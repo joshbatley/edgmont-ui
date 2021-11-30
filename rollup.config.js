@@ -8,23 +8,16 @@ import postcss from "rollup-plugin-postcss";
 const packageJson = require("./package.json");
 
 export default {
-  input: {
-    index: 'src/index.ts',
-    atoms: 'src/atoms/index.ts'
-  },
+  input: 'src/index.ts',
   output: [
     {
-      dir: 'lib',
-      entryFileNames: '[name].[format].js',
+      file: packageJson.main,
       format: "cjs",
-      compact: true,
       sourcemap: true
     },
     {
-      dir: 'lib',
-      entryFileNames: '[name].[format].js',
-      format: "es",
-      compact: true,
+      file: packageJson.module,
+      format: "esm",
       sourcemap: true
     }
   ],
@@ -35,21 +28,15 @@ export default {
     commonjs({
       extensions: ['.js']
     }),
-    babel({
-      babelHelpers: 'bundled',
-      exclude: 'node_modules',
-      extentsions: ['.ts','.tsx']
-    }),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
       minimize: true,
-      modules: true,
       extract: true,
+      extensions: ['.css'],
       plugins: [
         require('tailwindcss'),
         require('autoprefixer')
       ],
-      extensions: ['.css']
     })
   ]
 };

@@ -1,11 +1,10 @@
 # Edgmont UI Library
 
 ### TODO:
+
 - Github actions
   - Test
   - Github pages
   - NPM publish
-- NPM setup
-  - setup
-  - test
-- Tests
+
+> "postbuild": "purgecss --css build/static/css/_.css --content build/index.html build/static/js/_.js --output build/static/css"
