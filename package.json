@@ -1,12 +1,13 @@
 {
   "name": "edgmont-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "package.json"
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006 --no-manager-cache",
