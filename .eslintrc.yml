@@ -3,6 +3,9 @@ extends:
   - plugin:import/typescript
   - 'plugin:@typescript-eslint/recommended'
 parser: '@typescript-eslint/parser'
+parserOptions:
+  project:
+    - './tsconfig.json'
 env:
   browser: true
   node: true
@@ -28,6 +31,4 @@ rules:
   import/prefer-default-export: 0
   "@typescript-eslint/no-explicit-any": 0
   "@typescript-eslint/explicit-function-return-type": 0
-  jsx-a11y/label-has-associated-control:
-    - 2
-    - assert: either
+  import/no-extraneous-dependencies: 0

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = () => {
-  return <button className="bg-green-500">My button</button>
-}
+const Box = () => {
+  return <div className="bg-green-500">My button</div>;
+};
 
-export default Button;
+export default Box;

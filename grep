@@ -1,9 +1,0 @@
-total 23448
-drwxr-xr-x   8 josh  staff   256B 29 Nov 20:55 .
-drwxr-xr-x  19 josh  staff   608B 29 Nov 21:48 ..
-drwxr-xr-x   4 josh  staff   128B 29 Nov 20:55 atoms
--rw-r--r--   1 josh  staff    61B 29 Nov 21:47 index.d.ts
--rw-r--r--   1 josh  staff   5.7M 29 Nov 21:47 index.esm.js
--rw-r--r--   1 josh  staff   106B 29 Nov 21:47 index.esm.js.map
--rw-r--r--   1 josh  staff   5.7M 29 Nov 21:47 index.js
--rw-r--r--   1 josh  staff   106B 29 Nov 21:47 index.js.map
