@@ -28,6 +28,12 @@ export default {
     commonjs({
       extensions: ['.js']
     }),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      plugins: ['macros'],
+    }),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
       minimize: true,

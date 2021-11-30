@@ -1,3 +1,2 @@
 export * from 'atoms';
-export * from './index.css';
-
+export * from './tailwind.css';
