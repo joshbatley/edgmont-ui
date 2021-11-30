@@ -11,7 +11,7 @@
     "test": "jest",
     "clean-docs": "rm -rf docs/ && mkdir docs",
     "build-storybook": "build-storybook -o ./docs",
-    "copy-cname": "cp ./cname ./docs/",
+    "copy-cname": "cp ./CNAME ./docs/",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn copy-cname"
   },
   "dependencies": {
