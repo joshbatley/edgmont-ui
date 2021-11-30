@@ -6,8 +6,8 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 --no-manager-cache",
+    "build-storybook": "build-storybook -o ./docs",
     "build": "rollup -c",
     "test": "jest"
   },
