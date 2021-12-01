@@ -41,7 +41,7 @@ jobs:
         id: publish-minor
         if: startsWith(github.event.head_commit.message, 'Minor')
         run: echo Minor
-
-      - name: Publish - patch
-        if: !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Major')
-        run: echo ${{ github.ref.name }}
+#
+# - name: Publish - patch
+#   if: startsWith(github.event.head_commit.message, 'Major') &&
+#   run: echo ${{ github.ref.name }}
