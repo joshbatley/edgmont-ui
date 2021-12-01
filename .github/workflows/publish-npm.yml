@@ -40,7 +40,7 @@ jobs:
       - name: Publish - Minor
         id: publish-minor
         if: step.publish-major.outputs.exit_code == 0 && contains(github.ref.name, 'Minor')
-        rung: echo Minor
+        run: echo Minor
 
       - name: Publish - patch
         if: step.publish-major.outputs.exit_code == 0 && step.publish-minor.outputs.exit_code
