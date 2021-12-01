@@ -52,3 +52,9 @@ jobs:
       - name: Publish Patch
         if: ${{ !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Minor') }}
         run: yarn publish --patch
+
+      - name: Publish
+        run: |
+          git add .
+          git commit -m "Publish"
+          git push origin main
