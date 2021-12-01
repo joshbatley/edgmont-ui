@@ -54,7 +54,4 @@ jobs:
         run: yarn publish --patch
 
       - name: Publish
-        run: |
-          git add .
-          git commit -m "Publish"
-          git push origin main
+        run: git push origin main
