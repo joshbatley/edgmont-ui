@@ -32,18 +32,6 @@ jobs:
       - name: Build docs
         run: yarn build-docs:ci
 
-      - name: Upload
-        uses: actions/upload-artifact@v2.2.4
-        with:
-          name: docs
-          path: docs
-
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.0.10
-        with:
-          name: docs
-          path: docs
-
       - name: Commit docs
         run: |
           git config user.email github-actions[bot]@users.noreply.github.com
