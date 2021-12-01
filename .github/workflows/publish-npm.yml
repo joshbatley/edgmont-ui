@@ -35,13 +35,13 @@ jobs:
       - name: Publish - Major
         id: publish-major
         if: contains(github.ref.name, 'Major')
-        echo: "Major"
+        run: echo Major
 
       - name: Publish - Minor
         id: publish-minor
         if: step.publish-major.outputs.exit_code == 0 && contains(github.ref.name, 'Minor')
-        echo: "Minor"
+        rung: echo Minor
 
       - name: Publish - patch
         if: step.publish-major.outputs.exit_code == 0 && step.publish-minor.outputs.exit_code
-        echo: "patch"
+        run: echo Patch
