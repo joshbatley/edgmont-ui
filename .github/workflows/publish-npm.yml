@@ -41,17 +41,30 @@ jobs:
 
       - name: Publish Major
         id: publish-major
-        if: startsWith(github.event.head_commit.message, 'Major')
+        if: ${{ github.event.label.name == 'release-major' }}
         run: yarn publish --major
 
       - name: Publish Minor
         id: publish-minor
-        if: startsWith(github.event.head_commit.message, 'Minor')
+        if: ${{ github.event.label.name == 'release-minor' }}
         run: yarn publish --minor
 
       - name: Publish Patch
-        if: ${{ !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Minor') }}
+        if: ${{ github.event.label.name != 'release-major' && github.event.label.name != 'release-minor }}
         run: yarn publish --patch
 
       - name: Publish
         run: git push origin main
+
+      - name: Get Tag
+        run: export TAG=$(git describe)
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG }}
+          release_name: ${{ env.TAG }}
+          draft: false
+          prerelease: false
