@@ -1,6 +1,6 @@
 import React from 'react';
 
 export const Box = () => {
-  return <div className="bg-green-500">My button</div>;
+  return <div className="bg-red-500">My button</div>;
 };
 
