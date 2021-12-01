@@ -31,18 +31,21 @@ jobs:
       - name: Build docs
         run: yarn build-docs
         
-#       - uses: actions/upload-artifacts@v2
-#         with:
-#           name: docs
-#           path: docs
-        
+      - name: Upload
+        uses: actions/upload-artifacts@v2
+        with:
+          name: docs
+          path: docs
+          
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.10
+        with:
+          name: docs
+          path: docs
+            
       - name: Commit docs
         run: |
           git config user.email github-actions[bot]@users.noreply.github.com
           git config user.name github-actions[bot]
           git commit -am "(Github Action): updated docs"
-          git push origin main
-          
-        
-        
-      
+          git push origin gh-pages
