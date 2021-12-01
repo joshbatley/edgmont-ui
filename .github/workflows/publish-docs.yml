@@ -11,14 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@2
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2.5.0
         with: 
           node-version: 17.x
           
       - name: Cache node modules
         id: cache-node
-        uses: action/cache@v2
+        uses: action/cache@v2.1.7
         with: 
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
@@ -31,10 +31,10 @@ jobs:
       - name: Build docs
         run: yarn build-docs
         
-      - uses: actions/upload-artifacts@v2
-        with:
-          name: docs
-          path: docs
+#       - uses: actions/upload-artifacts@v2
+#         with:
+#           name: docs
+#           path: docs
         
       - name: Commit docs
         run: |
