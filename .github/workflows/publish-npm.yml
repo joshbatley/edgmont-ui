@@ -7,6 +7,10 @@ on:
 
   workflow_dispatch:
 
+env:
+  CI: true
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,31 +21,31 @@ jobs:
         with:
           node-version: 16.x
 
-      # - name: Cache node modules
-      #   id: cache-node
-      #   uses: actions/cache@v2.1.7
-      #   with:
-      #     path: node_modules
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-      #     restore-key: ${{ runner.os}}-node-
+      - name: Cache node modules
+        id: cache-node
+        uses: actions/cache@v2.1.7
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-key: ${{ runner.os}}-node-
 
-      # - name: Install dependencies
-      #   if: steps.cache-node.output.cache-hit != 'true'
-      #   run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
+      - name: Install dependencies
+        if: steps.cache-node.output.cache-hit != 'true'
+        run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
 
-      # - name: Build
-      #   run: yarn build
+      - name: Build
+        run: yarn build
 
       - name: Publish Major
         id: publish-major
         if: startsWith(github.event.head_commit.message, 'Major')
-        run: echo Major
+        run: yarn publish --major
 
       - name: Publish Minor
         id: publish-minor
         if: startsWith(github.event.head_commit.message, 'Minor')
-        run: echo 'Minor'
+        run: yarn publish --minor
 
       - name: Publish Patch
         if: ${{ !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Minor') }}
-        run: echo 'patch'
+        run: yarn publish --patch
