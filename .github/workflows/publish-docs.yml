@@ -26,7 +26,7 @@ jobs:
           
       - name: Install dependencies
         if: steps.cache-node.output.cache-hit != 'true'
-        run: yarn --ignore-scripts --ignore-optional --pure-lockfile
+        run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
         
       - name: Build docs
         run: yarn build-docs
