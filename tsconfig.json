@@ -25,11 +25,10 @@
   },
   "include": [
     "src",
+    "src/**/*",
     "types"
   ],
   "exclude": [
       "node_modules",
-      "src/**/*.stories.*",
-      "src/**/*.test.*"
   ]
 }

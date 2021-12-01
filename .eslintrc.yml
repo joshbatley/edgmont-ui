@@ -1,11 +1,12 @@
 extends:
   - airbnb-typescript
   - plugin:import/typescript
-  - 'plugin:@typescript-eslint/recommended'
-parser: '@typescript-eslint/parser'
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:storybook/recommended"
+parser: "@typescript-eslint/parser"
 parserOptions:
   project:
-    - './tsconfig.json'
+    - "./tsconfig.json"
 env:
   browser: true
   node: true
@@ -15,7 +16,7 @@ plugins:
   - import
   - react
   - react-hooks
-  - '@typescript-eslint'
+  - "@typescript-eslint"
 rules:
   consistent-return: 0
   prefer-const: 0

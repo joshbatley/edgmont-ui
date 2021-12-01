@@ -34,7 +34,7 @@ export default {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
       plugins: ['macros'],
     }),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.build.json" }),
     postcss({
       minimize: true,
       extract: true,
