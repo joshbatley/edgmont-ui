@@ -50,7 +50,7 @@ jobs:
         run: yarn publish --minor
 
       - name: Publish Patch
-        if: ${{ github.event.label.name != 'release-major' && github.event.label.name != 'release-minor }}
+        if: ${{ github.event.label.name != 'release-major' && github.event.label.name != 'release-minor' }}
         run: yarn publish --patch
 
       - name: Publish
