@@ -34,14 +34,14 @@ jobs:
 
       - name: Publish - Major
         id: publish-major
-        if: contains(github.event.head_commit.message, 'Major')
+        if: startsWith(github.event.head_commit.message, 'Major')
         run: echo Major
 
       - name: Publish - Minor
         id: publish-minor
-        if: steps.publish-major.outputs.exit_code == 0 && contains(github.event.head_commit.message, 'Minor')
+        if: startsWith(github.event.head_commit.message, 'Minor')
         run: echo Minor
 
       - name: Publish - patch
-        if: steps.publish-major.outputs.exit_code != 0 && steps.publish-minor.outputs.exit_code != 0
+        if: !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Major')
         run: echo ${{ github.ref.name }}
