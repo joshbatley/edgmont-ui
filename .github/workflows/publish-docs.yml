@@ -39,7 +39,7 @@ jobs:
       - name: Commit docs
         run: |
           git config user.email github-actions[bot]@users.noreply.github.com
-          git conifg user.name github-actions[bot]
+          git config user.name github-actions[bot]
           git commit -am "(Github Action): updated docs"
           git push origin master
           
