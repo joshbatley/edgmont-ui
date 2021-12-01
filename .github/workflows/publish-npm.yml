@@ -39,7 +39,7 @@ jobs:
 
       - name: Publish - Minor
         id: publish-minor
-        if: steps.publish-major.outputs.exit_code != 0 && contains(github.event.head_commit.message, 'Minor')
+        if: steps.publish-major.outputs.exit_code == 0 && contains(github.event.head_commit.message, 'Minor')
         run: echo Minor
 
       - name: Publish - patch
