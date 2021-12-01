@@ -49,4 +49,4 @@ jobs:
           git config user.name github-actions[bot]
           git add .
           git commit -m "(Github Action): updated docs"
-          git push origin gh-pages
+          git push origin main:gh-pages
