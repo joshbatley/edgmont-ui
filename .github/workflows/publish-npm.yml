@@ -57,7 +57,9 @@ jobs:
         run: git push origin main
 
       - name: Get Tag
-        run: export TAG=$(git describe)
+        run: |
+          export TAG=$(git describe)
+          echo "TAG=$TAG" >> $GITHUB_ENV
 
       - name: Create Release
         uses: actions/create-release@v1
