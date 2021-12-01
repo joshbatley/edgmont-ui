@@ -16,11 +16,11 @@
     "build": "rollup -c rollup.config.js",
     "test": "jest",
     "clean-docs": "rm -rf docs && mkdir docs",
-    "build-storybook": "build-storybook -o ./docs",
     "create-cname": "echo ui.edgmont.dev > ./docs/CNAME",
     "create-ignore": "echo '*\n!.gitkeep' > ./docs/.gitignore",
     "create-keep": "touch ./docs/.gitkeep",
     "create-doc-files": "yarn create-ignore && yarn create-cname && yarn create-keep",
+    "build-storybook": "build-storybook -o ./docs",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
     "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname"
   },
