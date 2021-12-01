@@ -15,10 +15,14 @@
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "build": "rollup -c rollup.config.js",
     "test": "jest",
-    "clean-docs": "rm -rf docs/ && mkdir docs",
+    "clean-docs": "rm -rf docs && mkdir docs",
     "build-storybook": "build-storybook -o ./docs",
-    "copy-cname": "cp ./CNAME ./docs/",
-    "build-docs": "yarn clean-docs && yarn build-storybook && yarn copy-cname"
+    "create-cname": "echo ui.edgmont.dev > ./docs/CNAME",
+    "create-ignore": "echo '*\n!.gitkeep' > ./docs/.gitignore",
+    "create-keep": "touch ./docs/.gitkeep",
+    "create-doc-files": "yarn create-ignore && yarn create-cname && yarn create-keep",
+    "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
+    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname"
   },
   "dependencies": {
     "react": "^17.0.2",

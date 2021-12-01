@@ -3,7 +3,7 @@ name: Build Docs
 on:
   push:
     branches:
-      - main 
+      - main
 
   workflow_dispatch:
 
@@ -12,38 +12,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-        
+
       - uses: actions/setup-node@v2.5.0
-        with: 
+        with:
           node-version: 16.x
-          
+
       - name: Cache node modules
         id: cache-node
         uses: actions/cache@v2.1.7
-        with: 
+        with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-key: ${{ runner.os}}-node-
-          
+
       - name: Install dependencies
         if: steps.cache-node.output.cache-hit != 'true'
         run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
-        
+
       - name: Build docs
-        run: yarn build-docs
-        
+        run: yarn build-docs:ci
+
       - name: Upload
         uses: actions/upload-artifact@v2.2.4
         with:
           name: docs
           path: docs
-          
+
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.0.10
         with:
           name: docs
           path: docs
-            
+
       - name: Commit docs
         run: |
           git config user.email github-actions[bot]@users.noreply.github.com
