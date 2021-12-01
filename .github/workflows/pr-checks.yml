@@ -1,0 +1,45 @@
+name: Build Docs
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+  workflow_dispatch:
+
+env:
+  CI: true
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16.x
+
+      - name: Cache node modules
+        id: cache-node
+        uses: actions/cache@v2.1.7
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-key: ${{ runner.os}}-node-
+
+      - name: Install dependencies
+        if: steps.cache-node.output.cache-hit != 'true'
+        run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Test
+        run: yarn test:ci
+
+      - name: Build docs
+        run: yarn build
