@@ -43,5 +43,5 @@ jobs:
         run: echo Minor
 
       - name: Publish - patch
-        if: steps.publish-major.outputs.exit_code == 0 && steps.publish-minor.outputs.exit_code
+        if: steps.publish-major.outputs.exit_code == 0 && steps.publish-minor.outputs.exit_code == 0
         run: echo Patch
