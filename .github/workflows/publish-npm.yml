@@ -1,0 +1,47 @@
+name: Build NPM
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16.x
+
+      # - name: Cache node modules
+      #   id: cache-node
+      #   uses: actions/cache@v2.1.7
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+      #     restore-key: ${{ runner.os}}-node-
+
+      # - name: Install dependencies
+      #   if: steps.cache-node.output.cache-hit != 'true'
+      #   run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
+
+      # - name: Build
+      #   run: yarn build
+
+      - name: Publish - Major
+        id: publish-major
+        if: contains(github.ref.name, 'Major')
+        echo: "Major"
+
+      - name: Publish - Minor
+        id: publish-minor
+        if: step.publish-major.outputs.exit_code == 0 && contains(github.ref.name, 'Minor')
+        echo: "Minor"
+
+      - name: Publish - patch
+        if: step.publish-major.outputs.exit_code == 0 && step.publish-minor.outputs.exit_code
+        echo: "patch"
