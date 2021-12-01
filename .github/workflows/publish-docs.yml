@@ -25,7 +25,7 @@ jobs:
           restore-key: ${{ runner.os}}-node-
           
       - name: Install dependencies
-        if: steps.cache-node.output.cache-hit != 'true;
+        if: steps.cache-node.output.cache-hit != 'true'
         run: yarn --ignore-scripts --ignore-optional --pure-lockfile
         
       - name: Build docs
