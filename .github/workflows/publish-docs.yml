@@ -7,6 +7,10 @@ on:
 
   workflow_dispatch:
 
+env:
+  CI: true
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
