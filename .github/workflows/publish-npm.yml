@@ -32,16 +32,15 @@ jobs:
       # - name: Build
       #   run: yarn build
 
-      - name: Publish - Major
+      - name: Publish Major
         id: publish-major
         if: startsWith(github.event.head_commit.message, 'Major')
         run: echo Major
 
-      - name: Publish - Minor
+      - name: Publish Minor
         id: publish-minor
         if: startsWith(github.event.head_commit.message, 'Minor')
-        run: echo Minor
+        run: echo 'Minor'
 
-      - name: Publish - patch
-        if: !startsWith(github.event.head_commit.message , 'M')
-        run: echo ${{ github.ref.name }}
+      - name: Publish Patch
+        if: !startsWith(github.event.head_commit.message , 'Major') && !startsWith(github.event.head_commit.message, 'Minor')
