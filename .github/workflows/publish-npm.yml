@@ -39,9 +39,9 @@ jobs:
 
       - name: Publish - Minor
         id: publish-minor
-        if: steps.publish-major.outputs.exit_code == 0 && contains(github.event.head_commit.message, 'Minor')
+        if: steps.publish-major.outputs.exit_code != 0 && contains(github.event.head_commit.message, 'Minor')
         run: echo Minor
 
       - name: Publish - patch
-        if: steps.publish-major.outputs.exit_code == 0 && steps.publish-minor.outputs.exit_code == 0
+        if: steps.publish-major.outputs.exit_code != 0 && steps.publish-minor.outputs.exit_code != 0
         run: echo ${{ github.ref.name }}
