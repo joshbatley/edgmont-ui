@@ -11,10 +11,10 @@ let defaults = {
   margin: '',
 };
 
-const Box: React.FC<Props> = ({
+export const Box: React.FC<Props> = ({
   children,
   classes,
-}) => {
+}: Props) => {
   let overriders = overriderDefault(defaults, classes);
   return (
     <div className={overriders}>
@@ -22,5 +22,3 @@ const Box: React.FC<Props> = ({
     </div>
   );
 };
-
-export { Box };
