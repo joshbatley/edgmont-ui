@@ -8,7 +8,12 @@ function render(component: ReactNode) {
 
 describe('Box component', () => {
   it('should render', () => {
-    const { container } = render(<Box />);
+    const { container } = render(<Box>My Box</Box>);
     expect(container.firstChild).not.toBeEmptyDOMElement();
+  });
+
+  it('should match snapshots', () => {
+    const { container } = render(<Box><h1>Children</h1></Box>);
+    expect(container).toMatchSnapshot();
   });
 });
