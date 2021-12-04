@@ -1,12 +1,15 @@
 module.exports = {
-  'testEnvironment': 'jsdom',
+  "testEnvironment": "jsdom",
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,ts,tsx}",
     "!<rootDir>/node_modules/",
     "!src/index.tsx",
     "!src/serviceWorker.ts"
   ],
-  "setupFilesAfterEnv": ['<rootDir>/setupTests.ts'],
+  "modulePaths": [
+    "<rootDir>/src",
+  ],
+  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
   "coverageThreshold": {
     "global": {
       "branches": 80,
