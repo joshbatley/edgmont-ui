@@ -1,7 +1,7 @@
 import React from 'react';
 import { overriderDefault } from 'utils/override-default';
 
-export type Props = {
+export type BoxProps = {
   children?: React.ReactNode,
   classes?: string,
 };
@@ -11,13 +11,14 @@ let defaults = {
   margin: '',
 };
 
-export const Box: React.FC<Props> = ({
+export const Box: React.FC<BoxProps> = ({
   children,
   classes,
-}: Props) => {
+  ...params
+}: BoxProps) => {
   let overriders = overriderDefault(defaults, classes);
   return (
-    <div className={overriders}>
+    <div className={overriders} {...params}>
       {children}
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Box, Props } from './';
+import { Box, BoxProps } from './';
 
 export default {
   title: 'Atoms/Box',
@@ -11,6 +11,6 @@ export default {
     children: 'My Box',
 
   },
-} as Meta<Props>;
+} as Meta<BoxProps>;
 
-export const Default: Story<Props> = ({ children, ...args }) => <Box {...args}>{children}</Box>;
+export const Default: Story<BoxProps> = ({ children, ...args }) => <Box {...args}>{children}</Box>;
