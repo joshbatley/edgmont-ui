@@ -10,6 +10,7 @@ describe('Box component', () => {
   it('should render', () => {
     const { container } = render(<Box>My Box</Box>);
     expect(container.firstChild).not.toBeEmptyDOMElement();
+    expect(container.firstChild).toHaveTextContent('My Box');
   });
 
   it('should match snapshots', () => {
