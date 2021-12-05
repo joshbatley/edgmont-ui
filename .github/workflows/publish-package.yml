@@ -55,7 +55,9 @@ jobs:
         run: yarn publish --patch
 
       - name: Publish
-        run: git push origin main
+        run: |
+          git push origin main
+          git push --tags
 
       - name: Get Tag
         run: |
