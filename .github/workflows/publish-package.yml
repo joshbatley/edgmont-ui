@@ -56,8 +56,8 @@ jobs:
 
       - name: Publish
         run: |
-          git push origin main
-          git push --tags
+          git push origin main -f
+          git push --tags -f
 
       - name: Get Tag
         run: |
