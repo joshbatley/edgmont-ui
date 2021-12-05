@@ -1,4 +1,4 @@
-name: Build NPM
+name: Publish Package
 
 on:
   push:
@@ -17,22 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
 
-      - name: Setup git
+      - name: Setup Git
         run: git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config user.name "$GITHUB_ACTOR"
 
       - uses: actions/setup-node@v2.5.0
         with:
           node-version: 16.x
 
-      - name: Cache node modules
+      - name: Cache Dependencies
         id: cache-node
         uses: actions/cache@v2.1.7
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-key: ${{ runner.os}}-node-
+          restore-keys: |
+            ${{ runner.os}}-node-
 
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.cache-node.output.cache-hit != 'true'
         run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
 
