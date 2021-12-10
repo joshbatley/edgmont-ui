@@ -6,13 +6,12 @@ import { Text, TextMono, TextProps } from './Text';
 export default {
   title: 'Atoms/Text',
   component: Text,
+  args: {
+    children: 'My Text element',
+  },
   argTypes: {
     as: {
       options: ['p', 'span', 'b'],
-
-    },
-    children: {
-      defaultValue: 'My Text element',
     },
   },
 } as Meta<TextProps>;

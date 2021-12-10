@@ -6,10 +6,8 @@ import { Title as Comp, HeadingProps } from './Title';
 export default {
   title: 'Atoms/Text',
   component: Comp,
-  argTypes: {
-    children: {
-      defaultValue: 'My Text element',
-    },
+  args: {
+    children: 'My Text element',
   },
 } as Meta<HeadingProps>;
 

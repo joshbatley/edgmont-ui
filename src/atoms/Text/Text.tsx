@@ -13,6 +13,12 @@ export const Text: React.FC<TextProps> = ({ children, as: Component = 'p', class
   </Component>
 );
 
+export const TextInline: React.FC<TextProps> = ({ children, as: Component = 'span', className, ...params }) => (
+  <Component className={className} {...params}>
+    {children}
+  </Component>
+);
+
 export const TextMono: React.FC<TextProps> = ({ children, as: Component = 'p', className, ...params }) => (
   <Component className={classnames('font-mono', className)} {...params}>
     {children}
