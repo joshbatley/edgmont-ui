@@ -1,5 +1,5 @@
-import "../src/tailwind.css";
 import React from 'react';
+import config from '../src/tailwind';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -22,9 +22,18 @@ export const parameters = {
 }
 
 export const decorators = [
-  (Story) => (
-    <div className="antialiased font-sans">
-      {Story()}
-    </div>
-  ),
+  (Story) => {
+    const script = document.createElement("script");
+    script.innerHTML = `tailwind.config = { theme: { colors: ${config.theme.colors.toString()} }}`;
+    script.async = true;
+    document.body.appendChild(script);
+    return (
+      <div>
+
+        <div className="antialiased font-sans">
+          {Story()}
+        </div>
+      </div>
+    )
+  },
 ];
