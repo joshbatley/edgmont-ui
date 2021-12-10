@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons it renders 1`] = `
+<div>
+  <button
+    class="group inline-flex items-center justify-center space-x-2 rounded-md transition focus:outline-none focus:ring px-4 py-2 text-sm font-medium"
+    type="button"
+  />
+</div>
+`;
+
+exports[`Buttons should accept a size value 1`] = `
+<div>
+  <button
+    class="group inline-flex items-center justify-center space-x-2 rounded-md transition focus:outline-none focus:ring px-4 py-2 text-sm font-medium"
+    type="button"
+  />
+</div>
+`;
+
+exports[`Buttons should be disabled 1`] = `
+<div>
+  <button
+    class="group inline-flex items-center justify-center space-x-2 rounded-md transition focus:outline-none focus:ring px-4 py-2 text-sm font-medium filter grayscale cursor-not-allowed"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`Buttons should show loading icon and disabled button 1`] = `
+<div>
+  <button
+    class="group inline-flex items-center justify-center space-x-2 rounded-md transition focus:outline-none focus:ring px-4 py-2 text-sm font-medium cursor-wait"
+    disabled=""
+    type="button"
+  >
+    <svg
+      class="animate-spin stroke-current"
+      height="16"
+      viewBox="25 25 50 50"
+      width="16"
+    >
+      <circle
+        class="text-gray-200"
+        cx="50"
+        cy="50"
+        fill="none"
+        r="20"
+        stroke-width="4"
+      />
+      <circle
+        class="text-gray-500"
+        cx="50"
+        cy="50"
+        fill="none"
+        r="20"
+        stroke-dasharray="60"
+        stroke-dashoffset="-50"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+  </button>
+</div>
+`;

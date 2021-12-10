@@ -3,10 +3,14 @@ import React from 'react';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: { expanded: true },
   backgrounds: {
-    default: 'white',
+    default: 'Light',
     values: [
-      { name: 'white', value: '#F9FAFB' }
+      { name: 'Light', value: '#F9FAFB' },
+      { name: 'Dark', value: '#1F2937' },
+      { name: 'White', value: '#FFFFFF' },
+      { name: 'Black', value: '#000000' }
     ]
   },
   controls: {
