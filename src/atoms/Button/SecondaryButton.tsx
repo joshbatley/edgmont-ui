@@ -4,7 +4,7 @@ import { BaseButton, BaseButtonProps } from './BaseButton';
 
 type SecondaryButtonProps = BaseButtonProps;
 
-export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, color, ...args }) => {
+export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, color = 'gray', ...args }) => {
   let bgcolor = `bg-${color}-100`;
   let textcolor = `text-${color}-700`;
   let hoverClass = `hover:bg-${color}-200`;
