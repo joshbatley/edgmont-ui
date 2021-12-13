@@ -42,7 +42,7 @@ exports[`Buttons should show loading icon and disabled button 1`] = `
       width="16"
     >
       <circle
-        class="text-gray-200"
+        class="stroke-gray-200"
         cx="50"
         cy="50"
         fill="none"
@@ -50,7 +50,7 @@ exports[`Buttons should show loading icon and disabled button 1`] = `
         stroke-width="4"
       />
       <circle
-        class="text-gray-500"
+        class="stroke-gray-500"
         cx="50"
         cy="50"
         fill="none"
