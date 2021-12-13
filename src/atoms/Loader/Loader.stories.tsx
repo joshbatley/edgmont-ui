@@ -6,6 +6,9 @@ import { Loader } from './';
 export default {
   title: 'Atoms/Loader',
   component: Loader,
+  args: {
+    color: 'gray',
+  },
   argTypes: {
     color: {
       options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
