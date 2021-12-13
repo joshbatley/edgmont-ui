@@ -4,13 +4,13 @@ import { BaseButton, BaseButtonProps } from './BaseButton';
 
 type OutlineButtonProps = BaseButtonProps;
 
-export const OutlineButton: React.FC<OutlineButtonProps> = ({ children, color, ...args }) => {
+export const OutlineButton: React.FC<OutlineButtonProps> = ({ children, className, color, ...args }) => {
   let bgcolor = 'border border-gray-300 bg-white shadow-sm';
   let textcolor = 'text-gray-700';
   let hoverClass = 'hover:bg-gray-100';
   return (
     <BaseButton
-      className={classNames(bgcolor, textcolor, hoverClass)}
+      className={classNames(bgcolor, textcolor, hoverClass, className)}
       color="gray"
       {...args}
     >
