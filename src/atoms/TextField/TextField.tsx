@@ -9,6 +9,7 @@ export type TextFieldProps = {
   prefixIcon?: ReactNode,
   suffixIcon?: ReactNode,
   size?: Size,
+  type?: 'text' | 'password' | 'email' | 'numnber',
 } & BaseInputProps;
 
 const defaults = 'border border-gray-300 shadow-sm rounded-md bg-white text-gray-400 flex ';

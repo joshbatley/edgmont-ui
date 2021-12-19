@@ -1,7 +1,7 @@
 import React from 'react';
 
 type LoaderProps = {
-  color?: Colors,
+  color?: ColorsAndShades,
   height?: string | number;
   width?: string | number;
 };

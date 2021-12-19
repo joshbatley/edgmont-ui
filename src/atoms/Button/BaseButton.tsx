@@ -5,7 +5,7 @@ import { Loader } from 'atoms/Loader';
 export type BaseButtonProps = {
   size?: Size,
   variant?: Variant,
-  color?: Colors,
+  color?: ColorsAndShades;
   isLoading?: boolean,
 } & React.ComponentPropsWithRef<'button'>;
 
