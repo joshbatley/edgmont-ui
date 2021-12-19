@@ -14,6 +14,7 @@ const config = {
       current: colors.currentColor,
     }),
   },
+  // add keeps for colors
 };
 
 export default config;

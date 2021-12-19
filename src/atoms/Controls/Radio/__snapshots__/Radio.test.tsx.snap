@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio test should errored with disabled classes 1`] = `
+<div>
+  <label
+    class="cursor-pointer group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full  border-red-300 shadow-red-200"
+    >
+      <input
+        class="peer hidden"
+        type="radio"
+      />
+      <div
+        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+      />
+      <svg
+        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="8"
+          cy="8"
+          r="3"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Radio test should render 1`] = `
+<div>
+  <label
+    class="cursor-pointer group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full "
+    >
+      <input
+        class="peer hidden"
+        type="radio"
+      />
+      <div
+        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600"
+      />
+      <svg
+        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="8"
+          cy="8"
+          r="3"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Radio test should render with disabled classes 1`] = `
+<div>
+  <label
+    class="cursor-not-allowed group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full "
+    >
+      <input
+        class="peer hidden"
+        disabled=""
+        type="radio"
+      />
+      <div
+        class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
+      />
+      <svg
+        class="text-transparent z-10 relative peer-checked:text-white"
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="8"
+          cy="8"
+          r="3"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;

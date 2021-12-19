@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox test should errored with disabled classes 1`] = `
+<div>
+  <label
+    class="cursor-pointer group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md border-red-300 shadow-red-200"
+    >
+      <input
+        class="peer hidden"
+        type="checkbox"
+      />
+      <div
+        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+      />
+      <svg
+        aria-hidden="true"
+        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Checkbox test should render 1`] = `
+<div>
+  <label
+    class="cursor-pointer group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md"
+    >
+      <input
+        class="peer hidden"
+        type="checkbox"
+      />
+      <div
+        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600"
+      />
+      <svg
+        aria-hidden="true"
+        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Checkbox test should render with disabled classes 1`] = `
+<div>
+  <label
+    class="cursor-not-allowed group flex space-x-2 items-center"
+  >
+    <div
+      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md"
+    >
+      <input
+        class="peer hidden"
+        disabled=""
+        type="checkbox"
+      />
+      <div
+        class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
+      />
+      <svg
+        aria-hidden="true"
+        class="text-transparent z-10 relative peer-checked:text-white"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </label>
+</div>
+`;
