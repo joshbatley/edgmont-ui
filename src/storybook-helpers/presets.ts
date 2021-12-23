@@ -13,8 +13,14 @@ const intercardinalPointsSelect = {
   control: { type: 'select' },
 };
 
+const sizeSelect = {
+  options: ['small', 'medium', 'large'],
+  control: { type: 'select' },
+};
+
 export {
   colorSelectWithWhite,
   colorSelect,
   intercardinalPointsSelect,
+  sizeSelect,
 };
