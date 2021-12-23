@@ -7,7 +7,7 @@ import { ClickableElement } from 'atoms/Button';
 import { Text } from 'atoms/Text';
 
 export default {
-  title: 'Atoms/Form/TextField/States',
+  title: 'Atoms/Controls/TextField/States',
   component: TextField,
   args: {
     placeholder: 'My input',

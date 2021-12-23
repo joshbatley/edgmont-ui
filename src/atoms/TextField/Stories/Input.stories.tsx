@@ -8,7 +8,7 @@ import { Password as PasswordComp } from '../Password';
 import { Text } from 'atoms/Text';
 
 export default {
-  title: 'Atoms/Form/TextField/Props',
+  title: 'Atoms/Controls/TextField/Props',
   component: TextField,
   args: {
     placeholder: 'My input',

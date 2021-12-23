@@ -6,7 +6,7 @@ import { SaveIcon } from '../../Icons/Outline';
 import { OutlineButton } from '../OutlineButton';
 
 export default {
-  title: 'Atoms/Button/Outline',
+  title: 'Atoms/Controls/Button/Outline',
   component: OutlineButton,
   args: {
     children: 'Get started',

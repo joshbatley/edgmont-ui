@@ -5,7 +5,7 @@ import { Story } from '@storybook/react';
 import { ClickableElement } from '../ClickableElement';
 
 export default {
-  title: 'Atoms/Button/ClickableElement',
+  title: 'Atoms/Controls/Button/ClickableElement',
   component: ClickableElement,
   args: {
     children: 'Click me',

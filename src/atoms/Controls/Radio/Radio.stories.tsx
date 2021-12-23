@@ -5,7 +5,7 @@ import { Radio } from './Radio';
 import { colorSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Form/Radio',
+  title: 'Atoms/Controls/Radio',
   component: Radio,
   args: {
     labelText: 'My Text element',

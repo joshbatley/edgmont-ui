@@ -6,7 +6,7 @@ import { SaveIcon } from '../../Icons/Outline';
 import { HighlightButton } from '../HighlightButton';
 
 export default {
-  title: 'Atoms/Button/Highlight',
+  title: 'Atoms/Controls/Button/Highlight',
   component: HighlightButton,
   args: {
     children: 'Get started',
