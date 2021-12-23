@@ -7,7 +7,7 @@ import { ButtonGroup } from '../ButtonGroup';
 import { OutlineButton } from '../OutlineButton';
 
 export default {
-  title: 'Atoms/Button/ButtonGroups',
+  title: 'Atoms/Controls/Button/ButtonGroups',
   component: ButtonGroup,
   args: {
     children: 'Get started',

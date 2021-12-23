@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ReactElement, ReactNode } from 'react';
+import React, { forwardRef, ReactElement, ReactNode } from 'react';
 import { BaseInput, BaseInputProps } from './BaseInput';
 
 export type TextFieldProps = {
@@ -46,12 +46,12 @@ const AddonElement: React.FC<{ containerClasses: string, addonClasses: string, a
     </div>
   ) : null;
 
-export const TextField: React.FC<TextFieldProps> = ({
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefixIcon, suffixIcon,
   before, after,
   size, disabled, error,
   ...args
-}) => {
+}, ref) => {
   let sizingClasses = applySizeClass(size);
   let focus = 'focus-with:outline-none focus-within:ring focus-within:z-10';
   if (before && !after) {
@@ -71,7 +71,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
 
       <div className={classNames('flex-grow', { [focus]: before || after })}>
-        <BaseInput className={classNames(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} {...args} />
+        <BaseInput className={classNames(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} ref={ref} {...args} />
       </div>
 
       <OptionalIcon sizingClasses={sizingClasses} icon={suffixIcon} />
@@ -83,4 +83,4 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
     </div>
   );
-};
+});

@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { Checkbox } from './Checkbox';
 
 export default {
-  title: 'Atoms/Form/Checkbox',
+  title: 'Atoms/Controls/Checkbox',
   component: Checkbox,
   args: {
     labelText: 'My Text element',
