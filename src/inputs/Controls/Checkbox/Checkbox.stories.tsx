@@ -2,18 +2,16 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Checkbox } from './Checkbox';
+import { colorSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/Checkbox',
+  title: 'inputs/Checkbox',
   component: Checkbox,
   args: {
-    labelText: 'My Text element',
+    labelText: 'My Checkboxes',
   },
   argTypes: {
-    color: {
-      options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
-      control: { type: 'select' },
-    },
+    color: colorSelect,
   },
 } as Meta;
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, TextFieldProps } from './TextField';
 import { EyeIcon, EyeOffIcon } from 'atoms/Icons/Outline';
-import { ClickableElement } from 'atoms/Button';
+import { ClickableElement } from 'inputs/Button';
 
 type Props = TextFieldProps;
 

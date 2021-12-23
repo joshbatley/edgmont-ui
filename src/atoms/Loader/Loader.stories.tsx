@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Loader } from './';
+import { colorSelectWithWhite } from 'storybook-helpers/presets';
 
 export default {
   title: 'Atoms/Loader',
@@ -10,10 +11,7 @@ export default {
     color: 'gray',
   },
   argTypes: {
-    color: {
-      options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
-      control: { type: 'select' },
-    },
+    color: colorSelectWithWhite,
   },
 } as Meta;
 

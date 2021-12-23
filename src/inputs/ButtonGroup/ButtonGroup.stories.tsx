@@ -2,27 +2,17 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
-import { PrimaryButton } from '../PrimaryButton';
-import { ButtonGroup } from '../ButtonGroup';
-import { OutlineButton } from '../OutlineButton';
+import { PrimaryButton } from '../Button/PrimaryButton';
+import { ButtonGroup } from '../Button/ButtonGroup';
+import { OutlineButton } from '../Button/OutlineButton';
+import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/Button/ButtonGroups',
+  title: 'inputs/Button/ButtonGroups',
   component: ButtonGroup,
-  args: {
-    children: 'Get started',
-    color: 'gray',
-  },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-
-    },
-    color: {
-      options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
+    color: colorSelectWithWhite,
   },
 } as Meta;
 

@@ -5,18 +5,16 @@ import { Select } from './Select';
 import { SelectList } from './SelectList';
 import { SelectItem } from './SelectItem';
 import { SelectFilter } from './SelectFilter';
+import { sizeSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/Select/Custom',
+  title: 'inputs/Select/Custom',
   component: Select,
   args: {
     label: 'My select menu',
   },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
   },
 } as Meta;
 

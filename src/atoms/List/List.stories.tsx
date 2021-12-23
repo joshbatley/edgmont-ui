@@ -2,19 +2,14 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { List, ListItem, OrderedList, UnorderedList } from 'atoms/List';
+import { sizeSelect } from 'storybook-helpers/presets';
 
 
 export default {
   title: 'Atoms/List',
   component: List,
-  args: {
-    label: 'My select menu',
-  },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
   },
 } as Meta;
 

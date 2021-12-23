@@ -3,21 +3,19 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TextField } from '../TextField';
 import { LockClosedIcon, CodeIcon } from 'atoms/Icons/Solid';
-import { ClickableElement } from 'atoms/Button';
+import { ClickableElement } from 'inputs/Button';
 import { Password as PasswordComp } from '../Password';
 import { Text } from 'atoms/Text';
+import { sizeSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/TextField/Props',
+  title: 'inputs/TextField/Props',
   component: TextField,
   args: {
     placeholder: 'My input',
   },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
   },
 } as Meta;
 

@@ -2,26 +2,19 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
-import { SaveIcon } from '../../Icons/Outline';
+import { SaveIcon } from 'atoms/Icons/Outline';
 import { HighlightButton } from '../HighlightButton';
+import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/Button/Highlight',
+  title: 'inputs/Button/Highlight',
   component: HighlightButton,
   args: {
     children: 'Get started',
-    color: 'gray',
   },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-
-    },
-    color: {
-      options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
+    color: colorSelectWithWhite,
   },
 } as Meta;
 

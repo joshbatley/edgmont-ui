@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClickableElement, OutlineButton, OutlineButtonProps } from 'atoms/Button';
+import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs/Button';
 import { useSelectContext } from './SelectContext';
 import { SelectorIcon } from 'atoms/Icons/Outline';
 import { Text } from 'atoms';

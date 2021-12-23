@@ -7,9 +7,6 @@ import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
 export default {
   title: 'Atoms/Chip',
   component: Chip,
-  args: {
-    color: 'gray',
-  },
   argTypes: {
     color: colorSelect,
     size: sizeSelect,

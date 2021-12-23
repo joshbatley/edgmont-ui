@@ -3,24 +3,17 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
 import { ClickableElement } from '../ClickableElement';
+import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Controls/Button/ClickableElement',
+  title: 'inputs/Button/ClickableElement',
   component: ClickableElement,
   args: {
     children: 'Click me',
-    color: 'gray',
   },
   argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
-
-    },
-    color: {
-      options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink', 'white'],
-      control: { type: 'select' },
-    },
+    size: sizeSelect,
+    color: colorSelectWithWhite,
   },
 } as Meta;
 
