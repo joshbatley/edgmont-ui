@@ -5,10 +5,9 @@ import { Select } from './Select';
 import { SelectList } from './SelectList';
 import { SelectItem } from './SelectItem';
 import { SelectFilter } from './SelectFilter';
-import { SimpleSelect } from './SimpleSelect';
 
 export default {
-  title: 'Atoms/Controls/Select',
+  title: 'Atoms/Controls/Select/Custom',
   component: Select,
   args: {
     label: 'My select menu',
@@ -21,12 +20,8 @@ export default {
   },
 } as Meta;
 
-const values = ['hello', 'worlds', 'yeah us to', 'some more options'];
-const valuesComplex = [{ value: 'hello', label: 'this is hello' }, { value: 'world', label: 'this is world' }];
 
-export const Default: Story = ({ ...args }) => (
-  <SimpleSelect values={values} placeholder="My Select" />
-);
+const valuesComplex = [{ value: 'hello', label: 'this is hello' }, { value: 'world', label: 'this is world' }];
 
 export const Filter: Story = ({ ...args }) => (
   <Select {...args} onChange={(...item) => console.log(item)} itemToString={item => item ? item.value : ''} >
@@ -39,8 +34,5 @@ export const Filter: Story = ({ ...args }) => (
   </Select>
 );
 
-
-// Simple
-// Simple with props
 // Baic Example of complex
 // Example of complex complex
