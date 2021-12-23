@@ -3,11 +3,11 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TextField } from '../TextField';
 import { LockClosedIcon, EyeIcon } from 'atoms/Icons/Solid';
-import { ClickableElement } from 'atoms/Button';
+import { ClickableElement } from 'inputs/Button';
 import { Text } from 'atoms/Text';
 
 export default {
-  title: 'Atoms/Controls/TextField/States',
+  title: 'inputs/TextField/States',
   component: TextField,
   args: {
     placeholder: 'My input',

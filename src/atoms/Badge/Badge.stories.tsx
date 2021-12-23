@@ -8,9 +8,6 @@ import { intercardinalPointsSelect, colorSelect } from 'storybook-helpers/preset
 export default {
   title: 'Atoms/Badge',
   component: Badge,
-  args: {
-    color: 'gray',
-  },
   argTypes: {
     position: intercardinalPointsSelect,
     color: colorSelect,

@@ -9,7 +9,6 @@ export default {
   args: {
     classes: 'bg-white',
     children: 'My Box',
-
   },
 } as Meta<BoxProps>;
 

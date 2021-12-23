@@ -3,7 +3,7 @@ import React from 'react';
 import { XCircleIcon } from 'atoms/Icons/Solid';
 import { Text } from 'atoms/Text';
 import { applyColor } from 'utils/colorpicker';
-import { ClickableElement } from 'atoms/Button';
+import { ClickableElement } from 'inputs/Button';
 
 type Props = {
   color?: Colors;

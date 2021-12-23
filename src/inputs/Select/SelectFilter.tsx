@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { TextField, TextFieldProps } from 'atoms/TextField';
+import { TextField, TextFieldProps } from 'inputs/TextField';
 import { useSelectContext } from './SelectContext';
 import { SelectButton, SelectButtonProps } from './SelectButton';
 import { SelectorIcon } from 'atoms/Icons/Outline';
