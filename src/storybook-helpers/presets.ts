@@ -8,8 +8,13 @@ const colorSelect = {
   control: { type: 'select' },
 };
 
+const intercardinalPointsSelect = {
+  options: ['NW', 'NE', 'SE', 'SW'],
+  control: { type: 'select' },
+};
 
 export {
   colorSelectWithWhite,
   colorSelect,
+  intercardinalPointsSelect,
 };

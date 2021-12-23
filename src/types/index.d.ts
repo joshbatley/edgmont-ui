@@ -12,7 +12,9 @@ type ColorWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800
 
 type ColorPrefix = 'text' | 'bg' | 'border' | 'ring' | 'outline' | 'shadow';
 
-// Button
 type Size = 'large' | 'medium' | 'small' | 'none';
 type Variant = 'button' | 'submit' | 'reset';
+type Position = CardinalPoints | IntercardinalPoints;
 
+type CardinalPoints = 'N' | 'E' | 'S' | 'W';
+type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
