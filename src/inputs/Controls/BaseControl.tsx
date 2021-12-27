@@ -11,7 +11,7 @@ export type BaseControlProps = {
 } & React.ComponentPropsWithRef<'input'>;
 
 export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, color = 'blue', icon, rounded = false, disabled, error, ...args
+  labelText, color = 'blue', icon, rounded = false, disabled, error, ...rest
 }) => {
   let colorClass = applyColor(color, '500', 'bg');
   let colorHightlightClass = applyColor(color, '600', 'bg');
@@ -37,7 +37,7 @@ export const BaseControl: React.FC<BaseControlProps> = ({
   return (
     <label className={labelClasses}>
       <div className={btnClasses}>
-        <input className="peer hidden" disabled={disabled} {...args} />
+        <input className="peer hidden" disabled={disabled} {...rest} />
         <div className={boxClasses} />
         {React.cloneElement(icon, { width: 16, height: 16, className: iconClasses })}
       </div>

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ListItem } from 'atoms/List';
+import { ListItem } from 'base/List';
 import { useSelectContext } from './SelectContext';
 import classNames from 'classnames';
 

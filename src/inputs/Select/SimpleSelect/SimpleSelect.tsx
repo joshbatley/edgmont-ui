@@ -15,7 +15,7 @@ type SimpleSelectProps = {
 export const SimpleSelect: React.FC<SimpleSelectProps> = ({
   values, isFilterable, disabled, error, isClearable, placeholder, onInputValueChange,
   itemToString = (item): string => item || '',
-  ...args
+  ...rest
 }) => {
   const [filter, setFilter] = useState<string>('');
   const filterOptions = values.filter(item => itemToString(item).toLowerCase().includes(filter));
@@ -28,7 +28,7 @@ export const SimpleSelect: React.FC<SimpleSelectProps> = ({
   }
 
   return (
-    <Select onInputValueChange={handleOnputValueChange} itemToString={itemToString} {...args}>
+    <Select onInputValueChange={handleOnputValueChange} itemToString={itemToString} {...rest}>
       {isFilterable ?
         <SelectFilter disabled={disabled} error={error} isClearable={isClearable} placeholder={placeholder} /> :
         <SelectButton disabled={disabled} error={error} isClearable={isClearable} placeholder={placeholder} />

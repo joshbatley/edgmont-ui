@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...args }) => (
-  <div>You can click this and it will work <ClickableElement {...args}>{children}</ClickableElement>. No really</div>
+export const Default: Story = ({ children, ...rest }) => (
+  <div>You can click this and it will work <ClickableElement {...rest}>{children}</ClickableElement>. No really</div>
 );
 

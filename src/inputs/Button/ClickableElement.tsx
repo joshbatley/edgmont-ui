@@ -1,14 +1,14 @@
 import React from 'react';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type ClickableElementProps = Omit<BaseButtonProps, 'size' | 'color' | 'isLoading'>;
+export type ClickableElementProps = Omit<BaseButtonProps, 'size' | 'color' | 'isLoading'>;
 
-export const ClickableElement: React.FC<ClickableElementProps> = ({ children, ...args }) => {
+export const ClickableElement: React.FC<ClickableElementProps> = ({ children, ...rest }) => {
   return (
     <BaseButton
       size="none"
       color="gray"
-      {...args}
+      {...rest}
     >
       {children}
     </BaseButton>

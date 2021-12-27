@@ -5,7 +5,7 @@ import { Loader } from './';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Atoms/Loader',
+  title: 'Base/Loader',
   component: Loader,
   args: {
     color: 'gray',
@@ -15,4 +15,4 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ ...args }) => <Loader {...args} />;
+export const Default: Story = ({ ...rest }) => <Loader {...rest} />;

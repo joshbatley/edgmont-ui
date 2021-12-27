@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { Text, TextMono, TextProps } from './Text';
 
 export default {
-  title: 'Atoms/Text',
+  title: 'Base/Text',
   component: Text,
   args: {
     children: 'My Text element',
@@ -16,5 +16,5 @@ export default {
   },
 } as Meta<TextProps>;
 
-export const Default: Story<TextProps> = ({ children, ...args }) => <Text {...args}>{children}</Text>;
-export const Mono: Story<TextProps> = ({ children, ...args }) => <TextMono {...args}>{children}</TextMono>;
+export const Default: Story<TextProps> = ({ children, ...rest }) => <Text {...rest}>{children}</Text>;
+export const Mono: Story<TextProps> = ({ children, ...rest }) => <TextMono {...rest}>{children}</TextMono>;

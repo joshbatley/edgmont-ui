@@ -4,7 +4,7 @@ import { BaseButton, BaseButtonProps } from './BaseButton';
 
 type PrimaryButtonProps = BaseButtonProps;
 
-export const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, color = 'gray', className, ...args }) => {
+export const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, color = 'gray', className, ...rest }) => {
   let isWhite = color === 'white';
   let bgcolor = isWhite ? 'bg-white' : `bg-${color}-600`;
   let textcolor = isWhite ? 'text-gray-800' : 'text-white';
@@ -13,7 +13,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, color = 
     <BaseButton
       className={classNames(bgcolor, textcolor, hoverClass, className)}
       color={isWhite ? 'gray' : color}
-      {...args}
+      {...rest}
     >
       {children}
     </BaseButton>

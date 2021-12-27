@@ -4,7 +4,7 @@ import { BaseButton, BaseButtonProps } from './BaseButton';
 
 type SecondaryButtonProps = BaseButtonProps;
 
-export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, color = 'gray', ...args }) => {
+export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, color = 'gray', ...rest }) => {
   let bgcolor = `bg-${color}-100`;
   let textcolor = `text-${color}-700`;
   let hoverClass = `hover:bg-${color}-200`;
@@ -12,7 +12,7 @@ export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, colo
     <BaseButton
       className={classNames(bgcolor, textcolor, hoverClass)}
       color={color}
-      {...args}
+      {...rest}
     >
       {children}
     </BaseButton>
