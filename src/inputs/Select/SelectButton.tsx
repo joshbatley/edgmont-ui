@@ -1,8 +1,8 @@
 import React from 'react';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs/Button';
 import { useSelectContext } from './SelectContext';
-import { SelectorIcon } from 'atoms/Icons/Outline';
-import { Text } from 'atoms';
+import { SelectorIcon } from 'base/Icons/Outline';
+import { Text } from 'base';
 import classNames from 'classnames';
 
 export type SelectButtonProps = {
@@ -12,7 +12,7 @@ export type SelectButtonProps = {
 } & OutlineButtonProps;
 
 export const SelectButton: React.FC<SelectButtonProps> = ({
-  isClearable, children, isFilterable, placeholder, error, ...args
+  isClearable, children, isFilterable, placeholder, error, ...rest
 }) => {
   const {
     getToggleButtonProps, itemToString, selectedItem, clearSelection,
@@ -34,7 +34,7 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
   let classes = classNames('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error });
 
   return (
-    <OutlineButton className={classes} {...getToggleButtonProps()} {...args}>
+    <OutlineButton className={classes} {...getToggleButtonProps()} {...rest}>
       <Text>{buttonText}</Text>
       <div className="flex space-x-4 items-center">
         {isClearableActive &&

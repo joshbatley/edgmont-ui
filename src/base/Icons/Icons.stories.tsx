@@ -27,6 +27,6 @@ export const Solid: Story = () => (<IconsComp />);
 export const Outline: Story = () => (<IconsOutlineComp />);
 
 export default {
-  title: 'Atoms/Icons',
+  title: 'Base/Icons',
   component: IconsComp,
 } as Meta;

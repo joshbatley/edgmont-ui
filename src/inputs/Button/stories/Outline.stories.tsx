@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
-import { SaveIcon } from 'atoms/Icons/Outline';
+import { SaveIcon } from 'base/Icons/Outline';
 import { OutlineButton } from '../OutlineButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
@@ -18,24 +18,24 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...args }) => <OutlineButton {...args}>{children}</OutlineButton>;
+export const Default: Story = ({ children, ...rest }) => <OutlineButton {...rest}>{children}</OutlineButton>;
 
-export const Sizes: Story = ({ children, ...args }) => (
+export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    <OutlineButton size="large" {...args}>{children}</OutlineButton>
-    <OutlineButton size="medium" {...args}>{children}</OutlineButton>
-    <OutlineButton size="small" {...args}>{children}</OutlineButton>
+    <OutlineButton size="large" {...rest}>{children}</OutlineButton>
+    <OutlineButton size="medium" {...rest}>{children}</OutlineButton>
+    <OutlineButton size="small" {...rest}>{children}</OutlineButton>
   </div>
 );
 
-export const Loading: Story = ({ children, ...args }) => (
-  <OutlineButton isLoading {...args}>
+export const Loading: Story = ({ children, ...rest }) => (
+  <OutlineButton isLoading {...rest}>
     <span>Saving</span>
   </OutlineButton>
 );
 
-export const WithIcon: Story = ({ children, ...args }) => (
-  <OutlineButton {...args}>
+export const WithIcon: Story = ({ children, ...rest }) => (
+  <OutlineButton {...rest}>
     <SaveIcon width={16} height={16} /><span>{children}</span>
   </OutlineButton>
 );

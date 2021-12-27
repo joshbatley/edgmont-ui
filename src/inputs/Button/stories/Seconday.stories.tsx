@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
-import { SaveIcon } from 'atoms/Icons/Outline';
+import { SaveIcon } from 'base/Icons/Outline';
 import { SecondaryButton } from '../SecondaryButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
@@ -18,17 +18,17 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...args }) => <SecondaryButton {...args}>{children}</SecondaryButton>;
+export const Default: Story = ({ children, ...rest }) => <SecondaryButton {...rest}>{children}</SecondaryButton>;
 
-export const Sizes: Story = ({ children, ...args }) => (
+export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    <SecondaryButton size="large" {...args}>{children}</SecondaryButton>
-    <SecondaryButton size="medium" {...args}>{children}</SecondaryButton>
-    <SecondaryButton size="small" {...args}>{children}</SecondaryButton>
+    <SecondaryButton size="large" {...rest}>{children}</SecondaryButton>
+    <SecondaryButton size="medium" {...rest}>{children}</SecondaryButton>
+    <SecondaryButton size="small" {...rest}>{children}</SecondaryButton>
   </div>
 );
 
-export const All: Story = ({ children = 'save', ...args }) => (
+export const All: Story = ({ children = 'save', ...rest }) => (
   <div className="grid grid-cols-6 gap-4">
     <SecondaryButton color="gray">{children}</SecondaryButton>
     <SecondaryButton color="green">{children}</SecondaryButton>
@@ -40,14 +40,14 @@ export const All: Story = ({ children = 'save', ...args }) => (
     <SecondaryButton color="pink">{children}</SecondaryButton>
   </div>);
 
-export const Loading: Story = ({ children, ...args }) => (
-  <SecondaryButton isLoading {...args}>
+export const Loading: Story = ({ children, ...rest }) => (
+  <SecondaryButton isLoading {...rest}>
     <span>Saving</span>
   </SecondaryButton>
 );
 
-export const WithIcon: Story = ({ children, ...args }) => (
-  <SecondaryButton {...args}>
+export const WithIcon: Story = ({ children, ...rest }) => (
+  <SecondaryButton {...rest}>
     <SaveIcon width={16} height={16} /><span>{children}</span>
   </SecondaryButton>
 );

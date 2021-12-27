@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'atoms/List';
+import { List } from 'base/List';
 import { useSelectContext } from './SelectContext';
 
 export const SelectList: React.FC = ({ children }) => {

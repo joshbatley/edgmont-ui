@@ -15,24 +15,24 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...args }) => (
+export const Default: Story = ({ children, ...rest }) => (
   <div>
-    <Checkbox {...args} />
-    <Checkbox checked {...args} />
+    <Checkbox {...rest} />
+    <Checkbox checked {...rest} />
   </div>
 );
 
-export const Disabled: Story = ({ children, ...args }) => (
+export const Disabled: Story = ({ children, ...rest }) => (
   <div>
-    <Checkbox disabled {...args} />
-    <Checkbox checked disabled {...args} />
+    <Checkbox disabled {...rest} />
+    <Checkbox checked disabled {...rest} />
   </div>
 );
 
-export const Error: Story = ({ children, ...args }) => (
+export const Error: Story = ({ children, ...rest }) => (
   <div>
-    <Checkbox error {...args} />
-    <Checkbox checked error {...args} />
-    <Checkbox error disabled {...args} />
+    <Checkbox error {...rest} />
+    <Checkbox checked error {...rest} />
+    <Checkbox error disabled {...rest} />
   </div>
 );

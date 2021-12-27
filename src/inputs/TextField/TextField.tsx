@@ -50,7 +50,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefixIcon, suffixIcon,
   before, after,
   size, disabled, error,
-  ...args
+  ...rest
 }, ref) => {
   let sizingClasses = applySizeClass(size);
   let focus = 'focus-with:outline-none focus-within:ring focus-within:z-10';
@@ -71,7 +71,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
       />
 
       <div className={classNames('flex-grow', { [focus]: before || after })}>
-        <BaseInput className={classNames(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} ref={ref} {...args} />
+        <BaseInput className={classNames(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} ref={ref} {...rest} />
       </div>
 
       <OptionalIcon sizingClasses={sizingClasses} icon={suffixIcon} />

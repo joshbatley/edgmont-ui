@@ -18,9 +18,15 @@ const sizeSelect = {
   control: { type: 'select' },
 };
 
+const severitySelect = {
+  options: ['error', 'warning', 'info', 'success'],
+  control: { type: 'select' },
+};
+
 export {
   colorSelectWithWhite,
   colorSelect,
   intercardinalPointsSelect,
   sizeSelect,
+  severitySelect,
 };

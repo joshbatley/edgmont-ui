@@ -2,9 +2,9 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TextField } from '../TextField';
-import { LockClosedIcon, EyeIcon } from 'atoms/Icons/Solid';
+import { LockClosedIcon, EyeIcon } from 'base/Icons/Solid';
 import { ClickableElement } from 'inputs/Button';
-import { Text } from 'atoms/Text';
+import { Text } from 'base/Text';
 
 export default {
   title: 'inputs/TextField/States',
@@ -14,26 +14,26 @@ export default {
   },
 } as Meta;
 
-const Before = ({ ...args }) => (<ClickableElement onClick={() => alert('boo')} {...args}>https://</ClickableElement>);
-const After = ({ ...args }) => (<Text {...args}>.com</Text>);
+const Before = ({ ...rest }) => (<ClickableElement onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
+const After = ({ ...rest }) => (<Text {...rest}>.com</Text>);
 
-export const Error: Story = ({ ...args }) => (
+export const Error: Story = ({ ...rest }) => (
   <div className="space-y-2">
-    <TextField error {...args} />
-    <TextField error prefixIcon={<LockClosedIcon width={16} />} {...args} />
-    <TextField error suffixIcon={<EyeIcon width={16} />} {...args} />
-    <TextField error before={<Before />} {...args} />
-    <TextField error after={<After />} {...args} />
-    <TextField error before={<Before />} after={<After />} {...args} />
+    <TextField error {...rest} />
+    <TextField error prefixIcon={<LockClosedIcon width={16} />} {...rest} />
+    <TextField error suffixIcon={<EyeIcon width={16} />} {...rest} />
+    <TextField error before={<Before />} {...rest} />
+    <TextField error after={<After />} {...rest} />
+    <TextField error before={<Before />} after={<After />} {...rest} />
   </div>
 );
-export const Disabled: Story = ({ ...args }) => (
+export const Disabled: Story = ({ ...rest }) => (
   <div className="space-y-2">
-    <TextField disabled {...args} />
-    <TextField disabled prefixIcon={<LockClosedIcon width={16} />} {...args} />
-    <TextField disabled suffixIcon={<EyeIcon width={16} />} {...args} />
-    <TextField disabled before={<Before />} {...args} />
-    <TextField disabled after={<After />} {...args} />
-    <TextField disabled before={<Before />} after={<After />} {...args} />
+    <TextField disabled {...rest} />
+    <TextField disabled prefixIcon={<LockClosedIcon width={16} />} {...rest} />
+    <TextField disabled suffixIcon={<EyeIcon width={16} />} {...rest} />
+    <TextField disabled before={<Before />} {...rest} />
+    <TextField disabled after={<After />} {...rest} />
+    <TextField disabled before={<Before />} after={<After />} {...rest} />
   </div>
 );

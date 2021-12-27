@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
-import { SaveIcon } from 'atoms/Icons/Outline';
+import { SaveIcon } from 'base/Icons/Outline';
 import { PrimaryButton } from '../PrimaryButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
@@ -18,17 +18,17 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...args }) => <PrimaryButton {...args}>{children}</PrimaryButton>;
+export const Default: Story = ({ children, ...rest }) => <PrimaryButton {...rest}>{children}</PrimaryButton>;
 
-export const Sizes: Story = ({ children, ...args }) => (
+export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    <PrimaryButton size="large" {...args}>{children}</PrimaryButton>
-    <PrimaryButton size="medium" {...args}>{children}</PrimaryButton>
-    <PrimaryButton size="small" {...args}>{children}</PrimaryButton>
+    <PrimaryButton size="large" {...rest}>{children}</PrimaryButton>
+    <PrimaryButton size="medium" {...rest}>{children}</PrimaryButton>
+    <PrimaryButton size="small" {...rest}>{children}</PrimaryButton>
   </div>
 );
 
-export const All: Story = ({ children = 'save', ...args }) => (
+export const All: Story = ({ children = 'save', ...rest }) => (
   <div className="grid grid-cols-6 gap-4">
     <PrimaryButton color="gray">{children}</PrimaryButton>
     <PrimaryButton color="green">{children}</PrimaryButton>
@@ -41,20 +41,20 @@ export const All: Story = ({ children = 'save', ...args }) => (
     <PrimaryButton color="white">{children}</PrimaryButton>
   </div>);
 
-export const Loading: Story = ({ children, ...args }) => (
-  <PrimaryButton isLoading {...args}>
+export const Loading: Story = ({ children, ...rest }) => (
+  <PrimaryButton isLoading {...rest}>
     <span>Saving</span>
   </PrimaryButton>
 );
 
-export const WithIcon: Story = ({ children, ...args }) => (
-  <PrimaryButton {...args}>
+export const WithIcon: Story = ({ children, ...rest }) => (
+  <PrimaryButton {...rest}>
     <SaveIcon width={16} height={16} /><span>{children}</span>
   </PrimaryButton>
 );
 
-export const WithAction: Story = ({ children, ...args }) => (
-  <PrimaryButton onClick={() => alert('boo')} {...args}>
+export const WithAction: Story = ({ children, ...rest }) => (
+  <PrimaryButton onClick={() => alert('boo')} {...rest}>
     {children}
   </PrimaryButton>
 );

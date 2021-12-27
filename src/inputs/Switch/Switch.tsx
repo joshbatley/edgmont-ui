@@ -24,7 +24,7 @@ function getSizes(size: string) {
 
 export const Switch: React.FC<Props> = ({
   color = 'green', size = 'medium', disabled,
-  ...args
+  ...rest
 }) => {
   let colorsToggle = applyColor(color, '400', 'bg');
   let colorsRing = applyColor(color, '400', 'ring');
@@ -46,7 +46,7 @@ export const Switch: React.FC<Props> = ({
 
   return (
     <label className={labelClasses} >
-      <input type="checkbox" className="peer hidden" disabled={disabled} {...args} />
+      <input type="checkbox" className="peer hidden" disabled={disabled} {...rest} />
       <div className={backClasses} />
       <div className={btnClasses} />
     </label >

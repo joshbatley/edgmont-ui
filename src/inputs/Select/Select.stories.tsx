@@ -21,8 +21,8 @@ export default {
 
 const valuesComplex = [{ value: 'hello', label: 'this is hello' }, { value: 'world', label: 'this is world' }];
 
-export const Filter: Story = ({ ...args }) => (
-  <Select {...args} onChange={(...item) => console.log(item)} itemToString={item => item ? item.value : ''} >
+export const Filter: Story = ({ ...rest }) => (
+  <Select {...rest} onChange={(...item) => console.log(item)} itemToString={item => item ? item.value : ''} >
     <SelectFilter error placeholder="Options" />
     <SelectList>
       {valuesComplex.map((item, i) => (

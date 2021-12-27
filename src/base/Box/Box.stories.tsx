@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { Box, BoxProps } from './';
 
 export default {
-  title: 'Atoms/Box',
+  title: 'Base/Box',
   component: Box,
   args: {
     classes: 'bg-white',
@@ -12,4 +12,4 @@ export default {
   },
 } as Meta<BoxProps>;
 
-export const Default: Story<BoxProps> = ({ children, ...args }) => <Box {...args}>{children}</Box>;
+export const Default: Story<BoxProps> = ({ children, ...rest }) => <Box {...rest}>{children}</Box>;

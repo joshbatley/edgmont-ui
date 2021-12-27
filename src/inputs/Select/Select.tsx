@@ -19,8 +19,8 @@ export const clearInputOnSelectItem = (state: DownshiftState<any>, changes: Stat
   return changes;
 };
 
-export const Select: React.FC<SelectProps> = ({ itemToString, className, children, ...args }) => (
-  <Downshift itemToString={itemToString} stateReducer={clearInputOnSelectItem} {...args}>
+export const Select: React.FC<SelectProps> = ({ itemToString, className, children, ...rest }) => (
+  <Downshift itemToString={itemToString} stateReducer={clearInputOnSelectItem} {...rest}>
     {(downshift) => (
       <div className={classNames(className, 'relative w-full')}>
         <SelectContext.Provider value={downshift}>

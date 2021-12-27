@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import { XCircleIcon } from 'atoms/Icons/Solid';
-import { Text } from 'atoms/Text';
+import { XCircleIcon } from 'base/Icons/Solid';
+import { Text } from 'base/Text';
 import { applyColor } from 'utils/colorpicker';
 import { ClickableElement } from 'inputs/Button';
 

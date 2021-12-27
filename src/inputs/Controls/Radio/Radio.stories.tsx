@@ -16,27 +16,27 @@ function change(e: any) {
   console.log(e.target.value);
 }
 
-export const Default: Story = ({ children, ...args }) => (
+export const Default: Story = ({ children, ...rest }) => (
   <div>
-    <Radio name="default" value="123" onChange={change} {...args} />
-    <Radio name="default" value="456" onChange={change} {...args} />
-    <Radio checked name="default" value="789" onChange={change} {...args} />
+    <Radio name="default" value="123" onChange={change} {...rest} />
+    <Radio name="default" value="456" onChange={change} {...rest} />
+    <Radio checked name="default" value="789" onChange={change} {...rest} />
   </div>
 );
 
 
-export const Disabled: Story = ({ children, ...args }) => (
+export const Disabled: Story = ({ children, ...rest }) => (
   <div>
-    <Radio disabled name="default" value="123" onChange={change} {...args} />
-    <Radio disabled checked name="default" value="456" onChange={change} {...args} />
-    <Radio disabled name="default" value="789" onChange={change} {...args} />
+    <Radio disabled name="default" value="123" onChange={change} {...rest} />
+    <Radio disabled checked name="default" value="456" onChange={change} {...rest} />
+    <Radio disabled name="default" value="789" onChange={change} {...rest} />
   </div>
 );
 
-export const Errored: Story = ({ children, ...args }) => (
+export const Errored: Story = ({ children, ...rest }) => (
   <div>
-    <Radio error name="default" value="123" onChange={change} {...args} />
-    <Radio error checked name="default" value="456" onChange={change} {...args} />
-    <Radio error disabled name="default" value="789" onChange={change} {...args} />
+    <Radio error name="default" value="123" onChange={change} {...rest} />
+    <Radio error checked name="default" value="456" onChange={change} {...rest} />
+    <Radio error disabled name="default" value="789" onChange={change} {...rest} />
   </div>
 );

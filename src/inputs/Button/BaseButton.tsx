@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Loader } from 'atoms/Loader';
+import { Loader } from 'base/Loader';
 
 export type BaseButtonProps = {
   size?: Size,
@@ -27,7 +27,7 @@ function sizingClasses(size?: Size): string {
 }
 
 export const BaseButton: React.FC<BaseButtonProps> = ({
-  children, size, variant = 'button', isLoading, color = 'gray', disabled, className, ref, as: Component = 'button', ...args
+  children, size, variant = 'button', isLoading, color = 'gray', disabled, className, ref, as: Component = 'button', ...rest
 }) => {
   let sizing = sizingClasses(size);
   let classes = classNames(
@@ -38,7 +38,7 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
     { [isLoadingClasses]: isLoading },
   );
   return (
-    <Component type={variant} ref={ref} disabled={isLoading || disabled} className={classes} {...args}>
+    <Component type={variant} ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
       {isLoading && (<Loader color={color} height={16} width={16} />)}
       {children}
     </Component>
