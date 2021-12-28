@@ -1,5 +1,7 @@
 import React from 'react';
-import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs/Button';
+import {
+  ClickableElement, OutlineButton, OutlineButtonProps,
+} from 'inputs';
 import { useSelectContext } from './SelectContext';
 import { SelectorIcon } from 'base/Icons/Outline';
 import { Text } from 'base';
@@ -14,11 +16,11 @@ export type SelectButtonProps = {
 export const SelectButton: React.FC<SelectButtonProps> = ({
   isClearable, children, isFilterable, placeholder, error, ...rest
 }) => {
-  const {
+  let {
     getToggleButtonProps, itemToString, selectedItem, clearSelection,
   } = useSelectContext();
 
-  const buttonText =
+  let buttonText =
     children ||
     (itemToString && itemToString(selectedItem)) ||
     (selectedItem && selectedItem.value) ||

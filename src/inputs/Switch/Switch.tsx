@@ -1,8 +1,8 @@
-import classNames from 'classnames';
 import React from 'react';
+import classNames from 'classnames';
 import { applyColor } from 'utils/colorpicker';
 
-type Props = {
+export type SwitchProps = {
   color?: Colors,
   size?: 'small' | 'medium';
 } & Omit<React.ComponentPropsWithRef<'input'>, 'size'>;
@@ -22,7 +22,7 @@ function getSizes(size: string) {
   };
 }
 
-export const Switch: React.FC<Props> = ({
+export const Switch: React.FC<SwitchProps> = ({
   color = 'green', size = 'medium', disabled,
   ...rest
 }) => {
