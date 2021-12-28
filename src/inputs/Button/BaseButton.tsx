@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Loader } from 'base';
+import { Loader } from 'base/Loader';
 
 export type BaseButtonProps = {
   size?: Size,
