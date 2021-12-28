@@ -23,10 +23,21 @@ const severitySelect = {
   control: { type: 'select' },
 };
 
+
+const options = ['top', 'right', 'bottom', 'left'].map(k => [k + '-start', k, k + '-end']).flat();
+
+console.log(options);
+
+const directionSelect = {
+  options: options,
+  control: { type: 'select' },
+};
+
 export {
   colorSelectWithWhite,
   colorSelect,
   intercardinalPointsSelect,
   sizeSelect,
   severitySelect,
+  directionSelect,
 };
