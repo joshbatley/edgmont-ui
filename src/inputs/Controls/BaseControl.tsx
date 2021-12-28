@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React from 'react';
+import classNames from 'classnames';
 import { applyColor } from 'utils/colorpicker';
 
 export type BaseControlProps = {

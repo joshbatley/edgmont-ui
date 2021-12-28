@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import {
   ExclamationCircleIcon,
   ExclamationIcon,
@@ -6,12 +7,11 @@ import {
   CheckCircleIcon,
   XIcon,
 } from 'base/Icons/Solid';
-import { Text } from 'base/Text';
-import classNames from 'classnames';
+import { Text } from 'base';
 import { applyColor } from 'utils/colorpicker';
 import { ClickableElement, ClickableElementProps } from 'inputs';
 
-type Props = {
+export type AlertProps = {
   severity?: Severity;
   title?: string;
   icon?: React.ReactNode;
@@ -54,7 +54,7 @@ const CloseBtn: React.FC<ClickableElementProps> = ({ onClick }) => (
   </ClickableElement>
 );
 
-export const Alert: React.FC<Props> = ({
+export const Alert: React.FC<AlertProps> = ({
   severity, title, icon, children, withClose, ...rest
 }) => {
   let classes = 'px-2 py-2 flex items-center shadow rounded bg-white overflow-hidden relative max-w-sm text-sm flex-wrap border';

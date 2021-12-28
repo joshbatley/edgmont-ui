@@ -1,13 +1,14 @@
-import classNames from 'classnames';
-import Downshift, { DownshiftProps, DownshiftState, StateChangeOptions } from 'downshift';
 import React from 'react';
+import classNames from 'classnames';
+import Downshift, {
+  DownshiftProps, DownshiftState, StateChangeOptions,
+} from 'downshift';
 import { SelectContext } from './SelectContext';
 
-type SelectProps = {
+export type SelectProps = {
   disabled?: boolean;
   className?: string;
 } & Omit<DownshiftProps<any>, 'children'>;
-
 
 export const clearInputOnSelectItem = (state: DownshiftState<any>, changes: StateChangeOptions<any>) => {
   if (changes.type === Downshift.stateChangeTypes.clickButton) {

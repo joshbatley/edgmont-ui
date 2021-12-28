@@ -1,27 +1,26 @@
 import React, { useMemo } from 'react';
-import { ListItem } from 'base/List';
-import { useSelectContext } from './SelectContext';
+import { ListItem } from 'base';
 import classNames from 'classnames';
+import { useSelectContext } from './SelectContext';
 
-type SelectItemProps = {
+export type SelectItemProps = {
   item: any;
   index: number;
 };
 
 export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index }) => {
-  const {
+  let {
     getItemProps,
     selectedItem,
     itemToString,
   } = useSelectContext();
 
-  const itemText =
+  let itemText =
     children ||
     (itemToString && itemToString(item)) ||
     (item && item.value);
 
-  const memoValue = useMemo(() => itemToString(item), [item, itemToString]);
-
+  let memoValue = useMemo(() => itemToString(item), [item, itemToString]);
 
   let classes = classNames('cursor-pointer py-2 px-4 text-sm text-gray-700 hover:bg-gray-100', { 'bg-gray-200 ': selectedItem === item || itemToString(SelectItem) === memoValue },
   );

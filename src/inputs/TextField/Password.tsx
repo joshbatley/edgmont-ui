@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { TextField, TextFieldProps } from './TextField';
 import { EyeIcon, EyeOffIcon } from 'base/Icons/Outline';
-import { ClickableElement } from 'inputs/Button';
+import { ClickableElement } from 'inputs';
+import { TextField, TextFieldProps } from './TextField';
 
-type Props = TextFieldProps;
+export type PasswordProps = TextFieldProps;
 
 const Btn: React.FC<{ showPassword: boolean, onClick: () => void }> = ({ showPassword, onClick, ...rest }) => (
   <ClickableElement type="button" onClick={onClick} {...rest}>
@@ -11,7 +11,7 @@ const Btn: React.FC<{ showPassword: boolean, onClick: () => void }> = ({ showPas
   </ClickableElement>
 );
 
-export const Password: React.FC<Props> = ({ ...rest }) => {
+export const Password: React.FC<PasswordProps> = ({ ...rest }) => {
   const [showPassword, setToggle] = useState(false);
   const onClick = () => setToggle(!showPassword);
   return (

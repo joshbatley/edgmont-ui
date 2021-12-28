@@ -1,6 +1,6 @@
 import React from 'react';
 
-type LoaderProps = {
+export type LoaderProps = {
   color?: ColorsAndShades,
   height?: string | number;
   width?: string | number;

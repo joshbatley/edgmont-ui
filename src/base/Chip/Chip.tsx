@@ -1,11 +1,11 @@
-import classNames from 'classnames';
 import React from 'react';
+import classNames from 'classnames';
+import { Text } from 'base';
+import { ClickableElement } from 'inputs';
 import { XCircleIcon } from 'base/Icons/Solid';
-import { Text } from 'base/Text';
 import { applyColor } from 'utils/colorpicker';
-import { ClickableElement } from 'inputs/Button';
 
-type Props = {
+export type ChipProps = {
   color?: Colors;
   size?: Size;
   outline?: boolean;
@@ -23,7 +23,7 @@ function applySize(size: Size) {
   }
 }
 
-export const Chip: React.FC<Props> = ({
+export const Chip: React.FC<ChipProps> = ({
   color = 'gray', size = 'small', outline = true,
   handleDelete, children,
 }) => {

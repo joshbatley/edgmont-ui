@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { applyColor } from 'utils/colorpicker';
 
-type BadgeProps = {
+export type BadgeProps = {
   color?: Colors;
   position?: IntercardinalPoints;
   tag: React.ReactNode;
@@ -28,6 +28,7 @@ function getPosition(position: IntercardinalPoints) {
 export const Badge: React.FC<BadgeProps> = ({ color = 'gray', position = 'NE', children, tag }) => {
   let colorClass = applyColor(color, '600', 'bg');
   let positionClass = getPosition(position);
+
   return (
     <div className="relative inline-block">
       <div className={classNames('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', colorClass, positionClass)}>

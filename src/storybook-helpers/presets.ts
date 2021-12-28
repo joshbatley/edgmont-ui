@@ -24,12 +24,10 @@ const severitySelect = {
 };
 
 
-const options = ['top', 'right', 'bottom', 'left'].map(k => [k + '-start', k, k + '-end']).flat();
-
-console.log(options);
+const directionOptions = ['top', 'right', 'bottom', 'left'].map(k => [k + '-start', k, k + '-end']).flat();
 
 const directionSelect = {
-  options: options,
+  options: directionOptions,
   control: { type: 'select' },
 };
 

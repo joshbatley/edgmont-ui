@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
 import { PrimaryButton } from '../Button/PrimaryButton';
-import { ButtonGroup } from '../Button/ButtonGroup';
+import { ButtonGroup } from './ButtonGroup';
 import { OutlineButton } from '../Button/OutlineButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 
