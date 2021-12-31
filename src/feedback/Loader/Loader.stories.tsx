@@ -5,7 +5,7 @@ import { Loader } from './';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
 
 export default {
-  title: 'Base/Loader',
+  title: 'Feedback/Loader',
   component: Loader,
   args: {
     color: 'gray',

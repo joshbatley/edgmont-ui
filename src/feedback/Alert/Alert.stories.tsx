@@ -6,7 +6,7 @@ import { severitySelect } from 'storybook-helpers/presets';
 import { SunIcon } from 'base/Icons/Solid';
 
 export default {
-  title: 'Base/Alert',
+  title: 'Feedback/Alert',
   component: Alert,
   args: {
     title: 'Alert title',

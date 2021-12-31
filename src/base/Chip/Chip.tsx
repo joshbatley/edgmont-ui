@@ -31,7 +31,7 @@ export const Chip: React.FC<ChipProps> = ({
   let borderClasses = applyColor(color, '600', 'border') + ' border';
   let textClasses = applyColor(color, outline ? '800' : '600', 'text');
   let sizeClasses = applySize(size);
-  let classes = 'rounded-lg inline-flex space-x-2 justify-center items-center';
+  let classes = 'rounded-lg inline-flex space-x-2 justify-center items-center w-fit';
   let showIcon = handleDelete !== undefined && handleDelete !== null;
 
   return (

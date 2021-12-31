@@ -3,8 +3,7 @@ import { overriderDefault } from 'utils/override-default';
 
 export type BoxProps = {
   children?: React.ReactNode,
-  classes?: string,
-};
+} & React.ComponentPropsWithoutRef<'div'>;
 
 let defaults = {
   padding: 'px-6 py-2',
@@ -13,12 +12,12 @@ let defaults = {
 
 export const Box: React.FC<BoxProps> = ({
   children,
-  classes,
-  ...params
+  className,
+  ...rest
 }: BoxProps) => {
-  let overriders = overriderDefault(defaults, classes);
+  let overriders = overriderDefault(defaults, className);
   return (
-    <div className={overriders} {...params}>
+    <div className={overriders} {...rest}>
       {children}
     </div>
   );

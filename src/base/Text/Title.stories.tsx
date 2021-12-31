@@ -11,10 +11,13 @@ export default {
   },
 } as Meta<HeadingProps>;
 
-export const TitleHeading1: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h1" {...rest}>{children}</Comp>;
-export const TitleHeading2: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h2"  {...rest}>{children}</Comp>;
-export const TitleHeading3: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h3"  {...rest}>{children}</Comp>;
-export const TitleHeading4: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h4"  {...rest}>{children}</Comp>;
-export const TitleHeading5: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h5"  {...rest}>{children}</Comp>;
-export const TitleHeading6: Story<HeadingProps> = ({ children, ...rest }) => <Comp as="h6"  {...rest}>{children}</Comp>;
-
+export const Titles: Story<HeadingProps> = ({ children, ...rest }) => (
+  <div className="space-y-2">
+    <Comp as="h1" {...rest}>{children}</Comp>
+    <Comp as="h2"  {...rest}>{children}</Comp>
+    <Comp as="h3"  {...rest}>{children}</Comp>
+    <Comp as="h4"  {...rest}>{children}</Comp>
+    <Comp as="h5"  {...rest}>{children}</Comp>
+    <Comp as="h6"  {...rest}>{children}</Comp>
+  </div>
+);
