@@ -17,16 +17,16 @@ function change(e: any) {
 }
 
 export const Default: Story = ({ children, ...rest }) => (
-  <div>
+  <div className="space-y-2">
     <Radio name="default" value="123" onChange={change} {...rest} />
     <Radio name="default" value="456" onChange={change} {...rest} />
-    <Radio checked name="default" value="789" onChange={change} {...rest} />
+    <Radio name="default" value="789" onChange={change} {...rest} />
   </div>
 );
 
 
 export const Disabled: Story = ({ children, ...rest }) => (
-  <div>
+  <div className="space-y-2">
     <Radio disabled name="default" value="123" onChange={change} {...rest} />
     <Radio disabled checked name="default" value="456" onChange={change} {...rest} />
     <Radio disabled name="default" value="789" onChange={change} {...rest} />
@@ -34,9 +34,9 @@ export const Disabled: Story = ({ children, ...rest }) => (
 );
 
 export const Errored: Story = ({ children, ...rest }) => (
-  <div>
+  <div className="space-y-2">
     <Radio error name="default" value="123" onChange={change} {...rest} />
     <Radio error checked name="default" value="456" onChange={change} {...rest} />
-    <Radio error disabled name="default" value="789" onChange={change} {...rest} />
+    <Radio error name="default" value="789" onChange={change} {...rest} />
   </div>
 );
