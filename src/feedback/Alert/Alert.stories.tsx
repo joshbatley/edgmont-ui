@@ -26,6 +26,7 @@ export const All: Story = ({ ...rest }) => (
     <Alert {...rest} severity='warning' title="This is a warning message!" />
     <Alert {...rest} severity='info' title="This is an information message!" />
     <Alert {...rest} severity='success' title="This is a success message!" />
+    <Alert {...rest} dark />
     <Alert {...rest} />
   </div>
 );
@@ -39,7 +40,7 @@ export const OverriderDefaultIcon: Story = ({ ...rest }) => (
 );
 
 export const WithMessage: Story = ({ ...rest }) => (
-  <Alert {...rest}>
+  <Alert withClose={() => { }} {...rest}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod, mauris.
   </Alert>
 );

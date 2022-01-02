@@ -1,26 +1,30 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Portal } from 'base';
+import { Fade } from 'base/Transitions';
 
 export const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
 
-export const Backdrop: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ children, onClick, ...rest }) => {
+export const Backdrop: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({
+  children, onClick, ...rest
+}) => {
+  let [open, setOpen] = useState(true);
 
-  const handleClickBackdrop = useCallback(
+  let handleClickBackdrop = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
-      onClick?.(e as any);
+      setOpen(false);
     },
-    [onClick],
+    [setOpen],
   );
 
-  const closeModalOnESC = useCallback(
+  let closeModalOnESC = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.stopPropagation();
-        onClick?.(e as any);
+        setOpen(false);
       }
     },
-    [onClick],
+    [setOpen],
   );
 
   useEffect(() => {
@@ -33,14 +37,16 @@ export const Backdrop: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ chil
 
   return (
     <Portal>
-      <div
-        className="w-screen h-screen fixed inset-0 overflow-auto bg-gray-900 opacity-70 flex justify-center items-center"
-        style={{ zIndex: 9999 }}
-        onClick={handleClickBackdrop}
-        {...rest}
-      >
-        {children}
-      </div>
+      <Fade inProp={open} onDestroyed={onClick}>
+        <div
+          className="w-screen h-screen fixed inset-0 overflow-auto bg-gray-900 opacity-70 flex justify-center items-center"
+          style={{ zIndex: 9999 }}
+          onClick={handleClickBackdrop}
+          {...rest}
+        >
+          {children}
+        </div>
+      </Fade>
     </Portal>
   );
 };
