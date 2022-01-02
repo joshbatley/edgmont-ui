@@ -1,5 +1,5 @@
-import { ControllerStateAndHelpers } from 'downshift';
 import React, { useContext } from 'react';
+import { ControllerStateAndHelpers } from 'downshift';
 
 export const SelectContext = React.createContext<ControllerStateAndHelpers<any> | undefined>(undefined);
 

@@ -1,43 +1,26 @@
 import React, { useRef } from 'react';
-import { Transition } from 'react-transition-group';
-import { TransitionProps } from 'react-transition-group/Transition';
+import { animated, useSpring, UseSpringProps } from 'react-spring';
 
 export type CollapseProps = {
   children: React.ReactNode;
   inProp?: boolean;
-} & Omit<TransitionProps, 'addEndListener'>;
-
-function getAutoHeightDuration(height?: number) {
-  if (!height) {
-    return 100;
-  }
-  const constant = height / 36;
-  return Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10);
-}
-
-function handleAddEndListener(node: any, done: any) {
-  node.addEventListener('transitionend', done, false);
-}
+} & UseSpringProps;
 
 export const Collapse: React.FC<CollapseProps> = ({ children, inProp, ...rest }) => {
-  let wrapperRef = useRef<HTMLDivElement>(null);
-  let scrollHeight = wrapperRef.current?.scrollHeight || 0;
-  let transitionDuration = `${getAutoHeightDuration(scrollHeight)}ms`;
-
-  function applyAnimation(state: any) {
-    return {
-      style: {
-        height: state === 'entering' || state === 'entered' ? scrollHeight : '0',
-        transitionDuration,
-      },
-    };
-  }
+  let ref = useRef<HTMLDivElement>(null);
+  let styles = useSpring({
+    from: { height: 0 },
+    to: { height: inProp ? ref.current?.scrollHeight : 0 },
+    ...rest,
+  });
 
   return (
-    <Transition in={inProp} {...rest} addEndListener={handleAddEndListener}>
-      {(state) => (
-        <div className="overflow-hidden group" {...applyAnimation(state)} ref={wrapperRef}>{children}</div>
-      )}
-    </Transition>
+    <animated.div
+      ref={ref}
+      className="overflow-hidden group"
+      style={styles}
+    >
+      {children}
+    </animated.div>
   );
 };
