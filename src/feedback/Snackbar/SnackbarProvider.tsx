@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Portal } from 'base';
-import {
-  SnackbarContext, SnackbarItem, SnackbarProviderProps, Snack, SnackOptions,
-} from '.';
+import { Portal } from 'utils';
 import classNames from 'classnames';
+import { SnackbarContext, SnackbarItem, SnackbarProviderProps, Snack, SnackOptions } from '.';
 
 function createId() {
   return Math.random().toString(36).substr(2, 9);

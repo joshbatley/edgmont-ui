@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Slide } from 'base/Transitions';
+import { Slide } from 'utils';
 import { Alert } from 'feedback';
 import { Snack } from './';
 
