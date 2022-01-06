@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { ClickableElement } from 'inputs';
 import { Tab } from '.';
 import { Scrollable } from 'base/Scrollable';
+import { applyColor } from 'utils/colorpicker';
 
 export type TabNavItemProps = {
   onClick: () => void;
@@ -21,11 +22,13 @@ export type TabNavItemsProps = {
   tabs: Tab[];
   selected: string;
   onChange: any;
+  accentColor?: Colors;
 };
 
-export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange }) => {
-  const ref = useRef<HTMLButtonElement>(null);
-  const [styles, setStyles] = useState({ width: 0, left: 0 });
+export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange, accentColor = 'blue' }) => {
+  let ref = useRef<HTMLButtonElement>(null);
+  let [styles, setStyles] = useState({ width: 0, left: 0 });
+  let color = applyColor(accentColor, '600', 'bg');
 
   useEffect(() => {
     setStyles({
@@ -44,7 +47,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
             onClick={() => onChange(key)}
           >{tab}</TabNavItem>
         ))}
-        <div className="h-1 bg-blue-400 relative transition-all" style={{ ...styles }} />
+        <div className={classNames(color, 'h-1 relative transition-all')} style={{ ...styles }} />
       </div>
     </Scrollable>
   );
