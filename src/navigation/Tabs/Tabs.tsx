@@ -4,6 +4,7 @@ import { Tab, TabNavItems, TabPaneList, TabCardItems, TabVarient } from '.';
 export type TabsProps = {
   value?: string | number;
   type?: TabVarient;
+  accentColor?: Colors;
 };
 
 function parseChildrenToTabs(children: React.ReactNode): Tab[] {
@@ -20,15 +21,15 @@ function parseChildrenToTabs(children: React.ReactNode): Tab[] {
   });
 }
 
-export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value }) => {
+export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value, accentColor = 'blue' }) => {
   let tabs = parseChildrenToTabs(childrenProp);
   let [selected, setSelected] = useState(value || tabs[0].key);
   return (
     <div className="w-full">
       {type === 'card' ? (
-        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} />
+        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} accentColor={accentColor} />
       ) : (
-        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} />
+        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} accentColor={accentColor} />
       )}
       <TabPaneList type={type} tabs={tabs} selected={selected} />
     </div>
