@@ -8,7 +8,7 @@ export type TabsProps = {
 };
 
 function parseChildrenToTabs(children: React.ReactNode): Tab[] {
-  return React.Children.toArray(children).map((node, idx) => {
+  return React.Children.toArray(children).map((node) => {
     if (!React.isValidElement(node)) {
       return null;
     }

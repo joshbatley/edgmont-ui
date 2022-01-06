@@ -17,23 +17,23 @@ export default {
 
 const values = ['hello', 'worlds', 'yeah us to', 'some more options', 'Selectable value'];
 
-export const Default: Story = ({ ...rest }) => (
+export const Default: Story = () => (
   <SimpleSelect values={values} placeholder="My Select" />
 );
 
-export const Disabled: Story = ({ ...rest }) => (
+export const Disabled: Story = () => (
   <SimpleSelect values={values} placeholder="My Select" disabled />
 );
 
-export const Errored: Story = ({ ...rest }) => (
+export const Errored: Story = () => (
   <SimpleSelect values={values} placeholder="My Select" error />
 );
 
-export const Clearable: Story = ({ ...rest }) => (
+export const Clearable: Story = () => (
   <SimpleSelect values={values} placeholder="My Select" isClearable initialSelectedItem="Selectable value" />
 );
 
-export const Filterable: Story = ({ ...rest }) => (
+export const Filterable: Story = () => (
   <SimpleSelect values={values} placeholder="My Select" isFilterable />
 );
 

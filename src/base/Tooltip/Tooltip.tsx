@@ -1,5 +1,5 @@
 import React, { Ref, useState } from 'react';
-import { Portal } from 'base';
+import { Portal } from 'utils';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 import classNames from 'classnames';

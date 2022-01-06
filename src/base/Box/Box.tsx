@@ -1,5 +1,5 @@
 import React from 'react';
-import { overriderDefault } from 'utils/override-default';
+import { overriderDefault } from 'shared/override-default';
 
 export type BoxProps = {
   children?: React.ReactNode,

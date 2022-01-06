@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text } from 'base';
 import { ClickableElement } from 'inputs';
 import { XCircleIcon } from 'base/Icons/Solid';
-import { applyColor } from 'utils/colorpicker';
+import { applyColor } from 'shared/colorpicker';
 
 export type ChipProps = {
   color?: Colors;

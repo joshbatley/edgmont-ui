@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-export const PrimaryGroup: Story = ({ ...rest }) => (
+export const PrimaryGroup: Story = () => (
   <ButtonGroup>
     <PrimaryButton>1</PrimaryButton>
     <PrimaryButton>2</PrimaryButton>
@@ -25,7 +25,7 @@ export const PrimaryGroup: Story = ({ ...rest }) => (
   </ButtonGroup>
 );
 
-export const OutlineGroup: Story = ({ ...rest }) => (
+export const OutlineGroup: Story = () => (
   <ButtonGroup>
     <OutlineButton>1</OutlineButton>
     <OutlineButton>2</OutlineButton>

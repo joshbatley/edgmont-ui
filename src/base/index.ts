@@ -5,5 +5,4 @@ export * from './Panel';
 export * from './Chip';
 export * from './List';
 export * from './Text';
-export * from './Portal';
 export * from './Tooltip';
