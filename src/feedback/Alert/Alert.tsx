@@ -8,7 +8,7 @@ import {
   XIcon,
 } from 'base/Icons/Solid';
 import { Text } from 'base';
-import { applyColor } from 'utils/colorpicker';
+import { applyColor } from 'shared/colorpicker';
 import { ClickableElement, ClickableElementProps } from 'inputs';
 
 export type AlertProps = {

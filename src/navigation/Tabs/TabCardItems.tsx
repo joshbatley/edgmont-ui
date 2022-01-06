@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ClickableElement } from 'inputs';
 import { Tab } from '.';
 import { Scrollable } from 'base/Scrollable';
-import { applyColor } from 'utils/colorpicker';
+import { applyColor } from 'shared/colorpicker';
 
 export type TabCardItemProps = {
   selected?: boolean;

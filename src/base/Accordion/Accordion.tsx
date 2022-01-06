@@ -2,7 +2,7 @@ import React from 'react';
 import { ClickableElement } from 'inputs';
 import { ChevronRightIcon } from 'base/Icons/Solid';
 import classNames from 'classnames';
-import { Collapse } from 'base/Transitions';
+import { Collapse } from 'utils';
 
 export type AccordionProps = {
   summary?: React.ReactNode;

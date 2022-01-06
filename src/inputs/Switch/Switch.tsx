@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { applyColor } from 'utils/colorpicker';
+import { applyColor } from 'shared/colorpicker';
 
 export type SwitchProps = {
   color?: Colors,
