@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import { Loader } from 'feedback/Loader';
 
@@ -8,7 +8,7 @@ export type BaseButtonProps = {
   color?: ColorsAndShades;
   isLoading?: boolean,
   as?: React.ElementType,
-} & React.ComponentPropsWithRef<'button'>;
+} & React.ComponentPropsWithoutRef<'button'>;
 
 const defaultClasses = 'group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring';
 
@@ -26,9 +26,9 @@ function sizingClasses(size?: Size): string {
   }
 }
 
-export const BaseButton: React.FC<BaseButtonProps> = ({
-  children, size, variant = 'button', isLoading, color = 'gray', disabled, className, ref, as: Component = 'button', ...rest
-}) => {
+export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
+  children, size, variant = 'button', isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest
+}, ref) => {
   let sizing = sizingClasses(size);
   let classes = classNames(
     defaultClasses,
@@ -43,4 +43,4 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
       {children}
     </Component>
   );
-};
+});
