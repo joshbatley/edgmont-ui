@@ -21,7 +21,6 @@ function parseChildrenToTabs(children: React.ReactNode): Tab[] {
 }
 
 export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value }) => {
-  console.log(value);
   let tabs = parseChildrenToTabs(childrenProp);
   let [selected, setSelected] = useState(value || tabs[0].key);
   return (
