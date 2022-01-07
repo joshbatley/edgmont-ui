@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import classNames from 'classnames';
-import { Loader } from 'feedback/Loader';
+import { CircleLoader } from 'feedback/Loader';
 
 export type BaseButtonProps = {
   size?: Size,
@@ -39,7 +39,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   );
   return (
     <Component type={variant} ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
-      {isLoading && (<Loader color={color} height={16} width={16} />)}
+      {isLoading && (<CircleLoader color={color} height={16} width={16} />)}
       {children}
     </Component>
   );

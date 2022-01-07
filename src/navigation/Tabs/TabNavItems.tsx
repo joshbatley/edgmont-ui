@@ -33,7 +33,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
   useEffect(() => {
     setStyles({
       width: ref.current?.offsetWidth || 0,
-      left: (ref.current?.offsetLeft || 0) - 20,
+      left: (ref.current?.offsetLeft || 0) - 16,
     });
   }, [selected]);
 
