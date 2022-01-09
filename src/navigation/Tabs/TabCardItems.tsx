@@ -29,7 +29,7 @@ export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, on
 
 export type TabCardItemsProps = {
   tabs: Tab[];
-  selected: string;
+  selected: string | number;
   onChange: any;
   accentColor?: Colors;
 };

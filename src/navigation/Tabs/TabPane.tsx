@@ -12,7 +12,7 @@ export type TabPaneProps = {
 
 export type TabPaneListProps = {
   tabs: Tab[];
-  selected: string;
+  selected: string | number;
   type: TabVarient;
 };
 
