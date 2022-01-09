@@ -18,5 +18,6 @@ type Position = CardinalPoints | IntercardinalPoints;
 
 type CardinalPoints = 'N' | 'E' | 'S' | 'W';
 type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
+type Direction = 'horizontal' | 'vertical';
 
 type Severity = 'error' | 'warning' | 'info' | 'success';

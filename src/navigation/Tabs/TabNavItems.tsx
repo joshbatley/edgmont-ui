@@ -20,7 +20,7 @@ export const TabNavItem = forwardRef<HTMLButtonElement, TabNavItemProps>(({ chil
 
 export type TabNavItemsProps = {
   tabs: Tab[];
-  selected: string;
+  selected: string | number;
   onChange: any;
   accentColor?: Colors;
 };
