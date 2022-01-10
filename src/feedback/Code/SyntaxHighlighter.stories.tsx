@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { SyntaxHighlighter } from './';
+import { SyntaxHighlighter, CodeEditor } from './';
 
 export default {
   title: 'Feedback/Syntax Highlighter',
@@ -20,10 +20,16 @@ let code = `{
 
 export const Default: Story = ({ ...rest }) => (
   <SyntaxHighlighter
-    editable
     language="json"
     code={code}
     {...rest}
   />
 );
 
+export const AsCodeEditor: Story = ({ ...rest }) => (
+  <CodeEditor
+    language="json"
+    code={code}
+    {...rest}
+  />
+);
