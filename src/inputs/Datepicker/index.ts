@@ -1,5 +1,5 @@
 export * from './Base/BasePicker';
 export * from './DateRangePicker';
-export * from './DatePickerr';
+export * from './DatePicker';
 export * from './MonthPicker';
 export * from './YearPicker';
