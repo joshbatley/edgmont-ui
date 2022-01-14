@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { CircleLoader, LinearLoader } from './';
+import { CircleLoader, LinearLoader } from '.';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
 
 export default {

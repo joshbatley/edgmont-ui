@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { SyntaxHighlighter, CodeEditor } from './';
+import { SyntaxHighlighter, CodeEditor } from '.';
 
 export default {
-  title: 'Feedback/Syntax Highlighter',
+  title: 'Feedback/Code',
   component: SyntaxHighlighter,
 } as Meta;
 

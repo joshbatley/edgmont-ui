@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { CircleLoader } from './';
+import { CircleLoader } from '.';
 
 function render(Comp: ReactNode) {
   return testRender(<>{Comp}</>);

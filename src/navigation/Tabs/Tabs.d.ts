@@ -1,4 +1,4 @@
-import { TabPaneProps } from './';
+import { TabPaneProps } from '.';
 
 type TabVarient = 'default' | 'card';
 

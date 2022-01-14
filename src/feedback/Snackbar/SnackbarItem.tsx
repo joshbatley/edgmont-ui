@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Slide } from 'utils';
 import { Alert } from 'feedback';
-import { Snack } from './';
+import { Snack } from '.';
 
 export type SnackbarItemProps = {
   handleClose: () => void;
@@ -10,7 +10,7 @@ export type SnackbarItemProps = {
 export const SnackbarItem: React.FC<SnackbarItemProps> = ({
   body, handleClose, duration, title, persist, ...rest
 }) => {
-  const [open, setOpen] = useState(true);
+  let [open, setOpen] = useState(true);
 
   useEffect(() => {
     if (persist) {

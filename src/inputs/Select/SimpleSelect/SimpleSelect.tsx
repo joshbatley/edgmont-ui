@@ -17,7 +17,7 @@ export const SimpleSelect: React.FC<SimpleSelectProps> = ({
   itemToString = (item): string => item || '',
   ...rest
 }) => {
-  const [filter, setFilter] = useState<string>('');
+  let [filter, setFilter] = useState<string>('');
   const filterOptions = values.filter(item => itemToString(item).toLowerCase().includes(filter));
 
   function handleOnputValueChange(inputValue: string, stateAndHelpers: ControllerStateAndHelpers<any>) {

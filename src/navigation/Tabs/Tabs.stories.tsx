@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Tabs, TabPane } from './';
+import { Tabs, TabPane } from '.';
 
 export default {
   title: 'Navigation/Tabs',

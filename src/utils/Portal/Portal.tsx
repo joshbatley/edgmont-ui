@@ -5,4 +5,4 @@ export type PortalProps = {
   element?: Element;
 };
 
-export const Portal = ({ children, element }: PortalProps) => createPortal(children, element || document.body);
+export const Portal = ({ children, element }: PortalProps) => createPortal(children, element || (document.getElementById('portal-root') || document.body));
