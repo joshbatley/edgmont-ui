@@ -19,7 +19,7 @@
     "test": "jest --watch",
     "test:ci": "jest",
     "lint": "eslint . --ignore-path .eslintignore",
-    "typecheck": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.build.json",
     "clean-docs": "rm -rf docs && mkdir docs",
     "create-cname": "echo ui.edgmont.dev > ./docs/CNAME",
     "create-ignore": "echo '*\n!.gitkeep' > ./docs/.gitignore",
