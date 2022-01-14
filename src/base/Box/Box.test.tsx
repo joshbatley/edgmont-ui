@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { Box } from './';
+import { Box } from '.';
 
 function render(component: ReactNode) {
   return testRender(<>{component}</>);

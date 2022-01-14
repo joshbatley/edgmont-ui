@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Slide } from 'utils';
 import { Alert } from 'feedback';
-import { Snack } from './';
+import { Snack } from '.';
 
 export type SnackbarItemProps = {
   handleClose: () => void;

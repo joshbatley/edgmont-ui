@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Backdrop } from './';
+import { Backdrop } from '.';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
 import { OutlineButton, PrimaryButton } from 'inputs';
 import { Text } from 'base';

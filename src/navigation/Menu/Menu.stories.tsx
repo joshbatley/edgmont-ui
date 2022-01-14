@@ -1,7 +1,7 @@
 import React, { Ref } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Menu, MenuItem } from './';
+import { Menu, MenuItem } from '.';
 import { useState } from 'react';
 import { ClickableElement } from 'inputs';
 

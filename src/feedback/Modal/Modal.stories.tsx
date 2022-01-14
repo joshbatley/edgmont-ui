@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Modal } from './';
+import { Modal } from '.';
 import { OutlineButton, PrimaryButton, TextField } from 'inputs';
 import { Chip, Panel, Text } from 'base';
 
