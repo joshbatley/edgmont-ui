@@ -12,8 +12,8 @@ export type TooltipProps = {
 
 export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction = 'top', dark = false }) => {
   let [showTooltip, setTooltip] = useState(false);
-  const [wrappedRef, setWrappedRef] = useState(null);
-  const [popperRef, setPopperRef] = useState(null);
+  let [wrappedRef, setWrappedRef] = useState(null);
+  let [popperRef, setPopperRef] = useState(null);
   const { styles, attributes } = usePopper(wrappedRef, popperRef, {
     placement: direction,
   });

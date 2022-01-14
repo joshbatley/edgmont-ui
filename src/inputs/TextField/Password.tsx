@@ -12,7 +12,7 @@ const Btn: React.FC<{ showPassword: boolean, onClick: () => void }> = ({ showPas
 );
 
 export const Password: React.FC<PasswordProps> = ({ ...rest }) => {
-  const [showPassword, setToggle] = useState(false);
+  let [showPassword, setToggle] = useState(false);
   const onClick = () => setToggle(!showPassword);
   return (
     <TextField

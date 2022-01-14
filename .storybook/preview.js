@@ -1,5 +1,4 @@
 import React from 'react';
-import config from '../src/tailwind';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -23,16 +22,15 @@ export const parameters = {
 
 export const decorators = [
   (Story) => {
-    const script = document.createElement("script");
-    script.innerHTML = `tailwind.config = { theme: { colors: ${config.theme.colors.toString()} }}`;
-    script.async = true;
-    document.body.appendChild(script);
-    return (
-      <div>
+    if (!document.getElementById('portal-root')) {
+      let portalRoot = document.createElement('div');
+      portalRoot.setAttribute('id', 'portal-root')
+      document.body.appendChild(portalRoot);
 
-        <div className="antialiased font-sans">
-          {Story()}
-        </div>
+    }
+    return (
+      <div className="antialiased font-sans">
+        {Story()}
       </div>
     )
   },

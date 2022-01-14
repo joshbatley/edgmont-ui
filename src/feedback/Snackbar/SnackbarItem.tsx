@@ -10,7 +10,7 @@ export type SnackbarItemProps = {
 export const SnackbarItem: React.FC<SnackbarItemProps> = ({
   body, handleClose, duration, title, persist, ...rest
 }) => {
-  const [open, setOpen] = useState(true);
+  let [open, setOpen] = useState(true);
 
   useEffect(() => {
     if (persist) {
