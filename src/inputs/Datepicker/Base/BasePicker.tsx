@@ -1,5 +1,5 @@
 import React, { Ref, useState } from 'react';
-import DatePicker, { ReactDatePickerCustomHeaderProps, ReactDatePickerProps } from 'react-datepicker';
+import Picker, { ReactDatePickerCustomHeaderProps, ReactDatePickerProps } from 'react-datepicker';
 import { PopperContainer } from './PopperContainer';
 import { DateHeader } from './DateHeader';
 import { DateInput } from './DateInput';
@@ -59,7 +59,7 @@ export const BasePicker: React.FC<BasePickerProps> = ({
         showClear={showClear}
       />
       <DateWrapper isOpen={isOpen} handleClose={() => setOpen(false)} itemRef={wrappedRef}>
-        <DatePicker
+        <Picker
           {...defaults}
           {...rest}
         />

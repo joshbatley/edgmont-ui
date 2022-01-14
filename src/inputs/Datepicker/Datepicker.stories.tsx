@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { format } from 'date-fns';
-import { DatePicker } from './DatePicker';
-import { BasePicker, DateRangePicker, MonthPicker, YearPicker } from '.';
+import { BasePicker, DateRangePicker, MonthPicker, YearPicker, DatePicker } from '.';
 
 export default {
   title: 'Inputs/Datepicker',
