@@ -48,7 +48,7 @@ const AddonElement: React.FC<{ containerClasses: string, addonClasses: string, a
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefixIcon, suffixIcon,
-  before, after,
+  before, after, className,
   size, disabled, error,
   ...rest
 }, ref) => {
@@ -61,7 +61,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
     focus += ' rounded-l-md';
   }
   return (
-    <div className={classNames(defaults, { [focusWith]: !(before || after) }, { [errorClasses]: error }, { [disabledClasses]: disabled })}>
+    <div className={classNames(defaults, { [focusWith]: !(before || after) }, { [errorClasses]: error }, { [disabledClasses]: disabled }, className)}>
       <OptionalIcon sizingClasses={sizingClasses} icon={prefixIcon} />
       <AddonElement
         disabled={disabled}
