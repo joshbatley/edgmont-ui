@@ -1,11 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Portal } from 'utils';
-import { Fade } from 'utils/Transitions';
+import { Portal, Fade, FadeProps } from 'utils';
 import FocusLock from 'react-focus-lock';
 
 export const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
 
-export const Backdrop: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({
+type BackdropProps = {
+  onClick: () => void;
+} & FadeProps;
+
+export const Backdrop: React.FC<BackdropProps> = ({
   children, onClick, ...rest
 }) => {
   let [open, setOpen] = useState(true);
@@ -40,17 +43,16 @@ export const Backdrop: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({
   return (
     <Portal>
       <FocusLock>
-        <Fade inProp={open} onDestroyed={onClick}>
+        <Fade inProp={open} onProps={onClick} {...rest}>
           <div
             className="w-screen h-full fixed inset-0 overflow-auto bg-gray-900 opacity-70 flex justify-center items-center"
             style={{ zIndex: 9999 }}
             onClick={handleClickBackdrop}
-            {...rest}
           >
             {children}
           </div>
         </Fade>
       </FocusLock>
-    </Portal>
+    </Portal >
   );
 };

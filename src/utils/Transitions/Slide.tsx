@@ -31,7 +31,6 @@ export const Slide: React.FC<SlideProps> = ({ children, inProp, ...rest }) => {
     (styles: any, item) => item && (
       <animated.div
         ref={ref}
-        className="transition-[flex]"
         style={{ ...styles, height: height }}
       >
         {children}
