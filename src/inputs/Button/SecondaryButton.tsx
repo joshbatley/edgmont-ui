@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type SecondaryButtonProps = BaseButtonProps;
+export type SecondaryButtonProps = BaseButtonProps;
 
 export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, color = 'gray', ...rest }) => {
   let bgcolor = `bg-${color}-100`;

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type HighlightButtonProps = BaseButtonProps & { darkMode?: boolean };
+export type HighlightButtonProps = BaseButtonProps & { darkMode?: boolean };
 
 export const HighlightButton: React.FC<HighlightButtonProps> = ({ children, className, color, darkMode, ...rest }) => {
   let bgcolor = 'bg-transparent';
