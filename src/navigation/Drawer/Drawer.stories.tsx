@@ -14,7 +14,7 @@ export const Default: Story = ({ ...rest }) => {
   return (
     <>
       <div className='grid h-screen place-content-center'>
-        <PrimaryButton onClick={() => setOpen(true)}>Open Drawer</PrimaryButton>
+        <PrimaryButton onClick={() => setOpen(!open)}>Open Drawer</PrimaryButton>
       </div>
       <Drawer open={open} handleClose={() => setOpen(false)} {...rest}>
         <div className="p-4">This is a drawer</div>
