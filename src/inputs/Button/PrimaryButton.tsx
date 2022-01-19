@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type PrimaryButtonProps = BaseButtonProps;
+export type PrimaryButtonProps = BaseButtonProps;
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(({ children, color = 'gray', className, ...rest }, ref) => {
   let isWhite = color === 'white';

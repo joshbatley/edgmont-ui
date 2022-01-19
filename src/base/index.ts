@@ -6,3 +6,4 @@ export * from './Chip';
 export * from './List';
 export * from './Text';
 export * from './Tooltip';
+export * from './Image';

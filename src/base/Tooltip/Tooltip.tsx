@@ -8,13 +8,15 @@ export type TooltipProps = {
   tooltip: React.ReactNode;
   direction?: Placement;
   dark?: boolean;
+  as?: React.ElementType;
+  disabled?: boolean;
 };
 
-export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction = 'top', dark = false }) => {
+export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled }) => {
   let [showTooltip, setTooltip] = useState(false);
   let [wrappedRef, setWrappedRef] = useState(null);
   let [popperRef, setPopperRef] = useState(null);
-  const { styles, attributes } = usePopper(wrappedRef, popperRef, {
+  let { styles, attributes } = usePopper(wrappedRef, popperRef, {
     placement: direction,
   });
 
@@ -33,10 +35,10 @@ export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction =
 
   return (
     <>
-      <div className="inline-block cursor-pointer" ref={setWrappedRef as Ref<HTMLDivElement>} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Component className="cursor-pointer" ref={setWrappedRef as Ref<HTMLDivElement>} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {children}
-      </div>
-      {showTooltip && (
+      </Component>
+      {(!disabled && showTooltip) && (
         <Portal>
           <div className={classes} ref={setPopperRef as Ref<HTMLDivElement>} style={styles.popper} {...attributes.popper}>
             {tooltip}

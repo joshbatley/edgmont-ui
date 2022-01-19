@@ -4,7 +4,6 @@ import { CircleLoader } from 'feedback/Loader';
 
 export type BaseButtonProps = {
   size?: Size,
-  variant?: Variant,
   color?: ColorsAndShades;
   isLoading?: boolean,
   as?: React.ElementType,
@@ -27,7 +26,7 @@ function sizingClasses(size?: Size): string {
 }
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size, variant = 'button', isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest
+  children, size, isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest
 }, ref) => {
   let sizing = sizingClasses(size);
   let classes = classNames(
@@ -38,7 +37,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
     { [isLoadingClasses]: isLoading },
   );
   return (
-    <Component type={variant} ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
+    <Component ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
       {isLoading && (<CircleLoader color={color} height={16} width={16} />)}
       {children}
     </Component>
