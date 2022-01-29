@@ -26,10 +26,9 @@ export const decorators = [
       let portalRoot = document.createElement('div');
       portalRoot.setAttribute('id', 'portal-root')
       document.body.appendChild(portalRoot);
-
     }
     return (
-      <div className="antialiased font-sans">
+      <div className="antialiased font-sans" style={{ fontSize: 14 }}>
         {Story()}
       </div>
     )

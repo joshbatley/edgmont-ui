@@ -20,3 +20,9 @@ type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
 type Direction = 'horizontal' | 'vertical';
 
 type Severity = 'error' | 'warning' | 'info' | 'success';
+
+
+type ObjectKey = string | number | symbol;
+type WithKey<K extends string | number | symbol> = {
+  [k in K]: boolean
+};

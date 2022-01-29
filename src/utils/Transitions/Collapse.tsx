@@ -1,26 +1,31 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { useMeasure } from 'react-use';
 import { animated, useSpring, UseSpringProps } from 'react-spring';
+import { usePrevious } from 'shared/usePrevious';
 
 export type CollapseProps = {
   children: React.ReactNode;
   inProp?: boolean;
+  className?: string;
 } & UseSpringProps;
 
-export const Collapse: React.FC<CollapseProps> = ({ children, inProp, ...rest }) => {
-  let ref = useRef<HTMLDivElement>(null);
-  let styles = useSpring({
+export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, className, ...rest }) => {
+  let previous = usePrevious(inProp);
+  let [ref, { height: viewHeight }] = useMeasure();
+  let { height } = useSpring({
     from: { height: 0 },
-    to: { height: inProp ? ref.current?.scrollHeight : 0 },
+    to: { height: inProp ? viewHeight : 0 },
     ...rest,
   });
 
   return (
     <animated.div
-      ref={ref}
       className="overflow-hidden group"
-      style={styles}
+      style={{
+        height: inProp && previous === inProp ? 'auto' : height,
+      }}
     >
-      {children}
-    </animated.div>
+      <animated.div ref={ref as any} className={className} children={children} />
+    </animated.div >
   );
 };
