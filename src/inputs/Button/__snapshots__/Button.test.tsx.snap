@@ -3,7 +3,7 @@
 exports[`Buttons it renders 1`] = `
 <div>
   <button
-    class="group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium"
+    class="group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Buttons it renders 1`] = `
 exports[`Buttons should accept a size value 1`] = `
 <div>
   <button
-    class="group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium"
+    class="group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium"
   />
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`Buttons should accept a size value 1`] = `
 exports[`Buttons should be disabled 1`] = `
 <div>
   <button
-    class="group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium filter grayscale cursor-not-allowed"
+    class="group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium filter grayscale cursor-not-allowed"
     disabled=""
   />
 </div>
@@ -28,7 +28,7 @@ exports[`Buttons should be disabled 1`] = `
 exports[`Buttons should show loading icon and disabled button 1`] = `
 <div>
   <button
-    class="group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium cursor-wait"
+    class="group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring px-3 py-2 text-sm font-medium cursor-wait"
     disabled=""
   >
     <svg
