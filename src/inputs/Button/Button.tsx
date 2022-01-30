@@ -12,7 +12,6 @@ import {
   SecondaryButtonProps,
 } from '.';
 
-type Variant = 'Clickable' | 'Highlight' | 'Outline' | 'Primary' | 'Secondary';
 type Clickable = { variant: 'Clickable' } & ClickableElementProps;
 type Highlight = { variant: 'Highlight' } & HighlightButtonProps;
 type Outline = { variant: 'Outline' } & OutlineButtonProps;
@@ -20,7 +19,7 @@ type Primary = { variant: 'Primary' } & PrimaryButtonProps;
 type Secondary = { variant: 'Secondary' } & SecondaryButtonProps;
 export type ButtonProps = Clickable | Highlight | Outline | Primary | Secondary;
 
-function getComp(variant: Variant): any {
+function getComp(variant: ButtonVariant): any {
   switch (variant) {
     case 'Clickable':
       return ClickableElement;

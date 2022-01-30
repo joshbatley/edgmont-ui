@@ -21,6 +21,7 @@ type Direction = 'horizontal' | 'vertical';
 
 type Severity = 'error' | 'warning' | 'info' | 'success';
 
+type ButtonVariant = 'Clickable' | 'Highlight' | 'Outline' | 'Primary' | 'Secondary';
 
 type ObjectKey = string | number | symbol;
 type WithKey<K extends string | number | symbol> = {
