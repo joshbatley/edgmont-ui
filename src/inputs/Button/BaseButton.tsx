@@ -9,7 +9,7 @@ export type BaseButtonProps = {
   as?: React.ElementType,
 } & React.ComponentPropsWithoutRef<'button'>;
 
-const defaultClasses = 'group inline-flex items-center space-x-2 rounded-md transition focus:outline-none focus:ring';
+const defaultClasses = 'group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring';
 
 const disabledClasses = 'filter grayscale cursor-not-allowed';
 const isLoadingClasses = 'cursor-wait';
