@@ -3,7 +3,8 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { OutlineButton } from 'inputs';
 import { intercardinalPointsSelect } from 'storybook-helpers/presets';
-import { SnackbarProvider, useSnackbar, Snack } from '.';
+import { SnackbarProvider, useSnackbar } from '.';
+import { Snack } from 'types/Snackbar';
 
 export default {
   title: 'Feedback/Snackbar',

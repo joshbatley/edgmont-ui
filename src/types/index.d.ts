@@ -27,3 +27,4 @@ type ObjectKey = string | number | symbol;
 type WithKey<K extends string | number | symbol> = {
   [k in K]: boolean
 };
+

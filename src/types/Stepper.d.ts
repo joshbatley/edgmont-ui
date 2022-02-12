@@ -1,4 +1,4 @@
-export type StepContext = {
+type StepContext = {
   noOfItems: number;
   activeStep: number;
   color: Colors;
@@ -6,6 +6,6 @@ export type StepContext = {
   alternativeLabel?: boolean;
 };
 
-export type Step = {
+type Step = {
   idx: number;
 };
