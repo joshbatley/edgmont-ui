@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { StepIcon } from './StepIcon';
-import { useStepperContext } from './StepperContext';
+import { StepIcon, useStepperContext } from '.';
 
 export type StepLabelProps = {
   icon?: React.ReactNode;

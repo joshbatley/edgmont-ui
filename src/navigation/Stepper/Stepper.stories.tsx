@@ -2,8 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
-import { StepLabel } from './StepLabel';
-import { Stepper } from '.';
+import { Stepper, StepLabel } from '.';
 
 export default {
   title: 'Navigation/Stepper',

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { StepperContext } from './StepperContext';
+import { StepperContext } from '.';
 
 type StepperPropsVertical = {
   color?: Colors;

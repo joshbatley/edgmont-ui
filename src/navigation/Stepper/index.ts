@@ -1,3 +1,4 @@
 export * from './Stepper';
-export * from './Stepper.d';
+export * from './StepIcon';
+export * from './StepperContext';
 export * from './StepLabel';

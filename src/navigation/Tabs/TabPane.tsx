@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Tab, TabVarient } from '.';
+import { Tab, TabVarient } from 'types/Tabs';
 
 export type TabPaneProps = {
   selected?: boolean;

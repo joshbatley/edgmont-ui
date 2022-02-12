@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Tab, TabNavItems, TabPaneList, TabCardItems, TabVarient } from '.';
+import { Tab, TabVarient } from 'types/Tabs';
+import { TabNavItems, TabPaneList, TabCardItems } from '.';
 
 export type TabsProps = {
   value?: string | number;
