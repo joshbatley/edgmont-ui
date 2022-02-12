@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
 import { ClickableElement } from 'inputs';
-import { useTreeContext } from '.';
 import { Collapse } from 'utils';
+import { useTreeContext } from '.';
 
 type Icon = React.ReactNode | {
   endIcon?: React.ReactNode;

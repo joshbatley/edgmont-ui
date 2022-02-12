@@ -1,13 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-
-import { SaveIcon } from 'base/Icons/Outline';
-import { PrimaryButton } from '../PrimaryButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { SaveIcon } from 'feedback/Icons/Outline';
+import { PrimaryButton } from '../PrimaryButton';
 
 export default {
-  title: 'inputs/Button/Primary',
+  title: 'Inputs/Button/Primary',
   component: PrimaryButton,
   args: {
     children: 'Get started',

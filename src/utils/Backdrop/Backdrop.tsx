@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Portal, Fade, FadeProps } from 'utils';
 import FocusLock from 'react-focus-lock';
+import { Portal, Fade, FadeProps } from 'utils';
 
 export const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
 

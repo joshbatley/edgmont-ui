@@ -1,12 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { List, ListItem, OrderedList, UnorderedList } from 'base/List';
 import { sizeSelect } from 'storybook-helpers/presets';
-
+import { List, ListItem, OrderedList, UnorderedList } from '.';
 
 export default {
-  title: 'Base/List',
+  title: 'Data/List',
   component: List,
   argTypes: {
     size: sizeSelect,

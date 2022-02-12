@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { ChevronDownIcon, ChevronRightIcon } from 'feedback/Icons/Outline';
 import { TreeContext } from '.';
-import { ChevronDownIcon, ChevronRightIcon } from 'base/Icons/Outline';
 
 export type TreeProps = {
   defaultExpanded?: string[];

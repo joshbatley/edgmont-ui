@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { ClickableElement, OutlineButton } from 'inputs';
-import { CalendarIcon } from 'base/Icons/Outline';
+import { CalendarIcon } from 'feedback/Icons/Outline';
 
 export type DateInputProps = {
   placeholder?: string;

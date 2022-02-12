@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { ButtonGroup, HighlightButton } from 'inputs';
-import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from 'base/Icons/Outline';
+import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from 'feedback/Icons/Outline';
 import classNames from 'classnames';
 
 export type PaginationProps = {

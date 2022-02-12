@@ -1,10 +1,10 @@
 import React from 'react';
-import { List, Text, TextInline } from 'base';
-import { UploadIcon } from 'base/Icons/Outline';
+import classNames from 'classnames';
+import { UploadIcon } from 'feedback/Icons/Outline';
+import { Text, TextInline, List } from 'data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
-import classNames from 'classnames';
-import { BaseUploader, AcceptedFile, BaseUploaderProps } from './BaseUploader';
+import { BaseUploader, AcceptedFile, BaseUploaderProps } from '.';
 
 export type UploadZoneProps = {
   showAsTile?: boolean;

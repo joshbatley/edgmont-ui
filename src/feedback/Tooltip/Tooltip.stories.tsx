@@ -1,12 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Tooltip } from '.';
 import { directionSelect } from 'storybook-helpers/presets';
-import { Box } from 'base';
+import { Box } from 'data';
+import { Tooltip } from '.';
 
 export default {
-  title: 'Base/Tooltip',
+  title: 'Feedback/Tooltip',
   component: Tooltip,
   argTypes: {
     direction: directionSelect,

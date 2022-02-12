@@ -1,5 +1,5 @@
-import classnames from 'classnames';
 import React, { CSSProperties, forwardRef } from 'react';
+import classnames from 'classnames';
 
 export type CardProps = {
   children: React.ReactNode;

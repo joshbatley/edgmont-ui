@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckIcon } from 'base/Icons/Outline';
+import { CheckIcon } from 'feedback/Icons/Outline';
 import { BaseControl, BaseControlProps } from '../BaseControl';
 
 export type CheckboxPrpos = Omit<BaseControlProps, 'icon' | 'rounded'>;

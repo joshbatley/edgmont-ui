@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { forwardRef } from 'react';
+import classNames from 'classnames';
 
 const TextAreaClasses = 'shadow-sm mt-1 p-2 block h-24 w-full border border-gray-300 rounded-md focus:outline-none focus:ring focus:z-10';
 

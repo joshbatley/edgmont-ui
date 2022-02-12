@@ -1,8 +1,8 @@
 import React, { Ref, useState } from 'react';
-import { Portal } from 'utils';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 import classNames from 'classnames';
+import { Portal } from 'utils';
 
 export type TooltipProps = {
   tooltip: React.ReactNode;

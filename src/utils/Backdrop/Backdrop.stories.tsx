@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Backdrop } from '.';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
 import { OutlineButton, PrimaryButton } from 'inputs';
-import { Text } from 'base';
+import { Text } from 'data';
+import { Backdrop } from '.';
 
 export default {
-  title: 'Base/Backdrop',
+  title: 'Utils/Backdrop',
   component: Backdrop,
   args: {
     color: 'gray',

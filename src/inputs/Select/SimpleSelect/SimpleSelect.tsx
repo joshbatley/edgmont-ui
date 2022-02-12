@@ -1,6 +1,6 @@
 import { ControllerStateAndHelpers, DownshiftProps } from 'downshift';
 import React, { useState } from 'react';
-import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '../index';
+import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '..';
 
 type SimpleSelectProps = {
   values: Array<any>;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Title as Comp, HeadingProps } from './Title';
+import { Title as Comp, HeadingProps } from '.';
 
 export default {
-  title: 'Base/Text',
+  title: 'Data/Text',
   component: Comp,
   args: {
     children: 'My Text element',

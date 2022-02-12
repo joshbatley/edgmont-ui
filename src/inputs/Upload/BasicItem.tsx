@@ -1,9 +1,10 @@
 import React from 'react';
-import { TextInline, Tooltip } from 'base';
-import { PaperClipIcon, TrashIcon } from 'base/Icons/Outline';
-import { AcceptedFile } from '.';
-import { ClickableElement } from 'inputs';
 import classNames from 'classnames';
+import { PaperClipIcon, TrashIcon } from 'feedback/Icons/Outline';
+import { ClickableElement } from 'inputs';
+import { Tooltip } from 'feedback';
+import { TextInline } from 'data';
+import { AcceptedFile } from '.';
 
 export type BasicItemProps = {
   file: AcceptedFile;

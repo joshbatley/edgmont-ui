@@ -1,8 +1,9 @@
 import React from 'react';
-import { XIcon } from 'base/Icons/Outline';
-import { Backdrop, Panel, Title, stopPropagation } from 'base';
-import { ClickableElement } from 'inputs';
 import classNames from 'classnames';
+import { XIcon } from 'feedback/Icons/Outline';
+import { Title, Panel } from 'data';
+import { Backdrop, stopPropagation } from 'utils';
+import { ClickableElement } from 'inputs';
 
 export type ModalProps = {
   title?: string;

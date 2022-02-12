@@ -1,14 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Select } from './Select';
-import { SelectList } from './SelectList';
-import { SelectItem } from './SelectItem';
-import { SelectFilter } from './SelectFilter';
 import { sizeSelect } from 'storybook-helpers/presets';
+import { Select, SelectList, SelectItem, SelectFilter } from '.';
 
 export default {
-  title: 'inputs/Select/Custom',
+  title: 'Inputs/Select/Custom',
   component: Select,
   args: {
     label: 'My select menu',

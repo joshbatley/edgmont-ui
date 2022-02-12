@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'base';
+import { Text } from 'data';
 
 export type LabelProps = {
   value: React.ReactNode;

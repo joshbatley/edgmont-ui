@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Portal } from 'utils';
 import classNames from 'classnames';
+import { Portal } from 'utils';
 import { SnackbarContext, SnackbarItem, SnackbarProviderProps, Snack, SnackOptions } from '.';
 
 function createId() {

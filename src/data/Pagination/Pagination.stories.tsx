@@ -8,7 +8,7 @@ export default {
   component: Pagination,
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => {
+export const Default: Story = () => {
   let [skip, setSkip] = useState(0);
 
   return (

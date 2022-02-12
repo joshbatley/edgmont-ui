@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from 'base/Icons/Outline';
+import { ChevronLeftIcon, ChevronRightIcon } from 'feedback/Icons/Outline';
 
 export const Scrollable: React.FC = ({ children }) => {
   let [{ left, right }, setArrows] = useState({ left: false, right: false });

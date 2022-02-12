@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ClickableElement } from 'inputs';
-import { Tab } from '.';
-import { Scrollable } from 'base/Scrollable';
 import { applyColor } from 'shared/colorpicker';
+import { ClickableElement } from 'inputs';
+import { Scrollable } from 'utils';
+import { Tab } from '.';
 
 export type TabCardItemProps = {
   selected?: boolean;

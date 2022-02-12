@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Radio } from './Radio';
 import { colorSelect } from 'storybook-helpers/presets';
+import { Radio } from './Radio';
 
 export default {
-  title: 'inputs/Radio',
+  title: 'Inputs/Radio',
   component: Radio,
   argTypes: {
     color: colorSelect,

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Accordion } from '.';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
-import { AccordionDetail } from './Accordion';
+import { Accordion, AccordionDetail } from '.';
 
 export default {
-  title: 'Base/Accordion',
+  title: 'Data/Accordion',
   component: Accordion,
   args: {
     color: 'gray',

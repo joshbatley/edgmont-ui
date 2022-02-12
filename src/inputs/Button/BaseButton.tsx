@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import classNames from 'classnames';
-import { CircleLoader } from 'feedback/Loader';
+import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
   size?: Size,

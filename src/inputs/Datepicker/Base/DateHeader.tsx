@@ -1,9 +1,9 @@
 import React, { Ref, useState } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import { format, getYear } from 'date-fns';
-import { ChevronLeftIcon, ChevronRightIcon, ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from 'base/Icons/Outline';
+import { ChevronLeftIcon, ChevronRightIcon, ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from 'feedback/Icons/Outline';
 import { ClickableElement, HighlightButton } from 'inputs';
-import { Menu, MenuItem } from 'navigation/Menu';
+import { Menu, MenuItem } from 'navigation';
 
 const months = [
   'January',

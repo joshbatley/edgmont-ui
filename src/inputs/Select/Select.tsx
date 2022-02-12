@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Downshift, {
   DownshiftProps, DownshiftState, StateChangeOptions,
 } from 'downshift';
-import { SelectContext } from './SelectContext';
+import { SelectContext } from '.';
 
 export type SelectProps = {
   disabled?: boolean;

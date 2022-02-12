@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { Box, BoxProps } from '.';
 
 export default {
-  title: 'Base/Box',
+  title: 'Data/Box',
   component: Box,
   args: {
     classes: 'bg-white',

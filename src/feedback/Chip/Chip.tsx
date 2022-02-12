@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Text } from 'base';
-import { ClickableElement } from 'inputs';
-import { XCircleIcon } from 'base/Icons/Solid';
+import { XCircleIcon } from 'feedback/Icons/Solid';
 import { applyColor } from 'shared/colorpicker';
+import { ClickableElement } from 'inputs';
+import { Text } from 'data';
 
 export type ChipProps = {
   color?: Colors;

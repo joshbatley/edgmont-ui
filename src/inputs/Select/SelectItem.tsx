@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { ListItem } from 'base';
 import classNames from 'classnames';
-import { useSelectContext } from './SelectContext';
+import { ListItem } from 'data';
+import { useSelectContext } from '.';
 
 export type SelectItemProps = {
   item: any;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
+import { LockClosedIcon } from 'feedback/Icons/Outline';
 import { TextField } from '.';
-import { LockClosedIcon } from 'base/Icons/Outline';
 
 function render(Comp: any) {
   return testRender(Comp);

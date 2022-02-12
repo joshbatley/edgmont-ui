@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { DotsHorizontalIcon } from 'base/Icons/Outline';
 import classNames from 'classnames';
+import { DotsHorizontalIcon } from 'feedback/Icons/Outline';
 import { SecondaryButton } from 'inputs';
 
 export type BreadcrumbsProps = {

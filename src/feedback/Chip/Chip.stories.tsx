@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Chip } from '.';
 import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
+import { Chip } from '.';
 
 export default {
-  title: 'Base/Chip',
+  title: 'Feedback/Chip',
   component: Chip,
   argTypes: {
     color: colorSelect,

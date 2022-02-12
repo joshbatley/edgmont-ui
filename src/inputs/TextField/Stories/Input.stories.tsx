@@ -1,15 +1,14 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { TextField } from '../TextField';
-import { LockClosedIcon, CodeIcon } from 'base/Icons/Solid';
-import { ClickableElement } from 'inputs/Button';
-import { Password as PasswordComp } from '../Password';
-import { Text } from 'base/Text';
 import { sizeSelect } from 'storybook-helpers/presets';
+import { LockClosedIcon, CodeIcon } from 'feedback/Icons/Solid';
+import { ClickableElement } from 'inputs';
+import { Text } from 'data';
+import { Password as PasswordComp, TextField } from '..';
 
 export default {
-  title: 'inputs/TextField/Props',
+  title: 'Inputs/TextField/Props',
   component: TextField,
   args: {
     placeholder: 'My input',

@@ -3,6 +3,10 @@ import { Solid as Icons, Outline as IconsOutline } from '.';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 
+export default {
+  title: 'Feedback/Icons',
+} as Meta;
+
 function camelCaseToDash(str: string) {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
@@ -26,7 +30,3 @@ const IconsOutlineComp = () => (<IconWrapper IconArr={IconsOutline} />);
 export const Solid: Story = () => (<IconsComp />);
 export const Outline: Story = () => (<IconsOutlineComp />);
 
-export default {
-  title: 'Base/Icons',
-  component: IconsComp,
-} as Meta;

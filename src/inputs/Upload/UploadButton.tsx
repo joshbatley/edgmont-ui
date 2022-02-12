@@ -1,9 +1,9 @@
 import React from 'react';
+import { UploadIcon } from 'feedback/Icons/Outline';
 import { Button, ButtonProps } from 'inputs';
-import { UploadIcon } from 'base/Icons/Outline';
-import { AcceptedFile, BaseUploader, BaseUploaderProps } from './BaseUploader';
-import { List } from 'base';
+import { List } from 'data';
 import { BasicItem } from './BasicItem';
+import { AcceptedFile, BaseUploader, BaseUploaderProps } from '.';
 
 export type UploadButtonProps = {
   buttonText?: boolean;
