@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { XIcon } from 'feedback/Icons/Outline';
 import { Title, Panel } from 'data';
@@ -9,8 +9,8 @@ export type ModalProps = {
   title?: string;
   panelOverrides?: string;
   handleClose: () => void;
+  open?: boolean;
 };
-
 
 const Header: React.FC<{ handleClose: () => void; }> = ({ children, handleClose }) => (
   <div className="inline-flex border-b w-full justify-between">
@@ -21,13 +21,20 @@ const Header: React.FC<{ handleClose: () => void; }> = ({ children, handleClose 
   </div>
 );
 
-export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title, children }) => (
-  <Backdrop onClick={handleClose}>
-    <Panel className={classNames('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
-      {title && <Header handleClose={handleClose}>{title}</Header>}
-      {children}
-    </Panel>
-  </Backdrop>
-);
+export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title, children, open }) => {
+  let [isOpen, setOpen] = useState(false);
+
+  if (!open) {
+    return null;
+  }
+  return (
+    <Backdrop onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
+      <Panel className={classNames('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
+        {title && <Header handleClose={handleClose}>{title}</Header>}
+        {children}
+      </Panel>
+    </Backdrop>
+  );
+};
 
 
