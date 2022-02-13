@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import { Tab, TabVarient } from 'types/Tabs';
 import { TabNavItems, TabPaneList, TabCardItems } from '.';
-
-export type TabsProps = {
-  value?: string | number;
-  type?: TabVarient;
-  accentColor?: Colors;
-};
 
 function parseChildrenToTabs(children: React.ReactNode): Tab[] {
   return React.Children.toArray(children).map((node) => {

@@ -1,7 +1,6 @@
 import React, { useRef, forwardRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { applyColor } from 'shared/colorpicker';
-import { Tab } from 'types/Tabs';
 import { ClickableElement } from 'inputs';
 import { Scrollable } from 'utils';
 

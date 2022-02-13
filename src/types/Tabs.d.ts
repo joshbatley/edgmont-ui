@@ -1,4 +1,8 @@
-import type { TabPaneProps } from 'navigation';
+type TabsProps = {
+  value?: string | number;
+  type?: TabVarient;
+  accentColor?: Colors;
+};
 
 type TabVarient = 'default' | 'card';
 
