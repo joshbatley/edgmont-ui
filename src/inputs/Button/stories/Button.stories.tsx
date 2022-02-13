@@ -29,6 +29,7 @@ export const Sizes: Story = ({ children, ...rest }) => (
 
 export const All: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
+    <PrimaryButton color="primary">{children}</PrimaryButton>
     <PrimaryButton color="gray">{children}</PrimaryButton>
     <PrimaryButton color="green">{children}</PrimaryButton>
     <PrimaryButton color="red">{children}</PrimaryButton>

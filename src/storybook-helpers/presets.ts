@@ -4,7 +4,7 @@ const colorSelectWithWhite = {
 };
 
 const colorSelect = {
-  options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink'],
+  options: ['primary', 'gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink'],
   control: { type: 'select' },
 };
 
