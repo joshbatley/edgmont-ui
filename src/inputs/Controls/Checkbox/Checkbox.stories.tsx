@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelect } from 'storybook-helpers/presets';
-import { Checkbox } from './Checkbox';
+import { Checkbox } from '.';
 
 export default {
   title: 'Inputs/Checkbox',

@@ -18,7 +18,6 @@ export type TabPaneListProps = {
 export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest }) =>
   selected ? <div className="px-4 py-5" {...rest}>{children}</div> : null;
 
-
 export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => (
   <div className={classNames(type === 'card' && 'bg-white border rounded-b')}>
     {tabs.map(({ key, children, ...rest }) => (

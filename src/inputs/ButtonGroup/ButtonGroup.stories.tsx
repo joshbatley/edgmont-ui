@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 import { PrimaryButton } from '../Button/PrimaryButton';
 import { OutlineButton } from '../Button/OutlineButton';
-import { ButtonGroup } from './ButtonGroup';
+import { ButtonGroup } from '.';
 
 export default {
   title: 'Inputs/Button/ButtonGroups',

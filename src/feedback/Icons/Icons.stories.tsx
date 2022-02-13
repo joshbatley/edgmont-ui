@@ -1,7 +1,7 @@
 import React from 'react';
-import { Solid as Icons, Outline as IconsOutline } from '.';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
+import { Solid as Icons, Outline as IconsOutline } from '.';
 
 export default {
   title: 'Feedback/Icons',

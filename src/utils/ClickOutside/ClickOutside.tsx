@@ -27,7 +27,6 @@ export const ClickOutside: React.FC<ClickOutsideProps> = ({ children, handleClos
     return () => document.removeEventListener('mousedown', handleClick);
   }, [isOpen, handleClose, target]);
 
-
   let WrappedTransition = (
     <Grow inProp={isOpen} onDestroyed={handleClose}>
       {children}

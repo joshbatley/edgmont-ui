@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { BaseButton, BaseButtonProps } from './BaseButton';
+import { BaseButton, BaseButtonProps } from '.';
 
 export type ClickableElementProps = Omit<BaseButtonProps, 'size' | 'color' | 'isLoading'>;
 

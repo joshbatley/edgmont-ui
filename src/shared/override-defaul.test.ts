@@ -7,7 +7,6 @@ let defaults = {
   height: 'h-10',
 };
 
-
 describe('overriderDefault', () => {
   it('should override the defaults if the pattern is matched', () => {
     let overrides = 'px-10 my-10 w-1/2 h-1/2';

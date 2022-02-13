@@ -47,5 +47,3 @@ export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onCh
     </div>
   </Scrollable >
 );
-
-

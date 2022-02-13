@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import classNames from 'classnames';
-import { BaseButton, BaseButtonProps } from './BaseButton';
+import { BaseButton, BaseButtonProps } from '.';
 
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
