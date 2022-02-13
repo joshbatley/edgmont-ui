@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { CircleProgress, LinearProgress } from '.';
 import { colorSelectWithWhite } from 'storybook-helpers/presets';
+import { CircleProgress, LinearProgress } from '.';
 
 export default {
   title: 'Feedback/Progress',

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
+import { Panel } from 'data';
 import { Tree, TreeItem } from '.';
-import { Panel } from 'base';
 
 export default {
   title: 'Data/Tree',
   component: Tree,
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Default: Story = () => (
   <>
     <Panel className="px-2 py-3 w-1/2">
       <Tree defaultExpanded={['1', '1.2']} blockNode >

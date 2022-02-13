@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ClickableElement } from 'inputs';
-import { Tab } from '.';
-import { Scrollable } from 'base/Scrollable';
 import { applyColor } from 'shared/colorpicker';
+import { ClickableElement } from 'inputs';
+import { Scrollable } from 'utils';
 
 export type TabCardItemProps = {
   selected?: boolean;
@@ -48,5 +47,3 @@ export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onCh
     </div>
   </Scrollable >
 );
-
-

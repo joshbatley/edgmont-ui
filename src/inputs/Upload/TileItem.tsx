@@ -1,9 +1,10 @@
 import React from 'react';
-import { Tooltip, TextInline, Image, Text } from 'base';
-import { PhotographIcon, TrashIcon } from 'base/Icons/Outline';
-import { AcceptedFile } from '.';
-import { ClickableElement } from 'inputs';
 import classNames from 'classnames';
+import { PhotographIcon, TrashIcon } from 'feedback/Icons/Outline';
+import { TextInline, Text, Image } from 'data';
+import { ClickableElement } from 'inputs';
+import { Tooltip } from 'feedback';
+import { AcceptedFile } from '.';
 
 export type TileItemProps = {
   file: AcceptedFile;

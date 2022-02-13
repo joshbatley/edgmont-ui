@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { TextField } from '../TextField';
-import { LockClosedIcon, EyeIcon } from 'base/Icons/Solid';
-import { ClickableElement } from 'inputs/Button';
-import { Text } from 'base/Text';
+import { LockClosedIcon, EyeIcon } from 'feedback/Icons/Solid';
+import { ClickableElement } from 'inputs';
+import { Text } from 'data';
+import { TextField } from '..';
 
 export default {
-  title: 'inputs/TextField/States',
+  title: 'Inputs/TextField/States',
   component: TextField,
   args: {
     placeholder: 'My input',

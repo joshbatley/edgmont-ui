@@ -1,9 +1,8 @@
 import React, { useRef, forwardRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { ClickableElement } from 'inputs';
-import { Tab } from '.';
-import { Scrollable } from 'base/Scrollable';
 import { applyColor } from 'shared/colorpicker';
+import { ClickableElement } from 'inputs';
+import { Scrollable } from 'utils';
 
 export type TabNavItemProps = {
   onClick: () => void;

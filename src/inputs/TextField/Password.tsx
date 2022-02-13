@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { EyeIcon, EyeOffIcon } from 'base/Icons/Outline';
+import { EyeIcon, EyeOffIcon } from 'feedback/Icons/Outline';
 import { ClickableElement } from 'inputs';
-import { TextField, TextFieldProps } from './TextField';
+import { TextField, TextFieldProps } from '.';
 
 export type PasswordProps = TextFieldProps;
 

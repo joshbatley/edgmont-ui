@@ -9,7 +9,7 @@ export default {
 
 let sidebar = <div className="bg-purple-700 border-r h-screen">123</div>;
 
-export const Default: Story = ({ ...rest }) => (
+export const Default: Story = () => (
   <TwoColumns sideNav={sidebar} className='bg-white'>
     <div className="bg-white border-r h-screen">123</div>
   </TwoColumns>

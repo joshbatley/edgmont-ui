@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Backdrop, stopPropagation } from 'base';
 import classNames from 'classnames';
-import { Open } from 'utils';
+import { Backdrop, stopPropagation, Open } from 'utils';
 
 export type DrawerProps = {
   open?: boolean;

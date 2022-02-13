@@ -1,9 +1,8 @@
-import React, { Ref } from 'react';
+import React, { Ref, useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Menu, MenuItem } from '.';
-import { useState } from 'react';
 import { ClickableElement } from 'inputs';
+import { Menu, MenuItem } from '.';
 
 export default {
   title: 'Navigation/Menu',

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-
-import { ClickableElement } from '../ClickableElement';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { ClickableElement } from '../ClickableElement';
 
 export default {
-  title: 'inputs/Button/ClickableElement',
+  title: 'Inputs/Button/ClickableElement',
   component: ClickableElement,
   args: {
     children: 'Click me',

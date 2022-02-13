@@ -8,3 +8,5 @@ postcss.config.js
 dist/*
 src/tailwind.css
 docs/*
+fileMock.js
+styleMock.js

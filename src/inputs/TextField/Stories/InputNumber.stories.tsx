@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { NumberField } from '../NumberField';
 import { sizeSelect } from 'storybook-helpers/presets';
+import { NumberField } from '..';
 
 export default {
-  title: 'inputs/TextField',
+  title: 'Inputs/TextField',
   component: NumberField,
   args: {
     placeholder: 'My input',

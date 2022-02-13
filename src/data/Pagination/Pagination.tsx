@@ -1,7 +1,6 @@
 import React from 'react';
 import { PaginationControls } from './PaginationControls';
 
-
 export type PaginationProps = {
   limit: number;
   skip: number;

@@ -4,6 +4,6 @@
     "node_modules",
     "src/**/*.stories.*",
     "src/**/*.test.*",
-    "src/storybook-helpers/*",
+    "src/storybook-helpers/*"
   ]
 }

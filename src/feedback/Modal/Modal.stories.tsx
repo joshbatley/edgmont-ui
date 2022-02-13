@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Modal } from '.';
 import { OutlineButton, PrimaryButton, TextField } from 'inputs';
-import { Chip, Panel, Text } from 'base';
+import { Panel, Text } from 'data';
+import { Chip } from 'feedback';
+import { Modal } from '.';
 
 export default {
   title: 'Feedback/Modal',

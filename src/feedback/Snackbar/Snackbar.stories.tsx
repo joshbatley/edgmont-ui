@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { OutlineButton } from 'inputs';
 import { intercardinalPointsSelect } from 'storybook-helpers/presets';
-import { SnackbarProvider, useSnackbar, Snack } from '.';
+import { OutlineButton } from 'inputs';
+import { Snack } from 'types/Snackbar';
+import { SnackbarProvider, useSnackbar } from '.';
 
 export default {
   title: 'Feedback/Snackbar',

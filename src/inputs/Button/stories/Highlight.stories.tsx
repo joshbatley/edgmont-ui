@@ -1,13 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-
-import { SaveIcon } from 'base/Icons/Outline';
-import { HighlightButton } from '../HighlightButton';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { SaveIcon } from 'feedback/Icons/Outline';
+import { HighlightButton } from '../HighlightButton';
 
 export default {
-  title: 'inputs/Button/Highlight',
+  title: 'Inputs/Button/Highlight',
   component: HighlightButton,
   args: {
     children: 'Get started',

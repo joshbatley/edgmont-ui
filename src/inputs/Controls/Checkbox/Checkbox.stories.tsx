@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Checkbox } from './Checkbox';
 import { colorSelect } from 'storybook-helpers/presets';
+import { Checkbox } from '.';
 
 export default {
-  title: 'inputs/Checkbox',
+  title: 'Inputs/Checkbox',
   component: Checkbox,
   args: {
     labelText: 'My Checkboxes',

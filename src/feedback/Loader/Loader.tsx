@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import React from 'react';
-import { LinearSlide } from 'utils/Transitions/LinearSlide';
+import classNames from 'classnames';
+import { LinearSlide } from 'utils';
 
 export type LinearLoaderProps = {
   color?: ColorsAndShades,

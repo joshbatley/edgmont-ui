@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
+import { applyColor } from 'shared/colorpicker';
 import {
   ExclamationCircleIcon,
   ExclamationIcon,
   InformationCircleIcon,
   CheckCircleIcon,
   XIcon,
-} from 'base/Icons/Solid';
-import { Text } from 'base';
-import { applyColor } from 'shared/colorpicker';
+} from 'feedback/Icons/Solid';
+import { Text } from 'data';
 import { ClickableElement, ClickableElementProps } from 'inputs';
 
 export type AlertProps = {

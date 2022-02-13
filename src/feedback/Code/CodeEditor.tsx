@@ -6,7 +6,6 @@ import LightTheme from 'prism-react-renderer/themes/github';
 import { Wrapper } from './Wrapper';
 import { SyntaxHighlighter } from '.';
 
-
 export type CodeEditorProps = {
   code: string;
   language: Language;

@@ -1,6 +1,5 @@
-import classNames from 'classnames';
 import React from 'react';
-import { Tab, TabVarient } from '.';
+import classNames from 'classnames';
 
 export type TabPaneProps = {
   selected?: boolean;
@@ -18,7 +17,6 @@ export type TabPaneListProps = {
 
 export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest }) =>
   selected ? <div className="px-4 py-5" {...rest}>{children}</div> : null;
-
 
 export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => (
   <div className={classNames(type === 'card' && 'bg-white border rounded-b')}>

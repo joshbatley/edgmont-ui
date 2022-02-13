@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { StepContext } from '.';
 
 export const StepperContext = React.createContext<StepContext | undefined>(undefined);
 

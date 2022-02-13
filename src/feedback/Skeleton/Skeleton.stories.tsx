@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
+import { Title, Text as TextComp } from 'data';
 import { Skeleton } from '.';
-import { Title, Text as TextComp } from 'base';
 
 export default {
   title: 'Feedback/Skeleton',

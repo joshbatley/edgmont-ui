@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { applyColor } from 'shared/colorpicker';
-import { CheckCircleIcon, ExclamationIcon } from 'base/Icons/Solid';
+import { CheckCircleIcon, ExclamationIcon } from 'feedback/Icons/Solid';
 
 export type StepIconProps = {
   error?: boolean;

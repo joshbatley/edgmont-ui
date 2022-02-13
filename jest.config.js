@@ -9,6 +9,9 @@ module.exports = {
   "modulePaths": [
     "<rootDir>/src",
   ],
+  "moduleNameMapper": {
+    '\\.(css|less)$': '<rootDir>/styleMock.js'
+  },
   "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
   "coverageThreshold": {
     "global": {

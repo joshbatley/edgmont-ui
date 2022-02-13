@@ -1,6 +1,6 @@
 import React from 'react';
-import { List } from 'base';
-import { useSelectContext } from './SelectContext';
+import { List } from 'data';
+import { useSelectContext } from '.';
 
 export const SelectList: React.FC = ({ children }) => {
   let { isOpen } = useSelectContext();

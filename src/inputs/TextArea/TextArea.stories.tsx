@@ -8,7 +8,7 @@ export default {
   component: TextArea,
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Default: Story = () => (
   <TextArea />
 );
 
