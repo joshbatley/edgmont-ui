@@ -51,7 +51,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       )) : (
         <div className='inline-flex items-center'>
           <SecondaryButton size='small' onClick={() => setShow(true)}>
-            <DotsHorizontalIcon height={16} width={16} />
+            <DotsHorizontalIcon height={13} width={14} />
           </SecondaryButton>
           {React.cloneElement(dividerIcon, {
             width: 16, height: 16, className: 'inline-block text-gray-500 mx-1.5',
