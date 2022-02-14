@@ -4,6 +4,8 @@
     "node_modules",
     "src/**/*.stories.*",
     "src/**/*.test.*",
+    "src/styleMock.ts",
+    "src/setupTests.ts",
     "src/storybook-helpers/*"
   ]
 }

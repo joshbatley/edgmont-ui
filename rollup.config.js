@@ -23,7 +23,7 @@ export default {
   ],
   treeshake: true,
   plugins: [
-    css(),
+    css({ minify: true, output: 'datepicker.css' }),
     peerDepsExternal(),
     resolve(),
     commonjs({

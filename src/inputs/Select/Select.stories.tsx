@@ -28,6 +28,3 @@ export const Filter: Story = ({ ...rest }) => (
     </SelectList>
   </Select>
 );
-
-// Baic Example of complex
-// Example of complex complex

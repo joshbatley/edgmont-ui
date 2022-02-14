@@ -19,7 +19,6 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
   let [state, setState] = useState(code);
   let Theme = light ? LightTheme : DarkTheme;
   function handleTextChange(text: string) {
-    console.log(text);
     setState(text);
     handleChange?.(text);
   }
