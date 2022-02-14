@@ -10,9 +10,9 @@ module.exports = {
     "<rootDir>/src",
   ],
   "moduleNameMapper": {
-    '\\.(css|less)$': '<rootDir>/styleMock.js'
+    '\\.(css|less)$': '<rootDir>/src/styleMock.ts'
   },
-  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
   "coverageThreshold": {
     "global": {
       "branches": 80,
