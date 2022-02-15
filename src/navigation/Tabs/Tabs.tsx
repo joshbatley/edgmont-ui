@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TabNavItems, TabPaneList, TabCardItems } from '.';
 
-function parseChildrenToTabs(children: React.ReactNode): Tab[] {
+const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   return React.Children.toArray(children).map((node) => {
     if (!React.isValidElement(node)) {
       return null;
@@ -13,7 +13,7 @@ function parseChildrenToTabs(children: React.ReactNode): Tab[] {
       node,
     };
   });
-}
+};
 
 export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value, accentColor = 'blue' }) => {
   let tabs = parseChildrenToTabs(childrenProp);

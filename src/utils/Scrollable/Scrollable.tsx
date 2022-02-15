@@ -6,18 +6,18 @@ export const Scrollable: React.FC = ({ children }) => {
   let [scrollable, setScrollable] = useState<boolean | undefined>(undefined);
   let ref = useRef<HTMLDivElement>(null);
 
-  function handleScroll() {
+  let handleScroll = () => {
     let rightShadow = ref.current?.scrollWidth !== (ref.current?.scrollLeft || 0) + (ref.current?.clientWidth || 0);
     let leftShadow = (ref.current?.scrollLeft || 0) > 0;
     setArrows({
       left: leftShadow,
       right: rightShadow,
     });
-  }
+  };
 
-  function checkIfScrollable() {
+  let checkIfScrollable = () => {
     setScrollable((ref.current?.scrollWidth || 0) <= (ref.current?.clientWidth || 0));
-  }
+  };
 
   useEffect(() => {
     checkIfScrollable();

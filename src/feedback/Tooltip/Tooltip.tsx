@@ -12,7 +12,9 @@ export type TooltipProps = {
   disabled?: boolean;
 };
 
-export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled }) => {
+export const Tooltip: React.FC<TooltipProps> = ({
+  tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled,
+}) => {
   let [showTooltip, setTooltip] = useState(false);
   let [wrappedRef, setWrappedRef] = useState(null);
   let [popperRef, setPopperRef] = useState(null);
@@ -20,13 +22,8 @@ export const Tooltip: React.FC<TooltipProps> = ({ tooltip, children, direction =
     placement: direction,
   });
 
-  function handleMouseEnter() {
-    setTooltip(true);
-  }
-
-  function handleMouseLeave() {
-    setTooltip(false);
-  }
+  let handleMouseEnter = () => setTooltip(true);
+  let handleMouseLeave = () => setTooltip(false);
 
   let classes = classNames(
     'rounded shadow-md px-3 py-2 z-10 text-sm',

@@ -33,7 +33,6 @@ export const Default: Story = ({ ...rest }) => (
   <SnackbarProvider {...rest}>
     <div className='grid h-screen place-content-center'>
       <Comp />
-
     </div>
   </SnackbarProvider>
 );

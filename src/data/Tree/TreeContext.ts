@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-type TreeContextProps = {
+export type TreeContextProps = {
   expanded: string[];
   toggleItem: (key: string) => void;
   isItemExpanded: (key: string) => boolean;
@@ -13,7 +13,7 @@ type TreeContextProps = {
 export const TreeContext = React.createContext<TreeContextProps | undefined>(undefined);
 
 export const useTreeContext = () => {
-  const context = useContext(TreeContext);
+  let context = useContext(TreeContext);
 
   if (context === undefined) {
     throw new Error('useTreeContext must be used within a TreeContext provider');

@@ -11,10 +11,10 @@ export type DateInputProps = {
 };
 
 export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value, placeholder, onClick, clear, showClear }, ref) => {
-  function handleClear(e: React.MouseEvent) {
+  let handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     clear?.();
-  }
+  };
   return (
     <OutlineButton ref={ref} onClick={onClick} className="w-full justify-between">
       <div className="flex space-x-4 items-center">

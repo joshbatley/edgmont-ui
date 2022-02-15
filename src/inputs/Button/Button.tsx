@@ -19,7 +19,7 @@ type Primary = { variant: 'Primary' } & PrimaryButtonProps;
 type Secondary = { variant: 'Secondary' } & SecondaryButtonProps;
 export type ButtonProps = Clickable | Highlight | Outline | Primary | Secondary;
 
-function getComp(variant: ButtonVariant): any {
+const getComp = (variant: ButtonVariant) => {
   switch (variant) {
     case 'Clickable':
       return ClickableElement;
@@ -32,7 +32,7 @@ function getComp(variant: ButtonVariant): any {
     case 'Secondary':
       return SecondaryButton;
   }
-}
+};
 
 export const Button: React.FC<ButtonProps> = ({ variant, ...rest }) => {
   let Comp = getComp(variant);

@@ -8,7 +8,7 @@ export type BadgeProps = {
   tag: React.ReactNode;
 };
 
-function getPosition(position: IntercardinalPoints) {
+const getPosition = (position: IntercardinalPoints) => {
   let classes = '';
   if (position.includes('W')) {
     classes += 'left-0 translate-x-[-50%] ';
@@ -23,7 +23,7 @@ function getPosition(position: IntercardinalPoints) {
     classes += 'bottom-0 translate-y-[50%] ';
   }
   return classes;
-}
+};
 
 export const Badge: React.FC<BadgeProps> = ({ color = 'gray', position = 'NE', children, tag }) => {
   let colorClass = applyColor(color, '600', 'bg');

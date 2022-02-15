@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { DotsHorizontalIcon } from 'feedback/Icons/Outline';
 import { SecondaryButton } from 'inputs';
+import { Item } from './Item';
 
 export type BreadcrumbsProps = {
   maxItems?: number;
@@ -9,17 +9,6 @@ export type BreadcrumbsProps = {
   itemsBefore?: number;
   itemsAfter?: number;
 };
-
-const Item: React.FC<{ item: any, isLastItem?: boolean, dividerIcon: React.ReactElement }> = ({
-  item, isLastItem = false, dividerIcon,
-}) => (
-  <div className={classNames('inline-flex items-center', !isLastItem && 'text-gray-500')}>
-    {item}
-    {!isLastItem && React.cloneElement(dividerIcon, {
-      width: 16, height: 16, className: 'inline-block mx-1.5',
-    })}
-  </div>
-);
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   children, maxItems = 8, itemsBefore = 1, itemsAfter = 1, dividerIcon = <div>/</div>,
