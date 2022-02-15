@@ -1,8 +1,12 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { BaseButton, BaseButtonProps } from '.';
 
 export type PrimaryButtonProps = BaseButtonProps;
+
+// const colors = {
+
+// }
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(({ children, color = 'gray', className, ...rest }, ref) => {
   let isWhite = color === 'white';
@@ -12,7 +16,7 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>((
   return (
     <BaseButton
       ref={ref}
-      className={classNames(bgcolor, textcolor, hoverClass, className)}
+      className={clsx(bgcolor, textcolor, hoverClass, className)}
       color={isWhite ? 'gray' : color}
       {...rest}
     >

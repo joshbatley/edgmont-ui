@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { XCircleIcon } from 'feedback/Icons/Solid';
 import { applyColor } from 'shared/colorpicker';
 import { ClickableElement } from 'inputs';
@@ -24,18 +24,16 @@ const applySize = (size: Size) => {
 };
 
 export const Chip: React.FC<ChipProps> = ({
-  color = 'gray', size = 'small', outline = true,
-  handleDelete, children,
+  color = 'gray', size = 'small', outline = true, handleDelete, children,
 }) => {
   let colorClasses = applyColor(color, '200', 'bg');
   let borderClasses = applyColor(color, '600', 'border') + ' border';
   let textClasses = applyColor(color, outline ? '800' : '600', 'text');
   let sizeClasses = applySize(size);
-  let classes = 'rounded-lg inline-flex space-x-2 justify-center items-center w-fit';
   let showIcon = handleDelete !== undefined && handleDelete !== null;
 
   return (
-    <div className={classNames(outline ? colorClasses : borderClasses, textClasses, sizeClasses, classes)}>
+    <div className={clsx(outline ? colorClasses : borderClasses, textClasses, sizeClasses, 'rounded-lg inline-flex space-x-2 justify-center items-center w-fit')}>
       <Text>{children}</Text>
       {showIcon && (
         <ClickableElement onClick={handleDelete}>

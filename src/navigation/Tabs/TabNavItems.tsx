@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, useEffect, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { applyColor } from 'shared/colorpicker';
 import { ClickableElement } from 'inputs';
 import { Scrollable } from 'utils';
@@ -9,10 +9,8 @@ export type TabNavItemProps = {
   children: React.ReactNode;
 };
 
-const TabClasses = 'px-4 py-3 rounded-none relative overflow-hidden first-of-type:rounded-l last-of-type:rounded-r-md focus:ring-0';
-
 export const TabNavItem = forwardRef<HTMLButtonElement, TabNavItemProps>(({ children, onClick }, ref) => (
-  <ClickableElement className={classNames(TabClasses)} onClick={onClick} ref={ref}>
+  <ClickableElement className='px-4 py-3 rounded-none relative overflow-hidden first-of-type:rounded-l last-of-type:rounded-r-md focus:ring-0' onClick={onClick} ref={ref}>
     {children}
   </ClickableElement>
 ));
@@ -46,7 +44,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
             onClick={() => onChange(key)}
           >{tab}</TabNavItem>
         ))}
-        <div className={classNames(color, 'h-1 relative transition-all')} style={{ ...styles }} />
+        <div className={clsx(color, 'h-1 relative transition-all')} style={{ ...styles }} />
       </div>
     </Scrollable>
   );

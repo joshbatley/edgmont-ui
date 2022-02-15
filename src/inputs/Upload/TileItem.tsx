@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { PhotographIcon, TrashIcon } from 'feedback/Icons/Outline';
 import { TextInline, Text, Image } from 'data';
 import { ClickableElement } from 'inputs';
@@ -26,18 +26,19 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
 
   return (
     <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
-      <div className={classNames('flex items-center space-x-2 border rounded-md overflow-hidden p-2 group', hasError && 'border-red-500 text-red-500')}>
+      <div className={clsx('flex items-center space-x-2 border rounded-md overflow-hidden p-2 group', { 'border-red-500 text-red-500': hasError })}>
         <Image src={imgSrc as string} className="w-12 h-12 object-cover bg-gray-200 rounded" fallback={fallback} />
         <div className="flex flex-col">
           <TextInline className="font-bold">{name}</TextInline>
           <Text className="text-xs text-slate-400">{meta}</Text>
         </div>
         <div className="flex flex-grow items-center justify-end">
-          <ClickableElement className={classNames('opacity-0 group-hover:opacity-100 text-gray-500', hasError && 'opacity-100 text-current')} onClick={() => handleDelete(file.key)}>
+          <ClickableElement className={clsx('opacity-0 group-hover:opacity-100 text-gray-500', { 'opacity-100 text-current': hasError })}
+            onClick={() => handleDelete(file.key)}>
             <TrashIcon width={20} height={20} />
           </ClickableElement>
         </div>
       </div>
-    </Tooltip>
+    </Tooltip >
   );
 };

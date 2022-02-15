@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Portal } from 'utils';
 import { SnackbarProviderProps, Snack, SnackOptions } from 'types/Snackbar';
 import { SnackbarContext, SnackbarItem } from '.';
@@ -53,7 +53,7 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
       clearAll,
     }}>
       <Portal element={portalLocation}>
-        <div className={classNames('fixed flex z-50 my-1.5', getPosition(anchor))}>
+        <div className={clsx('fixed flex z-50 my-1.5', getPosition(anchor))}>
           {items.map(({ id, duration, ...rest }) => (
             <SnackbarItem
               key={id}

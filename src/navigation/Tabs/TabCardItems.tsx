@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { applyColor } from 'shared/colorpicker';
 import { ClickableElement } from 'inputs';
 import { Scrollable } from 'utils';
@@ -11,15 +11,13 @@ export type TabCardItemProps = {
   accentColor?: Colors;
 };
 
-const TabClasses = 'px-5 py-3 rounded-t rounded-b-none relative overflow-hidden focus:ring-0 border relative z-10 snap-start border-b-0';
-
 export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick, accentColor = 'blue' }) => {
   let color = applyColor(accentColor, '600', 'bg');
   return (
-    <ClickableElement className={classNames(TabClasses, selected ? 'bg-white ' : 'bg-gray-50')} onClick={onClick}>
+    <ClickableElement className={clsx('px-5 py-3 rounded-t rounded-b-none overflow-hidden focus:ring-0 border relative z-10 snap-start border-b-0', selected ? 'bg-white' : 'bg-gray-50')} onClick={onClick}>
       {children}
       {selected && (
-        <div className={classNames('absolute left-0 bottom-0 h-[2px] w-full', color)} ></div>
+        <div className={clsx('absolute left-0 bottom-0 h-[2px] w-full', color)} ></div>
       )
       }
     </ClickableElement >

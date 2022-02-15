@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { applyColor } from 'shared/colorpicker';
 
 export type SwitchProps = {
@@ -30,16 +30,16 @@ export const Switch: React.FC<SwitchProps> = ({
   let colorsRing = applyColor(color, '400', 'ring');
   let { height, width, widthBg } = getSizes(size);
 
-  let labelClasses = classNames(
+  let labelClasses = clsx(
     height, widthBg,
     'relative inline-flex items-center align-center cursor-pointer',
     { 'cursor-not-allowed opacity-40': disabled },
   );
-  let backClasses = classNames(
+  let backClasses = clsx(
     height,
     `transition-all w-full ring-2 ring-gray-300 rounded-full bg-gray-300 absolute peer-checked:${colorsToggle} peer-checked:${colorsRing}`,
   );
-  let btnClasses = classNames(
+  let btnClasses = clsx(
     height, width,
     'bg-white transition-all ease-in-out absolute rounded-full shadow right-full translate-x-full peer-checked:right-0 peer-checked:translate-x-0',
   );

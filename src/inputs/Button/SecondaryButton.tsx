@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { BaseButton, BaseButtonProps } from '.';
 
 export type SecondaryButtonProps = BaseButtonProps;
@@ -10,7 +10,7 @@ export const SecondaryButton: React.FC<SecondaryButtonProps> = ({ children, colo
   let hoverClass = `hover:bg-${color}-200`;
   return (
     <BaseButton
-      className={classNames(bgcolor, textcolor, hoverClass)}
+      className={clsx(bgcolor, textcolor, hoverClass)}
       color={color}
       {...rest}
     >

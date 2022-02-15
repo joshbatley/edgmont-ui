@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Downshift, {
   DownshiftProps, DownshiftState, StateChangeOptions,
 } from 'downshift';
@@ -23,7 +23,7 @@ export const clearInputOnSelectItem = (state: DownshiftState<any>, changes: Stat
 export const Select: React.FC<SelectProps> = ({ itemToString, className, children, ...rest }) => (
   <Downshift itemToString={itemToString} stateReducer={clearInputOnSelectItem} {...rest}>
     {(downshift) => (
-      <div className={classNames(className, 'relative w-full')}>
+      <div className={clsx(className, 'relative w-full')}>
         <SelectContext.Provider value={downshift}>
           {children}
         </SelectContext.Provider>

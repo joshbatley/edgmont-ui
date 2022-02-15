@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs';
 import { Text } from 'data';
 import { SelectorIcon } from 'feedback/Icons/Outline';
@@ -30,10 +30,12 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
     clearSelection();
   };
 
-  let classes = classNames('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error });
-
   return (
-    <OutlineButton className={classes} {...getToggleButtonProps()} {...rest}>
+    <OutlineButton
+      className={clsx('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error })}
+      {...getToggleButtonProps()}
+      {...rest}
+    >
       <Text>{buttonText}</Text>
       <div className="flex space-x-4 items-center">
         {isClearableActive &&

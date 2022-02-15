@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React from 'react';
+import clsx from 'clsx';
 import { LinearSlide } from 'utils';
 
 export type LinearLoaderProps = {
@@ -16,9 +16,9 @@ export const LinearLoader: React.FC<LinearLoaderProps> = ({ color, height = 5 })
   }
   return (
     <div className="overflow-hidden w-full relative rounded" style={{ height }}>
-      <div className={classNames(bgColor, 'rounded w-full h-full absolute inset-0')}></div>
-      <LinearSlide classNames="w-1/3 h-full absolute inset-0">
-        <div className={classNames(fgColor, 'rounded h-full')}></div>
+      <div className={clsx(bgColor, 'rounded w-full h-full absolute inset-0')}></div>
+      <LinearSlide clsx="w-1/3 h-full absolute inset-0">
+        <div className={clsx(fgColor, 'rounded h-full')}></div>
       </LinearSlide>
     </div>
   );

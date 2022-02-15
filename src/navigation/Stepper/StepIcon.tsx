@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { applyColor } from 'shared/colorpicker';
 import { CheckCircleIcon, ExclamationIcon } from 'feedback/Icons/Solid';
 
@@ -34,7 +34,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
         height="24px"
         viewBox="0 0 24 24"
         fill='currentColor'
-        className={classNames(state === 'default' ? 'text-gray-400' : svgColor)}
+        className={clsx(state === 'default' ? 'text-gray-400' : svgColor)}
       >
         <circle cx="12" cy="12" r="12" className="current" />
         <text x="12" y="16" textAnchor="middle" className="text-white font-bold text-xs">{number}</text>

@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type ItemProps = {
   item: any;
@@ -10,7 +10,7 @@ export type ItemProps = {
 export const Item: React.FC<ItemProps> = ({
   item, isLastItem = false, dividerIcon,
 }) => (
-  <div className={classNames('inline-flex items-center', !isLastItem && 'text-gray-500')}>
+  <div className={clsx('inline-flex items-center', { 'text-gray-500': !isLastItem })}>
     {item}
     {!isLastItem && React.cloneElement(dividerIcon, {
       width: 16, height: 16, className: 'inline-block mx-1.5',

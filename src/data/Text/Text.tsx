@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 export type TextProps = {
   children?: React.ReactNode,
@@ -20,7 +20,7 @@ export const TextInline: React.FC<TextProps> = ({ children, as: Component = 'spa
 );
 
 export const TextMono: React.FC<TextProps> = ({ children, as: Component = 'p', className, ...params }) => (
-  <Component className={classnames('font-mono', className)} {...params}>
+  <Component className={clsx('font-mono', className)} {...params}>
     {children}
   </Component>
 );

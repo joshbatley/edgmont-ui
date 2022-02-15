@@ -1,12 +1,14 @@
 import React, { CSSProperties, forwardRef } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 export type CardProps = {
   children: React.ReactNode;
   style?: CSSProperties;
-  classNames?: string;
+  className?: string;
 };
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, classNames, ...rest }, ref) => (
-  <div className={classnames('rounded-md bg-white shadow-sm overflow-hidden', classNames)} ref={ref} {...rest}>{children}</div>
+export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className, ...rest }, ref) => (
+  <div className={clsx('rounded-md bg-white shadow-sm overflow-hidden', className)} ref={ref} {...rest}>
+    {children}
+  </div>
 ));

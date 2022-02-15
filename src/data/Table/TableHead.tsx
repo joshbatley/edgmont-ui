@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type TableHeadProps = {
   headers?: string[];
@@ -7,7 +7,7 @@ export type TableHeadProps = {
 } & React.ComponentPropsWithRef<'thead'>;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, headers, className, sticky, ...rest }, ref) => {
-  let classes = classNames('text-left bg-gray-50', sticky && 'sticky top-0 shadow', className);
+  let classes = clsx('text-left bg-gray-50', { 'sticky top-0 shadow': sticky }, className);
   if (!headers) {
     return (
       <thead ref={ref} className={classes} {...rest}>{children}</thead>

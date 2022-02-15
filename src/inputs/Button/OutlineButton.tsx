@@ -1,21 +1,19 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { BaseButton, BaseButtonProps } from '.';
 
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
-export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, className, ...rest }, ref) => {
-  let bgcolor = 'border border-gray-300 bg-white shadow-sm disabled:bg-gray-100';
-  let textcolor = 'text-gray-700';
-  let hoverClass = 'hover:bg-gray-100';
-  return (
-    <BaseButton
-      className={classNames(bgcolor, textcolor, hoverClass, className)}
-      color="gray"
-      ref={ref}
-      {...rest}
-    >
-      {children}
-    </BaseButton >
-  );
-});
+export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, className, ...rest }, ref) => (
+  <BaseButton
+    className={clsx(
+      'border border-gray-300 bg-white shadow-sm disabled:bg-gray-100 text-gray-700 hover:bg-gray-100',
+      className,
+    )}
+    color="gray"
+    ref={ref}
+    {...rest}
+  >
+    {children}
+  </BaseButton >
+));

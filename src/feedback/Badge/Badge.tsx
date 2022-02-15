@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { applyColor } from 'shared/colorpicker';
 
 export type BadgeProps = {
@@ -31,7 +31,7 @@ export const Badge: React.FC<BadgeProps> = ({ color = 'gray', position = 'NE', c
 
   return (
     <div className="relative inline-block">
-      <div className={classNames('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', colorClass, positionClass)}>
+      <div className={clsx('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', colorClass, positionClass)}>
         {tag}
       </div>
       {children}

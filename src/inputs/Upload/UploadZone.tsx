@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { UploadIcon } from 'feedback/Icons/Outline';
 import { Text, TextInline, List } from 'data';
 import { TileItem } from './TileItem';
@@ -14,18 +14,15 @@ export type UploadZoneProps = {
 export const UploadZone: React.FC<UploadZoneProps> = ({
   showAsTile, filesRender, bottomText = 'Support for a single or bulk upload.', ...rest
 }) => {
-  let baseClasses = 'w-full flex flex-col text-center justify-center items-center rounded border-4 border-dashed px-2 py-5 space-y-2 cursor-pointer';
-  let dragClasses = 'bg-indigo-500 border-indigo-300';
-
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
-      <UploadIcon width={30} height={30} className={classNames('text-gray-500', isDragActive && 'animate-bounce text-white')} />
+      <UploadIcon width={30} height={30} className={clsx('text-gray-500', { 'animate-bounce text-white': isDragActive })} />
       {isDragActive ? <Text className="font-bold text-white">And drop your file to upload</Text> :
         <Text>
           Drag and drop, or <TextInline className="text-indigo-600">click to find</TextInline> a file
         </Text>
       }
-      <Text className={classNames('text-sm', isDragActive ? 'text-white' : 'text-gray-600')}>{bottomText}</Text>
+      <Text className={clsx('text-sm', isDragActive ? 'text-white' : 'text-gray-600')}>{bottomText}</Text>
     </>
   ), [bottomText]);
 
@@ -42,8 +39,8 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   return (
     <BaseUploader
       {...rest}
-      baseClasses={baseClasses}
-      dragActiveClasses={dragClasses}
+      baseClasses='w-full flex flex-col text-center justify-center items-center rounded border-4 border-dashed px-2 py-5 space-y-2 cursor-pointer'
+      dragActiveClasses='bg-indigo-500 border-indigo-300'
       renderUploader={Uploader}
       filesRender={filesRender || defaultRender}
     />

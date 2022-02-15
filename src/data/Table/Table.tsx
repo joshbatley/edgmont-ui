@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type TableProps = {
   containerClasses?: string;
@@ -7,8 +7,8 @@ export type TableProps = {
 } & React.ComponentPropsWithRef<'table'>;
 
 export const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, containerClasses, footer, ...rest }, ref) => (
-  <div style={{ contain: 'paint' }} className={classNames('rounded-md shadow bg-white', !footer && 'pb-1', containerClasses)}>
-    <table ref={ref} className={classNames('w-full relative border-collapse divide-y divider-gray-200', className)} {...rest}>
+  <div style={{ contain: 'paint' }} className={clsx('rounded-md shadow bg-white', { 'pb-1': !footer }, containerClasses)}>
+    <table ref={ref} className={clsx('w-full relative border-collapse divide-y divider-gray-200', className)} {...rest}>
       {children}
     </table>
     {footer && (

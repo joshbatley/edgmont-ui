@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 type MediaComponent = 'video' | 'audio' | 'picture' | 'iframe' | 'img' | 'div';
 
@@ -27,7 +27,12 @@ export const CardMedia: React.FC<CardMediaProps> = ({
     <Component
       style={{ ...style, ...bgImage }}
       src={isMediaComponent ? image || src : undefined}
-      className={classnames(isImageComponent && 'object-cover', isMediaComponent && 'w-full', 'block bg-cover bg-no-repeat bg-center', className)}
+      className={clsx(
+        { 'object-cover': isImageComponent },
+        { 'w-full': isMediaComponent },
+        'block bg-cover bg-no-repeat bg-center',
+        className,
+      )}
       {...rest}
     >
       {children}

@@ -41,11 +41,9 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
 }) => {
   let [monthMenuOpen, setMonthMenuOpen] = useState(false);
   let [itemRef, setItemRef] = useState(null);
-
   let showLeftNav = monthsShown === 1 || customHeaderCount === 0;
   let showRightNav = monthsShown === 1 || customHeaderCount === 1;
   let isOpen = showMonthYearPicker || showYearPicker ? false : monthMenuOpen;
-
   let formatting = (showMonthYearPicker) ? 'yyyy' : 'MMMM yyyy';
 
   let getFriendlyString = () => {

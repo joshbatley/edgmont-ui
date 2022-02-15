@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type LinearProgressProps = {
   color?: ColorsAndShades,
@@ -19,8 +19,8 @@ export const LinearProgress: React.FC<LinearProgressProps> = ({
 
   return (
     <div className="overflow-hidden w-full relative rounded" style={{ height }}>
-      <div className={classNames(bgColor, 'rounded w-full h-full absolute inset-0')}></div>
-      <div className={classNames(fgColor, 'rounded h-full absolute inset-0')} style={{ width: `${percentage}%` }}></div>
+      <div className={clsx(bgColor, 'rounded w-full h-full absolute inset-0')}></div>
+      <div className={clsx(fgColor, 'rounded h-full absolute inset-0')} style={{ width: `${percentage}%` }}></div>
     </div>
   );
 };

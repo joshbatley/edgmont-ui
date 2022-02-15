@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { XIcon } from 'feedback/Icons/Outline';
 import { Title, Panel } from 'data';
 import { Backdrop, stopPropagation } from 'utils';
@@ -29,7 +29,7 @@ export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title
 
   return (
     <Backdrop onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <Panel className={classNames('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
+      <Panel className={clsx('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
         {title && <Header handleClose={handleClose}>{title}</Header>}
         {children}
       </Panel>

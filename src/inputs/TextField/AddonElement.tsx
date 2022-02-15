@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type AddonElementProps = {
   containerClasses: string;
@@ -13,6 +13,6 @@ export const AddonElement: React.FC<AddonElementProps> = ({
 }) =>
   addon ? (
     <div className={containerClasses}>
-      {React.cloneElement(addon as React.ReactElement, { className: classNames(addonClasses), disabled })}
+      {React.cloneElement(addon as React.ReactElement, { className: clsx(addonClasses), disabled })}
     </div>
   ) : null;
