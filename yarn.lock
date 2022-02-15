@@ -1627,11 +1627,7 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-<<<<<<< HEAD
 "@popperjs/core@^2.11.2", "@popperjs/core@^2.5.4", "@popperjs/core@^2.6.0", "@popperjs/core@^2.9.2":
-=======
-"@popperjs/core@^2.11.0", "@popperjs/core@^2.5.4", "@popperjs/core@^2.6.0", "@popperjs/core@^2.9.2":
->>>>>>> main
   version "2.11.2"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
   integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
@@ -9871,7 +9867,6 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-<<<<<<< HEAD
 prism-react-renderer@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.1.tgz#88fc9d0df6bed06ca2b9097421349f8c2f24e30d"
@@ -9882,18 +9877,6 @@ prismjs@^1.21.0:
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.26.0.tgz#16881b594828bb6b45296083a8cbab46b0accd47"
   integrity sha512-HUoH9C5Z3jKkl3UunCyiD5jwk0+Hz0fIgQ2nbwU2Oo/ceuTAQAg+pPVnfdt2TJWRVLcxKh9iuoYDUSc8clb5UQ==
 
-=======
-prism-react-renderer@^1.2.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.1.tgz#88fc9d0df6bed06ca2b9097421349f8c2f24e30d"
-  integrity sha512-xUeDMEz074d0zc5y6rxiMp/dlC7C+5IDDlaEUlcBOFE2wddz7hz5PNupb087mPwTt7T9BrFmewObfCBuf/LKwQ==
-
-prismjs@^1.21.0:
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.26.0.tgz#16881b594828bb6b45296083a8cbab46b0accd47"
-  integrity sha512-HUoH9C5Z3jKkl3UunCyiD5jwk0+Hz0fIgQ2nbwU2Oo/ceuTAQAg+pPVnfdt2TJWRVLcxKh9iuoYDUSc8clb5UQ==
-
->>>>>>> main
 prismjs@~1.25.0:
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
@@ -10176,17 +10159,10 @@ react-draggable@^4.4.3:
     clsx "^1.1.1"
     prop-types "^15.6.0"
 
-<<<<<<< HEAD
 react-dropzone@^12.0.4:
   version "12.0.4"
   resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-12.0.4.tgz#b88eeaa2c7118f7fd042404682b17a1d466f2fcf"
   integrity sha512-fcqHEYe1MzAghU6/Hz86lHDlBNsA+lO48nAcm7/wA+kIzwS6uuJbUG33tBZjksj7GAZ1iUQ6NHwjUURPmSGang==
-=======
-react-dropzone@^11.5.1:
-  version "11.7.1"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.7.1.tgz#3851bb75b26af0bf1b17ce1449fd980e643b9356"
-  integrity sha512-zxCMwhfPy1olUEbw3FLNPLhAm/HnaYH5aELIEglRbqabizKAdHs0h+WuyOpmA+v1JXn0++fpQDdNfUagWt5hJQ==
->>>>>>> main
   dependencies:
     attr-accept "^2.2.2"
     file-selector "^0.4.0"
@@ -10213,11 +10189,7 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-<<<<<<< HEAD
 react-focus-lock@^2.8.1:
-=======
-react-focus-lock@^2.7.1:
->>>>>>> main
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.8.1.tgz#a28f06a4ef5eab7d4ef0d859512772ec1331d529"
   integrity sha512-4kb9I7JIiBm0EJ+CsIBQ+T1t5qtmwPRbFGYFQ0t2q2qIpbFbYTHDjnjJVFB7oMBtXityEOQehblJPjqSIf3Amg==
@@ -10316,11 +10288,7 @@ react-sizeme@^3.0.1:
     shallowequal "^1.1.0"
     throttle-debounce "^3.0.1"
 
-<<<<<<< HEAD
 react-spring@^9.4.3:
-=======
-react-spring@^9.3.3:
->>>>>>> main
   version "9.4.3"
   resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.4.3.tgz#3f697d3d6e990dbf7d182619dc75a72a63a302c1"
   integrity sha512-GGKAqQQ790JLoA2SAUgdJErFRG8oFR6pzX8jnJoqORVWX5Wo9bJUWs4563f2oN19+yQkVhc77neAkqQ7GCN8Lw==
@@ -11947,11 +11915,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-<<<<<<< HEAD
 typescript@^4.5.5:
-=======
-typescript@^4.5.2:
->>>>>>> main
   version "4.5.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
   integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
