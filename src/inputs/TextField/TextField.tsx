@@ -1,6 +1,8 @@
 import React, { forwardRef, ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
 import { BaseInput, BaseInputProps } from './BaseInput';
+import { AddonElement } from './AddonElement';
+import { OptionalIcon } from './OptionalIcon';
 
 export type TextFieldProps = {
   error?: boolean,
@@ -15,12 +17,11 @@ export type TextFieldProps = {
 const defaults = 'border border-gray-300 shadow-sm rounded-md bg-white text-gray-400 flex ';
 const beforeClasses = 'border-r border-gray-300 bg-gray-100 text-gray-500 rounded-l-md flex items-center';
 const afterClasses = 'border-l border-gray-300 bg-gray-100 text-gray-500 rounded-r-md flex items-center';
-const IconClasses = 'flex items-center';
 const focusWith = 'focus-with:outline-none focus-within:ring focus-within:z-10';
 const errorClasses = 'text-red-500 border-red-300 shadow-sm shadow-red-200';
 const disabledClasses = 'bg-gray-200 cursor-not-allowed';
 
-function applySizeClass(size?: Size): string {
+const applySizeClass = (size?: Size) => {
   switch (size) {
     case 'large':
       return 'text-lg px-6 py-4';
@@ -32,19 +33,7 @@ function applySizeClass(size?: Size): string {
     case 'none':
       return '';
   }
-}
-
-const OptionalIcon: React.FC<{ icon: ReactNode, sizingClasses: string }> = ({ icon, sizingClasses }) =>
-  icon ? (<div className={classNames(sizingClasses, IconClasses)}>{icon}</div>) : null;
-
-const AddonElement: React.FC<{ containerClasses: string, addonClasses: string, addon: ReactNode, disabled?: boolean }> = ({
-  containerClasses, addonClasses, addon, disabled,
-}) =>
-  addon ? (
-    <div className={containerClasses}>
-      {React.cloneElement(addon as ReactElement, { className: classNames(addonClasses), disabled })}
-    </div>
-  ) : null;
+};
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefixIcon, suffixIcon,

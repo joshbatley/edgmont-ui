@@ -1,1 +1,2 @@
-export * from './Progress';
+export * from './CircleProgress';
+export * from './LinearProgress';

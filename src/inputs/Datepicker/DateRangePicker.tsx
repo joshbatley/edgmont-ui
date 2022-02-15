@@ -16,17 +16,17 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({ defaultStartDa
   let [endDate, setEndDate] = useState<DateOrNull>(defaultEndDate || null);
   let inputValue = (startDate && endDate) && `${format(startDate, inputValueFormat)} - ${format(endDate, inputValueFormat)}`;
 
-  function clear() {
+  let clear = () => {
     setStartDate(null);
     setEndDate(null);
-  }
+  };
 
-  function handleChange(dates: [DateOrNull, DateOrNull], event?: React.SyntheticEvent<any, Event>) {
+  let handleChange = (dates: [DateOrNull, DateOrNull], event?: React.SyntheticEvent<any, Event>) => {
     let [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
     onChange?.(dates, event);
-  }
+  };
 
   return (
     <BasePicker

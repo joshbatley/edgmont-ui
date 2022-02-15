@@ -23,10 +23,10 @@ const Header: React.FC<{ handleClose: () => void; }> = ({ children, handleClose 
 
 export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title, children, open }) => {
   let [isOpen, setOpen] = useState(false);
-
   if (!open) {
     return null;
   }
+
   return (
     <Backdrop onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
       <Panel className={classNames('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
@@ -36,5 +36,3 @@ export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title
     </Backdrop>
   );
 };
-
-

@@ -30,23 +30,22 @@ export const BaseUploader: React.FC<BaseUploaderProps> = ({
   let [files, setFiles] = useState<AcceptedFile[]>([]);
   let { onDrop, ...otherOptions } = options;
 
-  function wrappedOnDrop(acceptedFiles: File[], fileRejections: FileRejection[], event: DropEvent) {
+  let wrappedOnDrop = (acceptedFiles: File[], fileRejections: FileRejection[], event: DropEvent) => {
     onDrop?.(acceptedFiles, fileRejections, event);
     let accepted = acceptedFiles.map(f => (getMeta(f, [])));
     let rejected = fileRejections.map(f => (getMeta(f.file, f.errors)));
     setFiles([...accepted, ...rejected]);
-  }
+  };
 
   let { getRootProps, getInputProps, isDragActive, open } = useDropzone({ onDrop: wrappedOnDrop, ...otherOptions });
 
-  function handleDelete(key: string) {
+  let handleDelete = (key: string) => {
     setFiles(files.filter(f => f.key !== key));
-  }
+  };
 
   useEffect(() => {
     handleFileUpdate?.(files);
   }, [files, handleFileUpdate]);
-
 
   return (
     <>

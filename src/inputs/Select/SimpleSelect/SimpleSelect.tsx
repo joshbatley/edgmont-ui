@@ -2,7 +2,7 @@ import { ControllerStateAndHelpers, DownshiftProps } from 'downshift';
 import React, { useState } from 'react';
 import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '..';
 
-type SimpleSelectProps = {
+export type SimpleSelectProps = {
   values: Array<any>;
   placeholder?: string;
   error?: boolean
@@ -18,14 +18,14 @@ export const SimpleSelect: React.FC<SimpleSelectProps> = ({
   ...rest
 }) => {
   let [filter, setFilter] = useState<string>('');
-  const filterOptions = values.filter(item => itemToString(item).toLowerCase().includes(filter));
+  let filterOptions = values.filter(item => itemToString(item).toLowerCase().includes(filter));
 
-  function handleOnputValueChange(inputValue: string, stateAndHelpers: ControllerStateAndHelpers<any>) {
+  const handleOnputValueChange = (inputValue: string, stateAndHelpers: ControllerStateAndHelpers<any>) => {
     if (onInputValueChange) {
       onInputValueChange(inputValue, stateAndHelpers);
     }
     setFilter(inputValue);
-  }
+  };
 
   return (
     <Select onInputValueChange={handleOnputValueChange} itemToString={itemToString} {...rest}>

@@ -15,7 +15,6 @@ export const Defualt: Story = ({ ...rest }) => (
   </Panel>
 );
 
-
 export const Button: Story = ({ ...rest }) => (
   <UploadButton {...rest} />
 );

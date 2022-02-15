@@ -14,7 +14,7 @@ const defaultClasses = 'group inline-flex items-center space-x-2 rounded-md sele
 const disabledClasses = 'filter grayscale cursor-not-allowed';
 const isLoadingClasses = 'cursor-wait';
 
-function sizingClasses(size?: Size): string {
+const sizingClasses = (size?: Size) => {
   switch (size) {
     case 'large': return 'px-10 py-4 text-lg font-medium';
     default:
@@ -23,7 +23,7 @@ function sizingClasses(size?: Size): string {
     case 'small': return 'px-2 py-1 text-sm font-normal';
     case 'none': return '';
   }
-}
+};
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   children, size, isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest

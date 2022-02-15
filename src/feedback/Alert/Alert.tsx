@@ -1,15 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { applyColor } from 'shared/colorpicker';
-import {
-  ExclamationCircleIcon,
-  ExclamationIcon,
-  InformationCircleIcon,
-  CheckCircleIcon,
-  XIcon,
-} from 'feedback/Icons/Solid';
 import { Text } from 'data';
-import { ClickableElement, ClickableElementProps } from 'inputs';
+import { getColor, getIcon } from './utils';
+import { CloseBtn } from './CloseBtn';
 
 export type AlertProps = {
   severity?: Severity;
@@ -19,42 +13,6 @@ export type AlertProps = {
   withClose?: () => void;
   className?: string;
 };
-
-function getIcon(severity: Severity) {
-  let props = {
-    height: 22,
-    width: 22,
-  };
-  switch (severity) {
-    case 'error':
-      return <ExclamationCircleIcon {...props} />;
-    case 'warning':
-      return <ExclamationIcon {...props} />;
-    case 'info':
-      return < InformationCircleIcon {...props} />;
-    case 'success':
-      return <CheckCircleIcon {...props} />;
-  }
-}
-
-function getColor(severity: Severity): Colors {
-  switch (severity) {
-    case 'error':
-      return 'red';
-    case 'warning':
-      return 'yellow';
-    case 'info':
-      return 'blue';
-    case 'success':
-      return 'green';
-  }
-}
-
-const CloseBtn: React.FC<ClickableElementProps> = ({ onClick }) => (
-  <ClickableElement className="float-right py-1 px-2" onClick={onClick}>
-    <XIcon width={16} height={16} />
-  </ClickableElement>
-);
 
 export const Alert: React.FC<AlertProps> = ({
   severity, title, icon, children, withClose, dark, className, ...rest

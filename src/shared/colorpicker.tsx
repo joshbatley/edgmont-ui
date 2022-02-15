@@ -1,4 +1,4 @@
-function getWeight(weight: ColorWeights) {
+const getWeight = (weight: ColorWeights) => {
   switch (weight) {
     case 'dark':
       return '700';
@@ -9,9 +9,9 @@ function getWeight(weight: ColorWeights) {
     default:
       return weight;
   }
-}
+};
 
-function applyColor(color: ColorsAndShades, weight: ColorWeights = 'medium', prefix: ColorPrefix = 'text') {
+export const applyColor = (color: ColorsAndShades, weight: ColorWeights = 'medium', prefix: ColorPrefix = 'text') => {
   if (color === 'white') {
     return `${prefix}-white`;
   }
@@ -19,6 +19,4 @@ function applyColor(color: ColorsAndShades, weight: ColorWeights = 'medium', pre
     return `${prefix}-gray-900`;
   }
   return `${prefix}-${color}-${getWeight(weight)}`;
-}
-
-export { applyColor };
+};

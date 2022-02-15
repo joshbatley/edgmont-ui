@@ -3,23 +3,7 @@ import classNames from 'classnames';
 import { Portal } from 'utils';
 import { SnackbarProviderProps, Snack, SnackOptions } from 'types/Snackbar';
 import { SnackbarContext, SnackbarItem } from '.';
-
-function createId() {
-  return Math.random().toString(36).substr(2, 9);
-}
-
-function getPosition(pos: IntercardinalPoints) {
-  switch (pos) {
-    case 'NW':
-      return 'left-0 top-0 flex-col';
-    case 'NE':
-      return 'right-0 top-0 flex-col';
-    case 'SW':
-      return 'left-0 bottom-0 flex-col-reverse space-y-reverse';
-    case 'SE':
-      return 'right-0 bottom-0 flex-col-reverse space-y-reverse';
-  }
-}
+import { createId, getPosition } from './utils';
 
 export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
   anchor = 'NE', children, max = 3, autoHideDuration = 5000, portalLocation,
@@ -39,7 +23,7 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
     }
   }, [items, queue, max]);
 
-  function enqueue(message: string, options?: SnackOptions) {
+  let enqueue = (message: string, options?: SnackOptions) => {
     let item = {
       title: message,
       ...options,
@@ -50,17 +34,17 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
     } else {
       setQueue([...queue, item]);
     }
-  }
+  };
 
-  function dequeue(id: string) {
+  let dequeue = (id: string) => {
     setItems([...items.filter(i => i.id !== id)]);
     setQueue([...queue.filter(i => i.id !== id)]);
-  }
+  };
 
-  function clearAll() {
+  let clearAll = () => {
     setItems([]);
     setQueue([]);
-  }
+  };
 
   return (
     <SnackbarContext.Provider value={{

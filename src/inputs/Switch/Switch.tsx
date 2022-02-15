@@ -7,7 +7,7 @@ export type SwitchProps = {
   size?: 'small' | 'medium';
 } & Omit<React.ComponentPropsWithRef<'input'>, 'size'>;
 
-function getSizes(size: string) {
+const getSizes = (size: string) => {
   if (size === 'medium') {
     return {
       height: 'h-6',
@@ -20,7 +20,7 @@ function getSizes(size: string) {
     width: 'w-4',
     widthBg: 'w-7',
   };
-}
+};
 
 export const Switch: React.FC<SwitchProps> = ({
   color = 'green', size = 'medium', disabled,

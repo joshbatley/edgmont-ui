@@ -17,7 +17,7 @@ type StepperPropsHorizontal = {
 
 export type StepperProps = StepperPropsVertical | StepperPropsHorizontal;
 
-function parseChildren(children: React.ReactNode, step: number): any[] {
+const parseChildren = (children: React.ReactNode, step: number): any[] => {
   return React.Children.toArray(children).map((node, idx) => {
     if (!React.isValidElement(node)) {
       return null;
@@ -31,7 +31,7 @@ function parseChildren(children: React.ReactNode, step: number): any[] {
       node,
     };
   });
-}
+};
 
 export const Stepper: React.FC<StepperProps> = ({
   children, color = 'blue', direction = 'horizontal', step, ...rest
