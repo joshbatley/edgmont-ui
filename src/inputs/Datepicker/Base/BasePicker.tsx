@@ -13,11 +13,8 @@ type SharedProps = {
   showClear?: boolean;
   handleClear?: () => void;
 };
-
 type SelectRange = SharedProps & ({ selectsRange: true } & Omit<ReactDatePickerProps<never, true>, 'isClearable'>);
-
 type SelectSingle = SharedProps & ({ selectsRange?: false } & Omit<ReactDatePickerProps<never, false>, 'isClearable'>);
-
 export type BasePickerProps = SelectRange | SelectSingle;
 
 export const BasePicker: React.FC<BasePickerProps> = ({
@@ -26,15 +23,15 @@ export const BasePicker: React.FC<BasePickerProps> = ({
   let [isOpen, setOpen] = useState(false);
   let [wrappedRef, setWrappedRef] = useState(null);
 
-  function handleChange(value: [Date | null, Date | null] & Date, e: any) {
+  let handleChange = (value: [Date | null, Date | null] & Date, e: any) => {
     let isComplete = (Array.isArray(value) && value[0] && value[1]) || (!Array.isArray(value) && value !== null);
     if (shouldCloseOnSelect && isComplete) {
       setOpen(false);
     }
     onChange(value, e);
-  }
+  };
 
-  const defaults = {
+  let defaults = {
     dateFormat: dateFormat,
     monthsShown: monthsShown,
     showPopperArrow: false,

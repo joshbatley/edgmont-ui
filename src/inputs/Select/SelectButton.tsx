@@ -18,18 +18,17 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
     getToggleButtonProps, itemToString, selectedItem, clearSelection,
   } = useSelectContext();
 
-  let buttonText =
-    children ||
+  let buttonText = children ||
     (itemToString && itemToString(selectedItem)) ||
     (selectedItem && selectedItem.value) ||
     placeholder;
 
   let isClearableActive = isClearable && selectedItem;
 
-  function clear(e: any) {
+  let clear = (e: any) => {
     e.stopPropagation();
     clearSelection();
-  }
+  };
 
   let classes = classNames('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error });
 

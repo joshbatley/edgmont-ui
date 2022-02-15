@@ -19,10 +19,10 @@ const IMAGE_COMPONENTS = ['picture', 'img'];
 export const CardMedia: React.FC<CardMediaProps> = ({
   children, className, as: Component = 'div', image, src, style, ...rest
 }) => {
-
   let isImageComponent = IMAGE_COMPONENTS.indexOf(Component) !== -1;
   let isMediaComponent = MEDIA_COMPONENTS.indexOf(Component) !== -1;
-  const bgImage = !isMediaComponent && image ? { backgroundImage: `url("${image}")` } : {};
+  let bgImage = !isMediaComponent && image ? { backgroundImage: `url("${image}")` } : {};
+
   return (
     <Component
       style={{ ...style, ...bgImage }}

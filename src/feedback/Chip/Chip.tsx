@@ -12,7 +12,7 @@ export type ChipProps = {
   handleDelete?: () => void;
 };
 
-function applySize(size: Size) {
+const applySize = (size: Size) => {
   switch (size) {
     case 'small':
       return 'px-2 py-px text-xs font-bold';
@@ -21,7 +21,7 @@ function applySize(size: Size) {
     case 'large':
       return 'px-3 py-2 text-md font-bold';
   }
-}
+};
 
 export const Chip: React.FC<ChipProps> = ({
   color = 'gray', size = 'small', outline = true,

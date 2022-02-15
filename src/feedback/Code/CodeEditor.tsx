@@ -18,10 +18,10 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
 }) => {
   let [state, setState] = useState(code);
   let Theme = light ? LightTheme : DarkTheme;
-  function handleTextChange(text: string) {
+  let handleTextChange = (text: string) => {
     setState(text);
     handleChange?.(text);
-  }
+  };
 
   return (
     <Wrapper style={Theme.plain}>
@@ -33,4 +33,3 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
     </Wrapper>
   );
 };
-

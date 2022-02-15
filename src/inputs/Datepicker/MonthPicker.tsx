@@ -14,14 +14,14 @@ export const MonthPicker: React.FC<MonthPickerProps> = ({ defaultDate, onChange 
   let [selectedDate, setSelectedDate] = useState<DateOrNull>(defaultDate || null);
   let inputValue = selectedDate && format(selectedDate, inputValueFormat);
 
-  function clear() {
+  let clear = () => {
     setSelectedDate(null);
-  }
+  };
 
-  function handleChange(date: DateOrNull, event?: React.SyntheticEvent<any, Event>) {
+  let handleChange = (date: DateOrNull, event?: React.SyntheticEvent<any, Event>) => {
     setSelectedDate(date);
     onChange?.(date, event);
-  }
+  };
 
   return (
     <BasePicker

@@ -5,7 +5,7 @@ export type BoxProps = {
   children?: React.ReactNode,
 } & React.ComponentPropsWithoutRef<'div'>;
 
-let defaults = {
+const defaults = {
   padding: 'px-6 py-2',
   margin: '',
 };

@@ -9,15 +9,15 @@ const CssKeys: Record<Property, RegExp> = {
   height: /^(h-)/g,
 };
 
-function anyArrayValueMatchRgx(rgx: RegExp, arr: string[]): boolean {
+const anyArrayValueMatchRgx = (rgx: RegExp, arr: string[]): boolean => {
   return arr.some(x => x.match(rgx));
-}
+};
 
-export function overriderDefault(defaults: OverriderDefaults, overrider = ''): string {
+export const overriderDefault = (defaults: OverriderDefaults, overrider = ''): string => {
   let overriderArr = overrider.split(' ');
   let Props = Object.keys(defaults).map((v) => ({
     [defaults[v as Property]]: !anyArrayValueMatchRgx(CssKeys[v as Property], overriderArr),
   }));
 
   return classNames(Props, overrider);
-}
+};

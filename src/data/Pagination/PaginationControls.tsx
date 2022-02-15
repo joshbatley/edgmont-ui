@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
-import { ButtonGroup, HighlightButton } from 'inputs';
-import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from 'feedback/Icons/Outline';
 import classNames from 'classnames';
+import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from 'feedback/Icons/Outline';
+import { ButtonGroup, HighlightButton } from 'inputs';
+import { calculatePageNumbers } from './utils';
 
 export type PaginationProps = {
   skip: number;
@@ -11,37 +12,7 @@ export type PaginationProps = {
   size?: Size;
 };
 
-const arrayRange = (from: number, to: number) =>
-  Array.from(Array(Math.max(0, to - from + 1)), (_, idx) => idx + from);
-
-const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(value, max));
 const ELLIPSIS_ELEMENT = <DotsHorizontalIcon width={16} height={20} />;
-
-const calculatePageNumbers = (totalPages: number, currentPage: number) => {
-  let pageNeighbours = 1;
-  let totalNumbers = 7;
-  let totalControls = totalNumbers + pageNeighbours;
-
-  if (totalPages < totalControls) {
-    return arrayRange(1, totalPages);
-  }
-  let minPageNumber = 3;
-  let maxPageNumber = totalPages - 2;
-
-  let startPage = clamp(currentPage - pageNeighbours, minPageNumber, totalPages - 4);
-  let endPage = clamp(currentPage + pageNeighbours, 5, maxPageNumber);
-
-  let hasLeftEllipsis = startPage > minPageNumber;
-  let hasRightEllipsis = endPage < maxPageNumber;
-
-  return [
-    1,
-    hasLeftEllipsis ? ELLIPSIS_ELEMENT : 2,
-    ...arrayRange(startPage, endPage),
-    hasRightEllipsis ? ELLIPSIS_ELEMENT : totalPages - 1,
-    totalPages,
-  ];
-};
 
 export const PaginationControls: React.FC<PaginationProps> = ({
   skip, limit, itemCount, setSkip, size,
@@ -50,7 +21,7 @@ export const PaginationControls: React.FC<PaginationProps> = ({
   let totalPages = Math.ceil(itemCount / limit);
 
   let pages = useMemo(() => {
-    return calculatePageNumbers(totalPages, currentPage);
+    return calculatePageNumbers(totalPages, currentPage, ELLIPSIS_ELEMENT);
   }, [totalPages, currentPage]);
 
   let handlePageClick = (page: number | JSX.Element) => {

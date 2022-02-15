@@ -15,8 +15,7 @@ export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index })
     itemToString,
   } = useSelectContext();
 
-  let itemText =
-    children ||
+  let itemText = children ||
     (itemToString && itemToString(item)) ||
     (item && item.value);
 
