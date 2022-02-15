@@ -14,6 +14,10 @@ export default {
       }),
     },
   },
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    'node_modules/edgmont-ui/**/*.{js,jsx,ts,tsx}',
+  ],
   safelist: [
     {
       pattern: /pl-.*/,
