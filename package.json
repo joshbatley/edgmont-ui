@@ -28,10 +28,11 @@
     "create-ignore": "echo '*\n!.gitkeep' > ./docs/.gitignore",
     "create-keep": "touch ./docs/.gitkeep",
     "create-doc-files": "yarn create-ignore && yarn create-cname && yarn create-keep",
+    "copy-preset": "cp preset.js docs/preset.js",
     "build-storybook": "build-storybook -o ./docs",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
     "build-tailwind": "tailwind  -i ./src/index.css -o ./dist/edgmont.css --postcss ./postcss.config.js --minify",
-    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname"
+    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname && copy-preset"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
