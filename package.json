@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "start": "yarn storybook",
-    "storybook": "start-storybook -p 6006 --no-manager-cache",
+    "storybook": "start-storybook -p 6006 --no-manager-cache --static-dir .",
     "clean-dist": "rm -rf dist && mkdir dist",
     "rollup": "rollup -c rollup.config.js",
     "build": "yarn clean-dist && yarn rollup && yarn build-tailwind",
@@ -32,7 +32,7 @@
     "build-storybook": "build-storybook -o ./docs",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
     "build-tailwind": "tailwind  -i ./src/index.css -o ./dist/edgmont.css --postcss ./postcss.config.js --minify",
-    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname && copy-preset"
+    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn create-cname && yarn copy-preset"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
