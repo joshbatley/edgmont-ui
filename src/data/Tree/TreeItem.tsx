@@ -55,8 +55,8 @@ export const TreeItem: React.FC<TreeItemProps> = ({
   }, [nodeId, onClick, toggleItem, blockNode]);
 
   let btnClass = clsx(
-    `pl-${blockNode ? (level * 3 - 1) : level * 3} inline-flex focus:ring-0 group rounded-sm`,
-    { 'py-0.5 my-0.5 pr-2 hover:bg-gray-100': blockNode },
+    'inline-flex focus:ring-0 group rounded-sm',
+    { 'py-0.5 my-0.5 pr-2 hover:bg-gray-100': !blockNode },
     { 'bg-gray-200': active && !blockNode },
     { 'cursor-not-allowed hover:bg-transparent text-gray-400 pointer-events-none': disabled },
     className,
@@ -71,7 +71,7 @@ export const TreeItem: React.FC<TreeItemProps> = ({
 
   return (
     <>
-      <ClickableElement className={btnClass} onClick={handleClick}>
+      <ClickableElement style={{ paddingLeft: blockNode ? level * 9 : level * 12 }} className={btnClass} onClick={handleClick}>
         {IconComp}
         <div className={labelClass}>{label}</div>
       </ClickableElement>

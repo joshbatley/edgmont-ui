@@ -6,7 +6,7 @@ module.exports = {
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  typescript: {
+  "typescript": {
     check: true,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -38,5 +38,6 @@ module.exports = {
       },
     },
   ],
+  "staticDirs": ['../'],
   "framework": "@storybook/react",
 }

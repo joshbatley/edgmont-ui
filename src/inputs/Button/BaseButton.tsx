@@ -4,7 +4,7 @@ import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
   size?: Size,
-  color?: ColorsAndShades;
+  color?: ColorsAndWhite;
   isLoading?: boolean,
   as?: React.ElementType,
 } & React.ComponentPropsWithoutRef<'button'>;

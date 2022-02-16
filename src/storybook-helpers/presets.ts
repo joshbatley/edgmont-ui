@@ -1,10 +1,15 @@
-const colorSelectWithWhite = {
-  options: ['gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink'],
+type Option<T> = {
+  options: T,
+  control: any;
+};
+
+const colorSelectWithWhite: Option<ColorsAndWhite[]> = {
+  options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink', 'white'],
   control: { type: 'select' },
 };
 
-const colorSelect = {
-  options: ['primary', 'gray', 'green', 'red', 'yellow', 'blue', 'purple', 'teal', 'pink'],
+const colorSelect: Option<Colors[]> = {
+  options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink'],
   control: { type: 'select' },
 };
 
@@ -22,7 +27,6 @@ const severitySelect = {
   options: ['error', 'warning', 'info', 'success'],
   control: { type: 'select' },
 };
-
 
 const directionOptions = ['top', 'right', 'bottom', 'left'].map(k => [k + '-start', k, k + '-end']).flat();
 

@@ -82,7 +82,7 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
         </ClickableElement>
         {showRightNav && <RightNavigation increaseMonth={canModifyMonths(increaseMonth)} increaseYear={increaseYearFn} />}
       </div>
-      <Menu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen} maxHeight={200}>
+      <Menu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen} className="max-height-[200px]">
         {months.map((month, idx) => (
           <MenuItem key={month} onClick={() => handleMonthChange(idx)}>{month}</MenuItem>
         ))}

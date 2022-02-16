@@ -23,15 +23,3 @@ export const getIcon = (severity: Severity) => {
   }
 };
 
-export const getColor = (severity: Severity): Colors => {
-  switch (severity) {
-    case 'error':
-      return 'red';
-    case 'warning':
-      return 'yellow';
-    case 'info':
-      return 'blue';
-    case 'success':
-      return 'green';
-  }
-};

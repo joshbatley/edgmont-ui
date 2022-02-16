@@ -11,12 +11,9 @@ const getWeight = (weight: ColorWeights) => {
   }
 };
 
-export const applyColor = (color: ColorsAndShades, weight: ColorWeights = 'medium', prefix: ColorPrefix = 'text') => {
+export const applyColor = (color: ColorsAndWhite, weight: ColorWeights = 'medium', prefix: ColorPrefix = 'text') => {
   if (color === 'white') {
     return `${prefix}-white`;
-  }
-  if (color === 'black') {
-    return `${prefix}-gray-900`;
   }
   return `${prefix}-${color}-${getWeight(weight)}`;
 };

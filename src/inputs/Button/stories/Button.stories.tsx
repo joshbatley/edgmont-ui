@@ -29,16 +29,9 @@ export const Sizes: Story = ({ children, ...rest }) => (
 
 export const All: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
-    <PrimaryButton color="primary">{children}</PrimaryButton>
-    <PrimaryButton color="gray">{children}</PrimaryButton>
-    <PrimaryButton color="green">{children}</PrimaryButton>
-    <PrimaryButton color="red">{children}</PrimaryButton>
-    <PrimaryButton color="yellow">{children}</PrimaryButton>
-    <PrimaryButton color="blue">{children}</PrimaryButton>
-    <PrimaryButton color="purple">{children}</PrimaryButton>
-    <PrimaryButton color="teal">{children}</PrimaryButton>
-    <PrimaryButton color="pink">{children}</PrimaryButton>
-    <PrimaryButton color="white">{children}</PrimaryButton>
+    {colorSelectWithWhite.options.map((c) => (
+      <PrimaryButton key={c} color={c}>{children}</PrimaryButton>
+    ))}
   </div>);
 
 export const Loading: Story = ({ children, ...rest }) => (

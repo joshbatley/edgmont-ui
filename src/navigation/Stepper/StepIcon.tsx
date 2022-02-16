@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import { applyColor } from 'shared/colorpicker';
 import { CheckCircleIcon, ExclamationIcon } from 'feedback/Icons/Solid';
 
 export type StepIconProps = {
@@ -11,19 +10,29 @@ export type StepIconProps = {
   color?: Colors;
 };
 
-export const StepIcon: React.FC<StepIconProps> = ({
-  state = 'default', icon, number, color = 'blue', error,
-}) => {
-  let svgColor = applyColor(color, '500', 'text');
-  let svgErrorColor = applyColor('red', '500', 'text');
+const classes: Record<Colors, string> = {
+  primary: 'text-primary-500',
+  gray: 'text-gray-500',
+  green: 'text-green-500',
+  lime: 'text-lime-500',
+  red: 'text-red-500',
+  yellow: 'text-yellow-500',
+  blue: 'text-blue-500',
+  purple: 'text-purple-500',
+  orange: 'text-orange-500',
+  pink: 'text-pink-500',
+};
 
+export const StepIcon: React.FC<StepIconProps> = ({
+  state = 'default', icon, number, color = 'primary', error,
+}) => {
   if (icon) {
     return <>{icon}</>;
   }
 
   if (error) {
     return (
-      <ExclamationIcon width={24} height={24} className={svgErrorColor} viewBox="2 2 16 16" />
+      <ExclamationIcon width={24} height={24} className="text-red-500" viewBox="2 2 16 16" />
     );
   }
 
@@ -34,7 +43,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
         height="24px"
         viewBox="0 0 24 24"
         fill='currentColor'
-        className={clsx(state === 'default' ? 'text-gray-400' : svgColor)}
+        className={clsx(state === 'default' ? 'text-gray-400' : classes[color])}
       >
         <circle cx="12" cy="12" r="12" className="current" />
         <text x="12" y="16" textAnchor="middle" className="text-white font-bold text-xs">{number}</text>
@@ -43,6 +52,6 @@ export const StepIcon: React.FC<StepIconProps> = ({
   }
 
   return (
-    <CheckCircleIcon width={24} height={24} className={svgColor} viewBox="2 2 16 16" />
+    <CheckCircleIcon width={24} height={24} className={classes[color]} viewBox="2 2 16 16" />
   );
 };

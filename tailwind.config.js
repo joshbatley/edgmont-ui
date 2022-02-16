@@ -1,16 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{css,ts}"],
-  safelist: [
-    {
-      pattern: /.*/,
-    }
-  ],
-  theme: {
-    extend: {
-      colors: ({ colors }) => ({
-        primary: colors.indigo,
-        gray: colors.slate,
-      }),
-    }
-  },
+  presets: [
+    require('./preset'),
+  ]
 }
