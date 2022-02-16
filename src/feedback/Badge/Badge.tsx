@@ -38,7 +38,7 @@ const classes: Record<ColorsAndWhite, string> = {
   white: 'bg-white text-gray-900 shadow-sm',
 };
 
-export const Badge: React.FC<BadgeProps> = ({ color = 'gray', position = 'NE', children, tag }) => (
+export const Badge: React.FC<BadgeProps> = ({ color = 'primary', position = 'NE', children, tag }) => (
   <div className="relative inline-block">
     <div className={clsx('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', classes[color], getPosition(position))}>
       {tag}

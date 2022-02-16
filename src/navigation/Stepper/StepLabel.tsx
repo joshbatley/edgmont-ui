@@ -11,7 +11,7 @@ export type StepLabelProps = {
 };
 
 export const StepLabel: React.FC<StepLabelProps> = ({
-  icon, children, idx = 0, state, error, color,
+  icon, children, idx = 0, state, error, color = 'primary',
 }) => {
   let { direction, alternativeLabel, noOfItems } = useStepperContext();
 

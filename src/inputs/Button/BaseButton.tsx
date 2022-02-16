@@ -21,7 +21,7 @@ const sizingClasses = (size?: Size) => {
 };
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size, isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest
+  children, size, isLoading, color = 'primary', disabled, className, as: Component = 'button', ...rest
 }, ref) => {
   let classes = clsx(
     'group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring',

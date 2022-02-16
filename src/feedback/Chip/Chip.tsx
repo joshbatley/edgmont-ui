@@ -36,7 +36,7 @@ const classes: Record<Colors, string> = {
 };
 
 export const Chip: React.FC<ChipProps> = ({
-  color = 'gray', size = 'small', handleDelete, children,
+  color = 'primary', size = 'small', handleDelete, children,
 }) => (
   <div className={clsx(classes[color], applySize(size), 'rounded-lg inline-flex space-x-2 justify-center items-center w-fit')}>
     <Text>{children}</Text>

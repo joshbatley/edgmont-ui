@@ -35,7 +35,7 @@ const classes: Record<Colors, string> = {
 };
 
 export const Switch: React.FC<SwitchProps> = ({
-  color = 'green', size = 'medium', disabled,
+  color = 'primary', size = 'medium', disabled,
   ...rest
 }) => {
   let { height, width, widthBg } = getSizes(size);

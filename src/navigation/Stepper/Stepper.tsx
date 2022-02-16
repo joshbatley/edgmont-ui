@@ -34,7 +34,7 @@ const parseChildren = (children: React.ReactNode, step: number): any[] => {
 };
 
 export const Stepper: React.FC<StepperProps> = ({
-  children, color = 'blue', direction = 'horizontal', step, ...rest
+  children, color = 'primary', direction = 'horizontal', step, ...rest
 }) => {
   let alternativeLabel = rest.hasOwnProperty('alternativeLabel') ? (rest as StepperPropsHorizontal).alternativeLabel : false;
   let items = parseChildren(children, step);
