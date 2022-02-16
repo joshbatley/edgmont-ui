@@ -41,11 +41,9 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
 }) => {
   let [monthMenuOpen, setMonthMenuOpen] = useState(false);
   let [itemRef, setItemRef] = useState(null);
-
   let showLeftNav = monthsShown === 1 || customHeaderCount === 0;
   let showRightNav = monthsShown === 1 || customHeaderCount === 1;
   let isOpen = showMonthYearPicker || showYearPicker ? false : monthMenuOpen;
-
   let formatting = (showMonthYearPicker) ? 'yyyy' : 'MMMM yyyy';
 
   let getFriendlyString = () => {
@@ -84,7 +82,7 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
         </ClickableElement>
         {showRightNav && <RightNavigation increaseMonth={canModifyMonths(increaseMonth)} increaseYear={increaseYearFn} />}
       </div>
-      <Menu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen} maxHeight={200}>
+      <Menu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen} className="max-height-[200px]">
         {months.map((month, idx) => (
           <MenuItem key={month} onClick={() => handleMonthChange(idx)}>{month}</MenuItem>
         ))}

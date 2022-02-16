@@ -1,6 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
-import { applyColor } from 'shared/colorpicker';
+import clsx from 'clsx';
 
 export type BaseControlProps = {
   labelText?: string;
@@ -10,28 +9,51 @@ export type BaseControlProps = {
   error?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
-export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, color = 'blue', icon, rounded = false, disabled, error, ...rest
-}) => {
-  let colorClass = applyColor(color, '500', 'bg');
-  let colorHightlightClass = applyColor(color, '600', 'bg');
+const classes: Record<Colors, string> = {
+  primary: 'peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600',
+  gray: 'peer-checked:bg-gray-500 group-hover:peer-checked:bg-gray-600',
+  green: 'peer-checked:bg-green-500 group-hover:peer-checked:bg-green-600',
+  lime: 'peer-checked:bg-lime-500 group-hover:peer-checked:bg-lime-600',
+  red: 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600',
+  yellow: 'peer-checked:bg-yellow-500 group-hover:peer-checked:bg-yellow-600',
+  blue: 'peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600',
+  purple: 'peer-checked:bg-purple-500 group-hover:peer-checked:bg-purple-600',
+  orange: 'peer-checked:bg-orange-500 group-hover:peer-checked:bg-orange-600',
+  pink: 'peer-checked:bg-pink-500 group-hover:peer-checked:bg-pink-600',
+};
 
-  let boxClasses = classNames(
+const iconText: Record<Colors, string> = {
+  primary: 'group-hover:text-primary-500',
+  gray: 'group-hover:text-gray-500',
+  green: 'group-hover:text-green-500',
+  lime: 'group-hover:text-lime-500',
+  red: 'group-hover:text-red-500',
+  yellow: 'group-hover:text-yellow-500',
+  blue: 'group-hover:text-blue-500',
+  purple: 'group-hover:text-purple-500',
+  orange: 'group-hover:text-orange-500',
+  pink: 'group-hover:text-pink-500',
+};
+
+export const BaseControl: React.FC<BaseControlProps> = ({
+  labelText, color = 'primary', icon, rounded = false, disabled, error, ...rest
+}) => {
+  let boxClasses = clsx(
     'bg-white w-full h-full absolute',
-    disabled ? 'bg-gray-300 peer-checked:bg-gray-400' : `peer-checked:${colorClass} group-hover:peer-checked:${colorHightlightClass}`,
-    error && 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600',
+    disabled ? 'bg-gray-300 peer-checked:bg-gray-400' : classes[color],
+    { 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600': error },
   );
-  let btnClasses = classNames(
+  let btnClasses = clsx(
     'relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2',
-    rounded ? 'rounded-full ' : 'rounded-md',
-    error && 'border-red-300 shadow-red-200',
+    rounded ? 'rounded-full' : 'rounded-md',
+    { 'border-red-300 shadow-red-200': error },
   );
-  let labelClasses = classNames(
+  let labelClasses = clsx(
     disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     'group flex space-x-2 items-center',
   );
-  let iconClasses = classNames(
-    disabled || `group-hover:text-${color}-500`,
+  let iconClasses = clsx(
+    { [iconText[color]]: !disabled },
     'text-transparent z-10 relative peer-checked:text-white',
   );
   return (

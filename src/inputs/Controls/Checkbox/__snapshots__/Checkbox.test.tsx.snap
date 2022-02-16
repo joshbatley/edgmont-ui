@@ -13,11 +13,11 @@ exports[`Checkbox test should errored with disabled classes 1`] = `
         type="checkbox"
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
       />
       <svg
         aria-hidden="true"
-        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
         fill="none"
         height="16"
         stroke="currentColor"
@@ -50,11 +50,11 @@ exports[`Checkbox test should render 1`] = `
         type="checkbox"
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600"
+        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600"
       />
       <svg
         aria-hidden="true"
-        class="group-hover:text-blue-500 text-transparent z-10 relative peer-checked:text-white"
+        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
         fill="none"
         height="16"
         stroke="currentColor"

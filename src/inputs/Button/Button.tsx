@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {
   ClickableElement,
   ClickableElementProps,
@@ -17,6 +17,7 @@ type Highlight = { variant: 'Highlight' } & HighlightButtonProps;
 type Outline = { variant: 'Outline' } & OutlineButtonProps;
 type Primary = { variant: 'Primary' } & PrimaryButtonProps;
 type Secondary = { variant: 'Secondary' } & SecondaryButtonProps;
+
 export type ButtonProps = Clickable | Highlight | Outline | Primary | Secondary;
 
 const getComp = (variant: ButtonVariant) => {
@@ -34,9 +35,9 @@ const getComp = (variant: ButtonVariant) => {
   }
 };
 
-export const Button: React.FC<ButtonProps> = ({ variant, ...rest }) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ variant, ...rest }, ref) => {
   let Comp = getComp(variant);
   return (
-    <Comp {...rest} />
+    <Comp ref={ref} {...rest} />
   );
-};
+});

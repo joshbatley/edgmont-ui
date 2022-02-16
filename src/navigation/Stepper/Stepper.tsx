@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { StepperContext } from '.';
 
 type StepperPropsVertical = {
@@ -34,16 +34,15 @@ const parseChildren = (children: React.ReactNode, step: number): any[] => {
 };
 
 export const Stepper: React.FC<StepperProps> = ({
-  children, color = 'blue', direction = 'horizontal', step, ...rest
+  children, color = 'primary', direction = 'horizontal', step, ...rest
 }) => {
   let alternativeLabel = rest.hasOwnProperty('alternativeLabel') ? (rest as StepperPropsHorizontal).alternativeLabel : false;
   let items = parseChildren(children, step);
-  let directionClass = classNames(direction === 'vertical' && 'flex-col h-full items-start');
   return (
     <StepperContext.Provider value={{
       noOfItems: items.length - 1, activeStep: step, color, direction, alternativeLabel,
     }}>
-      <div className={classNames(directionClass, 'flex relative')}>
+      <div className={clsx({ 'flex-col h-full items-start': direction === 'vertical' }, 'flex relative')}>
         {items.map(({ node, ...itemRest }) => React.cloneElement(node, { ...itemRest, color }))}
       </div>
     </StepperContext.Provider>

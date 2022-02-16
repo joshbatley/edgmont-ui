@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type TabPaneProps = {
   selected?: boolean;
@@ -19,7 +19,7 @@ export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest })
   selected ? <div className="px-4 py-5" {...rest}>{children}</div> : null;
 
 export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => (
-  <div className={classNames(type === 'card' && 'bg-white border rounded-b')}>
+  <div className={clsx({ 'bg-white border rounded-b': type === 'card' })}>
     {tabs.map(({ key, children, ...rest }) => (
       <TabPane
         selected={selected === key}

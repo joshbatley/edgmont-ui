@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { StepIcon, useStepperContext } from '.';
 
 export type StepLabelProps = {
@@ -11,24 +11,24 @@ export type StepLabelProps = {
 };
 
 export const StepLabel: React.FC<StepLabelProps> = ({
-  icon, children, idx = 0, state, error, color,
+  icon, children, idx = 0, state, error, color = 'primary',
 }) => {
   let { direction, alternativeLabel, noOfItems } = useStepperContext();
 
-  let lineAlternativeClasses = classNames(
+  let lineAlternativeClasses = clsx(
     'bg-gray-300 absolute top-3 flex-auto',
     direction === 'vertical' ? 'h-full w-px' : 'h-px',
   );
-  let lineClasses = classNames(
+  let lineClasses = clsx(
     'bg-gray-300 flex-auto w-px',
     direction === 'vertical' ? 'h-full' : 'h-px',
   );
-  let lineContainerClass = classNames(
+  let lineContainerClass = clsx(
     'flex-auto flex mx-3 w-px',
     !alternativeLabel && ' items-center',
     direction === 'vertical' && 'my-3',
   );
-  let labelClasses = classNames(
+  let labelClasses = clsx(
     'flex items-center justify-center relative text-sm',
     alternativeLabel ? 'flex-col flex-1' : 'space-x-2',
   );

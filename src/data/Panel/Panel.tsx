@@ -1,6 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export const Panel: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ className, children, ...rest }) => (
-  <div className={classNames('bg-white shadow rounded', className)} {...rest}>{children}</div>
+  <div className={clsx('bg-white shadow rounded', className)} {...rest}>{children}</div>
 );

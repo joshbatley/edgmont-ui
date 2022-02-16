@@ -1,6 +1,5 @@
 import React, { useRef, forwardRef, useEffect, useState } from 'react';
-import classNames from 'classnames';
-import { applyColor } from 'shared/colorpicker';
+import clsx from 'clsx';
 import { ClickableElement } from 'inputs';
 import { Scrollable } from 'utils';
 
@@ -9,10 +8,8 @@ export type TabNavItemProps = {
   children: React.ReactNode;
 };
 
-const TabClasses = 'px-4 py-3 rounded-none relative overflow-hidden first-of-type:rounded-l last-of-type:rounded-r-md focus:ring-0';
-
 export const TabNavItem = forwardRef<HTMLButtonElement, TabNavItemProps>(({ children, onClick }, ref) => (
-  <ClickableElement className={classNames(TabClasses)} onClick={onClick} ref={ref}>
+  <ClickableElement className='px-4 py-3 rounded-none relative overflow-hidden first-of-type:rounded-l last-of-type:rounded-r-md focus:ring-0' onClick={onClick} ref={ref}>
     {children}
   </ClickableElement>
 ));
@@ -24,10 +21,22 @@ export type TabNavItemsProps = {
   accentColor?: Colors;
 };
 
+const classes: Record<Colors, string> = {
+  primary: 'bg-primary-600',
+  gray: 'bg-gray-600',
+  green: 'bg-green-600',
+  lime: 'bg-lime-600',
+  red: 'bg-red-600',
+  yellow: 'bg-yellow-600',
+  blue: 'bg-blue-600',
+  purple: 'bg-purple-600',
+  orange: 'bg-orange-600',
+  pink: 'bg-pink-600',
+};
+
 export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange, accentColor = 'blue' }) => {
   let ref = useRef<HTMLButtonElement>(null);
   let [styles, setStyles] = useState({ width: 0, left: 0 });
-  let color = applyColor(accentColor, '600', 'bg');
 
   useEffect(() => {
     setStyles({
@@ -46,7 +55,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
             onClick={() => onChange(key)}
           >{tab}</TabNavItem>
         ))}
-        <div className={classNames(color, 'h-1 relative transition-all')} style={{ ...styles }} />
+        <div className={clsx(classes[accentColor], 'h-1 relative transition-all')} style={{ ...styles }} />
       </div>
     </Scrollable>
   );

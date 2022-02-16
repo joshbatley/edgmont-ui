@@ -30,7 +30,6 @@ export const Colors: Story = ({ ...rest }) => (
     <Chip {...rest} color="pink">Chip</Chip>
     <Chip {...rest} color="purple">Chip</Chip>
     <Chip {...rest} color="red">Chip</Chip>
-    <Chip {...rest} color="teal">Chip</Chip>
     <Chip {...rest} color="yellow">Chip</Chip>
   </div>
 );

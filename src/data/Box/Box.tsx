@@ -1,24 +1,13 @@
 import React from 'react';
-import { overriderDefault } from 'shared/override-default';
+import clsx from 'clsx';
 
 export type BoxProps = {
   children?: React.ReactNode,
 } & React.ComponentPropsWithoutRef<'div'>;
 
-const defaults = {
-  padding: 'px-6 py-2',
-  margin: '',
-};
+export const Box: React.FC<BoxProps> = ({ children, className, ...rest }) => (
+  <div className={clsx('px-6 py-2', className)} {...rest}>
+    {children}
+  </div>
+);
 
-export const Box: React.FC<BoxProps> = ({
-  children,
-  className,
-  ...rest
-}: BoxProps) => {
-  let overriders = overriderDefault(defaults, className);
-  return (
-    <div className={overriders} {...rest}>
-      {children}
-    </div>
-  );
-};

@@ -1,18 +1,13 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
   size?: Size,
-  color?: ColorsAndShades;
+  color?: ColorsAndWhite;
   isLoading?: boolean,
   as?: React.ElementType,
 } & React.ComponentPropsWithoutRef<'button'>;
-
-const defaultClasses = 'group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring';
-
-const disabledClasses = 'filter grayscale cursor-not-allowed';
-const isLoadingClasses = 'cursor-wait';
 
 const sizingClasses = (size?: Size) => {
   switch (size) {
@@ -26,16 +21,16 @@ const sizingClasses = (size?: Size) => {
 };
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size, isLoading, color = 'gray', disabled, className, as: Component = 'button', ...rest
+  children, size, isLoading, color = 'primary', disabled, className, as: Component = 'button', ...rest
 }, ref) => {
-  let sizing = sizingClasses(size);
-  let classes = classNames(
-    defaultClasses,
-    sizing,
+  let classes = clsx(
+    'group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring',
+    sizingClasses(size),
+    { 'filter grayscale cursor-not-allowed': disabled },
+    { 'cursor-wait': isLoading },
     className,
-    { [disabledClasses]: disabled },
-    { [isLoadingClasses]: isLoading },
   );
+
   return (
     <Component ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
       {isLoading && (<CircleLoader color={color} height={16} width={16} />)}

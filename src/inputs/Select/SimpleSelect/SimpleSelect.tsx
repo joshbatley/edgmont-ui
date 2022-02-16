@@ -1,5 +1,5 @@
-import { ControllerStateAndHelpers, DownshiftProps } from 'downshift';
 import React, { useState } from 'react';
+import { ControllerStateAndHelpers, DownshiftProps } from 'downshift';
 import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '..';
 
 export type SimpleSelectProps = {

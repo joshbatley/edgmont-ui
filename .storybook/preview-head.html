@@ -1,20 +1,11 @@
+<!-- Dirty little hack to make sure there a single source of truth when it comes to colours -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: ({ colors }) => ({
-          primary: colors.indigo,
-          gray: colors.slate,
-          green: colors.emerald,
-          red: colors.rose,
-          yellow: colors.amber,
-          blue: colors.sky,
-          purple: colors.indigo,
-          teal: colors.teal,
-          pink: colors.pink,
-        }),
-      },
-    },
+  var module = { }
+</script>
+<script src="preset.js"></script>
+<script>
+  tailwind.config =  {
+    theme: module.exports.theme
   }
 </script>

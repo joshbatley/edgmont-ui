@@ -1,14 +1,14 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite } from 'storybook-helpers/presets';
+import { colorSelect } from 'storybook-helpers/presets';
 import { Switch } from '.';
 
 export default {
   title: 'Inputs/Switch',
   component: Switch,
   argTypes: {
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 
@@ -21,13 +21,9 @@ export const Sizes: Story = ({ ...rest }) =>
 
 export const Colors: Story = ({ ...rest }) =>
   <div className="space-x-2">
-    <Switch color="gray" checked {...rest} />
-    <Switch color="blue" checked {...rest} />
-    <Switch color="green" checked {...rest} />
-    <Switch color="pink" checked {...rest} />
-    <Switch color="purple" checked {...rest} />
-    <Switch color="teal" checked {...rest} />
-    <Switch color="yellow" checked {...rest} />
+    {colorSelect.options.map((c) => (
+      <Switch key={c} color={c} checked />
+    ))}
   </div>;
 
 export const Disabled: Story = ({ ...rest }) =>

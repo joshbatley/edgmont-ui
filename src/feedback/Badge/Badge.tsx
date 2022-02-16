@@ -1,6 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
-import { applyColor } from 'shared/colorpicker';
+import clsx from 'clsx';
 
 export type BadgeProps = {
   color?: Colors;
@@ -25,16 +24,25 @@ const getPosition = (position: IntercardinalPoints) => {
   return classes;
 };
 
-export const Badge: React.FC<BadgeProps> = ({ color = 'gray', position = 'NE', children, tag }) => {
-  let colorClass = applyColor(color, '600', 'bg');
-  let positionClass = getPosition(position);
-
-  return (
-    <div className="relative inline-block">
-      <div className={classNames('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', colorClass, positionClass)}>
-        {tag}
-      </div>
-      {children}
-    </div>
-  );
+const classes: Record<ColorsAndWhite, string> = {
+  primary: 'bg-primary-600',
+  gray: 'bg-gray-600',
+  green: 'bg-green-600',
+  lime: 'bg-lime-600',
+  red: 'bg-red-600',
+  yellow: 'bg-yellow-600',
+  blue: 'bg-blue-600',
+  purple: 'bg-purple-600',
+  orange: 'bg-orange-600',
+  pink: 'bg-pink-600',
+  white: 'bg-white text-gray-900 shadow-sm',
 };
+
+export const Badge: React.FC<BadgeProps> = ({ color = 'primary', position = 'NE', children, tag }) => (
+  <div className="relative inline-block">
+    <div className={clsx('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', classes[color], getPosition(position))}>
+      {tag}
+    </div>
+    {children}
+  </div>
+);

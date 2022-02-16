@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { PaperClipIcon, TrashIcon } from 'feedback/Icons/Outline';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
@@ -17,14 +17,22 @@ export const BasicItem: React.FC<BasicItemProps> = ({ file, handleDelete }) => {
   let errorMessage = hasError && file.errors!.reduce((acc, curr) => acc += curr.message + ' ', '');
   return (
     <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
-      <div className={classNames('flex items-center justify-between px-1 rounded-sm group hover:bg-slate-50', hasError ? 'text-red-500' : 'text-slate-400')}>
+      <div
+        className={clsx(
+          'flex items-center justify-between px-1 rounded-sm group hover:bg-slate-50',
+          hasError ? 'text-red-500' : 'text-slate-400',
+        )}
+      >
         <div className="flex items-center space-x-2">
           <PaperClipIcon widths={16} height={16} />
           <TextInline className={hasError ? 'text-current' : 'text-gray-900'}>{name}</TextInline>
           {!hasError && <TextInline className="text-sm">{bytes}</TextInline>}
         </div>
         <div className="flex items-center space-x-2">
-          <ClickableElement className={classNames('opacity-0 group-hover:opacity-100', hasError && 'opacity-100')} onClick={() => handleDelete(file.key)}>
+          <ClickableElement
+            className={clsx('opacity-0 group-hover:opacity-100', { 'opacity-100': hasError })}
+            onClick={() => handleDelete(file.key)}
+          >
             <TrashIcon width={16} height={16} />
           </ClickableElement>
         </div>

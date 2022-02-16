@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 export type TableRowProps = {
   active?: boolean;
@@ -11,9 +11,9 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ active
     ref={ref}
     onClick={onClick}
     style={{ boxShadow: 'var(--tw-shadow-color) 3px 0px 0px 0px inset' }}
-    className={classNames(
-      typeof onClick === 'function' && 'hover:bg-gray-50 hover:shadow-gray-500 cursor-pointer',
-      active && 'bg-indigo-50 shadow-indigo-500',
+    className={clsx(
+      { 'hover:bg-gray-50 hover:shadow-gray-500 cursor-pointer': typeof onClick === 'function' },
+      { 'bg-indigo-50 shadow-indigo-500': active },
       className,
     )}
     {...rest}

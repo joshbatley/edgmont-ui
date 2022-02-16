@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Backdrop, stopPropagation, Open } from 'utils';
 
 export type DrawerProps = {
@@ -17,12 +17,10 @@ export const Drawer: React.FC<DrawerProps> = ({
     return null;
   }
 
-  let classes = classNames('fixed w-1/3 h-screen top-0', direction === 'left' ? 'left-0' : 'right-0');
-  let drawerClasses = classNames('w-full h-full bg-white');
   return (
     <Backdrop config={{ duration: 195 }} onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <Open inProp={isOpen} className={classes}>
-        <div onClick={stopPropagation} className={drawerClasses}>
+      <Open inProp={isOpen} className={clsx('fixed w-1/3 h-screen top-0', direction === 'left' ? 'left-0' : 'right-0')}>
+        <div onClick={stopPropagation} className={'w-full h-full bg-white'}>
           {children}
         </div>
       </Open>

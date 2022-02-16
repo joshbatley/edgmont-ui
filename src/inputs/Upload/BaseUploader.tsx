@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { DropEvent, DropzoneOptions, FileError, FileRejection, useDropzone } from 'react-dropzone';
 import { getMeta } from './Utils';
 
@@ -25,7 +25,7 @@ export type BaseUploaderProps = {
 };
 
 export const BaseUploader: React.FC<BaseUploaderProps> = ({
-  baseClasses, dragActiveClasses, options = {}, renderUploader, filesRender, handleFileUpdate,
+  baseClasses, dragActiveClasses = '', options = {}, renderUploader, filesRender, handleFileUpdate,
 }) => {
   let [files, setFiles] = useState<AcceptedFile[]>([]);
   let { onDrop, ...otherOptions } = options;
@@ -49,7 +49,7 @@ export const BaseUploader: React.FC<BaseUploaderProps> = ({
 
   return (
     <>
-      <div className={classNames(baseClasses, isDragActive && dragActiveClasses)} {...getRootProps()}>
+      <div className={clsx(baseClasses, { [dragActiveClasses]: isDragActive })} {...getRootProps()}>
         <input {...getInputProps()} />
         {renderUploader?.(isDragActive, open)}
       </div>
