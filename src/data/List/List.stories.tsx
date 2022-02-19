@@ -1,18 +1,17 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from 'storybook-helpers/presets';
-import { List, ListItem, OrderedList, UnorderedList } from '.';
+import { List, ListItem, OrderedList as OL, UnorderedList as UL } from '.';
 
 export default {
   title: 'Data/List',
   component: List,
-  argTypes: {
-    size: sizeSelect,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const UnstyledList: Story = ({ ...rest }) => (
   <List {...rest}>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>
@@ -20,18 +19,18 @@ export const Default: Story = ({ ...rest }) => (
   </List>
 );
 
-export const AsOrderedList: Story = ({ ...rest }) => (
-  <OrderedList {...rest}>
+export const OrderedList: Story = ({ ...rest }) => (
+  <OL {...rest}>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>
     <ListItem>Item 3</ListItem>
-  </OrderedList>
+  </OL>
 );
 
-export const AsUnorderedLost: Story = ({ ...rest }) => (
-  <UnorderedList {...rest}>
+export const UnorderedList: Story = ({ ...rest }) => (
+  <UL {...rest}>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>
     <ListItem>Item 3</ListItem>
-  </UnorderedList>
+  </UL>
 );

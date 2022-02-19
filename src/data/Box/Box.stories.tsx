@@ -7,9 +7,9 @@ export default {
   title: 'Data/Box',
   component: Box,
   args: {
-    classes: 'bg-white',
+    className: '',
     children: 'My Box',
   },
 } as Meta<BoxProps>;
 
-export const Default: Story<BoxProps> = ({ children, ...rest }) => <Box {...rest}>{children}</Box>;
+export const Example: Story<BoxProps> = ({ children, ...rest }) => <Box {...rest}>{children}</Box>;

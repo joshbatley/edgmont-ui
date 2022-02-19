@@ -50,7 +50,7 @@ export const PaginationControls: React.FC<PaginationProps> = ({
         <HighlightButton
           size={size}
           key={page.toString()}
-          className={clsx({ 'bg-indigo-100 z-30': page === currentPage }, 'align-bottom rounded')}
+          className={clsx({ 'bg-primary-100 z-30': page === currentPage }, 'align-bottom rounded')}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
         >

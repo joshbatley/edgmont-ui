@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Text, TextMono, TextProps } from '.';
+import { Text as T, TextMono, TextProps } from '.';
 
 export default {
   title: 'Data/Text',
-  component: Text,
+  component: T,
   args: {
     children: 'My Text element',
   },
@@ -16,5 +16,5 @@ export default {
   },
 } as Meta<TextProps>;
 
-export const Default: Story<TextProps> = ({ children, ...rest }) => <Text {...rest}>{children}</Text>;
+export const Text: Story<TextProps> = ({ children, ...rest }) => <T {...rest}>{children}</T>;
 export const Mono: Story<TextProps> = ({ children, ...rest }) => <TextMono {...rest}>{children}</TextMono>;

@@ -13,7 +13,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ active
     style={{ boxShadow: 'var(--tw-shadow-color) 3px 0px 0px 0px inset' }}
     className={clsx(
       { 'hover:bg-gray-50 hover:shadow-gray-500 cursor-pointer': typeof onClick === 'function' },
-      { 'bg-indigo-50 shadow-indigo-500': active },
+      { 'bg-primary-50 shadow-primary-500': active },
       className,
     )}
     {...rest}

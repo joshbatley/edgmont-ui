@@ -12,7 +12,7 @@ export type PaginationProps = {
 export const Pagination: React.FC<PaginationProps> = ({
   limit, skip, setSkip, itemCount, size = 'small',
 }) => {
-  let to = skip + limit > itemCount ? itemCount : skip + limit;
+  let to = (skip + limit > itemCount) ? itemCount : skip + limit;
   return (
     <div className="w-full flex justify-between items-center min-h-[38px]">
       <div className="leading-4">
