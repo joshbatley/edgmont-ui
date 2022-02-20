@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { CheckCircleIcon, ExclamationIcon } from 'icons/Solid';
+import { CheckCircleIcon, ExclamationIcon } from '@heroicons/react/solid';
 
 export type StepIconProps = {
   error?: boolean;

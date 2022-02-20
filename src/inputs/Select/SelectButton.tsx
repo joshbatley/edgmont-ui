@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs';
 import { Text } from 'data';
-import { SelectorIcon } from 'icons/Outline';
+import { SelectorIcon } from '@heroicons/react/outline';
 import { useSelectContext } from '.';
 
 export type SelectButtonProps = {

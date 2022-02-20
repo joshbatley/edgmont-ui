@@ -4,7 +4,7 @@ import {
   ExclamationIcon,
   InformationCircleIcon,
   CheckCircleIcon,
-} from 'icons/Solid';
+} from '@heroicons/react/solid';
 
 export const getIcon = (severity: Severity) => {
   let props = {

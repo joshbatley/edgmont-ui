@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
-import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from 'icons/Outline';
+import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from '@heroicons/react/outline';
 import { ButtonGroup, HighlightButton } from 'inputs';
 import { calculatePageNumbers } from './utils';
 

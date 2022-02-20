@@ -7,28 +7,8 @@ import css from "rollup-plugin-import-css";
 
 const packageJson = require("./package.json");
 
-const common = {
-  treeshake: true,
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs({
-      extensions: ['.js']
-    }),
-
-    babel({
-      babelHelpers: 'bundled',
-      exclude: 'node_modules/**',
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      plugins: ['macros'],
-    }),
-  ]
-}
-
-export default [{
-  input: {
-    index: 'src/index.ts',
-  },
+export default {
+  input: 'src/index.ts',
   output: [
     {
       entryFileNames: "[name].js",
@@ -38,29 +18,20 @@ export default [{
       sourcemap: true
     }
   ],
-  ...common,
+  treeshake: true,
   plugins: [
     css({ minify: true, output: 'datepicker.css' }),
+    peerDepsExternal(),
+    resolve(),
+    commonjs({
+      extensions: ['.js']
+    }),
     typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.build.json" }),
-    ...common.plugins
-  ],
-}, {
-  input: {
-    Solid: 'src/icons/Solid.ts',
-    Outline: 'src/icons/Outline.ts',
-  },
-  output: [
-    {
-      entryFileNames: "[name].js",
-      chunkFileNames: '[name]-[hash].js',
-      format: "esm",
-      dir: 'icons',
-      sourcemap: true
-    }
-  ],
-  ...common,
-  plugins: [
-    typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.icon.json" }),
-    ...common.plugins
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      plugins: ['macros'],
+    }),
   ]
-}];
+};
