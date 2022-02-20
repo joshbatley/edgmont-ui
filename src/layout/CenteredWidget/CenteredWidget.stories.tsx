@@ -6,9 +6,12 @@ import { CenteredWidget } from '.';
 
 export default {
   title: 'Layout/Centered Widget',
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
-export const Default: Story = () => (
+export const Example: Story = () => (
   <CenteredWidget>
     <Panel className="h-96 p-2">123</Panel>
   </CenteredWidget>
