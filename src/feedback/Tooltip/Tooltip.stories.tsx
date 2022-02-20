@@ -8,14 +8,18 @@ import { Tooltip } from '.';
 export default {
   title: 'Feedback/Tooltip',
   component: Tooltip,
+  args: {
+    tooltip: "i'm the tooltip",
+    as: 'div',
+  },
   argTypes: {
     direction: directionSelect,
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Example: Story = ({ ...rest }: any) => (
   <div className="grid h-screen place-content-center">
-    <Tooltip tooltip="i'm the tooltip" {...rest}>
+    <Tooltip {...rest}>
       <Box>This is wrapped</Box>
     </Tooltip>
   </div>

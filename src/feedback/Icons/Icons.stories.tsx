@@ -5,6 +5,9 @@ import { Solid as Icons, Outline as IconsOutline } from '.';
 
 export default {
   title: 'Feedback/Icons',
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
 function camelCaseToDash(str: string) {

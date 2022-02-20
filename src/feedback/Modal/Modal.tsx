@@ -7,7 +7,7 @@ import { ClickableElement } from 'inputs';
 
 export type ModalProps = {
   title?: string;
-  panelOverrides?: string;
+  panelClasses?: string;
   handleClose: () => void;
   open?: boolean;
 };
@@ -21,7 +21,7 @@ const Header: React.FC<{ handleClose: () => void; }> = ({ children, handleClose 
   </div>
 );
 
-export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title, children, open }) => {
+export const Modal: React.FC<ModalProps> = ({ panelClasses, handleClose, title, children, open }) => {
   let [isOpen, setOpen] = useState(false);
   if (!open) {
     return null;
@@ -29,7 +29,7 @@ export const Modal: React.FC<ModalProps> = ({ panelOverrides, handleClose, title
 
   return (
     <Backdrop onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <Panel className={clsx('min-w-[200px]', panelOverrides)} onClick={stopPropagation}>
+      <Panel className={clsx('min-w-[200px]', panelClasses)} onClick={stopPropagation}>
         {title && <Header handleClose={handleClose}>{title}</Header>}
         {children}
       </Panel>

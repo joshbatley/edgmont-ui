@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { SyntaxHighlighter, CodeEditor } from '.';
+import { SyntaxHighlighter as SH, CodeEditor as CE } from '.';
 
 export default {
   title: 'Feedback/Code',
-  component: SyntaxHighlighter,
+  component: SH,
 } as Meta;
 
 let code = `{
@@ -18,16 +18,16 @@ let code = `{
   }
 }`;
 
-export const Default: Story = ({ ...rest }) => (
-  <SyntaxHighlighter
+export const SyntaxHighlighter: Story = ({ ...rest }) => (
+  <SH
     language="json"
     code={code}
     {...rest}
   />
 );
 
-export const AsCodeEditor: Story = ({ ...rest }) => (
-  <CodeEditor
+export const CodeEditor: Story = ({ ...rest }) => (
+  <CE
     language="json"
     code={code}
     {...rest}

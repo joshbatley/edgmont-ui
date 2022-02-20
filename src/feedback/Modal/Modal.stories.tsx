@@ -9,22 +9,27 @@ import { Modal } from '.';
 export default {
   title: 'Feedback/Modal',
   component: Modal,
+  args: {
+    title: 'This is a modal header',
+  },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => {
+
+
+export const Example: Story = ({ title, children, ...rest }) => {
   let [open, setOpen] = useState(false);
 
   return (
     <>
       <OutlineButton onClick={() => setOpen(!open)}>Open</OutlineButton>
-      <Modal open={open} title="This is a modal header" handleClose={() => setOpen(!open)} {...rest}>
+      <Modal open={open} title={title} handleClose={() => setOpen(!open)} {...rest}>
         <Panel className="px-2 py-2 space-y-10 flex flex-col">
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
           <PrimaryButton color="green">Or a button</PrimaryButton>
           <Chip color="red">Or even a chip</Chip>
         </Panel>
-      </Modal >
+      </Modal>
     </>
   );
 };

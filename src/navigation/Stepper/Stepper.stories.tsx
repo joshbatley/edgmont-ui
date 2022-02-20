@@ -8,7 +8,7 @@ export default {
   title: 'Navigation/Stepper',
   component: Stepper,
   args: {
-    color: 'gray',
+    color: 'primary',
   },
   argTypes: {
     color: colorSelectWithWhite,

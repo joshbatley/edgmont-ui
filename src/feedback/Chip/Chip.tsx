@@ -7,7 +7,6 @@ import { Text } from 'data';
 export type ChipProps = {
   color?: Colors;
   size?: Size;
-  outline?: boolean;
   handleDelete?: () => void;
 };
 
