@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EyeIcon, EyeOffIcon } from 'icons/Outline';
+import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import { ClickableElement } from 'inputs';
 import { TextField, TextFieldProps } from '.';
 

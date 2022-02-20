@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { XIcon } from 'icons/Outline';
+import { XIcon } from '@heroicons/react/outline';
 import { Title, Panel } from 'data';
 import { Backdrop, stopPropagation } from 'utils';
 import { ClickableElement } from 'inputs';

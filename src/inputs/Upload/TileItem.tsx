@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { PhotographIcon, TrashIcon } from 'icons/Outline';
+import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
 import { TextInline, Text, Image } from 'data';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';

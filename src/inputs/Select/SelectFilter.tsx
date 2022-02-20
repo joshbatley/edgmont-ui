@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TextField, TextFieldProps } from 'inputs';
-import { SelectorIcon } from 'icons/Outline';
+import { SelectorIcon } from '@heroicons/react/outline';
 import { useSelectContext, SelectButton, SelectButtonProps } from '.';
 
 export type SelectFilterProps = {

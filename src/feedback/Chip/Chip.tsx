@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { XCircleIcon } from 'icons/Solid';
+import { XCircleIcon } from '@heroicons/react/solid';
 import { ClickableElement } from 'inputs';
 import { Text } from 'data';
 

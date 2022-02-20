@@ -24,5 +24,4 @@ yarn-error.log*
 
 /lib
 /dist
-/icons
 /storybook-static

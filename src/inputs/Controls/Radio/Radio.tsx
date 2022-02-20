@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioIcon } from 'icons/Custom';
+import { RadioIcon } from 'utils';
 import { BaseControl, BaseControlProps } from '../BaseControl';
 
 export type RadioPrpos = Omit<BaseControlProps, 'icon' | 'rounded'>;
