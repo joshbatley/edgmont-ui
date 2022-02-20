@@ -1,7 +1,7 @@
 type TabsProps = {
   value?: string | number;
   type?: TabVarient;
-  accentColor?: Colors;
+  color?: Colors;
 };
 
 type TabVarient = 'default' | 'card';

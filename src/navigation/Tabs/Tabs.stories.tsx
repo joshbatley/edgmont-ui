@@ -1,11 +1,19 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
+import { colorSelect } from 'storybook-helpers/presets';
 import { Tabs, TabPane } from '.';
 
 export default {
   title: 'Navigation/Tabs',
   component: Tabs,
+  argTypes: {
+    type: {
+      options: ['default', 'card'],
+      control: { type: 'select' },
+    },
+    color: colorSelect,
+  },
   parameters: {
     backgrounds: {
       default: 'White',
@@ -13,13 +21,11 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = () => {
-  let arr = Array(5).fill(null).map(() => btoa(Math.random().toString()).substr(10, 5));
-  return (
-    <Tabs value={arr[arr.length - 1]}>
-      {arr.map((i, idx) => (
-        <TabPane key={i} value={i} tab={`Tab button ${idx}`}>Content {idx}</TabPane>
-      ))}
-    </Tabs>
-  );
-};
+let arr = Array(5).fill(null).map(() => (Math.random().toString()).substring(10, 5));
+export const Example: Story = ({ ...rest }) => (
+  <Tabs value={arr[arr.length - 1]} {...rest}>
+    {arr.map((i, idx) => (
+      <TabPane key={i} value={i} tab={`Tab button ${idx}`}>Content {idx}</TabPane>
+    ))}
+  </Tabs>
+);

@@ -7,7 +7,7 @@ export type TabCardItemProps = {
   selected?: boolean;
   onClick: () => void;
   children: React.ReactNode;
-  accentColor?: Colors;
+  color?: Colors;
 };
 
 const clasess: Record<Colors, string> = {
@@ -23,11 +23,11 @@ const clasess: Record<Colors, string> = {
   pink: 'bg-pink-600',
 };
 
-export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick, accentColor = 'primary' }) => (
+export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick, color = 'primary' }) => (
   <ClickableElement className={clsx('px-5 py-3 rounded-t rounded-b-none overflow-hidden focus:ring-0 border relative z-10 snap-start border-b-0', selected ? 'bg-white' : 'bg-gray-50')} onClick={onClick}>
     {children}
     {selected && (
-      <div className={clsx('absolute left-0 bottom-0 h-[2px] w-full', clasess[accentColor])} ></div>
+      <div className={clsx('absolute left-0 bottom-0 h-[2px] w-full', clasess[color])} ></div>
     )
     }
   </ClickableElement >
@@ -37,15 +37,15 @@ export type TabCardItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  accentColor?: Colors;
+  color?: Colors;
 };
 
-export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onChange, accentColor = 'blue' }) => (
+export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onChange, color = 'primary' }) => (
   <Scrollable>
     <div className="space-x-1">
       {tabs.map(({ tab, key }) => (
         <TabCardItem
-          accentColor={accentColor}
+          color={color}
           key={key}
           selected={selected === key}
           onClick={() => onChange(key)}
