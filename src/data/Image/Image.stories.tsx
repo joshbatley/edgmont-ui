@@ -7,6 +7,9 @@ import { PhotographIcon } from 'feedback/Icons/Solid';
 export default {
   title: 'Data/Image',
   component: Image,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
 
@@ -16,9 +19,15 @@ const fallback = (
   </div>
 );
 
-export const Example: Story = ({ ...rest }) => (
-  <div className="space-y-2">
-    <Image width="200" height="200" fallback={fallback} src="https://brokenUrl.xyz/NotAImage.png" />
-    <Image width="200" height="200" fallback={fallback} src="https://mui.com/static/images/cards/contemplative-reptile.jpg" />
-  </div>
+export const Example: Story = () => (
+  <div className="space-y-4">
+    <div>
+      Broken Image with fallback
+      <Image width="200" height="200" fallback={fallback} src="https://brokenUrl.xyz/NotAImage.png" />
+    </div>
+    <div>
+      Working Image with fallback
+      <Image width="200" height="200" fallback={fallback} src="https://mui.com/static/images/cards/contemplative-reptile.jpg" />
+    </div>
+  </div >
 );

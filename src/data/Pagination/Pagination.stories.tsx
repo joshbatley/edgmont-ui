@@ -6,6 +6,9 @@ import { Pagination } from '.';
 export default {
   title: 'Data/Pagination',
   component: Pagination,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
 export const Examples: Story = () => {

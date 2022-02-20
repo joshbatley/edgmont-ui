@@ -7,6 +7,9 @@ import { Label } from '.';
 export default {
   title: 'Inputs/Label',
   component: Label,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
 export const Example: Story = () => (

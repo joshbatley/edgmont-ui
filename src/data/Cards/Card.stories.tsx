@@ -9,6 +9,9 @@ import { ShoppingCartIcon, ShoppingBagIcon } from 'feedback/Icons/Outline';
 export default {
   title: 'Data/Card',
   component: Card,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
 export const Examples: Story = ({ ...rest }) => (
@@ -64,7 +67,7 @@ export const Examples: Story = ({ ...rest }) => (
   </div>
 );
 
-export const Content: Story = ({ ...rest }) => (
+export const Content: Story = () => (
   <Card>
     <CardContent>A basic styled div for use inside Card component</CardContent>
   </Card>

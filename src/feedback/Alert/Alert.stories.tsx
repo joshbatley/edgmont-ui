@@ -20,7 +20,7 @@ export const Example: Story = ({ ...rest }) => (
   <Alert {...rest} />
 );
 
-export const All: Story = ({ ...rest }) => (
+export const Variations: Story = ({ ...rest }) => (
   <div className="space-y-4">
     <Alert {...rest} severity='error' />
     <Alert {...rest} severity='warning' />
@@ -30,7 +30,7 @@ export const All: Story = ({ ...rest }) => (
     <Alert {...rest} />
   </div>
 );
-All.argTypes = {
+Variations.argTypes = {
   severity: { table: { disable: true } },
   dark: { table: { disable: true } },
   icon: { table: { disable: true } },
@@ -38,7 +38,7 @@ All.argTypes = {
   className: { table: { disable: true } },
 };
 
-export const AddIcon: Story = ({ ...rest }) => (
+export const WithIcon: Story = ({ ...rest }) => (
   <Alert icon={<SunIcon height={22} width={22} />} {...rest} />
 );
 
