@@ -6,9 +6,12 @@ import { TextArea } from '.';
 export default {
   title: 'Inputs/TextArea',
   component: TextArea,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
-export const Default: Story = () => (
+export const Example: Story = () => (
   <TextArea />
 );
 

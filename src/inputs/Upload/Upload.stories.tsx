@@ -2,19 +2,19 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Panel } from 'data';
-import { UploadButton, UploadZone } from '.';
+import { UploadButton as UB, UploadZone as UZ } from '.';
 
 export default {
   title: 'Inputs/Upload',
-  component: UploadZone,
+  component: UZ,
 } as Meta;
 
-export const Defualt: Story = ({ ...rest }) => (
+export const UploadZone: Story = ({ ...rest }) => (
   <Panel className="px-3 py-2 w-1/2">
-    <UploadZone {...rest} />
+    <UZ {...rest} />
   </Panel>
 );
 
-export const Button: Story = ({ ...rest }) => (
-  <UploadButton {...rest} />
+export const UploadButton: Story = ({ ...rest }) => (
+  <UB {...rest} />
 );

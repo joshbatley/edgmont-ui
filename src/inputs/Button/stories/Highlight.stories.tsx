@@ -1,23 +1,22 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { sizeSelect } from 'storybook-helpers/presets';
 import { SaveIcon } from 'feedback/Icons/Outline';
 import { HighlightButton } from '../HighlightButton';
 
 export default {
-  title: 'Inputs/Button/Highlight',
+  title: 'Inputs/Buttons/Highlight',
   component: HighlightButton,
   args: {
     children: 'Get started',
   },
   argTypes: {
     size: sizeSelect,
-    color: colorSelectWithWhite,
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...rest }) => <HighlightButton {...rest}>{children}</HighlightButton>;
+export const Example: Story = ({ children, ...rest }) => <HighlightButton {...rest}>{children}</HighlightButton>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
@@ -26,6 +25,13 @@ export const Sizes: Story = ({ children, ...rest }) => (
     <HighlightButton size="small" {...rest}>{children}</HighlightButton>
   </div>
 );
+Sizes.argTypes = {
+  size: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
 export const Loading: Story = ({ children, ...rest }) => (
   <HighlightButton isLoading {...rest}>

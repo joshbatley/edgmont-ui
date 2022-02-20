@@ -6,7 +6,7 @@ import { SaveIcon } from 'feedback/Icons/Outline';
 import { SecondaryButton } from '../SecondaryButton';
 
 export default {
-  title: 'Inputs/Button/Secondary',
+  title: 'Inputs/Buttons/Secondary',
   component: SecondaryButton,
   args: {
     children: 'Get started',
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...rest }) => <SecondaryButton {...rest}>{children}</SecondaryButton>;
+export const Example: Story = ({ children, ...rest }) => <SecondaryButton {...rest}>{children}</SecondaryButton>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
@@ -26,13 +26,29 @@ export const Sizes: Story = ({ children, ...rest }) => (
     <SecondaryButton size="small" {...rest}>{children}</SecondaryButton>
   </div>
 );
+Sizes.argTypes = {
+  size: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
-export const All: Story = ({ children = 'save' }) => (
+
+export const Colors: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
     {colorSelectWithWhite.options.map((c) => (
       <SecondaryButton key={c} color={c}>{children}</SecondaryButton>
     ))}
-  </div>);
+  </div>
+);
+Colors.argTypes = {
+  color: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
 export const Loading: Story = ({ children, ...rest }) => (
   <SecondaryButton isLoading {...rest}>

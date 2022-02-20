@@ -7,9 +7,12 @@ import { TextFieldGroup } from '.';
 export default {
   title: 'Inputs/TextFieldGroup',
   component: TextFieldGroup,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
-export const Default: Story = () => (
+export const Example: Story = () => (
   <TextFieldGroup>
     <TextField placeholder="Username" />
     <TextField type="password" placeholder="Password" />

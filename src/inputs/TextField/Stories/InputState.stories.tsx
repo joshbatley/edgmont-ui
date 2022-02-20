@@ -7,7 +7,7 @@ import { Text } from 'data';
 import { TextField } from '..';
 
 export default {
-  title: 'Inputs/TextField/States',
+  title: 'Inputs/TextField',
   component: TextField,
   args: {
     placeholder: 'My input',
@@ -17,7 +17,7 @@ export default {
 const Before = ({ ...rest }) => (<ClickableElement onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
 const After = ({ ...rest }) => (<Text {...rest}>.com</Text>);
 
-export const Error: Story = ({ ...rest }) => (
+export const Errored: Story = ({ ...rest }) => (
   <div className="space-y-2">
     <TextField error {...rest} />
     <TextField error prefixIcon={<LockClosedIcon width={16} />} {...rest} />

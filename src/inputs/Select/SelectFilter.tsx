@@ -3,9 +3,11 @@ import { TextField, TextFieldProps } from 'inputs';
 import { SelectorIcon } from 'feedback/Icons/Outline';
 import { useSelectContext, SelectButton, SelectButtonProps } from '.';
 
-export type SelectFilterProps = TextFieldProps & SelectButtonProps;
+export type SelectFilterProps = {
+  textProps?: TextFieldProps,
+} & SelectButtonProps;
 
-export const SelectFilter: React.FC<SelectFilterProps> = ({ isClearable, ...rest }) => {
+export const SelectFilter: React.FC<SelectFilterProps> = ({ textProps, ...rest }) => {
   let ref = useRef<HTMLInputElement>(null);
   let { getInputProps, isOpen } = useSelectContext();
 
@@ -16,10 +18,10 @@ export const SelectFilter: React.FC<SelectFilterProps> = ({ isClearable, ...rest
   }, [isOpen]);
 
   if (!isOpen) {
-    return <SelectButton isClearable={isClearable} {...rest} />;
+    return <SelectButton {...rest} />;
   }
 
   return (
-    <TextField suffixIcon={<SelectorIcon height={16} width={16} />} ref={ref} {...rest} {...getInputProps()} />
+    <TextField suffixIcon={<SelectorIcon height={16} width={16} />} ref={ref} {...textProps} {...getInputProps()} />
   );
 };
