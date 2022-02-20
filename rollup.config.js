@@ -15,7 +15,7 @@ const common = {
     commonjs({
       extensions: ['.js']
     }),
-    typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.build.json" }),
+
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
@@ -33,13 +33,6 @@ export default [{
     {
       entryFileNames: "[name].js",
       chunkFileNames: '[name]-[hash].js',
-      format: "cjs",
-      dir: 'dist',
-      sourcemap: true
-    },
-    {
-      entryFileNames: "[name].esm.js",
-      chunkFileNames: '[name]-[hash].esm.js',
       format: "esm",
       dir: 'dist',
       sourcemap: true
@@ -48,28 +41,26 @@ export default [{
   ...common,
   plugins: [
     css({ minify: true, output: 'datepicker.css' }),
+    typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.build.json" }),
     ...common.plugins
   ],
 }, {
   input: {
-    solid: 'src/icons/Solid.ts',
-    outline: 'src/icons/Outline.ts',
+    Solid: 'src/icons/Solid.ts',
+    Outline: 'src/icons/Outline.ts',
   },
   output: [
     {
       entryFileNames: "[name].js",
       chunkFileNames: '[name]-[hash].js',
-      format: "cjs",
-      dir: 'icons',
-      sourcemap: true
-    },
-    {
-      entryFileNames: "[name].esm.js",
-      chunkFileNames: '[name]-[hash].esm.js',
       format: "esm",
       dir: 'icons',
       sourcemap: true
     }
   ],
   ...common,
+  plugins: [
+    typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.icon.json" }),
+    ...common.plugins
+  ]
 }];

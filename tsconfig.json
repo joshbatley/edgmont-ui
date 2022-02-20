@@ -25,7 +25,9 @@
   },
   "include": [
     "src",
-    "src/**/*"
+    "src/**/*",
+    "src/icons/Solid.ts",
+    "src/icons/Outline.ts",
   ],
   "exclude": [
     "node_modules"

@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/icons/Outline.ts",
+    "src/icons/Solid.ts",
+  ],
+  "compilerOptions": {
+    "outDir": "icons",
+    "declarationDir": "icons",
+  },
+  "exclude": [
+    "node_modules",
+    "src/**/*.stories.*",
+    "src/**/*.test.*",
+    "src/styleMock.ts",
+    "src/setupTests.ts",
+    "src/storybook-helpers/*"
+  ]
+}
