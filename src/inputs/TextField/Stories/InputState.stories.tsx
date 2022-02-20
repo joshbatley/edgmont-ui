@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { LockClosedIcon, EyeIcon } from 'feedback/Icons/Solid';
+import { LockClosedIcon, EyeIcon } from 'icons/Solid';
 import { ClickableElement } from 'inputs';
 import { Text } from 'data';
 import { TextField } from '..';

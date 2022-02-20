@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
-import { SaveIcon } from 'feedback/Icons/Outline';
+import { SaveIcon } from 'icons/Outline';
 import { PrimaryButton } from '../PrimaryButton';
 
 export default {

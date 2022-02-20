@@ -7,23 +7,9 @@ import css from "rollup-plugin-import-css";
 
 const packageJson = require("./package.json");
 
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-      sourcemap: true
-    }
-  ],
+const common = {
   treeshake: true,
   plugins: [
-    css({ minify: true, output: 'datepicker.css' }),
     peerDepsExternal(),
     resolve(),
     commonjs({
@@ -37,4 +23,53 @@ export default {
       plugins: ['macros'],
     }),
   ]
-};
+}
+
+export default [{
+  input: {
+    index: 'src/index.ts',
+  },
+  output: [
+    {
+      entryFileNames: "[name].js",
+      chunkFileNames: '[name]-[hash].js',
+      format: "cjs",
+      dir: 'dist',
+      sourcemap: true
+    },
+    {
+      entryFileNames: "[name].esm.js",
+      chunkFileNames: '[name]-[hash].esm.js',
+      format: "esm",
+      dir: 'dist',
+      sourcemap: true
+    }
+  ],
+  ...common,
+  plugins: [
+    css({ minify: true, output: 'datepicker.css' }),
+    ...common.plugins
+  ],
+}, {
+  input: {
+    solid: 'src/icons/Solid.ts',
+    outline: 'src/icons/Outline.ts',
+  },
+  output: [
+    {
+      entryFileNames: "[name].js",
+      chunkFileNames: '[name]-[hash].js',
+      format: "cjs",
+      dir: 'icons',
+      sourcemap: true
+    },
+    {
+      entryFileNames: "[name].esm.js",
+      chunkFileNames: '[name]-[hash].esm.js',
+      format: "esm",
+      dir: 'icons',
+      sourcemap: true
+    }
+  ],
+  ...common,
+}];

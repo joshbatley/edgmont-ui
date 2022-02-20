@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { UploadIcon } from 'feedback/Icons/Outline';
+import { UploadIcon } from 'icons/Outline';
 import { Button, ButtonProps } from 'inputs';
 import { List } from 'data';
 import { BasicItem } from './BasicItem';

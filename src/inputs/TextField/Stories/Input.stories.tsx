@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { sizeSelect } from 'storybook-helpers/presets';
-import { LockClosedIcon, CodeIcon } from 'feedback/Icons/Solid';
+import { LockClosedIcon, CodeIcon } from 'icons/Solid';
 import { ClickableElement } from 'inputs';
 import { Text } from 'data';
 import { Password as PasswordComp, TextField } from '..';
