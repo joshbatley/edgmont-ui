@@ -19,7 +19,7 @@ export const Drawer: React.FC<DrawerProps> = ({
 
   return (
     <Backdrop config={{ duration: 195 }} onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <Open inProp={isOpen} className={clsx('fixed w-1/3 h-screen top-0', direction === 'left' ? 'left-0' : 'right-0')}>
+      <Open inProp={isOpen} direction={direction} className={clsx('fixed w-1/3 h-screen top-0', direction === 'left' ? 'left-0' : 'right-0')}>
         <div onClick={stopPropagation} className={'w-full h-full bg-white'}>
           {children}
         </div>

@@ -9,25 +9,29 @@ export default {
   component: Checkbox,
   args: {
     labelText: 'My Checkboxes',
+    disabled: false,
   },
   argTypes: {
     color: colorSelect,
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...rest }) => (
+export const Example: Story = ({ children, ...rest }) => (
   <div>
     <Checkbox {...rest} />
     <Checkbox checked {...rest} />
   </div>
 );
 
-export const Disabled: Story = ({ children, ...rest }) => (
+export const Disabled: Story = ({ children, disabled, ...rest }) => (
   <div>
     <Checkbox disabled {...rest} />
     <Checkbox checked disabled {...rest} />
   </div>
 );
+Disabled.argTypes = {
+  disabled: { table: { disable: true } },
+};
 
 export const Error: Story = ({ children, ...rest }) => (
   <div>

@@ -8,32 +8,49 @@ export default {
   title: 'Inputs/Select/Simple',
   component: SimpleSelect,
   args: {
-    label: 'My select menu',
+    placeholder: 'My Simple Select Menu',
+    error: false,
+    disabled: false,
+    isClearable: false,
+    isFilterable: false,
   },
   argTypes: {
+    values: { table: { disable: true } },
     size: sizeSelect,
   },
 } as Meta;
 
 const values = ['hello', 'worlds', 'yeah us to', 'some more options', 'Selectable value'];
 
-export const Default: Story = () => (
-  <SimpleSelect values={values} placeholder="My Select" />
+export const Default: Story = ({ ...rest }) => (
+  <SimpleSelect values={values} {...rest} />
 );
 
-export const Disabled: Story = () => (
-  <SimpleSelect values={values} placeholder="My Select" disabled />
+export const Disabled: Story = ({ disabled, ...rest }) => (
+  <SimpleSelect values={values} disabled {...rest} />
 );
+Disabled.argTypes = {
+  disabled: { table: { disable: true } },
+};
 
-export const Errored: Story = () => (
-  <SimpleSelect values={values} placeholder="My Select" error />
+export const Errored: Story = ({ error, ...rest }) => (
+  <SimpleSelect values={values} error {...rest} />
 );
+Errored.argTypes = {
+  error: { table: { disable: true } },
+};
 
-export const Clearable: Story = () => (
-  <SimpleSelect values={values} placeholder="My Select" isClearable initialSelectedItem="Selectable value" />
+export const Clearable: Story = ({ isClearable, ...rest }) => (
+  <SimpleSelect values={values} isClearable initialSelectedItem="Selectable value" {...rest} />
 );
+Clearable.argTypes = {
+  isClearable: { table: { disable: true } },
+};
 
-export const Filterable: Story = () => (
-  <SimpleSelect values={values} placeholder="My Select" isFilterable />
+
+export const Filterable: Story = ({ isFilterable, ...rest }) => (
+  <SimpleSelect values={values} isFilterable {...rest} />
 );
-
+Filterable.argTypes = {
+  isFilterable: { table: { disable: true } },
+};

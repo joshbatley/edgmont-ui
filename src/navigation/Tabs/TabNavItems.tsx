@@ -18,7 +18,7 @@ export type TabNavItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  accentColor?: Colors;
+  color?: Colors;
 };
 
 const classes: Record<Colors, string> = {
@@ -34,7 +34,7 @@ const classes: Record<Colors, string> = {
   pink: 'bg-pink-600',
 };
 
-export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange, accentColor = 'blue' }) => {
+export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange, color = 'primary' }) => {
   let ref = useRef<HTMLButtonElement>(null);
   let [styles, setStyles] = useState({ width: 0, left: 0 });
 
@@ -55,7 +55,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
             onClick={() => onChange(key)}
           >{tab}</TabNavItem>
         ))}
-        <div className={clsx(classes[accentColor], 'h-1 relative transition-all')} style={{ ...styles }} />
+        <div className={clsx(classes[color], 'h-1 relative transition-all')} style={{ ...styles }} />
       </div>
     </Scrollable>
   );

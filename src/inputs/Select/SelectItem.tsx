@@ -25,7 +25,7 @@ export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index })
     <ListItem
       className={clsx(
         'cursor-pointer py-2 px-4 text-sm text-gray-700 hover:bg-gray-100',
-        { 'bg-gray-200 ': selectedItem === item || itemToString(SelectItem) === memoValue },
+        { 'bg-primary-100 ': selectedItem === item || itemToString(SelectItem) === memoValue },
       )}
       {...getItemProps({
         key: item.value,

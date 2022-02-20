@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 import { BaseButton, BaseButtonProps } from '.';
 
-export type HighlightButtonProps = BaseButtonProps & { darkMode?: boolean };
+export type HighlightButtonProps = Omit<BaseButtonProps, 'color'> & { darkMode?: boolean };
 
-export const HighlightButton = forwardRef<HTMLButtonElement, HighlightButtonProps>(({ children, className, color, darkMode, ...rest }, ref) => (
+export const HighlightButton = forwardRef<HTMLButtonElement, HighlightButtonProps>(({ children, className, darkMode, ...rest }, ref) => (
   <BaseButton
     className={clsx(
       'bg-transparent disabled:text-gray-300 hover:bg-gray-300 hover:bg-opacity-30',

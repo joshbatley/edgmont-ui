@@ -7,33 +7,47 @@ import { Chip } from '.';
 export default {
   title: 'Feedback/Chip',
   component: Chip,
+  args: {
+    children: 'Chip',
+  },
   argTypes: {
     color: colorSelect,
     size: sizeSelect,
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => <Chip {...rest}>Chip</Chip>;
+export const Example: Story = ({ children, ...rest }) => <Chip {...rest}>{children}</Chip>;
 
-export const Sizes: Story = ({ ...rest }) => (
+export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    <Chip {...rest} size="large">Chip</Chip>
-    <Chip {...rest} size="medium">Chip</Chip>
-    <Chip {...rest} size="small">Chip</Chip>
+    <Chip {...rest} size="large">{children}</Chip>
+    <Chip {...rest} size="medium">{children}</Chip>
+    <Chip {...rest} size="small">{children}</Chip>
   </div>
 );
-export const Colors: Story = ({ ...rest }) => (
+Sizes.argTypes = {
+  size: {
+    table: {
+      disable: true,
+    },
+  },
+};
+
+export const Colors: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    <Chip {...rest} color="gray"> Chip</Chip >
-    <Chip {...rest} color="blue">Chip</Chip>
-    <Chip {...rest} color="green">Chip</Chip>
-    <Chip {...rest} color="pink">Chip</Chip>
-    <Chip {...rest} color="purple">Chip</Chip>
-    <Chip {...rest} color="red">Chip</Chip>
-    <Chip {...rest} color="yellow">Chip</Chip>
+    {colorSelect.options.map((c) => (
+      <Chip {...rest} key={c} color={c}>{children}</Chip>
+    ))}
   </div>
 );
+Colors.argTypes = {
+  color: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
-export const WithDelete: Story = ({ ...rest }) => (
-  <Chip handleDelete={() => console.log('delete')} {...rest}>Chip</Chip>
+export const WithDelete: Story = ({ children, ...rest }) => (
+  <Chip handleDelete={() => alert('deleting')} {...rest}>{children}</Chip>
 );

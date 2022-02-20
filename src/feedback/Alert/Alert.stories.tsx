@@ -16,22 +16,29 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Example: Story = ({ ...rest }) => (
   <Alert {...rest} />
 );
 
-export const All: Story = ({ ...rest }) => (
+export const Variations: Story = ({ ...rest }) => (
   <div className="space-y-4">
-    <Alert {...rest} severity='error' title="This is an error message!" />
-    <Alert {...rest} severity='warning' title="This is a warning message!" />
-    <Alert {...rest} severity='info' title="This is an information message!" />
-    <Alert {...rest} severity='success' title="This is a success message!" />
+    <Alert {...rest} severity='error' />
+    <Alert {...rest} severity='warning' />
+    <Alert {...rest} severity='info' />
+    <Alert {...rest} severity='success' />
     <Alert {...rest} dark />
     <Alert {...rest} />
   </div>
 );
+Variations.argTypes = {
+  severity: { table: { disable: true } },
+  dark: { table: { disable: true } },
+  icon: { table: { disable: true } },
+  withClose: { table: { disable: true } },
+  className: { table: { disable: true } },
+};
 
-export const AddIcon: Story = ({ ...rest }) => (
+export const WithIcon: Story = ({ ...rest }) => (
   <Alert icon={<SunIcon height={22} width={22} />} {...rest} />
 );
 

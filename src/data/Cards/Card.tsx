@@ -1,9 +1,9 @@
-import React, { CSSProperties, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 
 export type CardProps = {
   children: React.ReactNode;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   className?: string;
 };
 

@@ -10,7 +10,7 @@ export default {
   title: 'Utils/Backdrop',
   component: Backdrop,
   args: {
-    color: 'gray',
+    color: 'primary',
   },
   argTypes: {
     color: colorSelectWithWhite,

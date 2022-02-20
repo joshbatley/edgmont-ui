@@ -8,7 +8,7 @@ export default {
   title: 'Feedback/Loader',
   component: CircleLoader,
   args: {
-    color: 'gray',
+    color: 'primary',
   },
   argTypes: {
     color: colorSelectWithWhite,

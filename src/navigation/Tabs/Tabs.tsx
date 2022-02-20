@@ -15,15 +15,15 @@ const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   });
 };
 
-export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value, accentColor = 'blue' }) => {
+export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value, color = 'primary' }) => {
   let tabs = parseChildrenToTabs(childrenProp);
   let [selected, setSelected] = useState(value || tabs[0].key);
   return (
     <div className="w-full">
       {type === 'card' ? (
-        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} accentColor={accentColor} />
+        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} color={color} />
       ) : (
-        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} accentColor={accentColor} />
+        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} color={color} />
       )}
       <TabPaneList type={type} tabs={tabs} selected={selected} />
     </div>

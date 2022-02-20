@@ -5,10 +5,12 @@ import { sizeSelect } from 'storybook-helpers/presets';
 import { Select, SelectList, SelectItem, SelectFilter } from '.';
 
 export default {
-  title: 'Inputs/Select/Custom',
+  title: 'Inputs/Select/Controlled',
   component: Select,
   args: {
-    label: 'My select menu',
+    placeholder: 'My select menu',
+    error: false,
+    disabled: false,
   },
   argTypes: {
     size: sizeSelect,
@@ -18,9 +20,9 @@ export default {
 
 const valuesComplex = [{ value: 'hello', label: 'this is hello' }, { value: 'world', label: 'this is world' }];
 
-export const Filter: Story = ({ ...rest }) => (
+export const Example: Story = ({ placeholder, ...rest }) => (
   <Select {...rest} onChange={(...item) => console.log(item)} itemToString={item => item ? item.value : ''} >
-    <SelectFilter error placeholder="Options" />
+    <SelectFilter {...rest} placeholder={placeholder} />
     <SelectList>
       {valuesComplex.map((item, i) => (
         <SelectItem item={item} index={i} key={item.value} />

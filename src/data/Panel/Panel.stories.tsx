@@ -1,22 +1,19 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite } from 'storybook-helpers/presets';
 import { Panel } from '.';
 
 export default {
   title: 'Data/Panel',
   component: Panel,
   args: {
-    color: 'gray',
-  },
-  argTypes: {
-    color: colorSelectWithWhite,
+    className: '',
+    children: 'My basic panel',
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Examples: Story = ({ children, ...rest }) => (
   <Panel {...rest}>
-    123
+    {children}
   </Panel>
 );

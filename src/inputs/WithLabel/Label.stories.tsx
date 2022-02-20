@@ -7,16 +7,19 @@ import { Label } from '.';
 export default {
   title: 'Inputs/Label',
   component: Label,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 } as Meta;
 
-export const Default: Story = () => (
+export const Example: Story = () => (
   <div className="space-y-6">
     <Label value="Username">
       <TextField placeholder="Username" />
     </Label>
 
-    <Label value="Username">
-      <TextField placeholder="Username" />
+    <Label value="Username" >
+      <TextField placeholder="Username" required />
     </Label>
   </div>
 );

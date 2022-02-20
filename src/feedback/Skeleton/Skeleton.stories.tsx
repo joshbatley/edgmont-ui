@@ -7,6 +7,9 @@ import { Skeleton } from '.';
 export default {
   title: 'Feedback/Skeleton',
   component: Skeleton,
+  argTypes: {
+    varient: { table: { disable: true } },
+  },
   parameters: {
     backgrounds: { default: 'White' },
   },

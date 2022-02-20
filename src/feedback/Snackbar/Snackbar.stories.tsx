@@ -29,7 +29,7 @@ const Comp: React.FC<Snack> = ({
   );
 };
 
-export const Default: Story = ({ ...rest }) => (
+export const Example: Story = ({ ...rest }) => (
   <SnackbarProvider {...rest}>
     <div className='grid h-screen place-content-center'>
       <Comp />

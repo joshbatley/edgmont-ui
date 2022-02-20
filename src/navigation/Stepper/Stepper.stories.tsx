@@ -8,16 +8,28 @@ export default {
   title: 'Navigation/Stepper',
   component: Stepper,
   args: {
-    color: 'gray',
+    color: 'primary',
+    step: 1,
+    alternativeLabel: false,
   },
   argTypes: {
     color: colorSelectWithWhite,
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Example: Story = ({ ...rest }: any) => (
   <div className="h-[300px]">
-    <Stepper alternativeLabel step={1} {...rest}>
+    <Stepper {...rest}>
+      <StepLabel>Select campaign settings</StepLabel>
+      <StepLabel>Create an ad group</StepLabel>
+      <StepLabel>Create an ad</StepLabel>
+    </Stepper>
+  </div>
+);
+
+export const ErrorStep: Story = ({ ...rest }: any) => (
+  <div className="h-[300px]">
+    <Stepper {...rest}>
       <StepLabel>Select campaign settings</StepLabel>
       <StepLabel error>Create an ad group</StepLabel>
       <StepLabel>Create an ad</StepLabel>

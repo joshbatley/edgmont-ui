@@ -8,7 +8,7 @@ import { Text } from 'data';
 import { Password as PasswordComp, TextField } from '..';
 
 export default {
-  title: 'Inputs/TextField/Props',
+  title: 'Inputs/TextField',
   component: TextField,
   args: {
     placeholder: 'My input',
@@ -21,7 +21,7 @@ export default {
 const Before = ({ ...rest }) => (<ClickableElement onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
 const After = ({ ...rest }) => (<Text {...rest}>.com</Text>);
 
-export const Default: Story = ({ ...rest }) => <TextField {...rest} />;
+export const Example: Story = ({ ...rest }) => <TextField {...rest} />;
 
 export const PrefixAndSuffix: Story = ({ ...rest }) => (
   <div className="space-y-2">

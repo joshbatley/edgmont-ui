@@ -9,7 +9,7 @@ export default {
   component: Drawer,
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => {
+export const Example: Story = ({ ...rest }) => {
   let [open, setOpen] = useState(false);
   return (
     <>

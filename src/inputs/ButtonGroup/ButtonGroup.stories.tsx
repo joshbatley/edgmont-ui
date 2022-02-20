@@ -1,17 +1,15 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
 import { PrimaryButton } from '../Button/PrimaryButton';
 import { OutlineButton } from '../Button/OutlineButton';
 import { ButtonGroup } from '.';
 
 export default {
-  title: 'Inputs/Button/ButtonGroups',
+  title: 'Inputs/Buttons/ButtonGroups',
   component: ButtonGroup,
-  argTypes: {
-    size: sizeSelect,
-    color: colorSelectWithWhite,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
   },
 } as Meta;
 

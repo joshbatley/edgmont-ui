@@ -6,7 +6,7 @@ import { SaveIcon } from 'feedback/Icons/Outline';
 import { PrimaryButton } from '../PrimaryButton';
 
 export default {
-  title: 'Inputs/Button/Primary',
+  title: 'Inputs/Buttons/Primary',
   component: PrimaryButton,
   args: {
     children: 'Get started',
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ children, ...rest }) => <PrimaryButton {...rest}>{children}</PrimaryButton>;
+export const Example: Story = ({ children, ...rest }) => <PrimaryButton {...rest}>{children}</PrimaryButton>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
@@ -26,13 +26,28 @@ export const Sizes: Story = ({ children, ...rest }) => (
     <PrimaryButton size="small" {...rest}>{children}</PrimaryButton>
   </div>
 );
+Sizes.argTypes = {
+  size: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
-export const All: Story = ({ children = 'save' }) => (
+export const Colors: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
     {colorSelectWithWhite.options.map((c) => (
       <PrimaryButton key={c} color={c}>{children}</PrimaryButton>
     ))}
-  </div>);
+  </div>
+);
+Colors.argTypes = {
+  color: {
+    table: {
+      disable: true,
+    },
+  },
+};
 
 export const Loading: Story = ({ children, ...rest }) => (
   <PrimaryButton isLoading {...rest}>

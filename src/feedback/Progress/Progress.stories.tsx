@@ -8,7 +8,8 @@ export default {
   title: 'Feedback/Progress',
   component: CircleProgress,
   args: {
-    color: 'gray',
+    color: 'primary',
+    percentage: 30,
   },
   argTypes: {
     color: colorSelectWithWhite,

@@ -7,6 +7,11 @@ import { Breadcrumbs } from '.';
 export default {
   title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
+  args: {
+    maxItems: 8,
+    itemsBefore: 1,
+    itemsAfter: 1,
+  },
   parameters: {
     backgrounds: {
       default: 'White',
@@ -14,7 +19,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = ({ ...rest }) => (
+export const Example: Story = ({ ...rest }) => (
   <Breadcrumbs {...rest}>
     <a href="#">Edgmont</a>
     <a href="#">Navigation</a>
@@ -30,7 +35,7 @@ export const CustomDividers: Story = ({ ...rest }) => (
   </Breadcrumbs >
 );
 
-export const CollaspsedBreadcrumbs: Story = ({ ...rest }) => (
+export const CollaspsedBreadcrumbs: Story = ({ maxItems, ...rest }) => (
   <Breadcrumbs maxItems={4} {...rest}>
     <a href="#">With hidden</a>
     <a href="#">now</a>

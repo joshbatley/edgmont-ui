@@ -2,30 +2,30 @@ import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { format } from 'date-fns';
-import { BasePicker, DateRangePicker, MonthPicker, YearPicker, DatePicker } from '.';
+import { BasePicker, DateRangePicker, MonthPicker as MP, YearPicker as YP, DatePicker } from '.';
 
 export default {
   title: 'Inputs/Datepicker',
   component: BasePicker,
 } as Meta;
 
-export const Default: Story = ({ }) => (
-  <DatePicker placeholder='Click to select a date' />
+export const BasicDatePicker: Story = ({ ...rest }) => (
+  <DatePicker {...rest} />
 );
 
-export const Range: Story = ({ }) => (
-  <DateRangePicker showClear placeholder='Click to select a date' />
+export const RangePicker: Story = ({ ...rest }) => (
+  <DateRangePicker showClear placeholder='Click to select a date' {...rest} />
 );
 
-export const Month: Story = ({ }) => (
-  <MonthPicker placeholder='Click to select a month' />
+export const MonthPicker: Story = ({ ...rest }) => (
+  <MP placeholder='Click to select a month' {...rest} />
 );
 
-export const Year: Story = ({ }) => (
-  <YearPicker placeholder='Click to select a year' />
+export const YearPicker: Story = ({ ...rest }) => (
+  <YP placeholder='Click to select a year' {...rest} />
 );
 
-export const Custom: Story = () => {
+export const CustomSetup: Story = () => {
   let [date, setDate] = useState<Date | null>(null);
   let inputValue = date && format(date, 'dd/MM/yyyy');
   return (
@@ -37,4 +37,7 @@ export const Custom: Story = () => {
       onChange={(d) => setDate(d)}
     />
   );
+};
+CustomSetup.parameters = {
+  controls: { hideNoControlsWarning: true },
 };
