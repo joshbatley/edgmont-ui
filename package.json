@@ -6,13 +6,10 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "homepage": "https://ui.edgmont.dev/",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/:_authToken=${NPM_TOKEN}"
-  },
   "bugs": {
     "url": "https://github.com/jbatley/edgmont-ui/issues"
   },
-  "repository": {
+  "rpository": {
     "type": "git",
     "url": "https://github.com/jbatley/edgmont-ui"
   },
