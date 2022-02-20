@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { PaperClipIcon, TrashIcon } from 'feedback/Icons/Outline';
+import { PaperClipIcon, TrashIcon } from 'icons/Outline';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
 import { TextInline } from 'data';

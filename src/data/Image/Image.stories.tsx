@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Image } from '.';
-import { PhotographIcon } from 'feedback/Icons/Solid';
+import { PhotographIcon } from 'icons/Solid';
 
 export default {
   title: 'Data/Image',

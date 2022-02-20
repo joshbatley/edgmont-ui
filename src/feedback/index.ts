@@ -2,7 +2,6 @@ export * from './Alert';
 export * from './Badge';
 export * from './Chip';
 export * from './Code';
-export * from './Icons';
 export * from './Loader';
 export * from './Modal';
 export * from './Progress';

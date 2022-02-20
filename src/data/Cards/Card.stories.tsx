@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { Card, CardContent, CardMedia } from '.';
 import { Title, Text, TextMono } from 'data';
 import { Label, OutlineButton, PrimaryButton, TextArea, TextField } from 'inputs';
-import { ShoppingCartIcon, ShoppingBagIcon } from 'feedback/Icons/Outline';
+import { ShoppingCartIcon, ShoppingBagIcon } from 'icons/Outline';
 
 export default {
   title: 'Data/Card',

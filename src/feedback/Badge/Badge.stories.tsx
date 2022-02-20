@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { intercardinalPointsSelect, colorSelectWithWhite } from 'storybook-helpers/presets';
-import { UserIcon } from 'feedback/Icons/Solid';
+import { UserIcon } from 'icons/Solid';
 import { Badge } from '.';
 
 export default {

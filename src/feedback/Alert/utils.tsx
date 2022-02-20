@@ -4,7 +4,7 @@ import {
   ExclamationIcon,
   InformationCircleIcon,
   CheckCircleIcon,
-} from 'feedback/Icons/Solid';
+} from 'icons/Solid';
 
 export const getIcon = (severity: Severity) => {
   let props = {

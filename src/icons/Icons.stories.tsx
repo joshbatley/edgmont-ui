@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Solid as Icons, Outline as IconsOutline } from '.';
+import * as SolidIcons from 'icons/Solid';
+import * as OutlineIcon from 'icons/Outline';
 
 export default {
   title: 'Feedback/Icons',
@@ -27,8 +28,8 @@ const IconWrapper = ({ IconArr }: { IconArr: Record<string, any> }) => (
   </div>
 );
 
-const IconsComp = () => (<IconWrapper IconArr={Icons} />);
-const IconsOutlineComp = () => (<IconWrapper IconArr={IconsOutline} />);
+const IconsComp = () => (<IconWrapper IconArr={SolidIcons} />);
+const IconsOutlineComp = () => (<IconWrapper IconArr={OutlineIcon} />);
 
 export const Solid: Story = () => (<IconsComp />);
 export const Outline: Story = () => (<IconsOutlineComp />);

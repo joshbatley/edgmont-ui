@@ -19,6 +19,7 @@
   "files": [
     "dist/**/*",
     "dist/**/*.css",
+    "icons/*",
     "preset.js",
     "package.json"
   ],
@@ -26,8 +27,10 @@
     "start": "yarn storybook",
     "storybook": "start-storybook -p 6006 --no-manager-cache --static-dir .",
     "clean-dist": "rm -rf dist && mkdir dist",
+    "clean-icons": "rm -rf icons && mkdir icons",
+    "clean": "yarn clean-dist && yarn clean-icons",
     "rollup": "rollup -c rollup.config.js",
-    "build": "yarn clean-dist && yarn rollup && yarn build-tailwind",
+    "build": "yarn clean && yarn rollup && yarn build-tailwind",
     "test": "jest --watch",
     "test:ci": "jest",
     "lint": "eslint . --ignore-path .eslintignore",
