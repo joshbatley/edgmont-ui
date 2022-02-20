@@ -11,6 +11,7 @@ exports[`Radio test should errored with disabled classes 1`] = `
       <input
         class="peer hidden"
         type="radio"
+        value=""
       />
       <div
         class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
@@ -45,6 +46,7 @@ exports[`Radio test should render 1`] = `
       <input
         class="peer hidden"
         type="radio"
+        value=""
       />
       <div
         class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600"
@@ -80,6 +82,7 @@ exports[`Radio test should render with disabled classes 1`] = `
         class="peer hidden"
         disabled=""
         type="radio"
+        value=""
       />
       <div
         class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
