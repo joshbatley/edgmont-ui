@@ -34,7 +34,6 @@ Sizes.argTypes = {
   },
 };
 
-
 export const Colors: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
     {colorSelectWithWhite.options.map((c) => (

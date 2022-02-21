@@ -14,8 +14,6 @@ export default {
   },
 } as Meta;
 
-
-
 export const Example: Story = ({ title, children, ...rest }) => {
   let [open, setOpen] = useState(false);
 
