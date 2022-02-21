@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
   backgrounds: {
     default: 'Light',
@@ -28,7 +28,7 @@ export const decorators = [
       document.body.appendChild(portalRoot);
     }
     return (
-      <div className="antialiased font-sans" style={{ fontSize: 14 }}>
+      <div className='antialiased font-sans' style={{ fontSize: 14 }}>
         {Story()}
       </div>
     )

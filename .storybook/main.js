@@ -1,12 +1,12 @@
-const path = require("path");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    '../src/**/*.stories.mdx',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
-  "typescript": {
+  typescript: {
     check: true,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -26,17 +26,18 @@ module.exports = {
     // Return the altered config
     return config;
   },
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
     {
-      name: "@storybook/addon-postcss",
+      name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
-          implementation: require("postcss"),
+          implementation: require('postcss'),
         },
       },
     },
   ],
-  "framework": "@storybook/react",
+  staticDirs: ['../public'],
+  framework: '@storybook/react',
 }
