@@ -17,19 +17,17 @@
 
 </div>
 
-<!-- Idea behind -->
-
 ## Getting Started
 
 ### Installation methods
 
-There a few methods to choose from depending on your usage for edgmont-ui
+There are a few methods to choose from depending on your usage for edgmont-ui
 
 #### Option 1 - Edgmont-ui theme & Tailwind
 
 ##### Install tailwind
 
-Follow this official set up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
+Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
 
 ##### Install edgmont-ui
 
@@ -69,7 +67,7 @@ import "edgmont-ui/dist/datepicker.css";
 
 ##### Install tailwind
 
-Follow this official set up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
+Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
 
 ##### Install edgmont-ui
 
@@ -79,7 +77,7 @@ npm/yarn install edgmont-ui
 
 ##### Import edgmont-ui tailwind preset
 
-Update the tailwind config to your prefences check edgmont-ui/preset, for the required color names and update to your liking.
+Update the tailwind config to your preferences check edgmont-ui/preset, for the required color names and update to your liking.
 
 ```js
 // tailwind.config.js
@@ -136,20 +134,20 @@ or
 import "edgmont-ui/dist/edgmont.css";
 ```
 
-> Note: This might be optimized and is not recommend!
+> Note: This might be optimized and is not recommended!
 
 ## Package used
 
 - React - Framework of choice
-- Typesciprt - Types!!!
+- Typescript - Types!!!
 - Tailwind - for all styling
-- Heroicons - for the few icons need
+- Heroicons - for the few icons needed
 - Downshift - a easy to use API for our select element
 - React-datepicker - for the datepicker api
-- Date-fns - the datapicker date library of choice
+- Date-fns - the datepicker date library of choice
 - Prism-react-renderer & react-simple-code-editor - for the code editor and syntax highlighter
 - React-dropzone - for the file uploader
-- React-spring - for any animation/transistions
+- React-spring - for any animation/transitions
 - React-popper - for tooltip and popover API
 - Storybooks - for the docs
 
