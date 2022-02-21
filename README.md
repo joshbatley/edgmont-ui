@@ -11,7 +11,7 @@
 [version-image]: https://img.shields.io/npm/v/edgmont-ui
 [version-url]: https://www.npmjs.com/package/edgmont-ui
 [license-image]: https://img.shields.io/github/license/joshbatley/edgmont-ui
-[license-url]: https://github.com/joshbatley/edgmont-ui/blob/master/LICENSE
+[license-url]: https://github.com/joshbatley/edgmont-ui/blob/main/LICENSE
 [size-image]: https://img.shields.io/bundlephobia/minzip/edgmont-ui
 [size-url]: https://bundlephobia.com/package/edgmont-ui
 
