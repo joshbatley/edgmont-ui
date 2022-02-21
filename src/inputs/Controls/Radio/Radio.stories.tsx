@@ -25,7 +25,6 @@ export const Default: Story = ({ children, ...rest }) => (
   </div>
 );
 
-
 export const Disabled: Story = ({ children, disabled, ...rest }) => (
   <div className="space-y-2">
     <Radio disabled name="default" labelText="123" onChange={change} {...rest} />
@@ -36,7 +35,6 @@ export const Disabled: Story = ({ children, disabled, ...rest }) => (
 Disabled.argTypes = {
   disabled: { table: { disable: true } },
 };
-
 
 export const Errored: Story = ({ children, ...rest }) => (
   <div className="space-y-2">

@@ -19,7 +19,6 @@ export default {
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet imperdiet nunc non porttitor. Morbi vitae venenatis mauris. Nam malesuada ipsum mi, sed maximus nulla rhoncus sit amet.';
 
-
 const Comp: React.FC<Snack> = ({
   text = 'Add Snackbar', title = 'Your notification here', ...rest
 }) => {

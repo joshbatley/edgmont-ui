@@ -47,7 +47,6 @@ Clearable.argTypes = {
   isClearable: { table: { disable: true } },
 };
 
-
 export const Filterable: Story = ({ isFilterable, ...rest }) => (
   <SimpleSelect values={values} isFilterable {...rest} />
 );

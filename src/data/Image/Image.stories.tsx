@@ -12,7 +12,6 @@ export default {
   },
 } as Meta;
 
-
 const fallback = (
   <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-white">
     <PhotographIcon width={30} height={30} />
