@@ -42,16 +42,16 @@ jobs:
 
       - name: Publish Major
         id: publish-major
-        if: ${{ github.event.label.name == 'release-major' }}
+        if: ${{ github.event.head_commit.message == 'Release-major' }}
         run: yarn publish --major
 
       - name: Publish Minor
         id: publish-minor
-        if: ${{ github.event.label.name == 'release-minor' }}
+        if: ${{ github.event.head_commit.message == 'Release-minor' }}
         run: yarn publish --minor
 
       - name: Publish Patch
-        if: ${{ github.event.label.name != 'release-major' && github.event.label.name != 'release-minor' }}
+        if: ${{ github.event.head_commit.message != 'Release-major' && github.event.head_commit.message != 'Release-minor' }}
         run: yarn publish --patch
 
       - name: Publish
