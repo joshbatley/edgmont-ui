@@ -3,6 +3,7 @@
   <img src="public/logo-light.svg#gh-light-mode-only" height="128"/>
 </p>
 <div align="center">
+
 [![Build][build-image]][build-url] [![NPM Version][version-image]][version-url] [![License][license-image]][license-url] [![Bundle Size][size-image]][size-url]
 
 [build-image]: https://img.shields.io/github/workflow/status/joshbatley/edgmont-ui/Publish%20Package
