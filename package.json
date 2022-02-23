@@ -7,11 +7,11 @@
   "license": "MIT",
   "homepage": "https://ui.edgmont.dev/",
   "bugs": {
-    "url": "https://github.com/jbatley/edgmont-ui/issues"
+    "url": "https://github.com/joshbatley/edgmont-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbatley/edgmont-ui"
+    "url": "https://github.com/joshbatley/edgmont-ui"
   },
   "contributors": [
     "joshbatley"
