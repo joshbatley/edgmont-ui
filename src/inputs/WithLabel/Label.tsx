@@ -4,7 +4,7 @@ import { Text } from 'data';
 
 export type LabelProps = {
   value: React.ReactNode;
-  className: string;
+  className?: string;
   children: React.ReactElement;
 };
 
