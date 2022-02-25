@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { sizeSelect } from 'storybook-helpers/presets';
-import { SaveIcon } from 'feedback/Icons/Outline';
+import { SaveIcon } from '@heroicons/react/outline';
 import { HighlightButton } from '../HighlightButton';
 
 export default {

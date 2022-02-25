@@ -1,17 +1,17 @@
 {
   "name": "edgmont-ui",
-  "version": "0.0.51",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "homepage": "https://ui.edgmont.dev/",
   "bugs": {
-    "url": "https://github.com/jbatley/edgmont-ui/issues"
+    "url": "https://github.com/joshbatley/edgmont-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbatley/edgmont-ui"
+    "url": "https://github.com/joshbatley/edgmont-ui"
   },
   "contributors": [
     "joshbatley"
@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "start": "yarn storybook",
-    "storybook": "start-storybook -p 6006 --no-manager-cache --static-dir .",
+    "copy-preset": "cp preset.js public/preset.js",
+    "storybook": "yarn copy-preset && start-storybook -p 6006 --no-manager-cache",
     "clean-dist": "rm -rf dist && mkdir dist",
     "rollup": "rollup -c rollup.config.js",
     "build": "yarn clean-dist && yarn rollup && yarn build-tailwind",
@@ -37,7 +38,6 @@
     "create-ignore": "echo '*\n!.gitkeep' > ./docs/.gitignore",
     "create-keep": "touch ./docs/.gitkeep",
     "create-doc-files": "yarn create-ignore && yarn create-cname && yarn create-keep",
-    "copy-preset": "cp preset.js docs/preset.js",
     "build-storybook": "build-storybook -o ./docs",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
     "build-tailwind": "tailwind  -i ./src/index.css -o ./dist/edgmont.css --postcss ./postcss.config.js --minify",

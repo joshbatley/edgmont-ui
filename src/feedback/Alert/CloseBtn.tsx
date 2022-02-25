@@ -1,5 +1,5 @@
 import React from 'react';
-import { XIcon } from 'feedback/Icons/Solid';
+import { XIcon } from '@heroicons/react/solid';
 import { ClickableElement, ClickableElementProps } from 'inputs';
 
 export const CloseBtn: React.FC<ClickableElementProps> = ({ onClick }) => (

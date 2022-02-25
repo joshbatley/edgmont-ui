@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DotsHorizontalIcon } from 'feedback/Icons/Outline';
+import { DotsHorizontalIcon } from '@heroicons/react/outline';
 import { SecondaryButton } from 'inputs';
 import { Item } from './Item';
 

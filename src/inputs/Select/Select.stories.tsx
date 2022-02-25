@@ -17,7 +17,6 @@ export default {
   },
 } as Meta;
 
-
 const valuesComplex = [{ value: 'hello', label: 'this is hello' }, { value: 'world', label: 'this is world' }];
 
 export const Example: Story = ({ placeholder, ...rest }) => (

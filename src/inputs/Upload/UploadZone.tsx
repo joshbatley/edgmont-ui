@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import clsx from 'clsx';
-import { UploadIcon } from 'feedback/Icons/Outline';
+import { UploadIcon } from '@heroicons/react/outline';
 import { Text, TextInline, List } from 'data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';

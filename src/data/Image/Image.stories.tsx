@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Image } from '.';
-import { PhotographIcon } from 'feedback/Icons/Solid';
+import { PhotographIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Data/Image',
@@ -11,7 +11,6 @@ export default {
     controls: { hideNoControlsWarning: true },
   },
 } as Meta;
-
 
 const fallback = (
   <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-white">

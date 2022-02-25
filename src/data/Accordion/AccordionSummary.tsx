@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { ChevronRightIcon } from 'feedback/Icons/Solid';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 import { ClickableElement } from 'inputs';
 import { AccordionProps } from './Accordion';
 

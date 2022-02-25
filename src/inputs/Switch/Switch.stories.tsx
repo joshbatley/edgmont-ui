@@ -27,7 +27,6 @@ Sizes.argTypes = {
   size: { table: { disable: true } },
 };
 
-
 export const Colors: Story = ({ ...rest }) => (
   <div className="space-x-2">
     {colorSelect.options.map((c) => (

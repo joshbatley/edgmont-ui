@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
-import { SaveIcon } from 'feedback/Icons/Outline';
+import { SaveIcon } from '@heroicons/react/outline';
 import { SecondaryButton } from '../SecondaryButton';
 
 export default {
@@ -33,7 +33,6 @@ Sizes.argTypes = {
     },
   },
 };
-
 
 export const Colors: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
