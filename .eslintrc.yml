@@ -5,8 +5,8 @@ extends:
   - plugin:@typescript-eslint/recommended
 parser: "@typescript-eslint/parser"
 parserOptions:
-  project:
-    - "./tsconfig.json"
+  sourceType: module
+  project: "./packages/*/tsconfig.json"
 env:
   browser: true
   node: true
