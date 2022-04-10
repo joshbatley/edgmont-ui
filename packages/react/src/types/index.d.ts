@@ -29,3 +29,5 @@ type WithKey<K extends string | number | symbol> = {
   [k in K]: boolean
 };
 
+// Hack as its effort to fix the as prop and TS
+type AsProp = any;

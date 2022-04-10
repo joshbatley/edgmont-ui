@@ -1,0 +1,11 @@
+lib/*
+**/node_modules/
+jest.config.js
+setupTests.ts
+rollup.config.js
+tailwind.config.js
+postcss.config.js
+dist/*
+src/tailwind.css
+docs/*
+preset.js

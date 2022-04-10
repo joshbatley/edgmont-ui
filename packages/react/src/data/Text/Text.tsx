@@ -3,11 +3,11 @@ import clsx from 'clsx';
 
 export type TextProps = {
   children?: React.ReactNode,
-  as?: React.ElementType,
+  as?: AsProp;
   className?: string,
 };
 
-export const Text: React.FC<TextProps> = ({ children, as: Component = 'p', className, ...params }) => (
+export const Text = ({ children, as: Component = 'p', className, ...params }: TextProps) => (
   <Component className={className} {...params}>
     {children}
   </Component>

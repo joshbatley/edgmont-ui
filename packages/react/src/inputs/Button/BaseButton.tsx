@@ -3,10 +3,10 @@ import clsx from 'clsx';
 import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
-  size?: Size,
+  size?: Size;
   color?: ColorsAndWhite;
-  isLoading?: boolean,
-  as?: React.ElementType,
+  isLoading?: boolean;
+  as?: AsProp;
 } & React.ComponentPropsWithoutRef<'button'>;
 
 const sizingClasses = (size?: Size) => {
