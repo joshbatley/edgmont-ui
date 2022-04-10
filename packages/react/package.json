@@ -1,6 +1,6 @@
 {
-  "name": "@edgmont-ui-test/react",
-  "version": "0.1.5",
+  "name": "@edgmont-ui/react",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
