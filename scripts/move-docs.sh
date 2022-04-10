@@ -3,7 +3,7 @@ files=()
 for d in packages/*; do
   files+=("${d//packages\//}")
   mkdir docs/"${d//packages/}"
-  rsync -a "${d:1}"/build/ "${d//packages/docs}"
+  rsync -a "./${d}"/build/ "${d//packages/docs}"
 done
 
 links=""

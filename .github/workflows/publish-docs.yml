@@ -9,7 +9,7 @@ on:
 
 env:
   CI: true
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
 jobs:
   build:
@@ -26,9 +26,9 @@ jobs:
         uses: actions/cache@v2.1.7
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          key: ${{runner.os}}-node-${{hashFiles('**/yarn.lock')}}
           restore-keys: |
-            ${{ runner.os}}-node-
+            ${{runner.os}}-node-
 
       - name: Install Dependencies
         if: steps.cache-node.output.cache-hit != 'true'
