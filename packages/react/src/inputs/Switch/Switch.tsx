@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 export type SwitchProps = {
-  color?: Colors,
+  color?: Colors;
   size?: 'small' | 'medium';
 } & Omit<React.ComponentPropsWithRef<'input'>, 'size'>;
 

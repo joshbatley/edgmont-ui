@@ -8,7 +8,7 @@ export type TooltipProps = {
   tooltip: React.ReactNode;
   direction?: Placement;
   dark?: boolean;
-  as?: React.ElementType;
+  as?: AsProp;
   disabled?: boolean;
 };
 

@@ -32,7 +32,7 @@ Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-r
 ##### Install edgmont-ui
 
 ```
-npm/yarn install edgmont-ui
+npm/yarn install @edgmont-ui/react
 ```
 
 ##### Import edgmont-ui tailwind preset
@@ -41,7 +41,7 @@ Update the tailwind config
 
 ```js
 // tailwind.config.js
-const preset = require("edgmont-ui/preset");
+const preset = require("@edgmont-ui/react/preset");
 module.exports = {
   ...preset,
 };
@@ -53,14 +53,14 @@ Datepicker is a css file so will need to be imported.
 
 ```css
 /* index.css */
-@import "edgmont-ui/dist/datepicker.css";
+@import "@edgmont-ui/react/dist/datepicker.css";
 ```
 
 or
 
 ```js
 // index.js
-import "edgmont-ui/dist/datepicker.css";
+import "@edgmont-ui/react/dist/datepicker.css";
 ```
 
 #### Option 2 - Custom theme & Tailwind
@@ -72,7 +72,7 @@ Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-r
 ##### Install edgmont-ui
 
 ```
-npm/yarn install edgmont-ui
+npm/yarn install @edgmont-ui/react
 ```
 
 ##### Import edgmont-ui tailwind preset
@@ -81,7 +81,7 @@ Update the tailwind config to your preferences check edgmont-ui/preset, for the 
 
 ```js
 // tailwind.config.js
-const preset = require("edgmont-ui/preset");
+const preset = require("@edgmont-ui/react/preset");
 module.exports = {
    theme: {
     colors: ({colors}) => ({
@@ -91,7 +91,7 @@ module.exports = {
   }
   content: [
     // Extends you content and include the edgmont-ui package
-    'node_modules/edgmont-ui/**/*.{js,jsx,ts,tsx}',
+    'node_modules/@edgmont-ui/react/**/*.{js,jsx,ts,tsx}',
   ],
 };
 ```
@@ -102,14 +102,14 @@ Datepicker is a css file so will need to be imported.
 
 ```css
 /* index.css */
-@import "edgmont-ui/dist/datepicker.css";
+@import "@edgmont-ui/react/dist/datepicker.css";
 ```
 
 or
 
 ```js
 // index.js
-import "edgmont-ui/dist/datepicker.css";
+import "@edgmont-ui/react/dist/datepicker.css";
 ```
 
 #### Option 3 - Playground
@@ -117,21 +117,21 @@ import "edgmont-ui/dist/datepicker.css";
 ##### Install edgmont-ui
 
 ```
-npm/yarn install edgmont-ui
+npm/yarn install @edgmont-ui/react
 ```
 
 ##### Add edgmont-ui css with no tailwind required
 
 ```css
 /* index.css */
-@import "edgmont-ui/dist/edgmont.css";
+@import "@edgmont-ui/react/dist/edgmont.css";
 ```
 
 or
 
 ```js
 // index.js
-import "edgmont-ui/dist/edgmont.css";
+import "@edgmont-ui/react/dist/edgmont.css";
 ```
 
 > Note: This might be optimized and is not recommended!

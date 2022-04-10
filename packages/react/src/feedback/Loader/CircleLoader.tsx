@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type CircleLoaderProps = {
-  color?: ColorsAndWhite,
+  color?: ColorsAndWhite;
   height?: string | number;
   width?: string | number;
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type CircleProgressProps = {
-  color?: ColorsAndWhite,
+  color?: ColorsAndWhite;
   height?: string | number;
   width?: string | number;
   percentage?: number;

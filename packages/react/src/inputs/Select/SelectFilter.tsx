@@ -4,7 +4,7 @@ import { SelectorIcon } from '@heroicons/react/outline';
 import { useSelectContext, SelectButton, SelectButtonProps } from '.';
 
 export type SelectFilterProps = {
-  textProps?: TextFieldProps,
+  textProps?: TextFieldProps;
 } & SelectButtonProps;
 
 export const SelectFilter: React.FC<SelectFilterProps> = ({ textProps, ...rest }) => {
