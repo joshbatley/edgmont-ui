@@ -5,7 +5,7 @@ import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '..';
 export type SimpleSelectProps = {
   values: Array<any>;
   placeholder?: string;
-  error?: boolean
+  error?: boolean;
   disabled?: boolean;
   isClearable?: boolean;
   isFilterable?: boolean;

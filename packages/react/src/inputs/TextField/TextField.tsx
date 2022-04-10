@@ -5,13 +5,13 @@ import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
 
 export type TextFieldProps = {
-  error?: boolean,
-  before?: ReactElement,
-  after?: ReactElement,
-  prefixIcon?: ReactNode,
-  suffixIcon?: ReactNode,
-  size?: Size,
-  type?: 'text' | 'password' | 'number' | 'email',
+  error?: boolean;
+  before?: ReactElement;
+  after?: ReactElement;
+  prefixIcon?: ReactNode;
+  suffixIcon?: ReactNode;
+  size?: Size;
+  type?: 'text' | 'password' | 'number' | 'email';
 } & BaseInputProps;
 
 const applySizeClass = (size?: Size) => {

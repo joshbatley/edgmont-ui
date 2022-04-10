@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
+
 type MediaComponent = 'video' | 'audio' | 'picture' | 'iframe' | 'img' | 'div';
 
 export type CardMediaProps = {

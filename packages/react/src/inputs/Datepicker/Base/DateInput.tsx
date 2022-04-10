@@ -4,7 +4,7 @@ import { CalendarIcon } from '@heroicons/react/outline';
 
 export type DateInputProps = {
   placeholder?: string;
-  value?: string | null
+  value?: string | null;
   onClick: () => void;
   clear?: () => void;
   showClear?: boolean;

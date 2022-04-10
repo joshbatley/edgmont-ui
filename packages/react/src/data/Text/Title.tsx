@@ -4,9 +4,9 @@ import clsx from 'clsx';
 type TagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type HeadingProps = {
-  children?: React.ReactNode,
-  as?: React.ElementType & TagType,
-  className?: string,
+  children?: React.ReactNode;
+  as?: TagType;
+  className?: string;
 };
 
 const addHeadingClass = (comp: TagType) => {

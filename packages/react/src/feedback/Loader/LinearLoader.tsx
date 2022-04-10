@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { LinearSlide } from 'utils';
 
 export type LinearLoaderProps = {
-  color?: ColorsAndWhite,
+  color?: ColorsAndWhite;
   height?: string | number;
 };
 

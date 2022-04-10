@@ -24,6 +24,9 @@
     "build-docs:ci": "yarn clean-docs && yarn build-docs && yarn move-docs",
     "build-docs": "lerna run build-docs:ci",
     "move-docs": "./scripts/move-docs.sh",
-    "clean-docs": "rm -rf ./docs/*"
+    "clean-docs": "rm -rf ./docs/*",
+    "lint": "eslint . --ignore-path .eslintignore",
+    "typecheck": "lerna run typecheck",
+    "test:ci": "lerna run test:ci"
   }
 }
