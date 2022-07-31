@@ -26,10 +26,10 @@ describe('Radio test', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should update value when updated', () => {
+  it('should update value when updated', async () => {
     const { getByRole } = render(<Radio value="testing-value" name="testing-input" onChange={onChangeMock} />);
     expect(onChangeMock).not.toHaveBeenCalled();
-    userEvent.click(getByRole('radio'));
+    await userEvent.click(getByRole('radio'));
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 });

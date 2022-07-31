@@ -33,9 +33,9 @@ describe('Buttons', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should allow a onClick to be passed and fire the event', () => {
+  it('should allow a onClick to be passed and fire the event', async () => {
     const { getByRole } = render(<BaseButton onClick={onClickMock}>My button</BaseButton>);
-    userEvent.click(getByRole('button', { name: 'My button' }));
+    await userEvent.click(getByRole('button', { name: 'My button' }));
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 });
