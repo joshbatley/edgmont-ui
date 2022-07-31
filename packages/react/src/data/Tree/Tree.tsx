@@ -8,7 +8,7 @@ export type TreeProps = {
   defaultExpandIcon?: React.ReactNode;
   defaultEndIcon?: React.ReactNode;
   blockNode?: boolean;
-};
+} & WithChildren;
 
 export const Tree: React.FC<TreeProps> = ({
   children,

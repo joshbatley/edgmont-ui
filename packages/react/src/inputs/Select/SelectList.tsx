@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'data';
 import { useSelectContext } from '.';
 
-export const SelectList: React.FC = ({ children }) => {
+export const SelectList: React.FC<WithChildren> = ({ children }) => {
   let { isOpen } = useSelectContext();
 
   if (!isOpen) {

@@ -8,6 +8,7 @@ export type AccordionProps = {
   summary?: React.ReactNode;
   isOpen?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  children: React.ReactNode,
 };
 
 export const Accordion: React.FC<AccordionProps> = ({

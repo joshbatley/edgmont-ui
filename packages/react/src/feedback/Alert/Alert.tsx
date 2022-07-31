@@ -11,7 +11,7 @@ export type AlertProps = {
   dark?: boolean;
   withClose?: () => void;
   className?: string;
-};
+} & WithChildren;
 
 const classes: Record<Severity, string> = {
   error: 'bg-red-50 text-red-500 border-red-500',

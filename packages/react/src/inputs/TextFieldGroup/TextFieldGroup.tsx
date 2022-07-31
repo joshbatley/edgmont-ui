@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TextFieldGroup: React.FC = ({ children }) => (
+export const TextFieldGroup: React.FC<WithChildren> = ({ children }) => (
   <div>
     {React.Children.map(children, (child, idx) => (
       React.cloneElement(child as React.ReactElement, {

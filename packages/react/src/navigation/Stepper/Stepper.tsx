@@ -6,14 +6,14 @@ type StepperPropsVertical = {
   color?: Colors;
   step: number;
   direction?: 'vertical';
-};
+} & WithChildren;
 
 type StepperPropsHorizontal = {
   color?: Colors;
   step: number;
   direction?: 'horizontal';
   alternativeLabel?: boolean;
-};
+} & WithChildren;
 
 export type StepperProps = StepperPropsVertical | StepperPropsHorizontal;
 

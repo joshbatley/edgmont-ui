@@ -8,7 +8,7 @@ import { SelectContext } from '.';
 export type SelectProps = {
   disabled?: boolean;
   className?: string;
-} & Omit<DownshiftProps<any>, 'children'>;
+} & Omit<DownshiftProps<any>, 'children'> & WithChildren;
 
 export const clearInputOnSelectItem = (state: DownshiftState<any>, changes: StateChangeOptions<any>) => {
   if (changes.type === Downshift.stateChangeTypes.clickButton) {

@@ -6,7 +6,7 @@ import { useSelectContext } from '.';
 export type SelectItemProps = {
   item: any;
   index: number;
-};
+} & WithChildren;
 
 export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index }) => {
   let {

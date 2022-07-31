@@ -8,7 +8,7 @@ export type ChipProps = {
   color?: Colors;
   size?: Size;
   handleDelete?: () => void;
-};
+} & WithChildren;
 
 const applySize = (size: Size) => {
   switch (size) {

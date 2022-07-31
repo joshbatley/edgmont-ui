@@ -31,3 +31,5 @@ type WithKey<K extends string | number | symbol> = {
 
 // TS hack, for as prop as its effort to fix
 type AsProp = any;
+
+type WithChildren = { children?: React.ReactNode };

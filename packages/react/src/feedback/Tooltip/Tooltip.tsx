@@ -10,7 +10,7 @@ export type TooltipProps = {
   dark?: boolean;
   as?: AsProp;
   disabled?: boolean;
-};
+} & WithChildren;
 
 export const Tooltip: React.FC<TooltipProps> = ({
   tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled,

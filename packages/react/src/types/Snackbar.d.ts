@@ -19,7 +19,7 @@ type SnackbarProviderProps = {
   anchor?: IntercardinalPoints;
   autoHideDuration?: number;
   portalLocation?: Element;
-};
+} & WithChildren;
 
 type SnackContext = {
   enqueue: (message: string, options?: SnackOptions) => void;

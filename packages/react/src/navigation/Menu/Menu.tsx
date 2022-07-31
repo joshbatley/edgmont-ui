@@ -11,7 +11,7 @@ export type MenuProps = {
   handleClose: () => void;
   className?: string;
   inline?: boolean;
-};
+} & WithChildren;
 
 export const Menu: React.FC<MenuProps> = ({ children, isOpen, direction = 'bottom-start', itemRef, handleClose, className, inline = false }) => {
   let [popperRef, setPopperRef] = useState<HTMLDivElement | null>(null);

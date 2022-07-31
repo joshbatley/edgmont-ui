@@ -6,7 +6,7 @@ export type DrawerProps = {
   open?: boolean;
   direction?: 'left' | 'right';
   handleClose: () => void;
-};
+} & WithChildren;
 
 export const Drawer: React.FC<DrawerProps> = ({
   open, handleClose, direction = 'right', children,

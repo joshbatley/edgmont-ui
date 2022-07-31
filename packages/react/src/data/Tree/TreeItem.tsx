@@ -21,7 +21,7 @@ export type TreeItemProps = {
   level?: number;
   disabled?: boolean;
   onClick?: (event: React.MouseEvent, toggleItem?: () => void) => void;
-};
+} & WithChildren;
 
 export const TreeItem: React.FC<TreeItemProps> = ({
   nodeId, label, children, className, icon, level = 1, onClick, active, disabled, labelClasses,
@@ -78,7 +78,7 @@ export const TreeItem: React.FC<TreeItemProps> = ({
       {children && (
         <Collapse inProp={isItemExpanded(nodeId)} className="flex flex-col">
           {React.Children.map(children, child =>
-            React.isValidElement(child) && React.cloneElement(child, { level: level + 1 }),
+            React.isValidElement(child) && React.cloneElement<any>(child, { level: level + 1 }),
           )}
         </Collapse>
       )}
