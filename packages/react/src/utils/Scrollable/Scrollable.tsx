@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
-export const Scrollable: React.FC = ({ children }) => {
+export const Scrollable: React.FC<WithChildren> = ({ children }) => {
   let [{ left, right }, setArrows] = useState({ left: false, right: false });
   let [scrollable, setScrollable] = useState<boolean | undefined>(undefined);
   let ref = useRef<HTMLDivElement>(null);

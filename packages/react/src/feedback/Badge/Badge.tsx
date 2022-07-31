@@ -6,7 +6,7 @@ export type BadgeProps = {
   position?: IntercardinalPoints;
   tag: React.ReactNode;
   wrapperClasses?: string;
-};
+} & WithChildren;
 
 const getPosition = (position: IntercardinalPoints) => {
   let classes = '';

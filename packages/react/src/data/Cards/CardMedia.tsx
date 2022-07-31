@@ -12,7 +12,7 @@ export type CardMediaProps = {
   alt?: string;
   style?: React.CSSProperties,
   fallback?: React.ReactNode;
-};
+} & WithChildren;
 
 const MEDIA_COMPONENTS = ['video', 'audio', 'picture', 'iframe', 'img'];
 const IMAGE_COMPONENTS = ['picture', 'img'];

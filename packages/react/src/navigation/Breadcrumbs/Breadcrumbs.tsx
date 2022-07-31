@@ -8,7 +8,7 @@ export type BreadcrumbsProps = {
   dividerIcon?: React.ReactElement;
   itemsBefore?: number;
   itemsAfter?: number;
-};
+} & WithChildren;
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   children, maxItems = 8, itemsBefore = 1, itemsAfter = 1, dividerIcon = <div>/</div>,

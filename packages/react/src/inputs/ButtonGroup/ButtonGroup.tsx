@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-export const ButtonGroup: React.FC = ({ children }) => (
+export const ButtonGroup: React.FC<WithChildren> = ({ children }) => (
   <>
     {React.Children.map(children, (child, index) => React.isValidElement(child) && (
       React.cloneElement(child, {

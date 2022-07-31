@@ -6,7 +6,7 @@ export type ClickOutsideProps = {
   target: Element | null;
   wrapper?: React.ReactElement;
   inline?: boolean;
-};
+} & WithChildren;
 
 export const ClickOutside: React.FC<ClickOutsideProps> = ({ children, handleClose, target, wrapper, inline = false }) => {
   let [isOpen, setOpen] = useState(true);

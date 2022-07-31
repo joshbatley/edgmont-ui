@@ -8,7 +8,7 @@ export type DateWrapperProps = {
   isOpen?: boolean;
   itemRef: Element | null;
   handleClose: () => void;
-};
+} & WithChildren;
 
 export const DateWrapper: React.FC<DateWrapperProps> = ({ children, itemRef, direction = 'bottom-start', handleClose, isOpen }) => {
   let [popperRef, setPopperRef] = useState<HTMLDivElement | null>(null);

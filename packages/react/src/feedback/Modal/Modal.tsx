@@ -10,9 +10,13 @@ export type ModalProps = {
   panelClasses?: string;
   handleClose: () => void;
   open?: boolean;
-};
+} & WithChildren;
 
-const Header: React.FC<{ handleClose: () => void; }> = ({ children, handleClose }) => (
+type HeaderProps = {
+  handleClose: () => void;
+} & WithChildren;
+
+const Header: React.FC<HeaderProps> = ({ children, handleClose }) => (
   <div className="inline-flex border-b w-full justify-between">
     <Title className="self-center px-2" as="h3">{children}</Title>
     <ClickableElement onClick={handleClose} className="px-3 py-2 ml-5">

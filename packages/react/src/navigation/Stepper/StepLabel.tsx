@@ -8,7 +8,7 @@ export type StepLabelProps = {
   state?: 'completed' | 'active' | 'default';
   error?: boolean;
   color?: Colors;
-};
+} & WithChildren;
 
 export const StepLabel: React.FC<StepLabelProps> = ({
   icon, children, idx = 0, state, error, color = 'primary',

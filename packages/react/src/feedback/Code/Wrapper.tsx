@@ -3,7 +3,7 @@ import React from 'react';
 type WrapperProps = {
   style: React.CSSProperties;
   skip?: boolean;
-};
+} & WithChildren;
 
 export const Wrapper: React.FC<WrapperProps> = ({
   children, style, skip,

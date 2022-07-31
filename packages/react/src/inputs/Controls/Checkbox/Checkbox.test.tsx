@@ -26,10 +26,10 @@ describe('Checkbox test', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should update value when updated', () => {
+  it('should update value when updated', async () => {
     const { getByRole } = render(<Checkbox value="testing-value" name="testing-input" onChange={onChangeMock} />);
     expect(onChangeMock).not.toHaveBeenCalled();
-    userEvent.click(getByRole('checkbox'));
+    await userEvent.click(getByRole('checkbox'));
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 });
