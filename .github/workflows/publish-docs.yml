@@ -34,6 +34,9 @@ jobs:
         if: steps.cache-node.output.cache-hit != 'true'
         run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
 
+      - name: Build
+        run: yarn build
+
       - name: Build Docs
         run: yarn build-docs:ci
 
