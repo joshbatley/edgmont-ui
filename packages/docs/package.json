@@ -38,8 +38,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-docs:ci": "react-scripts build",
-    "build-docs": "react-scripts build",
+    "build-docs-home": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
