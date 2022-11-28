@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     colors: ({ colors }) => ({
@@ -18,6 +19,6 @@ module.exports = {
   },
   content: [
     './src/**/*.{js,jsx,ts,tsx,css}',
-    'node_modules/@edgmont-ui/react/**/*.{js,jsx,ts,tsx}',
+    '../../node_modules/@edgmont-ui/react/**/*.{js,jsx,ts,tsx}',
   ],
-};
+}

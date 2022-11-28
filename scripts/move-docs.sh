@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
-files=()
+echo "Moving build into docs folder"
 for d in packages/*; do
-  files+=("${d//packages\//}")
-  mkdir docs/"${d//packages/}"
-  rsync -a $(pwd)"/${d}"/docs/ "${d//packages/docs}"
+  files=("${d//packages\//}")
+  if [ "$files" == "docs" ]; then
+    echo "${d//packages/docs}"
+    rsync -a $(pwd)"/${d}"/build/ "${d//packages/.}"
+  else
+    mkdir docs/"${d//packages/}"
+    rsync -a $(pwd)"/${d}"/docs/ "${d//packages/docs}"
+  fi
 done
-
-links=""
-for f in "${files[@]}"; do
-  links+="<a href='$f'>$f<\/a>\n"
-done
-
-sed "s/{{links}}/${links}/g" scripts/doc-template.html > docs/index.html

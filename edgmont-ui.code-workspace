@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "path": "packages/docs"
+    },
+    {
+      "path": "packages/react"
+    }
+  ]
+}
