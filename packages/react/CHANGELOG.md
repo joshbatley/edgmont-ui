@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.10 (2022-11-28)
+
+**Note:** Version bump only for package @edgmont-ui/react
+
+
+
+
+
 ## [0.1.9](https://github.com/joshbatley/edgmont-ui/compare/@edgmont-ui/react@0.1.8...@edgmont-ui/react@0.1.9) (2022-11-28)
 
 **Note:** Version bump only for package @edgmont-ui/react

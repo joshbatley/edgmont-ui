@@ -1,6 +1,6 @@
 {
   "name": "@edgmont-ui/docs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "homepage": "https://ui.edgmont.dev/",
@@ -20,7 +20,7 @@
     "url": "https://github.com/joshbatley/edgmont-ui"
   },
   "dependencies": {
-    "@edgmont-ui/react": "^0.1.9",
+    "@edgmont-ui/react": "^0.1.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
