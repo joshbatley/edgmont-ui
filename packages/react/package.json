@@ -29,6 +29,7 @@
     "clean-dist": "rm -rf dist && mkdir dist",
     "rollup": "rollup -c rollup.config.js",
     "build": "yarn clean-dist && yarn rollup && yarn build-tailwind",
+    "build:ci": "yarn clean-dist && yarn rollup && yarn build-tailwind",
     "test": "jest --watch",
     "test:ci": "jest",
     "typecheck": "tsc -p tsconfig.build.json",
