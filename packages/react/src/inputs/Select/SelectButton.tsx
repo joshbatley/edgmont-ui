@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs';
 import { Text } from 'data';
-import { SelectorIcon } from '@heroicons/react/outline';
+import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import { useSelectContext } from '.';
 
 export type SelectButtonProps = {
@@ -43,7 +43,7 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
             Clear
           </ClickableElement>
         }
-        <SelectorIcon height={16} width={16} />
+        <ChevronUpDownIcon height={16} width={16} />
       </div>
     </OutlineButton>
   );

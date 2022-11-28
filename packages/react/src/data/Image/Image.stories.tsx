@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Image } from '.';
-import { PhotographIcon } from '@heroicons/react/solid';
+import { PhotoIcon } from '@heroicons/react/24/solid';
 
 export default {
   title: 'Data/Image',
@@ -14,7 +14,7 @@ export default {
 
 const fallback = (
   <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-white">
-    <PhotographIcon width={30} height={30} />
+    <PhotoIcon width={30} height={30} />
   </div>
 );
 

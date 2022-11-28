@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { sizeSelect } from 'storybook-helpers/presets';
-import { SaveIcon } from '@heroicons/react/outline';
+import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { OutlineButton } from '../OutlineButton';
 
 export default {
@@ -41,6 +41,6 @@ export const Loading: Story = ({ children, ...rest }) => (
 
 export const WithIcon: Story = ({ children, ...rest }) => (
   <OutlineButton {...rest}>
-    <SaveIcon width={16} height={16} /><span>{children}</span>
+    <ArrowDownOnSquareIcon width={16} height={16} /><span>{children}</span>
   </OutlineButton>
 );

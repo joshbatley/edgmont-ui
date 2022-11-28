@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { TreeContext } from '.';
 
 export type TreeProps = {

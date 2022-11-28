@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { UploadIcon } from '@heroicons/react/outline';
+import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { Button, ButtonProps } from 'inputs';
 import { List } from 'data';
 import { BasicItem } from './BasicItem';
@@ -15,7 +15,7 @@ export const UploadButton: React.FC<UploadButtonProps> = ({ buttonText = 'Upload
   let Uploader = useCallback((isDragActive: boolean, open: () => void) => (
     <>
       <Button {...buttonProps} onClick={open} >
-        <UploadIcon width={16} height={16} className="mr-2" />
+        <ArrowUpTrayIcon width={16} height={16} className="mr-2" />
         {buttonText}
       </Button>
     </>

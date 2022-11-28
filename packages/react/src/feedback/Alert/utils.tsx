@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   ExclamationCircleIcon,
-  ExclamationIcon,
+  ExclamationTriangleIcon,
   InformationCircleIcon,
   CheckCircleIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/react/24/solid';
 
 export const getIcon = (severity: Severity) => {
   let props = {
@@ -15,9 +15,9 @@ export const getIcon = (severity: Severity) => {
     case 'error':
       return <ExclamationCircleIcon {...props} />;
     case 'warning':
-      return <ExclamationIcon {...props} />;
+      return <ExclamationTriangleIcon {...props} />;
     case 'info':
-      return < InformationCircleIcon {...props} />;
+      return <InformationCircleIcon {...props} />;
     case 'success':
       return <CheckCircleIcon {...props} />;
   }
