@@ -21,7 +21,7 @@
     "version": "lerna version --conventional-commits --create-release github",
     "publish": "lerna publish from-git",
     "build": "lerna run build",
-    "build-docs:ci": "yarn clean-docs && yarn build-docs && yarn move-docs",
+    "build-docs:ci": "yarn clean-docs && yarn build-docs && lerna run build-docs-home && yarn move-docs",
     "build-docs": "lerna run build-docs:ci",
     "move-docs": "./scripts/move-docs.sh",
     "clean-docs": "rm -rf ./docs/*",
