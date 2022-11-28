@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
+import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { TextInline, Text, Image } from 'data';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
@@ -13,7 +13,7 @@ export type TileItemProps = {
 
 const fallback = (
   <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-gray-100">
-    <PhotographIcon width={30} height={30} />
+    <PhotoIcon width={30} height={30} />
   </div>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { sizeSelect } from 'storybook-helpers/presets';
-import { LockClosedIcon, CodeIcon } from '@heroicons/react/solid';
+import { LockClosedIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from 'inputs';
 import { Text } from 'data';
 import { Password as PasswordComp, TextField } from '..';
@@ -25,9 +25,9 @@ export const Example: Story = ({ ...rest }) => <TextField {...rest} />;
 
 export const PrefixAndSuffix: Story = ({ ...rest }) => (
   <div className="space-y-2">
-    <TextField prefixIcon={<LockClosedIcon width={16} />} {...rest} />
-    <TextField suffixIcon={<CodeIcon width={16} />} {...rest} />
-    <TextField prefixIcon={<LockClosedIcon width={16} />} suffixIcon={<CodeIcon width={16} />} {...rest} />
+    <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} {...rest} />
+    <TextField suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
+    <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
   </div>
 );
 

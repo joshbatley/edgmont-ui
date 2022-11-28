@@ -45,7 +45,8 @@
     "build": "react-scripts build",
     "build-docs-home": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ignore-path .eslintignore"
   },
   "eslintConfig": {
     "extends": [

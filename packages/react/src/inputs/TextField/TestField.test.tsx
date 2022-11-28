@@ -1,6 +1,6 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
-import { LockClosedIcon } from '@heroicons/react/outline';
+import { LockClosedIcon } from '@heroicons/react/24/outline';
 import { TextField } from '.';
 
 function render(Comp: any) {
@@ -15,11 +15,11 @@ describe('TextField test', () => {
   });
 
   it('should render the Prefix Icon', () => {
-    const { getByTestId } = render(<TextField prefixIcon={<LockClosedIcon data-testid="testingPrefix" />} />);
+    const { getByTestId } = render(<TextField prefiXMarkIcon={<LockClosedIcon data-testid="testingPrefix" />} />);
     expect(getByTestId('testingPrefix')).toBeInTheDocument();
   });
   it('should render the Suffix Icon', () => {
-    const { getByTestId } = render(<TextField suffixIcon={<LockClosedIcon data-testid="testingSuffix" />} />);
+    const { getByTestId } = render(<TextField suffiXMarkIcon={<LockClosedIcon data-testid="testingSuffix" />} />);
     expect(getByTestId('testingSuffix')).toBeInTheDocument();
   });
 });

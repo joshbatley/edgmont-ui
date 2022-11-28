@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DotsHorizontalIcon } from '@heroicons/react/outline';
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import { SecondaryButton } from 'inputs';
 import { Item } from './Item';
 
@@ -40,7 +40,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       )) : (
         <div className='inline-flex items-center'>
           <SecondaryButton size='small' onClick={() => setShow(true)}>
-            <DotsHorizontalIcon height={13} width={14} />
+            <EllipsisHorizontalIcon height={13} width={14} />
           </SecondaryButton>
           {React.cloneElement(dividerIcon, {
             width: 16, height: 16, className: 'inline-block text-gray-500 mx-1.5',

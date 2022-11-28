@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import clsx from 'clsx';
-import { UploadIcon } from '@heroicons/react/outline';
+import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { Text, TextInline, List } from 'data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
@@ -16,7 +16,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
 }) => {
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
-      <UploadIcon width={30} height={30} className={clsx('text-gray-500', { 'animate-bounce text-white': isDragActive })} />
+      <ArrowUpTrayIcon width={30} height={30} className={clsx('text-gray-500', { 'animate-bounce text-white': isDragActive })} />
       {isDragActive ? <Text className="font-bold text-white">And drop your file to upload</Text> :
         <Text>
           Drag and drop, or <TextInline className="text-indigo-600">click to find</TextInline> a file

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { CheckCircleIcon, ExclamationIcon } from '@heroicons/react/solid';
+import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 
 export type StepIconProps = {
   error?: boolean;
@@ -32,7 +32,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
 
   if (error) {
     return (
-      <ExclamationIcon width={24} height={24} className="text-red-500" viewBox="2 2 16 16" />
+      <ExclamationTriangleIcon width={24} height={24} className="text-red-500" viewBox="2 2 16 16" />
     );
   }
 

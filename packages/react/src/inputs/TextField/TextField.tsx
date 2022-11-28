@@ -8,8 +8,8 @@ export type TextFieldProps = {
   error?: boolean;
   before?: ReactElement;
   after?: ReactElement;
-  prefixIcon?: ReactNode;
-  suffixIcon?: ReactNode;
+  prefiXMarkIcon?: ReactNode;
+  suffiXMarkIcon?: ReactNode;
   size?: Size;
   type?: 'text' | 'password' | 'number' | 'email';
 } & BaseInputProps;
@@ -29,7 +29,7 @@ const applySizeClass = (size?: Size) => {
 };
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
-  prefixIcon, suffixIcon,
+  prefiXMarkIcon, suffiXMarkIcon,
   before, after, className,
   size, disabled, error,
   ...rest
@@ -54,7 +54,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
         className,
       )}
     >
-      <OptionalIcon sizingClasses={sizingClasses} icon={prefixIcon} />
+      <OptionalIcon sizingClasses={sizingClasses} icon={prefiXMarkIcon} />
       <AddonElement
         disabled={disabled}
         containerClasses={clsx('border-r border-gray-300 bg-gray-100 text-gray-500 rounded-l-md flex items-center', focusWith)}
@@ -66,7 +66,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
         <BaseInput className={clsx(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} ref={ref} {...rest} />
       </div>
 
-      <OptionalIcon sizingClasses={sizingClasses} icon={suffixIcon} />
+      <OptionalIcon sizingClasses={sizingClasses} icon={suffiXMarkIcon} />
       <AddonElement
         disabled={disabled}
         containerClasses={clsx('border-l border-gray-300 bg-gray-100 text-gray-500 rounded-r-md flex items-center', focusWith)}

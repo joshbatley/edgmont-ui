@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TextField, TextFieldProps } from 'inputs';
-import { SelectorIcon } from '@heroicons/react/outline';
+import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import { useSelectContext, SelectButton, SelectButtonProps } from '.';
 
 export type SelectFilterProps = {
@@ -22,6 +22,6 @@ export const SelectFilter: React.FC<SelectFilterProps> = ({ textProps, ...rest }
   }
 
   return (
-    <TextField suffixIcon={<SelectorIcon height={16} width={16} />} ref={ref} {...textProps} {...getInputProps()} />
+    <TextField suffiXMarkIcon={<ChevronUpDownIcon height={16} width={16} />} ref={ref} {...textProps} {...getInputProps()} />
   );
 };

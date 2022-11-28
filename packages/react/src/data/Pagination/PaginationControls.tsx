@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
-import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from '@heroicons/react/outline';
+import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import { ButtonGroup, HighlightButton } from 'inputs';
 import { calculatePageNumbers } from './utils';
 
@@ -12,7 +12,7 @@ export type PaginationProps = {
   size?: Size;
 };
 
-const ELLIPSIS_ELEMENT = <DotsHorizontalIcon width={16} height={20} />;
+const ELLIPSIS_ELEMENT = <EllipsisHorizontalIcon width={16} height={20} />;
 
 export const PaginationControls: React.FC<PaginationProps> = ({
   skip, limit, itemCount, setSkip, size,

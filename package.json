@@ -25,7 +25,7 @@
     "build-docs": "lerna run build-docs:ci",
     "move-docs": "./scripts/move-docs.sh",
     "clean-docs": "rm -rf ./docs/*",
-    "lint": "eslint . --ignore-path .eslintignore",
+    "lint": "lerna run lint",
     "typecheck": "lerna run typecheck",
     "test:ci": "lerna run test:ci",
     "create-cname": "echo ui.edgmont.dev > ./docs/CNAME"

@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { severitySelect } from 'storybook-helpers/presets';
-import { SunIcon } from '@heroicons/react/solid';
+import { SunIcon } from '@heroicons/react/24/solid';
 import { Alert } from '.';
 
 export default {
