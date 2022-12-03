@@ -9,6 +9,8 @@ export default {
   args: {
     className: '',
     children: 'My Box',
+    px: '6',
+    py: '2',
   },
 } as Meta<BoxProps>;
 

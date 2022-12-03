@@ -1,13 +1,17 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { border, boxShadow, color, grid, layout, order, space } from 'styled-system';
 
 export type BoxProps = {
   children?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<'div'>;
 
-export const Box: React.FC<BoxProps> = ({ children, className, ...rest }) => (
-  <div className={clsx('px-6 py-2', className)} {...rest}>
-    {children}
-  </div>
-);
-
+export const Box = styled.div`
+  ${space}
+  ${layout}
+  ${color}
+  ${boxShadow}
+  ${border}
+  ${order}
+  ${grid}
+`;
