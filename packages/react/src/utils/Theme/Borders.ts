@@ -16,4 +16,5 @@ const generateBorders = (colors: typeof ThemeColors) =>
   }, {} as Record<BorderColors, string[]>);
 
 export const ThemeBorders = generateBorders(ThemeColors);
+
 export const radii = [0, '3px', '30px', '50%'];

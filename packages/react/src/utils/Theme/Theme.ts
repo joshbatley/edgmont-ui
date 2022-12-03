@@ -15,6 +15,6 @@ export const theme = {
   },
   space: [0, '4px', '8px', '16px', '24px', '32px', '40px', '56px'],
   modal: {
-    bg: 'rgba(30,36,46,0.70)',
+    bg: 'rgba(15, 23, 42, 0.70)',
   },
 };

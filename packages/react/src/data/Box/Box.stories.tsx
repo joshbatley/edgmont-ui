@@ -14,4 +14,4 @@ export default {
   },
 } as Meta<BoxProps>;
 
-export const Example: Story<BoxProps> = ({ children, ...rest }) => <Box {...rest}>{children}</Box>;
+export const Example: Story<BoxProps> = ({ children, ...rest }: any) => <Box {...rest}>{children}</Box>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../src/utils/Theme';
+import { DefaultThemeProvider } from '../src/utils/Theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,11 +30,9 @@ export const decorators = [
       document.body.appendChild(portalRoot);
     }
     return (
-      <ThemeProvider theme={theme}>
-        <div className='antialiased font-sans' style={{ fontSize: 14 }}>
-          {Story()}
-        </div>
-      </ThemeProvider>
+      <DefaultThemeProvider>
+        {Story()}
+      </DefaultThemeProvider>
     )
   },
 ];

@@ -1,12 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
-import { border, boxShadow, color, grid, layout, order, space } from 'styled-system';
+import {
+  border, boxShadow, color, grid, layout, order, space,
+  ColorProps, SpaceProps, LayoutProps, BoxShadowProps, BorderProps, OrderProps, GridProps,
+} from 'styled-system';
 
-export type BoxProps = {
-  children?: React.ReactNode;
-} & React.ComponentPropsWithoutRef<'div'>;
+export type BoxProps = ColorProps & SpaceProps & LayoutProps & BoxShadowProps & BorderProps & OrderProps & GridProps;
 
-export const Box = styled.div`
+export const Box = styled.div<BoxProps>`
   ${space}
   ${layout}
   ${color}
