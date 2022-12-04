@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 export type SwitchProps = {
-  color?: Colors;
+  color?: ColorsLegacy;
   size?: 'small' | 'medium';
 } & Omit<React.ComponentPropsWithRef<'input'>, 'size'>;
 
@@ -21,7 +21,7 @@ const getSizes = (size: string) => {
   };
 };
 
-const classes: Record<Colors, string> = {
+const classes: Record<ColorsLegacy, string> = {
   primary: 'peer-checked:bg-primary-400 peer-checked:ring-primary-400',
   gray: 'peer-checked:bg-gray-400 peer-checked:ring-gray-400',
   green: 'peer-checked:bg-green-400 peer-checked:ring-green-400',

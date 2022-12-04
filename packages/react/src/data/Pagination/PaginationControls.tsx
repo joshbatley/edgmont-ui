@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { ButtonGroup, HighlightButton } from 'inputs';
+import { ButtonGroup, Button } from 'inputs';
 import { calculatePageNumbers } from './utils';
 
 export type PaginationProps = {
@@ -38,16 +38,16 @@ export const PaginationControls: React.FC<PaginationProps> = ({
 
   return (
     <ButtonGroup>
-      <HighlightButton
+      <Button
         size={size}
         className="align-bottom"
         onClick={() => setSkip(skip - limit)}
         disabled={currentPage === 1}
       >
         <ChevronLeftIcon width={16} height={20} />
-      </HighlightButton>
+      </Button>
       {pages.map((page) => (
-        <HighlightButton
+        <Button
           size={size}
           key={page.toString()}
           className={clsx({ 'bg-primary-100 z-30': page === currentPage }, 'align-bottom rounded')}
@@ -55,16 +55,16 @@ export const PaginationControls: React.FC<PaginationProps> = ({
           disabled={page === ELLIPSIS_ELEMENT}
         >
           {page}
-        </HighlightButton>
+        </Button>
       ))}
-      <HighlightButton
+      <Button
         size={size}
         className="align-bottom"
         onClick={() => setSkip(skip + limit)}
         disabled={currentPage === totalPages}
       >
         <ChevronRightIcon width={16} height={20} />
-      </HighlightButton>
+      </Button>
     </ButtonGroup>
   );
 };

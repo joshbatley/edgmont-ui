@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BaseButton } from '.';
+import { BaseButton } from './BaseButton';
 
 function render(Comp: ReactNode) {
   return testRender(<>{Comp}</>);

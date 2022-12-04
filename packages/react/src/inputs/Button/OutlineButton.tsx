@@ -1,19 +1,28 @@
 import React, { forwardRef } from 'react';
-import clsx from 'clsx';
-import { BaseButton, BaseButtonProps } from '.';
+import styled from 'styled-components';
+import { BaseButton, BaseButtonProps } from './BaseButton';
 
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
+const StyledButton = styled(BaseButton) <OutlineButtonProps>`
+  background: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.base};
+  border: ${({ theme }) => theme.borders.gray[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  :disabled {
+    background:${({ theme }) => theme.colors.gray};
+  }
+  :hover {
+    background: ${({ theme }) => theme.colors.gray};
+  }
+`;
+
 export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, className, ...rest }, ref) => (
-  <BaseButton
-    className={clsx(
-      'border border-gray-300 bg-white shadow-sm disabled:bg-gray-100 text-gray-700 hover:bg-gray-100',
-      className,
-    )}
-    color="gray"
+  <StyledButton
+    loaderColor="gray"
     ref={ref}
     {...rest}
   >
     {children}
-  </BaseButton >
+  </StyledButton >
 ));

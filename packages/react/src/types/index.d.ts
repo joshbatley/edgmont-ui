@@ -5,9 +5,11 @@ declare module '*.css' {
 
 type OverriderDefaults = Record<Partial<Property>, string>;
 
-type Colors = 'primary' | 'gray' | 'green' | 'lime' | 'red' | 'yellow' | 'blue' | 'purple' | 'orange' | 'pink';
+type Colors = 'primary' | 'success' | 'info' | 'error' | 'warning' | 'dark';
+type ColorsLegacy = 'primary' | 'gray' | 'green' | 'lime' | 'red' | 'yellow' | 'blue' | 'purple' | 'orange' | 'pink';
 
 type ColorsAndWhite = Colors | 'white';
+type ColorsAndWhiteLegacy = ColorsLegacy | 'white';
 
 type ColorWeights = '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'light' | 'medium' | 'dark';
 

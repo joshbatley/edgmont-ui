@@ -1,43 +1,28 @@
 import React, { forwardRef } from 'react';
-import {
-  ClickableElement,
-  ClickableElementProps,
-  HighlightButton,
-  HighlightButtonProps,
-  OutlineButton,
-  OutlineButtonProps,
-  PrimaryButton,
-  PrimaryButtonProps,
-  SecondaryButton,
-  SecondaryButtonProps,
-} from '.';
+import styled from 'styled-components';
+import { rgba } from 'polished';
+import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type Clickable = { variant: 'Clickable' } & ClickableElementProps;
-type Highlight = { variant: 'Highlight' } & HighlightButtonProps;
-type Outline = { variant: 'Outline' } & OutlineButtonProps;
-type Primary = { variant: 'Primary' } & PrimaryButtonProps;
-type Secondary = { variant: 'Secondary' } & SecondaryButtonProps;
+export type ButtonProps = Omit<BaseButtonProps, 'color'> & { darkMode?: boolean };
 
-export type ButtonProps = Clickable | Highlight | Outline | Primary | Secondary;
-
-const getComp = (variant: ButtonVariant) => {
-  switch (variant) {
-    case 'Clickable':
-      return ClickableElement;
-    case 'Highlight':
-      return HighlightButton;
-    case 'Outline':
-      return OutlineButton;
-    case 'Primary':
-      return PrimaryButton;
-    case 'Secondary':
-      return SecondaryButton;
+const StyledButton = styled(BaseButton) <ButtonProps>`
+  background: transparent;
+  color: ${({ theme, darkMode }) => darkMode ? theme.colors.white : theme.colors.base};
+  :disabled {
+    color: ${({ theme }) => theme.colors.baseLight};
   }
-};
+  :hover {
+    background: ${({ theme }) => rgba(theme.colors.gray, 0.3)};
+  }
+`;
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ variant, ...rest }, ref) => {
-  let Comp = getComp(variant);
-  return (
-    <Comp ref={ref} {...rest} />
-  );
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, className, ...rest }, ref) => (
+  <StyledButton
+    ref={ref}
+    loaderColor="white"
+    {...rest}
+  >
+    {children}
+  </StyledButton>
+));
+

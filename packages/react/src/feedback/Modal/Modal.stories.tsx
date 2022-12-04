@@ -24,7 +24,7 @@ export const Example: Story = ({ title, children, ...rest }) => {
         <Panel className="px-2 py-2 space-y-10 flex flex-col">
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
-          <PrimaryButton color="green">Or a button</PrimaryButton>
+          <PrimaryButton color="success">Or a button</PrimaryButton>
           <Chip color="red">Or even a chip</Chip>
         </Panel>
       </Modal>

@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 
 export type LinearProgressProps = {
-  color?: ColorsAndWhite;
+  color?: ColorsAndWhiteLegacy;
   height?: string | number;
   percentage?: number;
 };
 
-const outerClasses: Record<ColorsAndWhite, string> = {
+const outerClasses: Record<ColorsAndWhiteLegacy, string> = {
   primary: 'bg-primary-200',
   gray: 'bg-gray-200',
   green: 'bg-green-200',
@@ -21,7 +21,7 @@ const outerClasses: Record<ColorsAndWhite, string> = {
   white: 'bg-white',
 };
 
-const innerClasses: Record<ColorsAndWhite, string> = {
+const innerClasses: Record<ColorsAndWhiteLegacy, string> = {
   primary: 'bg-primary-500',
   gray: 'bg-gray-500',
   green: 'bg-green-500',

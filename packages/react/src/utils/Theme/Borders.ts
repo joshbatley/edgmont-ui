@@ -17,4 +17,14 @@ const generateBorders = (colors: typeof ThemeColors) =>
 
 export const ThemeBorders = generateBorders(ThemeColors);
 
-export const radii = [0, '3px', '30px', '50%'];
+export const radii = [
+  0,            // 0 - none
+  '0.125rem',   // 1 - sm
+  '0.25rem',    // 2 -
+  '0.375rem',   // 3 - md
+  '0.5rem',     // 4 - lg
+  '0.75rem',    // 5 - xl
+  '1rem',       // 6 - 2xl
+  '1.5rem',     // 7 - 3xl
+  '9999px',     // 8 - full
+];

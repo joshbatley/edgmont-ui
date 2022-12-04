@@ -7,10 +7,10 @@ export type TabCardItemProps = {
   selected?: boolean;
   onClick: () => void;
   children: React.ReactNode;
-  color?: Colors;
+  color?: ColorsLegacy;
 };
 
-const clasess: Record<Colors, string> = {
+const clasess: Record<ColorsLegacy, string> = {
   primary: 'bg-primary-600',
   gray: 'bg-gray-600',
   green: 'bg-green-600',
@@ -37,7 +37,7 @@ export type TabCardItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  color?: Colors;
+  color?: ColorsLegacy;
 };
 
 export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onChange, color = 'primary' }) => (

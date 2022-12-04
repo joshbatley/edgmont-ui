@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import { StepperContext } from '.';
 
 type StepperPropsVertical = {
-  color?: Colors;
+  color?: ColorsLegacy;
   step: number;
   direction?: 'vertical';
 } & WithChildren;
 
 type StepperPropsHorizontal = {
-  color?: Colors;
+  color?: ColorsLegacy;
   step: number;
   direction?: 'horizontal';
   alternativeLabel?: boolean;

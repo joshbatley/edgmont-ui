@@ -18,10 +18,10 @@ export type TabNavItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  color?: Colors;
+  color?: ColorsLegacy;
 };
 
-const classes: Record<Colors, string> = {
+const classes: Record<ColorsLegacy, string> = {
   primary: 'bg-primary-600',
   gray: 'bg-gray-600',
   green: 'bg-green-600',

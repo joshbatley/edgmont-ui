@@ -5,7 +5,7 @@ import { ClickableElement } from 'inputs';
 import { Text } from 'data';
 
 export type ChipProps = {
-  color?: Colors;
+  color?: ColorsLegacy;
   size?: Size;
   handleDelete?: () => void;
 } & WithChildren;
@@ -21,7 +21,7 @@ const applySize = (size: Size) => {
   }
 };
 
-const classes: Record<Colors, string> = {
+const classes: Record<ColorsLegacy, string> = {
   primary: 'bg-primary-200 text-primary-800',
   gray: 'bg-gray-200 text-gray-800',
   green: 'bg-green-200 text-green-800',

@@ -7,10 +7,10 @@ export type StepIconProps = {
   state?: 'completed' | 'active' | 'default';
   icon?: React.ReactNode;
   number: number;
-  color?: Colors;
+  color?: ColorsLegacy;
 };
 
-const classes: Record<Colors, string> = {
+const classes: Record<ColorsLegacy, string> = {
   primary: 'text-primary-500',
   gray: 'text-gray-500',
   green: 'text-green-500',

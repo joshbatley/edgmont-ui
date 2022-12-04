@@ -1,13 +1,13 @@
 import React from 'react';
 
 export type CircleProgressProps = {
-  color?: ColorsAndWhite;
+  color?: ColorsAndWhiteLegacy;
   height?: string | number;
   width?: string | number;
   percentage?: number;
 };
 
-const outerClasses: Record<ColorsAndWhite, string> = {
+const outerClasses: Record<ColorsAndWhiteLegacy, string> = {
   primary: 'stroke-primary-200',
   gray: 'stroke-gray-200',
   green: 'stroke-green-200',
@@ -21,7 +21,7 @@ const outerClasses: Record<ColorsAndWhite, string> = {
   white: 'stroke-white',
 };
 
-const innerClasses: Record<ColorsAndWhite, string> = {
+const innerClasses: Record<ColorsAndWhiteLegacy, string> = {
   primary: 'stroke-primary-500',
   gray: 'stroke-gray-500',
   green: 'stroke-green-500',

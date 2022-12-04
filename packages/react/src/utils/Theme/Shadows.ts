@@ -1,6 +1,6 @@
 export const ThemeBoxShadow = {
   none: '0 0 #0000',
-  normal: [
+  base: [
     '0 1px 2px 0 rgb(0 0 0 / 0.05)',
     '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
     '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
@@ -9,4 +9,5 @@ export const ThemeBoxShadow = {
   ],
   error: '0 1px 2px 0 #fecaca',
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+  focus: '0 0 0 5px rgb(147 197 253))',
 };

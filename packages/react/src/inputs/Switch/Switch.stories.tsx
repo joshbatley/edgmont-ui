@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
+import { colorSelectLegacy, sizeSelect } from 'storybook-helpers/presets';
 import { Switch } from '.';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     disabled: false,
   },
   argTypes: {
-    color: colorSelect,
+    color: colorSelectLegacy,
     size: sizeSelect,
   },
 } as Meta;
@@ -29,7 +29,7 @@ Sizes.argTypes = {
 
 export const Colors: Story = ({ ...rest }) => (
   <div className="space-x-2">
-    {colorSelect.options.map((c) => (
+    {colorSelectLegacy.options.map((c) => (
       <Switch key={c} color={c} checked {...rest} />
     ))}
   </div>

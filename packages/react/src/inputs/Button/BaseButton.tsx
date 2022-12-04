@@ -1,40 +1,69 @@
 import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { variant } from 'styled-system';
 import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
   size?: Size;
-  color?: ColorsAndWhite;
   isLoading?: boolean;
+  type?: 'button' | 'reset' | 'submit';
   as?: AsProp;
+  className?: any;
+  loaderColor?: ColorsAndWhiteLegacy;
 } & React.ComponentPropsWithoutRef<'button'>;
 
-const sizingClasses = (size?: Size) => {
-  switch (size) {
-    case 'large': return 'px-10 py-4 text-lg font-medium';
-    default:
-    case 'medium':
-      return 'px-3 py-2 text-sm font-medium';
-    case 'small': return 'px-2 py-1 text-sm font-normal';
-    case 'none': return '';
+
+export const Button = styled.button<BaseButtonProps>`
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  border-radius ${({ theme }) => theme.radii[3]};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.5rem;
   }
-};
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: ${({ theme }) => theme.shadows.focus};
+  }
+  ${({ isLoading }) => isLoading && 'cursor: wait;'}
+  ${({ disabled }) => disabled && 'cursor: not-allowed;'}
+  ${({ theme }) => theme.transition}
+  ${variant({
+  prop: 'size',
+  variants: {
+    large: {
+      px: 10,
+      py: 4,
+      fontSize: 3,
+      lineHeight: 3,
+      fontWeight: '500',
+    },
+    medium: {
+      px: 3,
+      py: 2,
+      fontSize: 1,
+      lineHeight: 1,
+      fontWeight: '500',
+    },
+    small: {
+      px: 2,
+      py: 1,
+      fontSize: 1,
+      lineHeight: 1,
+    },
+  },
+})}
+`;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size, isLoading, color = 'primary', disabled, className, as: Component = 'button', ...rest
+  children, size = 'medium', isLoading, loaderColor = 'white', disabled, className, ...rest
 }, ref) => {
-  let classes = clsx(
-    'group inline-flex items-center space-x-2 rounded-md select-none transition focus:outline-none focus:ring',
-    sizingClasses(size),
-    { 'filter grayscale cursor-not-allowed': disabled },
-    { 'cursor-wait': isLoading },
-    className,
-  );
-
   return (
-    <Component ref={ref} disabled={isLoading || disabled} className={classes} {...rest}>
-      {isLoading && (<CircleLoader color={color} height={16} width={16} />)}
+    <Button size={size} ref={ref} disabled={isLoading || disabled} className={className}  {...rest}>
+      {isLoading && (<CircleLoader color={loaderColor} height={16} width={16} />)}
       {children}
-    </Component>
+    </Button>
   );
 });
+

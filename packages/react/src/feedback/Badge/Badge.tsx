@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 export type BadgeProps = {
-  color?: Colors;
+  color?: ColorsLegacy;
   position?: IntercardinalPoints;
   tag: React.ReactNode;
   wrapperClasses?: string;
@@ -25,7 +25,7 @@ const getPosition = (position: IntercardinalPoints) => {
   return classes;
 };
 
-const classes: Record<ColorsAndWhite, string> = {
+const classes: Record<ColorsAndWhiteLegacy, string> = {
   primary: 'bg-primary-600',
   gray: 'bg-gray-600',
   green: 'bg-green-600',

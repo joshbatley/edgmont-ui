@@ -26,7 +26,7 @@ export const Default: Story = ({ ...rest }) => {
         <Backdrop onClick={() => setOpen(!open)} {...rest}>
           <div className="bg-white h-2/5 w-2/5 flex justify-center items-center flex-col space-y-5">
             <Text>Hit the close button, or Escape key or click the backdrop</Text>
-            <PrimaryButton color="red" onClick={() => setOpen(!open)}>
+            <PrimaryButton color="error" onClick={() => setOpen(!open)}>
               Close
             </PrimaryButton>
           </div>

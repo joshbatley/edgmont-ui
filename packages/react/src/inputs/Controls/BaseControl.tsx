@@ -3,13 +3,13 @@ import clsx from 'clsx';
 
 export type BaseControlProps = {
   labelText?: string;
-  color?: Colors;
+  color?: ColorsLegacy;
   icon: React.ReactElement;
   rounded?: boolean;
   error?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
-const classes: Record<Colors, string> = {
+const classes: Record<ColorsLegacy, string> = {
   primary: 'peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600',
   gray: 'peer-checked:bg-gray-500 group-hover:peer-checked:bg-gray-600',
   green: 'peer-checked:bg-green-500 group-hover:peer-checked:bg-green-600',
@@ -22,7 +22,7 @@ const classes: Record<Colors, string> = {
   pink: 'peer-checked:bg-pink-500 group-hover:peer-checked:bg-pink-600',
 };
 
-const iconText: Record<Colors, string> = {
+const iconText: Record<ColorsLegacy, string> = {
   primary: 'group-hover:text-primary-500',
   gray: 'group-hover:text-gray-500',
   green: 'group-hover:text-green-500',

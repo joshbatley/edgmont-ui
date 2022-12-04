@@ -1,17 +1,26 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { Button } from 'inputs/Button/BaseButton';
+
+const Grouping = styled.div`
+  ${Button} {
+    border-radius: 0;
+    position: relative;
+    margin-right: -1px;
+  }
+  ${Button}:first-child {
+    border-top-left-radius: ${({ theme }) => theme.radii[3]};
+    border-bottom-left-radius: ${({ theme }) => theme.radii[3]};
+  }
+
+  ${Button}:last-child {
+    border-top-right-radius: ${({ theme }) => theme.radii[3]};
+    border-bottom-right-radius: ${({ theme }) => theme.radii[3]};
+  }
+`;
 
 export const ButtonGroup: React.FC<WithChildren> = ({ children }) => (
-  <>
-    {React.Children.map(children, (child, index) => React.isValidElement(child) && (
-      React.cloneElement(child, {
-        ...child.props,
-        key: `btn-${index}`,
-        className: clsx(
-          'rounded-none relative -mr-px focus:ring-0 first:rounded-r-none first:rounded-l-md last:rounded-l-none last:rounded-r-md',
-          child.props.className,
-        ),
-      })
-    ))}
-  </>
+  <Grouping>
+    {children}
+  </Grouping>
 );

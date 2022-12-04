@@ -21,7 +21,7 @@ export const ThemeColors = {
   errorLight: '#fff1f2',
   errorDark: '#be123c',
 
-  warning: '#fff7ed',
-  warningLight: '#f97316',
+  warning: '#f97316',
+  warningLight: '#fff7ed',
   warningDark: '#c2410c',
 };

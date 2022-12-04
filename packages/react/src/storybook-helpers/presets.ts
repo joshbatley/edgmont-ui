@@ -3,15 +3,26 @@ type Option<T> = {
   control: any;
 };
 
-const colorSelectWithWhite: Option<ColorsAndWhite[]> = {
+const colorSelectWithWhiteLegacy: Option<ColorsAndWhiteLegacy[]> = {
   options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink', 'white'],
   control: { type: 'select' },
 };
 
-const colorSelect: Option<Colors[]> = {
+const colorSelectLegacy: Option<ColorsLegacy[]> = {
   options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink'],
   control: { type: 'select' },
 };
+
+const colorSelectWithWhite: Option<ColorsAndWhite[]> = {
+  options: ['primary', 'success', 'info', 'error', 'warning', 'dark', 'white'],
+  control: { type: 'select' },
+};
+
+const colorSelect: Option<Colors[]> = {
+  options: ['primary', 'success', 'info', 'error', 'warning', 'dark'],
+  control: { type: 'select' },
+};
+
 
 const intercardinalPointsSelect = {
   options: ['NW', 'NE', 'SE', 'SW'],
@@ -36,8 +47,10 @@ const directionSelect = {
 };
 
 export {
-  colorSelectWithWhite,
+  colorSelectWithWhiteLegacy,
+  colorSelectLegacy,
   colorSelect,
+  colorSelectWithWhite,
   intercardinalPointsSelect,
   sizeSelect,
   severitySelect,

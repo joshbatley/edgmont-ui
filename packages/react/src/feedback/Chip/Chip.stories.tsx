@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
+import { colorSelectLegacy, sizeSelect } from 'storybook-helpers/presets';
 import { Chip } from '.';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     children: 'Chip',
   },
   argTypes: {
-    color: colorSelect,
+    color: colorSelectLegacy,
     size: sizeSelect,
   },
 } as Meta;
@@ -35,7 +35,7 @@ Sizes.argTypes = {
 
 export const Colors: Story = ({ children, ...rest }) => (
   <div className="space-x-4">
-    {colorSelect.options.map((c) => (
+    {colorSelectLegacy.options.map((c) => (
       <Chip {...rest} key={c} color={c}>{children}</Chip>
     ))}
   </div>

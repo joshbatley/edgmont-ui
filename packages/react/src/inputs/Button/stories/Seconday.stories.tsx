@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { SecondaryButton } from '../SecondaryButton';
 
@@ -13,7 +13,7 @@ export default {
   },
   argTypes: {
     size: sizeSelect,
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 
@@ -36,7 +36,7 @@ Sizes.argTypes = {
 
 export const Colors: Story = ({ children = 'save' }) => (
   <div className="grid grid-cols-6 gap-4">
-    {colorSelectWithWhite.options.map((c) => (
+    {colorSelect.options.map((c) => (
       <SecondaryButton key={c} color={c}>{children}</SecondaryButton>
     ))}
   </div>
