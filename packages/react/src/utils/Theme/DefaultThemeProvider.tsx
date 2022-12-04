@@ -15,12 +15,9 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const DefaultThemeProvider: React.FC<WithChildren> = ({ children }) => (
+export const ThemeDefaultProvider: React.FC<WithChildren> = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <div data-test="asd">
-      <GlobalStyles />
-
-    </div>
+    <GlobalStyles />
     {children}
   </ThemeProvider>
 );

@@ -1,10 +1,11 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BaseButton } from './BaseButton';
+import { BaseButton } from '.';
+import { ThemeDefaultProvider } from 'utils';
 
 function render(Comp: ReactNode) {
-  return testRender(<>{Comp}</>);
+  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
 }
 
 const onClickMock = jest.fn();

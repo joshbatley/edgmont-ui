@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from 'inputs/Button/BaseButton';
+import { StyledButton } from 'inputs/Button/BaseButton';
 
 const Grouping = styled.div`
-  ${Button} {
+  ${StyledButton} {
     border-radius: 0;
     position: relative;
     margin-right: -1px;
   }
-  ${Button}:first-child {
+  ${StyledButton}:first-child {
     border-top-left-radius: ${({ theme }) => theme.radii[3]};
     border-bottom-left-radius: ${({ theme }) => theme.radii[3]};
   }
 
-  ${Button}:last-child {
+  ${StyledButton}:last-child {
     border-top-right-radius: ${({ theme }) => theme.radii[3]};
     border-bottom-right-radius: ${({ theme }) => theme.radii[3]};
   }

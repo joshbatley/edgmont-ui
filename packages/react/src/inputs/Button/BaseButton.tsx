@@ -12,8 +12,7 @@ export type BaseButtonProps = {
   loaderColor?: ColorsAndWhiteLegacy;
 } & React.ComponentPropsWithoutRef<'button'>;
 
-
-export const Button = styled.button<BaseButtonProps>`
+export const StyledButton = styled.button<BaseButtonProps>`
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -60,10 +59,10 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   children, size = 'medium', isLoading, loaderColor = 'white', disabled, className, ...rest
 }, ref) => {
   return (
-    <Button size={size} ref={ref} disabled={isLoading || disabled} className={className}  {...rest}>
+    <StyledButton size={size} ref={ref} disabled={isLoading || disabled} className={className}  {...rest}>
       {isLoading && (<CircleLoader color={loaderColor} height={16} width={16} />)}
       {children}
-    </Button>
+    </StyledButton>
   );
 });
 
