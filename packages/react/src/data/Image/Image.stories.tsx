@@ -28,5 +28,5 @@ export const Example: Story = () => (
       Working Image with fallback
       <Image width="200" height="200" fallback={fallback} src="https://mui.com/static/images/cards/contemplative-reptile.jpg" />
     </div>
-  </div >
+  </div>
 );
