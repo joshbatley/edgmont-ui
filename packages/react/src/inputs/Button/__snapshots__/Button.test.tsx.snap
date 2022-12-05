@@ -3,7 +3,7 @@
 exports[`Buttons it renders 1`] = `
 <div>
   <button
-    class="sc-dkrFOg kcvRNK"
+    class="sc-dkrFOg hpmOvL"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Buttons it renders 1`] = `
 exports[`Buttons should accept a size value 1`] = `
 <div>
   <button
-    class="sc-dkrFOg kcvRNK"
+    class="sc-dkrFOg hpmOvL"
   />
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`Buttons should accept a size value 1`] = `
 exports[`Buttons should be disabled 1`] = `
 <div>
   <button
-    class="sc-dkrFOg hYrvlF"
+    class="sc-dkrFOg diyGhw"
     disabled=""
   />
 </div>
@@ -28,7 +28,7 @@ exports[`Buttons should be disabled 1`] = `
 exports[`Buttons should show loading icon and disabled button 1`] = `
 <div>
   <button
-    class="sc-dkrFOg hYrvlF"
+    class="sc-dkrFOg diyGhw"
     disabled=""
   >
     <svg
