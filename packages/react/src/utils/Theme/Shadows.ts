@@ -9,5 +9,5 @@ export const ThemeBoxShadow = {
   ],
   error: '0 1px 2px 0 #fecaca',
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
-  focus: '0 0 0 5px rgb(147 197 253))',
+  focus: '0 0 0 3px rgb(147 197 253)',
 };

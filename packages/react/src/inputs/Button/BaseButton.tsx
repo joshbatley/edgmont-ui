@@ -20,7 +20,7 @@ export const StyledButton = styled.button<BaseButtonProps>`
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }
-  &:focus {
+  :focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
     box-shadow: ${({ theme }) => theme.shadows.focus};
