@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { DefaultThemeProvider } from '../src/utils/Theme';
+import { ThemeDefaultProvider } from '../src/utils/Theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,9 +30,9 @@ export const decorators = [
       document.body.appendChild(portalRoot);
     }
     return (
-      <DefaultThemeProvider>
+      <ThemeDefaultProvider>
         {Story()}
-      </DefaultThemeProvider>
+      </ThemeDefaultProvider>
     )
   },
 ];
