@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BaseButton } from '.';
 import { ThemeDefaultProvider } from 'utils';
+import { BaseButton } from '.';
+import 'jest-styled-components';
 
 function render(Comp: ReactNode) {
   return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
