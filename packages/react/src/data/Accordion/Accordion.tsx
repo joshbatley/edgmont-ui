@@ -2,7 +2,7 @@ import React from 'react';
 import { ClickableElement } from 'inputs';
 import { Collapse } from 'utils';
 import { AccordionSummary } from './AccordionSummary';
-import { AccordionDetail } from './AccordionDetail';
+import { AccordionDetail, DetailsGrouping } from './AccordionDetail';
 
 export type AccordionProps = {
   summary?: React.ReactNode;
@@ -25,9 +25,11 @@ export const Accordion: React.FC<AccordionProps> = ({
   return (
     <>
       {accodingTitle}
-      <Collapse inProp={isOpen}>
-        {details}
-      </Collapse>
+      <DetailsGrouping>
+        <Collapse inProp={isOpen}>
+          {details}
+        </Collapse>
+      </DetailsGrouping>
     </>
   );
 };

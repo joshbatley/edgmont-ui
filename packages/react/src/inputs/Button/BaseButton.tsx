@@ -16,7 +16,7 @@ export const StyledButton = styled.button<BaseButtonProps>`
   display: inline-flex;
   align-items: center;
   user-select: none;
-  border-radius ${({ theme }) => theme.radii[3]};
+  border-radius: ${({ theme }) => theme.radii[3]};
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }

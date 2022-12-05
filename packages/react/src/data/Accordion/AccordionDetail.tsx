@@ -1,5 +1,17 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const AccordionDetail: React.FC<WithChildren> = ({ children, ...rest }) => (
-  <div className="bg-white px-3 py-2 border-x border-b shadow-inner group-last-of-type:rounded-b-md" {...rest}>{children}</div>
-);
+export const AccordionDetail = styled.div`
+  background: #fff;
+  padding: ${({ theme }) => `${theme.space[3]} ${theme.space[2]}`};
+  border-bottom: ${({ theme }) => theme.borders.lightGray[1]};
+  border-left: ${({ theme }) => theme.borders.lightGray[1]};
+  border-right: ${({ theme }) => theme.borders.lightGray[1]};
+  box-shadow: ${({ theme }) => theme.shadows.inner};
+`;
+
+export const DetailsGrouping = styled.div`
+  :last-of-type ${AccordionDetail} {
+    border-bottom-left-radius: ${({ theme }) => theme.radii[3]};
+    border-bottom-right-radius: ${({ theme }) => theme.radii[3]};
+  }
+`;

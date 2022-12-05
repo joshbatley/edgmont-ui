@@ -3,6 +3,7 @@ export const ThemeColors = {
   baseLight: '#64748b',
   white: '#ffffff',
   offwhite: '#f8fafc',
+  lightGray: '#e2e8f0',
   gray: '#cbd5e1',
 
   primary: '#4f46e5',
