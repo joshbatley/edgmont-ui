@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import clsx from 'clsx';
 import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import { ButtonGroup, Button } from 'inputs';
 import { calculatePageNumbers } from './utils';
@@ -40,7 +39,7 @@ export const PaginationControls: React.FC<PaginationProps> = ({
     <ButtonGroup>
       <Button
         size={size}
-        className="align-bottom"
+        verticalAlign="bottom"
         onClick={() => setSkip(skip - limit)}
         disabled={currentPage === 1}
       >
@@ -50,16 +49,20 @@ export const PaginationControls: React.FC<PaginationProps> = ({
         <Button
           size={size}
           key={page.toString()}
-          className={clsx({ 'bg-primary-100 z-30': page === currentPage }, 'align-bottom rounded')}
+          borderRadius={2}
+          verticalAlign="bottom"
+          zIndex={page === currentPage ? 30 : 'unset'}
+          backgroundColor={page === currentPage ? 'primaryLight' : 'transparent'}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
+          data-ignore-radius
         >
           {page}
         </Button>
       ))}
       <Button
         size={size}
-        className="align-bottom"
+        verticalAlign="bottom"
         onClick={() => setSkip(skip + limit)}
         disabled={currentPage === totalPages}
       >

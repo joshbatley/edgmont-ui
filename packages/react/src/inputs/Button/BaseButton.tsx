@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import {
+  border, BorderProps, color, ColorProps, layout, LayoutProps, position, PositionProps, variant,
+} from 'styled-system';
 import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
@@ -10,9 +12,13 @@ export type BaseButtonProps = {
   as?: AsProp;
   className?: any;
   loaderColor?: ColorsAndWhiteLegacy;
-} & React.ComponentPropsWithoutRef<'button'>;
+} & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps;
 
 export const StyledButton = styled.button<BaseButtonProps>`
+  ${layout}
+  ${border}
+  ${position}
+  ${color}
   display: inline-flex;
   align-items: center;
   user-select: none;

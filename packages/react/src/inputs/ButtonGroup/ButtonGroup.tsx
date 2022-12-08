@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { StyledButton } from 'inputs/Button/BaseButton';
 
 const Grouping = styled.div`
+  ${StyledButton}:not([data-ignore-radius]) {
+    border-radius:0;
+  }
   ${StyledButton} {
-    border-radius: 0;
     position: relative;
     margin-right: -1px;
   }
