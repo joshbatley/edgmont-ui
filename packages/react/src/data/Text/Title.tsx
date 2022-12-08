@@ -1,5 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { variant } from 'styled-system';
 
 type TagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -9,19 +10,22 @@ export type HeadingProps = {
   className?: string;
 };
 
-const addHeadingClass = (comp: TagType) => {
-  switch (comp) {
-    case 'h1': return 'text-3xl';
-    case 'h2': return 'text-2xl';
-    case 'h3': return 'text-xl';
-    case 'h4': return 'text-lg';
-    case 'h5': return 'text-base';
-    case 'h6': return 'text-sm';
-  }
-};
+const Component = styled.h1`
+  ${variant({
+  prop: 'as',
+  variants: {
+    h1: { fontSize: 5 },
+    h2: { fontSize: 4 },
+    h3: { fontSize: 3 },
+    h4: { fontSize: 2 },
+    h5: { fontSize: 1 },
+    h6: { fontSize: 0 },
+  },
+})}
+`;
 
-export const Title: React.FC<HeadingProps> = ({ children, as: Component = 'h1', className, ...params }) => (
-  <Component className={clsx(addHeadingClass(Component), className)} {...params}>
+export const Title: React.FC<HeadingProps> = ({ children, as = 'h1', ...params }) => (
+  <Component as={as} {...params}>
     {children}
   </Component>
 );

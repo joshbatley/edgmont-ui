@@ -1,29 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text component Text should default to <p> html tag 1`] = `
-<p>
-  Text
-</p>
-`;
-
-exports[`Text component Text should match snapshots 1`] = `
-<div>
-  <p>
-    Text
-  </p>
-</div>
-`;
-
-exports[`Text component Text should updated to span html tag 1`] = `
-<span>
-  Text
-</span>
-`;
-
-exports[`Text component TextMono should match snapshots 1`] = `
+exports[` 1`] = `
 <div>
   <p
-    class="font-mono"
+    class="sc-bcXHqe jenwRm"
   >
     Text
   </p>

@@ -12,11 +12,4 @@ describe('Title component', () => {
     expect(container.firstChild).not.toBeEmptyDOMElement();
     expect(container.firstChild).toHaveTextContent('Title');
   });
-
-  it.each([
-    'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-  ])('headings match snapshots', (as: any) => {
-    const { container } = render(<Title as={as}>Title</Title>);
-    expect(container).toMatchSnapshot();
-  });
 });
