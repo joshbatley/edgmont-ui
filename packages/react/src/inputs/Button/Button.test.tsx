@@ -15,24 +15,16 @@ describe('Buttons', () => {
   it('it renders', () => {
     const { container } = render(<BaseButton />);
     expect(container).not.toBeEmptyDOMElement();
-    expect(container).toMatchSnapshot();
   });
 
   it('should be disabled', () => {
     const { container } = render(<BaseButton disabled />);
     expect(container.firstChild).toHaveAttribute('disabled');
-    expect(container).toMatchSnapshot();
   });
 
   it('should show loading icon and disabled button', () => {
     const { container } = render(<BaseButton isLoading />);
     expect(container.firstChild).toHaveAttribute('disabled');
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should accept a size value', () => {
-    const { container } = render(<BaseButton size="medium" />);
-    expect(container).toMatchSnapshot();
   });
 
   it('should allow a onClick to be passed and fire the event', async () => {

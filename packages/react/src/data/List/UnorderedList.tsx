@@ -1,7 +1,9 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const UnorderedList: React.FC<WithChildren> = ({ children, ...rest }) => (
-  <ul className="list-disc list-inside marker:text-gray-500" {...rest}>
-    {children}
-  </ul>
-);
+export const UnorderedList = styled.ul`
+  list-style-type: disc;
+  list-style-position: inside;
+  *::marker {
+    color:${({ theme }) => theme.colors.baseLight};
+  }
+`;

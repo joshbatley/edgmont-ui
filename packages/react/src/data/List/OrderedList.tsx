@@ -1,7 +1,9 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const OrderedList: React.FC<WithChildren> = ({ children, ...rest }) => (
-  <ol className="list-decimal list-inside marker:text-gray-500" {...rest}>
-    {children}
-  </ol>
-);
+export const OrderedList = styled.ol`
+  list-style-type: decimal;
+  list-style-position: inside;
+  *::marker {
+    color:${({ theme }) => theme.colors.baseLight};
+  }
+`;
