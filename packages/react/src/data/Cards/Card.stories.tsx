@@ -34,7 +34,7 @@ export const Examples: Story = ({ ...rest }) => (
         </Text>
         <hr className="my-4" />
         <div className="w-full flex space-x-2">
-          <PrimaryButton className=" justify-center flex-grow" size="small">
+          <PrimaryButton className="justify-center flex-grow" size="small">
             <ShoppingBagIcon width={16} height={16} className="mr-2" />Buy now
           </PrimaryButton>
           <OutlineButton size="small" className="text-center justify-center flex-grow">

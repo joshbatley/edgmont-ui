@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
 
 export type CardProps = {
   children: React.ReactNode;
@@ -7,8 +7,9 @@ export type CardProps = {
   className?: string;
 };
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className, ...rest }, ref) => (
-  <div className={clsx('rounded-md bg-white shadow-sm overflow-hidden', className)} ref={ref} {...rest}>
-    {children}
-  </div>
-));
+export const Card = styled.div`
+  border-radius: ${({ theme }) => theme.radii[3]};
+  background: #fff;
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  overflow: hidden;
+`;

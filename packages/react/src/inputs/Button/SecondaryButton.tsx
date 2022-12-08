@@ -60,7 +60,7 @@ const StyledButton = styled(BaseButton)<SecondaryButtonProps>(({ theme }) =>
 
 
 export const SecondaryButton = forwardRef<HTMLButtonElement, SecondaryButtonProps>(({
-  children, color = 'primary', className, ...rest
+  children, color = 'primary', ...rest
 }, ref) => (
   <StyledButton
     ref={ref}

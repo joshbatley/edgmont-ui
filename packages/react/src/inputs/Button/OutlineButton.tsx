@@ -17,7 +17,7 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   }
 `;
 
-export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, className, ...rest }, ref) => (
+export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, ...rest }, ref) => (
   <StyledButton
     loaderColor="gray"
     ref={ref}

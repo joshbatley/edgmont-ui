@@ -56,10 +56,10 @@ export const StyledButton = styled.button<BaseButtonProps>`
 `;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size = 'medium', isLoading, loaderColor = 'white', disabled, className, ...rest
+  children, size = 'medium', isLoading, loaderColor = 'white', disabled, ...rest
 }, ref) => {
   return (
-    <StyledButton size={size} ref={ref} disabled={isLoading || disabled} className={className}  {...rest}>
+    <StyledButton size={size} ref={ref} disabled={isLoading || disabled}  {...rest}>
       {isLoading && (<CircleLoader color={loaderColor} height={16} width={16} />)}
       {children}
     </StyledButton>
