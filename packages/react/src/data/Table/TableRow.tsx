@@ -1,21 +1,22 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
 
 export type TableRowProps = {
   active?: boolean;
   onClick?: (event: React.MouseEvent) => void;
 } & React.ComponentPropsWithRef<'tr'>;
 
-export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ active, children, className, onClick, ...rest }, ref) => (
-  <tr
-    ref={ref}
-    onClick={onClick}
-    style={{ boxShadow: 'var(--tw-shadow-color) 3px 0px 0px 0px inset' }}
-    className={clsx(
-      { 'hover:bg-gray-50 hover:shadow-gray-500 cursor-pointer': typeof onClick === 'function' },
-      { 'bg-primary-50 shadow-primary-500': active },
-      className,
-    )}
-    {...rest}
-  >{children}</tr>
-));
+export const TableRow = styled.tr<TableRowProps>`
+  ${({ onClick, theme }) => typeof onClick === 'function' && `
+    cursor: pointer;
+    :hover {
+      background: ${theme.colors.offwhite};
+      box-shadow: ${theme.colors.gray} 3px 0px 0px 0px inset;
+    }
+  `}
+  ${({ active, theme }) => active && `
+    cursor: pointer;
+    background: ${theme.colors.primaryLight};
+    box-shadow: ${theme.colors.primary} 3px 0px 0px 0px inset;
+  `}
+`;

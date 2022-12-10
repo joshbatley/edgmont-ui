@@ -1,10 +1,5 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
-export type TableCellProps = React.ComponentPropsWithRef<'td'>;
-
-export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ children, className, ...rest }, ref) => (
-  <td ref={ref} className={clsx('px-3 py-2.5', className)} {...rest}>
-    {children}
-  </td>
-));
+export const TableCell = styled.td`
+  padding: ${({ theme }) => `0.625rem ${theme.space[3]}`}
+`;

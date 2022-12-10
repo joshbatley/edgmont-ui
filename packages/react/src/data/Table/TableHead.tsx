@@ -1,25 +1,44 @@
 import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 export type TableHeadProps = {
   headers?: string[];
   sticky?: boolean;
 } & React.ComponentPropsWithRef<'thead'>;
 
-export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, headers, className, sticky, ...rest }, ref) => {
-  let classes = clsx('text-left bg-gray-50', { 'sticky top-0 shadow': sticky }, className);
+const Thead = styled.thead<TableHeadProps>`
+  text-align: left;
+  background: ${({ theme }) => theme.colors.offwhite};
+  ${({ sticky, theme }) => sticky && `
+    position: sticky;
+    top: 0;
+    box-shadow: ${theme.shadows.base[1]};
+  `}
+`;
+
+const TableHeadItem = styled.th`
+  padding: ${({ theme }) => theme.space[3]};
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-size: ${({ theme }) => theme.fontSizes[0]};
+  line-height: ${({ theme }) => theme.lineHeights[0]};
+  color: ${({ theme }) => theme.colors.baseLight};
+`;
+
+export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, headers, sticky, ...rest }, ref) => {
   if (!headers) {
     return (
-      <thead ref={ref} className={classes} {...rest}>{children}</thead>
+      <Thead sticky={sticky} ref={ref} {...rest}>{children}</Thead>
     );
   }
   return (
-    <thead ref={ref} className={classes}>
+    <Thead sticky={sticky} ref={ref}>
       <tr>
         {headers.map(h => (
-          <th key={h} className="px-3 py-3 font-medium uppercase text-xs tracking-wide text-gray-500">{h}</th>
+          <TableHeadItem key={h}>{h}</TableHeadItem>
         ))}
       </tr>
-    </thead>
+    </Thead>
   );
 });

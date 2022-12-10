@@ -1,20 +1,44 @@
 import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 export type TableProps = {
   containerClasses?: string;
   footer?: React.ReactNode;
 } & React.ComponentPropsWithRef<'table'>;
 
+const Container = styled.div<TableProps>`
+  background: #fff;
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  border-radius: ${({ theme }) => theme.radii[3]};
+  contain: paint;
+  padding-bottom: ${({ footer, theme }) => !footer ? theme.space[1] : '0'};
+`;
+
+const StyledTable = styled.table`
+  width: 100%;
+  position: relative;
+  border-collapse: collapse;
+  > :not([hidden]) ~ :not([hidden]) & :not(:last-child) {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: ${({ theme }) => theme.colors.lightGray}
+  }
+`;
+
+const Footer = styled.div`
+  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[4]}`};
+  border-top-width: 1px;
+`;
+
 export const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, containerClasses, footer, ...rest }, ref) => (
-  <div style={{ contain: 'paint' }} className={clsx('rounded-md shadow bg-white', { 'pb-1': !footer }, containerClasses)}>
-    <table ref={ref} className={clsx('w-full relative border-collapse divide-y divider-gray-200', className)} {...rest}>
+  <Container footer={footer}>
+    <StyledTable ref={ref} {...rest}>
       {children}
-    </table>
+    </StyledTable>
     {footer && (
-      <div className="px-4 py-2 border-t">
+      <Footer>
         {footer}
-      </div>
+      </Footer>
     )}
-  </div>
+  </Container>
 ));

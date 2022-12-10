@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
-export type TableBodyProps = React.ComponentPropsWithRef<'tbody'>;
-
-export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(({ children, className, ...rest }, ref) => (
-  <tbody ref={ref} className={clsx('divide-y divide-gray-200 bg-white', className)} {...rest}>
-    {children}
-  </tbody>
-));
+export const TableBody = styled.tbody`
+  background: #fff;
+  border-top-width: 1px;
+  > :not([hidden]) ~ :not([hidden]) {
+    border-top-width: 1px;
+    border-color: ${({ theme }) => theme.colors.lightGray}
+  }
+`;
