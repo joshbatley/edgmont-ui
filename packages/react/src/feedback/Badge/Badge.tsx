@@ -1,51 +1,98 @@
 import React from 'react';
-import clsx from 'clsx';
+import { Box } from 'data';
+import styled from 'styled-components';
+import { variant } from 'styled-system';
 
 export type BadgeProps = {
   color?: ColorsLegacy;
   position?: IntercardinalPoints;
   tag: React.ReactNode;
-  wrapperClasses?: string;
 } & WithChildren;
 
 const getPosition = (position: IntercardinalPoints) => {
-  let classes = '';
-  if (position.includes('W')) {
-    classes += 'left-0 translate-x-[-50%] ';
+  switch (position) {
+    case 'NE':
+      return `
+      top: 0;
+      right: 0;
+      transform: translateY(-50%) translateX(50%);
+      `;
+    case 'NW':
+      return `
+      top: 0;
+      left: 0;
+      transform: translateY(-50%) translateX(-50%);
+      `;
+    case 'SE':
+      return `
+      right: 0;
+      bottom: 0;
+      transform: translateY(50%) translateX(50%);
+      `;
+    case 'SW':
+      return `
+        left: 0;
+        bottom: 0;
+        transform: translateY(50%) translateX(-50%);
+      `;
   }
-  if (position.includes('E')) {
-    classes += 'right-0 translate-x-[50%] ';
-  }
-  if (position.includes('N')) {
-    classes += 'top-0 translate-y-[-50%] ';
-  }
-  if (position.includes('S')) {
-    classes += 'bottom-0 translate-y-[50%] ';
-  }
-  return classes;
 };
 
-const classes: Record<ColorsAndWhiteLegacy, string> = {
-  primary: 'bg-primary-600',
-  gray: 'bg-gray-600',
-  green: 'bg-green-600',
-  lime: 'bg-lime-600',
-  red: 'bg-red-600',
-  yellow: 'bg-yellow-600',
-  blue: 'bg-blue-600',
-  purple: 'bg-purple-600',
-  orange: 'bg-orange-600',
-  pink: 'bg-pink-600',
-  white: 'bg-white text-gray-900 shadow-sm',
-};
+const BadgeItem = styled.div<{
+  color: ColorsLegacy;
+  position: IntercardinalPoints;
+}>`
+  position: absolute;
+  border-radius: ${({ theme }) => theme.radii[8]};
+  font-size: ${({ theme }) => theme.fontSizes[0]};
+  line-height:  ${({ theme }) => theme.lineHeights[0]};
+  text-align: center;
+  color: #fff;
+  min-width: fit-content;
+  width: ${({ theme }) => theme.sizes[5]};
+  padding: calc(${({ theme }) => theme.space[1]} / 2) ${({ theme }) => theme.space[1]};
+
+  :empty {
+    width: ${({ theme }) => theme.sizes[1]};
+    height: ${({ theme }) => theme.sizes[2]};
+  }
+  ${({ position }) => getPosition(position)}
+  ${variant({
+  prop: 'color',
+  variants: {
+    primary: {
+      bg: 'primary',
+    },
+    success: {
+      bg: 'success',
+    },
+    info: {
+      bg: 'info',
+    },
+    error: {
+      bg: 'error',
+    },
+    warning: {
+      bg: 'warning',
+    },
+    dark: {
+      bg: 'base',
+    },
+    white: {
+      bg: 'white',
+      color: 'base',
+    },
+  },
+})}
+`;
 
 export const Badge: React.FC<BadgeProps> = ({
-  color = 'primary', position = 'NE', children, tag, wrapperClasses,
+  color = 'primary', position = 'NE', children, tag,
 }) => (
-  <div className={clsx('relative inline-block', wrapperClasses)}>
-    <div className={clsx('absolute rounded-full text-xs text-center px-1 py-0.5 min-w-fit w-5 text-white empty:w-1 empty:h-2', classes[color], getPosition(position))}>
+  <Box display="inline-block" position="relative" className='translate-x-[-50%]'>
+    <BadgeItem color={color} position={position}>
       {tag}
-    </div>
+    </BadgeItem>
     {children}
-  </div>
+  </Box>
 );
