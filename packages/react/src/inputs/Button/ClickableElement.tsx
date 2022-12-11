@@ -6,7 +6,7 @@ export type ClickableElementProps = Omit<BaseButtonProps, 'size' | 'color' | 'is
 export const ClickableElement = forwardRef<HTMLButtonElement, ClickableElementProps>(({ children, ...rest }, ref) => (
   <BaseButton
     size="none"
-    loaderColor="gray"
+    loaderColor="dark"
     ref={ref}
     {...rest}
   >

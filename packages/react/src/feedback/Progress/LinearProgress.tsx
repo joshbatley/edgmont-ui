@@ -1,5 +1,7 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { variant } from 'styled-system';
+import { darken } from 'polished';
 
 export type LinearProgressProps = {
   color?: ColorsAndWhiteLegacy;
@@ -7,40 +9,78 @@ export type LinearProgressProps = {
   percentage?: number;
 };
 
-const outerClasses: Record<ColorsAndWhiteLegacy, string> = {
-  primary: 'bg-primary-200',
-  gray: 'bg-gray-200',
-  green: 'bg-green-200',
-  lime: 'bg-lime-200',
-  red: 'bg-red-200',
-  yellow: 'bg-yellow-200',
-  blue: 'bg-blue-200',
-  purple: 'bg-purple-200',
-  orange: 'bg-orange-200',
-  pink: 'bg-pink-200',
-  white: 'bg-white',
-};
+const OuterLine = styled.div`
+  border-radius: ${({ theme }) => theme.radii[8]};
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  ${({ theme }) => variant({
+  prop: 'color',
+  variants: {
+    primary: {
+      background: theme.colors.primaryLight,
+    },
+    success: {
+      background: darken(0.1, theme.colors.successLight),
+    },
+    info: {
+      background: darken(0.1, theme.colors.infoLight),
+    },
+    error: {
+      background: darken(0.1, theme.colors.errorLight),
+    },
+    warning: {
+      background: darken(0.1, theme.colors.warningLight),
+    },
+    dark: {
+      background: theme.colors.gray,
+    },
+  },
+})}`;
 
-const innerClasses: Record<ColorsAndWhiteLegacy, string> = {
-  primary: 'bg-primary-500',
-  gray: 'bg-gray-500',
-  green: 'bg-green-500',
-  lime: 'bg-lime-500',
-  red: 'bg-red-500',
-  yellow: 'bg-yellow-500',
-  blue: 'bg-blue-500',
-  purple: 'bg-purple-500',
-  orange: 'bg-orange-500',
-  pink: 'bg-pink-500',
-  white: 'bg-gray-400',
-};
+const InnerLine = styled.div<{ percentage: number }>`
+  border-radius: ${({ theme }) => theme.radii[2]};
+  height: 100%;
+  width: ${({ percentage }) => percentage}%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  ${({ theme }) => variant({
+  prop: 'color',
+  variants: {
+    primary: {
+      background: theme.colors.primary,
+    },
+    success: {
+      background: theme.colors.success,
+    },
+    info: {
+      background: theme.colors.info,
+    },
+    error: {
+      background: theme.colors.error,
+    },
+    warning: {
+      background: theme.colors.warning,
+    },
+    dark: {
+      background: theme.colors.baseLight,
+    },
+  },
+})}`;
 
 export const LinearProgress: React.FC<LinearProgressProps> = ({
   color = 'primary', height = 5, percentage = 0,
 }) => (
   <div className="overflow-hidden w-full relative rounded" style={{ height }}>
-    <div className={clsx(outerClasses[color], 'rounded w-full h-full absolute inset-0')}></div>
-    <div className={clsx(innerClasses[color], 'rounded h-full absolute inset-0')} style={{ width: `${percentage}%` }}></div>
+    <OuterLine color={color} />
+    <InnerLine color={color} percentage={percentage} />
   </div>
 );
 
