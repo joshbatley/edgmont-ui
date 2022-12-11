@@ -25,7 +25,7 @@ export const Example: Story = ({ title, children, ...rest }) => {
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
           <PrimaryButton color="success">Or a button</PrimaryButton>
-          <Chip color="red">Or even a chip</Chip>
+          <Chip color="warning">Or even a chip</Chip>
         </Panel>
       </Modal>
     </>
