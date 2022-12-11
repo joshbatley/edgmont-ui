@@ -1,45 +1,88 @@
 import React from 'react';
-import clsx from 'clsx';
 import { LinearSlide } from 'utils';
+import styled from 'styled-components';
+import { darken } from 'polished';
+import { variant } from 'styled-system';
 
 export type LinearLoaderProps = {
   color?: ColorsAndWhiteLegacy;
   height?: string | number;
 };
 
-const outerClasses: Record<ColorsAndWhiteLegacy, string> = {
-  primary: 'bg-primary-200',
-  gray: 'bg-gray-200',
-  green: 'bg-green-200',
-  lime: 'bg-lime-200',
-  red: 'bg-red-200',
-  yellow: 'bg-yellow-200',
-  blue: 'bg-blue-200',
-  purple: 'bg-purple-200',
-  orange: 'bg-orange-200',
-  pink: 'bg-pink-200',
-  white: 'bg-white',
-};
+const OuterLine = styled.div`
+  border-radius: ${({ theme }) => theme.radii[2]};
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  ${({ theme }) => variant({
+  prop: 'color',
+  variants: {
+    primary: {
+      background: theme.colors.primaryLight,
+    },
+    success: {
+      background: darken(0.1, theme.colors.successLight),
+    },
+    info: {
+      background: darken(0.1, theme.colors.infoLight),
+    },
+    error: {
+      background: darken(0.1, theme.colors.errorLight),
+    },
+    warning: {
+      background: darken(0.1, theme.colors.warningLight),
+    },
+    dark: {
+      background: theme.colors.gray,
+    },
+  },
+})}`;
 
-const innerClasses: Record<ColorsAndWhiteLegacy, string> = {
-  primary: 'bg-primary-500',
-  gray: 'bg-gray-500',
-  green: 'bg-green-500',
-  lime: 'bg-lime-500',
-  red: 'bg-red-500',
-  yellow: 'bg-yellow-500',
-  blue: 'bg-blue-500',
-  purple: 'bg-purple-500',
-  orange: 'bg-orange-500',
-  pink: 'bg-pink-500',
-  white: 'bg-gray-400',
-};
+const InnerLine = styled.div`
+  border-radius: ${({ theme }) => theme.radii[2]};
+  ${({ theme }) => variant({
+  prop: 'color',
+  variants: {
+    primary: {
+      background: theme.colors.primary,
+    },
+    success: {
+      background: theme.colors.success,
+    },
+    info: {
+      background: theme.colors.info,
+    },
+    error: {
+      background: theme.colors.error,
+    },
+    warning: {
+      background: theme.colors.warning,
+    },
+    dark: {
+      background: theme.colors.baseLight,
+    },
+  },
+})}`;
+
+const StyledLinearSlider = styled(LinearSlide)`
+  width: 33.333333%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+`;
 
 export const LinearLoader: React.FC<LinearLoaderProps> = ({ color = 'primary', height = 5 }) => (
   <div className="overflow-hidden w-full relative rounded" style={{ height }}>
-    <div className={clsx(outerClasses[color], 'rounded w-full h-full absolute inset-0')}></div>
-    <LinearSlide className="w-1/3 h-full absolute inset-0">
-      <div className={clsx(innerClasses[color], 'rounded')} style={{ height }}></div>
-    </LinearSlide>
+    <OuterLine color={color} />
+    <StyledLinearSlider>
+      <InnerLine color={color} style={{ height }} />
+    </StyledLinearSlider>
   </div>
 );
