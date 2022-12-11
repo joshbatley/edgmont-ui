@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
+import { Box } from 'data';
 
-export const CenteredWidget: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ children, className }) => (
-  <div className={clsx('max-w-xl mx-auto', className)}>{children}</div>
+export const CenteredWidget: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ children, ...rest }) => (
+  <Box maxWidth="36rem" mx="auto" {...rest}>{children}</Box>
 );
