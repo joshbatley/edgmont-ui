@@ -25,4 +25,6 @@ export const ThemeColors = {
   warning: '#f97316',
   warningLight: '#fff7ed',
   warningDark: '#c2410c',
+
+  modalBg: 'rgba(15, 23, 42, 0.70)',
 };

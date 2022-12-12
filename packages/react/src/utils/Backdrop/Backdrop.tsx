@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Portal, Fade, FadeProps } from 'utils';
+import { Box } from '../../data/Box';
 
 export const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
 
@@ -44,13 +45,24 @@ export const Backdrop: React.FC<BackdropProps> = ({
     <Portal>
       <FocusLock>
         <Fade inProp={open} onProps={onClick} {...rest}>
-          <div
-            className="w-screen h-full fixed inset-0 overflow-auto bg-gray-900 opacity-70 flex justify-center items-center"
-            style={{ zIndex: 9999 }}
+          <Box
+            width="100vw"
+            height="100%"
+            position="fixed"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            overflow="auto"
+            bg="modalBg"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            zIndex="9999"
             onClick={handleClickBackdrop}
           >
             {children}
-          </div>
+          </Box>
         </Fade>
       </FocusLock>
     </Portal >
