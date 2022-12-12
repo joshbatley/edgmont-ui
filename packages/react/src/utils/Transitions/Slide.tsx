@@ -9,10 +9,10 @@ export type SlideProps = {
 export const Slide: React.FC<SlideProps> = ({ children, inProp, ...rest }) => {
   let ref = useRef<HTMLDivElement>(null);
   let springRef = useSpringRef();
-  let { height } = useSpring({
+  let { opacity } = useSpring({
     ref: springRef,
-    from: { height: ref.current?.scrollHeight },
-    to: { height: 0 },
+    from: { opacity: 1 },
+    to: { opacity: 0 },
   });
 
   let transRef = useSpringRef();
@@ -31,7 +31,7 @@ export const Slide: React.FC<SlideProps> = ({ children, inProp, ...rest }) => {
     (styles: any, item) => item && (
       <animated.div
         ref={ref}
-        style={{ ...styles, height: height }}
+        style={{ ...styles, opacity: opacity }}
       >
         {children}
       </animated.div>

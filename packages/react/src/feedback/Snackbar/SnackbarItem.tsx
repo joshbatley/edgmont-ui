@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Slide } from 'utils';
 import { Alert } from 'feedback';
 import { Snack } from 'types/Snackbar';
+import styled from 'styled-components';
 
 export type SnackbarItemProps = {
   handleClose: () => void;
 } & Snack;
+
+const StyledAlert = styled(Alert)`
+  margin: ${({ theme }) => `${theme.space[1]} ${theme.space[4]}`};
+`;
 
 export const SnackbarItem: React.FC<SnackbarItemProps> = ({
   body, handleClose, duration, title, persist, ...rest
@@ -25,14 +30,13 @@ export const SnackbarItem: React.FC<SnackbarItemProps> = ({
 
   return (
     <Slide inProp={open} onDestroyed={handleClose}>
-      <Alert
-        className="my-1.5 mx-4"
+      <StyledAlert
         withClose={() => setOpen(false)}
         title={title}
         {...rest}
       >
         {body}
-      </Alert>
+      </StyledAlert>
     </Slide>
   );
 };
