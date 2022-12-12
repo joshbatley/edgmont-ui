@@ -26,7 +26,6 @@ export const Variations: Story = ({ ...rest }) => (
     <Alert {...rest} severity='warning' />
     <Alert {...rest} severity='info' />
     <Alert {...rest} severity='success' />
-    <Alert {...rest} dark />
     <Alert {...rest} />
   </div>
 );

@@ -8,7 +8,7 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   background: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.base};
   border: ${({ theme }) => theme.borders.gray[1]};
-  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  box-shadow: ${({ theme }) => theme.shadows[0]};
   :disabled {
     background:${({ theme }) => theme.colors.gray};
   }

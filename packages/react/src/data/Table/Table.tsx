@@ -8,7 +8,7 @@ export type TableProps = {
 
 const Container = styled.div<TableProps>`
   background: #fff;
-  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  box-shadow: ${({ theme }) => theme.shadows[1]};
   border-radius: ${({ theme }) => theme.radii[3]};
   contain: paint;
   padding-bottom: ${({ footer, theme }) => !footer ? theme.space[1] : '0'};

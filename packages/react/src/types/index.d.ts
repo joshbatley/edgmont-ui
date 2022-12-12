@@ -22,7 +22,7 @@ type CardinalPoints = 'N' | 'E' | 'S' | 'W';
 type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
 type Direction = 'horizontal' | 'vertical';
 
-type Severity = 'error' | 'warning' | 'info' | 'success';
+type Severity = 'error' | 'warning' | 'info' | 'success' | 'none';
 
 type ButtonVariant = 'Clickable' | 'Highlight' | 'Outline' | 'Primary' | 'Secondary';
 

@@ -12,7 +12,7 @@ const Thead = styled.thead<TableHeadProps>`
   ${({ sticky, theme }) => sticky && `
     position: sticky;
     top: 0;
-    box-shadow: ${theme.shadows.base[1]};
+    box-shadow: ${theme.shadows[1]};
   `}
 `;
 
