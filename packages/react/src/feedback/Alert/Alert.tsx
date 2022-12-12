@@ -61,7 +61,7 @@ const Content = styled(Text)`
 export const Alert: React.FC<AlertProps> = ({
   severity = 'none', title, icon, children, withClose, ...rest
 }) => (
-  <Container p={2} display="flex" flexGrow={1} alignItems="center" boxShadow={1} borderRadius={2} overflow="hidden" position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap"
+  <Container p={2} display="flex" flexGrow={1} alignItems="center" boxShadow="base.1" borderRadius={2} overflow="hidden" position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap"
     severity={severity} {...rest}>
     <Box minWidth="100%">
       <Icon mr={3} mt="1px" lineHeight={5} alignSelf="center">{icon || getIcon(severity)}</Icon>

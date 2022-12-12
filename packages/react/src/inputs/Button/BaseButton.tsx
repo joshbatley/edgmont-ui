@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
-  border, BorderProps, color, ColorProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, variant,
+  border, BorderProps, color, ColorProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, typography, TypographyProps, variant,
 } from 'styled-system';
 import { CircleLoader } from 'feedback';
 
@@ -12,14 +12,9 @@ export type BaseButtonProps = {
   as?: AsProp;
   className?: any;
   loaderColor?: Colors;
-} & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps;
+} & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps;
 
 export const StyledButton = styled.button<BaseButtonProps>`
-  ${layout}
-  ${border}
-  ${position}
-  ${color}
-  ${space}
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -60,6 +55,12 @@ export const StyledButton = styled.button<BaseButtonProps>`
     },
   },
 })}
+  ${layout}
+  ${border}
+  ${position}
+  ${color}
+  ${space}
+  ${typography}
 `;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
