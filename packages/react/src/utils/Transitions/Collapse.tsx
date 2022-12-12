@@ -2,12 +2,17 @@ import React from 'react';
 import { useMeasure } from 'react-use';
 import { animated, useSpring, UseSpringProps } from 'react-spring';
 import { usePrevious } from 'shared/usePrevious';
+import styled from 'styled-components';
 
 export type CollapseProps = {
   children: React.ReactNode;
   inProp?: boolean;
   className?: string;
 } & UseSpringProps;
+
+const Container = styled(animated.div)`
+  overflow:hidden;
+`;
 
 export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, className, ...rest }) => {
   let previous = usePrevious(inProp);
@@ -19,13 +24,12 @@ export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, cl
   });
 
   return (
-    <animated.div
-      className="overflow-hidden group"
+    <Container
       style={{
         height: inProp && previous === inProp ? 'auto' : height,
       }}
     >
       <animated.div ref={ref as any} className={className} children={children} />
-    </animated.div >
+    </Container>
   );
 };

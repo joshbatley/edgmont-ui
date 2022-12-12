@@ -1,10 +1,15 @@
 import React from 'react';
 import { animated, useTransition, UseTransitionProps } from 'react-spring';
+import styled from 'styled-components';
 
 export type GrowProps = {
   children: React.ReactNode;
   inProp?: boolean;
 } & UseTransitionProps;
+
+const Container = styled(animated.div)`
+   transform-origin: top left;
+`;
 
 export const Grow: React.FC<GrowProps> = ({ children, inProp, ...rest }) => {
   let transitions = useTransition(inProp, {
@@ -20,6 +25,6 @@ export const Grow: React.FC<GrowProps> = ({ children, inProp, ...rest }) => {
 
   return transitions(
     (styles: any, item) => item && (
-      <animated.div className="origin-top-left" style={styles}>{children}</animated.div>
+      <Container style={styles}>{children}</Container>
     ));
 };
