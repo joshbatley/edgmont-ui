@@ -1,8 +1,8 @@
 import React, { Ref, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import clsx from 'clsx';
 import { Portal } from 'utils';
+import styled from 'styled-components';
 
 export type TooltipProps = {
   tooltip: React.ReactNode;
@@ -11,6 +11,21 @@ export type TooltipProps = {
   as?: AsProp;
   disabled?: boolean;
 } & WithChildren;
+
+const Popover = styled.div<{ dark: boolean }>`
+  border-radius: ${({ theme }) => theme.radii[2]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
+  z-index: 10;
+  font-size: ${({ theme }) => theme.fontSizes[1]};
+  line-height: ${({ theme }) => theme.lineHeights[1]};
+  ${({ dark, theme }) => dark ? `
+    color: #fff;
+    background: ${theme.colors.base};
+  ` : `
+    background: #fff;
+  `}
+`;
 
 export const Tooltip: React.FC<TooltipProps> = ({
   tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled,
@@ -37,14 +52,14 @@ export const Tooltip: React.FC<TooltipProps> = ({
       </Component>
       {(!disabled && showTooltip) && (
         <Portal>
-          <div
-            className={clsx('rounded shadow-md px-3 py-2 z-10 text-sm', dark ? 'text-white bg-gray-700' : 'bg-white')}
+          <Popover
+            dark={dark}
             ref={setPopperRef as Ref<HTMLDivElement>}
             style={styles.popper}
             {...attributes.popper}
           >
             {tooltip}
-          </div>
+          </Popover>
         </Portal>
       )
       }
