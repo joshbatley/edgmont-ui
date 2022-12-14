@@ -6,7 +6,7 @@ exports[`Radio test should errored with disabled classes 1`] = `
     class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="sc-eDvSVe kuFxqE"
+      class="sc-eDvSVe eBeQzt"
     >
       <input
         class="peer hidden"
@@ -42,7 +42,7 @@ exports[`Radio test should render 1`] = `
     class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="sc-eDvSVe ccFLMP"
+      class="sc-eDvSVe gyGhYa"
     >
       <input
         class="peer hidden"
@@ -79,7 +79,7 @@ exports[`Radio test should render with disabled classes 1`] = `
     disabled=""
   >
     <div
-      class="sc-eDvSVe ccFLMP"
+      class="sc-eDvSVe gyGhYa"
     >
       <input
         class="peer hidden"

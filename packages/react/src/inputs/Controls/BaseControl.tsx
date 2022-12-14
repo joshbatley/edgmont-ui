@@ -23,10 +23,10 @@ const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
   position: relative;
   width: ${({ theme }) => theme.sizes[4]};
   height: ${({ theme }) => theme.sizes[4]};
-  border: ${({ theme }) => theme.borders.gray[1]};
+  border: ${({ theme }) => theme.borders.lightGray[1]};
   background: #fff;
   overflow: hidden;
-  box-shadow: ${({ theme }) => theme.shadows[0]};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
   display: flex;
   align-items: center;
   justify-content: center;

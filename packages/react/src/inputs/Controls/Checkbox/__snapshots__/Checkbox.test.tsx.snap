@@ -6,7 +6,7 @@ exports[`Checkbox test should errored with disabled classes 1`] = `
     class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="sc-eDvSVe efgyed"
+      class="sc-eDvSVe eJUlos"
     >
       <input
         class="peer hidden"
@@ -44,7 +44,7 @@ exports[`Checkbox test should render 1`] = `
     class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="sc-eDvSVe eiYUOm"
+      class="sc-eDvSVe eGDUlj"
     >
       <input
         class="peer hidden"
@@ -83,7 +83,7 @@ exports[`Checkbox test should render with disabled classes 1`] = `
     disabled=""
   >
     <div
-      class="sc-eDvSVe eiYUOm"
+      class="sc-eDvSVe eGDUlj"
     >
       <input
         class="peer hidden"
