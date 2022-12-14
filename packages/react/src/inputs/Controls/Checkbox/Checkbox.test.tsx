@@ -1,10 +1,11 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ThemeDefaultProvider } from 'utils';
 import { Checkbox } from '.';
 
 function render(Comp: any) {
-  return testRender(Comp);
+  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
 }
 
 const onChangeMock = jest.fn();

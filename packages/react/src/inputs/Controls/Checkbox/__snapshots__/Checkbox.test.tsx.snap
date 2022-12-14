@@ -3,35 +3,38 @@
 exports[`Checkbox test should errored with disabled classes 1`] = `
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md border-red-300 shadow-red-200"
+      class="sc-eDvSVe efgyed"
     >
       <input
         class="peer hidden"
         type="checkbox"
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+        class="sc-jSUZER eulufV"
+        color="primary"
       />
-      <svg
-        aria-hidden="true"
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="none"
-        height="16"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg lmistq"
+        color="primary"
       >
-        <path
-          d="M4.5 12.75l6 6 9-13.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+        <svg
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.5 12.75l6 6 9-13.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
@@ -40,35 +43,38 @@ exports[`Checkbox test should errored with disabled classes 1`] = `
 exports[`Checkbox test should render 1`] = `
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md"
+      class="sc-eDvSVe eiYUOm"
     >
       <input
         class="peer hidden"
         type="checkbox"
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600"
+        class="sc-jSUZER eAbsrQ"
+        color="primary"
       />
-      <svg
-        aria-hidden="true"
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="none"
-        height="16"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg lmistq"
+        color="primary"
       >
-        <path
-          d="M4.5 12.75l6 6 9-13.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+        <svg
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.5 12.75l6 6 9-13.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
@@ -77,10 +83,11 @@ exports[`Checkbox test should render 1`] = `
 exports[`Checkbox test should render with disabled classes 1`] = `
 <div>
   <label
-    class="cursor-not-allowed group flex space-x-2 items-center"
+    class="sc-hLBbgP bwQUxR"
+    disabled=""
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-md"
+      class="sc-eDvSVe eiYUOm"
     >
       <input
         class="peer hidden"
@@ -88,25 +95,30 @@ exports[`Checkbox test should render with disabled classes 1`] = `
         type="checkbox"
       />
       <div
-        class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
+        class="sc-jSUZER kPfgwW"
+        color="primary"
+        disabled=""
       />
-      <svg
-        aria-hidden="true"
-        class="text-transparent z-10 relative peer-checked:text-white"
-        fill="none"
-        height="16"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg gvGJXl"
+        color="primary"
+        disabled=""
       >
-        <path
-          d="M4.5 12.75l6 6 9-13.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+        <svg
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.5 12.75l6 6 9-13.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>

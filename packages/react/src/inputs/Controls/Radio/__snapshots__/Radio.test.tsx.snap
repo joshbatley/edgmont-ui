@@ -3,10 +3,10 @@
 exports[`Radio test should errored with disabled classes 1`] = `
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full border-red-300 shadow-red-200"
+      class="sc-eDvSVe kuFxqE"
     >
       <input
         class="peer hidden"
@@ -14,22 +14,25 @@ exports[`Radio test should errored with disabled classes 1`] = `
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+        class="sc-jSUZER eulufV"
+        color="primary"
       />
-      <svg
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg lmistq"
+        color="primary"
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
@@ -38,10 +41,10 @@ exports[`Radio test should errored with disabled classes 1`] = `
 exports[`Radio test should render 1`] = `
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="sc-hLBbgP dBDxxq"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full"
+      class="sc-eDvSVe ccFLMP"
     >
       <input
         class="peer hidden"
@@ -49,22 +52,25 @@ exports[`Radio test should render 1`] = `
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600"
+        class="sc-jSUZER eAbsrQ"
+        color="primary"
       />
-      <svg
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg lmistq"
+        color="primary"
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
@@ -73,10 +79,11 @@ exports[`Radio test should render 1`] = `
 exports[`Radio test should render with disabled classes 1`] = `
 <div>
   <label
-    class="cursor-not-allowed group flex space-x-2 items-center"
+    class="sc-hLBbgP bwQUxR"
+    disabled=""
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full"
+      class="sc-eDvSVe ccFLMP"
     >
       <input
         class="peer hidden"
@@ -85,22 +92,27 @@ exports[`Radio test should render with disabled classes 1`] = `
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
+        class="sc-jSUZER kPfgwW"
+        color="primary"
+        disabled=""
       />
-      <svg
-        class="text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="sc-gKPRtg gvGJXl"
+        color="primary"
+        disabled=""
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>

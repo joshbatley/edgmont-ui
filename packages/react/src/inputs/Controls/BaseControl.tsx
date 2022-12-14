@@ -1,69 +1,102 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 export type BaseControlProps = {
   labelText?: string;
-  color?: ColorsLegacy;
+  color?: Colors;
   icon: React.ReactElement;
   rounded?: boolean;
   error?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
-const classes: Record<ColorsLegacy, string> = {
-  primary: 'peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600',
-  gray: 'peer-checked:bg-gray-500 group-hover:peer-checked:bg-gray-600',
-  green: 'peer-checked:bg-green-500 group-hover:peer-checked:bg-green-600',
-  lime: 'peer-checked:bg-lime-500 group-hover:peer-checked:bg-lime-600',
-  red: 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600',
-  yellow: 'peer-checked:bg-yellow-500 group-hover:peer-checked:bg-yellow-600',
-  blue: 'peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600',
-  purple: 'peer-checked:bg-purple-500 group-hover:peer-checked:bg-purple-600',
-  orange: 'peer-checked:bg-orange-500 group-hover:peer-checked:bg-orange-600',
-  pink: 'peer-checked:bg-pink-500 group-hover:peer-checked:bg-pink-600',
-};
+const getColor = (theme: any, dark: boolean) => ({
+  primary: dark ? theme.colors.primaryDark : theme.colors.primary,
+  success: dark ? theme.colors.successDark : theme.colors.success,
+  info: dark ? theme.colors.infoDark : theme.colors.info,
+  error: dark ? theme.colors.errorDark : theme.colors.error,
+  warning: dark ? theme.colors.warningDark : theme.colors.warning,
+  dark: dark ? theme.colors.baseDark : theme.colors.dark,
+});
 
-const iconText: Record<ColorsLegacy, string> = {
-  primary: 'group-hover:text-primary-500',
-  gray: 'group-hover:text-gray-500',
-  green: 'group-hover:text-green-500',
-  lime: 'group-hover:text-lime-500',
-  red: 'group-hover:text-red-500',
-  yellow: 'group-hover:text-yellow-500',
-  blue: 'group-hover:text-blue-500',
-  purple: 'group-hover:text-purple-500',
-  orange: 'group-hover:text-orange-500',
-  pink: 'group-hover:text-pink-500',
-};
+const Label = styled.label<{ disabled: boolean; }>`
+  display: flex;
+  align-items: center;
+  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.5rem;
+  }
+`;
+
+const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
+  position: relative;
+  width: ${({ theme }) => theme.sizes[4]};
+  height: ${({ theme }) => theme.sizes[4]};
+  border: ${({ theme }) => theme.borders.gray[1]};
+  background: #fff;
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.shadows[0]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: ${({ theme }) => theme.space[2]};
+  border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[3]};
+  ${({ error, theme }) => error && `
+    border-color: ${theme.colors.error};
+    box-shadow: ${theme.shadows.error};
+  `}
+`;
+
+const Box = styled.div<{ disabled: boolean; color: Colors; error: boolean; }>`
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  ${({ theme, disabled, color, error }) => disabled ? `
+    input:checked ~ & {
+      background: ${theme.colors.lightGray};
+    }
+    ${Label}:hover input:checked ~ & {
+      background: ${theme.colors.gray};
+    }
+  ` : `
+    input:checked ~ & {
+      background: ${getColor(theme, false)[error ? 'error' : color]};
+    }
+    ${Label}:hover input:checked ~ & {
+      background: ${getColor(theme, true)[error ? 'error' : color]};
+    }
+  `}
+`;
+
+let Icon = styled.div<{ disabled: boolean, color: Colors; }>`
+  svg {
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    z-index: 10;
+    position: relative;
+    input:checked ~ & {
+      color:#fff!important;
+    }
+    ${({ disabled, color, theme }) => !disabled && `
+      ${Label}:hover & {
+        color: ${getColor(theme, false)[color]};
+      }
+    `}
+  }
+`;
 
 export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, color = 'primary', icon, rounded = false, disabled, error, ...rest
+  labelText, color = 'primary', icon, rounded = false, disabled = false, error = false, ...rest
 }) => {
-  let boxClasses = clsx(
-    'bg-white w-full h-full absolute',
-    disabled ? 'bg-gray-300 peer-checked:bg-gray-400' : classes[color],
-    { 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600': error },
-  );
-  let btnClasses = clsx(
-    'relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2',
-    rounded ? 'rounded-full' : 'rounded-md',
-    { 'border-red-300 shadow-red-200': error },
-  );
-  let labelClasses = clsx(
-    disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    'group flex space-x-2 items-center',
-  );
-  let iconClasses = clsx(
-    { [iconText[color]]: !disabled },
-    'text-transparent z-10 relative peer-checked:text-white',
-  );
   return (
-    <label className={labelClasses}>
-      <div className={btnClasses}>
+    <Label disabled={disabled}>
+      <Btn rounded={rounded} error={error}>
         <input className="peer hidden" disabled={disabled} {...rest} />
-        <div className={boxClasses} />
-        {React.cloneElement(icon, { width: 16, height: 16, className: iconClasses })}
-      </div>
+        <Box disabled={disabled} color={color} error={error} />
+        <Icon color={color} disabled={disabled}>{icon}</Icon>
+      </Btn>
       {labelText}
-    </label>
+    </Label>
   );
 };
