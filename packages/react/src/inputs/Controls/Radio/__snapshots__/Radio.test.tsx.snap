@@ -14,12 +14,10 @@ exports[`Radio test should errored with disabled classes 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER eulufV"
-        color="primary"
+        class="sc-pyfCe bYzKRG"
       />
       <div
-        class="sc-gKPRtg lmistq"
-        color="primary"
+        class="sc-jrcTuL iILfEi"
       >
         <svg
           fill="currentColor"
@@ -52,12 +50,10 @@ exports[`Radio test should render 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER eAbsrQ"
-        color="primary"
+        class="sc-jSUZER jWOcza"
       />
       <div
-        class="sc-gKPRtg lmistq"
-        color="primary"
+        class="sc-gKPRtg lbFYFG"
       >
         <svg
           fill="currentColor"
@@ -92,14 +88,10 @@ exports[`Radio test should render with disabled classes 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER kPfgwW"
-        color="primary"
-        disabled=""
+        class="sc-iBYQkv gRZjKR"
       />
       <div
-        class="sc-gKPRtg gvGJXl"
-        color="primary"
-        disabled=""
+        class="sc-ftTHYK brZDRI"
       >
         <svg
           fill="currentColor"

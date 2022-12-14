@@ -39,7 +39,7 @@ Disabled.argTypes = {
 export const Errored: Story = ({ children, ...rest }) => (
   <div className="space-y-2">
     <Radio error name="default" labelText="123" onChange={change} {...rest} />
-    <Radio error checked name="default" labelText="456" onChange={change} {...rest} />
+    <Radio error name="default" labelText="456" onChange={change} {...rest} />
     <Radio error name="default" labelText="789" onChange={change} {...rest} />
   </div>
 );

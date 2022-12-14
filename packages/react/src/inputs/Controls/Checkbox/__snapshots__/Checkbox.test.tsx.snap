@@ -13,12 +13,10 @@ exports[`Checkbox test should errored with disabled classes 1`] = `
         type="checkbox"
       />
       <div
-        class="sc-jSUZER eulufV"
-        color="primary"
+        class="sc-pyfCe bYzKRG"
       />
       <div
-        class="sc-gKPRtg lmistq"
-        color="primary"
+        class="sc-jrcTuL iILfEi"
       >
         <svg
           aria-hidden="true"
@@ -53,12 +51,10 @@ exports[`Checkbox test should render 1`] = `
         type="checkbox"
       />
       <div
-        class="sc-jSUZER eAbsrQ"
-        color="primary"
+        class="sc-jSUZER jWOcza"
       />
       <div
-        class="sc-gKPRtg lmistq"
-        color="primary"
+        class="sc-gKPRtg lbFYFG"
       >
         <svg
           aria-hidden="true"
@@ -95,14 +91,10 @@ exports[`Checkbox test should render with disabled classes 1`] = `
         type="checkbox"
       />
       <div
-        class="sc-jSUZER kPfgwW"
-        color="primary"
-        disabled=""
+        class="sc-iBYQkv gRZjKR"
       />
       <div
-        class="sc-gKPRtg gvGJXl"
-        color="primary"
-        disabled=""
+        class="sc-ftTHYK brZDRI"
       >
         <svg
           aria-hidden="true"
