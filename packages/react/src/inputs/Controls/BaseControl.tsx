@@ -1,6 +1,5 @@
-import React, { memo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
 
 export type BaseControlProps = {
   labelText?: string;
