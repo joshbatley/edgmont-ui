@@ -1,30 +1,41 @@
 import React from 'react';
-import clsx from 'clsx';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
+import styled from 'styled-components';
 
 export type StepIconProps = {
   error?: boolean;
   state?: 'completed' | 'active' | 'default';
   icon?: React.ReactNode;
   number: number;
-  color?: ColorsLegacy;
 };
 
-const classes: Record<ColorsLegacy, string> = {
-  primary: 'text-primary-500',
-  gray: 'text-gray-500',
-  green: 'text-green-500',
-  lime: 'text-lime-500',
-  red: 'text-red-500',
-  yellow: 'text-yellow-500',
-  blue: 'text-blue-500',
-  purple: 'text-purple-500',
-  orange: 'text-orange-500',
-  pink: 'text-pink-500',
-};
+const Error = styled(ExclamationTriangleIcon)`
+  width: 24px;
+  height: 24px;
+  color: ${({ theme }) => theme.colors.error};
+`;
+
+const DefaultSvg = styled.svg<{ state: 'completed' | 'active' | 'default' }>`
+  width: 30px;
+  height: 30px;
+  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.gray}` : `color: ${theme.colors.primary}`}
+`;
+
+const DefaultText = styled.text`
+  color: #fff;
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes[0]};
+  line-height: ${({ theme }) => theme.lineHeights[0]};
+`;
+
+const Checkmark = styled(CheckCircleIcon)`
+  color: ${({ theme }) => theme.colors.primary};
+  width: 30px;
+  height: 30px;
+`;
 
 export const StepIcon: React.FC<StepIconProps> = ({
-  state = 'default', icon, number, color = 'primary', error,
+  state = 'default', icon, number, error,
 }) => {
   if (icon) {
     return <>{icon}</>;
@@ -32,26 +43,20 @@ export const StepIcon: React.FC<StepIconProps> = ({
 
   if (error) {
     return (
-      <ExclamationTriangleIcon width={24} height={24} className="text-red-500" viewBox="2 2 16 16" />
+      <Error />
     );
   }
 
   if (state === 'active' || state === 'default') {
     return (
-      <svg
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        fill='currentColor'
-        className={clsx(state === 'default' ? 'text-gray-400' : classes[color])}
-      >
-        <circle cx="12" cy="12" r="12" className="current" />
-        <text x="12" y="16" textAnchor="middle" className="text-white font-bold text-xs">{number}</text>
-      </svg >
+      <DefaultSvg fill='currentColor' state={state}>
+        <circle cx="50%" cy="50%" r="12" className="current" />
+        <DefaultText x="50%" y="65%" textAnchor="middle">{number}</DefaultText>
+      </DefaultSvg>
     );
   }
 
   return (
-    <CheckCircleIcon width={24} height={24} className={classes[color]} viewBox="2 2 16 16" />
+    <Checkmark />
   );
 };

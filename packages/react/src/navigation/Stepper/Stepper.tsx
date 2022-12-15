@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
 import { StepperContext } from '.';
+import styled from 'styled-components';
 
 type StepperPropsVertical = {
   color?: ColorsLegacy;
@@ -33,6 +33,16 @@ const parseChildren = (children: React.ReactNode, step: number): any[] => {
   });
 };
 
+const StyledDiv = styled.div <{ direction: 'vertical' | 'horizontal' }> `
+  display: flex;
+  postion:relative;
+  ${({ direction }) => direction === 'vertical' && `
+    flex-direction: column;
+    height: 100%;
+    alignItems: flex-start;
+  `}
+`;
+
 export const Stepper: React.FC<StepperProps> = ({
   children, color = 'primary', direction = 'horizontal', step, ...rest
 }) => {
@@ -42,9 +52,9 @@ export const Stepper: React.FC<StepperProps> = ({
     <StepperContext.Provider value={{
       noOfItems: items.length - 1, activeStep: step, color, direction, alternativeLabel,
     }}>
-      <div className={clsx({ 'flex-col h-full items-start': direction === 'vertical' }, 'flex relative')}>
+      <StyledDiv direction={direction}>
         {items.map(({ node, ...itemRest }) => React.cloneElement(node, { ...itemRest, color }))}
-      </div>
+      </StyledDiv>
     </StepperContext.Provider>
   );
 };
