@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 import { Backdrop, stopPropagation, Open } from 'utils';
+import styled from 'styled-components';
 
 export type DrawerProps = {
   open?: boolean;
   direction?: 'left' | 'right';
   handleClose: () => void;
 } & WithChildren;
+
+const StyledOpen = styled(Open) <{ direction: 'left' | 'right' }>`
+  position: fixed;
+  width: 33.333333%;
+  height: 100vh;
+  top: 0px;
+  ${({ direction }) => direction === 'left' ? 'left: 0px;' : 'right: 0;'}
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #fff;
+`;
 
 export const Drawer: React.FC<DrawerProps> = ({
   open, handleClose, direction = 'right', children,
@@ -19,11 +33,11 @@ export const Drawer: React.FC<DrawerProps> = ({
 
   return (
     <Backdrop config={{ duration: 195 }} onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <Open inProp={isOpen} direction={direction} className={clsx('fixed w-1/3 h-screen top-0', direction === 'left' ? 'left-0' : 'right-0')}>
-        <div onClick={stopPropagation} className={'w-full h-full bg-white'}>
+      <StyledOpen inProp={isOpen} direction={direction} >
+        <Container onClick={stopPropagation}>
           {children}
-        </div>
-      </Open>
+        </Container>
+      </StyledOpen>
     </Backdrop >
   );
 };
