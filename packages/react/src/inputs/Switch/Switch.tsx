@@ -1,65 +1,100 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { variant } from 'styled-system';
 
 export type SwitchProps = {
-  color?: ColorsLegacy;
+  color?: Colors;
   size?: 'small' | 'medium';
 } & Omit<React.ComponentPropsWithRef<'input'>, 'size'>;
 
-const getSizes = (size: string) => {
-  if (size === 'medium') {
-    return {
-      height: 'h-6',
-      width: 'w-6',
-      widthBg: 'w-12',
-    };
-  }
-  return {
-    height: 'h-4',
-    width: 'w-4',
-    widthBg: 'w-7',
-  };
-};
+const Label = styled.label<{ size: 'small' | 'medium'; disabled: boolean; }>`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  height: ${({ size, theme }) => size === 'medium' ? theme.sizes[6] : theme.sizes[4]};
+  width: ${({ size, theme }) => size === 'medium' ? theme.sizes[12] : theme.sizes[7]};
+  ${({ disabled }) => disabled && `
+    cursor: not-allowed;
+    opacity: 0.4;
+  `}
+`;
 
-const classes: Record<ColorsLegacy, string> = {
-  primary: 'peer-checked:bg-primary-400 peer-checked:ring-primary-400',
-  gray: 'peer-checked:bg-gray-400 peer-checked:ring-gray-400',
-  green: 'peer-checked:bg-green-400 peer-checked:ring-green-400',
-  lime: 'peer-checked:bg-lime-400 peer-checked:ring-lime-400',
-  red: 'peer-checked:bg-red-400 peer-checked:ring-red-400',
-  yellow: 'peer-checked:bg-yellow-400 peer-checked:ring-yellow-400',
-  blue: 'peer-checked:bg-blue-400 peer-checked:ring-blue-400',
-  purple: 'peer-checked:bg-purple-400 peer-checked:ring-purple-400',
-  orange: 'peer-checked:bg-orange-400 peer-checked:ring-orange-400',
-  pink: 'peer-checked:bg-pink-400 peer-checked:ring-pink-400',
-};
+const Button = styled.div<{ size: 'small' | 'medium' }>`
+  input:checked ~ & {
+    right: 0%;
+    transform: translateX(0%);
+  }
+  background: #fff;
+  position: absolute;
+  border-radius: ${({ theme }) => theme.radii[8]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  right: 100%;
+  transform: translateX(100%);
+  height: ${({ size, theme }) => size === 'medium' ? theme.sizes[6] : theme.sizes[4]};
+  width: ${({ size, theme }) => size === 'medium' ? theme.sizes[6] : theme.sizes[4]};
+  ${({ theme }) => theme.transition}
+`;
 
 export const Switch: React.FC<SwitchProps> = ({
-  color = 'primary', size = 'medium', disabled,
+  color = 'primary', size = 'medium', disabled = false,
   ...rest
 }) => {
-  let { height, width, widthBg } = getSizes(size);
-
-  let labelClasses = clsx(
-    height, widthBg,
-    'relative inline-flex items-center align-center cursor-pointer',
-    { 'cursor-not-allowed opacity-40': disabled },
-  );
-  let backClasses = clsx(
-    height,
-    'transition-all w-full ring-2 ring-gray-300 rounded-full bg-gray-300 absolute',
-    classes[color],
-  );
-  let btnClasses = clsx(
-    height, width,
-    'bg-white transition-all ease-in-out absolute rounded-full shadow right-full translate-x-full peer-checked:right-0 peer-checked:translate-x-0',
-  );
+  const Backing = styled.div`
+    width: 100%;
+    height: ${({ theme }) => size === 'medium' ? theme.sizes[6] : theme.sizes[4]};
+    border-radius: ${({ theme }) => theme.radii[8]};
+    position: absolute;
+    background: ${({ theme }) => theme.colors.gray};
+    box-shadow: ${({ theme }) => theme.colors.gray} 0 0 0 2px;
+    ${({ theme }) => theme.transition}
+    ${({ theme }) => variant({
+    prop: 'color',
+    variants: {
+      primary: {
+        'input:checked ~ &': {
+          bg: 'primary',
+          boxShadow: `${theme.colors.primary} 0 0 0 2px`,
+        },
+      },
+      success: {
+        'input:checked ~ &': {
+          bg: 'success',
+          boxShadow: `${theme.colors.success} 0 0 0 2px`,
+        },
+      },
+      info: {
+        'input:checked ~ &': {
+          bg: 'info',
+          boxShadow: `${theme.colors.info} 0 0 0 2px`,
+        },
+      },
+      error: {
+        'input:checked ~ &': {
+          bg: 'error',
+          boxShadow: `${theme.colors.error} 0 0 0 2px`,
+        },
+      },
+      warning: {
+        'input:checked ~ &': {
+          bg: 'warning',
+          boxShadow: `${theme.colors.warning} 0 0 0 2px`,
+        },
+      },
+      dark: {
+        'input:checked ~ &': {
+          bg: 'base',
+          boxShadow: `${theme.colors.base} 0 0 0 2px`,
+        },
+      },
+    },
+  })}`;
 
   return (
-    <label className={labelClasses} >
+    <Label size={size} disabled={disabled} >
       <input type="checkbox" className="peer hidden" disabled={disabled} {...rest} />
-      <div className={backClasses} />
-      <div className={btnClasses} />
-    </label >
+      <Backing color={color} />
+      <Button size={size} />
+    </Label>
   );
 };
