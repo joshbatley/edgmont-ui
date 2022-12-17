@@ -1,6 +1,9 @@
 import React, { forwardRef } from 'react';
-import { ClickableElement, OutlineButton } from 'inputs';
+import { ClickableElement } from 'inputs/Button/ClickableElement';
+import { OutlineButton } from 'inputs';
 import { CalendarIcon } from '@heroicons/react/24/outline';
+import { Text } from 'data';
+import styled from 'styled-components';
 
 export type DateInputProps = {
   placeholder?: string;
@@ -10,21 +13,42 @@ export type DateInputProps = {
   showClear?: boolean;
 };
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-left: ${({ theme }) => theme.space[4]};
+    margin-right:${({ theme }) => theme.space[4]};
+  }
+`;
+
+const Icon = styled(CalendarIcon)`
+  color: ${({ theme }) => theme.colors.baseLight};
+  margin-right: ${({ theme }) => theme.space[2]};
+`;
+
+const ClearBtn = styled(ClickableElement)`
+  color: ${({ theme }) => theme.colors.baseLight};
+  :hover {
+    color: ${({ theme }) => theme.colors.base};
+  }
+`;
+
 export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value, placeholder, onClick, clear, showClear }, ref) => {
   let handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     clear?.();
   };
   return (
-    <OutlineButton ref={ref} onClick={onClick} className="w-full justify-between">
-      <div className="flex space-x-4 items-center">
-        <CalendarIcon width={16} height={16} className='text-gray-400 mr-2' />
-        {value || <span className="text-gray-400">{placeholder}</span>}
-      </div>
+    <OutlineButton width="100%" justifyContent="space-between" ref={ref} onClick={onClick} >
+      <Container>
+        <Icon width={16} height={16} />
+        {value || <Text as="span" color="baseLight">{placeholder}</Text>}
+      </Container>
       {showClear && value && (
-        <ClickableElement onClick={handleClear} as="a" className="text-gray-400 hover:text-gray-800">
+        <ClearBtn onClick={handleClear} as="a">
           Clear
-        </ClickableElement>
+        </ClearBtn>
       )}
     </OutlineButton>
   );

@@ -13,7 +13,7 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
     background:${({ theme }) => theme.colors.gray};
   }
   :hover {
-    background: ${({ theme }) => theme.colors.gray};
+    background: ${({ theme }) => theme.colors.offwhite};
   }
 `;
 

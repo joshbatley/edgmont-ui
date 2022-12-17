@@ -5,7 +5,7 @@ import { DateHeader } from './DateHeader';
 import { DateInput } from './DateInput';
 import { DateContainer } from './DateContainer';
 import { DateWrapper } from './DateWrapper';
-import './Datepicker.css';
+import { Container } from './StylingBasePicker';
 
 type SharedProps = {
   placeholder?: string;
@@ -56,10 +56,12 @@ export const BasePicker: React.FC<BasePickerProps> = ({
         showClear={showClear}
       />
       <DateWrapper isOpen={isOpen} handleClose={() => setOpen(false)} itemRef={wrappedRef}>
-        <Picker
-          {...defaults}
-          {...rest}
-        />
+        <Container>
+          <Picker
+            {...defaults}
+            {...rest}
+          />
+        </Container>
       </DateWrapper>
     </>
   );

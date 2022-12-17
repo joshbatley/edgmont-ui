@@ -37,27 +37,24 @@ const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
   `}
 `;
 
-export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, icon, rounded = false, disabled = false, error = false, ...rest
-}) => {
-  const Box = styled.div`
+const Box = styled.div<{ disabled: boolean; error: boolean; }>`
     background: #fff;
     width: 100%;
     height: 100%;
     position: absolute;
     input:checked ~ & {
-      background: ${({ theme }) =>
-      error ? theme.colors.error :
-        disabled ? theme.colors.baseLight : theme.colors.primary};
+      background: ${({ theme, error, disabled }) =>
+    error ? theme.colors.error :
+      disabled ? theme.colors.baseLight : theme.colors.primary};
     }
     ${Label}:hover input:checked ~ & {
-      background: ${({ theme }) =>
-      error ? theme.colors.error :
-        disabled ? theme.colors.baseLight : theme.colors.primary};
+      background: ${({ theme, error, disabled }) =>
+    error ? theme.colors.error :
+      disabled ? theme.colors.baseLight : theme.colors.primary};
     }
   `;
 
-  let Icon = styled.div`
+let Icon = styled.div<{ disabled: boolean; error: boolean; }>`
     svg {
       width: 16px;
       height: 16px;
@@ -67,7 +64,7 @@ export const BaseControl: React.FC<BaseControlProps> = ({
       ${Label} input:checked ~ & {
         color: #fff;
       }
-      ${({ theme }) => !disabled && `
+      ${({ theme, disabled, error }) => !disabled && `
         ${Label}:hover & {
           color: ${error ? theme.colors.error : theme.colors.primary};
         }
@@ -75,15 +72,17 @@ export const BaseControl: React.FC<BaseControlProps> = ({
     }
   `;
 
-  return (
-    <Label disabled={disabled}>
-      <Btn rounded={rounded} error={error}>
-        <input className="peer hidden" disabled={disabled} {...rest} />
-        <Box />
-        <Icon>{icon}</Icon>
-      </Btn>
-      {labelText}
-    </Label>
-  );
-};
+export const BaseControl: React.FC<BaseControlProps> = ({
+  labelText, icon, rounded = false, disabled = false, error = false, ...rest
+}) => (
+  <Label disabled={disabled}>
+    <Btn rounded={rounded} error={error}>
+      <input className="peer hidden" disabled={disabled} {...rest} />
+      <Box disabled={disabled} error={error} />
+      <Icon disabled={disabled} error={error}>{icon}</Icon>
+    </Btn>
+    {labelText}
+  </Label>
+);
+
 

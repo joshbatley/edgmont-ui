@@ -4,6 +4,8 @@ import { format, getYear } from 'date-fns';
 import { ClickableElement } from 'inputs';
 import { Menu, MenuItem } from 'navigation';
 import { LeftNavigation, RightNavigation } from './DateNavigation';
+import { Box } from 'data';
+import styled from 'styled-components';
 
 const months = [
   'January',
@@ -19,6 +21,10 @@ const months = [
   'November',
   'December',
 ];
+
+const StyledMenu = styled(Menu)`
+  max-height: 200px;
+`;
 
 export type DateHeaderProps = {
   monthsShown?: number;
@@ -71,7 +77,7 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
 
   return (
     <div>
-      <div className="flex items-center justify-center py-2 border-b">
+      <Box display="flex" alignItems="center" justifyContent="center" py="2" borderBottom="lightGray.1">
         {showLeftNav && <LeftNavigation decreaseMonth={canModifyMonths(decreaseMonth)} decreaseYear={decreaseYearFn} />}
         <ClickableElement
           ref={setItemRef as Ref<HTMLButtonElement>}
@@ -81,12 +87,12 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
           {getFriendlyString()}
         </ClickableElement>
         {showRightNav && <RightNavigation increaseMonth={canModifyMonths(increaseMonth)} increaseYear={increaseYearFn} />}
-      </div>
-      <Menu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen} className="max-height-[200px]">
+      </Box>
+      <StyledMenu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen}>
         {months.map((month, idx) => (
           <MenuItem key={month} onClick={() => handleMonthChange(idx)}>{month}</MenuItem>
         ))}
-      </Menu>
+      </StyledMenu>
     </div >
   );
 };
