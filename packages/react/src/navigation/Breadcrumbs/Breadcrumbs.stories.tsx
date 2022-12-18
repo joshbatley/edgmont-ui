@@ -28,7 +28,7 @@ export const Example: Story = ({ ...rest }) => (
 );
 
 export const CustomDividers: Story = ({ ...rest }) => (
-  <Breadcrumbs dividerIcon={<ChevronRightIcon />} {...rest}>
+  <Breadcrumbs dividerIcon={<ChevronRightIcon width="16px" height="16px" />} {...rest}>
     <a href="#">With</a>
     <a href="#">A</a>
     <a href="#">Custom</a>
