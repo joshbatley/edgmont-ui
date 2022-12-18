@@ -6,7 +6,7 @@ import {
 import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
-  size?: Size;
+  size?: Size | 'none';
   isLoading?: boolean;
   type?: 'button' | 'reset' | 'submit';
   as?: AsProp;

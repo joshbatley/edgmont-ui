@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { LockClosedIcon, EyeIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from 'inputs';
-import { Text } from 'data';
+import { Box, Text } from 'data';
 import { TextField } from '..';
 
 export default {
@@ -14,8 +14,8 @@ export default {
   },
 } as Meta;
 
-const Before = ({ ...rest }) => (<ClickableElement onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
-const After = ({ ...rest }) => (<Text {...rest}>.com</Text>);
+const Before = ({ ...rest }) => (<ClickableElement px="3" py="2" onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
+const After = ({ ...rest }) => (<Box px="3" py="2"><Text {...rest}>.com</Text></Box>);
 
 export const Errored: Story = ({ ...rest }) => (
   <div className="space-y-2">

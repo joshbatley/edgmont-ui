@@ -6,7 +6,7 @@ import { TextField, TextFieldProps } from '.';
 export type PasswordProps = TextFieldProps;
 
 const Btn: React.FC<{ showPassword: boolean, onClick: () => void }> = ({ showPassword, onClick, ...rest }) => (
-  <ClickableElement type="button" onClick={onClick} {...rest}>
+  <ClickableElement px="3" py="2" type="button" onClick={onClick} {...rest}>
     {showPassword ? <EyeSlashIcon width={16} /> : <EyeIcon width={16} />}
   </ClickableElement>
 );

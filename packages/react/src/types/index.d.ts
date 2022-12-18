@@ -15,7 +15,7 @@ type ColorWeights = '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700'
 
 type ColorPrefix = 'text' | 'bg' | 'border' | 'ring' | 'outline' | 'shadow';
 
-type Size = 'large' | 'medium' | 'small' | 'none';
+type Size = 'large' | 'medium' | 'small';
 type Position = CardinalPoints | IntercardinalPoints;
 
 type CardinalPoints = 'N' | 'E' | 'S' | 'W';

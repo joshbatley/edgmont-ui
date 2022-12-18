@@ -1,10 +1,32 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { Box } from 'data/Box';
+import { variant } from 'styled-system';
 
 export type OptionalIconProps = {
   icon: React.ReactNode;
-  sizingClasses: string;
+  size: Size;
 };
 
-export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, sizingClasses }) =>
-  icon ? (<div className={clsx('flex items-center', sizingClasses)}>{icon}</div>) : null;
+const StyledBox = styled(Box)`
+  ${variant({
+  prop: 'size',
+  variants: {
+    small: {
+      px: 2,
+      py: 1,
+    },
+    medium: {
+      px: 3,
+      py: 2,
+    },
+    large: {
+      px: 6,
+      py: 4,
+    },
+  },
+})}
+`;
+
+export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, size }) =>
+  icon ? (<StyledBox display="flex" alignItems="center" size={size}>{icon}</StyledBox>) : null;

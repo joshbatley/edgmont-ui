@@ -3,13 +3,14 @@
 exports[`TextField test should render 1`] = `
 <div>
   <div
-    class="border border-gray-300 shadow-sm rounded-md bg-white text-gray-400 flex focus-with:outline-none focus-within:ring focus-within:z-10"
+    class="sc-gswNZR sc-jSUZER hiYrTO gzMPmx"
+    display="flex"
   >
     <div
-      class="flex-grow"
+      class="sc-gswNZR sc-eDvSVe dEGTuI jKqFOw"
     >
       <input
-        class="w-full outline-none rounded-md text-gray-900 text-sm px-3 py-2"
+        class="sc-bcXHqe jbrppb"
       />
     </div>
   </div>
