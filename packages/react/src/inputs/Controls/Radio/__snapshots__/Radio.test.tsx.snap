@@ -3,10 +3,10 @@
 exports[`Radio test should errored with disabled classes 1`] = `
 <div>
   <label
-    class="sc-hLBbgP dBDxxq"
+    class="sc-eDvSVe cIHxS"
   >
     <div
-      class="sc-eDvSVe eBeQzt"
+      class="sc-jSUZER AlNEP"
     >
       <input
         class="peer hidden"
@@ -14,10 +14,10 @@ exports[`Radio test should errored with disabled classes 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER jbZjW"
+        class="sc-gKPRtg cKVZem"
       />
       <div
-        class="sc-gKPRtg hlWRQJ"
+        class="sc-iBYQkv gyVbu"
       >
         <svg
           fill="currentColor"
@@ -39,10 +39,10 @@ exports[`Radio test should errored with disabled classes 1`] = `
 exports[`Radio test should render 1`] = `
 <div>
   <label
-    class="sc-hLBbgP dBDxxq"
+    class="sc-eDvSVe cIHxS"
   >
     <div
-      class="sc-eDvSVe gyGhYa"
+      class="sc-jSUZER lktFsw"
     >
       <input
         class="peer hidden"
@@ -50,10 +50,10 @@ exports[`Radio test should render 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER jWOcza"
+        class="sc-gKPRtg bwiDRa"
       />
       <div
-        class="sc-gKPRtg lbFYFG"
+        class="sc-iBYQkv gvhRVZ"
       >
         <svg
           fill="currentColor"
@@ -75,11 +75,11 @@ exports[`Radio test should render 1`] = `
 exports[`Radio test should render with disabled classes 1`] = `
 <div>
   <label
-    class="sc-hLBbgP bwQUxR"
+    class="sc-eDvSVe ZXIxN"
     disabled=""
   >
     <div
-      class="sc-eDvSVe gyGhYa"
+      class="sc-jSUZER lktFsw"
     >
       <input
         class="peer hidden"
@@ -88,11 +88,11 @@ exports[`Radio test should render with disabled classes 1`] = `
         value=""
       />
       <div
-        class="sc-jSUZER cYLjeu"
+        class="sc-gKPRtg hUqRem"
         disabled=""
       />
       <div
-        class="sc-gKPRtg dzxhHl"
+        class="sc-iBYQkv fSQQZm"
         disabled=""
       >
         <svg

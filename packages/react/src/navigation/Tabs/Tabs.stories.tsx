@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect } from 'storybook-helpers/presets';
 import { Tabs, TabPane } from '.';
 
 export default {
@@ -12,7 +11,6 @@ export default {
       options: ['default', 'card'],
       control: { type: 'select' },
     },
-    color: colorSelect,
   },
   parameters: {
     backgrounds: {
