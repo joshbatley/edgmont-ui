@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { BaseButton, BaseButtonProps } from './BaseButton';
+import { BaseButton, BaseButtonProps } from 'inputs/Button/BaseButton';
 
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
@@ -10,9 +10,9 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   border: ${({ theme }) => theme.borders.gray[1]};
   box-shadow: ${({ theme }) => theme.shadows[0]};
   :disabled {
-    background:${({ theme }) => theme.colors.gray};
+    background:${({ theme }) => theme.colors.lightGray};
   }
-  :hover {
+  :hover:not(:disabled) {
     background: ${({ theme }) => theme.colors.offwhite};
   }
 `;

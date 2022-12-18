@@ -1,6 +1,19 @@
 import React from 'react';
-import { List } from 'data';
+import { List } from 'data/List';
+import styled from 'styled-components';
 import { useSelectContext } from '.';
+
+const StyledList = styled(List)`
+  padding-top: ${({ theme }) => theme.space[1]};
+  padding-bottom: ${({ theme }) => theme.space[1]};
+  border-radius: ${({ theme }) => theme.radii[3]};
+  box-shadow: ${({ theme }) => theme.shadows[4]};
+  border: ${({ theme }) => theme.borders.lightGray[1]};
+  background: #fff;
+  margin-top: ${({ theme }) => theme.space[2]};
+  position: absolute;
+  min-width: 100%;
+`;
 
 export const SelectList: React.FC<WithChildren> = ({ children }) => {
   let { isOpen } = useSelectContext();
@@ -10,8 +23,8 @@ export const SelectList: React.FC<WithChildren> = ({ children }) => {
   }
 
   return (
-    <List className="py-1 border border-gray-300 rounded-md shadow-lg bg-white mt-2 absolute min-w-full">
+    <StyledList>
       {children}
-    </List>
+    </StyledList>
   );
 };

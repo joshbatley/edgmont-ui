@@ -1,15 +1,39 @@
 import React from 'react';
-import clsx from 'clsx';
-import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs';
-import { Text } from 'data';
+import { ClickableElement } from 'inputs';
+import { OutlineButton, OutlineButtonProps } from 'inputs/Button/OutlineButton';
+import { Box, Text } from 'data';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import { useSelectContext } from '.';
+import styled from 'styled-components';
 
 export type SelectButtonProps = {
   isClearable?: boolean;
   isFilterable?: boolean;
   error?: boolean;
 } & OutlineButtonProps;
+
+const StyledOutlineButton = styled(OutlineButton) <{ error: boolean }>`
+  ${({ error, theme }) => error && `
+    border: ${theme.borders.error[1]};
+    box-shadow: ${theme.shadows.error};
+  `}
+`;
+
+const ClearBtn = styled(ClickableElement)`
+  color: ${({ theme }) => theme.colors.baseLight};
+  :hover {
+    color: ${({ theme }) => theme.colors.base};
+  }
+`;
+
+const Container = styled(Box)`
+  > {
+    margin-right: ${({ theme }) => theme.space[4]};
+  }
+  > :last-child {
+    margin-right: 0;
+  }
+`;
 
 export const SelectButton: React.FC<SelectButtonProps> = ({
   isClearable, children, isFilterable, placeholder, error, ...rest
@@ -31,20 +55,22 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
   };
 
   return (
-    <OutlineButton
-      className={clsx('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error })}
+    <StyledOutlineButton
+      width="100%"
+      justifyContent="space-between"
+      error={error}
       {...getToggleButtonProps()}
       {...rest}
     >
       <Text>{buttonText}</Text>
-      <div className="flex space-x-4 items-center">
+      <Container display="flex" alignItems="center">
         {isClearableActive &&
-          <ClickableElement as="a" onClick={clear} className="text-gray-400 hover:text-gray-800">
+          <ClearBtn as="a" onClick={clear}>
             Clear
-          </ClickableElement>
+          </ClearBtn>
         }
         <ChevronUpDownIcon height={16} width={16} />
-      </div>
-    </OutlineButton>
+      </Container>
+    </StyledOutlineButton>
   );
 };
