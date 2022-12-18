@@ -1,56 +1,51 @@
 import React from 'react';
-import clsx from 'clsx';
-import { ClickableElement } from 'inputs';
+import { ClickableElement } from 'inputs/Button/ClickableElement';
 import { Scrollable } from 'utils';
+import styled from 'styled-components';
+import { Box } from 'data';
 
 export type TabCardItemProps = {
   selected?: boolean;
   onClick: () => void;
   children: React.ReactNode;
-  color?: ColorsLegacy;
 };
 
-const clasess: Record<ColorsLegacy, string> = {
-  primary: 'bg-primary-600',
-  gray: 'bg-gray-600',
-  green: 'bg-green-600',
-  lime: 'bg-lime-600',
-  red: 'bg-red-600',
-  yellow: 'bg-yellow-600',
-  blue: 'bg-blue-600',
-  purple: 'bg-purple-600',
-  orange: 'bg-orange-600',
-  pink: 'bg-pink-600',
-};
+const StyledBtn = styled(ClickableElement)`
+  scroll-snap-align: start;
+  border-radius: ${({ theme }) => `${theme.radii[2]} ${theme.radii[2]}`} 0 0;
+  margin-right: ${({ theme }) => theme.space[2]};
+  &:last-of-type {
+    margin-right: 0;
+  }
+  :focus {
+    outline: 0;
+    box-shadow: none;
+  }
+`;
 
-export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick, color = 'primary' }) => (
-  <ClickableElement className={clsx('px-5 py-3 rounded-t rounded-b-none overflow-hidden focus:ring-0 border relative z-10 snap-start border-b-0', selected ? 'bg-white' : 'bg-gray-50')} onClick={onClick}>
+export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick }) => (
+  <StyledBtn px="5" py="3" zIndex="10" position="relative" border="lightGray.1" borderBottom="0" bg={selected ? 'white' : 'offwhite'} onClick={onClick}>
     {children}
     {selected && (
-      <div className={clsx('absolute left-0 bottom-0 h-[2px] w-full', clasess[color])} ></div>
-    )
-    }
-  </ClickableElement >
+      <Box bg="primary" position="absolute" left="0" bottom="0" height="2px" width="100%" />
+    )}
+  </StyledBtn >
 );
 
 export type TabCardItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  color?: ColorsLegacy;
 };
 
-export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onChange, color = 'primary' }) => (
+export const TabCardItems: React.FC<TabCardItemsProps> = ({ tabs, selected, onChange }) => (
   <Scrollable>
-    <div className="space-x-1">
-      {tabs.map(({ tab, key }) => (
-        <TabCardItem
-          color={color}
-          key={key}
-          selected={selected === key}
-          onClick={() => onChange(key)}
-        >{tab}</TabCardItem>
-      ))}
-    </div>
-  </Scrollable >
+    {tabs.map(({ tab, key }) => (
+      <TabCardItem
+        key={key}
+        selected={selected === key}
+        onClick={() => onChange(key)}
+      >{tab}</TabCardItem>
+    ))}
+  </Scrollable>
 );

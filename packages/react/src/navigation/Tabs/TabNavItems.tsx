@@ -1,40 +1,32 @@
-import React, { useRef, forwardRef, useEffect, useState } from 'react';
-import clsx from 'clsx';
-import { ClickableElement } from 'inputs';
+import React, { useRef, useEffect, useState } from 'react';
+import { ClickableElement } from 'inputs/Button/ClickableElement';
 import { Scrollable } from 'utils';
+import { Box } from 'data/Box';
+import styled from 'styled-components';
 
-export type TabNavItemProps = {
-  onClick: () => void;
-  children: React.ReactNode;
-};
-
-export const TabNavItem = forwardRef<HTMLButtonElement, TabNavItemProps>(({ children, onClick }, ref) => (
-  <ClickableElement className='px-4 py-3 rounded-none relative overflow-hidden first-of-type:rounded-l last-of-type:rounded-r-md focus:ring-0' onClick={onClick} ref={ref}>
-    {children}
-  </ClickableElement>
-));
+const TabNavItem = styled(ClickableElement)`
+  padding: ${({ theme }) => `${theme.space[3]} ${theme.space[4]}`};
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+  :focus {
+    box-shadow: none;
+    outline: 0;
+  }
+`;
 
 export type TabNavItemsProps = {
   tabs: Tab[];
   selected: string | number;
   onChange: any;
-  color?: ColorsLegacy;
 };
 
-const classes: Record<ColorsLegacy, string> = {
-  primary: 'bg-primary-600',
-  gray: 'bg-gray-600',
-  green: 'bg-green-600',
-  lime: 'bg-lime-600',
-  red: 'bg-red-600',
-  yellow: 'bg-yellow-600',
-  blue: 'bg-blue-600',
-  purple: 'bg-purple-600',
-  orange: 'bg-orange-600',
-  pink: 'bg-pink-600',
-};
+const StyledBox = styled(Box)`
+  ${({ theme }) => theme.transition}
+`;
 
-export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange, color = 'primary' }) => {
+export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChange }) => {
   let ref = useRef<HTMLButtonElement>(null);
   let [styles, setStyles] = useState({ width: 0, left: 0 });
 
@@ -47,7 +39,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
 
   return (
     <Scrollable>
-      <div className="border-b">
+      <Box borderBottom="lightGray.1">
         {tabs.map(({ tab, key }) => (
           <TabNavItem
             key={key}
@@ -55,8 +47,8 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
             onClick={() => onChange(key)}
           >{tab}</TabNavItem>
         ))}
-        <div className={clsx(classes[color], 'h-1 relative transition-all')} style={{ ...styles }} />
-      </div>
+        <StyledBox height="1" position="relative" bg="primary" style={{ ...styles }} />
+      </Box>
     </Scrollable>
   );
 };

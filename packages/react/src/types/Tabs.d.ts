@@ -1,7 +1,6 @@
 type TabsProps = {
   value?: string | number;
   type?: TabVarient;
-  color?: ColorsLegacy;
 } & WithChildren;
 
 type TabVarient = 'default' | 'card';
