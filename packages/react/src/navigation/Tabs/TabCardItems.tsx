@@ -13,7 +13,7 @@ export type TabCardItemProps = {
 const StyledBtn = styled(ClickableElement)`
   scroll-snap-align: start;
   border-radius: ${({ theme }) => `${theme.radii[2]} ${theme.radii[2]}`} 0 0;
-  margin-right: ${({ theme }) => theme.space[2]};
+  margin-right: ${({ theme }) => theme.space[1]};
   &:last-of-type {
     margin-right: 0;
   }
