@@ -1,46 +1,85 @@
 import React, { useCallback } from 'react';
-import clsx from 'clsx';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { Text, TextInline, List } from 'data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
 import { BaseUploader, AcceptedFile, BaseUploaderProps } from '.';
+import styled from 'styled-components';
 
 export type UploadZoneProps = {
   showAsTile?: boolean;
   bottomText?: string;
-} & Omit<BaseUploaderProps, 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
+} & Omit<BaseUploaderProps, 'container' | 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
+
+const Container = styled.div<{ isDragActive: boolean }>`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.radii[2]};
+  border: ${({ theme }) => theme.borders.lightGray[3]};
+  border-style: dashed;
+  padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin: ${({ theme }) => theme.space[1]} 0;
+  }
+  ${({ isDragActive, theme }) => isDragActive && `
+    background: ${theme.colors.primary};
+    border-color: ${theme.colors.primaryLight};
+  `}
+`;
+
+const StyledList = styled(List)`
+  margin-top: ${({ theme }) => theme.space[2]};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-top: ${({ theme }) => theme.space[2]};
+    margin-bottom: ${({ theme }) => theme.space[2]};
+  }
+  :empty {
+    margin: 0px;
+  }
+`;
+
+const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
+  color: ${({ theme }) => theme.colors.baseLight};
+  ${({ isDragActive, theme }) => isDragActive && `
+    color: #fff;
+    ${theme.animations.bounce}
+  `}
+`;
 
 export const UploadZone: React.FC<UploadZoneProps> = ({
   showAsTile, filesRender, bottomText = 'Support for a single or bulk upload.', ...rest
 }) => {
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
-      <ArrowUpTrayIcon width={30} height={30} className={clsx('text-gray-500', { 'animate-bounce text-white': isDragActive })} />
-      {isDragActive ? <Text className="font-bold text-white">And drop your file to upload</Text> :
+      <TrayIcon width={30} height={30} isDragActive={isDragActive} />
+      {isDragActive ? <Text fontWeight="700" color="white">And drop your file to upload</Text> :
         <Text>
-          Drag and drop, or <TextInline className="text-indigo-600">click to find</TextInline> a file
+          Drag and drop, or <TextInline color="primary">click to find</TextInline> a file
         </Text>
       }
-      <Text className={clsx('text-sm', isDragActive ? 'text-white' : 'text-gray-600')}>{bottomText}</Text>
+      <Text fontSize="1" lineHeight="1" color={isDragActive ? '#fff' : 'baseLight'}>{bottomText}</Text>
     </>
   ), [bottomText]);
 
   let defaultRender = useCallback((files: AcceptedFile[], handleDelete: any) => (
-    <List className="space-y-2 mt-3 empty:m-0">
+    <StyledList>
       {files.map(file => showAsTile ? (
         <TileItem key={file.key} file={file} handleDelete={handleDelete} />
       ) : (
         <BasicItem key={file.key} file={file} handleDelete={handleDelete} />
       ))}
-    </List>
+    </StyledList>
   ), [showAsTile]);
 
   return (
     <BaseUploader
       {...rest}
-      baseClasses='w-full flex flex-col text-center justify-center items-center rounded border-4 border-dashed px-2 py-5 space-y-2 cursor-pointer'
-      dragActiveClasses='bg-indigo-500 border-indigo-300'
+      container={Container}
       renderUploader={Uploader}
       filesRender={filesRender || defaultRender}
     />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import clsx from 'clsx';
 import { DropEvent, DropzoneOptions, FileError, FileRejection, useDropzone } from 'react-dropzone';
 import { getMeta } from './Utils';
 
@@ -16,8 +15,7 @@ export type AcceptedFile = {
 };
 
 export type BaseUploaderProps = {
-  baseClasses?: string;
-  dragActiveClasses?: string;
+  container: React.ElementType;
   options?: DropzoneOptions;
   renderUploader: (isDragActive: boolean, open: () => void) => React.ReactNode;
   filesRender?: (files: AcceptedFile[], handleDelete: (key: string) => void) => React.ReactNode;
@@ -25,7 +23,7 @@ export type BaseUploaderProps = {
 };
 
 export const BaseUploader: React.FC<BaseUploaderProps> = ({
-  baseClasses, dragActiveClasses = '', options = {}, renderUploader, filesRender, handleFileUpdate,
+  container: Container, options = {}, renderUploader, filesRender, handleFileUpdate,
 }) => {
   let [files, setFiles] = useState<AcceptedFile[]>([]);
   let { onDrop, ...otherOptions } = options;
@@ -49,10 +47,10 @@ export const BaseUploader: React.FC<BaseUploaderProps> = ({
 
   return (
     <>
-      <div className={clsx(baseClasses, { [dragActiveClasses]: isDragActive })} {...getRootProps()}>
+      <Container isDragActive={isDragActive} {...getRootProps()}>
         <input {...getInputProps()} />
         {renderUploader?.(isDragActive, open)}
-      </div>
+      </Container>
       {filesRender?.(files, handleDelete)}
     </>
   );

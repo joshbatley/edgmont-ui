@@ -1,36 +1,47 @@
 import React, { useCallback } from 'react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { Button, ButtonProps } from 'inputs';
+import styled from 'styled-components';
+import { OutlineButton } from 'inputs';
 import { List } from 'data';
 import { BasicItem } from './BasicItem';
 import { AcceptedFile, BaseUploader, BaseUploaderProps } from '.';
 
 export type UploadButtonProps = {
   buttonText?: boolean;
-  buttonProps?: ButtonProps;
-} & Omit<BaseUploaderProps, 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
+} & Omit<BaseUploaderProps, 'container' | 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
 
-export const UploadButton: React.FC<UploadButtonProps> = ({ buttonText = 'Upload file', buttonProps = { variant: 'Outline' }, ...rest }) => {
+const StyledList = styled(List)`
+  margin-top: ${({ theme }) => theme.space[2]};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-top: ${({ theme }) => theme.space[2]};
+    margin-bottom: ${({ theme }) => theme.space[2]};
+  }
+  :empty {
+    margin: 0px;
+  }
+`;
 
-  let Uploader = useCallback((isDragActive: boolean, open: () => void) => (
-    <>
-      <Button {...buttonProps} onClick={open} >
-        <ArrowUpTrayIcon width={16} height={16} className="mr-2" />
-        {buttonText}
-      </Button>
-    </>
-  ), [buttonProps, buttonText]);
+export const UploadButton: React.FC<UploadButtonProps> = ({
+  buttonText = 'Upload file', ...rest
+}) => {
+  let Uploader = useCallback((_: boolean, open: () => void) => (
+    <OutlineButton onClick={open}>
+      <ArrowUpTrayIcon width={16} height={16} />
+      <span>{buttonText}</span>
+    </OutlineButton>
+  ), [buttonText]);
 
   let defaultRender = useCallback((files: AcceptedFile[], handleDelete: any) => (
-    <List className="space-y-2 mt-2 empty:m-0">
+    <StyledList>
       {files.map(file => (
         <BasicItem key={file.key} file={file} handleDelete={handleDelete} />
       ))}
-    </List>
+    </StyledList>
   ), []);
 
   return (
     <BaseUploader
+      container={({ ...params }: any) => <div {...params} />}
       {...rest}
       options={{
         noClick: true,

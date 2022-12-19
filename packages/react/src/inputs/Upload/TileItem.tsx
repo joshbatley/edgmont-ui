@@ -1,10 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
 import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { TextInline, Text, Image } from 'data';
+import { TextInline, Text, Image, Box } from 'data';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
 import { AcceptedFile } from '.';
+import styled from 'styled-components';
 
 export type TileItemProps = {
   file: AcceptedFile;
@@ -12,10 +12,27 @@ export type TileItemProps = {
 };
 
 const fallback = (
-  <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-gray-100">
+  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseLight" borderRadius="2" bg="lightGray">
     <PhotoIcon width={30} height={30} />
-  </div>
+  </Box>
 );
+
+const DeleteBtn = styled(ClickableElement) <{ hasError: boolean }>`
+  opacity: ${({ hasError }) => hasError ? 1 : 0};
+`;
+
+const BoxStyled = styled(Box)`
+  :hover button {
+    opacity: 1;
+  }
+`;
+const StyledImage = styled(Image)`
+  width: ${({ theme }) => theme.sizes[12]};
+  height: ${({ theme }) => theme.sizes[12]};
+  object-fit: cover;
+  border-radius: ${({ theme }) => theme.radii[2]};
+  background: ${({ theme }) => theme.colors.offwhite};
+`;
 
 export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
   let { name, bytes, type, extension } = file.meta;
@@ -26,19 +43,18 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
 
   return (
     <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
-      <div className={clsx('flex items-center space-x-2 border rounded-md overflow-hidden p-2 group', { 'border-red-500 text-red-500': hasError })}>
-        <Image src={imgSrc as string} className="w-12 h-12 object-cover bg-gray-200 rounded" fallback={fallback} />
-        <div className="flex flex-col">
-          <TextInline className="font-bold">{name}</TextInline>
-          <Text className="text-xs text-slate-400">{meta}</Text>
-        </div>
-        <div className="flex flex-grow items-center justify-end">
-          <ClickableElement className={clsx('opacity-0 group-hover:opacity-100 text-gray-500', { 'opacity-100 text-current': hasError })}
-            onClick={() => handleDelete(file.key)}>
-            <TrashIcon width={20} height={20} />
-          </ClickableElement>
-        </div>
-      </div>
-    </Tooltip >
+      <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'lightGray.1'} color={hasError ? 'error' : 'base'}>
+        <StyledImage src={imgSrc as string} fallback={fallback} />
+        <Box display="flex" flexDirection="column" ml="2">
+          <TextInline fontWeight="700">{name}</TextInline>
+          <Text fontSize="0" lineHeight="0" color="baseLight">{meta}</Text>
+        </Box>
+        <Box display="flex" flexGrow="1" alignItems="center" justifyContent="end">
+          <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>
+            <TrashIcon width={16} height={16} />
+          </DeleteBtn>
+        </Box>
+      </BoxStyled>
+    </Tooltip>
   );
 };
