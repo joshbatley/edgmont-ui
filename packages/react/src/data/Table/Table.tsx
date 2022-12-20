@@ -7,8 +7,8 @@ export type TableProps = {
 } & React.ComponentPropsWithRef<'table'>;
 
 const Container = styled.div<TableProps>`
-  background: #fff;
-  box-shadow: ${({ theme }) => theme.shadows[1]};
+  background: ${({ theme }) => theme.colors.background[0]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
   border-radius: ${({ theme }) => theme.radii[3]};
   contain: paint;
   padding-bottom: ${({ footer, theme }) => !footer ? theme.space[1] : '0'};
@@ -21,7 +21,7 @@ const StyledTable = styled.table`
   > :not([hidden]) ~ :not([hidden]) & :not(:last-child) {
     border-top-width: 1px;
     border-bottom-width: 1px;
-    border-color: ${({ theme }) => theme.colors.lightGray}
+    border-color: ${({ theme }) => theme.colors.background[2]}
   }
 `;
 

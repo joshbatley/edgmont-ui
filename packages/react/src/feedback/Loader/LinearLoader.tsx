@@ -22,22 +22,22 @@ const OuterLine = styled.div`
   prop: 'color',
   variants: {
     primary: {
-      background: theme.colors.primaryLight,
+      background: theme.colors.primaryHighlight,
     },
     success: {
-      background: darken(0.1, theme.colors.successLight),
+      background: darken(0.1, theme.colors.successHighlight),
     },
     info: {
-      background: darken(0.1, theme.colors.infoLight),
+      background: darken(0.1, theme.colors.infoHighlight),
     },
     error: {
-      background: darken(0.1, theme.colors.errorLight),
+      background: darken(0.1, theme.colors.errorHighlight),
     },
     warning: {
-      background: darken(0.1, theme.colors.warningLight),
+      background: darken(0.1, theme.colors.warningHighlight),
     },
     dark: {
-      background: theme.colors.gray,
+      background: theme.colors.background[3],
     },
   },
 })}`;
@@ -63,7 +63,7 @@ const InnerLine = styled.div`
       background: theme.colors.warning,
     },
     dark: {
-      background: theme.colors.baseLight,
+      background: theme.colors.baseHighlight,
     },
   },
 })}`;

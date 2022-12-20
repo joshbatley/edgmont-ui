@@ -6,6 +6,6 @@ export type PanelProps = LayoutProps;
 export const Panel = styled.div<PanelProps>`
   ${layout}
   border-radius:${({ theme }) => theme.radii[2]};
-  background:${({ theme }) => theme.colors.white};
-  box-shadow:${({ theme }) => theme.shadows[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  background: ${({ theme }) => theme.colors.background[0]};
 `;

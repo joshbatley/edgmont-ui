@@ -32,14 +32,14 @@ const Label = styled.div<LabelProps>`
     border-radius: ${theme.radii[2]};
     padding: calc(${theme.space[1]} / 2) ${theme.space[2]};
     margin: calc(${theme.space[1]} / 2) 0;
-    background: ${active ? theme.colors.lightGray : 'transparent'};
+    background: ${active ? theme.colors.background[2] : 'transparent'};
     :hover {
-      background: ${disabled ? 'transparent' : theme.colors.lightGray};
+      background: ${disabled ? 'transparent' : theme.colors.background[2]};
     }
     ${disabled && `
       cursor: not-allowed;
       pointer-events: none;
-      color: ${theme.colors.gray};
+      color: ${theme.colors.background[3]};
     `}
   `}
 `;
@@ -64,14 +64,14 @@ const StyledBtn = styled(ClickableElement) <ButtonProps>`
     padding-bottom: calc(${theme.space[1]} / 2);
     padding-right: ${theme.space[2]};
     margin: calc(${theme.space[1]} / 2) 0;
-    background: ${active ? theme.colors.lightGray : 'transparent'};
+    background: ${active ? theme.colors.background[2] : 'transparent'};
     :hover {
-      background: ${disabled ? 'transparent' : theme.colors.lightGray};
+      background: ${disabled ? 'transparent' : theme.colors.background[2]};
     }
     ${disabled && `
       cursor: not-allowed;
       pointer-events: none;
-      color: ${theme.colors.gray};
+      color: ${theme.colors.background[3]};
     `}
   `}
 `;

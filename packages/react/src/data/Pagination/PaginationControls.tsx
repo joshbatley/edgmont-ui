@@ -52,7 +52,7 @@ export const PaginationControls: React.FC<PaginationProps> = ({
           borderRadius={2}
           verticalAlign="bottom"
           zIndex={page === currentPage ? 30 : 'unset'}
-          backgroundColor={page === currentPage ? 'primaryLight' : 'transparent'}
+          backgroundColor={page === currentPage ? 'primaryHighlight' : 'transparent'}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
           data-ignore-radius

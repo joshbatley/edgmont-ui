@@ -31,7 +31,7 @@ export const Menu: React.FC<MenuProps> = ({ children, isOpen, direction = 'botto
 
   return isOpen ? (
     <ClickOutside handleClose={handleClose} target={popperRef} wrapper={Popper} inline={inline}>
-      <Box bg="white" borderRadius={1} boxShadow="base.2" display="flex" flexDirection="column" overflowY="scroll" {...rest}>
+      <Box bg="background.0" borderRadius={1} boxShadow="base.2" display="flex" flexDirection="column" overflowY="scroll" {...rest}>
         {children}
       </Box>
     </ClickOutside>

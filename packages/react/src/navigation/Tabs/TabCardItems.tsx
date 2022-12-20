@@ -24,7 +24,7 @@ const StyledBtn = styled(ClickableElement)`
 `;
 
 export const TabCardItem: React.FC<TabCardItemProps> = ({ children, selected, onClick }) => (
-  <StyledBtn px="5" py="3" zIndex="10" position="relative" border="lightGray.1" borderBottom="0" bg={selected ? 'white' : 'offwhite'} onClick={onClick}>
+  <StyledBtn px="5" py="3" zIndex="10" position="relative" border="background2.1" borderBottom="0" bg={selected ? 'background.0' : 'background.1'} onClick={onClick}>
     {children}
     {selected && (
       <Box bg="primary" position="absolute" left="0" bottom="0" height="2px" width="100%" />

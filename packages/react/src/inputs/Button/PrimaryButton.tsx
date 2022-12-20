@@ -15,49 +15,49 @@ const StyledButton = styled(BaseButton)<PrimaryButtonProps>(
         color: 'white',
         bg: 'primary',
         ':hover': {
-          bg: 'primaryDark',
+          bg: 'primaryAccent',
         },
       },
       success: {
         color: 'white',
         bg: 'success',
         ':hover': {
-          bg: 'successDark',
+          bg: 'successAccent',
         },
       },
       info: {
         color: 'white',
         bg: 'info',
         ':hover': {
-          bg: 'infoDark',
+          bg: 'infoAccent',
         },
       },
       error: {
         color: 'white',
         bg: 'error',
         ':hover': {
-          bg: 'errorDark',
+          bg: 'errorAccent',
         },
       },
       warning: {
         color: 'white',
         bg: 'warning',
         ':hover': {
-          bg: 'warningDark',
+          bg: 'warningAccent',
         },
       },
       dark: {
         color: 'white',
         bg: 'base',
         ':hover': {
-          bg: 'baseLight',
+          bg: 'baseHighlight',
         },
       },
       white: {
         color: 'base',
-        bg: 'white',
+        bg: 'background.0',
         ':hover': {
-          bg: 'offwhite',
+          bg: 'background.1',
         },
       },
     },

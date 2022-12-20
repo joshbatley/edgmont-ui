@@ -39,7 +39,7 @@ export const TabNavItems: React.FC<TabNavItemsProps> = ({ tabs, selected, onChan
 
   return (
     <Scrollable>
-      <Box borderBottom="lightGray.1">
+      <Box borderBottom="background2.1">
         {tabs.map(({ tab, key }) => (
           <TabNavItem
             key={key}

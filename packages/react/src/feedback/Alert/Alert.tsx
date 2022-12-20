@@ -17,27 +17,27 @@ const Container = styled(Box) <{ severity: Severity }>`
   prop: 'severity',
   variants: {
     error: {
-      bg: 'errorLight',
+      bg: 'errorHighlight',
       color: 'error',
       border: theme.borders.error[1],
     },
     warning: {
-      bg: 'warningLight',
+      bg: 'warningHighlight',
       color: 'warning',
       border: theme.borders.warning[1],
     },
     info: {
-      bg: 'infoLight',
+      bg: 'infoHighlight',
       color: 'info',
       border: theme.borders.info[1],
     },
     success: {
-      bg: 'successLight',
+      bg: 'successHighlight',
       color: 'success',
       border: theme.borders.success[1],
     },
     none: {
-      bg: 'white',
+      bg: 'background.0',
     },
   },
 })}

@@ -14,44 +14,44 @@ const StyledButton = styled(BaseButton)<SecondaryButtonProps>(({ theme }) =>
     variants: {
       primary: {
         color: 'primary',
-        bg: 'primaryLight',
+        bg: 'primaryHighlight',
         ':hover': {
-          bg: darken(0.1, theme.colors.primaryLight),
+          bg: darken(0.1, theme.colors.primaryHighlight),
         },
       },
       success: {
         color: 'success',
-        bg: 'successLight',
+        bg: 'successHighlight',
         ':hover': {
-          bg: darken(0.1, theme.colors.successLight),
+          bg: darken(0.1, theme.colors.successHighlight),
         },
       },
       info: {
         color: 'info',
-        bg: 'infoLight',
+        bg: 'infoHighlight',
         ':hover': {
-          bg: darken(0.1, theme.colors.infoLight),
+          bg: darken(0.1, theme.colors.infoHighlight),
         },
       },
       error: {
         color: 'error',
-        bg: 'errorLight',
+        bg: 'errorHighlight',
         ':hover': {
-          bg: darken(0.1, theme.colors.errorLight),
+          bg: darken(0.1, theme.colors.errorHighlight),
         },
       },
       warning: {
         color: 'warning',
-        bg: 'warningLight',
+        bg: 'warningHighlight',
         ':hover': {
-          bg: darken(0.1, theme.colors.warningLight),
+          bg: darken(0.1, theme.colors.warningHighlight),
         },
       },
       dark: {
         color: 'dark',
-        bg: 'gray',
+        bg: 'background.3',
         ':hover': {
-          bg: darken(0.1, theme.colors.gray),
+          bg: darken(0.1, theme.colors.background[3]),
         },
       },
     },

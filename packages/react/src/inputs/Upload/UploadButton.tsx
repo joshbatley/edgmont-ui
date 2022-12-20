@@ -8,7 +8,7 @@ import { AcceptedFile, BaseUploader, BaseUploaderProps } from '.';
 
 export type UploadButtonProps = {
   buttonText?: boolean;
-} & Omit<BaseUploaderProps, 'container' | 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
+} & Omit<BaseUploaderProps, 'container' | 'renderUploader'>;
 
 const StyledList = styled(List)`
   margin-top: ${({ theme }) => theme.space[2]};

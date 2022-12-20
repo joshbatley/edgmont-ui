@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const AccordionDetail = styled.div`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background[0]};
   padding: ${({ theme }) => `${theme.space[3]} ${theme.space[2]}`};
-  border-bottom: ${({ theme }) => theme.borders.lightGray[1]};
-  border-left: ${({ theme }) => theme.borders.lightGray[1]};
-  border-right: ${({ theme }) => theme.borders.lightGray[1]};
+  border-bottom: ${({ theme }) => theme.borders.background2[1]};
+  border-left: ${({ theme }) => theme.borders.background2[1]};
+  border-right: ${({ theme }) => theme.borders.background2[1]};
   box-shadow: ${({ theme }) => theme.shadows.inner};
 `;
 

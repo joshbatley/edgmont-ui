@@ -15,7 +15,7 @@ const Group = styled.div`
   }
   > div:last-of-type {
     border-radius: ${({ theme }) => `0 0 ${theme.radii[3]} ${theme.radii[3]}`};
-    border-bottom: ${({ theme }) => theme.borders.gray[1]};
+    border-bottom: ${({ theme }) => theme.borders.background3[1]};
   }
 `;
 

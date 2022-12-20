@@ -19,7 +19,7 @@ const StyledOpen = styled(Open) <{ direction: 'left' | 'right' }>`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background[0]};
 `;
 
 export const Drawer: React.FC<DrawerProps> = ({

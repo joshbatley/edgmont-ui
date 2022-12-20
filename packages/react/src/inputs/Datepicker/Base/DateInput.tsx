@@ -23,12 +23,12 @@ const Container = styled.div`
 `;
 
 const Icon = styled(CalendarIcon)`
-  color: ${({ theme }) => theme.colors.baseLight};
+  color: ${({ theme }) => theme.colors.baseHighlight};
   margin-right: ${({ theme }) => theme.space[2]};
 `;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.baseLight};
+  color: ${({ theme }) => theme.colors.baseHighlight};
   :hover {
     color: ${({ theme }) => theme.colors.base};
   }
@@ -43,7 +43,7 @@ export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value,
     <OutlineButton width="100%" justifyContent="space-between" ref={ref} onClick={onClick} >
       <Container>
         <Icon width={16} height={16} />
-        {value || <Text as="span" color="baseLight">{placeholder}</Text>}
+        {value || <Text as="span" color="baseHighlight">{placeholder}</Text>}
       </Container>
       {showClear && value && (
         <ClearBtn onClick={handleClear} as="a">

@@ -21,7 +21,7 @@ export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest })
 export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => {
   let isCard = type === 'card';
   return (
-    <Box bg={isCard ? 'white' : ''} border={isCard ? 'lightGray.1' : ''} borderBottomLeftRadius={isCard ? '2' : '0'} borderBottomRightRadius={isCard ? '2' : '0'}>
+    <Box bg={isCard ? 'background.0' : ''} border={isCard ? 'background2.1' : ''} borderBottomLeftRadius={isCard ? '2' : '0'} borderBottomRightRadius={isCard ? '2' : '0'}>
       {tabs.map(({ key, children, ...rest }) => (
         <TabPane
           selected={selected === key}

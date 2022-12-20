@@ -19,22 +19,22 @@ const OuterCircle = styled.circle(({ theme }) => variant({
   prop: 'color',
   variants: {
     primary: {
-      stroke: 'primaryLight',
+      stroke: 'primaryHighlight',
     },
     success: {
-      stroke: darken(0.1, theme.colors.successLight),
+      stroke: darken(0.1, theme.colors.successHighlight),
     },
     info: {
-      stroke: darken(0.1, theme.colors.infoLight),
+      stroke: darken(0.1, theme.colors.infoHighlight),
     },
     error: {
-      stroke: darken(0.1, theme.colors.errorLight),
+      stroke: darken(0.1, theme.colors.errorHighlight),
     },
     warning: {
-      stroke: darken(0.1, theme.colors.warningLight),
+      stroke: darken(0.1, theme.colors.warningHighlight),
     },
     dark: {
-      stroke: 'gray',
+      stroke: 'background.3',
     },
   },
 }));
@@ -58,7 +58,7 @@ const InnerCircle = styled.circle(variant({
       stroke: 'warning',
     },
     dark: {
-      stroke: 'baseLight',
+      stroke: 'baseHighlight',
     },
   },
 }));

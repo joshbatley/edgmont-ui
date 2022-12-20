@@ -18,11 +18,11 @@ const Error = styled(ExclamationTriangleIcon)`
 const DefaultSvg = styled.svg<{ state: 'completed' | 'active' | 'default' }>`
   width: 30px;
   height: 30px;
-  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.gray}` : `color: ${theme.colors.primary}`}
+  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.background[3]}` : `color: ${theme.colors.primary}`}
 `;
 
 const DefaultText = styled.text`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.background[0]};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};

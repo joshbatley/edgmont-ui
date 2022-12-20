@@ -9,7 +9,7 @@ import styled from 'styled-components';
 export type UploadZoneProps = {
   showAsTile?: boolean;
   bottomText?: string;
-} & Omit<BaseUploaderProps, 'container' | 'renderUploader' | 'baseClasses' | 'dragActiveClasses'>;
+} & Omit<BaseUploaderProps, 'container' | 'renderUploader'>;
 
 const Container = styled.div<{ isDragActive: boolean }>`
   width: 100%;
@@ -20,7 +20,7 @@ const Container = styled.div<{ isDragActive: boolean }>`
   align-items: center;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.radii[2]};
-  border: ${({ theme }) => theme.borders.lightGray[3]};
+  border: ${({ theme }) => theme.borders.background2[3]};
   border-style: dashed;
   padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
   > :not([hidden]) ~ :not([hidden]) {
@@ -28,7 +28,7 @@ const Container = styled.div<{ isDragActive: boolean }>`
   }
   ${({ isDragActive, theme }) => isDragActive && `
     background: ${theme.colors.primary};
-    border-color: ${theme.colors.primaryLight};
+    border-color: ${theme.colors.primaryHighlight};
   `}
 `;
 
@@ -44,9 +44,9 @@ const StyledList = styled(List)`
 `;
 
 const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
-  color: ${({ theme }) => theme.colors.baseLight};
+  color: ${({ theme }) => theme.colors.baseHighlight};
   ${({ isDragActive, theme }) => isDragActive && `
-    color: #fff;
+    color: ${theme.colors.background[0]};
     ${theme.animations.bounce}
   `}
 `;
@@ -57,12 +57,12 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
       <TrayIcon width={30} height={30} isDragActive={isDragActive} />
-      {isDragActive ? <Text fontWeight="700" color="white">And drop your file to upload</Text> :
+      {isDragActive ? <Text fontWeight="700" color="background.0">And drop your file to upload</Text> :
         <Text>
           Drag and drop, or <TextInline color="primary">click to find</TextInline> a file
         </Text>
       }
-      <Text fontSize="1" lineHeight="1" color={isDragActive ? '#fff' : 'baseLight'}>{bottomText}</Text>
+      <Text fontSize="1" lineHeight="1" color={isDragActive ? 'background.0' : 'baseHighlight'}>{bottomText}</Text>
     </>
   ), [bottomText]);
 

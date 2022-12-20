@@ -8,12 +8,19 @@ export type BorderColors = keyof typeof ThemeColors;
 const generateBorders = (colors: typeof ThemeColors) =>
   borderColors.reduce((borderObj, key) => {
     const colorKey = key as BorderColors;
-    borderObj[colorKey] = borderWidths.map((width) =>
-      `${width}px solid ${colors[colorKey]}`,
-    );
-
+    if (typeof colors[colorKey] !== 'string') {
+      (colors[colorKey] as string[]).map((value, idx) => {
+        borderObj[`${colorKey}${idx}`] = borderWidths.map((width) =>
+          `${width}px solid ${value}`,
+        );
+      });
+    } else {
+      borderObj[colorKey] = borderWidths.map((width) =>
+        `${width}px solid ${colors[colorKey]}`,
+      );
+    }
     return borderObj;
-  }, {} as Record<BorderColors, string[]>);
+  }, {} as Record<any, string[]>);
 
 export const ThemeBorders = generateBorders(ThemeColors);
 

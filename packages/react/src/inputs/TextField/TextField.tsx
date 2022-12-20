@@ -44,7 +44,7 @@ const Container = styled(Box) <{ error: boolean; disabled: boolean; }>`
     box-shadow: ${theme.shadows.error};
   `}
   ${({ theme, disabled }) => disabled && `
-    background: ${theme.colors.lightGray};
+    background: ${theme.colors.background[2]};
     cursor: not-allowed;
   `}
 `;
@@ -58,11 +58,11 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   <Container
     error={error}
     disabled={disabled}
-    bg="white"
+    bg="background.0"
     display="flex"
     boxShadow="base.0"
     borderRadius="4"
-    border="gray.1"
+    border="background3.1"
   >
     <OptionalIcon size={size as Size} icon={prefiXMarkIcon} />
     <AddonElement position="left" addon={before} />

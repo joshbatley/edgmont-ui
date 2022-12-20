@@ -9,7 +9,7 @@ export type SkeletonProps = {
 
 export const Skeleton = styled.div<SkeletonProps>`
   ${({ theme }) => theme.animations.pulse}
-  background: ${({ theme }) => theme.colors.lightGray};
+  background: ${({ theme }) => theme.colors.background[2]};
   ${({ theme, height, width }) => variant({
   prop: 'variant',
   variants: {

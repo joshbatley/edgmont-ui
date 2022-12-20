@@ -43,7 +43,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
           <SecondaryButton size='small' onClick={() => setShow(true)}>
             <EllipsisHorizontalIcon height={13} width={14} />
           </SecondaryButton>
-          <Box display="inline-block" color="baseLight" mx="2">{dividerIcon}</Box>
+          <Box display="inline-block" color="baseHighlight" mx="2">{dividerIcon}</Box>
         </Box>
       )}
       {afterItems.map((c, idx) => (

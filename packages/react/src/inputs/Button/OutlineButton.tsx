@@ -5,15 +5,15 @@ import { BaseButton, BaseButtonProps } from 'inputs/Button/BaseButton';
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
 const StyledButton = styled(BaseButton) <OutlineButtonProps>`
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.background[0]};
   color: ${({ theme }) => theme.colors.base};
-  border: ${({ theme }) => theme.borders.gray[1]};
-  box-shadow: ${({ theme }) => theme.shadows[0]};
+  border: ${({ theme }) => theme.borders.background3[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
   :disabled {
-    background:${({ theme }) => theme.colors.lightGray};
+    background:${({ theme }) => theme.colors.background[2]};
   }
   :hover:not(:disabled) {
-    background: ${({ theme }) => theme.colors.offwhite};
+    background: ${({ theme }) => theme.colors.background[1]};
   }
 `;
 

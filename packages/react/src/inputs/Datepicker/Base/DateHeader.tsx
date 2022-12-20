@@ -77,7 +77,7 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
 
   return (
     <div>
-      <Box display="flex" alignItems="center" justifyContent="center" py="2" borderBottom="lightGray.1">
+      <Box display="flex" alignItems="center" justifyContent="center" py="2" borderBottom="background2.1">
         {showLeftNav && <LeftNavigation decreaseMonth={canModifyMonths(decreaseMonth)} decreaseYear={decreaseYearFn} />}
         <ClickableElement
           ref={setItemRef as Ref<HTMLButtonElement>}

@@ -29,4 +29,4 @@ const StyledBox = styled(Box)`
 `;
 
 export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, size }) =>
-  icon ? (<StyledBox display="flex" alignItems="center" size={size}>{icon}</StyledBox>) : null;
+  icon ? (<StyledBox color="background.3" display="flex" alignItems="center" size={size}>{icon}</StyledBox>) : null;

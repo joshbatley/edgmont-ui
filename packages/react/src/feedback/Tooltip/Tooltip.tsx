@@ -14,16 +14,16 @@ export type TooltipProps = {
 
 const Popover = styled.div<{ dark: boolean }>`
   border-radius: ${({ theme }) => theme.radii[2]};
-  box-shadow: ${({ theme }) => theme.shadows[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
   z-index: 10;
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
   ${({ dark, theme }) => dark ? `
-    color: #fff;
+    color: ${theme.colors.background[0]};
     background: ${theme.colors.base};
   ` : `
-    background: #fff;
+    background: ${theme.colors.background[0]};
   `}
 `;
 

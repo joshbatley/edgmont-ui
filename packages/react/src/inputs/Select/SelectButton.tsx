@@ -20,7 +20,7 @@ const StyledOutlineButton = styled(OutlineButton) <{ error: boolean }>`
 `;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.baseLight};
+  color: ${({ theme }) => theme.colors.baseHighlight};
   :hover {
     color: ${({ theme }) => theme.colors.base};
   }

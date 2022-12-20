@@ -12,7 +12,7 @@ export type TileItemProps = {
 };
 
 const fallback = (
-  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseLight" borderRadius="2" bg="lightGray">
+  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight" borderRadius="2" bg="background[2]">
     <PhotoIcon width={30} height={30} />
   </Box>
 );
@@ -31,7 +31,7 @@ const StyledImage = styled(Image)`
   height: ${({ theme }) => theme.sizes[12]};
   object-fit: cover;
   border-radius: ${({ theme }) => theme.radii[2]};
-  background: ${({ theme }) => theme.colors.offwhite};
+  background: ${({ theme }) => theme.colors.background[1]};
 `;
 
 export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
@@ -43,11 +43,11 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
 
   return (
     <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
-      <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'lightGray.1'} color={hasError ? 'error' : 'base'}>
+      <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
         <StyledImage src={imgSrc as string} fallback={fallback} />
         <Box display="flex" flexDirection="column" ml="2">
           <TextInline fontWeight="700">{name}</TextInline>
-          <Text fontSize="0" lineHeight="0" color="baseLight">{meta}</Text>
+          <Text fontSize="0" lineHeight="0" color="baseHighlight">{meta}</Text>
         </Box>
         <Box display="flex" flexGrow="1" alignItems="center" justifyContent="end">
           <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>

@@ -25,28 +25,28 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
   prop: 'color',
   variants: {
     primary: {
-      color: 'primaryDark',
-      bg: darken(0.1, tint(0.2, theme.colors.primaryLight)),
+      color: 'primaryAccent',
+      bg: darken(0.1, tint(0.2, theme.colors.primaryHighlight)),
     },
     success: {
-      color: 'successDark',
-      bg: darken(0.1, tint(0.2, theme.colors.successLight)),
+      color: 'successAccent',
+      bg: darken(0.1, tint(0.2, theme.colors.successHighlight)),
     },
     info: {
-      color: 'infoDark',
-      bg: darken(0.1, tint(0.2, theme.colors.infoLight)),
+      color: 'infoAccent',
+      bg: darken(0.1, tint(0.2, theme.colors.infoHighlight)),
     },
     error: {
-      color: 'errorDark',
-      bg: darken(0.1, tint(0.2, theme.colors.errorLight)),
+      color: 'errorAccent',
+      bg: darken(0.1, tint(0.2, theme.colors.errorHighlight)),
     },
     warning: {
-      color: 'warningDark',
-      bg: darken(0.1, tint(0.2, theme.colors.warningLight)),
+      color: 'warningAccent',
+      bg: darken(0.1, tint(0.2, theme.colors.warningHighlight)),
     },
     dark: {
       color: 'dark',
-      bg: 'gray',
+      bg: 'background.3',
     },
   },
 })}
