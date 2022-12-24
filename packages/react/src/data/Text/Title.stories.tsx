@@ -9,22 +9,15 @@ export default {
   args: {
     children: 'My Text element',
   },
-  argTypes: {
-    as: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 } as Meta<HeadingProps>;
 
 export const Titles: Story<HeadingProps> = ({ children, ...rest }) => (
   <div className="space-y-2">
-    <Comp as="h1" {...rest}>{children}</Comp>
-    <Comp as="h2" {...rest}>{children}</Comp>
-    <Comp as="h3" {...rest}>{children}</Comp>
-    <Comp as="h4" {...rest}>{children}</Comp>
-    <Comp as="h5" {...rest}>{children}</Comp>
-    <Comp as="h6" {...rest}>{children}</Comp>
+    <Comp as="h1">{children}</Comp>
+    <Comp as="h2" >{children}</Comp>
+    <Comp as="h3">{children}</Comp>
+    <Comp as="h4">{children}</Comp>
+    <Comp as="h5">{children}</Comp>
+    <Comp as="h6">{children}</Comp>
   </div>
 );

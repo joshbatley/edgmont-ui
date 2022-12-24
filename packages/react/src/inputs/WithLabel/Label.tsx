@@ -10,7 +10,7 @@ export const Label: React.FC<LabelProps> = ({ value, children }) => {
   let isRequired = children.props.required;
   return (
     <Box as="label" display="block">
-      <Box display="flex" fontSize={1} lineHeight={1} mb={1} ml={1}>
+      <Box display="flex" fontSize={1} lineHeight={1} mt="2" mb={1} ml={1}>
         {value} {isRequired && <Text color="error">*</Text>}
       </Box>
       {children}

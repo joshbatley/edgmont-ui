@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 import styled from 'styled-components';
+import { LayoutProps, layout } from 'styled-system';
 
 type MediaComponent = 'video' | 'audio' | 'picture' | 'iframe' | 'img' | 'div';
 
 export type CardMediaProps = {
   imageUrl?: string;
-  className?: string;
   as: MediaComponent
   image?: string;
   src?: string;
   alt?: string;
   fallback?: React.ReactNode;
-} & WithChildren;
+} & WithChildren & LayoutProps;
 
 type Props = {
   isImageComponent?: boolean;
@@ -24,6 +23,7 @@ const MEDIA_COMPONENTS = ['video', 'audio', 'picture', 'iframe', 'img'];
 const IMAGE_COMPONENTS = ['picture', 'img'];
 
 const Component = styled.div<CardMediaProps & Props>`
+  ${layout}
   object-fit: ${({ isImageComponent }) => isImageComponent ? 'cover' : 'unset'};
   display: block;
   background-size: cover;

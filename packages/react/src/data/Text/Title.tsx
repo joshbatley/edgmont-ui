@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { ColorProps, TypographyProps, color, typography, variant } from 'styled-system';
 
-type TagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type HeadingProps = {
   children?: React.ReactNode;
-  as?: TagType;
-  className?: string;
-};
+} & ColorProps & TypographyProps;
 
-const Component = styled.h1`
+export const Title = styled.h1<HeadingProps>`
+  ${color}
+  ${typography}
   ${variant({
   prop: 'as',
   variants: {
@@ -23,10 +22,3 @@ const Component = styled.h1`
   },
 })}
 `;
-
-export const Title: React.FC<HeadingProps> = ({ children, as = 'h1', ...params }) => (
-  <Component as={as} {...params}>
-    {children}
-  </Component>
-);
-

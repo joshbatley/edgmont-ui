@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { Text, TextInline, List } from 'data';
+import { Text, List } from 'data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
 import { BaseUploader, AcceptedFile, BaseUploaderProps } from '.';
@@ -59,7 +59,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
       <TrayIcon width={30} height={30} isDragActive={isDragActive} />
       {isDragActive ? <Text fontWeight="700" color="background.0">And drop your file to upload</Text> :
         <Text>
-          Drag and drop, or <TextInline color="primary">click to find</TextInline> a file
+          Drag and drop, or <Text as="span" color="primary">click to find</Text> a file
         </Text>
       }
       <Text fontSize="1" lineHeight="1" color={isDragActive ? 'background.0' : 'baseHighlight'}>{bottomText}</Text>

@@ -2,7 +2,7 @@ import React from 'react';
 import { PaperClipIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
-import { Box, TextInline } from 'data';
+import { Box, Text } from 'data';
 import { AcceptedFile } from '.';
 import styled from 'styled-components';
 
@@ -43,8 +43,8 @@ export const BasicItem: React.FC<BasicItemProps> = ({ file, handleDelete }) => {
       >
         <SpacedBox display="flex" alignItems="center">
           <PaperClipIcon widths={16} height={16} />
-          <TextInline>{name}</TextInline>
-          {!hasError && <TextInline fontSize={1} lineHeight={1}>{bytes}</TextInline>}
+          <Text as="span">{name}</Text>
+          {!hasError && <Text as="span" fontSize={1} lineHeight={1}>{bytes}</Text>}
         </SpacedBox>
         <SpacedBox display="flex" alignItems="center">
           <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { Text, TextMono } from '.';
+import { Text } from '.';
 import { ThemeDefaultProvider } from 'utils';
 
 function render(component: ReactNode) {
@@ -18,12 +18,12 @@ describe('Text component', () => {
 
   describe('TextMono', () => {
     it('should render', () => {
-      const { container } = render(<TextMono>Text</TextMono>);
+      const { container } = render(<Text mono>Text</Text>);
       expect(container.firstChild).not.toBeEmptyDOMElement();
       expect(container.firstChild).toHaveTextContent('Text');
     });
 
-    const { container } = render(<TextMono>Text</TextMono>);
+    const { container } = render(<Text mono>Text</Text>);
     expect(container).toMatchSnapshot();
   });
 });

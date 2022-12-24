@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Pagination, Text } from 'data';
+import { Box, Pagination, Text } from 'data';
 import { Table, TableHead, TableBody, TableCell, TableRow } from '.';
 
 export default {
@@ -81,18 +81,20 @@ export const Interactable: Story = () => {
 };
 
 export const TableProps: Story = () => (
-  <div className="space-y-4">
-    <Table>
-      <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
-      <TableBody>
-        <TableRow>
-          <TableCell>Value for row 1 item 1</TableCell>
-          <TableCell>Value for row 2 item 2</TableCell>
-          <TableCell>Value for row 3s item 3</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-    <Table footer={<Text className="text-primary-600 font-bold text-center">You can add any footer prop, like a Pagination</Text>}>
+  <Box>
+    <Box mb="2">
+      <Table>
+        <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
+        <TableBody>
+          <TableRow>
+            <TableCell>Value for row 1 item 1</TableCell>
+            <TableCell>Value for row 2 item 2</TableCell>
+            <TableCell>Value for row 3s item 3</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Box>
+    <Table footer={<Text textAlign="center" color="primary" fontWeight="700">You can add any footer prop, like a Pagination</Text>}>
       <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
       <TableBody>
         <TableRow>
@@ -103,21 +105,21 @@ export const TableProps: Story = () => (
       </TableBody>
     </Table>
 
-  </div>
+  </Box>
 );
 
 export const TableHeadProps: Story = ({ ...rest }) => {
   let headers: string[] = rest.headers.split(',');
   return (
-    <div className="space-y-4">
-      <div>
+    <div>
+      <Box mb="3">
         Headers as pro
         <Table>
           <TableHead headers={headers} />
         </Table>
-      </div>
+      </Box>
 
-      <div>
+      <Box mb="3">
         As Custom headers
         <Table>
           <TableHead>
@@ -128,9 +130,9 @@ export const TableHeadProps: Story = ({ ...rest }) => {
             </TableRow>
           </TableHead>
         </Table>
-      </div>
+      </Box>
 
-      <div>
+      <Box mb="3">
         Sticky Header
         <Table>
           <TableHead headers={['Header 1', 'Header 2', 'Header 3']} sticky />
@@ -144,7 +146,7 @@ export const TableHeadProps: Story = ({ ...rest }) => {
             ))}
           </TableBody>
         </Table>
-      </div>
+      </Box>
     </div>
   );
 };

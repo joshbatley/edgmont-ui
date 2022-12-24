@@ -7,10 +7,6 @@ export const ThemeColors = {
     '#e2e8f0', // lightGray
     '#cbd5e1', // gray
   ],
-  // white: ',
-  // offwhite: ,
-  // lightGray: ',
-  // gray: ,
 
   primary: '#4f46e5',
   primaryHighlight: '#e0e7ff',

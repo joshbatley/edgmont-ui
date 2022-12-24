@@ -1,6 +1,6 @@
 import React from 'react';
 import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { TextInline, Text, Image, Box } from 'data';
+import { Text, Image, Box } from 'data';
 import { ClickableElement } from 'inputs';
 import { Tooltip } from 'feedback';
 import { AcceptedFile } from '.';
@@ -12,7 +12,7 @@ export type TileItemProps = {
 };
 
 const fallback = (
-  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight" borderRadius="2" bg="background[2]">
+  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight" borderRadius="2" bg="background.2">
     <PhotoIcon width={30} height={30} />
   </Box>
 );
@@ -46,7 +46,7 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
       <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
         <StyledImage src={imgSrc as string} fallback={fallback} />
         <Box display="flex" flexDirection="column" ml="2">
-          <TextInline fontWeight="700">{name}</TextInline>
+          <Text as="span" fontWeight="700">{name}</Text>
           <Text fontSize="0" lineHeight="0" color="baseHighlight">{meta}</Text>
         </Box>
         <Box display="flex" flexGrow="1" alignItems="center" justifyContent="end">

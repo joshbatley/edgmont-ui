@@ -16,7 +16,7 @@ export default {
 
 export const Example: Story = () => (
   <>
-    <Panel className="px-2 py-3 w-1/2">
+    <Panel width="50%" px="2" py="3">
       <Tree defaultExpanded={['1', '1.2']} blockNode>
         <TreeItem nodeId="1" label="item 1" active>
           <TreeItem nodeId="1.1" label="item 1.1" />
@@ -31,7 +31,7 @@ export const Example: Story = () => (
       </Tree>
     </Panel>
 
-    <Panel className="mt-4 px-2 py-3 w-1/2">
+    <Panel width="50%" mt="4" px="2" py="3">
       <Tree defaultExpanded={['1', '1.2']} >
         <TreeItem nodeId="1" label="item 1" active>
           <TreeItem nodeId="1.1" label="item 1.1" />
@@ -49,7 +49,7 @@ export const Example: Story = () => (
 );
 
 export const CustomIcons: Story = () => (
-  <Panel className="px-2 py-3 w-1/2">
+  <Panel width="50%" px="2" py="3">
     <Tree
       defaultExpanded={['1']}
       defaultCollapseIcon={<ShoppingBagIcon width={16} height={16} />}
