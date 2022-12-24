@@ -9,7 +9,7 @@ exports[`Radio test should errored with disabled classes 1`] = `
       class="sc-jSUZER eNJiMC"
     >
       <input
-        class="peer hidden"
+        class="sc-ftTHYK eQxEFj"
         type="radio"
         value=""
       />
@@ -45,7 +45,7 @@ exports[`Radio test should render 1`] = `
       class="sc-jSUZER bPLnxV"
     >
       <input
-        class="peer hidden"
+        class="sc-ftTHYK eQxEFj"
         type="radio"
         value=""
       />
@@ -82,7 +82,7 @@ exports[`Radio test should render with disabled classes 1`] = `
       class="sc-jSUZER bPLnxV"
     >
       <input
-        class="peer hidden"
+        class="sc-ftTHYK eQxEFj"
         disabled=""
         type="radio"
         value=""

@@ -7,7 +7,6 @@ export default {
   title: 'Data/Box',
   component: Box,
   args: {
-    className: '',
     children: 'My Box',
     px: '6',
     py: '2',

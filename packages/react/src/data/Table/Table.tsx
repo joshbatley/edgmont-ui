@@ -30,7 +30,7 @@ const Footer = styled.div`
   border-top-width: 1px;
 `;
 
-export const Table = forwardRef<HTMLTableElement, TableProps>(({ children, className, containerClasses, footer, ...rest }, ref) => (
+export const Table = forwardRef<HTMLTableElement, TableProps>(({ children, containerClasses, footer, ...rest }, ref) => (
   <Container footer={footer}>
     <StyledTable ref={ref} {...rest}>
       {children}

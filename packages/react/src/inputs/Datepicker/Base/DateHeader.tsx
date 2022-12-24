@@ -4,7 +4,7 @@ import { format, getYear } from 'date-fns';
 import { ClickableElement } from 'inputs';
 import { Menu, MenuItem } from 'navigation';
 import { LeftNavigation, RightNavigation } from './DateNavigation';
-import { Box } from 'data';
+import { Box } from 'data/Box';
 import styled from 'styled-components';
 
 const months = [
@@ -81,7 +81,8 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
         {showLeftNav && <LeftNavigation decreaseMonth={canModifyMonths(decreaseMonth)} decreaseYear={decreaseYearFn} />}
         <ClickableElement
           ref={setItemRef as Ref<HTMLButtonElement>}
-          className="grow justify-center"
+          flexGrow="1"
+          justifyContent="center"
           onClick={() => setMonthMenuOpen(true)}
         >
           {getFriendlyString()}

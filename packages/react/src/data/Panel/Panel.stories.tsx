@@ -7,7 +7,6 @@ export default {
   title: 'Data/Panel',
   component: Panel,
   args: {
-    className: '',
     children: 'My basic panel',
   },
 } as Meta;

@@ -43,7 +43,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   return (
     <>
       <Component
-        className="cursor-pointer"
+        style={{ cursor: 'pointer' }}
         ref={setWrappedRef as Ref<HTMLDivElement>}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

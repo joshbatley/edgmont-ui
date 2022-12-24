@@ -7,14 +7,13 @@ import styled from 'styled-components';
 export type CollapseProps = {
   children: React.ReactNode;
   inProp?: boolean;
-  className?: string;
 } & UseSpringProps;
 
 const Container = styled(animated.div)`
   overflow:hidden;
 `;
 
-export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, className, ...rest }) => {
+export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, ...rest }) => {
   let previous = usePrevious(inProp);
   let [ref, { height: viewHeight }] = useMeasure();
   let { height } = useSpring({
@@ -29,7 +28,7 @@ export const Collapse: React.FC<CollapseProps> = ({ children, inProp = false, cl
         height: inProp && previous === inProp ? 'auto' : height,
       }}
     >
-      <animated.div ref={ref as any} className={className} children={children} />
+      <animated.div ref={ref as any} children={children} />
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'data';
+import { Box } from 'data/Box';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 
@@ -89,7 +89,7 @@ const BadgeItem = styled.div<{
 export const Badge: React.FC<BadgeProps> = ({
   color = 'primary', position = 'NE', children, tag,
 }) => (
-  <Box display="inline-block" position="relative" className='translate-x-[-50%]'>
+  <Box display="inline-block" position="relative">
     <BadgeItem color={color} position={position}>
       {tag}
     </BadgeItem>

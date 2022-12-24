@@ -3,6 +3,7 @@ import { LinearSlide } from 'utils';
 import styled from 'styled-components';
 import { darken } from 'polished';
 import { variant } from 'styled-system';
+import { Box } from 'data/Box';
 
 export type LinearLoaderProps = {
   color?: ColorsAndWhiteLegacy;
@@ -79,10 +80,10 @@ const StyledLinearSlider = styled(LinearSlide)`
 `;
 
 export const LinearLoader: React.FC<LinearLoaderProps> = ({ color = 'primary', height = 5 }) => (
-  <div className="overflow-hidden w-full relative rounded" style={{ height }}>
+  <Box overflow="hidden" width="100%" position="relative" borderRadius="8" style={{ height }}>
     <OuterLine color={color} />
     <StyledLinearSlider>
       <InnerLine color={color} style={{ height }} />
     </StyledLinearSlider>
-  </div>
+  </Box>
 );

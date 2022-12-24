@@ -30,7 +30,7 @@ describe('Checkbox test', () => {
   it('should update value when updated', async () => {
     const { getByRole } = render(<Checkbox value="testing-value" name="testing-input" onChange={onChangeMock} />);
     expect(onChangeMock).not.toHaveBeenCalled();
-    await userEvent.click(getByRole('checkbox'));
+    await userEvent.click(getByRole('checkbox', { hidden: true }));
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 });

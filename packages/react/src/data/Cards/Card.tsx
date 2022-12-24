@@ -5,7 +5,6 @@ import { FlexboxProps, LayoutProps, SpaceProps, flexbox, layout, space } from 's
 export type CardProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
-  className?: string;
 } & LayoutProps & FlexboxProps & SpaceProps;
 
 export const Card = styled.div<CardProps>`

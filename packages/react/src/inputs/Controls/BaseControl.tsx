@@ -72,12 +72,16 @@ let Icon = styled.div<{ disabled: boolean; error: boolean; }>`
     }
   `;
 
+const Input = styled.input`
+  display: none;
+`;
+
 export const BaseControl: React.FC<BaseControlProps> = ({
   labelText, icon, rounded = false, disabled = false, error = false, ...rest
 }) => (
   <Label disabled={disabled}>
     <Btn rounded={rounded} error={error}>
-      <input className="peer hidden" disabled={disabled} {...rest} />
+      <Input disabled={disabled} {...rest} />
       <Box disabled={disabled} error={error} />
       <Icon disabled={disabled} error={error}>{icon}</Icon>
     </Btn>

@@ -10,7 +10,6 @@ export type BaseButtonProps = {
   isLoading?: boolean;
   type?: 'button' | 'reset' | 'submit';
   as?: AsProp;
-  className?: any;
   loaderColor?: Colors;
 } & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps & FlexboxProps;
 

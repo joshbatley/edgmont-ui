@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { darken } from 'polished';
+import { Box } from 'data/Box';
 
 export type LinearProgressProps = {
   color?: ColorsAndWhiteLegacy;
@@ -78,9 +79,9 @@ const InnerLine = styled.div<{ percentage: number }>`
 export const LinearProgress: React.FC<LinearProgressProps> = ({
   color = 'primary', height = 5, percentage = 0,
 }) => (
-  <div className="overflow-hidden w-full relative rounded" style={{ height }}>
+  <Box overflow="hidden" width="100%" position="relative" borderRadius="8" style={{ height }}>
     <OuterLine color={color} />
     <InnerLine color={color} percentage={percentage} />
-  </div>
+  </Box>
 );
 

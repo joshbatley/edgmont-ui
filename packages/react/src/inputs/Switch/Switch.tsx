@@ -36,6 +36,10 @@ const Button = styled.div<{ size: 'small' | 'medium' }>`
   ${({ theme }) => theme.transition}
 `;
 
+const Input = styled.input`
+  display: none;
+`;
+
 export const Switch: React.FC<SwitchProps> = ({
   color = 'primary', size = 'medium', disabled = false,
   ...rest
@@ -92,7 +96,7 @@ export const Switch: React.FC<SwitchProps> = ({
 
   return (
     <Label size={size} disabled={disabled} >
-      <input type="checkbox" className="peer hidden" disabled={disabled} {...rest} />
+      <Input type="checkbox" disabled={disabled} {...rest} />
       <Backing color={color} />
       <Button size={size} />
     </Label>

@@ -5,10 +5,9 @@ export type OpenProps = {
   children: React.ReactNode;
   inProp?: boolean;
   direction?: 'left' | 'right';
-  className?: string;
 } & UseTransitionProps;
 
-export const Open: React.FC<OpenProps> = ({ children, direction = 'right', inProp, className, ...rest }) => {
+export const Open: React.FC<OpenProps> = ({ children, direction = 'right', inProp, ...rest }) => {
   let transitions = useTransition(inProp, {
     from: { translateX: direction === 'right' ? '100%' : '-100%' },
     enter: { translateX: direction === 'right' ? '0%' : '0%' },
@@ -19,7 +18,7 @@ export const Open: React.FC<OpenProps> = ({ children, direction = 'right', inPro
 
   return transitions(
     (styles: any, item) => item && (
-      <animated.div style={styles} className={className}>
+      <animated.div style={styles}>
         {children}
       </animated.div >
     ));

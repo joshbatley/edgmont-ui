@@ -50,7 +50,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
   if (state === 'active' || state === 'default') {
     return (
       <DefaultSvg fill='currentColor' state={state}>
-        <circle cx="50%" cy="50%" r="12" className="current" />
+        <circle cx="50%" cy="50%" r="12" />
         <DefaultText x="50%" y="65%" textAnchor="middle">{number}</DefaultText>
       </DefaultSvg>
     );

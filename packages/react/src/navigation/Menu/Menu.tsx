@@ -9,7 +9,6 @@ export type MenuProps = {
   isOpen?: boolean;
   itemRef: Element | null;
   handleClose: () => void;
-  className?: string;
   inline?: boolean;
 } & WithChildren;
 
