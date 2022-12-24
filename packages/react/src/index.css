@@ -1,6 +1,0 @@
-/* This file is only used to export a full css file of all used classes */
-@import "./inputs/Datepicker/Base/Datepicker.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

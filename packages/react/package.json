@@ -24,11 +24,10 @@
   ],
   "scripts": {
     "start": "yarn storybook",
-    "copy-preset": "cp preset.js public/preset.js",
-    "storybook": "yarn copy-preset && start-storybook -p 6006 --no-manager-cache",
+    "storybook": "start-storybook -p 6006 --no-manager-cache",
     "clean-dist": "rm -rf dist && mkdir dist",
     "rollup": "rollup -c rollup.config.js --bundleConfigAsCjs",
-    "build": "yarn clean-dist && yarn rollup && yarn build-tailwind",
+    "build": "yarn clean-dist && yarn rollup",
     "build:ci": "yarn build",
     "test": "jest --watch",
     "test:ci": "jest",
@@ -39,8 +38,7 @@
     "create-doc-files": "yarn create-ignore && yarn create-keep",
     "build-storybook": "build-storybook -o ./docs",
     "build-docs": "yarn clean-docs && yarn build-storybook && yarn create-doc-files",
-    "build-tailwind": "tailwind  -i ./src/index.css -o ./dist/edgmont.css --postcss ./postcss.config.js --minify",
-    "build-docs:ci": "yarn clean-docs && yarn build-storybook && yarn copy-preset",
+    "build-docs:ci": "yarn clean-docs && yarn build-storybook",
     "lint": "eslint . --ignore-path .eslintignore"
   },
   "devDependencies": {
@@ -50,11 +48,11 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^23.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-essentials": "^6.5.14",
-    "@storybook/addon-links": "^6.5.14",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.5.14",
+    "@storybook/react": "^6.5.15",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.1",
@@ -94,14 +92,12 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "styled-components": "^5.3.6",
     "styled-system": "^5.1.5",
-    "tailwindcss": "^3.0.22",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.0.22"
+    "react-dom": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
