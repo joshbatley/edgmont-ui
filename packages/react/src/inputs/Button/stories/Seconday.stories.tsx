@@ -4,6 +4,7 @@ import { Story } from '@storybook/react';
 import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { SecondaryButton } from '../SecondaryButton';
+import { Box } from 'data';
 
 export default {
   title: 'Inputs/Buttons/Secondary',
@@ -20,11 +21,11 @@ export default {
 export const Example: Story = ({ children, ...rest }) => <SecondaryButton {...rest}>{children}</SecondaryButton>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
-  <div className="space-x-4">
+  <Box spaceXBetween="4">
     <SecondaryButton size="large" {...rest}>{children}</SecondaryButton>
     <SecondaryButton size="medium" {...rest}>{children}</SecondaryButton>
     <SecondaryButton size="small" {...rest}>{children}</SecondaryButton>
-  </div>
+  </Box>
 );
 Sizes.argTypes = {
   size: {
@@ -35,11 +36,11 @@ Sizes.argTypes = {
 };
 
 export const Colors: Story = ({ children = 'save' }) => (
-  <div className="grid grid-cols-6 gap-4">
+  <Box display="grid" gridTemplateColumns="repeat(6, minmax(0, 1fr))" gridGap="4">
     {colorSelect.options.map((c) => (
       <SecondaryButton key={c} color={c}>{children}</SecondaryButton>
     ))}
-  </div>
+  </Box>
 );
 Colors.argTypes = {
   color: {

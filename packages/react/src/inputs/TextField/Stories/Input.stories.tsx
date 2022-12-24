@@ -24,19 +24,19 @@ const After = ({ ...rest }) => (<Box px="3" py="2"><Text {...rest}>.com</Text></
 export const Example: Story = ({ ...rest }) => <TextField {...rest} />;
 
 export const PrefixAndSuffix: Story = ({ ...rest }) => (
-  <div className="space-y-2">
+  <Box spaceYBetween="2">
     <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} {...rest} />
     <TextField suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
     <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
-  </div>
+  </Box>
 );
 
 export const Addons: Story = ({ ...rest }) => (
-  <div className="space-y-2">
+  <Box spaceYBetween="2">
     <TextField before={<Before />} {...rest} />
     <TextField after={<After />} {...rest} />
     <TextField before={<Before />} after={<After />} {...rest} />
-  </div>
+  </Box>
 );
 
 export const Password: Story = ({ ...rest }) => <PasswordComp {...rest} />;

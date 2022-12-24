@@ -4,6 +4,7 @@ import { Story } from '@storybook/react';
 import { sizeSelect } from 'storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { Button } from '../Button';
+import { Box } from 'data';
 
 export default {
   title: 'Inputs/Buttons/Button',
@@ -19,11 +20,11 @@ export default {
 export const Example: Story = ({ children, ...rest }) => <Button {...rest}>{children}</Button>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
-  <div className="space-x-4">
+  <Box spaceXBetween="4">
     <Button size="large" {...rest}>{children}</Button>
     <Button size="medium" {...rest}>{children}</Button>
     <Button size="small" {...rest}>{children}</Button>
-  </div>
+  </Box>
 );
 Sizes.argTypes = {
   size: {

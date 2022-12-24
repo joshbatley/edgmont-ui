@@ -3,6 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TextField } from 'inputs';
 import { Label } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Inputs/Label',
@@ -13,7 +14,7 @@ export default {
 } as Meta;
 
 export const Example: Story = () => (
-  <div className="space-y-6">
+  <Box spaceYBetween="6">
     <Label value="Username">
       <TextField placeholder="Username" />
     </Label>
@@ -21,6 +22,6 @@ export const Example: Story = () => (
     <Label value="Username" >
       <TextField placeholder="Username" required />
     </Label>
-  </div>
+  </Box>
 );
 
