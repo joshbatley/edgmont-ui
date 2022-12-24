@@ -4,6 +4,7 @@ import { Story } from '@storybook/react';
 import { intercardinalPointsSelect, colorSelectWithWhite } from 'storybook-helpers/presets';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { Badge } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Feedback/Badge',
@@ -18,32 +19,32 @@ export default {
 } as Meta;
 
 export const Examples: Story = ({ ...rest }: any) => (
-  <div className="space-y-4 w-1/2 mt-10 mx-auto">
-    <div className="space-x-10 grid grid-cols-2 justify-items-start">
+  <Box width="50%" mt="10" mx="auto">
+    <Box mt="4" display="grid" justifyItems="start" gridTemplateColumns="repeat(2, minmax(0, 1fr))">
       <Badge position="NW" {...rest}>
-        <div className="rounded-lg border p-2 text-gray-700 bg-white">
+        <Box p="2" borderRadius="4" border="background2.1" bg="background.0">
           <UserIcon width={20} height={20} />
-        </div>
+        </Box>
       </Badge>
       <Badge position="NE" {...rest}>
-        <div className="rounded-lg border p-2 text-gray-700 bg-white">
+        <Box p="2" borderRadius="4" border="background2.1" bg="background.0">
           <UserIcon width={20} height={20} />
-        </div>
+        </Box>
       </Badge>
-    </div>
-    <div className="space-x-10 grid grid-cols-2 justify-items-start">
+    </Box>
+    <Box mt="4" display="grid" justifyItems="start" gridTemplateColumns="repeat(2, minmax(0, 1fr))">
       <Badge position="SW" {...rest}>
-        <div className="rounded-lg border p-2 text-gray-700 bg-white">
+        <Box p="2" borderRadius="4" border="background2.1" bg="background.0">
           <UserIcon width={20} height={20} />
-        </div>
+        </Box>
       </Badge>
       <Badge position="SE" {...rest}>
-        <div className="rounded-lg border p-2 text-gray-700 bg-white">
+        <Box p="2" borderRadius="4" border="background2.1" bg="background.0">
           <UserIcon width={20} height={20} />
-        </div>
+        </Box>
       </Badge>
-    </div>
-  </div>
+    </Box>
+  </Box>
 );
 Examples.argTypes = {
   position: {

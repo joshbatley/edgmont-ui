@@ -4,7 +4,10 @@ import {
   ColorProps, SpaceProps, LayoutProps, BoxShadowProps, BorderProps, OrderProps, GridProps, FlexboxProps, flexbox, position, PositionProps, typography, TypographyProps,
 } from 'styled-system';
 
-export type BoxProps = ColorProps & SpaceProps & LayoutProps & BoxShadowProps & BorderProps & OrderProps & GridProps & FlexboxProps & PositionProps & TypographyProps;
+export type BoxProps = ColorProps & SpaceProps & LayoutProps & BoxShadowProps & BorderProps & OrderProps & GridProps & FlexboxProps & PositionProps & TypographyProps & {
+  spaceXBetween?: string | number;
+  spaceYBetween?: string | number;
+};
 
 export const Box = styled.div<BoxProps>`
   ${space}
@@ -17,4 +20,6 @@ export const Box = styled.div<BoxProps>`
   ${flexbox}
   ${position}
   ${typography}
+  ${({ spaceXBetween, theme }) => spaceXBetween && theme.spaceXBetween[spaceXBetween]}
+  ${({ spaceYBetween, theme }) => spaceYBetween && theme.spaceYBetween[spaceYBetween]}
 `;

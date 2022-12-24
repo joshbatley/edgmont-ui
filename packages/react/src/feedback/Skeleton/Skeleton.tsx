@@ -1,15 +1,16 @@
+import React from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { LayoutProps, SpaceProps, layout, space, variant } from 'styled-system';
 
 export type SkeletonProps = {
   variant?: 'text' | 'rectangle' | 'circle';
-  height?: number;
-  width?: number;
-};
+} & LayoutProps & SpaceProps;
 
-export const Skeleton = styled.div<SkeletonProps>`
+const Comp = styled.div<SkeletonProps>`
   ${({ theme }) => theme.animations.pulse}
   background: ${({ theme }) => theme.colors.background[2]};
+  ${layout}
+  ${space}
   ${({ theme, height, width }) => variant({
   prop: 'variant',
   variants: {
@@ -24,15 +25,13 @@ export const Skeleton = styled.div<SkeletonProps>`
       width: width + 'px',
     },
     text: {
+      display: 'inline-flex',
       borderRadius: theme.radii[3],
-      display: 'flex',
-      height: 'full',
-      fontSize: '50%',
-      ':before': {
-        content: '\\00a0',
-        height: '50%',
-      },
     },
   },
 })}
 `;
+
+export const Skeleton: React.FC<SkeletonProps> = ({ ...rest }) => (
+  <Comp {...rest}>&nbsp;</Comp>
+);

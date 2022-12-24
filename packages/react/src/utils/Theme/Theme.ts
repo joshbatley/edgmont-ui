@@ -3,7 +3,7 @@ import { breakpoints } from './Breakpoints';
 import { ThemeColors } from './Colors';
 import { ThemeBoxShadow } from './Shadows';
 import { animations } from './Animations';
-
+import { sizes, spaceYBetween, spaceXBetween } from './sizes';
 
 export const theme = {
   colors: ThemeColors,
@@ -44,37 +44,8 @@ export const theme = {
     '2.25rem',
     '2.5rem',
   ],
-  sizes: [
-    0,
-    '0.25rem',
-    '0.5rem',
-    '0.75rem',
-    '1rem',
-    '1.25rem',
-    '1.5rem',
-    '1.75rem',
-    '2rem',
-    '2.25rem',
-    '2.5rem',
-    '2.75rem',
-    '3rem',
-    '3.5rem',
-    '4rem',
-    '5rem',
-    '6rem',
-    '7rem',
-    '8rem',
-    '9rem',
-    '10rem',
-    '11rem',
-    '12rem',
-    '13rem',
-    '14rem',
-    '15rem',
-    '16rem',
-    '18rem',
-    '20rem',
-    '24rem',
-  ],
+  sizes: sizes,
   transition: 'transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms;',
+  spaceYBetween: spaceYBetween,
+  spaceXBetween: spaceXBetween,
 };

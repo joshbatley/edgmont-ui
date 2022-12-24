@@ -3,11 +3,11 @@
 exports[`TextField test should render 1`] = `
 <div>
   <div
-    class="sc-gswNZR sc-jSUZER hiYrTO gzMPmx"
+    class="sc-gswNZR sc-jSUZER exgxGi gzMPmx"
     display="flex"
   >
     <div
-      class="sc-gswNZR sc-eDvSVe dEGTuI jKqFOw"
+      class="sc-gswNZR sc-eDvSVe cIiTgE jKqFOw"
     >
       <input
         class="sc-bcXHqe jbrppb"

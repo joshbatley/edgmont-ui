@@ -21,7 +21,7 @@ export const Example: Story = ({ title, children, ...rest }) => {
     <>
       <OutlineButton onClick={() => setOpen(!open)}>Open</OutlineButton>
       <Modal open={open} title={title} handleClose={() => setOpen(!open)} {...rest}>
-        <Panel className="px-2 py-2 space-y-10 flex flex-col">
+        <Panel spaceYBetween="10" p="2" display="flex" flexDirection="column">
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
           <PrimaryButton color="success">Or a button</PrimaryButton>

@@ -4,6 +4,7 @@ import { Story } from '@storybook/react';
 import { severitySelect } from 'storybook-helpers/presets';
 import { SunIcon } from '@heroicons/react/24/solid';
 import { Alert } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Feedback/Alert',
@@ -21,12 +22,22 @@ export const Example: Story = ({ ...rest }) => (
 );
 
 export const Variations: Story = ({ ...rest }) => (
-  <div className="space-y-4">
-    <Alert {...rest} severity='error' />
-    <Alert {...rest} severity='warning' />
-    <Alert {...rest} severity='info' />
-    <Alert {...rest} severity='success' />
-    <Alert {...rest} />
+  <div>
+    <Box mt="2">
+      <Alert {...rest} severity='error' />
+    </Box>
+    <Box mt="2">
+      <Alert {...rest} severity='warning' />
+    </Box>
+    <Box mt="2">
+      <Alert {...rest} severity='info' />
+    </Box>
+    <Box mt="2">
+      <Alert {...rest} severity='success' />
+    </Box>
+    <Box mt="2">
+      <Alert {...rest} />
+    </Box>
   </div>
 );
 Variations.argTypes = {
@@ -34,7 +45,6 @@ Variations.argTypes = {
   dark: { table: { disable: true } },
   icon: { table: { disable: true } },
   withClose: { table: { disable: true } },
-  className: { table: { disable: true } },
 };
 
 export const WithIcon: Story = ({ ...rest }) => (

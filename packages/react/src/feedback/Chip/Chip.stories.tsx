@@ -3,6 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
 import { Chip } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Feedback/Chip',
@@ -19,11 +20,17 @@ export default {
 export const Example: Story = ({ children, ...rest }) => <Chip {...rest}>{children}</Chip>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
-  <div className="space-x-4">
-    <Chip {...rest} size="large">{children}</Chip>
-    <Chip {...rest} size="medium">{children}</Chip>
-    <Chip {...rest} size="small">{children}</Chip>
-  </div>
+  <Box display="flex" alignItems="center">
+    <Box mr="2">
+      <Chip {...rest} size="large">{children}</Chip>
+    </Box>
+    <Box mr="2">
+      <Chip {...rest} size="medium">{children}</Chip>
+    </Box>
+    <Box mr="2">
+      <Chip {...rest} size="small">{children}</Chip>
+    </Box>
+  </Box>
 );
 Sizes.argTypes = {
   size: {
@@ -34,11 +41,13 @@ Sizes.argTypes = {
 };
 
 export const Colors: Story = ({ children, ...rest }) => (
-  <div className="space-x-4">
+  <Box display="flex">
     {colorSelect.options.map((c) => (
-      <Chip {...rest} key={c} color={c}>{children}</Chip>
+      <Box mr="2">
+        <Chip {...rest} key={c} color={c}>{children}</Chip>
+      </Box>
     ))}
-  </div>
+  </Box>
 );
 Colors.argTypes = {
   color: {

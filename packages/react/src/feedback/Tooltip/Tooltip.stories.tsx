@@ -18,9 +18,9 @@ export default {
 } as Meta;
 
 export const Example: Story = ({ ...rest }: any) => (
-  <div className="grid h-screen place-content-center">
+  <Box spaceYBetween="2" display="grid" height="100vh" style={{ placeContent: 'center' }}>
     <Tooltip {...rest}>
       <Box>This is wrapped</Box>
     </Tooltip>
-  </div>
+  </Box>
 );
