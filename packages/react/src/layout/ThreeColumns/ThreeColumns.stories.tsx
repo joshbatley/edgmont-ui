@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { ThreeColumns } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Layout/ThreeColumns',
@@ -10,12 +11,12 @@ export default {
   },
 } as Meta;
 
-let sidebar = <div className="bg-purple-700 border-r h-screen">123</div>;
-let mainNav = <div className="bg-blue-700 border-r h-screen">123</div>;
+let sidebar = <Box bg="primary" borderRight="background2.1" height="100vh">123</Box>;
+let mainNav = <Box bg="error" borderRight="background2.1" height="100vh">123</Box>;
 
 export const Example: Story = () => (
-  <ThreeColumns sideNav={sidebar} mainNav={mainNav} className='bg-white'>
-    <div className="bg-white border-r h-screen">123</div>
+  <ThreeColumns sideNav={sidebar} mainNav={mainNav}>
+    <Box bg="background.1" borderRight="background2.1" height="100vh">123</Box>
   </ThreeColumns>
 );
 

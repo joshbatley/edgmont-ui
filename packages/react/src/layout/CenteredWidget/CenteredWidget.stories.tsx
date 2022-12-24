@@ -13,7 +13,7 @@ export default {
 
 export const Example: Story = () => (
   <CenteredWidget>
-    <Panel className="h-96 p-2">123</Panel>
+    <Panel height="29" p="2">123</Panel>
   </CenteredWidget>
 );
 

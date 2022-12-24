@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TwoColumns } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Layout/TwoColumns',
@@ -10,11 +11,11 @@ export default {
   },
 } as Meta;
 
-let sidebar = <div className="bg-purple-700 border-r h-screen">123</div>;
+let sidebar = <Box bg="primary" borderRight="background2.1" height="100vh">123</Box>;
 
 export const Example: Story = () => (
-  <TwoColumns sideNav={sidebar} className='bg-white'>
-    <div className="bg-white border-r h-screen">123</div>
+  <TwoColumns sideNav={sidebar}>
+    <Box bg="background.1" borderRight="background2.1" height="100vh">123</Box>
   </TwoColumns>
 );
 

@@ -5,12 +5,13 @@ import { Box } from 'data';
 export type ThreeColumnsProps = {
   sideNav?: React.ReactNode;
   mainNav?: React.ReactNode;
-} & React.ComponentPropsWithRef<'div'>;
+  children: React.ReactNode,
+};
 
 export const ThreeColumns: React.FC<ThreeColumnsProps> = ({
-  children, sideNav, mainNav, ...rest
+  children, sideNav, mainNav,
 }) => (
-  <TwoColumns sideNav={sideNav} {...rest}>
+  <TwoColumns sideNav={sideNav}>
     <Box
       height="100%"
       m-width="0"
