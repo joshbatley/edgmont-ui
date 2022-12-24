@@ -1,8 +1,3 @@
-declare module '*.css' {
-  const styles: { [className: string]: string };
-  export default styles;
-}
-
 type OverriderDefaults = Record<Partial<Property>, string>;
 
 type Colors = 'primary' | 'success' | 'info' | 'error' | 'warning' | 'dark';
