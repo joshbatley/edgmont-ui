@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="public/logo-dark.svg#gh-dark-mode-only" height="128"/>
-  <img src="public/logo-light.svg#gh-light-mode-only" height="128"/>
+  <img src="/public/logo-dark.svg#gh-dark-mode-only" height="128"/>
+  <img src="/public/logo-light.svg#gh-light-mode-only" height="128"/>
 </p>
 <div align="center">
 
@@ -23,8 +23,6 @@
 
 There are a few methods to choose from depending on your usage for edgmont-ui
 
-#### Option 1 - Edgmont-ui theme & Tailwind
-
 ##### Install tailwind
 
 Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
@@ -34,107 +32,6 @@ Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-r
 ```
 npm/yarn install @edgmont-ui/react
 ```
-
-##### Import edgmont-ui tailwind preset
-
-Update the tailwind config
-
-```js
-// tailwind.config.js
-const preset = require("@edgmont-ui/react/preset");
-module.exports = {
-  ...preset,
-};
-```
-
-##### Optional: Datepicker css
-
-Datepicker is a css file so will need to be imported.
-
-```css
-/* index.css */
-@import "@edgmont-ui/react/dist/datepicker.css";
-```
-
-or
-
-```js
-// index.js
-import "@edgmont-ui/react/dist/datepicker.css";
-```
-
-#### Option 2 - Custom theme & Tailwind
-
-##### Install tailwind
-
-Follow this official set-up [guide](https://tailwindcss.com/docs/guides/create-react-app) to get tailwind working within your react application.
-
-##### Install edgmont-ui
-
-```
-npm/yarn install @edgmont-ui/react
-```
-
-##### Import edgmont-ui tailwind preset
-
-Update the tailwind config to your preferences check edgmont-ui/preset, for the required color names and update to your liking.
-
-```js
-// tailwind.config.js
-const preset = require("@edgmont-ui/react/preset");
-module.exports = {
-   theme: {
-    colors: ({colors}) => ({
-      ...preset.theme.colors,
-      primary: colors.green
-    })
-  }
-  content: [
-    // Extends you content and include the edgmont-ui package
-    'node_modules/@edgmont-ui/react/**/*.{js,jsx,ts,tsx}',
-  ],
-};
-```
-
-##### Optional: Datepicker css
-
-Datepicker is a css file so will need to be imported.
-
-```css
-/* index.css */
-@import "@edgmont-ui/react/dist/datepicker.css";
-```
-
-or
-
-```js
-// index.js
-import "@edgmont-ui/react/dist/datepicker.css";
-```
-
-#### Option 3 - Playground
-
-##### Install edgmont-ui
-
-```
-npm/yarn install @edgmont-ui/react
-```
-
-##### Add edgmont-ui css with no tailwind required
-
-```css
-/* index.css */
-@import "@edgmont-ui/react/dist/edgmont.css";
-```
-
-or
-
-```js
-// index.js
-import "@edgmont-ui/react/dist/edgmont.css";
-```
-
-> Note: This might be optimized and is not recommended!
 
 ## Package used
 
