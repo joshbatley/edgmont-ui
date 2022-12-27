@@ -4,7 +4,7 @@ import { variant } from 'styled-system';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
 export type PrimaryButtonProps = Omit<BaseButtonProps, 'loaderColor'> & {
-  color?: ColorsAndWhite
+  color?: Colors
 };
 
 const StyledButton = styled(BaseButton)<PrimaryButtonProps>(
@@ -46,18 +46,11 @@ const StyledButton = styled(BaseButton)<PrimaryButtonProps>(
           bg: 'warningAccent',
         },
       },
-      dark: {
+      base: {
         color: 'white',
         bg: 'base',
         ':hover': {
           bg: 'baseHighlight',
-        },
-      },
-      white: {
-        color: 'base',
-        bg: 'background.0',
-        ':hover': {
-          bg: 'background.1',
         },
       },
     },
@@ -70,7 +63,7 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>((
   <StyledButton
     ref={ref}
     color={color}
-    loaderColor={color === 'white' ? 'base' : color}
+    loaderColor={color}
     {...rest}
   >
     {children}

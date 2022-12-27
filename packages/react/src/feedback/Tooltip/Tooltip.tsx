@@ -7,28 +7,22 @@ import styled from 'styled-components';
 export type TooltipProps = {
   tooltip: React.ReactNode;
   direction?: Placement;
-  dark?: boolean;
   as?: AsProp;
   disabled?: boolean;
 } & WithChildren;
 
-const Popover = styled.div<{ dark: boolean }>`
+const Popover = styled.div`
   border-radius: ${({ theme }) => theme.radii[2]};
   box-shadow: ${({ theme }) => theme.shadows.base[1]};
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
   z-index: 10;
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
-  ${({ dark, theme }) => dark ? `
-    color: ${theme.colors.background[0]};
-    background: ${theme.colors.base};
-  ` : `
-    background: ${theme.colors.background[0]};
-  `}
+  background: ${({ theme }) => theme.colors.background[0]};
 `;
 
 export const Tooltip: React.FC<TooltipProps> = ({
-  tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled,
+  tooltip, children, direction = 'top', as: Component = 'div', disabled,
 }) => {
   let [showTooltip, setTooltip] = useState(false);
   let [wrappedRef, setWrappedRef] = useState(null);
@@ -53,7 +47,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
       {(!disabled && showTooltip) && (
         <Portal>
           <Popover
-            dark={dark}
             ref={setPopperRef as Ref<HTMLDivElement>}
             style={styles.popper}
             {...attributes.popper}

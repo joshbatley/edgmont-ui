@@ -32,7 +32,7 @@ export const BasicItem: React.FC<BasicItemProps> = ({ file, handleDelete }) => {
   let hasError = (file.errors?.length || 0) > 0;
   let errorMessage = hasError && file.errors!.reduce((acc, curr) => acc += curr.message + ' ', '');
   return (
-    <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
+    <Tooltip disabled={!hasError} as='li' tooltip={errorMessage}>
       <BoxStyled
         display="flex"
         alignItems="center"

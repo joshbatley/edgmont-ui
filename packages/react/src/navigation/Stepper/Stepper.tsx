@@ -3,13 +3,13 @@ import { StepperContext } from '.';
 import styled from 'styled-components';
 
 type StepperPropsVertical = {
-  color?: ColorsLegacy;
+  color?: Colors;
   step: number;
   direction?: 'vertical';
 } & WithChildren;
 
 type StepperPropsHorizontal = {
-  color?: ColorsLegacy;
+  color?: Colors;
   step: number;
   direction?: 'horizontal';
   alternativeLabel?: boolean;

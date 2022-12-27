@@ -48,10 +48,9 @@ export const Varients: Story = ({ ...rest }) => (
       <Box spaceXBetween="4" display="flex" justifyContent="space-between" >
         <Comp severity="success" text="Add Success" />
         <Comp text="Add normal" />
-        <Comp dark text="Add Dark" />
+        <Comp text="With body" body={lorem} />
       </Box>
 
-      <Comp text="With body" body={lorem} />
     </Box>
   </SnackbarProvider>
 );

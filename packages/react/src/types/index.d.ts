@@ -1,14 +1,6 @@
 type OverriderDefaults = Record<Partial<Property>, string>;
 
-type Colors = 'primary' | 'success' | 'info' | 'error' | 'warning' | 'dark';
-type ColorsLegacy = 'primary' | 'gray' | 'green' | 'lime' | 'red' | 'yellow' | 'blue' | 'purple' | 'orange' | 'pink';
-
-type ColorsAndWhite = Colors | 'white';
-type ColorsAndWhiteLegacy = ColorsLegacy | 'white';
-
-type ColorWeights = '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'light' | 'medium' | 'dark';
-
-type ColorPrefix = 'text' | 'bg' | 'border' | 'ring' | 'outline' | 'shadow';
+type Colors = 'primary' | 'success' | 'info' | 'error' | 'warning' | 'base';
 
 type Size = 'large' | 'medium' | 'small';
 type Position = CardinalPoints | IntercardinalPoints;
@@ -18,8 +10,6 @@ type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
 type Direction = 'horizontal' | 'vertical';
 
 type Severity = 'error' | 'warning' | 'info' | 'success' | 'none';
-
-type ButtonVariant = 'Clickable' | 'Highlight' | 'Outline' | 'Primary' | 'Secondary';
 
 type ObjectKey = string | number | symbol;
 type WithKey<K extends string | number | symbol> = {

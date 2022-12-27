@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite } from 'storybook-helpers/presets';
+import { colorSelect } from 'storybook-helpers/presets';
 import { OutlineButton, PrimaryButton } from 'inputs';
 import { Box, Text } from 'data';
 import { Backdrop } from '.';
@@ -13,7 +13,7 @@ export default {
     color: 'primary',
   },
   argTypes: {
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 

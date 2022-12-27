@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 
 export type CircleProgressProps = {
-  color?: ColorsAndWhiteLegacy;
+  color?: Colors;
   height?: string | number;
   width?: string | number;
   percentage?: number;
@@ -33,7 +33,7 @@ const OuterCircle = styled.circle(({ theme }) => variant({
     warning: {
       stroke: darken(0.1, theme.colors.warningHighlight),
     },
-    dark: {
+    dabaserk: {
       stroke: 'background.3',
     },
   },
@@ -57,7 +57,7 @@ const InnerCircle = styled.circle(variant({
     warning: {
       stroke: 'warning',
     },
-    dark: {
+    base: {
       stroke: 'baseHighlight',
     },
   },

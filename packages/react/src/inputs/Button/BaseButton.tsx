@@ -64,11 +64,11 @@ export const StyledButton = styled.button<BaseButtonProps>`
 `;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size = 'medium', isLoading, loaderColor = 'white', disabled, ...rest
+  children, size = 'medium', isLoading, loaderColor, disabled, ...rest
 }, ref) => {
   return (
     <StyledButton size={size} ref={ref} disabled={isLoading || disabled}  {...rest}>
-      {isLoading && (<CircleLoader color={loaderColor as Colors} height={16} width={16} />)}
+      {(isLoading && loaderColor) && (<CircleLoader color={loaderColor as Colors} height={16} width={16} />)}
       {children}
     </StyledButton>
   );

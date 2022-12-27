@@ -7,7 +7,7 @@ export type StepLabelProps = {
   idx?: number;
   state?: 'completed' | 'active' | 'default';
   error?: boolean;
-  color?: ColorsLegacy;
+  color?: Colors;
 } & WithChildren;
 
 const Line = styled.div<{ direction: Direction }>`

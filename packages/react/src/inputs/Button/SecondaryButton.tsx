@@ -47,11 +47,11 @@ const StyledButton = styled(BaseButton)<SecondaryButtonProps>(({ theme }) =>
           bg: darken(0.1, theme.colors.warningHighlight),
         },
       },
-      dark: {
-        color: 'dark',
-        bg: 'background.3',
+      base: {
+        color: 'base',
+        bg: 'background.2',
         ':hover': {
-          bg: darken(0.1, theme.colors.background[3]),
+          bg: darken(0.1, theme.colors.background[2]),
         },
       },
     },

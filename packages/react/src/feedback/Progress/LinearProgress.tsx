@@ -5,7 +5,7 @@ import { darken } from 'polished';
 import { Box } from 'data/Box';
 
 export type LinearProgressProps = {
-  color?: ColorsAndWhiteLegacy;
+  color?: Colors;
   height?: string | number;
   percentage?: number;
 };
@@ -37,7 +37,7 @@ const OuterLine = styled.div`
     warning: {
       background: darken(0.1, theme.colors.warningHighlight),
     },
-    dark: {
+    base: {
       background: theme.colors.background[3],
     },
   },
@@ -70,7 +70,7 @@ const InnerLine = styled.div<{ percentage: number }>`
     warning: {
       background: theme.colors.warning,
     },
-    dark: {
+    base: {
       background: theme.colors.baseHighlight,
     },
   },

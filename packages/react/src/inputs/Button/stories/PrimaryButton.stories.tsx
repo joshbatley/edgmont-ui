@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite, sizeSelect } from 'storybook-helpers/presets';
+import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { PrimaryButton } from '../PrimaryButton';
 import { Box } from 'data';
@@ -14,7 +14,7 @@ export default {
   },
   argTypes: {
     size: sizeSelect,
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 
@@ -37,7 +37,7 @@ Sizes.argTypes = {
 
 export const Colors: Story = ({ children = 'save' }) => (
   <Box display="grid" gridTemplateColumns="repeat(6, minmax(0, 1fr))" gridGap="4">
-    {colorSelectWithWhite.options.map((c) => (
+    {colorSelect.options.map((c) => (
       <PrimaryButton key={c} color={c}>{children}</PrimaryButton>
     ))}
   </Box>

@@ -32,7 +32,7 @@ const OuterCircle = styled.circle(({ theme }) => variant({
     warning: {
       stroke: darken(0.1, theme.colors.warningHighlight),
     },
-    dark: {
+    base: {
       stroke: 'background.3',
     },
   },
@@ -56,7 +56,7 @@ const InnerCircle = styled.circle(variant({
     warning: {
       stroke: 'warning',
     },
-    dark: {
+    base: {
       stroke: 'baseHighlight',
     },
   },

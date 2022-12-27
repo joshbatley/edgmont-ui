@@ -85,7 +85,7 @@ export const Switch: React.FC<SwitchProps> = ({
           boxShadow: `${theme.colors.warning} 0 0 0 2px`,
         },
       },
-      dark: {
+      base: {
         'input:checked ~ &': {
           bg: 'base',
           boxShadow: `${theme.colors.base} 0 0 0 2px`,

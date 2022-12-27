@@ -42,7 +42,6 @@ export const Variations: Story = ({ ...rest }) => (
 );
 Variations.argTypes = {
   severity: { table: { disable: true } },
-  dark: { table: { disable: true } },
   icon: { table: { disable: true } },
   withClose: { table: { disable: true } },
 };

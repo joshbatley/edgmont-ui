@@ -42,7 +42,7 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
   let meta = [bytes, type, extension].filter(Boolean).join(' - ');
 
   return (
-    <Tooltip disabled={!hasError} as='li' tooltip={errorMessage} dark>
+    <Tooltip disabled={!hasError} as='li' tooltip={errorMessage}>
       <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
         <StyledImage src={imgSrc as string} fallback={fallback} />
         <Box display="flex" flexDirection="column" ml="2">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { intercardinalPointsSelect, colorSelectWithWhite } from 'storybook-helpers/presets';
+import { intercardinalPointsSelect, colorSelect } from 'storybook-helpers/presets';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { Badge } from '.';
 import { Box } from 'data';
@@ -14,7 +14,7 @@ export default {
   },
   argTypes: {
     position: intercardinalPointsSelect,
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 

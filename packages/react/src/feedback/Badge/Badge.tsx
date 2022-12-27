@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 
 export type BadgeProps = {
-  color?: ColorsLegacy;
+  color?: Colors;
   position?: IntercardinalPoints;
   tag: React.ReactNode;
 } & WithChildren;
@@ -39,7 +39,7 @@ const getPosition = (position: IntercardinalPoints) => {
 };
 
 const BadgeItem = styled.div<{
-  color: ColorsLegacy;
+  color: Colors;
   position: IntercardinalPoints;
 }>`
   position: absolute;
@@ -75,12 +75,8 @@ const BadgeItem = styled.div<{
     warning: {
       bg: 'warning',
     },
-    dark: {
+    base: {
       bg: 'base',
-    },
-    white: {
-      bg: 'background.0',
-      color: 'base',
     },
   },
 })}

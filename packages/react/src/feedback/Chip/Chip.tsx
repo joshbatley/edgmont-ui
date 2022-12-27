@@ -44,8 +44,8 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
       color: 'warningAccent',
       bg: darken(0.1, tint(0.2, theme.colors.warningHighlight)),
     },
-    dark: {
-      color: 'dark',
+    base: {
+      color: 'base',
       bg: 'background.3',
     },
   },
