@@ -1,3 +1,11 @@
-# Edgmont-ui
+<p align="center">
+  <img src="/public/logo-dark.svg#gh-dark-mode-only" height="128"/>
+  <img src="/public/logo-light.svg#gh-light-mode-only" height="128"/>
+</p>
 
-Todo: set up monorepo readme
+### Packages
+
+- [React](https://github.com/joshbatley/edgmont-ui/tree/main/packages/react)
+  - React Package
+- [Docs](https://github.com/joshbatley/edgmont-ui/tree/main/packages/docs)
+  - Documation Website
