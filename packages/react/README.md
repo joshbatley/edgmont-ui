@@ -6,14 +6,14 @@
 
 [![Build][build-image]][build-url] [![NPM Version][version-image]][version-url] [![License][license-image]][license-url] [![Bundle Size][size-image]][size-url]
 
-[build-image]: https://img.shields.io/github/workflow/status/joshbatley/edgmont-ui/Publish%20Package
+[build-image]: https://img.shields.io/github/actions/workflow/status/joshbatley/edgmont-ui/npm-publish.yml
 [build-url]: https://github.com/joshbatley/edgmont-ui/actions
-[version-image]: https://img.shields.io/npm/v/edgmont-ui
-[version-url]: https://www.npmjs.com/package/edgmont-ui
-[license-image]: https://img.shields.io/github/license/joshbatley/edgmont-ui
+[version-image]: https://img.shields.io/npm/v/@edgmont-ui/react
+[version-url]: https://www.npmjs.com/package/@edgmont-ui/react
+[license-image]: https://img.shields.io/github/license/joshbatley/@edgmont-ui/react
 [license-url]: https://github.com/joshbatley/edgmont-ui/blob/main/LICENSE
-[size-image]: https://img.shields.io/bundlephobia/minzip/edgmont-ui
-[size-url]: https://bundlephobia.com/package/edgmont-ui
+[size-image]: https://img.shields.io/bundlephobia/minzip/@edgmont-ui/react
+[size-url]: https://bundlephobia.com/package/@edgmont-ui/react
 
 </div>
 
@@ -37,7 +37,6 @@ npm/yarn install @edgmont-ui/react
 
 - React - Framework of choice
 - Typescript - Types!!!
-- Tailwind - for all styling
 - Heroicons - for the few icons needed
 - Downshift - a easy to use API for our select element
 - React-datepicker - for the datepicker api
