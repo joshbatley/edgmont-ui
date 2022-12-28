@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Collapse } from 'utils';
 import { useTreeContext } from '.';
 import { ClickableElement } from '../../inputs/Button/ClickableElement';
+import { Box } from 'data/Box';
 
 type Icon = React.ReactNode | {
   endIcon?: React.ReactNode;
@@ -76,11 +77,6 @@ const StyledBtn = styled(ClickableElement) <ButtonProps>`
   `}
 `;
 
-const StyledCollapse = styled(Collapse)`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const TreeItem: React.FC<TreeItemProps> = ({
   nodeId, label, children, icon, level = 1, onClick, active, disabled,
 }) => {
@@ -119,11 +115,13 @@ export const TreeItem: React.FC<TreeItemProps> = ({
         <Label blockNode={blockNode} active={active} disabled={disabled}>{label}</Label>
       </StyledBtn>
       {children && (
-        <StyledCollapse inProp={isItemExpanded(nodeId)}>
-          {React.Children.map(children, child =>
-            React.isValidElement(child) && React.cloneElement<any>(child, { level: level + 1 }),
-          )}
-        </StyledCollapse>
+        <Collapse inProp={isItemExpanded(nodeId)}>
+          {React.Children.map(children, child => (
+            <Box display="flex" flexDirection="column">
+              {React.isValidElement(child) && React.cloneElement<any>(child, { level: level + 1 })}
+            </Box>
+          ))}
+        </Collapse>
       )}
     </>
   );

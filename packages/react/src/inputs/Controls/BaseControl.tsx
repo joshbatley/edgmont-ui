@@ -33,7 +33,6 @@ const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
   border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[3]};
   ${({ error, theme }) => error && `
     border-color: ${theme.colors.error};
-    box-shadow: ${theme.shadows.error};
   `}
 `;
 

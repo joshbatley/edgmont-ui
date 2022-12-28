@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ColorProps, TypographyProps, color, typography, variant } from 'styled-system';
+import { ColorProps, LayoutProps, TypographyProps, color, layout, typography, variant } from 'styled-system';
 
 
 export type HeadingProps = {
   children?: React.ReactNode;
-} & ColorProps & TypographyProps;
+} & ColorProps & TypographyProps & LayoutProps;
 
 export const Title = styled.h1<HeadingProps>`
+  color: ${({ theme }) => theme.colors.base};
   ${color}
   ${typography}
+  ${layout}
   ${variant({
   prop: 'as',
   variants: {

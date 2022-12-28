@@ -12,7 +12,7 @@ export default {
 } as Meta;
 
 export const Examples: Story = ({ children, ...rest }) => (
-  <Panel {...rest}>
+  <Panel px="3" py="2" {...rest}>
     {children}
   </Panel>
 );

@@ -4,10 +4,14 @@ type Option<T> = {
 };
 
 const colorSelect: Option<Colors[]> = {
-  options: ['primary', 'success', 'info', 'error', 'warning', 'base'],
+  options: ['primary', 'success', 'info', 'error', 'warning'],
   control: { type: 'select' },
 };
 
+const colorSelectWithBase: Option<Colors[]> = {
+  options: ['primary', 'success', 'info', 'error', 'warning', 'base'],
+  control: { type: 'select' },
+};
 
 const intercardinalPointsSelect = {
   options: ['NW', 'NE', 'SE', 'SW'],
@@ -20,7 +24,7 @@ const sizeSelect = {
 };
 
 const severitySelect = {
-  options: ['error', 'warning', 'info', 'success'],
+  options: ['error', 'warning', 'info', 'success', 'none'],
   control: { type: 'select' },
 };
 
@@ -33,6 +37,7 @@ const directionSelect = {
 
 export {
   colorSelect,
+  colorSelectWithBase,
   intercardinalPointsSelect,
   sizeSelect,
   severitySelect,

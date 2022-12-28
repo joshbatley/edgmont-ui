@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { SecondaryButton } from 'inputs';
+import { Button } from 'inputs';
 import { Item } from './Item';
 import { Box } from 'data';
 
@@ -40,9 +40,9 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         <Item key={idx} item={c} dividerIcon={dividerIcon} />
       )) : (
         <Box display="inline-flex" alignItems="center">
-          <SecondaryButton size='small' onClick={() => setShow(true)}>
+          <Button size='small' onClick={() => setShow(true)}>
             <EllipsisHorizontalIcon height={13} width={14} />
-          </SecondaryButton>
+          </Button>
           <Box display="inline-block" color="baseHighlight" mx="2">{dividerIcon}</Box>
         </Box>
       )}

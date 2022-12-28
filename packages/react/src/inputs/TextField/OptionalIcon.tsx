@@ -6,9 +6,19 @@ import { variant } from 'styled-system';
 export type OptionalIconProps = {
   icon: React.ReactNode;
   size: Size;
+  position: 'left' | 'right';
 };
 
-const StyledBox = styled(Box)`
+const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
+  ${({ theme, pos }) => pos === 'left' ? `
+    border-right: ${theme.borders.background3[1]};
+    border-top-left-radius: ${theme.radii[3]};
+    border-bottom-left-radius: ${theme.radii[3]};
+  ` : `
+    border-left: ${theme.borders.background3[1]};
+    border-top-right-radius: ${theme.radii[3]};
+    border-bottom-right-radius: ${theme.radii[3]};
+  `}
   ${variant({
   prop: 'size',
   variants: {
@@ -28,5 +38,5 @@ const StyledBox = styled(Box)`
 })}
 `;
 
-export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, size }) =>
-  icon ? (<StyledBox color="background.3" display="flex" alignItems="center" size={size}>{icon}</StyledBox>) : null;
+export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, size, position }) =>
+  icon ? (<StyledBox pos={position} color="base" bg="background.3" display="flex" alignItems="center" size={size}>{icon}</StyledBox>) : null;

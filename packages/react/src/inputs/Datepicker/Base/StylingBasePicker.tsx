@@ -46,7 +46,7 @@ export const Container = styled.div`
   cursor: pointer;
   text-align: center;
   :hover {
-    background: ${({ theme }) => theme.colors.primaryHighlight};
+    background: ${({ theme }) => theme.colors.primaryAccent};
     border-radius:${({ theme }) => theme.radii[3]};
   }
 }
@@ -64,8 +64,8 @@ export const Container = styled.div`
   :hover {
     border-radius: 0px;
   }
-  background: ${({ theme }) => theme.colors.primaryHighlight};
-  color: ${({ theme }) => theme.colors.primaryAccent};
+  background: ${({ theme }) => theme.colors.primaryAccent};
+  color: ${({ theme }) => theme.colors.base};
 }
 
 .react-datepicker__month--selected,
@@ -75,7 +75,7 @@ export const Container = styled.div`
 .react-datepicker__day--selected,
 .react-datepicker__day--range-start,
 .react-datepicker__day--range-end {
-  color: ${({ theme }) => theme.colors.primaryHighlight};
+  color: ${({ theme }) => theme.colors.base};
 }
 
 .react-datepicker__day--range-start,
@@ -119,8 +119,8 @@ export const Container = styled.div`
 .react-datepicker__day--highlighted,
 .react-datepicker__month--highlighted {
   order-radius: ${({ theme }) => theme.radii[3]};
-  background: ${({ theme }) => theme.colors.primaryHighlight};
-  color: ${({ theme }) => theme.colors.primaryAccent};
+  background: ${({ theme }) => theme.colors.primaryAccent};
+  color: ${({ theme }) => theme.colors.base};
 }
 
 .react-datepicker__day--disabled,
@@ -138,19 +138,19 @@ export const Container = styled.div`
 .react-datepicker__day--in-selecting-range {
   :hover {
     border-radius: ${({ theme }) => `0 ${theme.radii[3]} ${theme.radii[3]} 0`};
-    background: ${({ theme }) => darken(0.1, theme.colors.primaryHighlight)};
+    background: ${({ theme }) => darken(0.1, theme.colors.primaryAccent)};
   }
-  background: ${({ theme }) => theme.colors.primaryHighlight};
+  background: ${({ theme }) => theme.colors.primaryAccent};
 }
 
 .react-datepicker__day--selecting-range-start,
 .react-datepicker__day--selecting-range-end {
-  background: ${({ theme }) => darken(0.1, theme.colors.primaryHighlight)};
+  background: ${({ theme }) => darken(0.1, theme.colors.primaryAccent)};
 }
 
 .react-datepicker__day--selecting-range-start div,
 .react-datepicker__day--selecting-range-end div {
-  background: ${({ theme }) => darken(0.1, theme.colors.primaryHighlight)};
+  background: ${({ theme }) => darken(0.1, theme.colors.primaryAccent)};
 }
 
 /*

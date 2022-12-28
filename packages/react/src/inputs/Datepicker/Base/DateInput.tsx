@@ -39,18 +39,25 @@ export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value,
     e.stopPropagation();
     clear?.();
   };
+
+  let displayValue = value ?
+    (<Text as="span" color="base">{value}</Text>) :
+    (<Text as="span" color="baseHighlight">{placeholder}</Text>);
+
   return (
-    <OutlineButton width="100%" justifyContent="space-between" ref={ref} onClick={onClick} >
+    <OutlineButton bg="background.1" width="100%" justifyContent="space-between" ref={ref} onClick={onClick} >
       <Container>
         <Icon width={16} height={16} />
-        {value || <Text as="span" color="baseHighlight">{placeholder}</Text>}
+        {displayValue}
       </Container>
-      {showClear && value && (
-        <ClearBtn onClick={handleClear} as="a">
-          Clear
-        </ClearBtn>
-      )}
-    </OutlineButton>
+      {
+        showClear && value && (
+          <ClearBtn onClick={handleClear} as="a">
+            Clear
+          </ClearBtn>
+        )
+      }
+    </OutlineButton >
   );
 });
 

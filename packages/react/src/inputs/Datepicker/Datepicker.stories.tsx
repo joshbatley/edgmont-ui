@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 export const BasicDatePicker: Story = ({ ...rest }) => (
-  <DatePicker {...rest} />
+  <DatePicker placeholder='Click to select a date'  {...rest} />
 );
 
 export const RangePicker: Story = ({ ...rest }) => (

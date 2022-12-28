@@ -8,9 +8,11 @@ export const BaseInput = styled.input<{
   outline: 2px solid transparent;
   outline-offset: 2px;
   color: ${({ theme }) => theme.colors.base};
+  background: ${({ theme }) => theme.colors.background[2]};
   border-radius: ${({ theme }) => theme.radii[3]};
   color: ${({ error, theme }) => error ? theme.colors.error : 'inherit'};
   pointer-event: ${({ disabled }) => disabled ? 'none' : 'inherit'};
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
   ${variant({
   prop: 'variant',
   variants: {

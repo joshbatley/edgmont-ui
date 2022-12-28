@@ -8,7 +8,7 @@ export type TableHeadProps = {
 
 const Thead = styled.thead<TableHeadProps>`
   text-align: left;
-  background: ${({ theme }) => theme.colors.background[1]};
+  background: ${({ theme }) => theme.colors.background[2]};
   ${({ sticky, theme }) => sticky && `
     position: sticky;
     top: 0;

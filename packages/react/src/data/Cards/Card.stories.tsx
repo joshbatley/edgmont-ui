@@ -64,7 +64,7 @@ export const Examples: Story = ({ ...rest }) => (
           <TextArea placeholder="desciption of website" />
         </Label>
       </CardContent>
-      <Box bg="background.1" p="2" display="flex" justifyContent="flex-end">
+      <Box bg="background.2" p="2" display="flex" justifyContent="flex-end">
         <PrimaryButton>Submit</PrimaryButton>
       </Box>
     </Card>

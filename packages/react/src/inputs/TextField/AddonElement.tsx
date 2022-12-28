@@ -35,7 +35,7 @@ export const AddonElement: React.FC<AddonElementProps> = ({
   addon, position,
 }) =>
   addon ? (
-    <StyledBox pos={position} bg="background.1" color="baseHighlight" display="flex" alignItems="center">
+    <StyledBox pos={position} bg="background.3" color="baseAccent" display="flex" alignItems="center">
       {addon}
     </StyledBox>
   ) : null;

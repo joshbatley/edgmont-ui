@@ -18,22 +18,22 @@ const OuterCircle = styled.circle(({ theme }) => variant({
   prop: 'color',
   variants: {
     primary: {
-      stroke: 'primaryHighlight',
+      stroke: darken(0.1, theme.colors.primaryAccent),
     },
     success: {
-      stroke: darken(0.1, theme.colors.successHighlight),
+      stroke: darken(0.1, theme.colors.successAccent),
     },
     info: {
-      stroke: darken(0.1, theme.colors.infoHighlight),
+      stroke: darken(0.1, theme.colors.infoAccent),
     },
     error: {
-      stroke: darken(0.1, theme.colors.errorHighlight),
+      stroke: darken(0.1, theme.colors.errorAccent),
     },
     warning: {
-      stroke: darken(0.1, theme.colors.warningHighlight),
+      stroke: darken(0.1, theme.colors.warningAccent),
     },
     base: {
-      stroke: 'background.3',
+      stroke: darken(0.1, theme.colors.background[3]),
     },
   },
 }));

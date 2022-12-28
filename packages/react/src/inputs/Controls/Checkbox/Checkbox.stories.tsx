@@ -3,6 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelect } from 'storybook-helpers/presets';
 import { Checkbox } from '.';
+import { Box } from 'data';
 
 export default {
   title: 'Inputs/Checkbox',
@@ -17,26 +18,26 @@ export default {
 } as Meta;
 
 export const Example: Story = ({ children, ...rest }) => (
-  <div>
+  <Box spaceYBetween="3">
     <Checkbox {...rest} />
     <Checkbox checked {...rest} />
-  </div>
+  </Box>
 );
 
 export const Disabled: Story = ({ children, disabled, ...rest }) => (
-  <div>
+  <Box spaceYBetween="3">
     <Checkbox disabled {...rest} />
     <Checkbox checked disabled {...rest} />
-  </div>
+  </Box>
 );
 Disabled.argTypes = {
   disabled: { table: { disable: true } },
 };
 
 export const Error: Story = ({ children, ...rest }) => (
-  <div>
+  <Box spaceYBetween="3">
     <Checkbox error {...rest} />
     <Checkbox checked error {...rest} />
     <Checkbox error disabled {...rest} />
-  </div>
+  </Box>
 );

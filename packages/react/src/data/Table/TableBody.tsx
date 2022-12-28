@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TableBody = styled.tbody`
-  background: ${({ theme }) => theme.colors.background[0]};
+  background: ${({ theme }) => theme.colors.background[1]};
   border-top-width: 1px;
   > :not([hidden]) ~ :not([hidden]) {
     border-top-width: 1px;

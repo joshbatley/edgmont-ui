@@ -85,6 +85,7 @@
     "rollup-plugin-import-css": "^3.0.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
+    "storybook-dark-mode": "^2.0.4",
     "styled-components": "^5.3.6",
     "styled-system": "^5.1.5",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
@@ -95,6 +96,6 @@
     "react-dom": "^18.2.0"
   },
   "publishConfig": {
-    "access": "public"
+    "storybook-dark-mode": "^2.0.4"
   }
 }

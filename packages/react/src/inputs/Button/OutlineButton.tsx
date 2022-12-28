@@ -5,10 +5,6 @@ import { BaseButton, BaseButtonProps } from 'inputs/Button/BaseButton';
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
 const StyledButton = styled(BaseButton) <OutlineButtonProps>`
-  background: ${({ theme }) => theme.colors.background[0]};
-  color: ${({ theme }) => theme.colors.base};
-  border: ${({ theme }) => theme.borders.background3[1]};
-  box-shadow: ${({ theme }) => theme.shadows.base[0]};
   :disabled {
     background:${({ theme }) => theme.colors.background[2]};
   }
@@ -19,10 +15,13 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
 
 export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, ...rest }, ref) => (
   <StyledButton
-    loaderColor="gray"
+    backgroundColor="background.0"
+    border="background3.1"
+    color="base"
+    loaderColor="base"
     ref={ref}
     {...rest}
   >
     {children}
-  </StyledButton >
+  </StyledButton>
 ));

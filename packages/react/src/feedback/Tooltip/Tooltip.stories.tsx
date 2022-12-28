@@ -20,7 +20,7 @@ export default {
 export const Example: Story = ({ ...rest }: any) => (
   <Box spaceYBetween="2" display="grid" height="100vh" style={{ placeContent: 'center' }}>
     <Tooltip {...rest}>
-      <Box>This is wrapped</Box>
+      <Box m="5">This is wrapped</Box>
     </Tooltip>
   </Box>
 );

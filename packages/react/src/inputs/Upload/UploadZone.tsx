@@ -46,7 +46,7 @@ const StyledList = styled(List)`
 const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
   color: ${({ theme }) => theme.colors.baseHighlight};
   ${({ isDragActive, theme }) => isDragActive && `
-    color: ${theme.colors.background[0]};
+    color: ${theme.colors.base};
     ${theme.animations.bounce}
   `}
 `;
@@ -57,12 +57,12 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
       <TrayIcon width={30} height={30} isDragActive={isDragActive} />
-      {isDragActive ? <Text fontWeight="700" color="background.0">And drop your file to upload</Text> :
+      {isDragActive ? <Text fontWeight="700" color="base">And drop your file to upload</Text> :
         <Text>
           Drag and drop, or <Text as="span" color="primary">click to find</Text> a file
         </Text>
       }
-      <Text fontSize="1" lineHeight="1" color={isDragActive ? 'background.0' : 'baseHighlight'}>{bottomText}</Text>
+      <Text fontSize="1" lineHeight="1" color={isDragActive ? 'baseAccent' : 'baseHighlight'}>{bottomText}</Text>
     </>
   ), [bottomText]);
 

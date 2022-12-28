@@ -1,5 +1,6 @@
-export const ThemeColors = {
+export const LightThemeColors = {
   base: '#0f172a',
+  baseAccent: '#1e293b',
   baseHighlight: '#64748b',
   background: [
     '#ffffff', // White
@@ -30,3 +31,58 @@ export const ThemeColors = {
 
   modalBg: 'rgba(15, 23, 42, 0.70)',
 };
+
+export const DarkThemeColors = {
+  base: '#f8fafc',
+  baseAccent: '#cbd5e1',
+  baseHighlight: '#64748b',
+  background: [
+    '#0f172a', // White
+    '#1e293b', // offwhite
+    '#334155', // lightGray
+    '#475569', // gray
+  ],
+
+  primary: '#4f46e5',
+  primaryAccent: '#4338ca',
+  primaryHighlight: '#a5b4fc',
+
+  success: '#16a34a',
+  successAccent: '#15803d',
+  successHighlight: '#86efac',
+
+  info: '#0ea5e9',
+  infoAccent: '#0369a1',
+  infoHighlight: '#7dd3fc',
+
+  error: '#e11d48',
+  errorAccent: '#be123c',
+  errorHighlight: '#fda4af',
+
+  warning: '#d97706',
+  warningAccent: '#b45309',
+  warningHighlight: '#fcd34d',
+
+  modalBg: 'rgba(71, 85, 105, 0.70)',
+};
+
+
+// primary: '#4f46e5',
+// primaryAccent: '#4338ca',
+// primaryHighlight: '#4338ca',
+
+// success: '#10b981',
+// successAccent: '#0f766e',
+// successHighlight: '#047857',
+
+// info: '#0369a1',
+// infoAccent: '##7dd3fc',
+// infoHighlight: '#0369a1',
+
+// error: '#fda4af',
+// errorAccent: '#be123c',
+// errorHighlight: '#be123c',
+
+// warning: '#fcd34d',
+// warningAccent: '#b45309',
+// warningHighlight: '#b45309',

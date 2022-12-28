@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: any }>`
     font-size: 14px;
     tab-size: 4;
     font-family: ${({ theme }) => theme.fonts.base};
+    color: ${({ theme }) => theme.colors.baseAccent};
     margin: 0;
   }
 
@@ -189,7 +190,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: any }>`
   input::placeholder,
   textarea::placeholder {
     opacity: 1;
-    color: ${({ theme }) => theme.colors.background[3]};
+    color: ${({ theme }) => theme.colors.baseHighlight};
   }
 
   button,

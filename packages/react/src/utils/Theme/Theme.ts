@@ -1,13 +1,11 @@
-import { radii, ThemeBorders } from './Borders';
+import { radii, generateBorders } from './Borders';
 import { breakpoints } from './Breakpoints';
-import { ThemeColors } from './Colors';
+import { LightThemeColors, DarkThemeColors } from './Colors';
 import { ThemeBoxShadow } from './Shadows';
 import { animations } from './Animations';
 import { spaces, spaceYBetween, spaceXBetween } from './spaces';
 
-export const theme = {
-  colors: ThemeColors,
-  borders: ThemeBorders,
+const theme = {
   radii,
   shadows: ThemeBoxShadow,
   breakpoints,
@@ -68,3 +66,16 @@ export const theme = {
   spaceYBetween: spaceYBetween,
   spaceXBetween: spaceXBetween,
 };
+
+export const LightTheme = {
+  colors: LightThemeColors,
+  borders: generateBorders(LightThemeColors),
+  ...theme,
+};
+
+export const DarkTheme = {
+  colors: DarkThemeColors,
+  borders: generateBorders(DarkThemeColors),
+  ...theme,
+};
+

@@ -11,9 +11,8 @@ export const Card = styled.div<CardProps>`
   ${layout}
   ${flexbox}
   ${space}
-  border: ${({ theme }) => theme.borders.background2[1]};
   border-radius: ${({ theme }) => theme.radii[3]};
-  background: ${({ theme }) => theme.colors.background[0]};
-  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  background: ${({ theme }) => theme.colors.background[1]};
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
   overflow: hidden;
 `;

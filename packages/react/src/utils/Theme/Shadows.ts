@@ -1,7 +1,9 @@
 export const ThemeBoxShadow = {
   error: '0 1px 2px 0 #fecaca',
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
-  focus: '0 0 0 3px rgb(147 197 253)',
+  focus: 'unset',
+  // 0 0 0 3px rgb(147 197 253)
+  highlight: 'inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)',
   base: [
     '0 1px 2px 0 rgb(0 0 0 / 0.05)',
     '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',

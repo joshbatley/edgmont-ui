@@ -1,13 +1,9 @@
-import { ThemeColors } from './Colors';
+export const generateBorders = (colors: Record<string, string | string[]>) => {
+  let borderWidths = [0, 1, 3, 4];
+  let borderColors = Object.keys(colors);
 
-const borderWidths = [0, 1, 3, 4];
-const borderColors = Object.keys(ThemeColors);
-
-export type BorderColors = keyof typeof ThemeColors;
-
-const generateBorders = (colors: typeof ThemeColors) =>
-  borderColors.reduce((borderObj, key) => {
-    const colorKey = key as BorderColors;
+  return borderColors.reduce((borderObj, key) => {
+    const colorKey = key;
     if (typeof colors[colorKey] !== 'string') {
       (colors[colorKey] as string[]).map((value, idx) => {
         borderObj[`${colorKey}${idx}`] = borderWidths.map((width) =>
@@ -21,8 +17,8 @@ const generateBorders = (colors: typeof ThemeColors) =>
     }
     return borderObj;
   }, {} as Record<any, string[]>);
+};
 
-export const ThemeBorders = generateBorders(ThemeColors);
 
 export const radii = [
   0,            // 0 - none

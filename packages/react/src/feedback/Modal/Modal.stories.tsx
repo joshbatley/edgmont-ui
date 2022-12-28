@@ -21,7 +21,7 @@ export const Example: Story = ({ title, children, ...rest }) => {
     <>
       <OutlineButton onClick={() => setOpen(!open)}>Open</OutlineButton>
       <Modal open={open} title={title} handleClose={() => setOpen(!open)} {...rest}>
-        <Panel spaceYBetween="10" p="2" display="flex" flexDirection="column">
+        <Panel width="400px" spaceYBetween="10" pt="2" pb="4" px="2" display="flex" flexDirection="column">
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
           <PrimaryButton color="success">Or a button</PrimaryButton>

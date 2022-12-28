@@ -25,7 +25,7 @@ const Button = styled.div<{ size: 'small' | 'medium' }>`
     right: 0%;
     transform: translateX(0%);
   }
-  background: ${({ theme }) => theme.colors.background[0]};
+  background: ${({ theme }) => theme.colors.baseAccent};
   position: absolute;
   border-radius: ${({ theme }) => theme.radii[8]};
   box-shadow: ${({ theme }) => theme.shadows.base[1]};
@@ -49,8 +49,8 @@ export const Switch: React.FC<SwitchProps> = ({
     height: ${({ theme }) => size === 'medium' ? theme.sizes[6] : theme.sizes[4]};
     border-radius: ${({ theme }) => theme.radii[8]};
     position: absolute;
-    background: ${({ theme }) => theme.colors.background[3]};
-    box-shadow: ${({ theme }) => theme.colors.background[3]} 0 0 0 2px;
+    background: ${({ theme }) => theme.colors.background[2]};
+    box-shadow: ${({ theme }) => theme.colors.background[2]} 0 0 0 2px;
     ${({ theme }) => theme.transition}
     ${({ theme }) => variant({
     prop: 'color',

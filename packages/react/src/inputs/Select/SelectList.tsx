@@ -9,7 +9,7 @@ const StyledList = styled(List)`
   border-radius: ${({ theme }) => theme.radii[3]};
   box-shadow: ${({ theme }) => theme.shadows.base[4]};
   border: ${({ theme }) => theme.borders.background2[1]};
-  background: ${({ theme }) => theme.colors.background[0]};
+  background: ${({ theme }) => theme.colors.background[1]};
   margin-top: ${({ theme }) => theme.space[2]};
   position: absolute;
   min-width: 100%;

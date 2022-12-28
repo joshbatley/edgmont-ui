@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect } from 'storybook-helpers/presets';
+import { colorSelectWithBase } from 'storybook-helpers/presets';
 import { CircleLoader, LinearLoader } from '.';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     color: 'primary',
   },
   argTypes: {
-    color: colorSelect,
+    color: colorSelectWithBase,
   },
 } as Meta;
 

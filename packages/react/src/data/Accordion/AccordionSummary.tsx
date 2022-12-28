@@ -21,7 +21,7 @@ const StyledSummary = styled(ClickableElement) <AccordionProps>`
     border-top-right-radius: ${({ theme }) => theme.radii[3]};
   }
   &:last-of-type {
-    ${({ theme, isOpen }) => isOpen && `
+    ${({ theme, isOpen }) => !isOpen && `
       border-bottom-left-radius: ${theme.radii[3]};
       border-bottom-right-radius: ${theme.radii[3]};
     `}
@@ -39,7 +39,7 @@ const StyledIcon = styled(ChevronRightIcon) <{ isOpen?: boolean }>`
 `;
 
 export const AccordionSummary: React.FC<AccordionProps> = ({ isOpen, onClick, children }) => (
-  <StyledSummary onClick={onClick}>
+  <StyledSummary isOpen={isOpen} onClick={onClick}>
     <StyledIcon
       width={16}
       height={16}

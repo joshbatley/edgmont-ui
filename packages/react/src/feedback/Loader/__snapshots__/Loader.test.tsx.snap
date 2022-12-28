@@ -9,7 +9,7 @@ exports[`Loader accepts color value 1`] = `
     width="50"
   >
     <circle
-      class="sc-gswNZR jyoBiI"
+      class="sc-gswNZR idxzJP"
       color="success"
       cx="50"
       cy="50"
@@ -18,7 +18,7 @@ exports[`Loader accepts color value 1`] = `
       stroke-width="4"
     />
     <circle
-      class="sc-dkrFOg fOHjOE"
+      class="sc-dkrFOg gUpKzP"
       color="success"
       cx="50"
       cy="50"
@@ -42,7 +42,7 @@ exports[`Loader it renders 1`] = `
     width="50"
   >
     <circle
-      class="sc-gswNZR wgAJW"
+      class="sc-gswNZR bfpyeE"
       color="primary"
       cx="50"
       cy="50"

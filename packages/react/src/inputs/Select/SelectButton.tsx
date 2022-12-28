@@ -12,13 +12,6 @@ export type SelectButtonProps = {
   error?: boolean;
 } & OutlineButtonProps;
 
-const StyledOutlineButton = styled(OutlineButton) <{ error: boolean }>`
-  ${({ error, theme }) => error && `
-    border: ${theme.borders.error[1]};
-    box-shadow: ${theme.shadows.error};
-  `}
-`;
-
 const ClearBtn = styled(ClickableElement)`
   color: ${({ theme }) => theme.colors.baseHighlight};
   :hover {
@@ -55,10 +48,11 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
   };
 
   return (
-    <StyledOutlineButton
+    <OutlineButton
       width="100%"
+      bg="background.1"
       justifyContent="space-between"
-      error={error}
+      border={error ? 'error.1' : 'background3.1'}
       {...getToggleButtonProps()}
       {...rest}
     >
@@ -71,6 +65,6 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
         }
         <ChevronUpDownIcon height={16} width={16} />
       </Container>
-    </StyledOutlineButton>
+    </OutlineButton>
   );
 };
