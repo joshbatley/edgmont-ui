@@ -27,7 +27,7 @@
     "lint": "eslint . --ignore-path .eslintignore"
   },
   "dependencies": {
-    "@edgmont-ui/react": "^0.1.11",
+    "@edgmont-ui/react": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
