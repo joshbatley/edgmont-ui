@@ -1,15 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader accepts color value 1`] = `
+.c0 {
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  stroke: currentColor;
+}
+
+.c1 {
+  stroke: #0e5428;
+}
+
+.c2 {
+  stroke: #16a34a;
+}
+
 <div>
   <svg
-    class="sc-bcXHqe gAOCvb"
+    class="c0"
     height="50"
     viewBox="25 25 50 50"
     width="50"
   >
     <circle
-      class="sc-gswNZR idxzJP"
+      class="c1"
       color="success"
       cx="50"
       cy="50"
@@ -18,7 +32,7 @@ exports[`Loader accepts color value 1`] = `
       stroke-width="4"
     />
     <circle
-      class="sc-dkrFOg gUpKzP"
+      class="c2"
       color="success"
       cx="50"
       cy="50"
@@ -34,15 +48,29 @@ exports[`Loader accepts color value 1`] = `
 `;
 
 exports[`Loader it renders 1`] = `
+.c0 {
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  stroke: currentColor;
+}
+
+.c1 {
+  stroke: #352ca3;
+}
+
+.c2 {
+  stroke: #4f46e5;
+}
+
 <div>
   <svg
-    class="sc-bcXHqe gAOCvb"
+    class="c0"
     height="50"
     viewBox="25 25 50 50"
     width="50"
   >
     <circle
-      class="sc-gswNZR bfpyeE"
+      class="c1"
       color="primary"
       cx="50"
       cy="50"
@@ -51,7 +79,7 @@ exports[`Loader it renders 1`] = `
       stroke-width="4"
     />
     <circle
-      class="sc-dkrFOg fbUUUL"
+      class="c2"
       color="primary"
       cx="50"
       cy="50"
