@@ -1,9 +1,9 @@
 import React, { forwardRef, ReactElement, ReactNode } from 'react';
+import styled from 'styled-components';
+import { Box } from '../../data';
 import { BaseInput } from './BaseInput';
 import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
-import { Box } from '../../data';
-import styled from 'styled-components';
 
 export type TextFieldProps = {
   error?: boolean;

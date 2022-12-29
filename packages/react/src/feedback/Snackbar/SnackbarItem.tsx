@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Slide } from '../../utils';
 import { Alert } from '../Alert';
 import { Snack } from '../../types/Snackbar';
-import styled from 'styled-components';
 
 export type SnackbarItemProps = {
   handleClose: () => void;

@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ClickableElement, ClickableElementProps } from '../../inputs/Button/ClickableElement';
-import styled from 'styled-components';
 
 const StyledButton = styled(ClickableElement)`
   float:right;

@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ClickableElement } from '../../inputs';
 import { Scrollable } from '../../utils';
-import styled from 'styled-components';
 import { Box } from '../../data';
 
 export type TabCardItemProps = {

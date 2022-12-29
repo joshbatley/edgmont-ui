@@ -12,4 +12,3 @@ breakpoints.lg = breakpoints[2];
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 /* @ts-ignore enable */
 breakpoints.xl = breakpoints[3];
-

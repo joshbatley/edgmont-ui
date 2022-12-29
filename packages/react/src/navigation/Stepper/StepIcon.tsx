@@ -1,6 +1,6 @@
 import React from 'react';
-import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 import styled from 'styled-components';
+import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 
 export type StepIconProps = {
   error?: boolean;

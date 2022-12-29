@@ -1,11 +1,11 @@
 import React, { Ref, useState } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
+import styled from 'styled-components';
 import { format, getYear } from 'date-fns';
 import { ClickableElement } from '../../../inputs/Button';
 import { Menu, MenuItem } from '../../../navigation/Menu';
-import { LeftNavigation, RightNavigation } from './DateNavigation';
 import { Box } from '../../../data';
-import styled from 'styled-components';
+import { LeftNavigation, RightNavigation } from './DateNavigation';
 
 const months = [
   'January',

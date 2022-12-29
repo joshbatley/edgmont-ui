@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from '../../../storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { Button } from '../Button';
+import { sizeSelect } from '../../../storybook-helpers/presets';
 import { Box } from '../../../data';
+import { Button } from '../Button';
 
 export default {
   title: 'Inputs/Buttons/Button',

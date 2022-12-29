@@ -21,5 +21,3 @@ export const spaceXBetween = spaces.map((s) => (
   `> :not(:last-child) {
       margin-right: calc(${s}/2);
     }`));
-
-

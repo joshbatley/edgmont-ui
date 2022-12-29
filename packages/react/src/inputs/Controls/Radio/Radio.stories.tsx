@@ -2,8 +2,8 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelect } from '../../../storybook-helpers/presets';
-import { Radio } from '.';
 import { Box } from '../../../data';
+import { Radio } from '.';
 
 export default {
   title: 'Inputs/Radio',

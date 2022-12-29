@@ -1,5 +1,5 @@
-import { Box } from '../../data';
 import React, { useState } from 'react';
+import { Box } from '../../data';
 import { TabCardItems } from './TabCardItems';
 import { TabNavItems } from './TabNavItems';
 import { TabPaneList } from './TabPane';
@@ -32,4 +32,3 @@ export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'defa
     </Box>
   );
 };
-

@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { ClickableElement, OutlineButton } from '../../../inputs/Button';
 import { CalendarIcon } from '@heroicons/react/24/outline';
-import { Text } from '../../../data';
 import styled from 'styled-components';
+import { ClickableElement, OutlineButton } from '../../../inputs/Button';
+import { Text } from '../../../data';
 
 export type DateInputProps = {
   placeholder?: string;

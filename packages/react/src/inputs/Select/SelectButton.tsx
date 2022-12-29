@@ -1,9 +1,9 @@
 import React from 'react';
-import { ClickableElement, OutlineButton, OutlineButtonProps } from '../Button';
-import { Box, Text } from '../../data';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
-import { useSelectContext } from './SelectContext';
 import styled from 'styled-components';
+import { Box, Text } from '../../data';
+import { ClickableElement, OutlineButton, OutlineButtonProps } from '../Button';
+import { useSelectContext } from './SelectContext';
 
 export type SelectButtonProps = {
   isClearable?: boolean;

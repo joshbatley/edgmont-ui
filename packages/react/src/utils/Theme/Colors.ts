@@ -37,10 +37,10 @@ export const DarkThemeColors = {
   baseAccent: '#cbd5e1',
   baseHighlight: '#64748b',
   background: [
-    '#0f172a', // White
-    '#1e293b', // offwhite
-    '#334155', // lightGray
-    '#475569', // gray
+    '#0f172a',
+    '#1e293b',
+    '#334155',
+    '#475569',
   ],
 
   primary: '#4f46e5',
@@ -65,24 +65,3 @@ export const DarkThemeColors = {
 
   modalBg: 'rgba(71, 85, 105, 0.70)',
 };
-
-
-// primary: '#4f46e5',
-// primaryAccent: '#4338ca',
-// primaryHighlight: '#4338ca',
-
-// success: '#10b981',
-// successAccent: '#0f766e',
-// successHighlight: '#047857',
-
-// info: '#0369a1',
-// infoAccent: '##7dd3fc',
-// infoHighlight: '#0369a1',
-
-// error: '#fda4af',
-// errorAccent: '#be123c',
-// errorHighlight: '#be123c',
-
-// warning: '#fcd34d',
-// warningAccent: '#b45309',
-// warningHighlight: '#b45309',

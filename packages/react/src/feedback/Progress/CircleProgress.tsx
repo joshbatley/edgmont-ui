@@ -1,5 +1,5 @@
-import { darken } from 'polished';
 import React from 'react';
+import { darken } from 'polished';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 

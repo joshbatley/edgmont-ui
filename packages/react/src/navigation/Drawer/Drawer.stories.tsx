@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { PrimaryButton } from '../../inputs';
-import { Drawer } from '.';
 import { Box } from '../../data';
+import { Drawer } from '.';
 
 export default {
   title: 'Navigation/Drawer',

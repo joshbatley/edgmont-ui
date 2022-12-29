@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Image } from '.';
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import { Box } from '../../data';
+import { Image } from '.';
 
 export default {
   title: 'Data/Image',

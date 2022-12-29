@@ -1,6 +1,6 @@
 import React from 'react';
-import { List } from '../../data';
 import styled from 'styled-components';
+import { List } from '../../data';
 import { useSelectContext } from './SelectContext';
 
 const StyledList = styled(List)`

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Pagination } from '.';
 import { Box } from '../../data';
+import { Pagination } from '.';
 
 export default {
   title: 'Data/Pagination',

@@ -4,8 +4,8 @@ import { Story } from '@storybook/react';
 import { intercardinalPointsSelect } from '../../storybook-helpers/presets';
 import { OutlineButton } from '../../inputs';
 import { Snack } from '../../types/Snackbar';
-import { SnackbarProvider, useSnackbar } from '.';
 import { Box } from '../../data';
+import { SnackbarProvider, useSnackbar } from '.';
 
 export default {
   title: 'Feedback/Snackbar',

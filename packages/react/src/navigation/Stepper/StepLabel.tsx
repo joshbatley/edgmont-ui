@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { StepIcon } from './StepIcon';
 import { useStepperContext } from './StepperContext';
-import styled from 'styled-components';
 
 export type StepLabelProps = {
   icon?: React.ReactNode;
@@ -59,7 +59,6 @@ const LineContainer = styled.div<{ direction: Direction }>`
     margin-bottom: ${theme.space[3]};
   `}
 `;
-
 
 export const StepLabel: React.FC<StepLabelProps> = ({
   icon, children, idx = 0, state, error,

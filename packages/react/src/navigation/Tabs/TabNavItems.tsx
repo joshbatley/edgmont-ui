@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { ClickableElement } from '../../inputs';
 import { Scrollable } from '../../utils';
 import { Box } from '../../data';
-import styled from 'styled-components';
 
 const TabNavItem = styled(ClickableElement)`
   padding: ${({ theme }) => `${theme.space[3]} ${theme.space[4]}`};

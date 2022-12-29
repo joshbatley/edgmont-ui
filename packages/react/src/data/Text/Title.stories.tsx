@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Title as Comp, HeadingProps } from '.';
 import { Box } from '../../data';
+import { Title as Comp, HeadingProps } from '.';
 
 export default {
   title: 'Data/Text',

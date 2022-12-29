@@ -1,8 +1,8 @@
 import React from 'react';
-import { LinearSlide } from '../../utils';
 import styled from 'styled-components';
 import { darken } from 'polished';
 import { variant } from 'styled-system';
+import { LinearSlide } from '../../utils';
 import { Box } from '../../data';
 
 export type LinearLoaderProps = {

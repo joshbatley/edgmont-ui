@@ -2,8 +2,8 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { colorSelect, sizeSelect } from '../../storybook-helpers/presets';
-import { Switch } from '.';
 import { Box } from '../../data';
+import { Switch } from '.';
 
 export default {
   title: 'Inputs/Switch',

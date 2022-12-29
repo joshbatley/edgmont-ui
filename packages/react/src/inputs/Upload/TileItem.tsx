@@ -1,10 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { Text, Image, Box } from '../../data';
 import { ClickableElement } from '../../inputs/Button';
 import { Tooltip } from '../../feedback/Tooltip';
 import { AcceptedFile } from './Utils';
-import styled from 'styled-components';
 
 export type TileItemProps = {
   file: AcceptedFile;

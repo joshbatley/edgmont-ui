@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { Text } from '.';
 import { ThemeDefaultProvider } from '../../utils';
+import { Text } from '.';
 
 function render(component: ReactNode) {
   return testRender(<ThemeDefaultProvider>{component}</ThemeDefaultProvider>);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from '../../../storybook-helpers/presets';
 import { LockClosedIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from '../../../inputs';
+import { sizeSelect } from '../../../storybook-helpers/presets';
 import { Box, Text } from '../../../data';
 import { Password as PasswordComp, TextField } from '..';
 

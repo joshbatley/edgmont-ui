@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
+import styled from 'styled-components';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { Text, List } from '../../data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
 import { BaseUploader, BaseUploaderProps } from './BaseUploader';
 import { AcceptedFile } from './Utils';
-import styled from 'styled-components';
 
 export type UploadZoneProps = {
   showAsTile?: boolean;

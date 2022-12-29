@@ -19,7 +19,6 @@ export const generateBorders = (colors: Record<string, string | string[]>) => {
   }, {} as Record<any, string[]>);
 };
 
-
 export const radii = [
   0,            // 0 - none
   '0.125rem',   // 1 - sm

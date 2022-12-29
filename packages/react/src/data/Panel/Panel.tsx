@@ -1,5 +1,5 @@
-import { Box, BoxProps } from '../Box';
 import styled from 'styled-components';
+import { Box, BoxProps } from '../Box';
 
 export const Panel = styled(Box) <BoxProps>`
   border-radius:${({ theme }) => theme.radii[5]};

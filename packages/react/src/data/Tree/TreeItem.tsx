@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { isObjectAndValid } from '../../shared/isObjectAndValid';
 import styled from 'styled-components';
+import { isObjectAndValid } from '../../shared/isObjectAndValid';
 import { Collapse } from '../../utils/Transitions/Collapse';
 import { useTreeContext } from './TreeContext';
 import { ClickableElement } from '../../inputs/Button/ClickableElement';

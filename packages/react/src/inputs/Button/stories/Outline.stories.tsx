@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from '../../../storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { OutlineButton } from '../OutlineButton';
+import { sizeSelect } from '../../../storybook-helpers/presets';
 import { Box } from '../../../data';
+import { OutlineButton } from '../OutlineButton';
 
 export default {
   title: 'Inputs/Buttons/Outline',

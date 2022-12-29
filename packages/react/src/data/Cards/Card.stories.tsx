@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Card, CardContent, CardMedia } from '.';
+import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { Title, Text, Box } from '../../data';
 import { Label, OutlineButton, PrimaryButton, TextArea, TextField } from '../../inputs';
-import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { Card, CardContent, CardMedia } from '.';
 
 export default {
   title: 'Data/Card',
