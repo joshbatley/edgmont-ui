@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/outline';
-import { Button } from 'inputs';
+import { Button } from '../../../inputs/Button';
 
 export type LeftNavigationProps = {
   decreaseYear?: () => void;

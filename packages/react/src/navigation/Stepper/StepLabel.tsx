@@ -1,5 +1,6 @@
 import React from 'react';
-import { StepIcon, useStepperContext } from '.';
+import { StepIcon } from './StepIcon';
+import { useStepperContext } from './StepperContext';
 import styled from 'styled-components';
 
 export type StepLabelProps = {

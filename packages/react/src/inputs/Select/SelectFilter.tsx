@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { TextField, TextFieldProps } from 'inputs';
+import { TextField, TextFieldProps } from '../TextField';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
-import { useSelectContext, SelectButton, SelectButtonProps } from '.';
+import { useSelectContext } from './SelectContext';
+import { SelectButton, SelectButtonProps } from './SelectButton';
 
 export type SelectFilterProps = {
   textProps?: TextFieldProps;

@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: any }>`
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
     tab-size: 4;
+    background: ${({ theme }) => theme.colors.background[0]};
     font-family: ${({ theme }) => theme.fonts.base};
     color: ${({ theme }) => theme.colors.baseAccent};
     margin: 0;

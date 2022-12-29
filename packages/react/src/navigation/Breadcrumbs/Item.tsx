@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export type ItemProps = {
   item: any;

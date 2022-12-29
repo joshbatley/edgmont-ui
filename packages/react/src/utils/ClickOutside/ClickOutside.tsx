@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Grow, Portal } from 'utils';
+import { Portal } from '../Portal';
+import { Grow } from '../Transitions';
 
 export type ClickOutsideProps = {
   handleClose: () => void;

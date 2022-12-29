@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { BaseButton, BaseButtonProps } from 'inputs/Button/BaseButton';
+import { BaseButton, BaseButtonProps } from './BaseButton';
 
 export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
@@ -18,7 +18,6 @@ export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>((
     backgroundColor="background.0"
     border="background3.1"
     color="base"
-    loaderColor="base"
     ref={ref}
     {...rest}
   >

@@ -1,4 +1,4 @@
-import { Box, BoxProps } from 'data/Box';
+import { Box, BoxProps } from '../Box';
 import styled from 'styled-components';
 
 export const Panel = styled(Box) <BoxProps>`

@@ -1,8 +1,8 @@
 import React, { Ref, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import { ClickOutside } from 'utils';
-import { Box } from 'data';
+import { ClickOutside } from '../../utils';
+import { Box } from '../../data';
 
 export type MenuProps = {
   direction?: Placement;

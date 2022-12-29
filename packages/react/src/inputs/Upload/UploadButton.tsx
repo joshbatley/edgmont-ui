@@ -1,10 +1,11 @@
 import React, { useCallback } from 'react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
-import { OutlineButton } from 'inputs';
-import { List } from 'data';
+import { OutlineButton } from '../../inputs/Button';
+import { List } from '../../data';
 import { BasicItem } from './BasicItem';
-import { AcceptedFile, BaseUploader, BaseUploaderProps } from '.';
+import { BaseUploader, BaseUploaderProps } from './BaseUploader';
+import { AcceptedFile } from './Utils';
 
 export type UploadButtonProps = {
   buttonText?: boolean;

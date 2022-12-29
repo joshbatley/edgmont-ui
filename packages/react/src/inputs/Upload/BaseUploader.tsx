@@ -1,18 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { DropEvent, DropzoneOptions, FileError, FileRejection, useDropzone } from 'react-dropzone';
-import { getMeta } from './Utils';
-
-export type AcceptedFile = {
-  key: string;
-  file: File;
-  errors?: FileError[];
-  meta: {
-    name: string;
-    type: string;
-    extension: string;
-    bytes: string;
-  }
-};
+import { DropEvent, DropzoneOptions, FileRejection, useDropzone } from 'react-dropzone';
+import { getMeta, AcceptedFile } from './Utils';
 
 export type BaseUploaderProps = {
   container: React.ElementType;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'data/Box';
+import { Box } from '../../data';
 
 export type AddonElementProps = {
   position: 'left' | 'right';

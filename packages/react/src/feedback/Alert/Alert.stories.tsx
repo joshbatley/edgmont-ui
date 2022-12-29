@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { severitySelect } from 'storybook-helpers/presets';
+import { severitySelect } from '../../storybook-helpers/presets';
 import { SunIcon } from '@heroicons/react/24/solid';
 import { Alert } from '.';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export default {
   title: 'Feedback/Alert',

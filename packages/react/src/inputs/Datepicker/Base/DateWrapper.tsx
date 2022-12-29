@@ -1,7 +1,7 @@
 import React, { Ref, useState } from 'react';
 import { Placement } from '@popperjs/core';
 import { usePopper } from 'react-popper';
-import { ClickOutside } from 'utils';
+import { ClickOutside } from '../../../utils';
 
 export type DateWrapperProps = {
   direction?: Placement;

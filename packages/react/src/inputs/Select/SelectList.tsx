@@ -1,7 +1,7 @@
 import React from 'react';
-import { List } from 'data/List';
+import { List } from '../../data';
 import styled from 'styled-components';
-import { useSelectContext } from '.';
+import { useSelectContext } from './SelectContext';
 
 const StyledList = styled(List)`
   padding-top: ${({ theme }) => theme.space[1]};

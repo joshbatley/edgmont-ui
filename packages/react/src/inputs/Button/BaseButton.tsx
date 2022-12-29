@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import {
   border, BorderProps, color, ColorProps, flexbox, FlexboxProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, typography, TypographyProps, variant,
 } from 'styled-system';
-import { CircleLoader } from 'feedback';
 
 export type BaseButtonProps = {
   size?: Size | 'none';
-  isLoading?: boolean;
   type?: 'button' | 'reset' | 'submit';
   as?: AsProp;
-  loaderColor?: Colors;
 } & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps & FlexboxProps;
 
 export const StyledButton = styled.button<BaseButtonProps>`
@@ -26,7 +23,6 @@ export const StyledButton = styled.button<BaseButtonProps>`
     outline-offset: 2px;
     box-shadow: ${({ theme }) => theme.shadows.focus};
   }
-  ${({ isLoading }) => isLoading && 'cursor: wait;'}
   ${({ disabled }) => disabled && 'cursor: not-allowed;'}
   ${({ theme }) => theme.transition}
   ${variant({
@@ -64,11 +60,10 @@ export const StyledButton = styled.button<BaseButtonProps>`
 `;
 
 export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
-  children, size = 'medium', isLoading, loaderColor, disabled, ...rest
+  children, size = 'medium', disabled, ...rest
 }, ref) => {
   return (
-    <StyledButton size={size} ref={ref} disabled={isLoading || disabled}  {...rest}>
-      {(isLoading && loaderColor) && (<CircleLoader color={loaderColor as Colors} height={16} width={16} />)}
+    <StyledButton size={size} ref={ref} disabled={disabled}  {...rest}>
       {children}
     </StyledButton>
   );

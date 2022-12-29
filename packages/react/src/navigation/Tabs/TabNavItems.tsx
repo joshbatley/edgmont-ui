@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { ClickableElement } from 'inputs/Button/ClickableElement';
-import { Scrollable } from 'utils';
-import { Box } from 'data/Box';
+import { ClickableElement } from '../../inputs';
+import { Scrollable } from '../../utils';
+import { Box } from '../../data';
 import styled from 'styled-components';
 
 const TabNavItem = styled(ClickableElement)`

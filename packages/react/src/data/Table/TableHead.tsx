@@ -23,7 +23,7 @@ const TableHeadItem = styled.th`
   letter-spacing: 0.025em;
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};
-  color: ${({ theme }) => theme.colors.baseLight};
+  color: ${({ theme }) => theme.colors.baseHighlight};
 `;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, headers, sticky, ...rest }, ref) => {

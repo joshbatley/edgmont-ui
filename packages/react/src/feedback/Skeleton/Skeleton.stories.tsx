@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Title, Text as TextComp, Box } from 'data';
+import { Title, Text as TextComp, Box } from '../../data';
 import { Skeleton } from '.';
 
 export default {

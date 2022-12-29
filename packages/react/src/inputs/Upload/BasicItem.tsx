@@ -1,9 +1,9 @@
 import React from 'react';
 import { PaperClipIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { ClickableElement } from 'inputs';
-import { Tooltip } from 'feedback';
-import { Box, Text } from 'data';
-import { AcceptedFile } from '.';
+import { ClickableElement } from '../../inputs/Button';
+import { Tooltip } from '../../feedback/Tooltip';
+import { Box, Text } from '../../data';
+import { AcceptedFile } from './Utils';
 import styled from 'styled-components';
 
 export type BasicItemProps = {

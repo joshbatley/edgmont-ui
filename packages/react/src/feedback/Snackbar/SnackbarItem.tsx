@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Slide } from 'utils';
-import { Alert } from 'feedback';
-import { Snack } from 'types/Snackbar';
+import { Slide } from '../../utils';
+import { Alert } from '../Alert';
+import { Snack } from '../../types/Snackbar';
 import styled from 'styled-components';
 
 export type SnackbarItemProps = {

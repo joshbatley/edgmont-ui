@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Image } from '.';
 import { PhotoIcon } from '@heroicons/react/24/solid';
-import { Box } from 'data/Box';
+import { Box } from '../../data';
 
 export default {
   title: 'Data/Image',

@@ -2,7 +2,7 @@ import React, { forwardRef, ReactElement, ReactNode } from 'react';
 import { BaseInput } from './BaseInput';
 import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
-import { Box } from 'data/Box';
+import { Box } from '../../data';
 import styled from 'styled-components';
 
 export type TextFieldProps = {

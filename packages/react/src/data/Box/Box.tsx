@@ -20,6 +20,6 @@ export const Box = styled.div<BoxProps>`
   ${flexbox}
   ${position}
   ${typography}
-  ${({ spaceXBetween, theme }) => spaceXBetween && theme.spaceXBetween[spaceXBetween]}
-  ${({ spaceYBetween, theme }) => spaceYBetween && theme.spaceYBetween[spaceYBetween]}
+  ${({ spaceXBetween, theme }) => spaceXBetween && theme.spaceXBetween[spaceXBetween as number]}
+  ${({ spaceYBetween, theme }) => spaceYBetween && theme.spaceYBetween[spaceYBetween as number]}
 `;

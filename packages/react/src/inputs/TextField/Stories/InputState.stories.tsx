@@ -2,8 +2,8 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { LockClosedIcon, EyeIcon } from '@heroicons/react/24/solid';
-import { ClickableElement } from 'inputs';
-import { Box, Text } from 'data';
+import { ClickableElement } from '../../../inputs';
+import { Box, Text } from '../../../data';
 import { TextField } from '..';
 
 export default {

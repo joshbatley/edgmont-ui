@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
-import { isObjectAndValid } from 'shared/isObjectAndValid';
+import { isObjectAndValid } from '../../shared/isObjectAndValid';
 import styled from 'styled-components';
-import { Collapse } from 'utils';
-import { useTreeContext } from '.';
+import { Collapse } from '../../utils/Transitions/Collapse';
+import { useTreeContext } from './TreeContext';
 import { ClickableElement } from '../../inputs/Button/ClickableElement';
-import { Box } from 'data/Box';
+import { Box } from '../Box';
 
 type Icon = React.ReactNode | {
   endIcon?: React.ReactNode;

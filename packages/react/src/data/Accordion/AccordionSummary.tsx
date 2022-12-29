@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import { ClickableElement } from 'inputs/Button/ClickableElement';
-import { AccordionProps } from './Accordion';
+import { ClickableElement } from '../../inputs/Button';
 
-const StyledSummary = styled(ClickableElement) <AccordionProps>`
+type AccordionSummaryProps = {
+  isOpen?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+} & WithChildren;
+
+const StyledSummary = styled(ClickableElement) <AccordionSummaryProps>`
   width: 100%;
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
   border-bottom: ${({ theme }) => theme.borders.background2[1]};
@@ -38,7 +42,7 @@ const StyledIcon = styled(ChevronRightIcon) <{ isOpen?: boolean }>`
   `}
 `;
 
-export const AccordionSummary: React.FC<AccordionProps> = ({ isOpen, onClick, children }) => (
+export const AccordionSummary: React.FC<AccordionSummaryProps> = ({ isOpen, onClick, children }) => (
   <StyledSummary isOpen={isOpen} onClick={onClick}>
     <StyledIcon
       width={16}

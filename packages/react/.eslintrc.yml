@@ -28,6 +28,7 @@ rules:
   react-hooks/rules-of-hooks: 2
   react-hooks/exhaustive-deps: 1
   import/no-unresolved: 0
+  import/no-cycle: 1
   import/extensions: 0
   import/prefer-default-export: 0
   import/no-extraneous-dependencies: 0

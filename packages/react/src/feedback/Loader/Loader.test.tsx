@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import { CircleLoader } from '.';
-import { ThemeDefaultProvider } from 'utils';
+import { ThemeDefaultProvider } from '../../utils';
 
 function render(Comp: ReactNode) {
   return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);

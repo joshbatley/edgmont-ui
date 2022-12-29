@@ -1,7 +1,7 @@
 import React from 'react';
 import { XCircleIcon } from '@heroicons/react/24/solid';
-import { ClickableElement } from 'inputs';
-import { Text } from 'data';
+import { ClickableElement } from '../../inputs';
+import { Text } from '../../data';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { tint, darken } from 'polished';

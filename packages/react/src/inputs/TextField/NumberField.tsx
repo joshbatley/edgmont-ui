@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, TextFieldProps } from '.';
+import { TextField, TextFieldProps } from './TextField';
 
 export type NumberFieldProps = Omit<TextFieldProps, 'type'>;
 

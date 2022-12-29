@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { Text, List } from 'data';
+import { Text, List } from '../../data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
-import { BaseUploader, AcceptedFile, BaseUploaderProps } from '.';
+import { BaseUploader, BaseUploaderProps } from './BaseUploader';
+import { AcceptedFile } from './Utils';
 import styled from 'styled-components';
 
 export type UploadZoneProps = {

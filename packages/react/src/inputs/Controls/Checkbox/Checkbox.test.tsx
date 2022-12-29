@@ -1,7 +1,7 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ThemeDefaultProvider } from 'utils';
+import { ThemeDefaultProvider } from '../../../utils';
 import { Checkbox } from '.';
 
 function render(Comp: any) {

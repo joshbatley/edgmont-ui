@@ -1,6 +1,6 @@
 import React from 'react';
-import { ClickableElement } from 'inputs';
-import { Collapse } from 'utils';
+import { ClickableElement } from '../../inputs/Button';
+import { Collapse } from '../../utils/Transitions';
 import { AccordionSummary } from './AccordionSummary';
 import { AccordionDetail, DetailsGrouping } from './AccordionDetail';
 

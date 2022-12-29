@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Panel } from 'data';
+import { Panel } from '../../data';
 import { Tree, TreeItem } from '.';
 import { BellIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';

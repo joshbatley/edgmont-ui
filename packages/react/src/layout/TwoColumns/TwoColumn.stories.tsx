@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { TwoColumns } from '.';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export default {
   title: 'Layout/TwoColumns',

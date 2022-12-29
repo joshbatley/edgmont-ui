@@ -1,8 +1,8 @@
 import React from 'react';
-import { ClickableElement } from 'inputs/Button/ClickableElement';
-import { Scrollable } from 'utils';
+import { ClickableElement } from '../../inputs';
+import { Scrollable } from '../../utils';
 import styled from 'styled-components';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export type TabCardItemProps = {
   selected?: boolean;

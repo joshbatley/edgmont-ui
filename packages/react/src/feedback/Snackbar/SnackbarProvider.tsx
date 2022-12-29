@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Portal } from 'utils';
-import { SnackbarProviderProps, Snack, SnackOptions } from 'types/Snackbar';
-import { SnackbarContext, SnackbarItem } from '.';
+import { Portal } from '../../utils';
+import { SnackbarProviderProps, Snack, SnackOptions } from '../../types/Snackbar';
+import { SnackbarContext } from './SnackbarContext';
+import { SnackbarItem } from './SnackbarItem';
 import { createId, getPosition } from './utils';
 import styled from 'styled-components';
 

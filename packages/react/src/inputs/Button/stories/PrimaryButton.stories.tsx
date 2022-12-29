@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect, sizeSelect } from 'storybook-helpers/presets';
+import { colorSelect, sizeSelect } from '../../../storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { PrimaryButton } from '../PrimaryButton';
-import { Box } from 'data';
+import { Box } from '../../../data';
 
 export default {
   title: 'Inputs/Buttons/Primary',
@@ -51,7 +51,7 @@ Colors.argTypes = {
 };
 
 export const Loading: Story = ({ children, ...rest }) => (
-  <PrimaryButton isLoading {...rest}>
+  <PrimaryButton {...rest}>
     <span>Saving</span>
   </PrimaryButton>
 );

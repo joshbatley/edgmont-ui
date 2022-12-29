@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepperContext } from '.';
+import { StepperContext } from './StepperContext';
 import styled from 'styled-components';
 
 type StepperPropsVertical = {

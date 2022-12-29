@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Panel } from 'data';
+import { Panel } from '../../data';
 import { UploadButton as UB, UploadZone as UZ } from '.';
 
 export default {

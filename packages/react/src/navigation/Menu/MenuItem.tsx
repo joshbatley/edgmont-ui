@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'inputs';
+import { Button } from '../../inputs/Button';
 
 export type MenuItemProps = {
   onClick?: () => void;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { OutlineButton, PrimaryButton, TextField } from 'inputs';
-import { Panel, Text } from 'data';
-import { Chip } from 'feedback';
+import { OutlineButton, PrimaryButton, TextField } from '../../inputs';
+import { Panel, Text } from '../../data';
+import { Chip } from '../../feedback';
 import { Modal } from '.';
 
 export default {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'data/Box';
+import { Box } from '../../data';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 

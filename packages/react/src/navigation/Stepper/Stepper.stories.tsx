@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
 import { Stepper, StepLabel } from '.';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export default {
   title: 'Navigation/Stepper',

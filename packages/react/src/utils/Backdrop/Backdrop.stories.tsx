@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelect } from 'storybook-helpers/presets';
-import { OutlineButton, PrimaryButton } from 'inputs';
-import { Box, Text } from 'data';
+import { colorSelect } from '../../storybook-helpers/presets';
+import { OutlineButton, PrimaryButton } from '../../inputs';
+import { Box, Text } from '../../data';
 import { Backdrop } from '.';
 
 export default {

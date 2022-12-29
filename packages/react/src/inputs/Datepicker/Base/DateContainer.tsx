@@ -1,4 +1,4 @@
-import { Box } from 'data';
+import { Box } from '../../../data';
 import React from 'react';
 
 export const DateContainer: React.FC<WithChildren> = ({ children }) => (

@@ -1,10 +1,10 @@
 import React, { Ref, useState } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import { format, getYear } from 'date-fns';
-import { ClickableElement } from 'inputs';
-import { Menu, MenuItem } from 'navigation';
+import { ClickableElement } from '../../../inputs/Button';
+import { Menu, MenuItem } from '../../../navigation/Menu';
 import { LeftNavigation, RightNavigation } from './DateNavigation';
-import { Box } from 'data/Box';
+import { Box } from '../../../data';
 import styled from 'styled-components';
 
 const months = [

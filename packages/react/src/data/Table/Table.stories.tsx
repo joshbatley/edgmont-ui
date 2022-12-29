@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Box, Pagination, Text } from 'data';
+import { Box, Pagination, Text } from '../../data';
 import { Table, TableHead, TableBody, TableCell, TableRow } from '.';
 
 export default {

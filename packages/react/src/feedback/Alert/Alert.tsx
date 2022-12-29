@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Title } from 'data';
+import { Box, Text, Title } from '../../data';
 import { getIcon } from './utils';
 import { CloseBtn } from './CloseBtn';
 import styled from 'styled-components';

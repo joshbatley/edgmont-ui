@@ -56,7 +56,6 @@ export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>((
   <StyledButton
     ref={ref}
     color={color}
-    loaderColor={color}
     {...rest}
   >
     {children}

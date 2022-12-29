@@ -1,6 +1,6 @@
 import React from 'react';
-import { TwoColumns } from 'layout';
-import { Box } from 'data';
+import { TwoColumns } from '../TwoColumns';
+import { Box } from '../../data';
 
 export type ThreeColumnsProps = {
   sideNav?: React.ReactNode;

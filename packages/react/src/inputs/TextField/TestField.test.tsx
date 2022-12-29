@@ -2,7 +2,7 @@ import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 import { TextField } from '.';
-import { ThemeDefaultProvider } from 'utils';
+import { ThemeDefaultProvider } from '../../utils';
 
 function render(Comp: any) {
   return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);

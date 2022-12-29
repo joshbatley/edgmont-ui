@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from 'data';
+import { Box, Text } from '../../data';
 
 export type LabelProps = {
   value: React.ReactNode;

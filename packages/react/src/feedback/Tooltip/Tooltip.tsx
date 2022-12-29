@@ -1,7 +1,7 @@
 import React, { Ref, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import { Portal } from 'utils';
+import { Portal } from '../../utils';
 import styled from 'styled-components';
 
 export type TooltipProps = {

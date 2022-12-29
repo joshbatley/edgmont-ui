@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { ListItem } from 'data';
-import { useSelectContext } from '.';
+import { ListItem } from '../../data';
+import { useSelectContext } from './SelectContext';
 import styled from 'styled-components';
 
 export type SelectItemProps = {

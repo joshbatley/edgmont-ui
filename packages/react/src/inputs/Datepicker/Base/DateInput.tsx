@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react';
-import { ClickableElement } from 'inputs/Button/ClickableElement';
-import { OutlineButton } from 'inputs';
+import { ClickableElement, OutlineButton } from '../../../inputs/Button';
 import { CalendarIcon } from '@heroicons/react/24/outline';
-import { Text } from 'data';
+import { Text } from '../../../data';
 import styled from 'styled-components';
 
 export type DateInputProps = {

@@ -1,6 +1,8 @@
-import { Box } from 'data';
+import { Box } from '../../data';
 import React, { useState } from 'react';
-import { TabNavItems, TabPaneList, TabCardItems } from '.';
+import { TabCardItems } from './TabCardItems';
+import { TabNavItems } from './TabNavItems';
+import { TabPaneList } from './TabPane';
 
 const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   return React.Children.toArray(children).map((node) => {

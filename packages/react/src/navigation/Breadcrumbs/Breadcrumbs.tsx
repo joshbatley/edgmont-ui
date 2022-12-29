@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { Button } from 'inputs';
+import { Button } from '../../inputs';
 import { Item } from './Item';
-import { Box } from 'data';
+import { Box } from '../../data';
 
 export type BreadcrumbsProps = {
   maxItems?: number;

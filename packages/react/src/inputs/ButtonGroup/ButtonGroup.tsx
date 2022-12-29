@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledButton } from 'inputs/Button/BaseButton';
+import { StyledButton } from '../Button/BaseButton';
 
 const Grouping = styled.div`
   ${StyledButton}:not([data-ignore-radius]) {
