@@ -1,8 +1,22 @@
 {
-  "name": "docs",
+  "name": "@edgmont-ui/docs",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "homepage": "https://ui.edgmont.dev/",
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "contributors": [
+    "joshbatley"
+  ],
+  "bugs": {
+    "url": "https://github.com/joshbatley/edgmont-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshbatley/edgmont-ui"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
