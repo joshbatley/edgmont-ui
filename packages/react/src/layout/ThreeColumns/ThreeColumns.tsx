@@ -14,7 +14,7 @@ export const ThreeColumns: React.FC<ThreeColumnsProps> = ({
   <TwoColumns sideNav={sideNav}>
     <Box
       height="100%"
-      m-width="0"
+      minWidth="0"
       display={{ md: 'grid' }}
       gridTemplateColumns={{ md: '19.5rem auto' }}
       gridAutoFlow={{ md: 'row' }}

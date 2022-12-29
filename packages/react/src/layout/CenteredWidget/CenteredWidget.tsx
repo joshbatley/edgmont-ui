@@ -1,6 +1,13 @@
-import React from 'react';
-import { Box } from '../../data';
+import styled from 'styled-components';
+import { Box, BoxProps } from '../../data';
 
-export const CenteredWidget: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ children, ...rest }) => (
-  <Box maxWidth="36rem" mx="auto" {...rest}>{children}</Box>
+const CenteredDiv = styled(Box) <BoxProps>`
+  margin: 0 auto;
+  width: 36rem;
+`;
+
+export const CenteredWidget: React.FC<BoxProps & WithChildren> = ({ children, ...rest }) => (
+  <Box display="flex" alignItems="center" justifyItems="center" height="100vh">
+    <CenteredDiv {...rest as any}>{children}</CenteredDiv>
+  </Box>
 );

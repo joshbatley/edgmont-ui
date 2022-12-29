@@ -199,11 +199,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: any }>`
     cursor: pointer;
   }
 
-
-  :disabled {
-    cursor: default;
-  }
-
   img,
   svg,
   video,

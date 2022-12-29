@@ -16,10 +16,7 @@ const StyledButton = styled(BaseButton) <ButtonProps>`
 `;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, ...rest }, ref) => (
-  <StyledButton
-    ref={ref}
-    {...rest}
-  >
+  <StyledButton ref={ref} {...rest}>
     {children}
   </StyledButton>
 ));
