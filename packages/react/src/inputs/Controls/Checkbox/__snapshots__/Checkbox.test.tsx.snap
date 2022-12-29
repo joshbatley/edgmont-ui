@@ -3,20 +3,20 @@
 exports[`Checkbox test should errored with disabled classes 1`] = `
 <div>
   <label
-    class="sc-hLBbgP dBDxxq"
+    class="sc-ezOQGI kgyzsy"
   >
     <div
-      class="sc-eDvSVe iGAIsb"
+      class="sc-bYMpWt jdWWHh"
     >
       <input
-        class="sc-iBYQkv jgRTsF"
+        class="sc-jIRcFI bWqaOu"
         type="checkbox"
       />
       <div
-        class="sc-jSUZER gKloHQ"
+        class="sc-kMjNwy bpxqpd"
       />
       <div
-        class="sc-gKPRtg fdqAzt"
+        class="sc-ilhmMj ieqlfj"
       >
         <svg
           aria-hidden="true"
@@ -41,20 +41,20 @@ exports[`Checkbox test should errored with disabled classes 1`] = `
 exports[`Checkbox test should render 1`] = `
 <div>
   <label
-    class="sc-hLBbgP dBDxxq"
+    class="sc-ezOQGI kgyzsy"
   >
     <div
-      class="sc-eDvSVe eDpqpU"
+      class="sc-bYMpWt jpBeJS"
     >
       <input
-        class="sc-iBYQkv jgRTsF"
+        class="sc-jIRcFI bWqaOu"
         type="checkbox"
       />
       <div
-        class="sc-jSUZER heCVYM"
+        class="sc-kMjNwy fkrtlJ"
       />
       <div
-        class="sc-gKPRtg glUsyk"
+        class="sc-ilhmMj izIeci"
       >
         <svg
           aria-hidden="true"
@@ -79,23 +79,23 @@ exports[`Checkbox test should render 1`] = `
 exports[`Checkbox test should render with disabled classes 1`] = `
 <div>
   <label
-    class="sc-hLBbgP bwQUxR"
+    class="sc-ezOQGI dxWDVV"
     disabled=""
   >
     <div
-      class="sc-eDvSVe eDpqpU"
+      class="sc-bYMpWt jpBeJS"
     >
       <input
-        class="sc-iBYQkv jgRTsF"
+        class="sc-jIRcFI bWqaOu"
         disabled=""
         type="checkbox"
       />
       <div
-        class="sc-jSUZER dmuXTk"
+        class="sc-kMjNwy hTSHB"
         disabled=""
       />
       <div
-        class="sc-gKPRtg WOArv"
+        class="sc-ilhmMj cbHLdd"
         disabled=""
       >
         <svg
