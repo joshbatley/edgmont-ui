@@ -5,3 +5,4 @@ export * from './Portal';
 export * from './Scrollable';
 export * from './Transitions';
 export * from './Icons';
+export * from './Theme';

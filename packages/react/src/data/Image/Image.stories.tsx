@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Image } from '.';
 import { PhotoIcon } from '@heroicons/react/24/solid';
+import { Box } from '../../data';
+import { Image } from '.';
 
 export default {
   title: 'Data/Image',
@@ -13,13 +14,13 @@ export default {
 } as Meta;
 
 const fallback = (
-  <div className="w-12 h-12 flex items-center justify-center rounded text-gray-500 bg-white">
+  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight" borderRadius="2" bg="background.2">
     <PhotoIcon width={30} height={30} />
-  </div>
+  </Box>
 );
 
 export const Example: Story = () => (
-  <div className="space-y-4">
+  <div>
     <div>
       Broken Image with fallback
       <Image width="200" height="200" fallback={fallback} src="https://brokenUrl.xyz/NotAImage.png" />
@@ -28,5 +29,5 @@ export const Example: Story = () => (
       Working Image with fallback
       <Image width="200" height="200" fallback={fallback} src="https://mui.com/static/images/cards/contemplative-reptile.jpg" />
     </div>
-  </div >
+  </div>
 );

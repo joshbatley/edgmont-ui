@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Panel } from 'data';
+import { Panel } from '../../data';
 import { UploadButton as UB, UploadZone as UZ } from '.';
 
 export default {
@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 export const UploadZone: Story = ({ ...rest }) => (
-  <Panel className="px-3 py-2 w-1/2">
+  <Panel px="3" py="2" width="50%">
     <UZ {...rest} />
   </Panel>
 );

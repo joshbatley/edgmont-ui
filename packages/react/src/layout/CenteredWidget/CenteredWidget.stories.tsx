@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Panel } from 'data';
+import { Panel } from '../../data';
 import { CenteredWidget } from '.';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 
 export const Example: Story = () => (
   <CenteredWidget>
-    <Panel className="h-96 p-2">123</Panel>
+    <Panel height="29" p="2">123</Panel>
   </CenteredWidget>
 );
 

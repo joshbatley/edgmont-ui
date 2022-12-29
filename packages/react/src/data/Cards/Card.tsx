@@ -1,14 +1,18 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
+import { FlexboxProps, LayoutProps, SpaceProps, flexbox, layout, space } from 'styled-system';
 
 export type CardProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
-  className?: string;
-};
+} & LayoutProps & FlexboxProps & SpaceProps;
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, className, ...rest }, ref) => (
-  <div className={clsx('rounded-md bg-white shadow-sm overflow-hidden', className)} ref={ref} {...rest}>
-    {children}
-  </div>
-));
+export const Card = styled.div<CardProps>`
+  ${layout}
+  ${flexbox}
+  ${space}
+  border-radius: ${({ theme }) => theme.radii[3]};
+  background: ${({ theme }) => theme.colors.background[1]};
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  overflow: hidden;
+`;

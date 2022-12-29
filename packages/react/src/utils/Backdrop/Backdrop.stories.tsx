@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { colorSelectWithWhite } from 'storybook-helpers/presets';
-import { OutlineButton, PrimaryButton } from 'inputs';
-import { Text } from 'data';
+import { colorSelect } from '../../storybook-helpers/presets';
+import { OutlineButton, PrimaryButton } from '../../inputs';
+import { Box, Text } from '../../data';
 import { Backdrop } from '.';
 
 export default {
@@ -13,7 +13,7 @@ export default {
     color: 'primary',
   },
   argTypes: {
-    color: colorSelectWithWhite,
+    color: colorSelect,
   },
 } as Meta;
 
@@ -24,12 +24,12 @@ export const Default: Story = ({ ...rest }) => {
       <OutlineButton onClick={() => setOpen(!open)}>open</OutlineButton>
       {open && (
         <Backdrop onClick={() => setOpen(!open)} {...rest}>
-          <div className="bg-white h-2/5 w-2/5 flex justify-center items-center flex-col space-y-5">
+          <Box bg="background.0" height="40%" width="40%" display="flex" justifyContent="center" alignItems="center" flexDirection="column" spaceYBetween="5">
             <Text>Hit the close button, or Escape key or click the backdrop</Text>
-            <PrimaryButton color="red" onClick={() => setOpen(!open)}>
+            <PrimaryButton color="error" onClick={() => setOpen(!open)}>
               Close
             </PrimaryButton>
-          </div>
+          </Box>
         </Backdrop>)
       }
     </>);

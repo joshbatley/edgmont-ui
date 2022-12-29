@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { SecondaryButton } from 'inputs';
+import { Button } from '../../inputs';
+import { Box } from '../../data';
 import { Item } from './Item';
 
 export type BreadcrumbsProps = {
@@ -31,25 +32,23 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   let afterItems = items.slice(-itemsAfter);
 
   return (
-    <div className="flex items-center">
+    <Box display="flex" alignItems="center">
       {beforeItems.map((c, idx) => (
         <Item key={idx} item={c} dividerIcon={dividerIcon} />
       ))}
       {showAll ? middleItems.map((c, idx) => (
         <Item key={idx} item={c} dividerIcon={dividerIcon} />
       )) : (
-        <div className='inline-flex items-center'>
-          <SecondaryButton size='small' onClick={() => setShow(true)}>
+        <Box display="inline-flex" alignItems="center">
+          <Button size='small' onClick={() => setShow(true)}>
             <EllipsisHorizontalIcon height={13} width={14} />
-          </SecondaryButton>
-          {React.cloneElement(dividerIcon, {
-            width: 16, height: 16, className: 'inline-block text-gray-500 mx-1.5',
-          })}
-        </div>
+          </Button>
+          <Box display="inline-block" color="baseHighlight" mx="2">{dividerIcon}</Box>
+        </Box>
       )}
       {afterItems.map((c, idx) => (
         <Item key={idx} item={c} isLastItem={idx === afterItems.length - 1} dividerIcon={dividerIcon} />
       ))}
-    </div >
+    </Box >
   );
 };

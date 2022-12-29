@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from 'storybook-helpers/presets';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
+import { sizeSelect } from '../../../storybook-helpers/presets';
+import { Box } from '../../../data';
 import { OutlineButton } from '../OutlineButton';
 
 export default {
@@ -19,11 +20,11 @@ export default {
 export const Example: Story = ({ children, ...rest }) => <OutlineButton {...rest}>{children}</OutlineButton>;
 
 export const Sizes: Story = ({ children, ...rest }) => (
-  <div className="space-x-4">
+  <Box spaceXBetween="4">
     <OutlineButton size="large" {...rest}>{children}</OutlineButton>
     <OutlineButton size="medium" {...rest}>{children}</OutlineButton>
     <OutlineButton size="small" {...rest}>{children}</OutlineButton>
-  </div>
+  </Box>
 );
 Sizes.argTypes = {
   size: {
@@ -33,11 +34,6 @@ Sizes.argTypes = {
   },
 };
 
-export const Loading: Story = ({ children, ...rest }) => (
-  <OutlineButton isLoading {...rest}>
-    <span>Saving</span>
-  </OutlineButton>
-);
 
 export const WithIcon: Story = ({ children, ...rest }) => (
   <OutlineButton {...rest}>

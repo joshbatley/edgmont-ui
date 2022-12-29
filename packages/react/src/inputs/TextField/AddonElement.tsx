@@ -1,18 +1,41 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { Box } from '../../data';
 
 export type AddonElementProps = {
-  containerClasses: string;
-  addonClasses: string;
+  position: 'left' | 'right';
   addon: React.ReactNode;
-  disabled?: boolean;
 };
 
+const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
+  overflow: hidden;
+  ${({ theme, pos }) => pos === 'left' ? `
+    border-right: ${theme.borders.background3[1]};
+    border-top-left-radius: ${theme.radii[3]};
+    border-bottom-left-radius: ${theme.radii[3]};
+  ` : `
+    border-left: ${theme.borders.background3[1]};
+    border-top-right-radius: ${theme.radii[3]};
+    border-bottom-right-radius: ${theme.radii[3]};
+  `}
+
+  &:focus {
+    z-index:0;
+    outline: none;
+    box-shadow: ${({ theme }) => theme.shadows.focus};
+  }
+
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
 export const AddonElement: React.FC<AddonElementProps> = ({
-  containerClasses, addonClasses, addon, disabled,
+  addon, position,
 }) =>
   addon ? (
-    <div className={containerClasses}>
-      {React.cloneElement(addon as React.ReactElement, { className: clsx(addonClasses), disabled })}
-    </div>
+    <StyledBox pos={position} bg="background.3" color="baseAccent" display="flex" alignItems="center">
+      {addon}
+    </StyledBox>
   ) : null;

@@ -28,9 +28,11 @@ rules:
   react-hooks/rules-of-hooks: 2
   react-hooks/exhaustive-deps: 1
   import/no-unresolved: 0
+  import/no-cycle: 1
   import/extensions: 0
   import/prefer-default-export: 0
   import/no-extraneous-dependencies: 0
   "@typescript-eslint/no-explicit-any": 0
   "@typescript-eslint/explicit-function-return-type": 0
   "@typescript-eslint/no-non-null-assertion": 0
+  "@typescript-eslint/indent": 0

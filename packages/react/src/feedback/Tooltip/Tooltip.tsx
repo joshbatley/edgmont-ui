@@ -1,19 +1,28 @@
 import React, { Ref, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import clsx from 'clsx';
-import { Portal } from 'utils';
+import styled from 'styled-components';
+import { Portal } from '../../utils';
 
 export type TooltipProps = {
   tooltip: React.ReactNode;
   direction?: Placement;
-  dark?: boolean;
   as?: AsProp;
   disabled?: boolean;
 } & WithChildren;
 
+const Popover = styled.div`
+  border-radius: ${({ theme }) => theme.radii[2]};
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
+  z-index: 10;
+  font-size: ${({ theme }) => theme.fontSizes[1]};
+  line-height: ${({ theme }) => theme.lineHeights[1]};
+  background: ${({ theme }) => theme.colors.background[1]};
+`;
+
 export const Tooltip: React.FC<TooltipProps> = ({
-  tooltip, children, direction = 'top', dark = false, as: Component = 'div', disabled,
+  tooltip, children, direction = 'top', as: Component = 'div', disabled,
 }) => {
   let [showTooltip, setTooltip] = useState(false);
   let [wrappedRef, setWrappedRef] = useState(null);
@@ -28,7 +37,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   return (
     <>
       <Component
-        className="cursor-pointer"
+        style={{ cursor: 'pointer' }}
         ref={setWrappedRef as Ref<HTMLDivElement>}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -37,14 +46,13 @@ export const Tooltip: React.FC<TooltipProps> = ({
       </Component>
       {(!disabled && showTooltip) && (
         <Portal>
-          <div
-            className={clsx('rounded shadow-md px-3 py-2 z-10 text-sm', dark ? 'text-white bg-gray-700' : 'bg-white')}
+          <Popover
             ref={setPopperRef as Ref<HTMLDivElement>}
             style={styles.popper}
             {...attributes.popper}
           >
             {tooltip}
-          </div>
+          </Popover>
         </Portal>
       )
       }

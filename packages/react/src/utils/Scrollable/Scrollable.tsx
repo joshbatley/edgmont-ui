@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { Box } from '../../data';
+
+const ScrollBox = styled(Box)`
+  white-space: nowrap;
+  scroll-snap-type: x;
+`;
 
 export const Scrollable: React.FC<WithChildren> = ({ children }) => {
   let [{ left, right }, setArrows] = useState({ left: false, right: false });
@@ -29,24 +36,25 @@ export const Scrollable: React.FC<WithChildren> = ({ children }) => {
   }
 
   return (
-    <div className='relative px-5'>
+    <Box position="relative" px="5">
       {left && (
-        <div className="h-full w-5 absolute left-0 top-0 z-50 rounded-t flex items-center" >
-          <ChevronLeftIcon width={16} height={16} className="text-gray-500" />
-        </div>
+        <Box height="100%" width="5" position="absolute" left="0" top="0" zIndex="50" display="flex" alignItems="center" color="baseHighlight">
+          <ChevronLeftIcon width={16} height={16} />
+        </Box>
       )}
-      <div
+      <ScrollBox
+        maxHeight="100%"
         ref={ref}
-        className="max-w-full whitespace-nowrap overflow-x-auto snap-x"
+        overflowX="auto"
         onScroll={handleScroll}
       >
         {children}
-      </div>
+      </ScrollBox>
       {right && (
-        <div className="h-full w-5 right-0 absolute top-0 z-50 rounded-t flex items-center justify-end" >
-          <ChevronRightIcon width={16} height={16} className="text-gray-500" />
-        </div>
+        <Box height="100%" width="5" position="absolute" right="0" top="0" zIndex="50" display="flex" alignItems="center" justifyContent="end" color="baseHighlight">
+          <ChevronRightIcon width={16} height={16} />
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };

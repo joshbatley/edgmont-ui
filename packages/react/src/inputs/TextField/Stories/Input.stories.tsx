@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from 'storybook-helpers/presets';
 import { LockClosedIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
-import { ClickableElement } from 'inputs';
-import { Text } from 'data';
+import { ClickableElement } from '../../../inputs';
+import { sizeSelect } from '../../../storybook-helpers/presets';
+import { Box, Text } from '../../../data';
 import { Password as PasswordComp, TextField } from '..';
 
 export default {
@@ -18,25 +18,25 @@ export default {
   },
 } as Meta;
 
-const Before = ({ ...rest }) => (<ClickableElement onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
-const After = ({ ...rest }) => (<Text {...rest}>.com</Text>);
+const Before = ({ ...rest }) => (<ClickableElement px="3" py="2" onClick={() => alert('boo')} {...rest}>https://</ClickableElement>);
+const After = ({ ...rest }) => (<Box px="3" py="2"><Text {...rest}>.com</Text></Box>);
 
 export const Example: Story = ({ ...rest }) => <TextField {...rest} />;
 
 export const PrefixAndSuffix: Story = ({ ...rest }) => (
-  <div className="space-y-2">
+  <Box spaceYBetween="2">
     <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} {...rest} />
     <TextField suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
     <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
-  </div>
+  </Box>
 );
 
 export const Addons: Story = ({ ...rest }) => (
-  <div className="space-y-2">
+  <Box spaceYBetween="2">
     <TextField before={<Before />} {...rest} />
     <TextField after={<After />} {...rest} />
     <TextField before={<Before />} after={<After />} {...rest} />
-  </div>
+  </Box>
 );
 
 export const Password: Story = ({ ...rest }) => <PasswordComp {...rest} />;

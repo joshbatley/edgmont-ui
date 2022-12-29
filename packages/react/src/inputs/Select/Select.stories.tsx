@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { sizeSelect } from 'storybook-helpers/presets';
+import { sizeSelect } from '../../storybook-helpers/presets';
 import { Select, SelectList, SelectItem, SelectFilter } from '.';
 
 export default {

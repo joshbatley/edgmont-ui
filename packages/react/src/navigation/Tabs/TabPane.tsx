@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import { Box } from '../../data';
 
 export type TabPaneProps = {
   selected?: boolean;
@@ -16,16 +16,18 @@ export type TabPaneListProps = {
 };
 
 export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest }) =>
-  selected ? <div className="px-4 py-5" {...rest}>{children}</div> : null;
+  selected ? <Box px="4" py="5" {...rest}>{children}</Box> : null;
 
-export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => (
-  <div className={clsx({ 'bg-white border rounded-b': type === 'card' })}>
-    {tabs.map(({ key, children, ...rest }) => (
-      <TabPane
-        selected={selected === key}
-        key={key} {...rest}
-      >{children}</TabPane>
-    ))}
-  </div>
-);
-
+export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => {
+  let isCard = type === 'card';
+  return (
+    <Box bg={isCard ? 'background.0' : ''} border={isCard ? 'background2.1' : ''} borderBottomLeftRadius={isCard ? '2' : '0'} borderBottomRightRadius={isCard ? '2' : '0'}>
+      {tabs.map(({ key, children, ...rest }) => (
+        <TabPane
+          selected={selected === key}
+          key={key} {...rest}
+        >{children}</TabPane>
+      ))}
+    </Box>
+  );
+};

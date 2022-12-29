@@ -1,6 +1,8 @@
-import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { Box, BoxProps } from '../Box';
 
-export const Panel: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ className, children, ...rest }) => (
-  <div className={clsx('bg-white shadow rounded', className)} {...rest}>{children}</div>
-);
+export const Panel = styled(Box) <BoxProps>`
+  border-radius:${({ theme }) => theme.radii[5]};
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  background: ${({ theme }) => theme.colors.background[1]};
+`;

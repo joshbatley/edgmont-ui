@@ -1,7 +1,8 @@
 import React from 'react';
+import { Box } from '../../../data';
 
 export const DateContainer: React.FC<WithChildren> = ({ children }) => (
-  <div className="flex text-sm bg-white shadow rounded">
+  <Box display="flex" bg="background.1" borderRadius="2" boxShadow="highlight" fontSize="1" lineHeight="1">
     {children}
-  </div>
+  </Box>
 );

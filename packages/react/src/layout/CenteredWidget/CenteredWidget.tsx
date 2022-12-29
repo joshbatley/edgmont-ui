@@ -1,6 +1,13 @@
-import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { Box, BoxProps } from '../../data';
 
-export const CenteredWidget: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({ children, className }) => (
-  <div className={clsx('max-w-xl mx-auto', className)}>{children}</div>
+const CenteredDiv = styled(Box) <BoxProps>`
+  margin: 0 auto;
+  width: 36rem;
+`;
+
+export const CenteredWidget: React.FC<BoxProps & WithChildren> = ({ children, ...rest }) => (
+  <Box display="flex" alignItems="center" justifyItems="center" height="100vh">
+    <CenteredDiv {...rest as any}>{children}</CenteredDiv>
+  </Box>
 );

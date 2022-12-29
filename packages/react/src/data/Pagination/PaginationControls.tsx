@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import clsx from 'clsx';
 import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { ButtonGroup, HighlightButton } from 'inputs';
+import { Button } from '../../inputs/Button';
+import { ButtonGroup } from '../../inputs/ButtonGroup';
 import { calculatePageNumbers } from './utils';
 
 export type PaginationProps = {
@@ -38,33 +38,37 @@ export const PaginationControls: React.FC<PaginationProps> = ({
 
   return (
     <ButtonGroup>
-      <HighlightButton
+      <Button
         size={size}
-        className="align-bottom"
+        verticalAlign="bottom"
         onClick={() => setSkip(skip - limit)}
         disabled={currentPage === 1}
       >
         <ChevronLeftIcon width={16} height={20} />
-      </HighlightButton>
+      </Button>
       {pages.map((page) => (
-        <HighlightButton
+        <Button
           size={size}
           key={page.toString()}
-          className={clsx({ 'bg-primary-100 z-30': page === currentPage }, 'align-bottom rounded')}
+          borderRadius={2}
+          verticalAlign="bottom"
+          zIndex={page === currentPage ? 30 : 'unset'}
+          backgroundColor={page === currentPage ? 'primary' : 'transparent'}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
+          data-ignore-radius
         >
           {page}
-        </HighlightButton>
+        </Button>
       ))}
-      <HighlightButton
+      <Button
         size={size}
-        className="align-bottom"
+        verticalAlign="bottom"
         onClick={() => setSkip(skip + limit)}
         disabled={currentPage === totalPages}
       >
         <ChevronRightIcon width={16} height={20} />
-      </HighlightButton>
+      </Button>
     </ButtonGroup>
   );
 };

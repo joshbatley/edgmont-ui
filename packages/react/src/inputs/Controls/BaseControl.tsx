@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 export type BaseControlProps = {
   labelText?: string;
@@ -9,61 +9,83 @@ export type BaseControlProps = {
   error?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
-const classes: Record<Colors, string> = {
-  primary: 'peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600',
-  gray: 'peer-checked:bg-gray-500 group-hover:peer-checked:bg-gray-600',
-  green: 'peer-checked:bg-green-500 group-hover:peer-checked:bg-green-600',
-  lime: 'peer-checked:bg-lime-500 group-hover:peer-checked:bg-lime-600',
-  red: 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600',
-  yellow: 'peer-checked:bg-yellow-500 group-hover:peer-checked:bg-yellow-600',
-  blue: 'peer-checked:bg-blue-500 group-hover:peer-checked:bg-blue-600',
-  purple: 'peer-checked:bg-purple-500 group-hover:peer-checked:bg-purple-600',
-  orange: 'peer-checked:bg-orange-500 group-hover:peer-checked:bg-orange-600',
-  pink: 'peer-checked:bg-pink-500 group-hover:peer-checked:bg-pink-600',
-};
+const Label = styled.label<{ disabled: boolean; }>`
+  display: flex;
+  align-items: center;
+  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
+  > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.5rem;
+  }
+`;
 
-const iconText: Record<Colors, string> = {
-  primary: 'group-hover:text-primary-500',
-  gray: 'group-hover:text-gray-500',
-  green: 'group-hover:text-green-500',
-  lime: 'group-hover:text-lime-500',
-  red: 'group-hover:text-red-500',
-  yellow: 'group-hover:text-yellow-500',
-  blue: 'group-hover:text-blue-500',
-  purple: 'group-hover:text-purple-500',
-  orange: 'group-hover:text-orange-500',
-  pink: 'group-hover:text-pink-500',
-};
+const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
+  position: relative;
+  width: ${({ theme }) => theme.sizes[4]};
+  height: ${({ theme }) => theme.sizes[4]};
+  border: ${({ theme }) => theme.borders.background2[1]};
+  background: ${({ theme }) => theme.colors.background[0]};
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: ${({ theme }) => theme.space[2]};
+  border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[3]};
+  ${({ error, theme }) => error && `
+    border-color: ${theme.colors.error};
+  `}
+`;
+
+const Box = styled.div<{ disabled: boolean; error: boolean; }>`
+    background: ${({ theme }) => theme.colors.background[0]};
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    input:checked ~ & {
+      background: ${({ theme, error, disabled }) =>
+    error ? theme.colors.error :
+      disabled ? theme.colors.baseHighlight : theme.colors.primary};
+    }
+    ${Label}:hover input:checked ~ & {
+      background: ${({ theme, error, disabled }) =>
+    error ? theme.colors.error :
+      disabled ? theme.colors.baseHighlight : theme.colors.primary};
+    }
+  `;
+
+let Icon = styled.div<{ disabled: boolean; error: boolean; }>`
+    svg {
+      width: 16px;
+      height: 16px;
+      color: transparent;
+      z-index: 10;
+      position: relative;
+      ${Label} input:checked ~ & {
+        color: ${({ theme }) => theme.colors.background[0]};
+      }
+      ${({ theme, disabled, error }) => !disabled && `
+        ${Label}:hover & {
+          color: ${error ? theme.colors.error : theme.colors.primary};
+        }
+      `}
+    }
+  `;
+
+const Input = styled.input`
+  display: none;
+`;
 
 export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, color = 'primary', icon, rounded = false, disabled, error, ...rest
-}) => {
-  let boxClasses = clsx(
-    'bg-white w-full h-full absolute',
-    disabled ? 'bg-gray-300 peer-checked:bg-gray-400' : classes[color],
-    { 'peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600': error },
-  );
-  let btnClasses = clsx(
-    'relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2',
-    rounded ? 'rounded-full' : 'rounded-md',
-    { 'border-red-300 shadow-red-200': error },
-  );
-  let labelClasses = clsx(
-    disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    'group flex space-x-2 items-center',
-  );
-  let iconClasses = clsx(
-    { [iconText[color]]: !disabled },
-    'text-transparent z-10 relative peer-checked:text-white',
-  );
-  return (
-    <label className={labelClasses}>
-      <div className={btnClasses}>
-        <input className="peer hidden" disabled={disabled} {...rest} />
-        <div className={boxClasses} />
-        {React.cloneElement(icon, { width: 16, height: 16, className: iconClasses })}
-      </div>
-      {labelText}
-    </label>
-  );
-};
+  labelText, icon, rounded = false, disabled = false, error = false, ...rest
+}) => (
+  <Label disabled={disabled}>
+    <Btn rounded={rounded} error={error}>
+      <Input disabled={disabled} {...rest} />
+      <Box disabled={disabled} error={error} />
+      <Icon disabled={disabled} error={error}>{icon}</Icon>
+    </Btn>
+    {labelText}
+  </Label>
+);
+
+

@@ -1,10 +1,11 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
+import { ThemeDefaultProvider } from '../../utils';
 import { TextField } from '.';
 
 function render(Comp: any) {
-  return testRender(Comp);
+  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
 }
 
 describe('TextField test', () => {

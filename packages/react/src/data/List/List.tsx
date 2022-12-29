@@ -1,8 +1,6 @@
-import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
-export const List: React.FC<React.ComponentPropsWithRef<'ul'>> = ({ children, className, ...rest }) => (
-  <ul className={clsx('list-inside list-none', className)} {...rest}>
-    {children}
-  </ul>
-);
+export const List = styled.ul`
+  list-style-position: inside;
+  list-style-type: none;
+`;

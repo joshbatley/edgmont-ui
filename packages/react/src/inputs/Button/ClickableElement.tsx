@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
-import { BaseButton, BaseButtonProps } from '.';
+import { BaseButton, BaseButtonProps } from './BaseButton';
 
 export type ClickableElementProps = Omit<BaseButtonProps, 'size' | 'color' | 'isLoading'>;
 
 export const ClickableElement = forwardRef<HTMLButtonElement, ClickableElementProps>(({ children, ...rest }, ref) => (
   <BaseButton
     size="none"
-    color="gray"
     ref={ref}
     {...rest}
   >

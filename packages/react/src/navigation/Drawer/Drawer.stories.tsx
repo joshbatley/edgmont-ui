@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { PrimaryButton } from 'inputs';
+import { PrimaryButton } from '../../inputs';
+import { Box } from '../../data';
 import { Drawer } from '.';
 
 export default {
@@ -13,11 +14,11 @@ export const Example: Story = ({ ...rest }) => {
   let [open, setOpen] = useState(false);
   return (
     <>
-      <div className='grid h-screen place-content-center'>
+      <Box display="grid" height="100vh" style={{ placeContent: 'center' }}>
         <PrimaryButton onClick={() => setOpen(!open)}>Open Drawer</PrimaryButton>
-      </div>
+      </Box>
       <Drawer open={open} handleClose={() => setOpen(false)} {...rest}>
-        <div className="p-4">This is a drawer</div>
+        <Box p="4">This is a drawer</Box>
       </Drawer>
     </>
   );

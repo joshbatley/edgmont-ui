@@ -1,6 +1,7 @@
 import React, { forwardRef, ReactElement, ReactNode } from 'react';
-import clsx from 'clsx';
-import { BaseInput, BaseInputProps } from './BaseInput';
+import styled from 'styled-components';
+import { Box } from '../../data';
+import { BaseInput } from './BaseInput';
 import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
 
@@ -12,67 +13,72 @@ export type TextFieldProps = {
   suffiXMarkIcon?: ReactNode;
   size?: Size;
   type?: 'text' | 'password' | 'number' | 'email';
-} & BaseInputProps;
+} & React.ComponentPropsWithRef<'input'>;
 
-const applySizeClass = (size?: Size) => {
-  switch (size) {
-    case 'large':
-      return 'text-lg px-6 py-4';
-    case 'medium':
-    default:
-      return 'text-sm px-3 py-2';
-    case 'small':
-      return 'text-sm px-2 py-1';
-    case 'none':
-      return '';
+const InputContainer = styled(Box) <{ before: boolean; after: boolean; }>`
+  &:focus-within {
+    z-index: 10;
+    outline: none;
+    box-shadow: ${({ theme }) => theme.shadows.focus};
   }
-};
+  ${({ before, after }) => {
+    if (before && !after) {
+      return `input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }`;
+    }
+    if (!before && after) {
+      return `input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }`;
+    }
+
+    if (before && after) {
+      return `input {
+        border-radius: 0;
+      }`;
+    }
+  }}
+`;
+
+const Container = styled(Box) <{ error: boolean; disabled: boolean; }>`
+  ${({ theme, error }) => error && `
+    color: ${theme.colors.error};
+    border: ${theme.borders.error[1]};
+  `}
+  ${({ theme, disabled }) => disabled && `
+    background: ${theme.colors.error};
+    cursor: not-allowed;
+    div, svg, input {
+      cursor: not-allowed;
+     }
+  `}
+`;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefiXMarkIcon, suffiXMarkIcon,
-  before, after, className,
-  size, disabled, error,
+  before, after,
+  size = 'medium', disabled = false, error = false,
   ...rest
-}, ref) => {
-  let focusWith = 'focus-with:outline-none focus-within:ring focus-within:z-10';
-  let sizingClasses = applySizeClass(size);
+}, ref) => (
+  <Container
+    error={error}
+    disabled={disabled}
+    bg="background.0"
+    display="flex"
+    borderRadius="4"
+    boxShadow="hightlight"
+  >
+    <OptionalIcon position="left" size={size as Size} icon={prefiXMarkIcon} />
+    <AddonElement position="left" addon={before} />
 
-  let focus = 'focus-with:outline-none focus-within:ring focus-within:z-10';
-  if (before && !after) {
-    focus += ' rounded-r-md';
-  }
-  if (!before && after) {
-    focus += ' rounded-l-md';
-  }
-  return (
-    <div
-      className={clsx(
-        'border border-gray-300 shadow-sm rounded-md bg-white text-gray-400 flex',
-        { [focusWith]: !(before || after) },
-        { 'text-red-500 border-red-300 shadow-sm shadow-red-200': error },
-        { 'bg-gray-200 cursor-not-allowed': disabled },
-        className,
-      )}
-    >
-      <OptionalIcon sizingClasses={sizingClasses} icon={prefiXMarkIcon} />
-      <AddonElement
-        disabled={disabled}
-        containerClasses={clsx('border-r border-gray-300 bg-gray-100 text-gray-500 rounded-l-md flex items-center', focusWith)}
-        addonClasses={clsx(sizingClasses, 'rounded-r-none rounded-l-md focus:ring-0')}
-        addon={before}
-      />
+    <InputContainer flexGrow="1" before={!!before || !!prefiXMarkIcon} after={!!after || !!suffiXMarkIcon}>
+      <BaseInput variant={size as Size} error={error} disabled={disabled} ref={ref} {...rest} />
+    </InputContainer>
 
-      <div className={clsx('flex-grow', { [focus]: before || after })}>
-        <BaseInput className={clsx(sizingClasses, { 'text-red-800': error }, { 'pointer-events-none': disabled })} disabled={disabled} ref={ref} {...rest} />
-      </div>
-
-      <OptionalIcon sizingClasses={sizingClasses} icon={suffiXMarkIcon} />
-      <AddonElement
-        disabled={disabled}
-        containerClasses={clsx('border-l border-gray-300 bg-gray-100 text-gray-500 rounded-r-md flex items-center', focusWith)}
-        addonClasses={clsx(sizingClasses, 'rounded-l-none rounded-r-md focus:ring-0')}
-        addon={after}
-      />
-    </div>
-  );
-});
+    <OptionalIcon position="right" size={size as Size} icon={suffiXMarkIcon} />
+    <AddonElement position="right" addon={after} />
+  </Container>
+));

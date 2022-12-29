@@ -7,9 +7,10 @@ export default {
   title: 'Data/Box',
   component: Box,
   args: {
-    className: '',
     children: 'My Box',
+    px: '6',
+    py: '2',
   },
 } as Meta<BoxProps>;
 
-export const Example: Story<BoxProps> = ({ children, ...rest }) => <Box {...rest}>{children}</Box>;
+export const Example: Story<BoxProps> = ({ children, ...rest }: any) => <Box {...rest}>{children}</Box>;

@@ -3,13 +3,13 @@ type Option<T> = {
   control: any;
 };
 
-const colorSelectWithWhite: Option<ColorsAndWhite[]> = {
-  options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink', 'white'],
+const colorSelect: Option<Colors[]> = {
+  options: ['primary', 'success', 'info', 'error', 'warning'],
   control: { type: 'select' },
 };
 
-const colorSelect: Option<Colors[]> = {
-  options: ['primary', 'gray', 'green', 'lime', 'red', 'yellow', 'blue', 'purple', 'orange', 'pink'],
+const colorSelectWithBase: Option<Colors[]> = {
+  options: ['primary', 'success', 'info', 'error', 'warning', 'base'],
   control: { type: 'select' },
 };
 
@@ -24,7 +24,7 @@ const sizeSelect = {
 };
 
 const severitySelect = {
-  options: ['error', 'warning', 'info', 'success'],
+  options: ['error', 'warning', 'info', 'success', 'none'],
   control: { type: 'select' },
 };
 
@@ -36,8 +36,8 @@ const directionSelect = {
 };
 
 export {
-  colorSelectWithWhite,
   colorSelect,
+  colorSelectWithBase,
   intercardinalPointsSelect,
   sizeSelect,
   severitySelect,

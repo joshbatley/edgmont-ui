@@ -1,5 +1,16 @@
 import { FileError } from 'react-dropzone';
-import { AcceptedFile } from '.';
+
+export type AcceptedFile = {
+  key: string;
+  file: File;
+  errors?: FileError[];
+  meta: {
+    name: string;
+    type: string;
+    extension: string;
+    bytes: string;
+  }
+};
 
 const formatBytes = (bytes: number, decimals = 2) => {
   if (bytes == 0) return '0 Bytes';

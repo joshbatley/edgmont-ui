@@ -3,10 +3,9 @@ import { animated, useSpring, UseSpringProps } from 'react-spring';
 
 export type LinearSlideProps = {
   children: React.ReactNode;
-  className?: string;
 } & UseSpringProps;
 
-export const LinearSlide: React.FC<LinearSlideProps> = ({ children, className, ...rest }) => {
+export const LinearSlide: React.FC<LinearSlideProps> = ({ children, ...rest }) => {
   let styles = useSpring({
     from: { translateX: '-100%', left: '0' },
     to: { translateX: '100', left: '100%' },
@@ -16,6 +15,6 @@ export const LinearSlide: React.FC<LinearSlideProps> = ({ children, className, .
   });
 
   return (
-    <animated.div style={styles} className={className}>{children}</animated.div >
+    <animated.div style={styles}>{children}</animated.div >
   );
 };

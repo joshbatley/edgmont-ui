@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { OutlineButton, PrimaryButton, TextField } from 'inputs';
-import { Panel, Text } from 'data';
-import { Chip } from 'feedback';
+import { OutlineButton, PrimaryButton, TextField } from '../../inputs';
+import { Panel, Text } from '../../data';
+import { Chip } from '../../feedback';
 import { Modal } from '.';
 
 export default {
@@ -21,11 +21,11 @@ export const Example: Story = ({ title, children, ...rest }) => {
     <>
       <OutlineButton onClick={() => setOpen(!open)}>Open</OutlineButton>
       <Modal open={open} title={title} handleClose={() => setOpen(!open)} {...rest}>
-        <Panel className="px-2 py-2 space-y-10 flex flex-col">
+        <Panel width="400px" spaceYBetween="10" pt="2" pb="4" px="2" display="flex" flexDirection="column">
           <Text>This is the dialog body, it can contian anything</Text>
           <TextField placeholder="Like a form" />
-          <PrimaryButton color="green">Or a button</PrimaryButton>
-          <Chip color="red">Or even a chip</Chip>
+          <PrimaryButton color="success">Or a button</PrimaryButton>
+          <Chip color="warning">Or even a chip</Chip>
         </Panel>
       </Modal>
     </>

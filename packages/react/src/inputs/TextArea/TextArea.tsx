@@ -1,6 +1,16 @@
-import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
-export const TextArea = forwardRef<HTMLTextAreaElement, React.ComponentPropsWithoutRef<'textarea'>>(({ className, ...rest }, ref) => (
-  <textarea className={clsx('shadow-sm mt-1 p-2 block h-24 w-full border border-gray-300 rounded-md focus:outline-none focus:ring focus:z-10', className)} ref={ref} {...rest} />
-));
+export const TextArea = styled.textarea`
+  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  padding: ${({ theme }) => theme.space[2]};
+  width: 100%;
+  height: ${({ theme }) => theme.sizes[16]};
+  background: ${({ theme }) => theme.colors.background[2]};
+  border-radius: ${({ theme }) => theme.radii[3]};
+  :focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: ${({ theme }) => theme.shadows.focus};
+    z-index: 10;
+  }
+`;

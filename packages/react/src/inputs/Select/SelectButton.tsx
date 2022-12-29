@@ -1,15 +1,31 @@
 import React from 'react';
-import clsx from 'clsx';
-import { ClickableElement, OutlineButton, OutlineButtonProps } from 'inputs';
-import { Text } from 'data';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
-import { useSelectContext } from '.';
+import styled from 'styled-components';
+import { Box, Text } from '../../data';
+import { ClickableElement, OutlineButton, OutlineButtonProps } from '../Button';
+import { useSelectContext } from './SelectContext';
 
 export type SelectButtonProps = {
   isClearable?: boolean;
   isFilterable?: boolean;
   error?: boolean;
 } & OutlineButtonProps;
+
+const ClearBtn = styled(ClickableElement)`
+  color: ${({ theme }) => theme.colors.baseHighlight};
+  :hover {
+    color: ${({ theme }) => theme.colors.base};
+  }
+`;
+
+const Container = styled(Box)`
+  > {
+    margin-right: ${({ theme }) => theme.space[4]};
+  }
+  > :last-child {
+    margin-right: 0;
+  }
+`;
 
 export const SelectButton: React.FC<SelectButtonProps> = ({
   isClearable, children, isFilterable, placeholder, error, ...rest
@@ -32,19 +48,22 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
 
   return (
     <OutlineButton
-      className={clsx('w-full justify-between', { 'border-red-400 shadow-sm shadow-red-200': error })}
+      width="100%"
+      bg="background.1"
+      justifyContent="space-between"
+      border={error ? 'error.1' : 'background3.1'}
       {...getToggleButtonProps()}
       {...rest}
     >
       <Text>{buttonText}</Text>
-      <div className="flex space-x-4 items-center">
+      <Container display="flex" alignItems="center">
         {isClearableActive &&
-          <ClickableElement as="a" onClick={clear} className="text-gray-400 hover:text-gray-800">
+          <ClearBtn as="a" onClick={clear}>
             Clear
-          </ClickableElement>
+          </ClearBtn>
         }
         <ChevronUpDownIcon height={16} width={16} />
-      </div>
+      </Container>
     </OutlineButton>
   );
 };

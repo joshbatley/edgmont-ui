@@ -1,7 +1,7 @@
 type StepContext = {
   noOfItems: number;
   activeStep: number;
-  color: Colors;
+  color: ColorsLegacy;
   direction: Direction;
   alternativeLabel?: boolean;
 };

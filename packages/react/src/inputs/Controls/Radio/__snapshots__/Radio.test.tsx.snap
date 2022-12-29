@@ -1,106 +1,334 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio test should errored with disabled classes 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.5rem;
+}
+
+.c2 {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #334155;
+  background: #0f172a;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-radius: 9999px;
+  border-color: #e11d48;
+}
+
+.c5 {
+  background: #0f172a;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+input:checked ~ .c4 {
+  background: #e11d48;
+}
+
+.c0:hover input:checked ~ .c4 {
+  background: #e11d48;
+}
+
+.c7 svg {
+  width: 16px;
+  height: 16px;
+  color: transparent;
+  z-index: 10;
+  position: relative;
+}
+
+.c0 input:checked ~ .c6 svg {
+  color: #0f172a;
+}
+
+.c0:hover .c6 svg {
+  color: #e11d48;
+}
+
+.c3 {
+  display: none;
+}
+
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="c0 c1"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full border-red-300 shadow-red-200"
+      class="c2"
     >
       <input
-        class="peer hidden"
+        class="c3"
         type="radio"
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600 peer-checked:bg-red-500 group-hover:peer-checked:bg-red-600"
+        class="c4 c5"
       />
-      <svg
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c6 c7"
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
 `;
 
 exports[`Radio test should render 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.5rem;
+}
+
+.c2 {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #334155;
+  background: #0f172a;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-radius: 9999px;
+}
+
+.c5 {
+  background: #0f172a;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+input:checked ~ .c4 {
+  background: #4f46e5;
+}
+
+.c0:hover input:checked ~ .c4 {
+  background: #4f46e5;
+}
+
+.c7 svg {
+  width: 16px;
+  height: 16px;
+  color: transparent;
+  z-index: 10;
+  position: relative;
+}
+
+.c0 input:checked ~ .c6 svg {
+  color: #0f172a;
+}
+
+.c0:hover .c6 svg {
+  color: #4f46e5;
+}
+
+.c3 {
+  display: none;
+}
+
 <div>
   <label
-    class="cursor-pointer group flex space-x-2 items-center"
+    class="c0 c1"
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full"
+      class="c2"
     >
       <input
-        class="peer hidden"
+        class="c3"
         type="radio"
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute peer-checked:bg-primary-500 group-hover:peer-checked:bg-primary-600"
+        class="c4 c5"
       />
-      <svg
-        class="group-hover:text-primary-500 text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c6 c7"
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>
 `;
 
 exports[`Radio test should render with disabled classes 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: not-allowed;
+}
+
+.c1 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0.5rem;
+}
+
+.c2 {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #334155;
+  background: #0f172a;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-radius: 9999px;
+}
+
+.c5 {
+  background: #0f172a;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+input:checked ~ .c4 {
+  background: #64748b;
+}
+
+.c0:hover input:checked ~ .c4 {
+  background: #64748b;
+}
+
+.c7 svg {
+  width: 16px;
+  height: 16px;
+  color: transparent;
+  z-index: 10;
+  position: relative;
+}
+
+.c0 input:checked ~ .c6 svg {
+  color: #0f172a;
+}
+
+.c3 {
+  display: none;
+}
+
 <div>
   <label
-    class="cursor-not-allowed group flex space-x-2 items-center"
+    class="c0 c1"
+    disabled=""
   >
     <div
-      class="relative h-4 w-4 border bg-white overflow-hidden shadow-sm flex items-center justify-center mr-2 rounded-full"
+      class="c2"
     >
       <input
-        class="peer hidden"
+        class="c3"
         disabled=""
         type="radio"
         value=""
       />
       <div
-        class="bg-white w-full h-full absolute bg-gray-300 peer-checked:bg-gray-400"
+        class="c4 c5"
+        disabled=""
       />
-      <svg
-        class="text-transparent z-10 relative peer-checked:text-white"
-        fill="currentColor"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c6 c7"
+        disabled=""
       >
-        <circle
-          cx="8"
-          cy="8"
-          r="3"
-        />
-      </svg>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="3"
+          />
+        </svg>
+      </div>
     </div>
   </label>
 </div>

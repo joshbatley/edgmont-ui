@@ -1,15 +1,17 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { ThemeDefaultProvider } from '../src/utils/Theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
   backgrounds: {
-    default: 'Light',
+    default: 'Dark',
     values: [
-      { name: 'Light', value: '#F3F4F6' },
-      { name: 'Dark', value: '#1F2937' },
+      { name: 'Dark', value: '#0F172A' },
+      { name: 'Light', value: '#F8FAFC' },
+      { name: 'Black', value: '#000000' },
       { name: 'White', value: '#FFFFFF' },
-      { name: 'Black', value: '#000000' }
     ]
   },
   controls: {
@@ -28,9 +30,9 @@ export const decorators = [
       document.body.appendChild(portalRoot);
     }
     return (
-      <div className='antialiased font-sans' style={{ fontSize: 14 }}>
+      <ThemeDefaultProvider>
         {Story()}
-      </div>
+      </ThemeDefaultProvider>
     )
   },
 ];

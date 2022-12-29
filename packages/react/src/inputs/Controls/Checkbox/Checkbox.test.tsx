@@ -1,10 +1,11 @@
 import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ThemeDefaultProvider } from '../../../utils';
 import { Checkbox } from '.';
 
 function render(Comp: any) {
-  return testRender(Comp);
+  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
 }
 
 const onChangeMock = jest.fn();
@@ -29,7 +30,7 @@ describe('Checkbox test', () => {
   it('should update value when updated', async () => {
     const { getByRole } = render(<Checkbox value="testing-value" name="testing-input" onChange={onChangeMock} />);
     expect(onChangeMock).not.toHaveBeenCalled();
-    await userEvent.click(getByRole('checkbox'));
+    await userEvent.click(getByRole('checkbox', { hidden: true }));
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SnackContext } from 'types/Snackbar';
+import { SnackContext } from '../../types/Snackbar';
 
 export const SnackbarContext = React.createContext<SnackContext | undefined>(undefined);
 

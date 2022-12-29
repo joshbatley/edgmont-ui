@@ -4,7 +4,7 @@ import { Language } from 'prism-react-renderer';
 import DarkTheme from 'prism-react-renderer/themes/palenight';
 import LightTheme from 'prism-react-renderer/themes/github';
 import { Wrapper } from './Wrapper';
-import { SyntaxHighlighter } from '.';
+import { SyntaxHighlighter } from './SyntaxHighlighter';
 
 export type CodeEditorProps = {
   code: string;

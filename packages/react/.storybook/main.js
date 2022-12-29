@@ -29,14 +29,7 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
+    'storybook-dark-mode',
   ],
   staticDirs: ['../public'],
   framework: '@storybook/react',

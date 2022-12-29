@@ -1,12 +1,23 @@
 import React, { useMemo } from 'react';
-import clsx from 'clsx';
-import { ListItem } from 'data';
-import { useSelectContext } from '.';
+import styled from 'styled-components';
+import { ListItem } from '../../data';
+import { useSelectContext } from './SelectContext';
 
 export type SelectItemProps = {
   item: any;
   index: number;
 } & WithChildren;
+
+const Item = styled(ListItem) <{ changeBg: boolean; }>`
+  cursor: pointer;
+  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[4]}`};
+  background: ${({ changeBg, theme }) => changeBg ? theme.colors.background[2] : 'inherit'};
+  font-size: ${({ theme }) => theme.fontSizes[1]};
+  line-height: ${({ theme }) => theme.lineHeights[1]};
+  &:hover {
+    background: ${({ theme }) => theme.colors.background[2]};
+  }
+`;
 
 export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index }) => {
   let {
@@ -22,11 +33,8 @@ export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index })
   let memoValue = useMemo(() => itemToString(item), [item, itemToString]);
 
   return (
-    <ListItem
-      className={clsx(
-        'cursor-pointer py-2 px-4 text-sm text-gray-700 hover:bg-gray-100',
-        { 'bg-primary-100 ': selectedItem === item || itemToString(SelectItem) === memoValue },
-      )}
+    <Item
+      changeBg={selectedItem === item || itemToString(SelectItem) === memoValue}
       {...getItemProps({
         key: item.value,
         item,
@@ -34,6 +42,6 @@ export const SelectItem: React.FC<SelectItemProps> = ({ children, item, index })
       })}
     >
       {itemText}
-    </ListItem>
+    </Item>
   );
 };

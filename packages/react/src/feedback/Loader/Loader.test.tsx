@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
+import { ThemeDefaultProvider } from '../../utils';
 import { CircleLoader } from '.';
 
 function render(Comp: ReactNode) {
-  return testRender(<>{Comp}</>);
+  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
 }
 
 describe('Loader', () => {
@@ -20,7 +21,7 @@ describe('Loader', () => {
   });
 
   it('accepts color value', () => {
-    const { container } = render(<CircleLoader color="pink" />);
+    const { container } = render(<CircleLoader color="success" />);
     expect(container).toMatchSnapshot();
   });
 });

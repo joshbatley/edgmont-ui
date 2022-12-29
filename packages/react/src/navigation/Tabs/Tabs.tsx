@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { TabNavItems, TabPaneList, TabCardItems } from '.';
+import { Box } from '../../data';
+import { TabCardItems } from './TabCardItems';
+import { TabNavItems } from './TabNavItems';
+import { TabPaneList } from './TabPane';
 
 const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   return React.Children.toArray(children).map((node) => {
@@ -15,18 +18,17 @@ const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   });
 };
 
-export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value, color = 'primary' }) => {
+export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value }) => {
   let tabs = parseChildrenToTabs(childrenProp);
   let [selected, setSelected] = useState(value || tabs[0].key);
   return (
-    <div className="w-full">
+    <Box width="100%">
       {type === 'card' ? (
-        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} color={color} />
+        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} />
       ) : (
-        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} color={color} />
+        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} />
       )}
       <TabPaneList type={type} tabs={tabs} selected={selected} />
-    </div>
+    </Box>
   );
 };
-

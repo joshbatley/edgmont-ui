@@ -1,35 +1,37 @@
 import React from 'react';
-import clsx from 'clsx';
+import styled from 'styled-components';
+import { LayoutProps, SpaceProps, layout, space, variant } from 'styled-system';
 
 export type SkeletonProps = {
-  varient?: 'text' | 'rectangle' | 'circle';
-  height?: number;
-  width?: number;
-} & React.ComponentPropsWithoutRef<'div'>;
+  variant?: 'text' | 'rectangle' | 'circle';
+} & LayoutProps & SpaceProps;
 
-export const Skeleton: React.FC<SkeletonProps> = ({
-  height, width, className, varient = 'text', ...rest
-}) => {
-  switch (varient) {
-    case 'circle':
-      return (
-        <div
-          style={{ height, width }}
-          className={clsx('animate-pulse bg-gray-200 rounded-full', className)}
-          {...rest}
-        />
-      );
-    case 'rectangle':
-      return (
-        <div
-          style={{ height, width }}
-          className={clsx('animate-pulse bg-gray-200 rounded-md', className)}
-          {...rest}
-        />
-      );
-    default:
-      return (
-        <span className={clsx("animate-pulse bg-gray-200 flex rounded-md h-full text-[50%] before:h-1/2 before:content-['\\00a0']", className)} {...rest} />
-      );
-  }
-};
+const Comp = styled.div<SkeletonProps>`
+  ${({ theme }) => theme.animations.pulse}
+  background: ${({ theme }) => theme.colors.background[2]};
+  ${layout}
+  ${space}
+  ${({ theme, height, width }) => variant({
+  prop: 'variant',
+  variants: {
+    circle: {
+      borderRadius: theme.radii[8],
+      height: height + 'px',
+      width: width + 'px',
+    },
+    rectangle: {
+      borderRadius: theme.radii[3],
+      height: height + 'px',
+      width: width + 'px',
+    },
+    text: {
+      display: 'inline-flex',
+      borderRadius: theme.radii[3],
+    },
+  },
+})}
+`;
+
+export const Skeleton: React.FC<SkeletonProps> = ({ ...rest }) => (
+  <Comp {...rest}>&nbsp;</Comp>
+);

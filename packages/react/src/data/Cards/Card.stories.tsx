@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 import { Story } from '@storybook/react';
-import { Card, CardContent, CardMedia } from '.';
-import { Title, Text, TextMono } from 'data';
-import { Label, OutlineButton, PrimaryButton, TextArea, TextField } from 'inputs';
 import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { Title, Text, Box } from '../../data';
+import { Label, OutlineButton, PrimaryButton, TextArea, TextField } from '../../inputs';
+import { Card, CardContent, CardMedia } from '.';
 
 export default {
   title: 'Data/Card',
@@ -15,43 +15,47 @@ export default {
 } as Meta;
 
 export const Examples: Story = ({ ...rest }) => (
-  <div className="flex flex-col space-y-2">
-    <Card className="flex flex-row" style={{ maxWidth: 400 }} {...rest}>
+  <Box display="flex" flexDirection="column">
+    <Card mb="2" maxWidth="400px" display="flex" flexDirection="row" {...rest}>
       <CardMedia
         as="img"
         alt="green iguana"
-        className="w-1/3"
+        width="33.333%"
         src="https://mui.com/static/images/cards/contemplative-reptile.jpg"
       />
-      <CardContent className="py-4">
-        <Title as="h3" className="font-bold">
-          The Reptile
-          <TextMono as="span" className="float-right font-normal text-base text-gray-400">£99.99</TextMono>
-        </Title>
-        <Text className="text-xs text-gray-500 mb-2">In stock</Text>
+      <CardContent py="4">
+        <Box display="flex" justifyContent="space-between">
+          <Title as="h3" fontWeight="700">
+            The Reptile
+          </Title>
+          <Text mono as="span" color="baseHighlight">£99.99</Text>
+        </Box>
+        <Box mb="2">
+          <Text fontSize="0" lineHeight="0" color="baseHighlight">In stock</Text>
+        </Box>
         <Text>
           Good with children, only lightly bites limbs off.
         </Text>
-        <hr className="my-4" />
-        <div className="w-full flex space-x-2">
-          <PrimaryButton className=" justify-center flex-grow" size="small">
-            <ShoppingBagIcon width={16} height={16} className="mr-2" />Buy now
+        <Box as="hr" my="4" />
+        <Box width="100%" display="flex">
+          <PrimaryButton justifyContent="center" flexGrow="1" size="small" mr="2">
+            <ShoppingBagIcon width={16} height={16} /><Text>Buy now</Text>
           </PrimaryButton>
-          <OutlineButton size="small" className="text-center justify-center flex-grow">
-            <ShoppingCartIcon width={16} height={16} className="mr-1" />Add to cart
+          <OutlineButton justifyContent="center" flexGrow="1" size="small" textAlign="center">
+            <ShoppingCartIcon width={16} height={16} /><Text>Add to cart</Text>
           </OutlineButton>
-        </div>
+        </Box>
       </CardContent>
     </Card>
 
     <Card style={{ maxWidth: 500 }} {...rest}>
-      <CardContent className="border-b">
+      <CardContent borderBottom="background2.1">
         <Title as="h4" >Application form</Title>
       </CardContent>
-      <CardContent className="space-y-2 my-2">
+      <CardContent my="2">
         <Label value="Website url">
           <TextField
-            before={<div>https://</div>}
+            before={<Box px="2" py="1">https://</Box>}
             placeholder="www.example.com"
           />
         </Label>
@@ -60,11 +64,11 @@ export const Examples: Story = ({ ...rest }) => (
           <TextArea placeholder="desciption of website" />
         </Label>
       </CardContent>
-      <div className="bg-gray-50 px-2 py-2 flex justify-end">
+      <Box bg="background.2" p="2" display="flex" justifyContent="flex-end">
         <PrimaryButton>Submit</PrimaryButton>
-      </div>
+      </Box>
     </Card>
-  </div>
+  </Box>
 );
 
 export const Content: Story = () => (
@@ -74,7 +78,7 @@ export const Content: Story = () => (
 );
 
 export const Media: Story = ({ ...rest }) => (
-  <div className="flex flex-col space-y-2">
+  <Box display="flex" flexDirection="column">
     <Card style={{ maxWidth: 300 }} {...rest}>
       <CardMedia
         as="img"
@@ -91,5 +95,5 @@ export const Media: Story = ({ ...rest }) => (
       />
       <CardContent>A video</CardContent>
     </Card>
-  </div>
+  </Box>
 );
