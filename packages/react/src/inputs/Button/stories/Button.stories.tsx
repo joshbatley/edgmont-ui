@@ -34,12 +34,6 @@ Sizes.argTypes = {
   },
 };
 
-export const Loading: Story = ({ children, ...rest }) => (
-  <Button {...rest}>
-    <span>Saving</span>
-  </Button>
-);
-
 export const WithIcon: Story = ({ children, ...rest }) => (
   <Button {...rest}>
     <ArrowDownOnSquareIcon width={16} height={16} /><span>{children}</span>

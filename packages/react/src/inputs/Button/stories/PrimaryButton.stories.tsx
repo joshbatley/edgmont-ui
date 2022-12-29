@@ -50,12 +50,6 @@ Colors.argTypes = {
   },
 };
 
-export const Loading: Story = ({ children, ...rest }) => (
-  <PrimaryButton {...rest}>
-    <span>Saving</span>
-  </PrimaryButton>
-);
-
 export const WithIcon: Story = ({ children, ...rest }) => (
   <PrimaryButton {...rest}>
     <ArrowDownOnSquareIcon width={16} height={16} /><span>{children}</span>

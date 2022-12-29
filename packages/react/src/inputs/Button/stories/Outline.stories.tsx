@@ -34,11 +34,6 @@ Sizes.argTypes = {
   },
 };
 
-export const Loading: Story = ({ children, ...rest }) => (
-  <OutlineButton {...rest}>
-    <span>Saving</span>
-  </OutlineButton>
-);
 
 export const WithIcon: Story = ({ children, ...rest }) => (
   <OutlineButton {...rest}>
