@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from '../../inputs/Button';
+import {WithChildren} from "../../types";
 
 type AccordionSummaryProps = {
   isOpen?: boolean;

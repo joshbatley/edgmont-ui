@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StepperContext } from './StepperContext';
+import {Colors, WithChildren} from "../../types";
 
 type StepperPropsVertical = {
   color?: Colors;

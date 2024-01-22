@@ -3,6 +3,7 @@ import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@hero
 import { Button } from '../../inputs/Button';
 import { ButtonGroup } from '../../inputs/ButtonGroup';
 import { calculatePageNumbers } from './utils';
+import {Size} from "../../types";
 
 export type PaginationProps = {
   skip: number;

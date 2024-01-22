@@ -1,0 +1,3 @@
+{
+  "extends": "@edgmont-ui/typescript-config/base.json"
+}

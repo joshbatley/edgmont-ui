@@ -3,6 +3,7 @@ import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 import { ClickOutside } from '../../utils';
 import { Box } from '../../data';
+import { WithChildren } from '../../types';
 
 export type MenuProps = {
   direction?: Placement;

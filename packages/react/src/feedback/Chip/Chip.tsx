@@ -5,6 +5,7 @@ import { tint, darken } from 'polished';
 import { XCircleIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from '../../inputs';
 import { Text } from '../../data';
+import {Colors, Size, WithChildren} from "../../types";
 
 export type ChipProps = {
   color?: Colors;

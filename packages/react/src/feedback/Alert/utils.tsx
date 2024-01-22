@@ -5,6 +5,7 @@ import {
   InformationCircleIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/solid';
+import {Severity} from "../../types";
 
 export const getIcon = (severity: Severity) => {
   let props = {

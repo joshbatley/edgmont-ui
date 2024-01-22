@@ -5,6 +5,7 @@ import { Collapse } from '../../utils/Transitions/Collapse';
 import { useTreeContext } from './TreeContext';
 import { ClickableElement } from '../../inputs/Button/ClickableElement';
 import { Box } from '../Box';
+import {WithChildren} from "../../types";
 
 type Icon = React.ReactNode | {
   endIcon?: React.ReactNode;

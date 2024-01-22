@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { ListItem } from '../../data';
 import { useSelectContext } from './SelectContext';
+import {WithChildren} from "../../types";
 
 export type SelectItemProps = {
   item: any;

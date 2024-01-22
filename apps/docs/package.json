@@ -1,0 +1,39 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "start": "storybook dev -p 6006",
+    "build": "storybook build -o dist"
+  },
+  "dependencies": {
+    "@edgmont-ui/react": "workspace:*",
+    "@heroicons/react": "^2.1.1",
+    "date-fns": "^3.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@edgmont-ui/eslint-config": "workspace:*",
+    "@edgmont-ui/typescript-config": "workspace:*",
+    "@storybook/addon-essentials": "^7.6.8",
+    "@storybook/addon-interactions": "^7.6.8",
+    "@storybook/addon-links": "^7.6.8",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.8",
+    "@storybook/react": "^7.6.8",
+    "@storybook/react-vite": "^7.6.8",
+    "@storybook/test": "^7.6.8",
+    "@types/eslint": "^8.56.1",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "storybook": "^7.6.8",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  }
+}

@@ -4,6 +4,7 @@ import Downshift, {
 } from 'downshift';
 import { Box } from '../../data';
 import { SelectContext } from './SelectContext';
+import {WithChildren} from "../../types";
 
 export type SelectProps = {
   disabled?: boolean;

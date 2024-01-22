@@ -9,6 +9,7 @@ export type SelectButtonProps = {
   isClearable?: boolean;
   isFilterable?: boolean;
   error?: boolean;
+  placeholder?: string;
 } & OutlineButtonProps;
 
 const ClearBtn = styled(ClickableElement)`

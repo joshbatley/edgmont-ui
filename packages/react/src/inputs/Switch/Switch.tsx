@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
+import {Colors} from "../../types";
 
 export type SwitchProps = {
   color?: Colors;

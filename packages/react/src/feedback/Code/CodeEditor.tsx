@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Editor from 'react-simple-code-editor';
-import { Language } from 'prism-react-renderer';
-import DarkTheme from 'prism-react-renderer/themes/palenight';
-import LightTheme from 'prism-react-renderer/themes/github';
+import { Language, themes } from 'prism-react-renderer';
 import { Wrapper } from './Wrapper';
 import { SyntaxHighlighter } from './SyntaxHighlighter';
 
@@ -17,7 +15,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
   language, code, handleChange, light,
 }) => {
   let [state, setState] = useState(code);
-  let Theme = light ? LightTheme : DarkTheme;
+  let Theme = light ? themes.github : themes.palenight;
   let handleTextChange = (text: string) => {
     setState(text);
     handleChange?.(text);

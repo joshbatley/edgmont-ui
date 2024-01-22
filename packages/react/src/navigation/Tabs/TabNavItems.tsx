@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ClickableElement } from '../../inputs';
 import { Scrollable } from '../../utils';
 import { Box } from '../../data';
+import {Tab} from "../../types/Tabs";
 
 const TabNavItem = styled(ClickableElement)`
   padding: ${({ theme }) => `${theme.space[3]} ${theme.space[4]}`};

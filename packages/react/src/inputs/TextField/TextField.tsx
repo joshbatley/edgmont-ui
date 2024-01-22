@@ -4,6 +4,7 @@ import { Box } from '../../data';
 import { BaseInput } from './BaseInput';
 import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
+import {Size} from "../../types";
 
 export type TextFieldProps = {
   error?: boolean;

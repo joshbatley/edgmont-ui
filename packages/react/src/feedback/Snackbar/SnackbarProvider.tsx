@@ -5,6 +5,7 @@ import { SnackbarProviderProps, Snack, SnackOptions } from '../../types/Snackbar
 import { SnackbarContext } from './SnackbarContext';
 import { SnackbarItem } from './SnackbarItem';
 import { createId, getPosition } from './utils';
+import {IntercardinalPoints} from "../../types";
 
 const Container = styled.div<{ anchor: IntercardinalPoints }>`
   position: fixed;

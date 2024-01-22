@@ -1,10 +1,10 @@
-import type { AlertProps } from '../../feedback';
+import type {AlertProps} from "../feedback";
 
-type SnackItem = {
+export type SnackItem = {
   title: string, id?: string
 };
 
-type SnackOptions = {
+export type SnackOptions = {
   id?: string;
   body?: string
   persist?: boolean;
@@ -12,16 +12,16 @@ type SnackOptions = {
   severity?: Severity;
 } & Omit<AlertProps, 'title', 'withClose'>;
 
-type Snack = SnackItem & SnackOptions;
+export type Snack = SnackItem & SnackOptions;
 
-type SnackbarProviderProps = {
+export type SnackbarProviderProps = {
   max?: number;
   anchor?: IntercardinalPoints;
   autoHideDuration?: number;
   portalLocation?: Element;
 } & WithChildren;
 
-type SnackContext = {
+export type SnackContext = {
   enqueue: (message: string, options?: SnackOptions) => void;
   dequeue: (id: string) => void;
   clearAll: () => void;

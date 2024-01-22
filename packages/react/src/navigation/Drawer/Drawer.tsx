@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Backdrop, stopPropagation, Open } from '../../utils';
+import {WithChildren} from "../../types";
 
 export type DrawerProps = {
   open?: boolean;

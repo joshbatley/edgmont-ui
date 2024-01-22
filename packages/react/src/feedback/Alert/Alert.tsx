@@ -5,6 +5,7 @@ import { lighten } from 'polished';
 import { Box, Text, Title } from '../../data';
 import { getIcon } from './utils';
 import { CloseBtn } from './CloseBtn';
+import {Severity, WithChildren} from "../../types";
 
 export type AlertProps = {
   severity?: Severity;

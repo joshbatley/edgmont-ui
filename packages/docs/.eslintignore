@@ -1,7 +1,0 @@
-**/lib/*
-**/node_modules/
-**/jest.config.js
-**/setupTests.ts
-**/dist/*
-**/docs/*
-vite.config.ts
