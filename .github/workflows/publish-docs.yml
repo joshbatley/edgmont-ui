@@ -24,8 +24,8 @@ concurrency:
 jobs:
   deploy:
     environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,16 +33,14 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
 
-
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: "npm"
 
-       - name: Install pnpm
-         run: npm install -g pnpm
-
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
