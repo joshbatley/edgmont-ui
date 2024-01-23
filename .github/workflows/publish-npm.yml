@@ -1,0 +1,39 @@
+name: Publish NPM Package
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{secrets.gh_token}}
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          scope: ${{ secrets.npm_scope }}
+          registry-url: https://registry.npmjs.org/
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Build
+        run: pnpm install
+
+      - name: Publish NPM release
+        run: pnpm run publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
