@@ -1,15 +1,18 @@
 {
-  "name": "platform",
+  "name": "edgmont-ui",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "test": "turbo test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "changeset publish"
   },
   "devDependencies": {
-    "@edgmont-ui/eslint-config": "workspace:*",
-    "@edgmont-ui/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@changesets/cli": "^2.27.1",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },

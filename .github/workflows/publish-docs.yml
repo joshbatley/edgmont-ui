@@ -3,14 +3,7 @@ name: Deploy static content to Pages
 on:
   push:
     branches:
-      - "*"
-
-  workflow_dispatch:
-   inputs:
-      branch:
-        description: 'Target branch'
-        required: true
-        default: 'main'
+      - main
 
 permissions:
   contents: read
@@ -24,7 +17,7 @@ concurrency:
 jobs:
   deploy:
     environment:
-      name: monorepo-update
+      name: update docs
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:

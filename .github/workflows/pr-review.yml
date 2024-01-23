@@ -1,14 +1,12 @@
-name: Publish NPM Package
+name: PR Checks
 
 on:
-  push:
-    branches:
-      - main
-
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
   workflow_dispatch:
 
 jobs:
-  publish-npm:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,11 +26,11 @@ jobs:
       - name: Build
         run: pnpm install
 
-      - name: Publish NPM release
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm run publish-packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build

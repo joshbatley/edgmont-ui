@@ -22,6 +22,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    jest: true,
   },
   rules: {
     'consistent-return': "off",
@@ -54,6 +55,7 @@ module.exports = {
     ".*.js",
     "node_modules/",
     "dist/",
+    "**/jest.config.js"
   ],
   overrides: [
     // Force ESLint to detect .tsx files

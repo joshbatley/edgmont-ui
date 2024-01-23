@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -16,8 +16,8 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "@edgmont-ui/eslint-config": "workspace:*",
-    "@edgmont-ui/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@storybook/addon-essentials": "^7.6.8",
     "@storybook/addon-interactions": "^7.6.8",
     "@storybook/addon-links": "^7.6.8",

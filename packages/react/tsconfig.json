@@ -1,5 +1,12 @@
 {
-  "extends": "@edgmont-ui/typescript-config/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "extends": "@repo/typescript-config/react-library.json",
+  "include": [
+    "src",
+    "src/**/*",
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ]
 }

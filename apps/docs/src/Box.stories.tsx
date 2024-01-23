@@ -1,14 +1,14 @@
-import React from "react";
-import { StoryObj, Meta } from "@storybook/react";
-import { Box, BoxProps } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj, Meta } from '@storybook/react';
+import { Box, BoxProps } from '@edgmont-ui/react';
 
 const meta: Meta<typeof Box> = {
-  title: "Data/Box",
+  title: 'Data/Box',
   component: Box,
   args: {
-    children: "My Box",
-    px: "6",
-    py: "2",
+    children: 'My Box',
+    px: '6',
+    py: '2',
   },
 };
 

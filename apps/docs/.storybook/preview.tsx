@@ -12,7 +12,7 @@ const decorators = [
       document.body.appendChild(portalRoot);
     }
     return (
-    // @ts-ignore
+      // @ts-ignore
       <ThemeDefaultProvider>
         {Story()}
       </ThemeDefaultProvider>

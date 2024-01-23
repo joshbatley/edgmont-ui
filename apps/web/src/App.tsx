@@ -2,6 +2,8 @@ import { Box, Button, Image, Panel, Text } from '@edgmont-ui/react';
 import Logo from './assets/logo-dark.svg';
 import ReactLogo from './assets/react-logo.svg';
 
+"asda";
+
 {/* <Box margin="0 auto" py="10" pt="10" px="10"> */ }
 export const App: React.FC = () => (
   <Box display="grid" gridTemplateColumns={['1fr', '1fr 1fr']} width={['auto', '500px']} m="40px auto 0" gridColumnGap="3">
