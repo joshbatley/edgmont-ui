@@ -1,7 +1,8 @@
-import { ClickableElement } from "../../inputs/Button";
-import { Collapse } from "../../utils/Transitions";
-import { AccordionSummary } from "./AccordionSummary";
-import { AccordionDetail, DetailsGrouping } from "./AccordionDetail";
+import React from 'react';
+import { ClickableElement } from '../../inputs/Button';
+import { Collapse } from '../../utils/Transitions';
+import { AccordionSummary } from './AccordionSummary';
+import { AccordionDetail, DetailsGrouping } from './AccordionDetail';
 
 export type AccordionProps = {
   summary?: React.ReactNode;
@@ -17,7 +18,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   isOpen,
 }) => {
   let accodingTitle =
-    typeof summary === "string" ? (
+    typeof summary === 'string' ? (
       <AccordionSummary onClick={onClick} isOpen={isOpen}>
         {summary}
       </AccordionSummary>
@@ -26,7 +27,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     );
 
   let details =
-    typeof children === "string" ? (
+    typeof children === 'string' ? (
       <AccordionDetail>{children}</AccordionDetail>
     ) : (
       children

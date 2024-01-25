@@ -2,25 +2,18 @@ const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
 
-/*
- * This is a custom ESLint configuration for use with
- * internal (bundled by their consumer) libraries
- * that utilize React.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
-
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
     "eslint:recommended", "prettier", "eslint-config-turbo", "airbnb-typescript", "plugin:storybook/recommended",
   ],
-  plugins: ["only-warn", "@typescript-eslint", "react-hooks"],
+  plugins: ["only-warn", "@typescript-eslint", "react-hooks", "react"],
   globals: {
     React: true,
     JSX: true,
+  },
+  parserOptions: {
+    project,
   },
   env: {
     browser: true,
@@ -57,10 +50,6 @@ module.exports = {
     ".*.js",
     "node_modules/",
     "dist/",
-  ],
-  overrides: [
-    // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
-  ],
+  ]
 };
 
