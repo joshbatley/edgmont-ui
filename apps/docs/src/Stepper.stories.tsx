@@ -1,9 +1,9 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, StepLabel, Stepper } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, StepLabel, Stepper } from '@edgmont-ui/react';
 
 export default {
-  title: "Navigation/Stepper",
+  title: 'Navigation/Stepper',
   component: Stepper,
   args: {
     step: 1,

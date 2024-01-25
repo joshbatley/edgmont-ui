@@ -1,9 +1,8 @@
-import React from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { Badge } from '@edgmont-ui/react';
 import { Box } from '@edgmont-ui/react';
-import { colorSelect, intercardinalPointsSelect } from "./presets";
+import { colorSelect, intercardinalPointsSelect } from './presets';
 
 const meta: Meta = {
   title: 'Feedback/Badge',
@@ -46,5 +45,5 @@ export const Examples: StoryObj<typeof Badge> = {
         </Badge>
       </Box>
     </Box>
-  )
-}
+  ),
+};

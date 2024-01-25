@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 import { PaperClipIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { ClickableElement } from '../../inputs/Button';
 import { Tooltip } from '../../feedback/Tooltip';
-import { Box, Text } from '../../data';
+import { Box, TextComp } from '../../data';
 import { AcceptedFile } from './Utils';
 
 export type BasicItemProps = {
@@ -42,13 +41,13 @@ export const BasicItem: React.FC<BasicItemProps> = ({ file, handleDelete }) => {
         color={hasError ? 'error' : 'base'}
       >
         <SpacedBox display="flex" alignItems="center">
-          <PaperClipIcon widths={16} height={16} />
-          <Text as="span">{name}</Text>
-          {!hasError && <Text as="span" fontSize={1} lineHeight={1}>{bytes}</Text>}
+          <PaperClipIcon widths={16} height={16}/>
+          <TextComp as="span">{name}</TextComp>
+          {!hasError && <TextComp as="span" fontSize={1} lineHeight={1}>{bytes}</TextComp>}
         </SpacedBox>
         <SpacedBox display="flex" alignItems="center">
           <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>
-            <TrashIcon width={16} height={16} />
+            <TrashIcon width={16} height={16}/>
           </DeleteBtn>
         </SpacedBox>
       </BoxStyled>

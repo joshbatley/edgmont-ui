@@ -1,14 +1,14 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box } from "@edgmont-ui/react";
-import { Chip } from "@edgmont-ui/react";
-import { colorSelect, sizeSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box } from '@edgmont-ui/react';
+import { Chip } from '@edgmont-ui/react';
+import { colorSelect, sizeSelect } from './presets';
 
 export default {
-  title: "Feedback/Chip",
+  title: 'Feedback/Chip',
   component: Chip,
   args: {
-    children: "Chip",
+    children: 'Chip',
   },
   argTypes: {
     color: colorSelect,
@@ -72,7 +72,7 @@ export const Colors: StoryObj<typeof Chip> = {
 
 export const WithDelete: StoryObj<typeof Chip> = {
   render: ({ children, ...rest }) => (
-    <Chip handleDelete={() => alert("deleting")} {...rest}>
+    <Chip handleDelete={() => alert('deleting')} {...rest}>
       {children}
     </Chip>
   ),

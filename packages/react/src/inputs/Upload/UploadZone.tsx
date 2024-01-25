@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import styled from 'styled-components';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { Text, List } from '../../data';
+import { TextComp, List } from '../../data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
 import { BaseUploader, BaseUploaderProps } from './BaseUploader';
@@ -24,9 +24,11 @@ const Container = styled.div<{ isDragActive: boolean }>`
   border: ${({ theme }) => theme.borders.background2[3]};
   border-style: dashed;
   padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
+
   > :not([hidden]) ~ :not([hidden]) {
     margin: ${({ theme }) => theme.space[1]} 0;
   }
+
   ${({ isDragActive, theme }) => isDragActive && `
     background: ${theme.colors.primary};
     border-color: ${theme.colors.primaryHighlight};
@@ -53,17 +55,21 @@ const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
 `;
 
 export const UploadZone: React.FC<UploadZoneProps> = ({
-  showAsTile, filesRender, bottomText = 'Support for a single or bulk upload.', ...rest
+  showAsTile,
+  filesRender,
+  bottomText = 'Support for a single or bulk upload.',
+  ...rest
 }) => {
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
       <TrayIcon width={30} height={30} isDragActive={isDragActive} />
-      {isDragActive ? <Text fontWeight="700" color="base">And drop your file to upload</Text> :
-        <Text>
-          Drag and drop, or <Text as="span" color="primary">click to find</Text> a file
-        </Text>
+      {isDragActive ? <TextComp fontWeight="700" color="base">And drop your file to upload</TextComp> :
+        <TextComp>
+          Drag and drop, or <TextComp as="span" color="primary">click to find</TextComp> a file
+        </TextComp>
       }
-      <Text fontSize="1" lineHeight="1" color={isDragActive ? 'baseAccent' : 'baseHighlight'}>{bottomText}</Text>
+      <TextComp fontSize="1" lineHeight="1"
+        color={isDragActive ? 'baseAccent' : 'baseHighlight'}>{bottomText}</TextComp>
     </>
   ), [bottomText]);
 

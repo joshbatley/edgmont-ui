@@ -1,4 +1,4 @@
-import React, { Ref, useState } from 'react';
+import { Ref, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 import { ClickOutside } from '../../utils';

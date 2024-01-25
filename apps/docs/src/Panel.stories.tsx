@@ -1,12 +1,12 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { Panel } from "@edgmont-ui/react";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { Panel } from '@edgmont-ui/react';
 
 const meta: Meta = {
-  title: "Data/Panel",
+  title: 'Data/Panel',
   component: Panel,
   args: {
-    children: "My basic panel",
+    children: 'My basic panel',
   },
 };
 

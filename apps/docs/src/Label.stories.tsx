@@ -1,9 +1,9 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Label, TextField } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Label, TextField } from '@edgmont-ui/react';
 
 export default {
-  title: "Inputs/Label",
+  title: 'Inputs/Label',
   component: Label,
   parameters: {
     controls: { hideNoControlsWarning: true },

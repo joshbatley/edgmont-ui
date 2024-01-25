@@ -1,24 +1,24 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { EyeIcon, LockClosedIcon } from "@heroicons/react/24/solid";
-import { Box, ClickableElement, Text, TextField } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { EyeIcon, LockClosedIcon } from '@heroicons/react/24/solid';
+import { Box, ClickableElement, TextComp, TextField } from '@edgmont-ui/react';
 
 export default {
-  title: "Inputs/TextField",
+  title: 'Inputs/TextField',
   component: TextField,
   args: {
-    placeholder: "My input",
+    placeholder: 'My input',
   },
 };
 
 const Before = ({ ...rest }) => (
-  <ClickableElement px="3" py="2" onClick={() => alert("boo")} {...rest}>
+  <ClickableElement px="3" py="2" onClick={() => alert('boo')} {...rest}>
     https://
   </ClickableElement>
 );
 const After = ({ ...rest }) => (
   <Box px="3" py="2">
-    <Text {...rest}>.com</Text>
+    <TextComp {...rest}>.com</TextComp>
   </Box>
 );
 

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Box } from '../../data';
-import {Tab, TabVariant} from "../../types/Tabs";
+import { Tab, TabVariant } from '../../types/Tabs';
 
 export type TabPaneProps = {
   selected?: boolean;

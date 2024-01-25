@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Editor from 'react-simple-code-editor';
 import { Language, themes } from 'prism-react-renderer';
 import { Wrapper } from './Wrapper';

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Pagination } from "@edgmont-ui/react";
+import React, { useState } from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Pagination } from '@edgmont-ui/react';
 
 export default {
-  title: "Data/Pagination",
+  title: 'Data/Pagination',
   component: Pagination,
   parameters: {
     controls: { hideNoControlsWarning: true },

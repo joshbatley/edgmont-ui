@@ -1,15 +1,15 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Skeleton, Text as TextComp, Title } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Skeleton, TextComp, Title } from '@edgmont-ui/react';
 
 export default {
-  title: "Feedback/Skeleton",
+  title: 'Feedback/Skeleton',
   component: Skeleton,
   argTypes: {
     varient: { table: { disable: true } },
   },
   parameters: {
-    backgrounds: { default: "White" },
+    backgrounds: { default: 'White' },
   },
 };
 
@@ -25,7 +25,7 @@ export const Rectangle: StoryObj<typeof Skeleton> = {
   ),
 };
 
-export const Text: StoryObj<typeof Skeleton> = {
+export const TextStory: StoryObj<typeof Skeleton> = {
   render: ({ ...rest }) => (
     <Box
       spaceYBetween="6"

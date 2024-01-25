@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import {StepContext} from "../../types/Stepper";
+import { useContext, createContext } from 'react';
+import { StepContext } from '../../types/Stepper';
 
-export const StepperContext = React.createContext<StepContext | undefined>(undefined);
+export const StepperContext = createContext<StepContext | undefined>(undefined);
 
 export const useStepperContext = () => {
   let context = useContext(StepperContext);

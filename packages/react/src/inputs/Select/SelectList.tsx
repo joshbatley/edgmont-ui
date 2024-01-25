@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { List } from '../../data';
 import { useSelectContext } from './SelectContext';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 const StyledList = styled(List)`
   padding-top: ${({ theme }) => theme.space[1]};

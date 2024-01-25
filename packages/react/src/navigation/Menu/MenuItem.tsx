@@ -1,6 +1,5 @@
-import React from 'react';
 import { Button } from '../../inputs/Button';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 export type MenuItemProps = {
   onClick?: () => void;

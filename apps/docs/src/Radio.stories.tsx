@@ -1,10 +1,10 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Radio } from "@edgmont-ui/react";
-import { colorSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Radio } from '@edgmont-ui/react';
+import { colorSelect } from './presets';
 
 export default {
-  title: "Inputs/Radio",
+  title: 'Inputs/Radio',
   component: Radio,
   argTypes: {
     labelText: { table: { disable: true } },

@@ -7,9 +7,8 @@ module.exports = {
   extends: [
     "eslint:recommended", "prettier", "eslint-config-turbo", "airbnb-typescript", "plugin:storybook/recommended",
   ],
-  plugins: ["only-warn", "@typescript-eslint", "react-hooks", "react"],
+  plugins: ["only-warn", "@typescript-eslint", "react"],
   globals: {
-    React: true,
     JSX: true,
   },
   parserOptions: {
@@ -26,8 +25,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': "off",
     'react/jsx-props-no-spreading': "off",
     'react/no-array-index-key': "off",
-    'react-hooks/rules-of-hooks': "error",
-    'react-hooks/exhaustive-deps': "warn",
     "import/no-default-export": "off",
     'import/no-unresolved': "off",
     'import/extensions': "off",

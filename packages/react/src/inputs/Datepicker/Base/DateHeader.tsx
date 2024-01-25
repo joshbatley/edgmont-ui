@@ -1,4 +1,4 @@
-import React, { Ref, useState } from 'react';
+import { Ref, useState } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import styled from 'styled-components';
 import { format, getYear } from 'date-fns';

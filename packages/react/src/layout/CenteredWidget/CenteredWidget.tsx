@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Box, BoxProps } from '../../data';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 const CenteredDiv = styled(Box) <BoxProps>`
   margin: 0 auto;

@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 import { PaginationControls } from './PaginationControls';
-import {Size} from "../../types";
+import { Size } from '../../types';
 
 export type PaginationProps = {
   limit: number;

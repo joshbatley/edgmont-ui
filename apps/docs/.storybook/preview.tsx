@@ -1,6 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
 
-import React from 'react';
 import { ThemeDefaultProvider } from '@edgmont-ui/react'
 
 

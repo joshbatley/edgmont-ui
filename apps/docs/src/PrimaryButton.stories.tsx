@@ -1,14 +1,14 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
-import { Box, PrimaryButton } from "@edgmont-ui/react";
-import { colorSelect, sizeSelect } from "./presets";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
+import { Box, PrimaryButton } from '@edgmont-ui/react';
+import { colorSelect, sizeSelect } from './presets';
 
 const meta: Meta = {
-  title: "Inputs/Buttons/Primary",
+  title: 'Inputs/Buttons/Primary',
   component: PrimaryButton,
   args: {
-    children: "Get started",
+    children: 'Get started',
   },
   argTypes: {
     size: sizeSelect,
@@ -54,7 +54,7 @@ export const Colors: StoryObj<typeof PrimaryButton> = {
       },
     },
   },
-  render: ({ children = "save" }) => (
+  render: ({ children = 'save' }) => (
     <Box
       display="grid"
       gridTemplateColumns="repeat(6, minmax(0, 1fr))"
@@ -80,7 +80,7 @@ export const WithIcon: StoryObj<typeof PrimaryButton> = {
 
 export const WithAction: StoryObj<typeof PrimaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton onClick={() => alert("boo")} {...rest}>
+    <PrimaryButton onClick={() => alert('boo')} {...rest}>
       {children}
     </PrimaryButton>
   ),

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ColorProps, LayoutProps, TypographyProps, color, layout, typography, variant } from 'styled-system';
 

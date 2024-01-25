@@ -1,11 +1,10 @@
-import React from 'react';
 import {
   ExclamationCircleIcon,
   ExclamationTriangleIcon,
   InformationCircleIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/solid';
-import {Severity} from "../../types";
+import { Severity } from '../../types';
 
 export const getIcon = (severity: Severity) => {
   let props = {

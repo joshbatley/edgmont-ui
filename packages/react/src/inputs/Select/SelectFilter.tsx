@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import { TextField, TextFieldProps } from '../TextField';
 import { useSelectContext } from './SelectContext';

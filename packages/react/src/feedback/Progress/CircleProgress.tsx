@@ -1,8 +1,7 @@
-import React from 'react';
 import { darken } from 'polished';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import {Colors} from "../../types";
+import { Colors } from '../../types';
 
 export type CircleProgressProps = {
   color?: Colors;

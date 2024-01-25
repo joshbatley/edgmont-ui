@@ -1,9 +1,9 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { CodeEditor as CE, SyntaxHighlighter as SH } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { CodeEditor as CE, SyntaxHighlighter as SH } from '@edgmont-ui/react';
 
 export default {
-  title: "Feedback/Code",
+  title: 'Feedback/Code',
   component: SH,
 };
 

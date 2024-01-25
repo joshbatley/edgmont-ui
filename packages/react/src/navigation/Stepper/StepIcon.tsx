@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 
@@ -9,7 +8,7 @@ export type StepIconProps = {
   number: number;
 };
 
-const Error = styled(ExclamationTriangleIcon)`
+const ErrorComp = styled(ExclamationTriangleIcon)`
   width: 24px;
   height: 24px;
   color: ${({ theme }) => theme.colors.error};
@@ -43,7 +42,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
 
   if (error) {
     return (
-      <Error />
+      <ErrorComp />
     );
   }
 

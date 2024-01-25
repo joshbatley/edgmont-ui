@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 type WrapperProps = {
   style: React.CSSProperties;

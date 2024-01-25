@@ -1,10 +1,10 @@
-import React from "react";
-import { StoryObj, Meta } from "@storybook/react";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { Breadcrumbs } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { Breadcrumbs } from '@edgmont-ui/react';
 
 export default {
-  title: "Navigation/Breadcrumbs",
+  title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
   args: {
     maxItems: 8,
@@ -13,7 +13,7 @@ export default {
   },
   parameters: {
     backgrounds: {
-      default: "White",
+      default: 'White',
     },
   },
 };

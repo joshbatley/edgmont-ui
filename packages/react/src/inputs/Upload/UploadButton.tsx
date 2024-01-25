@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 import { OutlineButton } from '../../inputs/Button';

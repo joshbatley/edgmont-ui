@@ -1,14 +1,14 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
-import { Box, OutlineButton } from "@edgmont-ui/react";
-import { sizeSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
+import { Box, OutlineButton } from '@edgmont-ui/react';
+import { sizeSelect } from './presets';
 
 export default {
-  title: "Inputs/Buttons/Outline",
+  title: 'Inputs/Buttons/Outline',
   component: OutlineButton,
   args: {
-    children: "Get started",
+    children: 'Get started',
   },
   argTypes: {
     size: sizeSelect,

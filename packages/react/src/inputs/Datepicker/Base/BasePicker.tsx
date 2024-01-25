@@ -1,4 +1,4 @@
-import React, { Ref, useState } from 'react';
+import { Ref, useState } from 'react';
 import Picker, { ReactDatePickerCustomHeaderProps, ReactDatePickerProps } from 'react-datepicker';
 import { PopperContainer } from './PopperContainer';
 import { DateHeader } from './DateHeader';

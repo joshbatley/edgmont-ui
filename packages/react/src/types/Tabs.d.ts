@@ -1,5 +1,4 @@
-import React from "react";
-import {WithChildren} from "./index";
+import { WithChildren } from './index';
 
 export type TabsProps = {
   value?: string | number;

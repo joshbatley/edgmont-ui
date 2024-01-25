@@ -1,18 +1,18 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { ShoppingCartIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
-import { Title, Text, Box } from "@edgmont-ui/react";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { Title, TextComp, Box } from '@edgmont-ui/react';
 import {
   Label,
   OutlineButton,
   PrimaryButton,
   TextArea,
   TextField,
-} from "@edgmont-ui/react";
-import { Card, CardContent, CardMedia } from "@edgmont-ui/react";
+} from '@edgmont-ui/react';
+import { Card, CardContent, CardMedia } from '@edgmont-ui/react';
 
 const meta: Meta = {
-  title: "Data/Card",
+  title: 'Data/Card',
   component: Card,
   parameters: {
     controls: { hideNoControlsWarning: true },
@@ -42,16 +42,16 @@ export const Examples: StoryObj<typeof Card> = {
             <Title as="h3" fontWeight="700">
               The Reptile
             </Title>
-            <Text mono as="span" color="baseHighlight">
+            <TextComp mono as="span" color="baseHighlight">
               £99.99
-            </Text>
+            </TextComp>
           </Box>
           <Box mb="2">
-            <Text fontSize="0" lineHeight="0" color="baseHighlight">
+            <TextComp fontSize="0" lineHeight="0" color="baseHighlight">
               In stock
-            </Text>
+            </TextComp>
           </Box>
-          <Text>Good with children, only lightly bites limbs off.</Text>
+          <TextComp>Good with children, only lightly bites limbs off.</TextComp>
           <Box as="hr" my="4" />
           <Box width="100%" display="flex">
             <PrimaryButton
@@ -61,7 +61,7 @@ export const Examples: StoryObj<typeof Card> = {
               mr="2"
             >
               <ShoppingBagIcon width={16} height={16} />
-              <Text>Buy now</Text>
+              <TextComp>Buy now</TextComp>
             </PrimaryButton>
             <OutlineButton
               justifyContent="center"
@@ -70,7 +70,7 @@ export const Examples: StoryObj<typeof Card> = {
               textAlign="center"
             >
               <ShoppingCartIcon width={16} height={16} />
-              <Text>Add to cart</Text>
+              <TextComp>Add to cart</TextComp>
             </OutlineButton>
           </Box>
         </CardContent>

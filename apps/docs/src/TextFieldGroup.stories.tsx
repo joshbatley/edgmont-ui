@@ -1,9 +1,9 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { TextField, TextFieldGroup } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { TextField, TextFieldGroup } from '@edgmont-ui/react';
 
 export default {
-  title: "Inputs/TextFieldGroup",
+  title: 'Inputs/TextFieldGroup',
   component: TextFieldGroup,
   parameters: {
     controls: { hideNoControlsWarning: true },

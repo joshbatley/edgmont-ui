@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { LayoutProps, SpaceProps, layout, space, variant } from 'styled-system';
 

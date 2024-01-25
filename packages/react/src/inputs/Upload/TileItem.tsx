@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { Text, Image, Box } from '../../data';
+import { TextComp, ImageComp, Box } from '../../data';
 import { ClickableElement } from '../../inputs/Button';
 import { Tooltip } from '../../feedback/Tooltip';
 import { AcceptedFile } from './Utils';
@@ -12,8 +11,9 @@ export type TileItemProps = {
 };
 
 const fallback = (
-  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight" borderRadius="2" bg="background.2">
-    <PhotoIcon width={30} height={30} />
+  <Box width="12" height="12" display="flex" alignItems="center" justifyContent="center" color="baseHighlight"
+       borderRadius="2" bg="background.2">
+    <PhotoIcon width={30} height={30}/>
   </Box>
 );
 
@@ -26,7 +26,7 @@ const BoxStyled = styled(Box)`
     opacity: 1;
   }
 `;
-const StyledImage = styled(Image)`
+const StyledImage = styled(ImageComp)`
   width: ${({ theme }) => theme.sizes[12]};
   height: ${({ theme }) => theme.sizes[12]};
   object-fit: cover;
@@ -43,15 +43,16 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
 
   return (
     <Tooltip disabled={!hasError} as='li' tooltip={errorMessage}>
-      <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3" border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
-        <StyledImage src={imgSrc as string} fallback={fallback} />
+      <BoxStyled display="flex" alignItems="center" p="2" overflow="hidden" borderRadius="3"
+                 border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
+        <StyledImage src={imgSrc as string} fallback={fallback}/>
         <Box display="flex" flexDirection="column" ml="2">
-          <Text as="span" fontWeight="700">{name}</Text>
-          <Text fontSize="0" lineHeight="0" color="baseHighlight">{meta}</Text>
+          <TextComp as="span" fontWeight="700">{name}</TextComp>
+          <TextComp fontSize="0" lineHeight="0" color="baseHighlight">{meta}</TextComp>
         </Box>
         <Box display="flex" flexGrow="1" alignItems="center" justifyContent="end">
           <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>
-            <TrashIcon width={16} height={16} />
+            <TrashIcon width={16} height={16}/>
           </DeleteBtn>
         </Box>
       </BoxStyled>

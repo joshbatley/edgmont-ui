@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StoryObj } from "@storybook/react";
+import React, { useEffect, useState } from 'react';
+import { StoryObj } from '@storybook/react';
 import {
   Box,
   Pagination,
@@ -8,11 +8,11 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Text,
-} from "@edgmont-ui/react";
+  TextComp,
+} from '@edgmont-ui/react';
 
 export default {
-  title: "Data/Table",
+  title: 'Data/Table',
   component: Table,
   parameters: {
     controls: { hideNoControlsWarning: true },
@@ -48,7 +48,7 @@ export const Example: StoryObj<typeof Table> = {
           />
         }
       >
-        <TableHead headers={["Header 1", "Header 2", "Header 3"]} />
+        <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
         <TableBody>
           {rows.map((m, idx) => (
             <TableRow key={`${m}-${idx}`}>
@@ -94,7 +94,7 @@ export const Interactable: StoryObj<typeof Table> = {
           />
         }
       >
-        <TableHead headers={["Header 1", "Header 2", "Header 3"]} />
+        <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
         <TableBody>
           {rows.map((m, idx) => (
             <TableRow
@@ -118,7 +118,7 @@ export const TableProps: StoryObj<typeof Table> = {
     <Box>
       <Box mb="2">
         <Table>
-          <TableHead headers={["Header 1", "Header 2", "Header 3"]} />
+          <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
           <TableBody>
             <TableRow>
               <TableCell>Value for row 1 item 1</TableCell>
@@ -130,12 +130,12 @@ export const TableProps: StoryObj<typeof Table> = {
       </Box>
       <Table
         footer={
-          <Text textAlign="center" color="primary" fontWeight="700">
+          <TextComp textAlign="center" color="primary" fontWeight="700">
             You can add any footer prop, like a Pagination
-          </Text>
+          </TextComp>
         }
       >
-        <TableHead headers={["Header 1", "Header 2", "Header 3"]} />
+        <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />
         <TableBody>
           <TableRow>
             <TableCell>Value for row 1 item 1</TableCell>
@@ -150,10 +150,10 @@ export const TableProps: StoryObj<typeof Table> = {
 
 export const TableHeadProps: StoryObj<typeof Table & typeof TableHead> = {
   args: {
-    headers: ["Header1", "header2", "header3"],
+    headers: ['Header1', 'header2', 'header3'],
   },
   render: ({ ...rest }: any) => {
-    let headers: string[] = rest.headers.split(",");
+    let headers: string[] = rest.headers.split(',');
     return (
       <div>
         <Box mb="3">
@@ -179,7 +179,7 @@ export const TableHeadProps: StoryObj<typeof Table & typeof TableHead> = {
         <Box mb="3">
           Sticky Header
           <Table>
-            <TableHead headers={["Header 1", "Header 2", "Header 3"]} sticky />
+            <TableHead headers={['Header 1', 'Header 2', 'Header 3']} sticky />
             <TableBody>
               {allRows.map((m, idx) => (
                 <TableRow key={`${m}-${idx}`}>

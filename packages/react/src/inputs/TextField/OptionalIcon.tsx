@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box } from '../../data';
-import {Size} from "../../types";
+import { Size } from '../../types';
 
 export type OptionalIconProps = {
   icon: React.ReactNode;

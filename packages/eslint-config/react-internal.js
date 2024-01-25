@@ -33,6 +33,7 @@ module.exports = {
     "**/jest.config.js"
   ],
   rules: {
+    'no-prototype-builtins': 'off',
     'consistent-return': "off",
     'prefer-const': "off",
     'lines-between-class-members': "off",

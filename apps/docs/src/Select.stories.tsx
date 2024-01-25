@@ -1,18 +1,18 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
 import {
   Select,
   SelectFilter,
   SelectItem,
   SelectList,
-} from "@edgmont-ui/react";
-import { sizeSelect } from "./presets";
+} from '@edgmont-ui/react';
+import { sizeSelect } from './presets';
 
 export default {
-  title: "Inputs/Select/Controlled",
+  title: 'Inputs/Select/Controlled',
   component: Select,
   args: {
-    placeholder: "My select menu",
+    placeholder: 'My select menu',
     error: false,
     disabled: false,
   },
@@ -22,8 +22,8 @@ export default {
 };
 
 const valuesComplex = [
-  { value: "hello", label: "this is hello" },
-  { value: "world", label: "this is world" },
+  { value: 'hello', label: 'this is hello' },
+  { value: 'world', label: 'this is world' },
 ];
 
 export const Example: StoryObj<typeof Select & typeof SelectFilter> = {
@@ -31,7 +31,7 @@ export const Example: StoryObj<typeof Select & typeof SelectFilter> = {
     <Select
       {...rest}
       onChange={(...item) => console.log(item)}
-      itemToString={(item) => (item ? item.value : "")}
+      itemToString={(item) => (item ? item.value : '')}
     >
       <SelectFilter {...rest} placeholder={placeholder} />
       <SelectList>

@@ -1,10 +1,10 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Panel } from "@edgmont-ui/react";
-import { CenteredWidget } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Panel } from '@edgmont-ui/react';
+import { CenteredWidget } from '@edgmont-ui/react';
 
 export default {
-  title: "Layout/Centered Widget",
+  title: 'Layout/Centered Widget',
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

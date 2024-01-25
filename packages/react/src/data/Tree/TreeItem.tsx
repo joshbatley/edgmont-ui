@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react';
+import { useCallback, isValidElement, cloneElement, Children } from 'react';
 import styled from 'styled-components';
 import { isObjectAndValid } from '../../shared/isObjectAndValid';
 import { Collapse } from '../../utils/Transitions/Collapse';
 import { useTreeContext } from './TreeContext';
 import { ClickableElement } from '../../inputs/Button/ClickableElement';
 import { Box } from '../Box';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 type Icon = React.ReactNode | {
   endIcon?: React.ReactNode;
@@ -96,7 +96,7 @@ export const TreeItem: React.FC<TreeItemProps> = ({
 
   let ActionIcon = isItemExpanded(nodeId) ? expandedIcon : collaspseIcon;
   let StateIcon = children ? ActionIcon : endIcon;
-  let Icon = React.isValidElement(icon) ? icon : StateIcon;
+  let Icon = isValidElement(icon) ? icon : StateIcon;
   let IconComp = blockNode ? <ClickableElement as="a" onClick={() => toggleItem(nodeId)}>{Icon}</ClickableElement> : Icon;
 
   let handleClick = useCallback((e: React.MouseEvent) => {
@@ -117,9 +117,9 @@ export const TreeItem: React.FC<TreeItemProps> = ({
       </StyledBtn>
       {children && (
         <Collapse inProp={isItemExpanded(nodeId)}>
-          {React.Children.map(children, child => (
+          {Children.map(children, child => (
             <Box display="flex" flexDirection="column">
-              {React.isValidElement(child) && React.cloneElement<any>(child, { level: level + 1 })}
+              {isValidElement(child) && cloneElement<any>(child, { level: level + 1 })}
             </Box>
           ))}
         </Collapse>

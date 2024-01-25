@@ -1,13 +1,13 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { CircleLoader, LinearLoader } from "@edgmont-ui/react";
-import { colorSelectWithBase } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { CircleLoader, LinearLoader } from '@edgmont-ui/react';
+import { colorSelectWithBase } from './presets';
 
 export default {
-  title: "Feedback/Loader",
+  title: 'Feedback/Loader',
   component: CircleLoader,
   args: {
-    color: "primary",
+    color: 'primary',
   },
   argTypes: {
     color: colorSelectWithBase,

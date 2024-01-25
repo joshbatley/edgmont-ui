@@ -1,19 +1,19 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { TabPane, Tabs } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { TabPane, Tabs } from '@edgmont-ui/react';
 
 export default {
-  title: "Navigation/Tabs",
+  title: 'Navigation/Tabs',
   component: Tabs,
   argTypes: {
     type: {
-      options: ["default", "card"],
-      control: { type: "select" },
+      options: ['default', 'card'],
+      control: { type: 'select' },
     },
   },
   parameters: {
     backgrounds: {
-      default: "White",
+      default: 'White',
     },
   },
 };

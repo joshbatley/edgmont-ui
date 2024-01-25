@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState, Children } from 'react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import { Button } from '../../inputs';
 import { Box } from '../../data';
 import { Item } from './Item';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 export type BreadcrumbsProps = {
   maxItems?: number;
@@ -16,7 +16,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   children, maxItems = 8, itemsBefore = 1, itemsAfter = 1, dividerIcon = <div>/</div>,
 }) => {
   let [showAll, setShow] = useState(false);
-  let items = React.Children.toArray(children);
+  let items = Children.toArray(children);
 
   if (items.length <= maxItems) {
     return (

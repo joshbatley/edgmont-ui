@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Portal } from '../../utils';
 import { SnackbarProviderProps, Snack, SnackOptions } from '../../types/Snackbar';
 import { SnackbarContext } from './SnackbarContext';
 import { SnackbarItem } from './SnackbarItem';
 import { createId, getPosition } from './utils';
-import {IntercardinalPoints} from "../../types";
+import { IntercardinalPoints } from '../../types';
 
 const Container = styled.div<{ anchor: IntercardinalPoints }>`
   position: fixed;

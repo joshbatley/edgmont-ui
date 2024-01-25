@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {Colors} from "../../types";
+import { Colors } from '../../types';
 
 export type BaseControlProps = {
   labelText?: string;

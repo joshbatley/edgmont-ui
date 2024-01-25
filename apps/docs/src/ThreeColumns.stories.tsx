@@ -1,9 +1,9 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, ThreeColumns } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, ThreeColumns } from '@edgmont-ui/react';
 
 export default {
-  title: "Layout/ThreeColumns",
+  title: 'Layout/ThreeColumns',
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

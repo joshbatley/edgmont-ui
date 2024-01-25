@@ -4,4 +4,4 @@ export * from './SelectContext';
 export * from './SelectFilter';
 export * from './SelectItem';
 export * from './SelectList';
-export * from './SimpleSelect'
+export * from './SimpleSelect';

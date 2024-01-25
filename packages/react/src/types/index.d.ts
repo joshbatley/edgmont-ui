@@ -1,4 +1,3 @@
-import React from "react";
 
 export type OverriderDefaults = Record<Partial<Property>, string>;
 
@@ -23,6 +22,6 @@ export type AsProp = any;
 
 export type WithChildren = { children?: React.ReactNode };
 
-export * from './Tabs'
-export * from './Snackbar'
-export * from './Stepper'
+export * from './Tabs';
+export * from './Snackbar';
+export * from './Stepper';

@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 import { ClickableElement, OutlineButton } from '../../../inputs/Button';
-import { Text } from '../../../data';
+import { TextComp } from '../../../data';
 
 export type DateInputProps = {
   placeholder?: string;
@@ -33,18 +33,24 @@ const ClearBtn = styled(ClickableElement)`
   }
 `;
 
-export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value, placeholder, onClick, clear, showClear }, ref) => {
+export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({
+  value,
+  placeholder,
+  onClick,
+  clear,
+  showClear,
+}, ref) => {
   let handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     clear?.();
   };
 
   let displayValue = value ?
-    (<Text as="span" color="base">{value}</Text>) :
-    (<Text as="span" color="baseHighlight">{placeholder}</Text>);
+    (<TextComp as="span" color="base">{value}</TextComp>) :
+    (<TextComp as="span" color="baseHighlight">{placeholder}</TextComp>);
 
   return (
-    <OutlineButton bg="background.1" width="100%" justifyContent="space-between" ref={ref} onClick={onClick} >
+    <OutlineButton bg="background.1" width="100%" justifyContent="space-between" ref={ref} onClick={onClick}>
       <Container>
         <Icon width={16} height={16} />
         {displayValue}
@@ -56,7 +62,7 @@ export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({ value,
           </ClearBtn>
         )
       }
-    </OutlineButton >
+    </OutlineButton>
   );
 });
 

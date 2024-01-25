@@ -1,4 +1,4 @@
-import type {AlertProps} from "../feedback";
+import type { AlertProps } from '../feedback';
 
 export type SnackItem = {
   title: string, id?: string

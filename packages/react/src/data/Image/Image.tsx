@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import {
   FlexboxProps,
@@ -10,9 +10,17 @@ import {
   flexbox, grid, layout, order, position, space,
 } from 'styled-system';
 
-export type ImageProps = {
-  fallback?: React.ReactNode;
-} & React.ComponentPropsWithoutRef<'img'> & FlexboxProps & GridProps & LayoutProps & OrderProps & PositionProps & SpaceProps;
+export type ImageProps =
+  {
+    fallback?: React.ReactNode;
+  }
+  & React.ComponentPropsWithoutRef<'img'>
+  & FlexboxProps
+  & GridProps
+  & LayoutProps
+  & OrderProps
+  & PositionProps
+  & SpaceProps;
 
 const Img = styled.img`
   ${space}
@@ -23,7 +31,7 @@ const Img = styled.img`
   ${position}
 `;
 
-export const Image: React.FC<ImageProps> = ({ fallback, ...rest }) => {
+export const ImageComp: React.FC<ImageProps> = ({ fallback, ...rest }) => {
   let [hasError, setError] = useState(false);
 
   return (hasError && fallback) ? <>{fallback}</> : (

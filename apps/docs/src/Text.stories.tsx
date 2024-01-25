@@ -1,30 +1,30 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { Text } from "@edgmont-ui/react";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { TextComp } from '@edgmont-ui/react';
 
 const meta: Meta = {
-  title: "Data/Text",
-  component: Text,
+  title: 'Data/Text',
+  component: TextComp,
   args: {
-    children: "My Text element",
+    children: 'My Text element',
   },
   argTypes: {
     as: {
-      options: ["p", "span", "b"],
+      options: ['p', 'span', 'b'],
     },
   },
 };
 
 export default meta;
 
-export const TextComp: StoryObj<typeof Text> = {
-  render: ({ children, as }: any) => <Text as={as}>{children}</Text>,
+export const TextStory: StoryObj<typeof TextComp> = {
+  render: ({ children, as }: any) => <TextComp as={as}>{children}</TextComp>,
 };
 
-export const Mono: StoryObj<typeof Text> = {
+export const Mono: StoryObj<typeof TextComp> = {
   render: ({ children, as }: any) => (
-    <Text as={as} mono>
+    <TextComp as={as} mono>
       {children}
-    </Text>
+    </TextComp>
   ),
 };

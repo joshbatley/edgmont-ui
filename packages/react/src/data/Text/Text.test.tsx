@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import { ThemeDefaultProvider } from '../../utils';
-import { Text } from '.';
+import { TextComp } from '.';
 
 function render(component: ReactNode) {
   return testRender(<ThemeDefaultProvider>{component}</ThemeDefaultProvider>);
@@ -10,7 +10,7 @@ function render(component: ReactNode) {
 describe('Text component', () => {
   describe('Text', () => {
     it('should render', () => {
-      const { container } = render(<Text>Text</Text>);
+      const { container } = render(<TextComp>Text</TextComp>);
       expect(container.firstChild).not.toBeEmptyDOMElement();
       expect(container.firstChild).toHaveTextContent('Text');
     });
@@ -18,12 +18,12 @@ describe('Text component', () => {
 
   describe('TextMono', () => {
     it('should render', () => {
-      const { container } = render(<Text mono>Text</Text>);
+      const { container } = render(<TextComp mono>Text</TextComp>);
       expect(container.firstChild).not.toBeEmptyDOMElement();
       expect(container.firstChild).toHaveTextContent('Text');
     });
 
-    const { container } = render(<Text mono>Text</Text>);
+    const { container } = render(<TextComp mono>Text</TextComp>);
     expect(container).toMatchSnapshot();
   });
 });

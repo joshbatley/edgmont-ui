@@ -1,14 +1,14 @@
-import React from "react";
-import { StoryObj, Meta } from "@storybook/react";
-import { Box } from "@edgmont-ui/react";
-import { Checkbox } from "@edgmont-ui/react";
-import { colorSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box } from '@edgmont-ui/react';
+import { Checkbox } from '@edgmont-ui/react';
+import { colorSelect } from './presets';
 
 export default {
-  title: "Inputs/Checkbox",
+  title: 'Inputs/Checkbox',
   component: Checkbox,
   args: {
-    labelText: "My Checkboxes",
+    labelText: 'My Checkboxes',
     disabled: false,
   },
   argTypes: {
@@ -37,7 +37,7 @@ export const Disabled: StoryObj<typeof Checkbox> = {
   ),
 };
 
-export const Error: StoryObj<typeof Checkbox> = {
+export const ErrorStory: StoryObj<typeof Checkbox> = {
   render: ({ children, ...rest }) => (
     <Box spaceYBetween="3">
       <Checkbox error {...rest} />

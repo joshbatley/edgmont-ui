@@ -1,12 +1,12 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { Box, Title as Comp } from "@edgmont-ui/react";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { Box, Title as Comp } from '@edgmont-ui/react';
 
 const meta: Meta = {
-  title: "Data/Text",
+  title: 'Data/Text',
   component: Comp,
   args: {
-    children: "My Text element",
+    children: 'My Text element',
   },
 };
 export default meta;

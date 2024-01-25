@@ -1,16 +1,16 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
 import {
   Box,
   OutlineButton,
   SnackbarProvider,
   useSnackbar,
-} from "@edgmont-ui/react";
-import { intercardinalPointsSelect } from "./presets";
-import { Snack } from "@edgmont-ui/react/src/types";
+} from '@edgmont-ui/react';
+import { intercardinalPointsSelect } from './presets';
+import { Snack } from '@edgmont-ui/react/src/types';
 
 export default {
-  title: "Feedback/Snackbar",
+  title: 'Feedback/Snackbar',
   args: {
     max: 3,
     autoHideDuration: 6000,
@@ -21,11 +21,11 @@ export default {
 };
 
 const lorem =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet imperdiet nunc non porttitor. Morbi vitae venenatis mauris. Nam malesuada ipsum mi, sed maximus nulla rhoncus sit amet.";
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet imperdiet nunc non porttitor. Morbi vitae venenatis mauris. Nam malesuada ipsum mi, sed maximus nulla rhoncus sit amet.';
 
 const Comp: React.FC<Snack> = ({
-  text = "Add Snackbar",
-  title = "Your notification here",
+  text = 'Add Snackbar',
+  title = 'Your notification here',
   ...rest
 }) => {
   let { enqueue } = useSnackbar();
@@ -37,7 +37,7 @@ const Comp: React.FC<Snack> = ({
 export const Example: StoryObj = {
   render: ({ ...rest }) => (
     <SnackbarProvider {...rest}>
-      <Box display="grid" height="100vh" style={{ placeContent: "center" }}>
+      <Box display="grid" height="100vh" style={{ placeContent: 'center' }}>
         <Comp />
       </Box>
     </SnackbarProvider>
@@ -51,7 +51,7 @@ export const Varients: StoryObj = {
         spaceYBetween="2"
         display="grid"
         height="100vh"
-        style={{ placeContent: "center" }}
+        style={{ placeContent: 'center' }}
       >
         <Box display="flex" justifyContent="space-between">
           <Comp severity="error" text="Add Error" />

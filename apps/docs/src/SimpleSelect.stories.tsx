@@ -1,13 +1,13 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { sizeSelect } from "./presets";
-import { SimpleSelect } from "@edgmont-ui/react/src/inputs/Select/SimpleSelect";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { sizeSelect } from './presets';
+import { SimpleSelect } from '@edgmont-ui/react/src/inputs/Select/SimpleSelect';
 
 export default {
-  title: "Inputs/Select/Simple",
+  title: 'Inputs/Select/Simple',
   component: SimpleSelect,
   args: {
-    placeholder: "My Simple Select Menu",
+    placeholder: 'My Simple Select Menu',
     error: false,
     disabled: false,
     isClearable: false,
@@ -20,11 +20,11 @@ export default {
 };
 
 const values = [
-  "hello",
-  "worlds",
-  "yeah us to",
-  "some more options",
-  "Selectable value",
+  'hello',
+  'worlds',
+  'yeah us to',
+  'some more options',
+  'Selectable value',
 ];
 
 export const Default: StoryObj<typeof SimpleSelect> = {

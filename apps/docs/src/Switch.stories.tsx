@@ -1,10 +1,10 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Switch } from "@edgmont-ui/react";
-import { colorSelect, sizeSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Switch } from '@edgmont-ui/react';
+import { colorSelect, sizeSelect } from './presets';
 
 export default {
-  title: "Inputs/Switch",
+  title: 'Inputs/Switch',
   component: Switch,
   args: {
     disabled: false,

@@ -1,14 +1,14 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import {
   List,
   ListItem,
   OrderedList as OL,
   UnorderedList as UL,
-} from "@edgmont-ui/react";
+} from '@edgmont-ui/react';
 
 const meta: Meta = {
-  title: "Data/List",
+  title: 'Data/List',
   component: List,
   parameters: {
     controls: { hideNoControlsWarning: true },

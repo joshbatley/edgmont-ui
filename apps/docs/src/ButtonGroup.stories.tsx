@@ -1,11 +1,11 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { PrimaryButton } from "@edgmont-ui/react";
-import { OutlineButton } from "@edgmont-ui/react";
-import { ButtonGroup } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { PrimaryButton } from '@edgmont-ui/react';
+import { OutlineButton } from '@edgmont-ui/react';
+import { ButtonGroup } from '@edgmont-ui/react';
 
 export default {
-  title: "Inputs/Buttons/ButtonGroups",
+  title: 'Inputs/Buttons/ButtonGroups',
   component: ButtonGroup,
   parameters: {
     controls: { hideNoControlsWarning: true },

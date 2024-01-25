@@ -1,5 +1,4 @@
-import React from 'react';
-import { Highlight, Language, RenderProps, themes} from 'prism-react-renderer';
+import { Highlight, Language, themes } from 'prism-react-renderer';
 import { Wrapper } from './Wrapper';
 
 export type SyntaxHighlighterProps = {
@@ -12,16 +11,16 @@ export type SyntaxHighlighterProps = {
 export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
   language, code, light, withWrapper = true,
 }) => {
-  let Theme =  light ? themes.github : themes.palenight;
+  let Theme = light ? themes.github : themes.palenight;
   return (
     <Wrapper style={Theme.plain} skip={!withWrapper}>
       <Highlight theme={Theme} code={code} language={language}>
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => <span {...getTokenProps({ token, key })} />)}
-            </div>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => <span {...getTokenProps({ token, key })} />)}
+              </div>
             ))}
           </pre>
         )}

@@ -1,13 +1,13 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { CircleProgress, LinearProgress } from "@edgmont-ui/react";
-import { colorSelect } from "./presets";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { CircleProgress, LinearProgress } from '@edgmont-ui/react';
+import { colorSelect } from './presets';
 
 export default {
-  title: "Feedback/Progress",
+  title: 'Feedback/Progress',
   component: CircleProgress,
   args: {
-    color: "primary",
+    color: 'primary',
     percentage: 30,
   },
   argTypes: {

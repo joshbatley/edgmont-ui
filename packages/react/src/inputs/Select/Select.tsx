@@ -1,10 +1,9 @@
-import React from 'react';
 import Downshift, {
   DownshiftProps, DownshiftState, StateChangeOptions,
 } from 'downshift';
 import { Box } from '../../data';
 import { SelectContext } from './SelectContext';
-import {WithChildren} from "../../types";
+import { WithChildren } from '../../types';
 
 export type SelectProps = {
   disabled?: boolean;

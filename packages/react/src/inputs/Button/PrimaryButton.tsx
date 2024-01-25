@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { BaseButton, BaseButtonProps } from './BaseButton';
-import {Colors} from "../../types";
+import { Colors } from '../../types';
 
 export type PrimaryButtonProps = Omit<BaseButtonProps, 'loaderColor'> & {
   color?: Colors

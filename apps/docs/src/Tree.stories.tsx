@@ -1,11 +1,11 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { BellIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
-import { StarIcon } from "@heroicons/react/24/solid";
-import { Panel, Tree, TreeItem } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { BellIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/solid';
+import { Panel, Tree, TreeItem } from '@edgmont-ui/react';
 
 export default {
-  title: "Data/Tree",
+  title: 'Data/Tree',
   component: Tree,
   parameters: {
     controls: { hideNoControlsWarning: true },
@@ -16,7 +16,7 @@ export const Example: StoryObj<typeof Tree> = {
   render: () => (
     <>
       <Panel width="50%" px="2" py="3">
-        <Tree defaultExpanded={["1", "1.2"]} blockNode>
+        <Tree defaultExpanded={['1', '1.2']} blockNode>
           <TreeItem nodeId="1" label="item 1" active>
             <TreeItem nodeId="1.1" label="item 1.1" />
             <TreeItem disabled nodeId="1.2" label="item 1.2">
@@ -31,7 +31,7 @@ export const Example: StoryObj<typeof Tree> = {
       </Panel>
 
       <Panel width="50%" mt="4" px="2" py="3">
-        <Tree defaultExpanded={["1", "1.2"]}>
+        <Tree defaultExpanded={['1', '1.2']}>
           <TreeItem nodeId="1" label="item 1" active>
             <TreeItem nodeId="1.1" label="item 1.1" />
             <TreeItem disabled nodeId="1.2" label="item 1.2">
@@ -52,7 +52,7 @@ export const CustomIcons: StoryObj<typeof Tree> = {
   render: () => (
     <Panel width="50%" px="2" py="3">
       <Tree
-        defaultExpanded={["1"]}
+        defaultExpanded={['1']}
         defaultCollapseIcon={<ShoppingBagIcon width={16} height={16} />}
         defaultEndIcon={<BellIcon width={16} height={16} />}
         defaultExpandIcon={<StarIcon width={16} height={16} />}

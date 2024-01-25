@@ -1,20 +1,20 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { CodeBracketIcon, LockClosedIcon } from "@heroicons/react/24/solid";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { CodeBracketIcon, LockClosedIcon } from '@heroicons/react/24/solid';
 import {
   Box,
   ClickableElement,
   Password as PasswordComp,
-  Text,
+  TextComp,
   TextField,
-} from "@edgmont-ui/react";
-import { sizeSelect } from "./presets";
+} from '@edgmont-ui/react';
+import { sizeSelect } from './presets';
 
 export default {
-  title: "Inputs/TextField",
+  title: 'Inputs/TextField',
   component: TextField,
   args: {
-    placeholder: "My input",
+    placeholder: 'My input',
   },
   argTypes: {
     size: sizeSelect,
@@ -22,13 +22,13 @@ export default {
 };
 
 const Before = ({ ...rest }) => (
-  <ClickableElement px="3" py="2" onClick={() => alert("boo")} {...rest}>
+  <ClickableElement px="3" py="2" onClick={() => alert('boo')} {...rest}>
     https://
   </ClickableElement>
 );
 const After = ({ ...rest }) => (
   <Box px="3" py="2">
-    <Text {...rest}>.com</Text>
+    <TextComp {...rest}>.com</TextComp>
   </Box>
 );
 

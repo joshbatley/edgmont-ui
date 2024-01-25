@@ -1,11 +1,11 @@
-import React from "react";
-import { StoryObj } from "@storybook/react";
-import { PhotoIcon } from "@heroicons/react/24/solid";
-import { Box, Image } from "@edgmont-ui/react";
+import React from 'react';
+import { StoryObj } from '@storybook/react';
+import { PhotoIcon } from '@heroicons/react/24/solid';
+import { Box, ImageComp } from '@edgmont-ui/react';
 
 export default {
-  title: "Data/Image",
-  component: Image,
+  title: 'Data/Image',
+  component: ImageComp,
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
@@ -31,7 +31,7 @@ export const Example: StoryObj = {
     <div>
       <div>
         Broken Image with fallback
-        <Image
+        <ImageComp
           width="200"
           height="200"
           fallback={fallback}
@@ -40,7 +40,7 @@ export const Example: StoryObj = {
       </div>
       <div>
         Working Image with fallback
-        <Image
+        <ImageComp
           width="200"
           height="200"
           fallback={fallback}

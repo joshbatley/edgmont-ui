@@ -1,6 +1,5 @@
-import React from 'react';
 import { Portal } from '../../../utils';
-import {WithChildren} from "../../../types";
+import { WithChildren } from '../../../types';
 
 export const PopperContainer: React.FC<WithChildren> = ({ children }) => (
   <Portal>

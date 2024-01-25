@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box } from '../../data';
-import {Colors, IntercardinalPoints, WithChildren} from "../../types";
+import { Colors, IntercardinalPoints, WithChildren } from '../../types';
 
 export type BadgeProps = {
   color?: Colors;

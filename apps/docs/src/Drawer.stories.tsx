@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { StoryObj } from "@storybook/react";
-import { Box, Drawer, PrimaryButton } from "@edgmont-ui/react";
+import React, { useState } from 'react';
+import { StoryObj } from '@storybook/react';
+import { Box, Drawer, PrimaryButton } from '@edgmont-ui/react';
 
 export default {
-  title: "Navigation/Drawer",
+  title: 'Navigation/Drawer',
   component: Drawer,
 };
 
@@ -12,7 +12,7 @@ export const Example: StoryObj<typeof Drawer> = {
     let [open, setOpen] = useState(false);
     return (
       <>
-        <Box display="grid" height="100vh" style={{ placeContent: "center" }}>
+        <Box display="grid" height="100vh" style={{ placeContent: 'center' }}>
           <PrimaryButton onClick={() => setOpen(!open)}>
             Open Drawer
           </PrimaryButton>

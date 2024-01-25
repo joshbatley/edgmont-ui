@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState, Children, isValidElement } from 'react';
 import { Box } from '../../data';
 import { TabCardItems } from './TabCardItems';
 import { TabNavItems } from './TabNavItems';
 import { TabPaneList } from './TabPane';
-import {Tab, TabsProps} from "../../types/Tabs";
+import { Tab, TabsProps } from '../../types/Tabs';
 
 const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
-  return React.Children.toArray(children).map((node) => {
-    if (!React.isValidElement(node)) {
+  return Children.toArray(children).map((node) => {
+    if (!isValidElement(node)) {
       return null;
     }
     let key = node.props.value || node.key;

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { StoryObj } from "@storybook/react";
-import { format } from "date-fns";
+import React, { useState } from 'react';
+import { StoryObj } from '@storybook/react';
+import { format } from 'date-fns';
 import {
   BasePicker,
   DatePicker,
   DateRangePicker,
   MonthPicker as MP,
   YearPicker as YP,
-} from "@edgmont-ui/react";
+} from '@edgmont-ui/react';
 
 export default {
-  title: "Inputs/Datepicker",
+  title: 'Inputs/Datepicker',
   component: BasePicker,
 };
 
@@ -44,7 +44,7 @@ export const CustomSetup: StoryObj<typeof BasePicker> = {
   },
   render: () => {
     let [date, setDate] = useState<Date | null>(null);
-    let inputValue = date && format(date, "dd/MM/yyyy");
+    let inputValue = date && format(date, 'dd/MM/yyyy');
     return (
       <BasePicker
         inputValue={inputValue || undefined}
