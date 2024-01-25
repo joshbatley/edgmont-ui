@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box } from '../../data';
+import { Tab, TabVariant } from '../../types/Tabs';
 
 export type TabPaneProps = {
   selected?: boolean;
@@ -12,7 +12,7 @@ export type TabPaneProps = {
 export type TabPaneListProps = {
   tabs: Tab[];
   selected: string | number;
-  type: TabVarient;
+  type: TabVariant;
 };
 
 export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest }) =>

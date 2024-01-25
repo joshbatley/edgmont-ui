@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { format, subYears } from 'date-fns';
 import { BasePicker, BasePickerProps } from './Base/BasePicker';
 

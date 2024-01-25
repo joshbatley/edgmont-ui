@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import {
   border, boxShadow, color, grid, layout, order, space,
   ColorProps, SpaceProps, LayoutProps, BoxShadowProps, BorderProps, OrderProps, GridProps, FlexboxProps, flexbox, position, PositionProps, typography, TypographyProps,
@@ -9,7 +9,7 @@ export type BoxProps = ColorProps & SpaceProps & LayoutProps & BoxShadowProps & 
   spaceYBetween?: string | number;
 };
 
-export const Box = styled.div<BoxProps>`
+export const Box: StyledComponent<'div', DefaultTheme, BoxProps, never> = styled.div<BoxProps>`
   ${space}
   ${layout}
   ${color}

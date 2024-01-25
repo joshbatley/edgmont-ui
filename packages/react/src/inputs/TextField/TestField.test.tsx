@@ -1,4 +1,3 @@
-import React from 'react';
 import { render as testRender } from '@testing-library/react';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 import { ThemeDefaultProvider } from '../../utils';

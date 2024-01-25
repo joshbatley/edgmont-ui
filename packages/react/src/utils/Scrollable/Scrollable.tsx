@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { Box } from '../../data';
+import { WithChildren } from '../../types';
 
 const ScrollBox = styled(Box)`
   white-space: nowrap;

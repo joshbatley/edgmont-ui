@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { StepIcon } from './StepIcon';
 import { useStepperContext } from './StepperContext';
+import { Colors, Direction, WithChildren } from '../../types';
 
 export type StepLabelProps = {
   icon?: React.ReactNode;

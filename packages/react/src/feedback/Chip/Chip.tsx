@@ -1,10 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { tint, darken } from 'polished';
 import { XCircleIcon } from '@heroicons/react/24/solid';
 import { ClickableElement } from '../../inputs';
-import { Text } from '../../data';
+import { TextComp } from '../../data';
+import { Colors, Size, WithChildren } from '../../types';
 
 export type ChipProps = {
   color?: Colors;
@@ -80,13 +80,13 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
 
 
 export const Chip: React.FC<ChipProps> = ({
-  color = 'primary', size = 'small', handleDelete, children,
-}) => (
+                                            color = 'primary', size = 'small', handleDelete, children,
+                                          }) => (
   <Container size={size} color={color}>
-    <Text>{children}</Text>
+    <TextComp>{children}</TextComp>
     {(handleDelete !== undefined && handleDelete !== null) && (
       <ClickableElement onClick={handleDelete}>
-        <XCircleIcon width={16} height={16} />
+        <XCircleIcon width={16} height={16}/>
       </ClickableElement>
     )}
   </Container>

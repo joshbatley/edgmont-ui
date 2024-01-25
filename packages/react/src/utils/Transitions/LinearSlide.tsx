@@ -1,4 +1,3 @@
-import React from 'react';
 import { animated, useSpring, UseSpringProps } from 'react-spring';
 
 export type LinearSlideProps = {

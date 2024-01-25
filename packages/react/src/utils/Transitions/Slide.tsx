@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { animated, useTransition, useSpring, UseTransitionProps, useSpringRef, useChain } from 'react-spring';
 
 export type SlideProps = {

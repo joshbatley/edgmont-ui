@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext, createContext } from 'react';
 
 export type TreeContextProps = {
   expanded: string[];
@@ -10,7 +10,7 @@ export type TreeContextProps = {
   blockNode?: boolean;
 };
 
-export const TreeContext = React.createContext<TreeContextProps | undefined>(undefined);
+export const TreeContext = createContext<TreeContextProps | undefined>(undefined);
 
 export const useTreeContext = () => {
   let context = useContext(TreeContext);

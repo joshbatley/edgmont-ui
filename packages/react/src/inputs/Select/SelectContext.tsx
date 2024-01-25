@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { useContext, createContext } from 'react';
 import { ControllerStateAndHelpers } from 'downshift';
 
-export const SelectContext = React.createContext<ControllerStateAndHelpers<any> | undefined>(undefined);
+export const SelectContext = createContext<ControllerStateAndHelpers<any> | undefined>(undefined);
 
 export const useSelectContext = () => {
   let context = useContext(SelectContext);

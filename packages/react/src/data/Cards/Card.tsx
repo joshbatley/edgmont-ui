@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { FlexboxProps, LayoutProps, SpaceProps, flexbox, layout, space } from 'styled-system';
 

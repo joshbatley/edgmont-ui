@@ -1,4 +1,3 @@
-import React from 'react';
 import { animated, useTransition, UseTransitionProps } from 'react-spring';
 
 export type OpenProps = {

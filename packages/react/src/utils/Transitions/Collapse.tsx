@@ -1,4 +1,3 @@
-import React from 'react';
 import { useMeasure } from 'react-use';
 import { animated, useSpring, UseSpringProps } from 'react-spring';
 import { usePrevious } from '../../shared/usePrevious';

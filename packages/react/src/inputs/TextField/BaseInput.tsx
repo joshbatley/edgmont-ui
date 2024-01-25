@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
+import { Size } from '../../types';
 
 export const BaseInput = styled.input<{
   variant: Size; error: boolean; disabled: boolean;

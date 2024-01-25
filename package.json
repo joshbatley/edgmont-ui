@@ -1,33 +1,23 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "edgmont-ui",
   "private": true,
-  "repository": "github.com:joshbatley/edgmont-ui",
-  "license": "MIT",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "@typescript-eslint/parser": "^5.31.0",
-    "eslint": "^8.21.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-storybook": "^0.6.1",
-    "lerna": "^6.0.3"
-  },
   "scripts": {
-    "version": "lerna version --conventional-commits --create-release github",
-    "publish": "lerna publish from-git",
-    "build": "lerna run build:ci",
-    "build-docs:ci": "yarn clean-docs && yarn build-docs && lerna run build-docs-home && yarn move-docs && yarn create-cname",
-    "build-docs": "lerna run build-docs:ci",
-    "move-docs": "./scripts/move-docs.sh",
-    "clean-docs": "rm -rf ./docs/*",
-    "lint": "lerna run lint",
-    "typecheck": "lerna run typecheck",
-    "test:ci": "lerna run test:ci",
-    "create-cname": "echo ui.edgmont.dev > ./docs/CNAME"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "changeset publish"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@changesets/cli": "^2.27.1",
+    "prettier": "^3.1.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
   }
 }

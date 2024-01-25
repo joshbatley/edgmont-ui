@@ -1,49 +1,57 @@
-name: Publish Docs
+name: Deploy static content to Pages
 
 on:
   push:
     branches:
       - main
 
-  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-env:
-  CI: true
-  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: update docs
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
-
-      - uses: actions/setup-node@v2.5.0
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: 16.x
+          ref: ${{ github.event.inputs.branch }}
 
-      - name: Cache Dependencies
-        id: cache-node
-        uses: actions/cache@v2.1.7
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          path: node_modules
-          key: ${{runner.os}}-node-${{hashFiles('**/yarn.lock')}}
-          restore-keys: |
-            ${{runner.os}}-node-
+          node-version: 18
 
-      - name: Install Dependencies
-        if: steps.cache-node.output.cache-hit != 'true'
-        run: yarn install --frozen-lockfile --non-interactive --silent --prefer-offline
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build
-        run: yarn build
+        run: pnpm run build
 
-      - name: Build Docs
-        run: yarn build-docs:ci
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
-      - name: Commit Docs
-        run: |
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git config user.name github-actions[bot]
-          git add .
-          git commit -m "(Github Action): updated docs"
-          git push origin main:gh-pages -f
+      - name: Move Sites
+        run: node scripts/move-docs.js
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

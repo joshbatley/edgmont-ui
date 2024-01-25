@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import { Button } from '../../inputs/Button';
 import { ButtonGroup } from '../../inputs/ButtonGroup';
 import { calculatePageNumbers } from './utils';
+import { Size } from '../../types';
 
 export type PaginationProps = {
   skip: number;

@@ -1,8 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { darken } from 'polished';
 import { Box } from '../../data';
+import { Colors } from '../../types';
 
 export type LinearProgressProps = {
   color?: Colors;

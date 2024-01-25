@@ -1,11 +1,13 @@
-type TabsProps = {
+import { WithChildren } from './index';
+
+export type TabsProps = {
   value?: string | number;
-  type?: TabVarient;
+  type?: TabVariant;
 } & WithChildren;
 
-type TabVarient = 'default' | 'card';
+export type TabVariant = 'default' | 'card';
 
-type Tab = {
+export type Tab = {
   key: string;
   node: React.ReactElement;
 } & TabPaneProps;

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
 import { ThemeDefaultProvider } from '../../utils';
 import { Title } from '.';

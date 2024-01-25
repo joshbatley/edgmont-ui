@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Title, Panel, Box } from '../../data';
 import { Backdrop, stopPropagation } from '../../utils';
 import { ClickableElement } from '../../inputs';
+import { WithChildren } from '../../types';
 
 export type ModalProps = {
   title?: string;

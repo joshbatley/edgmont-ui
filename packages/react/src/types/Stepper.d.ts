@@ -1,4 +1,4 @@
-type StepContext = {
+export type StepContext = {
   noOfItems: number;
   activeStep: number;
   color: ColorsLegacy;

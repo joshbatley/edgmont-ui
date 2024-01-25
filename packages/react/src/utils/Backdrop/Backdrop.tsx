@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Box } from '../../data/Box';
 import { Fade, FadeProps } from '../Transitions';

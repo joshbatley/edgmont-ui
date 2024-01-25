@@ -1,8 +1,9 @@
-import React, { forwardRef } from 'react';
-import styled from 'styled-components';
+import { forwardRef } from 'react';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import {
   border, BorderProps, color, ColorProps, flexbox, FlexboxProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, typography, TypographyProps, variant,
 } from 'styled-system';
+import { AsProp, Size } from '../../types';
 
 export type BaseButtonProps = {
   size?: Size | 'none';
@@ -10,7 +11,7 @@ export type BaseButtonProps = {
   as?: AsProp;
 } & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps & FlexboxProps;
 
-export const StyledButton = styled.button<BaseButtonProps>`
+export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonProps, never> = styled.button<BaseButtonProps>`
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -59,7 +60,7 @@ export const StyledButton = styled.button<BaseButtonProps>`
   ${flexbox}
 `;
 
-export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
+export const BaseButton: React.ForwardRefExoticComponent<React.PropsWithoutRef<BaseButtonProps> & React.RefAttributes<HTMLButtonElement>> = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   children, size = 'medium', disabled, ...rest
 }, ref) => {
   return (

@@ -1,6 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { StepperContext } from './StepperContext';
+import { Colors, WithChildren } from '../../types';
+import { Children, isValidElement, cloneElement } from 'react';
 
 type StepperPropsVertical = {
   color?: Colors;
@@ -18,8 +19,8 @@ type StepperPropsHorizontal = {
 export type StepperProps = StepperPropsVertical | StepperPropsHorizontal;
 
 const parseChildren = (children: React.ReactNode, step: number): any[] => {
-  return React.Children.toArray(children).map((node, idx) => {
-    if (!React.isValidElement(node)) {
+  return Children.toArray(children).map((node, idx) => {
+    if (!isValidElement(node)) {
       return null;
     }
     let completed = step > idx && 'completed';
@@ -53,7 +54,7 @@ export const Stepper: React.FC<StepperProps> = ({
       noOfItems: items.length - 1, activeStep: step, color, direction, alternativeLabel,
     }}>
       <StyledDiv direction={direction}>
-        {items.map(({ node, ...itemRest }) => React.cloneElement(node, { ...itemRest, color }))}
+        {items.map(({ node, ...itemRest }) => cloneElement(node, { ...itemRest, color }))}
       </StyledDiv>
     </StepperContext.Provider>
   );

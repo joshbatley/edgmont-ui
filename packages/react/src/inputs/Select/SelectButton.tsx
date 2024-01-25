@@ -1,7 +1,6 @@
-import React from 'react';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
-import { Box, Text } from '../../data';
+import { Box, TextComp } from '../../data';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from '../Button';
 import { useSelectContext } from './SelectContext';
 
@@ -9,6 +8,7 @@ export type SelectButtonProps = {
   isClearable?: boolean;
   isFilterable?: boolean;
   error?: boolean;
+  placeholder?: string;
 } & OutlineButtonProps;
 
 const ClearBtn = styled(ClickableElement)`
@@ -28,8 +28,13 @@ const Container = styled(Box)`
 `;
 
 export const SelectButton: React.FC<SelectButtonProps> = ({
-  isClearable, children, isFilterable, placeholder, error, ...rest
-}) => {
+                                                            isClearable,
+                                                            children,
+                                                            isFilterable,
+                                                            placeholder,
+                                                            error,
+                                                            ...rest
+                                                          }) => {
   let {
     getToggleButtonProps, itemToString, selectedItem, clearSelection,
   } = useSelectContext();
@@ -55,14 +60,14 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
       {...getToggleButtonProps()}
       {...rest}
     >
-      <Text>{buttonText}</Text>
+      <TextComp>{buttonText}</TextComp>
       <Container display="flex" alignItems="center">
         {isClearableActive &&
           <ClearBtn as="a" onClick={clear}>
             Clear
           </ClearBtn>
         }
-        <ChevronUpDownIcon height={16} width={16} />
+        <ChevronUpDownIcon height={16} width={16}/>
       </Container>
     </OutlineButton>
   );
