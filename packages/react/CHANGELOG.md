@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 3.0.1
+
+### Patch Changes
+
+- 1c12ec6: readme
+
 ## 3.0.0
 
 ### Major Changes
