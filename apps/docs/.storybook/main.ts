@@ -1,8 +1,20 @@
 import { resolve } from "path";
 
+const isProd = process.env.NODE_ENV === 'production';
+
+const managerHead = (head) => `
+  ${head}
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+`
+
+const managerHeadProd = (head) => `
+  ${managerHead(head)}
+  <base href="/react/">
+`
+console.log(process.env.NODE_ENV);
 const config = {
   stories: [
-      '../src/*.stories.@(js|jsx|ts|tsx)'
+    '../src/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
     "@storybook/addon-links",
@@ -15,6 +27,7 @@ const config = {
     name: "@storybook/react-vite",
     options: {},
   },
+  managerHead: (head) => isProd ? managerHeadProd(head) : managerHead(head),
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
