@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 0.3.0
+
+### Minor Changes
+
+- cc0ffd7: Updated readme and version
+
 ## 3.0.1
 
 ### Patch Changes
