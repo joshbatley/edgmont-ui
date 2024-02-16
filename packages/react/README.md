@@ -6,13 +6,13 @@
 
 [![Build][build-image]][build-url] [![NPM Version][version-image]][version-url] [![License][license-image]][license-url] [![Bundle Size][size-image]][size-url]
 
-[build-image]: https://img.shields.io/github/actions/workflow/status/joshbatley/edgmont-ui/npm-publish.yml
+[build-image]: https://img.shields.io/github/actions/workflow/status/joshbatley/edgmont-ui/publish-npm.yml
 [build-url]: https://github.com/joshbatley/edgmont-ui/actions
 [version-image]: https://img.shields.io/npm/v/@edgmont-ui/react
 [version-url]: https://www.npmjs.com/package/@edgmont-ui/react
 [license-image]: https://img.shields.io/github/license/joshbatley/@edgmont-ui/react
 [license-url]: https://github.com/joshbatley/edgmont-ui/blob/main/LICENSE
-[size-image]: https://img.shields.io/bundlephobia/minzip/@edgmont-ui/react
+[size-image]: https://img.shields.io/bundlephobia/min/%40edgmont-ui%2Freact%40latest
 [size-url]: https://bundlephobia.com/package/@edgmont-ui/react
 
 </div>
