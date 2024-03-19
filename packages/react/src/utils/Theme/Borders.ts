@@ -1,22 +1,17 @@
-export const generateBorders = (colors: Record<string, string | string[]>) => {
+import { ColorTheme } from './Colors';
+
+export const generateBorders = (colors: ColorTheme) => {
   let borderWidths = [0, 1, 3, 4];
   let borderColors = Object.keys(colors);
 
   return borderColors.reduce((borderObj, key) => {
-    const colorKey = key;
-    if (typeof colors[colorKey] !== 'string') {
-      (colors[colorKey] as string[]).map((value, idx) => {
-        borderObj[`${colorKey}${idx}`] = borderWidths.map((width) =>
-          `${width}px solid ${value}`,
-        );
-      });
-    } else {
-      borderObj[colorKey] = borderWidths.map((width) =>
-        `${width}px solid ${colors[colorKey]}`,
-      );
-    }
+    const colorKey = key as keyof ColorTheme;
+    borderObj[colorKey] = borderWidths.map((width) =>
+      `${width}px solid ${colors[colorKey]}`,
+    );
+
     return borderObj;
-  }, {} as Record<any, string[]>);
+  }, {} as Record<keyof ColorTheme, string[]>);
 };
 
 export const radii = [

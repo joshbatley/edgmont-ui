@@ -22,8 +22,8 @@ const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
   position: relative;
   width: ${({ theme }) => theme.sizes[4]};
   height: ${({ theme }) => theme.sizes[4]};
-  border: ${({ theme }) => theme.borders.background2[1]};
-  background: ${({ theme }) => theme.colors.background[0]};
+  border: ${({ theme }) => theme.borders.background[1]};
+  background: ${({ theme }) => theme.colors.background};
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.base[0]};
   display: flex;
@@ -32,24 +32,24 @@ const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
   margin-right: ${({ theme }) => theme.space[2]};
   border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[3]};
   ${({ error, theme }) => error && `
-    border-color: ${theme.colors.error};
+    border-color: ${theme.colors.destructive};
   `}
 `;
 
 const Box = styled.div<{ disabled: boolean; error: boolean; }>`
-    background: ${({ theme }) => theme.colors.background[0]};
+    background: ${({ theme }) => theme.colors.background};
     width: 100%;
     height: 100%;
     position: absolute;
     input:checked ~ & {
       background: ${({ theme, error, disabled }) =>
-    error ? theme.colors.error :
-      disabled ? theme.colors.baseHighlight : theme.colors.primary};
+    error ? theme.colors.destructive :
+      disabled ? theme.colors.muted : theme.colors.primary};
     }
     ${Label}:hover input:checked ~ & {
       background: ${({ theme, error, disabled }) =>
-    error ? theme.colors.error :
-      disabled ? theme.colors.baseHighlight : theme.colors.primary};
+    error ? theme.colors.destructive :
+      disabled ? theme.colors.muted : theme.colors.primary};
     }
   `;
 
@@ -61,11 +61,11 @@ let Icon = styled.div<{ disabled: boolean; error: boolean; }>`
       z-index: 10;
       position: relative;
       ${Label} input:checked ~ & {
-        color: ${({ theme }) => theme.colors.background[0]};
+        color: ${({ theme }) => theme.colors.background};
       }
       ${({ theme, disabled, error }) => !disabled && `
         ${Label}:hover & {
-          color: ${error ? theme.colors.error : theme.colors.primary};
+          color: ${error ? theme.colors.destructive : theme.colors.primary};
         }
       `}
     }

@@ -6,10 +6,10 @@ export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
 const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   :disabled {
-    background:${({ theme }) => theme.colors.background[2]};
+    background:${({ theme }) => theme.colors.background};
   }
   :hover:not(:disabled) {
-    background: ${({ theme }) => theme.colors.background[1]};
+    background: ${({ theme }) => theme.colors.background};
   }
 `;
 

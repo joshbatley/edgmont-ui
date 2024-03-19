@@ -11,17 +11,17 @@ export type StepIconProps = {
 const ErrorComp = styled(ExclamationTriangleIcon)`
   width: 24px;
   height: 24px;
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => theme.colors.destructive};
 `;
 
 const DefaultSvg = styled.svg<{ state: 'completed' | 'active' | 'default' }>`
   width: 30px;
   height: 30px;
-  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.background[3]}` : `color: ${theme.colors.primary}`}
+  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.background}` : `color: ${theme.colors.primary}`}
 `;
 
 const DefaultText = styled.text`
-  color: ${({ theme }) => theme.colors.background[0]};
+  color: ${({ theme }) => theme.colors.background};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};

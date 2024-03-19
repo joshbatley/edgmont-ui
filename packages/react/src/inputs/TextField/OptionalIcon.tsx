@@ -11,11 +11,11 @@ export type OptionalIconProps = {
 
 const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
   ${({ theme, pos }) => pos === 'left' ? `
-    border-right: ${theme.borders.background3[1]};
+    border-right: ${theme.borders.background[1]};
     border-top-left-radius: ${theme.radii[3]};
     border-bottom-left-radius: ${theme.radii[3]};
   ` : `
-    border-left: ${theme.borders.background3[1]};
+    border-left: ${theme.borders.background[1]};
     border-top-right-radius: ${theme.radii[3]};
     border-bottom-right-radius: ${theme.radii[3]};
   `}

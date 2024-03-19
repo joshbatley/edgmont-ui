@@ -17,23 +17,11 @@ const Svg = styled.svg`
 const OuterCircle = styled.circle(({ theme }) => variant({
   prop: 'color',
   variants: {
-    primary: {
-      stroke: darken(0.1, theme.colors.primaryAccent),
-    },
-    success: {
-      stroke: darken(0.1, theme.colors.successAccent),
-    },
-    info: {
-      stroke: darken(0.1, theme.colors.infoAccent),
-    },
     error: {
-      stroke: darken(0.1, theme.colors.errorAccent),
-    },
-    warning: {
-      stroke: darken(0.1, theme.colors.warningAccent),
+      stroke: darken(0.1, theme.colors.destructive),
     },
     base: {
-      stroke: darken(0.1, theme.colors.background[3]),
+      stroke: darken(0.1, theme.colors.background),
     },
   },
 }));
@@ -41,23 +29,11 @@ const OuterCircle = styled.circle(({ theme }) => variant({
 const InnerCircle = styled.circle(variant({
   prop: 'color',
   variants: {
-    primary: {
-      stroke: 'primary',
-    },
-    success: {
-      stroke: 'success',
-    },
-    info: {
-      stroke: 'info',
-    },
     error: {
-      stroke: 'error',
-    },
-    warning: {
-      stroke: 'warning',
+      stroke: 'destructive',
     },
     base: {
-      stroke: 'baseHighlight',
+      stroke: 'foreground',
     },
   },
 }));

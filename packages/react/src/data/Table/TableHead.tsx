@@ -8,7 +8,7 @@ export type TableHeadProps = {
 
 const Thead = styled.thead<TableHeadProps>`
   text-align: left;
-  background: ${({ theme }) => theme.colors.background[2]};
+  background: ${({ theme }) => theme.colors.background};
   ${({ sticky, theme }) => sticky && `
     position: sticky;
     top: 0;
@@ -23,7 +23,7 @@ const TableHeadItem = styled.th`
   letter-spacing: 0.025em;
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
 `;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, headers, sticky, ...rest }, ref) => {

@@ -7,7 +7,7 @@ export type TableProps = {
 } & React.ComponentPropsWithRef<'table'>;
 
 const Container = styled.div<TableProps>`
-  background: ${({ theme }) => theme.colors.background[1]};
+  background: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) => theme.shadows.highlight};
   border-radius: ${({ theme }) => theme.radii[3]};
   contain: paint;
@@ -21,7 +21,7 @@ const StyledTable = styled.table`
   > :not([hidden]) ~ :not([hidden]) & :not(:last-child) {
     border-top-width: 1px;
     border-bottom-width: 1px;
-    border-color: ${({ theme }) => theme.colors.background[2]}
+    border-color: ${({ theme }) => theme.colors.background}
   }
 `;
 

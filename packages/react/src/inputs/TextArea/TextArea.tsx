@@ -5,7 +5,7 @@ export const TextArea = styled.textarea`
   padding: ${({ theme }) => theme.space[2]};
   width: 100%;
   height: ${({ theme }) => theme.sizes[16]};
-  background: ${({ theme }) => theme.colors.background[2]};
+  background: ${({ theme }) => theme.colors.background};
   border-radius: ${({ theme }) => theme.radii[3]};
   :focus {
     outline: 2px solid transparent;

@@ -19,7 +19,7 @@ const Popover = styled.div`
   z-index: 10;
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
-  background: ${({ theme }) => theme.colors.background[1]};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 export const Tooltip: React.FC<TooltipProps> = ({

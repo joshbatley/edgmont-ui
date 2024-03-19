@@ -22,23 +22,11 @@ const OuterLine = styled.div`
   ${({ theme }) => variant({
   prop: 'color',
   variants: {
-    primary: {
-      background: theme.colors.primaryHighlight,
-    },
-    success: {
-      background: darken(0.1, theme.colors.successHighlight),
-    },
-    info: {
-      background: darken(0.1, theme.colors.infoHighlight),
-    },
     error: {
-      background: darken(0.1, theme.colors.errorHighlight),
-    },
-    warning: {
-      background: darken(0.1, theme.colors.warningHighlight),
+      background: darken(0.1, theme.colors.destructive),
     },
     base: {
-      background: theme.colors.background[3],
+      background: theme.colors.background,
     },
   },
 })}`;
@@ -55,23 +43,11 @@ const InnerLine = styled.div<{ percentage: number }>`
   ${({ theme }) => variant({
   prop: 'color',
   variants: {
-    primary: {
-      background: theme.colors.primary,
-    },
-    success: {
-      background: theme.colors.success,
-    },
-    info: {
-      background: theme.colors.info,
-    },
     error: {
-      background: theme.colors.error,
-    },
-    warning: {
-      background: theme.colors.warning,
+      background: theme.colors.destructiveForeground,
     },
     base: {
-      background: theme.colors.baseHighlight,
+      background: theme.colors.foreground,
     },
   },
 })}`;

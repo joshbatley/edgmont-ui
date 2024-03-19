@@ -22,14 +22,14 @@ const Container = styled.div`
 `;
 
 const Icon = styled(CalendarIcon)`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   margin-right: ${({ theme }) => theme.space[2]};
 `;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   :hover {
-    color: ${({ theme }) => theme.colors.base};
+    color: ${({ theme }) => theme.colors.foreground};
   }
 `;
 

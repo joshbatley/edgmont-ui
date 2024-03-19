@@ -7,7 +7,7 @@ export type HeadingProps = {
 } & ColorProps & TypographyProps & LayoutProps;
 
 export const Title = styled.h1<HeadingProps>`
-  color: ${({ theme }) => theme.colors.base};
+  color: ${({ theme }) => theme.colors.foreground};
   ${color}
   ${typography}
   ${layout}

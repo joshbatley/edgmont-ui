@@ -15,7 +15,7 @@ export const Container = styled.div`
 .react-datepicker__day-name {
   text-align: center;
   padding: ${({ theme }) => theme.space[1]};
-  color: ${({ theme }) => theme.colors.background[3]};
+  color: ${({ theme }) => theme.colors.background};
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
 }
@@ -65,7 +65,7 @@ export const Container = styled.div`
     border-radius: 0px;
   }
   background: ${({ theme }) => theme.colors.primaryAccent};
-  color: ${({ theme }) => theme.colors.base};
+  color: ${({ theme }) => theme.colors.foreground};
 }
 
 .react-datepicker__month--selected,
@@ -75,7 +75,7 @@ export const Container = styled.div`
 .react-datepicker__day--selected,
 .react-datepicker__day--range-start,
 .react-datepicker__day--range-end {
-  color: ${({ theme }) => theme.colors.base};
+  color: ${({ theme }) => theme.colors.foreground};
 }
 
 .react-datepicker__day--range-start,
@@ -120,7 +120,7 @@ export const Container = styled.div`
 .react-datepicker__month--highlighted {
   order-radius: ${({ theme }) => theme.radii[3]};
   background: ${({ theme }) => theme.colors.primaryAccent};
-  color: ${({ theme }) => theme.colors.base};
+  color: ${({ theme }) => theme.colors.foreground};
 }
 
 .react-datepicker__day--disabled,
@@ -132,7 +132,7 @@ export const Container = styled.div`
   :hover {
     background-color: transparent;
   }
-  color: ${({ theme }) => theme.colors.background[3]};
+  color: ${({ theme }) => theme.colors.background};
 }
 
 .react-datepicker__day--in-selecting-range {

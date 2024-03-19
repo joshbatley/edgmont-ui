@@ -6,12 +6,12 @@ import { BaseButton, BaseButtonProps } from './BaseButton';
 export type ButtonProps = Omit<BaseButtonProps, 'color'>;
 
 const StyledButton = styled(BaseButton) <ButtonProps>`
-  color: ${({ theme }) => theme.colors.base};
+  color: ${({ theme }) => theme.colors.foreground};
   :disabled {
-    color: ${({ theme }) => theme.colors.background[3]};
+    color: ${({ theme }) => theme.colors.background};
   }
   :hover {
-    background: ${({ theme }) => rgba(theme.colors.background[3]!, 0.3)};
+    background: ${({ theme }) => rgba(theme.colors.background!, 0.3)};
   }
 `;
 

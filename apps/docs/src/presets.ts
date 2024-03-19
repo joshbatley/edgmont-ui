@@ -1,5 +1,5 @@
 const colorSelect = {
-  options: ['primary', 'success', 'info', 'error', 'warning'],
+  options: ['primary', 'success', 'info', 'error', 'warning', 'base'],
   control: { type: 'select' },
 };
 

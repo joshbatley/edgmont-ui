@@ -7,7 +7,7 @@ export type SkeletonProps = {
 
 const Comp = styled.div<SkeletonProps>`
   ${({ theme }) => theme.animations.pulse}
-  background: ${({ theme }) => theme.colors.background[2]};
+  background: ${({ theme }) => theme.colors.background};
   ${layout}
   ${space}
   ${({ theme, height, width }) => variant({

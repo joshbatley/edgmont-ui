@@ -8,7 +8,7 @@ type ThemeProviderProps = {
 };
 
 export const ThemeDefaultProvider: React.FC<ThemeProviderProps> = ({ children, theme = 'dark' }) => {
-  let pickedTheme = theme !== 'light' ? DarkTheme : LightTheme;
+  let pickedTheme = LightTheme;
   if (theme === 'light') {
     console.warn('THEME NOT FINALISED USED AT OWN RISK');
   }

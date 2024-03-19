@@ -46,11 +46,11 @@ const InputContainer = styled(Box) <{ before: boolean; after: boolean; }>`
 
 const Container = styled(Box) <{ error: boolean; disabled: boolean; }>`
   ${({ theme, error }) => error && `
-    color: ${theme.colors.error};
-    border: ${theme.borders.error[1]};
+    color: ${theme.colors.destructive};
+    border: ${theme.borders.destructive[1]};
   `}
   ${({ theme, disabled }) => disabled && `
-    background: ${theme.colors.error};
+    background: ${theme.colors.destructive};
     cursor: not-allowed;
     div, svg, input {
       cursor: not-allowed;

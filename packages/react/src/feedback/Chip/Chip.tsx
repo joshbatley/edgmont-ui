@@ -24,25 +24,9 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
   ${({ theme }) => variant({
   prop: 'color',
   variants: {
-    primary: {
-      color: 'primaryAccent',
-      bg: darken(0.1, tint(0.2, theme.colors.primaryHighlight)),
-    },
-    success: {
-      color: 'successAccent',
-      bg: darken(0.1, tint(0.2, theme.colors.successHighlight)),
-    },
-    info: {
-      color: 'infoAccent',
-      bg: darken(0.1, tint(0.2, theme.colors.infoHighlight)),
-    },
     error: {
-      color: 'errorAccent',
-      bg: darken(0.1, tint(0.2, theme.colors.errorHighlight)),
-    },
-    warning: {
-      color: 'warningAccent',
-      bg: darken(0.1, tint(0.2, theme.colors.warningHighlight)),
+      color: 'destructiveForegroud',
+      bg: darken(0.1, tint(0.2, theme.colors.destructive)),
     },
     base: {
       color: 'base',
@@ -80,13 +64,13 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
 
 
 export const Chip: React.FC<ChipProps> = ({
-                                            color = 'primary', size = 'small', handleDelete, children,
-                                          }) => (
+  color = 'primary', size = 'small', handleDelete, children,
+}) => (
   <Container size={size} color={color}>
     <TextComp>{children}</TextComp>
     {(handleDelete !== undefined && handleDelete !== null) && (
       <ClickableElement onClick={handleDelete}>
-        <XCircleIcon width={16} height={16}/>
+        <XCircleIcon width={16} height={16} />
       </ClickableElement>
     )}
   </Container>

@@ -19,36 +19,18 @@ const Container = styled(Box) <{ severity: Severity }>`
   prop: 'severity',
   variants: {
     error: {
-      bg: 'errorAccent',
-      borderColor: lighten(0.1, theme.colors.errorAccent),
+      bg: 'destructive',
+      border: 0,
       'h1, svg, p': {
-        color: 'errorHighlight',
-      },
-    },
-    warning: {
-      bg: 'warningAccent',
-      borderColor: lighten(0.1, theme.colors.warningAccent),
-      'h1, svg, p': {
-        color: 'warningHighlight',
-      },
-    },
-    info: {
-      bg: 'infoAccent',
-      borderColor: lighten(0.1, theme.colors.infoAccent),
-      'h1, svg, p': {
-        color: 'infoHighlight',
-      },
-    },
-    success: {
-      bg: 'successAccent',
-      borderColor: lighten(0.1, theme.colors.successAccent),
-      'h1, svg, p': {
-        color: 'successHighlight',
+        color: 'destructiveForeground',
       },
     },
     none: {
-      bg: 'background.1',
+      bg: 'background',
       border: 0,
+      'h1, svg, p': {
+        color: 'foreground',
+      },
       boxShadow: 'highlight',
     },
   },
@@ -71,14 +53,14 @@ const Content = styled(TextComp)`
 `;
 
 export const Alert: React.FC<AlertProps> = ({
-                                              severity = 'none', title, icon, children, withClose, ...rest
-                                            }) => (
+  severity = 'none', title, icon, children, withClose, ...rest
+}) => (
   <Container p={2} display="flex" flexGrow={1} alignItems="center" boxShadow="base.0" borderRadius="4" overflow="hidden"
-             position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap" severity={severity} {...rest}>
+    position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap" severity={severity} {...rest}>
     <Box minWidth="100%">
       <Icon mr={3} mt="1px" lineHeight={5} alignSelf="center">{icon || getIcon(severity)}</Icon>
       <Title display="inline" fontWeight="600" fontSize={1} lineHeight={2} letterSpacing="0.025em">{title}</Title>
-      {withClose && (<CloseBtn onClick={withClose}/>)}
+      {withClose && (<CloseBtn onClick={withClose} />)}
     </Box>
     <Content>{children}</Content>
   </Container>

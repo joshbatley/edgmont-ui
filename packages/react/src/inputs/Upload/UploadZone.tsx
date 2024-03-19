@@ -21,7 +21,7 @@ const Container = styled.div<{ isDragActive: boolean }>`
   align-items: center;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.radii[2]};
-  border: ${({ theme }) => theme.borders.background2[3]};
+  border: ${({ theme }) => theme.borders.background[3]};
   border-style: dashed;
   padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
 
@@ -30,8 +30,8 @@ const Container = styled.div<{ isDragActive: boolean }>`
   }
 
   ${({ isDragActive, theme }) => isDragActive && `
-    background: ${theme.colors.primary};
-    border-color: ${theme.colors.primaryHighlight};
+    background: ${theme.colors.mutedForeground};
+    border-color: ${theme.colors.background};
   `}
 `;
 
@@ -47,9 +47,9 @@ const StyledList = styled(List)`
 `;
 
 const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   ${({ isDragActive, theme }) => isDragActive && `
-    color: ${theme.colors.base};
+    color: ${theme.colors.foreground};
     ${theme.animations.bounce}
   `}
 `;

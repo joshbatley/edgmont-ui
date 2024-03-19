@@ -12,11 +12,11 @@ export type SelectItemProps = {
 const Item = styled(ListItem) <{ changeBg: boolean; }>`
   cursor: pointer;
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[4]}`};
-  background: ${({ changeBg, theme }) => changeBg ? theme.colors.background[2] : 'inherit'};
+  background: ${({ changeBg, theme }) => changeBg ? theme.colors.background : 'inherit'};
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
   &:hover {
-    background: ${({ theme }) => theme.colors.background[2]};
+    background: ${({ theme }) => theme.colors.background};
   }
 `;
 

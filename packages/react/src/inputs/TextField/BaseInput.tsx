@@ -8,8 +8,8 @@ export const BaseInput = styled.input<{
   width: 100%;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  color: ${({ theme }) => theme.colors.base};
-  background: ${({ theme }) => theme.colors.background[2]};
+  color: ${({ theme }) => theme.colors.foreground};
+  background: ${({ theme }) => theme.colors.background};
   border-radius: ${({ theme }) => theme.radii[3]};
   color: ${({ error, theme }) => error ? theme.colors.error : 'inherit'};
   pointer-event: ${({ disabled }) => disabled ? 'none' : 'inherit'};

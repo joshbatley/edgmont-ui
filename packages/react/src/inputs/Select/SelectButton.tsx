@@ -12,9 +12,9 @@ export type SelectButtonProps = {
 } & OutlineButtonProps;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   :hover {
-    color: ${({ theme }) => theme.colors.base};
+    color: ${({ theme }) => theme.colors.foreground};
   }
 `;
 
@@ -28,13 +28,13 @@ const Container = styled(Box)`
 `;
 
 export const SelectButton: React.FC<SelectButtonProps> = ({
-                                                            isClearable,
-                                                            children,
-                                                            isFilterable,
-                                                            placeholder,
-                                                            error,
-                                                            ...rest
-                                                          }) => {
+  isClearable,
+  children,
+  isFilterable,
+  placeholder,
+  error,
+  ...rest
+}) => {
   let {
     getToggleButtonProps, itemToString, selectedItem, clearSelection,
   } = useSelectContext();
@@ -67,7 +67,7 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
             Clear
           </ClearBtn>
         }
-        <ChevronUpDownIcon height={16} width={16}/>
+        <ChevronUpDownIcon height={16} width={16} />
       </Container>
     </OutlineButton>
   );
