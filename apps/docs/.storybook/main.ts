@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { resolve, dirname, join } from 'path';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -11,20 +11,20 @@ const managerHeadProd = (head) => `
   ${managerHead(head)}
   <base href="/react/">
 `
-console.log(process.env.NODE_ENV);
+
 const config = {
   stories: [
     '../src/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/preset-create-react-app"),
+    getAbsolutePath("@storybook/addon-onboarding"),
+    getAbsolutePath("@storybook/addon-interactions"),
   ],
   framework: {
-    name: "@storybook/react-vite",
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
   managerHead: (head) => isProd ? managerHeadProd(head) : managerHead(head),
@@ -52,3 +52,7 @@ const config = {
   staticDirs: ["../public"],
 };
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}
