@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import {
-  border, BorderProps, color, ColorProps, flexbox, FlexboxProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, typography, TypographyProps, variant,
+  border, BorderProps, color, ColorProps, flexbox, FlexboxProps, layout, LayoutProps, position, PositionProps, space, SpaceProps, typography, TypographyProps, variant, boxShadow, BoxShadowProps,
 } from 'styled-system';
 import { AsProp, Size } from '../../types';
 
@@ -9,7 +9,7 @@ export type BaseButtonProps = {
   size?: Size | 'none';
   type?: 'button' | 'reset' | 'submit';
   as?: AsProp;
-} & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps & FlexboxProps;
+} & React.ComponentPropsWithoutRef<'button'> & LayoutProps & BorderProps & PositionProps & ColorProps & SpaceProps & TypographyProps & FlexboxProps & BoxShadowProps;
 
 export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonProps, never> = styled.button<BaseButtonProps>`
   display: inline-flex;
@@ -58,6 +58,7 @@ export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonPro
   ${space}
   ${typography}
   ${flexbox}
+  ${boxShadow}
 `;
 
 export const BaseButton: React.ForwardRefExoticComponent<React.PropsWithoutRef<BaseButtonProps> & React.RefAttributes<HTMLButtonElement>> = forwardRef<HTMLButtonElement, BaseButtonProps>(({

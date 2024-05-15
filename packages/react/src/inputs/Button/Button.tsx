@@ -11,7 +11,7 @@ const StyledButton = styled(BaseButton) <ButtonProps>`
     color: ${({ theme }) => theme.colors.background};
   }
   :hover {
-    background: ${({ theme }) => rgba(theme.colors.background!, 0.3)};
+    background: ${({ theme }) => rgba(theme.colors.mutedForeground, 0.1)};
   }
 `;
 

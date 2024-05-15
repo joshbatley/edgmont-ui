@@ -6,7 +6,7 @@ export type OutlineButtonProps = Omit<BaseButtonProps, 'color'>;
 
 const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   :disabled {
-    background:${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background};
   }
   :hover:not(:disabled) {
     background: ${({ theme }) => theme.colors.background};
@@ -15,8 +15,9 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
 
 export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(({ children, ...rest }, ref) => (
   <StyledButton
-    backgroundColor="background.0"
-    border="background3.1"
+    backgroundColor="background"
+    boxShadow="base.0"
+    border="border.1"
     color="base"
     ref={ref}
     {...rest}

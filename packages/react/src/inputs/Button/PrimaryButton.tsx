@@ -13,38 +13,17 @@ const StyledButton = styled(BaseButton)<PrimaryButtonProps>(
     prop: 'color',
     variants: {
       primary: {
-        color: 'base',
+        color: 'background',
         bg: 'primary',
         ':hover': {
           bg: 'primaryAccent',
         },
       },
-      success: {
-        color: 'base',
-        bg: 'success',
-        ':hover': {
-          bg: 'successAccent',
-        },
-      },
-      info: {
-        color: 'base',
-        bg: 'info',
-        ':hover': {
-          bg: 'infoAccent',
-        },
-      },
       error: {
-        color: 'base',
-        bg: 'error',
+        color: 'background',
+        bg: 'destructive',
         ':hover': {
           bg: 'errorAccent',
-        },
-      },
-      warning: {
-        color: 'base',
-        bg: 'warning',
-        ':hover': {
-          bg: 'warningAccent',
         },
       },
     },
