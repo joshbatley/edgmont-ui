@@ -3,6 +3,6 @@ import { Box, BoxProps } from '../Box';
 
 export const Panel: typeof Box = styled(Box) <BoxProps>`
   border-radius:${({ theme }) => theme.radii[5]};
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  border: ${({ theme }) => theme.borders.border[1]};
   background: ${({ theme }) => theme.colors.background};
 `;

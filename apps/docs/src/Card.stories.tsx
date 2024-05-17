@@ -14,22 +14,19 @@ import { Card, CardContent, CardMedia } from '@edgmont-ui/react';
 const meta: Meta = {
   title: 'Data/Card',
   component: Card,
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
+
 };
 
 export default meta;
 
 export const Examples: StoryObj<typeof Card> = {
-  render: ({ ...rest }) => (
+  render: () => (
     <Box display="flex" flexDirection="column">
       <Card
         mb="2"
-        maxWidth="400px"
+        maxWidth={400}
         display="flex"
         flexDirection="row"
-        {...rest}
       >
         <CardMedia
           as="img"
@@ -76,10 +73,11 @@ export const Examples: StoryObj<typeof Card> = {
         </CardContent>
       </Card>
 
-      <Card style={{ maxWidth: 500 }} {...rest}>
-        <CardContent borderBottom="background2.1">
+      <Card maxWidth={500}>
+        <CardContent borderBottom="border.1">
           <Title as="h4">Application form</Title>
         </CardContent>
+
         <CardContent my="2">
           <Label value="Website url">
             <TextField
@@ -96,7 +94,8 @@ export const Examples: StoryObj<typeof Card> = {
             <TextArea placeholder="desciption of website" />
           </Label>
         </CardContent>
-        <Box bg="background.2" p="2" display="flex" justifyContent="flex-end">
+
+        <Box bg="background" p="2" display="flex" justifyContent="flex-end">
           <PrimaryButton>Submit</PrimaryButton>
         </Box>
       </Card>
@@ -115,9 +114,9 @@ export const Content: StoryObj<typeof Card> = {
 };
 
 export const Media: StoryObj<typeof Card> = {
-  render: ({ ...rest }) => (
+  render: () => (
     <Box display="flex" flexDirection="column">
-      <Card style={{ maxWidth: 300 }} {...rest}>
+      <Card maxWidth={300}>
         <CardMedia
           as="img"
           alt="green iguana"
@@ -125,7 +124,7 @@ export const Media: StoryObj<typeof Card> = {
         />
         <CardContent>A image</CardContent>
       </Card>
-      <Card style={{ maxWidth: 300 }} {...rest}>
+      <Card maxWidth={300}>
         <CardMedia
           as="iframe"
           alt="green iguana"

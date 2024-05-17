@@ -1,6 +1,6 @@
 import React from 'react';
 import { StoryObj } from '@storybook/react';
-import { CodeBracketIcon, LockClosedIcon } from '@heroicons/react/24/solid';
+import { CodeBracketIcon, LockClosedIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import {
   Box,
   ClickableElement,
@@ -39,7 +39,7 @@ export const Example: StoryObj<typeof TextField> = {
 export const PrefixAndSuffix: StoryObj<typeof TextField> = {
   render: ({ ...rest }) => (
     <Box spaceYBetween="2">
-      <TextField prefiXMarkIcon={<LockClosedIcon width={16} />} {...rest} />
+      <TextField prefiXMarkIcon={<CalendarIcon width={16} />} {...rest} />
       <TextField suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
       <TextField
         prefiXMarkIcon={<LockClosedIcon width={16} />}

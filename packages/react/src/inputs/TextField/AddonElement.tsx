@@ -9,11 +9,9 @@ export type AddonElementProps = {
 const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
   overflow: hidden;
   ${({ theme, pos }) => pos === 'left' ? `
-    border-right: ${theme.borders.background[1]};
     border-top-left-radius: ${theme.radii[3]};
     border-bottom-left-radius: ${theme.radii[3]};
   ` : `
-    border-left: ${theme.borders.background[1]};
     border-top-right-radius: ${theme.radii[3]};
     border-bottom-right-radius: ${theme.radii[3]};
   `}
@@ -34,7 +32,7 @@ export const AddonElement: React.FC<AddonElementProps> = ({
   addon, position,
 }) =>
   addon ? (
-    <StyledBox pos={position} bg="background.3" color="baseAccent" display="flex" alignItems="center">
+    <StyledBox pos={position} bg="secondary" color="mutedForeground" display="flex" alignItems="center">
       {addon}
     </StyledBox>
   ) : null;

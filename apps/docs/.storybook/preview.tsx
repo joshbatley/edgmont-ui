@@ -10,7 +10,7 @@ const decorators = [
       document.body.appendChild(portalRoot);
     }
     const value = context?.globals?.backgrounds?.value;
-    const theme = value === '#020817' ? 'dark' : 'light';
+    const theme = value === 'hsl(240, 10%, 3.9%)' ? 'dark' : 'light';
 
     return (
       // @ts-ignore
@@ -27,8 +27,8 @@ const preview = {
     backgrounds: {
       default: 'Light',
       values: [
-        { name: 'Light', value: '#FFFFFF' },
-        { name: 'Dark', value: '#020817' },
+        { name: 'Light', value: 'hsl(0, 0%, 100%)' },
+        { name: 'Dark', value: 'hsl(240, 10%, 3.9%)' },
       ], grid: {
         disable: true,
       },

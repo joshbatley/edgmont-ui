@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
-import { Size } from '../../types';
 
 export const BaseInput = styled.input<{
-  variant: Size; error: boolean; disabled: boolean;
+  error: boolean; disabled: boolean;
 }>`
   width: 100%;
   outline: 2px solid transparent;
@@ -11,31 +9,11 @@ export const BaseInput = styled.input<{
   color: ${({ theme }) => theme.colors.foreground};
   background: ${({ theme }) => theme.colors.background};
   border-radius: ${({ theme }) => theme.radii[3]};
-  color: ${({ error, theme }) => error ? theme.colors.error : 'inherit'};
+  color: ${({ error, theme }) => error ? theme.colors.destructive : 'inherit'};
   pointer-event: ${({ disabled }) => disabled ? 'none' : 'inherit'};
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
-  ${variant({
-  prop: 'variant',
-  variants: {
-    small: {
-      px: 2,
-      py: 1,
-      fontSize: 1,
-      lineHeight: 1,
-    },
-    medium: {
-      px: 3,
-      py: 2,
-      fontSize: 1,
-      lineHeight: 1,
-    },
-    large: {
-      px: 6,
-      py: 4,
-      fontSize: 4,
-      lineHeight: 4,
-    },
-  },
-})
+  padding: ${({ theme }) => theme.space[1]} ${({ theme }) => theme.space[3]};
+  height: ${({ theme }) => theme.sizes[9]};
+  :placeholder{
+    color: ${({ theme }) => theme.colors.mutedForeground};
   }
 `;

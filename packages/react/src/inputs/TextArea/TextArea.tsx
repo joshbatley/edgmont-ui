@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const TextArea = styled.textarea`
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  border: ${({ theme }) => theme.borders.border[1]};
   padding: ${({ theme }) => theme.space[2]};
   width: 100%;
   height: ${({ theme }) => theme.sizes[16]};

@@ -15,6 +15,9 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTheme }>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "YTLC" 500;
     tab-size: 4;
     background: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fonts.base};

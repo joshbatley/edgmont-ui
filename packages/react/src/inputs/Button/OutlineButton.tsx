@@ -9,7 +9,7 @@ const StyledButton = styled(BaseButton) <OutlineButtonProps>`
     background: ${({ theme }) => theme.colors.background};
   }
   :hover:not(:disabled) {
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.accent};
   }
 `;
 

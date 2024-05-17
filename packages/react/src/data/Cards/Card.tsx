@@ -12,6 +12,7 @@ export const Card = styled.div<CardProps>`
   ${space}
   border-radius: ${({ theme }) => theme.radii[3]};
   background: ${({ theme }) => theme.colors.background};
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  border:${({ theme }) => theme.borders.border[1]};
   overflow: hidden;
 `;
