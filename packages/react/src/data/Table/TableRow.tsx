@@ -9,13 +9,13 @@ export const TableRow = styled.tr<TableRowProps>`
   ${({ onClick, theme }) => typeof onClick === 'function' && `
     cursor: pointer;
     :hover {
-      background: ${theme.colors.background};
-      box-shadow: ${theme.colors.background} 3px 0px 0px 0px inset;
+      background: ${theme.colors.accent};
+      box-shadow: ${theme.colors.primary} 3px 0px 0px 0px inset;
     }
   `}
   ${({ active, theme }) => active && `
     cursor: pointer;
-    background: ${theme.colors.primaryForeground};
+    background: ${theme.colors.accent};
     box-shadow: ${theme.colors.primary} 3px 0px 0px 0px inset;
   `}
 `;

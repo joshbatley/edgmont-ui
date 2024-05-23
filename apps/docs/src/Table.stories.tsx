@@ -152,8 +152,8 @@ export const TableHeadProps: StoryObj<typeof Table & typeof TableHead> = {
   args: {
     headers: ['Header1', 'header2', 'header3'],
   },
-  render: ({ ...rest }: any) => {
-    let headers: string[] = rest.headers.split(',');
+  render: ({ ...rest }) => {
+    let headers = rest.headers!;
     return (
       <div>
         <Box mb="3">

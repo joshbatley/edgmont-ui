@@ -54,7 +54,7 @@ export const PaginationControls: React.FC<PaginationProps> = ({
           borderRadius={2}
           verticalAlign="bottom"
           zIndex={page === currentPage ? 30 : 'unset'}
-          backgroundColor={page === currentPage ? 'primary' : 'transparent'}
+          active={page === currentPage}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
           data-ignore-radius

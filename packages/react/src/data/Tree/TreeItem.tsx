@@ -34,7 +34,7 @@ const Label = styled.div<LabelProps>`
     border-radius: ${theme.radii[2]};
     padding: calc(${theme.space[1]} / 2) ${theme.space[2]};
     margin: calc(${theme.space[1]} / 2) 0;
-    background: ${active ? theme.colors.background : 'transparent'};
+    background: ${active ? theme.colors.accent : 'transparent'};
     :hover {
       background: ${disabled ? 'transparent' : theme.colors.background};
     }
@@ -66,7 +66,7 @@ const StyledBtn = styled(ClickableElement) <ButtonProps>`
     padding-bottom: calc(${theme.space[1]} / 2);
     padding-right: ${theme.space[2]};
     margin: calc(${theme.space[1]} / 2) 0;
-    background: ${active ? theme.colors.background : 'transparent'};
+    background: ${active ? theme.colors.accent : 'transparent'};
     :hover {
       background: ${disabled ? 'transparent' : theme.colors.background};
     }

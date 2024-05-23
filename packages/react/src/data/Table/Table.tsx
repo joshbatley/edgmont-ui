@@ -8,7 +8,7 @@ export type TableProps = {
 
 const Container = styled.div<TableProps>`
   background: ${({ theme }) => theme.colors.background};
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii[3]};
   contain: paint;
   padding-bottom: ${({ footer, theme }) => !footer ? theme.space[1] : '0'};
@@ -21,13 +21,14 @@ const StyledTable = styled.table`
   > :not([hidden]) ~ :not([hidden]) & :not(:last-child) {
     border-top-width: 1px;
     border-bottom-width: 1px;
-    border-color: ${({ theme }) => theme.colors.background}
+    border-color: ${({ theme }) => theme.colors.border}
   }
 `;
 
 const Footer = styled.div`
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[4]}`};
   border-top-width: 1px;
+  border-color: ${({ theme }) => theme.colors.border};
 `;
 
 export const Table = forwardRef<HTMLTableElement, TableProps>(({ children, containerClasses, footer, ...rest }, ref) => (
