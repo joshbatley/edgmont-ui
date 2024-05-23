@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import { tint, darken } from 'polished';
-import { XCircleIcon } from '@heroicons/react/24/solid';
-import { ClickableElement } from '../../inputs';
 import { TextComp } from '../../data';
-import { Colors, Size, WithChildren } from '../../types';
+import { Colors, WithChildren } from '../../types';
 
 export type ChipProps = {
   color?: Colors;
-  size?: Size;
-  handleDelete?: () => void;
 } & WithChildren;
 
-export const Container = styled.div<{ color: Colors, size: Size }>`
-  border-radius: ${({ theme }) => theme.radii[4]};
+export const Container = styled.div<{ color: Colors }>`
+  border-radius: ${({ theme }) => theme.radii[3]};
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
+  padding: calc(${({ theme }) => theme.space[1]} / 2) ${({ theme }) => theme.space[2]};
+  font-size: ${({ theme }) => theme.fontSizes[0]};
+  line-height: ${({ theme }) => theme.lineHeights[0]};
+  font-weight: 700;
+
+
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }
@@ -25,38 +26,16 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
   prop: 'color',
   variants: {
     error: {
-      color: 'destructiveForegroud',
-      bg: darken(0.1, tint(0.2, theme.colors.destructive)),
+      color: 'background',
+      bg: 'destructive',
     },
-    base: {
-      color: 'base',
-      bg: 'background.3',
+    secondary: {
+      color: 'secondaryForeground',
+      bg: 'secondary',
     },
-  },
-})}
-  ${variant({
-  prop: 'size',
-  variants: {
-    small: {
-      px: 2,
-      py: '1px',
-      fontSize: 0,
-      lineHeight: 0,
-      fontWeight: 'bold',
-    },
-    medium: {
-      px: 3,
-      py: 1,
-      fontSize: 1,
-      lineHeight: 1,
-      fontWeight: 'bold',
-    },
-    large: {
-      px: 3,
-      py: 2,
-      fontSize: 2,
-      lineHeight: 2,
-      fontWeight: 'bold',
+    primary: {
+      color: 'background',
+      bg: 'foreground',
     },
   },
 })}
@@ -64,15 +43,10 @@ export const Container = styled.div<{ color: Colors, size: Size }>`
 
 
 export const Chip: React.FC<ChipProps> = ({
-  color = 'primary', size = 'small', handleDelete, children,
+  color = 'primary', children,
 }) => (
-  <Container size={size} color={color}>
+  <Container color={color}>
     <TextComp>{children}</TextComp>
-    {(handleDelete !== undefined && handleDelete !== null) && (
-      <ClickableElement onClick={handleDelete}>
-        <XCircleIcon width={16} height={16} />
-      </ClickableElement>
-    )}
   </Container>
 );
 

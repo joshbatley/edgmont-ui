@@ -15,14 +15,14 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
   language, code, handleChange, light,
 }) => {
   let [state, setState] = useState(code);
-  let Theme = light ? themes.github : themes.palenight;
+  let theme = !light ? themes.vsLight : themes.vsDark;
   let handleTextChange = (text: string) => {
     setState(text);
     handleChange?.(text);
   };
 
   return (
-    <Wrapper style={Theme.plain}>
+    <Wrapper style={theme.plain}>
       <Editor
         highlight={c => (<SyntaxHighlighter code={c} language={language} withWrapper={false} light={light} />)}
         value={state}

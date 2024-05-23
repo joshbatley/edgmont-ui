@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { WithChildren } from '../../types';
 
 type WrapperProps = {
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
   skip?: boolean;
 } & WithChildren;
 

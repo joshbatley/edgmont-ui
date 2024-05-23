@@ -15,23 +15,20 @@ export type AlertProps = {
 
 const Container = styled(Box) <{ severity: Severity }>`
   border: 1px solid;
-  ${({ theme }) => variant({
+  border-color: ${({ theme }) => theme.colors.border};
+  ${variant({
   prop: 'severity',
   variants: {
     error: {
-      bg: 'destructive',
-      border: 0,
+      borderColor: 'destructive',
       'h1, svg, p': {
-        color: 'destructiveForeground',
+        color: 'destructive',
       },
     },
     none: {
-      bg: 'background',
-      border: 0,
       'h1, svg, p': {
         color: 'foreground',
       },
-      boxShadow: 'highlight',
     },
   },
 })}
@@ -55,7 +52,7 @@ const Content = styled(TextComp)`
 export const Alert: React.FC<AlertProps> = ({
   severity = 'none', title, icon, children, withClose, ...rest
 }) => (
-  <Container p={2} display="flex" flexGrow={1} alignItems="center" boxShadow="base.0" borderRadius="4" overflow="hidden"
+  <Container p={2} display="flex" flexGrow={1} alignItems="center" borderRadius="4" overflow="hidden"
     position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap" severity={severity} {...rest}>
     <Box minWidth="100%">
       <Icon mr={3} mt="1px" lineHeight={5} alignSelf="center">{icon || getIcon(severity)}</Icon>

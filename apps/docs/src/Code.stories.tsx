@@ -18,9 +18,9 @@ let code = `{
 }`;
 
 export const SyntaxHighlighter: StoryObj<typeof SH> = {
-  render: ({ ...rest }) => <SH {...rest} language="json" code={code} />,
+  render: ({ ...rest }) => <SH {...rest} language="js" code={code} />,
 };
 
 export const CodeEditor: StoryObj<typeof CE> = {
-  render: ({ ...rest }) => <CE {...rest} language="json" code={code} />,
+  render: ({ ...rest }) => <CE {...rest} language="js" code={code} />,
 };
