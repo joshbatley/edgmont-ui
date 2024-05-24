@@ -55,7 +55,7 @@ export const Backdrop: React.FC<BackdropProps> = ({
             right={0}
             bottom={0}
             overflow="auto"
-            bg="modalBg"
+            bg="rgba(0, 0, 0, .7)"
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -66,6 +66,6 @@ export const Backdrop: React.FC<BackdropProps> = ({
           </Box>
         </Fade>
       </FocusLock>
-    </Portal >
+    </Portal>
   );
 };

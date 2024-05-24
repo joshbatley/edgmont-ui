@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 import { LayoutProps, SpaceProps, layout, space, variant } from 'styled-system';
 
 export type SkeletonProps = {
@@ -7,7 +8,7 @@ export type SkeletonProps = {
 
 const Comp = styled.div<SkeletonProps>`
   ${({ theme }) => theme.animations.pulse}
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => rgba(theme.colors.primary, 0.1)};
   ${layout}
   ${space}
   ${({ theme, height, width }) => variant({

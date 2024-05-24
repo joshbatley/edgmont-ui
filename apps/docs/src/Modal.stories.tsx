@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import {
-  Chip,
   Modal,
   OutlineButton,
-  Panel,
+  Box,
   PrimaryButton,
   TextComp,
   TextField,
+  Label,
 } from '@edgmont-ui/react';
 
 export default {
@@ -31,20 +31,24 @@ export const Example: StoryObj<typeof Modal> = {
           title={title}
           handleClose={() => setOpen(!open)}
         >
-          <Panel
+          <Box
             width="400px"
-            spaceYBetween="10"
-            pt="2"
+            spaceYBetween="3"
+            pt="0"
             pb="4"
-            px="2"
+            px="4"
             display="flex"
             flexDirection="column"
           >
-            <TextComp>This is the dialog body, it can contian anything</TextComp>
-            <TextField placeholder="Like a form" />
-            <PrimaryButton color="success">Or a button</PrimaryButton>
-            <Chip color="warning">Or even a chip</Chip>
-          </Panel>
+            <TextComp color="mutedForeground">Make changes to your profile here. Click save when you're done.</TextComp>
+            <Label value="Email">
+              <TextField placeholder="Email" />
+            </Label>
+            <Label value="Password">
+              <TextField placeholder="password" type="password" />
+            </Label>
+            <PrimaryButton>Update</PrimaryButton>
+          </Box>
         </Modal>
       </>
     );

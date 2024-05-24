@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import { lighten } from 'polished';
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import { Box, TextComp, Title } from '../../data';
-import { getIcon } from './utils';
 import { CloseBtn } from './CloseBtn';
 import { Severity, WithChildren } from '../../types';
 
@@ -16,6 +15,7 @@ export type AlertProps = {
 const Container = styled(Box) <{ severity: Severity }>`
   border: 1px solid;
   border-color: ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.background};
   ${variant({
   prop: 'severity',
   variants: {
@@ -51,15 +51,18 @@ const Content = styled(TextComp)`
 
 export const Alert: React.FC<AlertProps> = ({
   severity = 'none', title, icon, children, withClose, ...rest
-}) => (
-  <Container p={2} display="flex" flexGrow={1} alignItems="center" borderRadius="4" overflow="hidden"
-    position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap" severity={severity} {...rest}>
-    <Box minWidth="100%">
-      <Icon mr={3} mt="1px" lineHeight={5} alignSelf="center">{icon || getIcon(severity)}</Icon>
-      <Title display="inline" fontWeight="600" fontSize={1} lineHeight={2} letterSpacing="0.025em">{title}</Title>
-      {withClose && (<CloseBtn onClick={withClose} />)}
-    </Box>
-    <Content>{children}</Content>
-  </Container>
-);
+}) => {
+  let Icons = icon || (severity === 'error' ? <ExclamationCircleIcon width={20} height={20} /> : <></>);
+  return (
+    <Container p={2} display="flex" flexGrow={1} alignItems="center" borderRadius="4" overflow="hidden"
+      position="relative" width={29} fontSize={1} lineHeight={1} flexWrap="wrap" severity={severity} {...rest}>
+      <Box minWidth="100%">
+        <Icon mr={3} mt="1px" lineHeight={5} alignSelf="center">{Icons}</Icon>
+        <Title display="inline" fontWeight="600" fontSize={1} lineHeight={2} letterSpacing="0.025em">{title}</Title>
+        {withClose && (<CloseBtn onClick={withClose} />)}
+      </Box>
+      <Content>{children}</Content>
+    </Container>
+  );
+};
 

@@ -14,7 +14,8 @@ export type TooltipProps = {
 
 const Popover = styled.div`
   border-radius: ${({ theme }) => theme.radii[2]};
-  box-shadow: ${({ theme }) => theme.shadows.highlight};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  border: ${({ theme }) => theme.borders.border[1]};
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[3]}`};
   z-index: 10;
   font-size: ${({ theme }) => theme.fontSizes[1]};

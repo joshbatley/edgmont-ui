@@ -13,6 +13,7 @@ export type BaseButtonProps = {
 
 export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonProps, never> = styled.button<BaseButtonProps>`
   display: inline-flex;
+  place-content: center;
   align-items: center;
   user-select: none;
   border-radius: ${({ theme }) => theme.radii[3]};
