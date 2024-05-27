@@ -36,7 +36,7 @@ const parseChildren = (children: React.ReactNode, step: number): any[] => {
 
 const StyledDiv = styled.div <{ direction: 'vertical' | 'horizontal' }> `
   display: flex;
-  postion:relative;
+  postion: relative;
   ${({ direction }) => direction === 'vertical' && `
     flex-direction: column;
     height: 100%;

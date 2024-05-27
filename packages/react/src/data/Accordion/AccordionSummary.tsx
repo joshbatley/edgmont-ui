@@ -15,6 +15,7 @@ const StyledSummary = styled(ClickableElement) <AccordionSummaryProps>`
   border-left: ${({ theme }) => theme.borders.border[1]};
   border-right: ${({ theme }) => theme.borders.border[1]};
   background: ${({ theme }) => theme.colors.background};
+  place-content: flex-start;
   border-radius: 0;
   &:focus {
     box-shadow: none;

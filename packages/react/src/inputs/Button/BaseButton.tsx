@@ -23,7 +23,6 @@ export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonPro
   :focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
   }
   ${({ disabled }) => disabled && 'cursor: not-allowed;'}
   ${({ theme }) => theme.transition}

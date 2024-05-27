@@ -14,7 +14,8 @@ export type StepLabelProps = {
 const Line = styled.div<{ direction: Direction }>`
   left: calc(-50% + 30px);
   right: calc(50% + 30px);
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.primary};
+  opacity: 0.2;
   flex: 1 1 auto;
   width: 1px;
   ${({ direction }) => direction === 'vertical' ? 'height: 100%; width: 1px;' : 'height: 1px;'}
@@ -24,7 +25,8 @@ const AlternativeLine = styled.div<{ direction: Direction }>`
   left: calc(-50% + 30px);
   right: calc(50% + 30px);
   position: absolute;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.primary};
+  opacity: 0.2;
   top: ${({ theme }) => theme.sizes[3]};
   flex: 1 1 auto;
   ${({ direction }) => direction === 'vertical' ? 'height: 100%;' : 'height: 1px;'}

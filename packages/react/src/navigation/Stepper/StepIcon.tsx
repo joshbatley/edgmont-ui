@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 export type StepIconProps = {
   error?: boolean;
@@ -17,11 +17,10 @@ const ErrorComp = styled(ExclamationTriangleIcon)`
 const DefaultSvg = styled.svg<{ state: 'completed' | 'active' | 'default' }>`
   width: 30px;
   height: 30px;
-  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.background}` : `color: ${theme.colors.primary}`}
+  ${({ state, theme }) => state === 'default' ? `color: ${theme.colors.mutedForeground}` : `color: ${theme.colors.primary}`}
 `;
 
 const DefaultText = styled.text`
-  color: ${({ theme }) => theme.colors.background};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};
@@ -50,6 +49,7 @@ export const StepIcon: React.FC<StepIconProps> = ({
     return (
       <DefaultSvg fill='currentColor' state={state}>
         <circle cx="50%" cy="50%" r="12" />
+        <circle cx="50%" cy="50%" r="10" color="background" />
         <DefaultText x="50%" y="65%" textAnchor="middle">{number}</DefaultText>
       </DefaultSvg>
     );
