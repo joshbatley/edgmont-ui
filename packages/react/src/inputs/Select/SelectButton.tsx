@@ -7,12 +7,12 @@ import { useSelectContext } from './SelectContext';
 export type SelectButtonProps = {
   isClearable?: boolean;
   isFilterable?: boolean;
-  error?: boolean;
   placeholder?: string;
 } & OutlineButtonProps;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.foreground};
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  margin-right: 3px;
   :hover {
     color: ${({ theme }) => theme.colors.foreground};
   }
@@ -32,7 +32,6 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
   children,
   isFilterable,
   placeholder,
-  error,
   ...rest
 }) => {
   let {
@@ -54,13 +53,12 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
   return (
     <OutlineButton
       width="100%"
-      bg="background.1"
+      bg="background"
       justifyContent="space-between"
-      border={error ? 'error.1' : 'background3.1'}
       {...getToggleButtonProps()}
       {...rest}
     >
-      <TextComp>{buttonText}</TextComp>
+      <TextComp fontSize="1" lineHeight="1">{buttonText}</TextComp>
       <Container display="flex" alignItems="center">
         {isClearableActive &&
           <ClearBtn as="a" onClick={clear}>

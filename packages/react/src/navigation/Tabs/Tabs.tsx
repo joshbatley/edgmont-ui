@@ -1,5 +1,4 @@
 import { useState, Children, isValidElement } from 'react';
-import { Box } from '../../data';
 import { TabItems } from './TabItems';
 import { TabPaneList } from './TabPane';
 import { Tab, TabsProps } from '../../types/Tabs';

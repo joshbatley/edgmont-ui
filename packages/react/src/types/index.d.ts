@@ -2,6 +2,7 @@
 export type OverriderDefaults = Record<Partial<Property>, string>;
 
 export type Colors = 'primary' | 'secondary' | 'outline' | 'error';
+export type BtnType = 'primary' | 'secondary' | 'error';
 
 export type Size = 'large' | 'medium' | 'small';
 export type Position = CardinalPoints | IntercardinalPoints;

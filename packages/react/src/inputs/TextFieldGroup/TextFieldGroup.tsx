@@ -2,26 +2,29 @@ import styled from 'styled-components';
 import { WithChildren } from '../../types';
 
 const Group = styled.div`
-  div {
+  > div {
     border-radius: 0;
-    border-bottom: 0;
     position: relative;
-    :focus {
-      z-index: 20;
-    }
   }
-  > div:first-of-type
-  > div:first-of-type input {
+
+  > div:focus-within {
+    z-index: 20;
+  }
+
+  > :not(div:first-of-type) {
+    margin-top: -1px;
+  }
+
+  div:first-of-type {
     border-radius: ${({ theme }) => `${theme.radii[3]} ${theme.radii[3]}`} 0 0 ;
   }
-  > div:last-of-type
-  > div:last-of-type input {
+  div:last-of-type {
     border-radius: ${({ theme }) => `0 0 ${theme.radii[3]} ${theme.radii[3]}`};
   }
 `;
 
 export const TextFieldGroup: React.FC<WithChildren> = ({ children }) => (
-  <Group data-testId='asds'>
+  <Group>
     {children}
   </Group>
 );

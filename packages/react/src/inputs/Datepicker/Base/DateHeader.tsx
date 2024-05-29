@@ -30,6 +30,7 @@ export type DateHeaderProps = {
   monthsShown?: number;
   showMonthYearPicker?: boolean;
   showYearPicker?: boolean;
+  monthShown?: number;
 } & ReactDatePickerCustomHeaderProps;
 
 const getYearsPeriod = (
@@ -52,6 +53,7 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
   let isOpen = showMonthYearPicker || showYearPicker ? false : monthMenuOpen;
   let formatting = (showMonthYearPicker) ? 'yyyy' : 'MMMM yyyy';
 
+
   let getFriendlyString = () => {
     if (showYearPicker) {
       let [start, end] = getYearsPeriod(date, 12);
@@ -72,22 +74,30 @@ export const DateHeader: React.FC<DateHeaderProps> = ({
     return fn;
   };
 
+  let canModifyYear = (fn: () => void) => {
+    if (showMonthYearPicker || showYearPicker) {
+      return fn;
+    }
+    return undefined;
+  };
+
   let decreaseYearFn = showYearPicker ? () => changeYear(getYear(date) - 12) : decreaseYear;
   let increaseYearFn = showYearPicker ? () => changeYear(getYear(date) + 12) : increaseYear;
 
   return (
     <div>
-      <Box display="flex" alignItems="center" justifyContent="center" py="2" borderBottom="background2.1">
-        {showLeftNav && <LeftNavigation decreaseMonth={canModifyMonths(decreaseMonth)} decreaseYear={decreaseYearFn} />}
+      <Box display="flex" alignItems="center" justifyContent="center" py="2">
+        {showLeftNav && <LeftNavigation decreaseMonth={canModifyMonths(decreaseMonth)} decreaseYear={canModifyYear(decreaseYearFn)} />}
         <ClickableElement
           ref={setItemRef as Ref<HTMLButtonElement>}
           flexGrow="1"
+          fontWeight="500"
           justifyContent="center"
           onClick={() => setMonthMenuOpen(true)}
         >
           {getFriendlyString()}
         </ClickableElement>
-        {showRightNav && <RightNavigation increaseMonth={canModifyMonths(increaseMonth)} increaseYear={increaseYearFn} />}
+        {showRightNav && <RightNavigation increaseMonth={canModifyMonths(increaseMonth)} increaseYear={canModifyYear(increaseYearFn)} />}
       </Box>
       <StyledMenu inline handleClose={() => setMonthMenuOpen(false)} itemRef={itemRef} isOpen={isOpen}>
         {months.map((month, idx) => (

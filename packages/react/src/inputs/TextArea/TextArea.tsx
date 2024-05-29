@@ -5,13 +5,15 @@ export const TextArea = styled.textarea`
   border: ${({ theme }) => theme.borders.border[1]};
   padding: ${({ theme }) => theme.space[2]};
   width: 100%;
-  height: ${({ theme }) => theme.sizes[16]};
+  min-height: ${({ theme }) => theme.sizes[16]};
   background: ${({ theme }) => theme.colors.background};
+  font-size: ${({ theme }) => theme.fontSizes[1]};
+  line-height: ${({ theme }) => theme.lineHeights[1]};
   border-radius: ${({ theme }) => theme.radii[3]};
   :focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    border-color: ${({ theme }) => theme.colors.primary};
     z-index: 10;
   }
 `;

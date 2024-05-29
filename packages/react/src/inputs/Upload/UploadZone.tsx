@@ -21,7 +21,8 @@ const Container = styled.div<{ isDragActive: boolean }>`
   align-items: center;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.radii[2]};
-  border: ${({ theme }) => theme.borders.background[3]};
+  border-color: ${({ theme }) => theme.colors.border};
+  border-width: 4px;
   border-style: dashed;
   padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
 
@@ -30,8 +31,8 @@ const Container = styled.div<{ isDragActive: boolean }>`
   }
 
   ${({ isDragActive, theme }) => isDragActive && `
-    background: ${theme.colors.mutedForeground};
-    border-color: ${theme.colors.background};
+    background: ${theme.colors.muted};
+    border-color: ${theme.colors.accent};
   `}
 `;
 

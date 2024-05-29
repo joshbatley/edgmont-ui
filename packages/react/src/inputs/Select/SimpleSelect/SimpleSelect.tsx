@@ -5,7 +5,6 @@ import { Select, SelectFilter, SelectButton, SelectList, SelectItem } from '..';
 export type SimpleSelectProps = {
   values: Array<any>;
   placeholder?: string;
-  error?: boolean;
   disabled?: boolean;
   isClearable?: boolean;
   isFilterable?: boolean;
@@ -13,7 +12,7 @@ export type SimpleSelectProps = {
 } & DownshiftProps<any>;
 
 export const SimpleSelect: React.FC<SimpleSelectProps> = ({
-  values, isFilterable, disabled, error, isClearable, placeholder, onInputValueChange,
+  values, isFilterable, disabled, isClearable, placeholder, onInputValueChange,
   itemToString = (item): string => item || '',
   ...rest
 }) => {
@@ -30,8 +29,8 @@ export const SimpleSelect: React.FC<SimpleSelectProps> = ({
   return (
     <Select onInputValueChange={handleOnputValueChange} itemToString={itemToString} {...rest}>
       {isFilterable ?
-        <SelectFilter disabled={disabled} error={error} isClearable={isClearable} placeholder={placeholder} /> :
-        <SelectButton disabled={disabled} error={error} isClearable={isClearable} placeholder={placeholder} />
+        <SelectFilter disabled={disabled} isClearable={isClearable} placeholder={placeholder} /> :
+        <SelectButton disabled={disabled} isClearable={isClearable} placeholder={placeholder} />
       }
       <SelectList>
         {filterOptions.map((item, idx) => (

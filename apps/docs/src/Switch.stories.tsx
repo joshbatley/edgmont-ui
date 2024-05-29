@@ -37,9 +37,8 @@ export const Colors: StoryObj<typeof Switch> = {
   },
   render: ({ ...rest }) => (
     <Box spaceXBetween="2">
-      {colorSelect.options.map((c) => (
-        <Switch key={c} color={c} checked {...rest} />
-      ))}
+      <Switch checked {...rest} />
+      <Switch error checked {...rest} />
     </Box>
   ),
 };

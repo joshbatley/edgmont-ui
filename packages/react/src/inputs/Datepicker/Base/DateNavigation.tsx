@@ -1,8 +1,5 @@
-import {
-  ChevronLeftIcon, ChevronRightIcon,
-  ChevronDoubleLeftIcon, ChevronDoubleRightIcon,
-} from '@heroicons/react/24/outline';
-import { Button } from '../../../inputs/Button';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { OutlineButton } from '../../../inputs/Button';
 
 export type LeftNavigationProps = {
   decreaseYear?: () => void;
@@ -12,14 +9,14 @@ export type LeftNavigationProps = {
 export const LeftNavigation: React.FC<LeftNavigationProps> = ({ decreaseYear, decreaseMonth }) => (
   <>
     {decreaseYear && (
-      <Button size='small' onClick={decreaseYear}>
-        <ChevronDoubleLeftIcon width={16} height={16} />
-      </Button>
+      <OutlineButton px="5px" py="5px" height="inherit" onClick={decreaseYear}>
+        <ChevronLeftIcon width={16} height={16} />
+      </OutlineButton>
     )}
     {decreaseMonth && (
-      <Button size='small' onClick={decreaseMonth}>
+      <OutlineButton px="5px" py="5px" height="inherit" onClick={decreaseMonth}>
         <ChevronLeftIcon width={16} height={16} />
-      </Button>
+      </OutlineButton>
     )}
   </>
 );
@@ -32,14 +29,14 @@ export type RightNavigationProps = {
 export const RightNavigation: React.FC<RightNavigationProps> = ({ increaseYear, increaseMonth }) => (
   <>
     {increaseMonth && (
-      <Button size='small' onClick={increaseMonth}>
+      <OutlineButton px="5px" py="5px" height="inherit" onClick={increaseMonth}>
         <ChevronRightIcon width={16} height={16} />
-      </Button>
+      </OutlineButton>
     )}
     {increaseYear && (
-      <Button size='small' onClick={increaseYear}>
-        <ChevronDoubleRightIcon width={16} height={16} />
-      </Button>
+      <OutlineButton px="5px" py="5px" height="inherit" onClick={increaseYear}>
+        <ChevronRightIcon width={16} height={16} />
+      </OutlineButton>
     )}
   </>
 );

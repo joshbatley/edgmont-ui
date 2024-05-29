@@ -5,8 +5,6 @@ import {
   BasePicker,
   DatePicker,
   DateRangePicker,
-  MonthPicker as MP,
-  YearPicker as YP,
 } from '@edgmont-ui/react';
 
 export default {
@@ -26,18 +24,6 @@ export const RangePicker: StoryObj<typeof DateRangePicker> = {
   ),
 };
 
-export const MonthPicker: StoryObj<typeof MP> = {
-  render: ({ ...rest }) => (
-    <MP placeholder="Click to select a month" {...rest} />
-  ),
-};
-
-export const YearPicker: StoryObj<typeof YP> = {
-  render: ({ ...rest }) => (
-    <YP placeholder="Click to select a year" {...rest} />
-  ),
-};
-
 export const CustomSetup: StoryObj<typeof BasePicker> = {
   parameters: {
     controls: { hideNoControlsWarning: true },
@@ -51,7 +37,7 @@ export const CustomSetup: StoryObj<typeof BasePicker> = {
         placeholder="Click to select a date"
         selected={date}
         handleClear={() => setDate(null)}
-        onChange={(d) => setDate(d)}
+        onChange={(d: any) => setDate(d)}
       />
     );
   },

@@ -2,24 +2,13 @@ import styled from 'styled-components';
 import { Box } from '../../data';
 
 export type AddonElementProps = {
-  position: 'left' | 'right';
   addon: React.ReactNode;
 };
 
-const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
-  overflow: hidden;
-  ${({ theme, pos }) => pos === 'left' ? `
-    border-top-left-radius: ${theme.radii[3]};
-    border-bottom-left-radius: ${theme.radii[3]};
-  ` : `
-    border-top-right-radius: ${theme.radii[3]};
-    border-bottom-right-radius: ${theme.radii[3]};
-  `}
-
+const StyledBox = styled(Box)`
   &:focus {
     z-index:0;
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
   }
 
   button:focus {
@@ -29,10 +18,10 @@ const StyledBox = styled(Box) <{ pos: 'left' | 'right' }>`
 `;
 
 export const AddonElement: React.FC<AddonElementProps> = ({
-  addon, position,
+  addon,
 }) =>
   addon ? (
-    <StyledBox pos={position} bg="secondary" color="mutedForeground" display="flex" alignItems="center">
+    <StyledBox bg="muted" color="mutedForeground" display="flex" alignItems="center">
       {addon}
     </StyledBox>
   ) : null;

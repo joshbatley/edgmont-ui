@@ -18,54 +18,47 @@ const Label = styled.label<{ disabled: boolean; }>`
   }
 `;
 
-const Btn = styled.div<{ rounded: boolean; error: boolean; }>`
+const Btn = styled.div<{ rounded: boolean; disabled: boolean; }>`
   position: relative;
   width: ${({ theme }) => theme.sizes[4]};
   height: ${({ theme }) => theme.sizes[4]};
   border: ${({ theme }) => theme.borders.background[1]};
   background: ${({ theme }) => theme.colors.background};
   overflow: hidden;
-  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  border: ${({ theme }) => theme.borders.primary[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: ${({ theme }) => theme.space[2]};
-  border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[3]};
-  ${({ error, theme }) => error && `
-    border-color: ${theme.colors.destructive};
-  `}
+  border-radius: ${({ theme, rounded }) => rounded ? theme.radii[8] : theme.radii[2]};
+  opacity: ${({ disabled }) => disabled ? .5 : 1};
 `;
 
-const Box = styled.div<{ disabled: boolean; error: boolean; }>`
+const Box = styled.div`
     background: ${({ theme }) => theme.colors.background};
     width: 100%;
     height: 100%;
     position: absolute;
     input:checked ~ & {
-      background: ${({ theme, error, disabled }) =>
-    error ? theme.colors.destructive :
-      disabled ? theme.colors.muted : theme.colors.primary};
+      background: ${({ theme }) => theme.colors.primary};
     }
     ${Label}:hover input:checked ~ & {
-      background: ${({ theme, error, disabled }) =>
-    error ? theme.colors.destructive :
-      disabled ? theme.colors.muted : theme.colors.primary};
+      background: ${({ theme }) => theme.colors.primary};
     }
   `;
 
-let Icon = styled.div<{ disabled: boolean; error: boolean; }>`
+let Icon = styled.div<{ disabled: boolean; }>`
     svg {
-      width: 16px;
-      height: 16px;
       color: transparent;
       z-index: 10;
       position: relative;
       ${Label} input:checked ~ & {
         color: ${({ theme }) => theme.colors.background};
       }
-      ${({ theme, disabled, error }) => !disabled && `
+      ${({ theme, disabled }) => !disabled && `
         ${Label}:hover & {
-          color: ${error ? theme.colors.destructive : theme.colors.primary};
+          color: ${theme.colors.primary};
         }
       `}
     }
@@ -76,13 +69,13 @@ const Input = styled.input`
 `;
 
 export const BaseControl: React.FC<BaseControlProps> = ({
-  labelText, icon, rounded = false, disabled = false, error = false, ...rest
+  labelText, icon, rounded = false, disabled = false, ...rest
 }) => (
   <Label disabled={disabled}>
-    <Btn rounded={rounded} error={error}>
+    <Btn rounded={rounded} disabled={disabled}>
       <Input disabled={disabled} {...rest} />
-      <Box disabled={disabled} error={error} />
-      <Icon disabled={disabled} error={error}>{icon}</Icon>
+      <Box />
+      <Icon disabled={disabled}>{icon}</Icon>
     </Btn>
     {labelText}
   </Label>

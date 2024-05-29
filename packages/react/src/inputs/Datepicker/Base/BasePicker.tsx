@@ -13,9 +13,10 @@ type SharedProps = {
   showClear?: boolean;
   handleClear?: () => void;
 };
-type SelectRange = SharedProps & ({ selectsRange: true } & Omit<ReactDatePickerProps<never, true>, 'isClearable'>);
-type SelectSingle = SharedProps & ({ selectsRange?: false } & Omit<ReactDatePickerProps<never, false>, 'isClearable'>);
-export type BasePickerProps = SelectRange | SelectSingle;
+type SelectRange = SharedProps & ReactDatePickerProps<true>;
+type SelectSingle = SharedProps & ReactDatePickerProps;
+
+export type BasePickerProps = (SelectRange | SelectSingle);
 
 export const BasePicker: React.FC<BasePickerProps> = ({
   placeholder, handleClear, dateFormat = 'dd/MM/yyyy', inputValue, monthsShown = 1, shouldCloseOnSelect = true, onChange, showMonthYearPicker, showYearPicker, showClear = false, ...rest
@@ -36,7 +37,7 @@ export const BasePicker: React.FC<BasePickerProps> = ({
     monthsShown: monthsShown,
     showPopperArrow: false,
     inline: true,
-    renderDayContents: (dayOfMonth: number) => <div>{dayOfMonth}</div>,
+    renderDayContents: (dayOfMonth: number) => <div className="in-month">{dayOfMonth}</div>,
     calendarContainer: DateContainer,
     popperContainer: PopperContainer,
     onChange: handleChange,

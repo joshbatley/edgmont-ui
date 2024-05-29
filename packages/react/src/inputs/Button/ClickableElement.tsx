@@ -5,7 +5,10 @@ export type ClickableElementProps = Omit<BaseButtonProps, | 'isLoading'>;
 
 export const ClickableElement = forwardRef<HTMLButtonElement, ClickableElementProps>(({ children, ...rest }, ref) => (
   <BaseButton
-    size="none"
+    padding="0"
+    fontWeight="inherit"
+    lineHeight="inherit"
+    fontSize="inherit"
     ref={ref}
     {...rest}
   >

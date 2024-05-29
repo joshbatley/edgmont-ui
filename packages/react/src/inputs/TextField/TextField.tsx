@@ -6,7 +6,6 @@ import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
 
 export type TextFieldProps = {
-  error?: boolean;
   before?: ReactElement;
   after?: ReactElement;
   prefiXMarkIcon?: ReactElement;
@@ -15,45 +14,13 @@ export type TextFieldProps = {
   type?: 'text' | 'password' | 'number' | 'email';
 } & React.ComponentPropsWithRef<'input'>;
 
-const InputContainer = styled(Box) <{ before: boolean; after: boolean; }>`
-  &:focus-within {
-    z-index: 10;
-    outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+const Container = styled(Box) <{ disabled: boolean; }>`
+  overflow: hidden;
+  :focus-within {
+    border: ${({ theme }) => theme.borders.primary[1]};
   }
-  ${({ before, after }) => {
-    if (before && !after) {
-      return `input {
-        border-left: 0;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }`;
-    }
-    if (!before && after) {
-      return `input {
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }`;
-    }
-
-    if (before && after) {
-      return `input {
-        border-right: 0;
-        border-left: 0;
-        border-radius: 0;
-      }`;
-    }
-  }}
-`;
-
-const Container = styled(Box) <{ error: boolean; disabled: boolean; }>`
-  ${({ theme, error }) => error && `
-    color: ${theme.colors.destructive};
-    border: ${theme.borders.destructive[1]};
-  `}
-  ${({ theme, disabled }) => disabled && `
-    background: ${theme.colors.destructive};
+  ${({ disabled }) => disabled && `
+    opacity: 0.5;
     cursor: not-allowed;
     div, svg, input {
       cursor: not-allowed;
@@ -63,26 +30,23 @@ const Container = styled(Box) <{ error: boolean; disabled: boolean; }>`
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
   prefiXMarkIcon, suffiXMarkIcon,
-  before, after, disabled = false, error = false,
+  before, after, disabled = false,
   ...rest
 }, ref) => (
   <Container
-    error={error}
     disabled={disabled}
-    bg="background.0"
+    bg="background"
     display="flex"
-    borderRadius="4"
+    borderRadius="3"
     border="border.1"
     boxShadow="base.0"
   >
-    <OptionalIcon position="left" icon={prefiXMarkIcon} />
-    <AddonElement position="left" addon={before} />
+    <OptionalIcon icon={prefiXMarkIcon} />
+    <AddonElement addon={before} />
 
-    <InputContainer flexGrow="1" before={!!before || !!prefiXMarkIcon} after={!!after || !!suffiXMarkIcon}>
-      <BaseInput error={error} disabled={disabled} ref={ref} {...rest} />
-    </InputContainer>
+    <BaseInput disabled={disabled} ref={ref} {...rest} />
 
-    <OptionalIcon position="right" icon={suffiXMarkIcon} />
-    <AddonElement position="right" addon={after} />
+    <OptionalIcon icon={suffiXMarkIcon} />
+    <AddonElement addon={after} />
   </Container>
 ));

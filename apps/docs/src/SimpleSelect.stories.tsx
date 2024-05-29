@@ -41,11 +41,8 @@ export const Disabled: StoryObj<typeof SimpleSelect> = {
 };
 
 export const Errored: StoryObj<typeof SimpleSelect> = {
-  argTypes: {
-    error: { table: { disable: true } },
-  },
-  render: ({ error, ...rest }) => (
-    <SimpleSelect {...rest} values={values} error />
+  render: ({ ...rest }) => (
+    <SimpleSelect {...rest} values={values} />
   ),
 };
 

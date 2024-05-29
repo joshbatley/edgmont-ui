@@ -3,21 +3,28 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { rgba } from 'polished';
 import { BaseButton, BaseButtonProps } from './BaseButton';
-import { Colors } from '../../types';
+import { BtnType } from '../../types';
 
 export type PrimaryButtonProps = Omit<BaseButtonProps, 'loaderColor'> & {
-  color?: Colors
+  btnType?: BtnType
 };
 
 const StyledButton = styled(BaseButton) <PrimaryButtonProps>`
 ${({ theme }) => variant({
-  prop: 'color',
+  prop: 'btnType',
   variants: {
     primary: {
       color: 'primaryForeground',
       bg: 'primary',
       ':hover': {
         bg: rgba(theme.colors.primary, 0.9),
+      },
+    },
+    secondary: {
+      color: 'secondaryForeground',
+      bg: 'secondary',
+      ':hover': {
+        bg: rgba(theme.colors.secondary, 0.9),
       },
     },
     error: {
@@ -32,11 +39,11 @@ ${({ theme }) => variant({
 `;
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(({
-  children, color = 'primary', ...rest
+  children, btnType = 'primary', ...rest
 }, ref) => (
   <StyledButton
     ref={ref}
-    color={color}
+    btnType={btnType}
     {...rest}
   >
     {children}

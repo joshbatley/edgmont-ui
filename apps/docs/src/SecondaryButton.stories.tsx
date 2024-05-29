@@ -5,7 +5,7 @@ import { Box, PrimaryButton } from '@edgmont-ui/react';
 import { colorSelect } from './presets';
 
 const meta: Meta = {
-  title: 'Inputs/Buttons/Primary',
+  title: 'Inputs/Buttons/Secondary',
   component: PrimaryButton,
   args: {
     children: 'Get started',
@@ -15,7 +15,7 @@ export default meta;
 
 export const Example: StoryObj<typeof PrimaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton {...rest}>{children}</PrimaryButton>
+    <PrimaryButton btnType="secondary" {...rest}>{children}</PrimaryButton>
   ),
 };
 
@@ -29,13 +29,13 @@ export const Sizes: StoryObj<typeof PrimaryButton> = {
   },
   render: ({ children, ...rest }) => (
     <Box spaceXBetween="4">
-      <PrimaryButton size="large" {...rest}>
+      <PrimaryButton btnType="secondary" size="large" {...rest}>
         {children}
       </PrimaryButton>
-      <PrimaryButton size="medium" {...rest}>
+      <PrimaryButton btnType="secondary" size="medium" {...rest}>
         {children}
       </PrimaryButton>
-      <PrimaryButton size="small" {...rest}>
+      <PrimaryButton btnType="secondary" size="small" {...rest}>
         {children}
       </PrimaryButton>
     </Box>
@@ -57,7 +57,7 @@ export const Colors: StoryObj<typeof PrimaryButton> = {
       gridGap="4"
     >
       {colorSelect.options.map((c) => (
-        <PrimaryButton key={c} color={c}>
+        <PrimaryButton btnType="secondary" key={c} color={c}>
           {children}
         </PrimaryButton>
       ))}
@@ -67,7 +67,7 @@ export const Colors: StoryObj<typeof PrimaryButton> = {
 
 export const WithIcon: StoryObj<typeof PrimaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton {...rest}>
+    <PrimaryButton btnType="secondary" {...rest}>
       <ArrowDownOnSquareIcon width={16} height={16} />
       <span>{children}</span>
     </PrimaryButton>
@@ -76,7 +76,7 @@ export const WithIcon: StoryObj<typeof PrimaryButton> = {
 
 export const WithAction: StoryObj<typeof PrimaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton onClick={() => alert('boo')} {...rest}>
+    <PrimaryButton btnType="secondary" onClick={() => alert('boo')} {...rest}>
       {children}
     </PrimaryButton>
   ),
