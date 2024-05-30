@@ -1,6 +1,6 @@
 import React, { Ref, useState } from 'react';
 import { StoryObj } from '@storybook/react';
-import { Alert, Box, ClickableElement, Menu, MenuItem } from '@edgmont-ui/react';
+import { Box, ClickableElement, Menu, MenuItem } from '@edgmont-ui/react';
 
 export default {
   title: 'Navigation/Menu',
