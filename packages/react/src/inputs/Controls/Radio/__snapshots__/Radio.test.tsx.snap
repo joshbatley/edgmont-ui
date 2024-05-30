@@ -1,117 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio test should errored with disabled classes 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c1 > :not([hidden]) ~ :not([hidden]) {
-  margin-left: 0.5rem;
-}
-
-.c2 {
-  position: relative;
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid #334155;
-  background: #0f172a;
-  overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-right: 0.5rem;
-  border-radius: 9999px;
-  border-color: #e11d48;
-}
-
-.c5 {
-  background: #0f172a;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-input:checked ~ .c4 {
-  background: #e11d48;
-}
-
-.c0:hover input:checked ~ .c4 {
-  background: #e11d48;
-}
-
-.c7 svg {
-  width: 16px;
-  height: 16px;
-  color: transparent;
-  z-index: 10;
-  position: relative;
-}
-
-.c0 input:checked ~ .c6 svg {
-  color: #0f172a;
-}
-
-.c0:hover .c6 svg {
-  color: #e11d48;
-}
-
-.c3 {
-  display: none;
-}
-
-<div>
-  <label
-    class="c0 c1"
-  >
-    <div
-      class="c2"
-    >
-      <input
-        class="c3"
-        type="radio"
-        value=""
-      />
-      <div
-        class="c4 c5"
-      />
-      <div
-        class="c6 c7"
-      >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 16 16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="8"
-            cy="8"
-            r="3"
-          />
-        </svg>
-      </div>
-    </div>
-  </label>
-</div>
-`;
-
 exports[`Radio test should render 1`] = `
 .c1 {
   display: -webkit-box;
@@ -133,10 +21,11 @@ exports[`Radio test should render 1`] = `
   position: relative;
   width: 1rem;
   height: 1rem;
-  border: 1px solid #334155;
-  background: #0f172a;
+  border: 1px solid hsl(0,0%,100%);
+  background: hsl(0,0%,100%);
   overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border: 1px solid hsl(240,5.9%,10%);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,37 +40,36 @@ exports[`Radio test should render 1`] = `
   justify-content: center;
   margin-right: 0.5rem;
   border-radius: 9999px;
+  opacity: 1;
 }
 
 .c5 {
-  background: #0f172a;
+  background: hsl(0,0%,100%);
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
 input:checked ~ .c4 {
-  background: #4f46e5;
+  background: hsl(240,5.9%,10%);
 }
 
 .c0:hover input:checked ~ .c4 {
-  background: #4f46e5;
+  background: hsl(240,5.9%,10%);
 }
 
 .c7 svg {
-  width: 16px;
-  height: 16px;
   color: transparent;
   z-index: 10;
   position: relative;
 }
 
 .c0 input:checked ~ .c6 svg {
-  color: #0f172a;
+  color: hsl(0,0%,100%);
 }
 
 .c0:hover .c6 svg {
-  color: #4f46e5;
+  color: hsl(240,5.9%,10%);
 }
 
 .c3 {
@@ -208,7 +96,9 @@ input:checked ~ .c4 {
       >
         <svg
           fill="currentColor"
+          height="16"
           viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
@@ -244,10 +134,11 @@ exports[`Radio test should render with disabled classes 1`] = `
   position: relative;
   width: 1rem;
   height: 1rem;
-  border: 1px solid #334155;
-  background: #0f172a;
+  border: 1px solid hsl(0,0%,100%);
+  background: hsl(0,0%,100%);
   overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border: 1px solid hsl(240,5.9%,10%);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -262,33 +153,32 @@ exports[`Radio test should render with disabled classes 1`] = `
   justify-content: center;
   margin-right: 0.5rem;
   border-radius: 9999px;
+  opacity: 0.5;
 }
 
 .c5 {
-  background: #0f172a;
+  background: hsl(0,0%,100%);
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
 input:checked ~ .c4 {
-  background: #64748b;
+  background: hsl(240,5.9%,10%);
 }
 
 .c0:hover input:checked ~ .c4 {
-  background: #64748b;
+  background: hsl(240,5.9%,10%);
 }
 
 .c7 svg {
-  width: 16px;
-  height: 16px;
   color: transparent;
   z-index: 10;
   position: relative;
 }
 
 .c0 input:checked ~ .c6 svg {
-  color: #0f172a;
+  color: hsl(0,0%,100%);
 }
 
 .c3 {
@@ -302,6 +192,7 @@ input:checked ~ .c4 {
   >
     <div
       class="c2"
+      disabled=""
     >
       <input
         class="c3"
@@ -311,7 +202,6 @@ input:checked ~ .c4 {
       />
       <div
         class="c4 c5"
-        disabled=""
       />
       <div
         class="c6 c7"
@@ -319,7 +209,9 @@ input:checked ~ .c4 {
       >
         <svg
           fill="currentColor"
+          height="16"
           viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
