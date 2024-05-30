@@ -57,20 +57,3 @@ export const Disabled: StoryObj<typeof Radio> = {
     </Box>
   ),
 };
-
-export const Errored: StoryObj<typeof Radio> = {
-  render: ({ children, ...rest }) => (
-    <Box spaceYBetween="2">
-      <Radio error name="default" labelText="123" onChange={change} {...rest} />
-      <Radio
-        checked
-        error
-        name="default"
-        labelText="456"
-        onChange={change}
-        {...rest}
-      />
-      <Radio error name="default" labelText="789" onChange={change} {...rest} />
-    </Box>
-  ),
-};

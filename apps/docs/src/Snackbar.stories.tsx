@@ -54,7 +54,7 @@ export const Varients: StoryObj = {
         style={{ placeContent: 'center' }}
       >
         <Box display="flex" justifyContent="space-between">
-          <Comp severity="error" text="Add Error" />
+          <Comp destructive text="Add Destructive" />
           <Comp severity="warning" text="Add Warning" />
           <Comp severity="info" text="Add Info" />
         </Box>

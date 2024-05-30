@@ -1,25 +1,25 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { Box, PrimaryButton } from '@edgmont-ui/react';
+import { Box, DestructiveButton } from '@edgmont-ui/react';
 import { colorSelect } from './presets';
 
 const meta: Meta = {
-  title: 'Inputs/Buttons/Primary',
-  component: PrimaryButton,
+  title: 'Inputs/Buttons/Destructive',
+  component: DestructiveButton,
   args: {
     children: 'Get started',
   },
 };
 export default meta;
 
-export const Example: StoryObj<typeof PrimaryButton> = {
+export const Example: StoryObj<typeof DestructiveButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton disabled {...rest}>{children}</PrimaryButton>
+    <DestructiveButton disabled {...rest}>{children}</DestructiveButton>
   ),
 };
 
-export const Sizes: StoryObj<typeof PrimaryButton> = {
+export const Sizes: StoryObj<typeof DestructiveButton> = {
   argTypes: {
     size: {
       table: {
@@ -29,20 +29,20 @@ export const Sizes: StoryObj<typeof PrimaryButton> = {
   },
   render: ({ children, ...rest }) => (
     <Box spaceXBetween="4">
-      <PrimaryButton size="large" {...rest}>
+      <DestructiveButton size="large" {...rest}>
         {children}
-      </PrimaryButton>
-      <PrimaryButton size="medium" {...rest}>
+      </DestructiveButton>
+      <DestructiveButton size="medium" {...rest}>
         {children}
-      </PrimaryButton>
-      <PrimaryButton size="small" {...rest}>
+      </DestructiveButton>
+      <DestructiveButton size="small" {...rest}>
         {children}
-      </PrimaryButton>
+      </DestructiveButton>
     </Box>
   ),
 };
 
-export const Colors: StoryObj<typeof PrimaryButton> = {
+export const Colors: StoryObj<typeof DestructiveButton> = {
   argTypes: {
     color: {
       table: {
@@ -57,27 +57,27 @@ export const Colors: StoryObj<typeof PrimaryButton> = {
       gridGap="4"
     >
       {colorSelect.options.map((c) => (
-        <PrimaryButton key={c} color={c}>
+        <DestructiveButton key={c} color={c}>
           {children}
-        </PrimaryButton>
+        </DestructiveButton>
       ))}
     </Box>
   ),
 };
 
-export const WithIcon: StoryObj<typeof PrimaryButton> = {
+export const WithIcon: StoryObj<typeof DestructiveButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton {...rest}>
+    <DestructiveButton {...rest}>
       <ArrowDownOnSquareIcon width={16} height={16} />
       <span>{children}</span>
-    </PrimaryButton>
+    </DestructiveButton>
   ),
 };
 
-export const WithAction: StoryObj<typeof PrimaryButton> = {
+export const WithAction: StoryObj<typeof DestructiveButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton onClick={() => alert('boo')} {...rest}>
+    <DestructiveButton onClick={() => alert('boo')} {...rest}>
       {children}
-    </PrimaryButton>
+    </DestructiveButton>
   ),
 };

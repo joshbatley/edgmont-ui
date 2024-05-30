@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
 import { TextComp } from '../../data';
-import { Colors, WithChildren } from '../../types';
+import { WithChildren } from '../../types';
 
 export type ChipProps = {
-  color?: Colors;
+  destructive?: boolean;
 } & WithChildren;
 
-export const Container = styled.div<{ color: Colors }>`
+export const Container = styled.div<{ destructive?: boolean }>`
   border-radius: ${({ theme }) => theme.radii[3]};
   display: inline-flex;
   justify-content: center;
@@ -17,35 +16,18 @@ export const Container = styled.div<{ color: Colors }>`
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};
   font-weight: 700;
-
+  color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.primary};
 
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }
-  ${({ theme }) => variant({
-  prop: 'color',
-  variants: {
-    error: {
-      color: 'background',
-      bg: 'destructive',
-    },
-    secondary: {
-      color: 'secondaryForeground',
-      bg: 'secondary',
-    },
-    primary: {
-      color: 'background',
-      bg: 'foreground',
-    },
-  },
-})}
 `;
 
-
 export const Chip: React.FC<ChipProps> = ({
-  color = 'primary', children,
+  destructive, children,
 }) => (
-  <Container color={color}>
+  <Container destructive={destructive}>
     <TextComp>{children}</TextComp>
   </Container>
 );

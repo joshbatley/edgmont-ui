@@ -14,7 +14,7 @@ export default {
   title: 'Inputs/TextField',
   component: TextField,
   args: {
-    placeholder: 'My input',
+    placeholder: 'Email',
   },
   argTypes: {
     size: sizeSelect,
@@ -33,12 +33,12 @@ const After = ({ ...rest }) => (
 );
 
 export const Example: StoryObj<typeof TextField> = {
-  render: ({ ...rest }) => <TextField {...rest} />,
+  render: ({ ...rest }) => <Box width="320px"><TextField {...rest} /></Box>,
 };
 
 export const PrefixAndSuffix: StoryObj<typeof TextField> = {
   render: ({ ...rest }) => (
-    <Box spaceYBetween="2">
+    <Box spaceYBetween="2" width="320px">
       <TextField prefiXMarkIcon={<CalendarIcon width={16} />} {...rest} />
       <TextField suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
       <TextField
@@ -52,7 +52,7 @@ export const PrefixAndSuffix: StoryObj<typeof TextField> = {
 
 export const Addons: StoryObj<typeof TextField> = {
   render: ({ ...rest }) => (
-    <Box spaceYBetween="2">
+    <Box spaceYBetween="2" width="320px">
       <TextField before={<Before />} {...rest} />
       <TextField after={<After />} {...rest} />
       <TextField before={<Before />} after={<After />} {...rest} />
@@ -61,5 +61,5 @@ export const Addons: StoryObj<typeof TextField> = {
 };
 
 export const Password: StoryObj<typeof PasswordComp> = {
-  render: ({ ...rest }) => <PasswordComp {...rest} />,
+  render: ({ ...rest }) => <Box width="320px"><PasswordComp {...rest} /></Box>,
 };

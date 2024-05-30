@@ -6,5 +6,11 @@ export type MenuItemProps = {
 } & WithChildren;
 
 export const MenuItem: React.FC<MenuItemProps> = ({ children, onClick }) => (
-  <Button borderRadius="0" fontWeight="400" onClick={onClick}>{children}</Button>
+  <Button
+    mx="1"
+    my="0"
+    borderRadius="3"
+    fontWeight="400"
+    onClick={onClick}
+  >{children}</Button>
 );

@@ -41,12 +41,12 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
     border="border.1"
     boxShadow="base.0"
   >
-    <OptionalIcon icon={prefiXMarkIcon} />
-    <AddonElement addon={before} />
+    <OptionalIcon left icon={prefiXMarkIcon} />
+    <AddonElement left addon={before} />
 
     <BaseInput disabled={disabled} ref={ref} {...rest} />
 
-    <OptionalIcon icon={suffiXMarkIcon} />
-    <AddonElement addon={after} />
+    <OptionalIcon right icon={suffiXMarkIcon} />
+    <AddonElement right addon={after} />
   </Container>
 ));

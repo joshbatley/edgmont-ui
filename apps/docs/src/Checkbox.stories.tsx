@@ -37,12 +37,4 @@ export const Disabled: StoryObj<typeof Checkbox> = {
   ),
 };
 
-export const ErrorStory: StoryObj<typeof Checkbox> = {
-  render: ({ children, ...rest }) => (
-    <Box spaceYBetween="3">
-      <Checkbox error {...rest} />
-      <Checkbox checked error {...rest} />
-      <Checkbox error disabled {...rest} />
-    </Box>
-  ),
-};
+

@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import { Colors } from '../../types';
 
 export type BaseControlProps = {
   labelText?: string;
-  color?: Colors;
   icon: React.ReactElement;
   rounded?: boolean;
-  error?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
 const Label = styled.label<{ disabled: boolean; }>`

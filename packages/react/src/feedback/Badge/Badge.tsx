@@ -40,12 +40,12 @@ const BadgeItem = styled.div<{
   position: IntercardinalPoints;
 }>`
   position: absolute;
-  border-radius: ${({ theme }) => theme.radii[3]};
+  border-radius: ${({ theme }) => theme.radii[8]};
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height:  ${({ theme }) => theme.lineHeights[0]};
   text-align: center;
   color: ${({ theme }) => theme.colors.background};
-  background: ${({ theme }) => theme.colors.foreground};
+  background: ${({ theme }) => theme.colors.destructive};
   min-width: fit-content;
   width: ${({ theme }) => theme.sizes[5]};
   padding: calc(${({ theme }) => theme.space[1]} / 2) ${({ theme }) => theme.space[2]};

@@ -1,6 +1,6 @@
 import React, { Ref, useState } from 'react';
 import { StoryObj } from '@storybook/react';
-import { ClickableElement, Menu, MenuItem } from '@edgmont-ui/react';
+import { Alert, Box, ClickableElement, Menu, MenuItem } from '@edgmont-ui/react';
 
 export default {
   title: 'Navigation/Menu',
@@ -25,9 +25,11 @@ export const Example: StoryObj = {
           itemRef={element}
           {...rest}
         >
-          <MenuItem onClick={() => alert('item 1')}>Item 1</MenuItem>
-          <MenuItem onClick={() => alert('item 2')}>Item 2</MenuItem>
-          <MenuItem onClick={() => alert('item 3')}>Item 3</MenuItem>
+          <Box minWidth="300px" display="flex" flexDirection="column">
+            <MenuItem onClick={() => alert('item 1')}>Item 1</MenuItem>
+            <MenuItem onClick={() => alert('item 2')}>Item 2</MenuItem>
+            <MenuItem onClick={() => alert('item 3')}>Item 3</MenuItem>
+          </Box>
         </Menu>
       </>
     );

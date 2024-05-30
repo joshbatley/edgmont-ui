@@ -23,12 +23,7 @@ export const StyledButton: StyledComponent<'button', DefaultTheme, BaseButtonPro
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }
-  :focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-  }
   ${({ disabled }) => disabled && 'cursor: not-allowed;'}
-  ${({ theme }) => theme.transition}
   ${layout}
   ${border}
   ${position}
@@ -43,7 +38,7 @@ export const BaseButton: React.ForwardRefExoticComponent<React.PropsWithoutRef<B
   children, disabled, ...rest
 }, ref) => {
   return (
-    <StyledButton ref={ref} disabled={disabled}  {...rest}>
+    <StyledButton ref={ref} disabled={disabled} {...rest}>
       {children}
     </StyledButton>
   );

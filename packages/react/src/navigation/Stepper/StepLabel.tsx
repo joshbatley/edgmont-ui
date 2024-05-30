@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import { StepIcon } from './StepIcon';
 import { useStepperContext } from './StepperContext';
-import { Colors, Direction, WithChildren } from '../../types';
+import { Direction, WithChildren } from '../../types';
 
 export type StepLabelProps = {
   icon?: React.ReactNode;
   idx?: number;
   state?: 'completed' | 'active' | 'default';
   error?: boolean;
-  color?: Colors;
 } & WithChildren;
 
 const Line = styled.div<{ direction: Direction }>`

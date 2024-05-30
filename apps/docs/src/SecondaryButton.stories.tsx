@@ -1,25 +1,25 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { Box, PrimaryButton } from '@edgmont-ui/react';
+import { Box, SecondaryButton } from '@edgmont-ui/react';
 import { colorSelect } from './presets';
 
 const meta: Meta = {
   title: 'Inputs/Buttons/Secondary',
-  component: PrimaryButton,
+  component: SecondaryButton,
   args: {
     children: 'Get started',
   },
 };
 export default meta;
 
-export const Example: StoryObj<typeof PrimaryButton> = {
+export const Example: StoryObj<typeof SecondaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton btnType="secondary" {...rest}>{children}</PrimaryButton>
+    <SecondaryButton {...rest}>{children}</SecondaryButton>
   ),
 };
 
-export const Sizes: StoryObj<typeof PrimaryButton> = {
+export const Sizes: StoryObj<typeof SecondaryButton> = {
   argTypes: {
     size: {
       table: {
@@ -29,20 +29,20 @@ export const Sizes: StoryObj<typeof PrimaryButton> = {
   },
   render: ({ children, ...rest }) => (
     <Box spaceXBetween="4">
-      <PrimaryButton btnType="secondary" size="large" {...rest}>
+      <SecondaryButton {...rest}>
         {children}
-      </PrimaryButton>
-      <PrimaryButton btnType="secondary" size="medium" {...rest}>
+      </SecondaryButton>
+      <SecondaryButton {...rest}>
         {children}
-      </PrimaryButton>
-      <PrimaryButton btnType="secondary" size="small" {...rest}>
+      </SecondaryButton>
+      <SecondaryButton {...rest}>
         {children}
-      </PrimaryButton>
+      </SecondaryButton>
     </Box>
   ),
 };
 
-export const Colors: StoryObj<typeof PrimaryButton> = {
+export const Colors: StoryObj<typeof SecondaryButton> = {
   argTypes: {
     color: {
       table: {
@@ -57,27 +57,27 @@ export const Colors: StoryObj<typeof PrimaryButton> = {
       gridGap="4"
     >
       {colorSelect.options.map((c) => (
-        <PrimaryButton btnType="secondary" key={c} color={c}>
+        <SecondaryButton key={c} color={c}>
           {children}
-        </PrimaryButton>
+        </SecondaryButton>
       ))}
     </Box>
   ),
 };
 
-export const WithIcon: StoryObj<typeof PrimaryButton> = {
+export const WithIcon: StoryObj<typeof SecondaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton btnType="secondary" {...rest}>
+    <SecondaryButton {...rest}>
       <ArrowDownOnSquareIcon width={16} height={16} />
       <span>{children}</span>
-    </PrimaryButton>
+    </SecondaryButton>
   ),
 };
 
-export const WithAction: StoryObj<typeof PrimaryButton> = {
+export const WithAction: StoryObj<typeof SecondaryButton> = {
   render: ({ children, ...rest }) => (
-    <PrimaryButton btnType="secondary" onClick={() => alert('boo')} {...rest}>
+    <SecondaryButton onClick={() => alert('boo')} {...rest}>
       {children}
-    </PrimaryButton>
+    </SecondaryButton>
   ),
 };

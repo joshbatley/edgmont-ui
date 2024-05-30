@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-export type OutlineButtonProps = Omit<BaseButtonProps, ''>;
+export type OutlineButtonProps = BaseButtonProps & React.ComponentPropsWithRef<'button'>;
 
 const StyledButton = styled(BaseButton) <OutlineButtonProps>`
   :disabled {

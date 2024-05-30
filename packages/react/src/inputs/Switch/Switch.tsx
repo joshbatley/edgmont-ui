@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export type SwitchProps = {
-  error?: boolean;
-} & React.ComponentPropsWithRef<'input'>;
+export type SwitchProps = React.ComponentPropsWithRef<'input'>;
 
 const Label = styled.label<{ disabled: boolean; }>`
   position: relative;
@@ -37,28 +35,25 @@ const Input = styled.input`
   display: none;
 `;
 
-const Backing = styled.div<{ error: boolean; }>`
+const Backing = styled.div`
     width: 100%;
     height: ${({ theme }) => theme.sizes[4]};
     border-radius: ${({ theme }) => theme.radii[8]};
     position: absolute;
-    background: ${({ theme, error }) => error ? theme.colors.destructive : theme.colors.input};
+    background: ${({ theme }) => theme.colors.input};
     box-shadow: ${({ theme }) => theme.colors.input} 0 0 0 2px;
     input:checked ~ & {
-      background:  ${({ theme, error }) => error ? theme.colors.destructive : theme.colors.primary};
-      box-shadow: ${({ theme, error }) => error ? theme.colors.destructive : theme.colors.primary} 0 0 0 2px;
+      background:  ${({ theme }) => theme.colors.primary};
+      box-shadow: ${({ theme }) => theme.colors.primary} 0 0 0 2px;
     }
 
     ${({ theme }) => theme.transition}
 `;
 
-export const Switch: React.FC<SwitchProps> = ({
-  error = false, disabled = false,
-  ...rest
-}) => (
+export const Switch: React.FC<SwitchProps> = ({ disabled = false, ...rest }) => (
   <Label disabled={disabled} >
     <Input type="checkbox" disabled={disabled} {...rest} />
-    <Backing error={error} />
+    <Backing />
     <Button />
   </Label>
 );

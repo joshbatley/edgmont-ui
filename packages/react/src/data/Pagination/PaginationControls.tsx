@@ -1,22 +1,27 @@
 import { useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
-import { Button } from '../../inputs/Button';
+import { Button, ClickableElement } from '../../inputs/Button';
 import { ButtonGroup } from '../../inputs/ButtonGroup';
 import { calculatePageNumbers } from './utils';
-import { Size } from '../../types';
+import styled from 'styled-components';
 
 export type PaginationProps = {
   skip: number;
   limit: number;
   itemCount: number;
   setSkip: (skip: number) => void;
-  size?: Size;
 };
+
+const StyledBtn = styled(ClickableElement)`
+  :hover {
+    background: ${({ theme }) => theme.colors.accent};
+  }
+`;
 
 const ELLIPSIS_ELEMENT = <EllipsisHorizontalIcon width={16} height={20} />;
 
 export const PaginationControls: React.FC<PaginationProps> = ({
-  skip, limit, itemCount, setSkip, size,
+  skip, limit, itemCount, setSkip,
 }) => {
   let currentPage = skip === 0 ? 1 : Math.floor(skip / limit + 1);
   let totalPages = Math.ceil(itemCount / limit);
@@ -40,7 +45,6 @@ export const PaginationControls: React.FC<PaginationProps> = ({
   return (
     <ButtonGroup>
       <Button
-        size={size}
         verticalAlign="bottom"
         onClick={() => setSkip(skip - limit)}
         disabled={currentPage === 1}
@@ -48,22 +52,22 @@ export const PaginationControls: React.FC<PaginationProps> = ({
         <ChevronLeftIcon width={16} height={20} />
       </Button>
       {pages.map((page) => (
-        <Button
-          size={size}
+        <StyledBtn
           key={page.toString()}
           borderRadius={2}
           verticalAlign="bottom"
           zIndex={page === currentPage ? 30 : 'unset'}
-          active={page === currentPage}
+          width="36px"
+          height="36px"
+          border={page === currentPage ? 'border.1' : 'none'}
           onClick={() => handlePageClick(page)}
           disabled={page === ELLIPSIS_ELEMENT}
           data-ignore-radius
         >
           {page}
-        </Button>
+        </StyledBtn>
       ))}
       <Button
-        size={size}
         verticalAlign="bottom"
         onClick={() => setSkip(skip + limit)}
         disabled={currentPage === totalPages}

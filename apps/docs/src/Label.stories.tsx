@@ -20,6 +20,10 @@ export const Example: StoryObj<typeof Label> = {
       <Label value="Username">
         <TextField placeholder="Username" required />
       </Label>
+
+      <Label error value="Username">
+        <TextField placeholder="Username" required />
+      </Label>
     </Box>
   ),
 };
