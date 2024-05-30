@@ -14,9 +14,9 @@ export type AlertProps = {
 const Container = styled(Box) <{ destructive: boolean }>`
   border: 1px solid;
   border-color: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.border};
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.background};
   h1, svg, p {
-    color: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.foreground};
+    color: ${({ theme, destructive }) => destructive ? theme.colors.background : theme.colors.foreground};
   }
 `;
 
