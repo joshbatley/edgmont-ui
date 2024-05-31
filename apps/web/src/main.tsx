@@ -5,7 +5,7 @@ import { StrictMode } from 'react';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <ThemeDefaultProvider>
+    <ThemeDefaultProvider theme="light">
       <App />
     </ThemeDefaultProvider>
   </StrictMode>,

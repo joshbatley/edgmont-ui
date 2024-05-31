@@ -1,6 +1,8 @@
 /** @type { import('@storybook/react').Preview } */
 
 import { ThemeDefaultProvider } from '@edgmont-ui/react'
+import { useDarkMode } from 'storybook-dark-mode';
+import { darkTheme, lightTheme } from './themes';
 
 const decorators = [
   (Story: any, context: any) => {
@@ -9,8 +11,7 @@ const decorators = [
       portalRoot.setAttribute('id', 'portal-root')
       document.body.appendChild(portalRoot);
     }
-    const value = context?.globals?.backgrounds?.value;
-    const theme = value === 'hsl(240, 10%, 3.9%)' ? 'dark' : 'light';
+    const theme = useDarkMode() ? 'dark' : 'light';
 
     return (
       // @ts-ignore
@@ -20,18 +21,13 @@ const decorators = [
     )
   },
 ];
-
 const preview = {
   decorators: decorators,
   parameters: {
-    backgrounds: {
-      default: 'Light',
-      values: [
-        { name: 'Light', value: 'hsl(0, 0%, 100%)' },
-        { name: 'Dark', value: 'hsl(240, 10%, 3.9%)' },
-      ], grid: {
-        disable: true,
-      },
+    darkMode: {
+      current: 'light',
+      light: lightTheme,
+      dark: darkTheme,
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {

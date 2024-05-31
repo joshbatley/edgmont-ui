@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { CircleLoader, OutlineButton } from '@edgmont-ui/react';
+import { CircleLoader, OutlineButton, PrimaryButton } from '@edgmont-ui/react';
 
 export default {
   title: 'Inputs/Buttons/Outline',
@@ -13,7 +13,7 @@ export default {
 export const Showcase: StoryObj<typeof OutlineButton> = {
   render: ({ children, ...rest }) => (
     <>
-      <OutlineButton  {...rest}>{children}</OutlineButton>
+      <OutlineButton {...rest}>{children}</OutlineButton>
       <br /><br />
       <OutlineButton disabled {...rest}>{children}</OutlineButton>
       <br /><br />

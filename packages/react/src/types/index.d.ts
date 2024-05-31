@@ -1,7 +1,10 @@
 
 export type OverriderDefaults = Record<Partial<Property>, string>;
 
+export type Position = CardinalPoints | IntercardinalPoints;
+export type CardinalPoints = 'N' | 'E' | 'S' | 'W';
 export type IntercardinalPoints = 'NW' | 'NE' | 'SE' | 'SW';
+
 export type Direction = 'horizontal' | 'vertical';
 
 export type ObjectKey = string | number | symbol;
