@@ -1,62 +1,26 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { lighten } from 'polished';
 import { BaseButton, BaseButtonProps } from './BaseButton';
-import { Colors } from '../../types';
 
-export type PrimaryButtonProps = Omit<BaseButtonProps, 'loaderColor'> & {
-  color?: Colors
-};
+export type PrimaryButtonProps = BaseButtonProps & React.ComponentPropsWithRef<'button'>;
 
-const StyledButton = styled(BaseButton)<PrimaryButtonProps>(
-  variant({
-    prop: 'color',
-    variants: {
-      primary: {
-        color: 'base',
-        bg: 'primary',
-        ':hover': {
-          bg: 'primaryAccent',
-        },
-      },
-      success: {
-        color: 'base',
-        bg: 'success',
-        ':hover': {
-          bg: 'successAccent',
-        },
-      },
-      info: {
-        color: 'base',
-        bg: 'info',
-        ':hover': {
-          bg: 'infoAccent',
-        },
-      },
-      error: {
-        color: 'base',
-        bg: 'error',
-        ':hover': {
-          bg: 'errorAccent',
-        },
-      },
-      warning: {
-        color: 'base',
-        bg: 'warning',
-        ':hover': {
-          bg: 'warningAccent',
-        },
-      },
-    },
-  }),
-);
+const StyledButton = styled(BaseButton) <PrimaryButtonProps>`
+  :hover {
+    background: ${({ theme }) => lighten(0.1, theme.colors.primary)};
+  }
+  :disabled {
+    background: ${({ theme }) => lighten(0.2, theme.colors.primary)};
+  }
+`;
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(({
-  children, color = 'primary', ...rest
+  children, ...rest
 }, ref) => (
   <StyledButton
+    color="background"
+    bg="primary"
     ref={ref}
-    color={color}
     {...rest}
   >
     {children}

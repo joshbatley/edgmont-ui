@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { Breadcrumbs } from '@edgmont-ui/react';
@@ -6,19 +5,9 @@ import { Breadcrumbs } from '@edgmont-ui/react';
 export default {
   title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
-  args: {
-    maxItems: 8,
-    itemsBefore: 1,
-    itemsAfter: 1,
-  },
-  parameters: {
-    backgrounds: {
-      default: 'White',
-    },
-  },
 };
 
-export const Example: StoryObj<typeof Breadcrumbs> = {
+export const Showcase: StoryObj<typeof Breadcrumbs> = {
   render: ({ ...rest }) => (
     <Breadcrumbs {...rest}>
       <a href="#">Edgmont</a>
@@ -42,7 +31,7 @@ export const CustomDividers: StoryObj<typeof Breadcrumbs> = {
 };
 
 export const CollaspsedBreadcrumbs: StoryObj<typeof Breadcrumbs> = {
-  render: ({ maxItems, ...rest }) => (
+  render: ({ ...rest }) => (
     <Breadcrumbs maxItems={4} {...rest}>
       <a href="#">With hidden</a>
       <a href="#">now</a>

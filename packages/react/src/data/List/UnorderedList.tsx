@@ -4,6 +4,6 @@ export const UnorderedList = styled.ul`
   list-style-type: disc;
   list-style-position: inside;
   *::marker {
-    color:${({ theme }) => theme.colors.baseHighlight};
+    color:${({ theme }) => theme.colors.foreground};
   }
 `;

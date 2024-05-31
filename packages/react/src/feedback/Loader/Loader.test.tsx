@@ -19,9 +19,4 @@ describe('Loader', () => {
     expect(container.firstChild).toHaveAttribute('height', '14');
     expect(container.firstChild).toHaveAttribute('width', '16');
   });
-
-  it('accepts color value', () => {
-    const { container } = render(<CircleLoader color="success" />);
-    expect(container).toMatchSnapshot();
-  });
 });

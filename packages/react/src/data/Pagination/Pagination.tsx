@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { PaginationControls } from './PaginationControls';
-import { Size } from '../../types';
 
 export type PaginationProps = {
   limit: number;
   skip: number;
   itemCount: number;
   setSkip: (skip: number) => void;
-  size?: Size;
 };
 
 const Container = styled.div`
@@ -24,7 +22,7 @@ const Strong = styled.strong`
 `;
 
 export const Pagination: React.FC<PaginationProps> = ({
-  limit, skip, setSkip, itemCount, size = 'small',
+  limit, skip, setSkip, itemCount,
 }) => {
   let to = (skip + limit > itemCount) ? itemCount : skip + limit;
   return (
@@ -33,7 +31,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         Showing <Strong>{skip + 1}</Strong> to <Strong>{to}</Strong> of <Strong>{itemCount}</Strong> results
       </div>
       <div>
-        <PaginationControls size={size} itemCount={itemCount} limit={limit} skip={skip} setSkip={setSkip} />
+        <PaginationControls itemCount={itemCount} limit={limit} skip={skip} setSkip={setSkip} />
       </div>
     </Container>
   );

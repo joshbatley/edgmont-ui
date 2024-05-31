@@ -1,25 +1,5 @@
-const colorSelect = {
-  options: ['primary', 'success', 'info', 'error', 'warning'],
-  control: { type: 'select' },
-};
-
-const colorSelectWithBase = {
-  options: ['primary', 'success', 'info', 'error', 'warning', 'base'],
-  control: { type: 'select' },
-};
-
 const intercardinalPointsSelect = {
   options: ['NW', 'NE', 'SE', 'SW'],
-  control: { type: 'select' },
-};
-
-const sizeSelect = {
-  options: ['small', 'medium', 'large'],
-  control: { type: 'select' },
-};
-
-const severitySelect = {
-  options: ['error', 'warning', 'info', 'success', 'none'],
   control: { type: 'select' },
 };
 
@@ -33,10 +13,6 @@ const directionSelect = {
 };
 
 export {
-  colorSelect,
-  colorSelectWithBase,
   intercardinalPointsSelect,
-  sizeSelect,
-  severitySelect,
   directionSelect,
 };

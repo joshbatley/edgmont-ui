@@ -1,13 +1,10 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
-import { variant } from 'styled-system';
 import { LinearSlide } from '../../utils';
 import { Box } from '../../data';
-import { Colors } from '../../types';
 
 export type LinearLoaderProps = {
-  color?: Colors;
   height?: string | number;
+  destructive?: boolean;
 };
 
 const OuterLine = styled.div`
@@ -19,55 +16,13 @@ const OuterLine = styled.div`
   right: 0px;
   bottom: 0px;
   left: 0px;
-  ${({ theme }) => variant({
-  prop: 'color',
-  variants: {
-    primary: {
-      background: theme.colors.primaryHighlight,
-    },
-    success: {
-      background: darken(0.1, theme.colors.successHighlight),
-    },
-    info: {
-      background: darken(0.1, theme.colors.infoHighlight),
-    },
-    error: {
-      background: darken(0.1, theme.colors.errorHighlight),
-    },
-    warning: {
-      background: darken(0.1, theme.colors.warningHighlight),
-    },
-    base: {
-      background: theme.colors.background[3],
-    },
-  },
-})}`;
+  background: ${({ theme }) => theme.colors.muted};
+`;
 
-const InnerLine = styled.div`
+const InnerLine = styled.div<{ destructive: boolean; }>`
   border-radius: ${({ theme }) => theme.radii[2]};
-  ${({ theme }) => variant({
-  prop: 'color',
-  variants: {
-    primary: {
-      background: theme.colors.primary,
-    },
-    success: {
-      background: theme.colors.success,
-    },
-    info: {
-      background: theme.colors.info,
-    },
-    error: {
-      background: theme.colors.error,
-    },
-    warning: {
-      background: theme.colors.warning,
-    },
-    base: {
-      background: theme.colors.baseHighlight,
-    },
-  },
-})}`;
+  background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.primary};
+`;
 
 const StyledLinearSlider = styled(LinearSlide)`
   width: 33.333333%;
@@ -79,11 +34,11 @@ const StyledLinearSlider = styled(LinearSlide)`
   left: 0px;
 `;
 
-export const LinearLoader: React.FC<LinearLoaderProps> = ({ color = 'primary', height = 5 }) => (
+export const LinearLoader: React.FC<LinearLoaderProps> = ({ height = 5, destructive = false }) => (
   <Box overflow="hidden" width="100%" position="relative" borderRadius="8" style={{ height }}>
-    <OuterLine color={color} />
+    <OuterLine />
     <StyledLinearSlider>
-      <InnerLine color={color} style={{ height }} />
+      <InnerLine destructive={destructive} style={{ height }} />
     </StyledLinearSlider>
   </Box>
 );

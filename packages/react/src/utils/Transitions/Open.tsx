@@ -17,7 +17,7 @@ export const Open: React.FC<OpenProps> = ({ children, direction = 'right', inPro
 
   return transitions(
     (styles: any, item) => item && (
-      <animated.div style={styles}>
+      <animated.div {...rest as any} style={styles}>
         {children}
       </animated.div >
     ));

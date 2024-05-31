@@ -1,12 +1,9 @@
-import { darken } from 'polished';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
-import { Colors } from '../../types';
 
 export type CircleLoaderProps = {
-  color?: Colors;
   height?: string | number;
   width?: string | number;
+  destructive?: boolean;
 };
 
 const Svg = styled.svg`
@@ -14,58 +11,18 @@ const Svg = styled.svg`
   stroke: currentColor;
 `;
 
-const OuterCircle = styled.circle(({ theme }) => variant({
-  prop: 'color',
-  variants: {
-    primary: {
-      stroke: darken(0.1, theme.colors.primaryAccent),
-    },
-    success: {
-      stroke: darken(0.1, theme.colors.successAccent),
-    },
-    info: {
-      stroke: darken(0.1, theme.colors.infoAccent),
-    },
-    error: {
-      stroke: darken(0.1, theme.colors.errorAccent),
-    },
-    warning: {
-      stroke: darken(0.1, theme.colors.warningAccent),
-    },
-    base: {
-      stroke: darken(0.1, theme.colors.background[3]),
-    },
-  },
-}));
+const OuterCircle = styled.circle`
+  color: ${({ theme }) => theme.colors.muted};
+`;
 
-const InnerCircle = styled.circle(variant({
-  prop: 'color',
-  variants: {
-    primary: {
-      stroke: 'primary',
-    },
-    success: {
-      stroke: 'success',
-    },
-    info: {
-      stroke: 'info',
-    },
-    error: {
-      stroke: 'error',
-    },
-    warning: {
-      stroke: 'warning',
-    },
-    base: {
-      stroke: 'baseHighlight',
-    },
-  },
-}));
+const InnerCircle = styled.circle<{ destructive: boolean }>`
+  color: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.primary};
+`;
 
-export const CircleLoader: React.FC<CircleLoaderProps> = ({ color = 'primary', height = 50, width = 50, ...rest }) => (
+export const CircleLoader: React.FC<CircleLoaderProps> = ({ height = 50, width = 50, destructive = false, ...rest }) => (
   <Svg viewBox="25 25 50 50" height={height} width={width} {...rest} >
-    <OuterCircle cx="50" cy="50" r="20" fill="none" strokeWidth="4" color={color} />
-    <InnerCircle cx="50" cy="50" r="20" fill="none" strokeWidth="4" strokeDashoffset="-50" strokeDasharray="60" strokeLinecap="round" color={color} />
+    <OuterCircle cx="50" cy="50" r="20" fill="none" strokeWidth="4" />
+    <InnerCircle destructive={destructive} cx="50" cy="50" r="20" fill="none" strokeWidth="4" strokeDashoffset="-50" strokeDasharray="60" strokeLinecap="round" />
   </Svg>
 );
 

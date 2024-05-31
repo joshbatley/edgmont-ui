@@ -9,17 +9,23 @@ export type SyntaxHighlighterProps = {
 };
 
 export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
-  language, code, light, withWrapper = true,
+  language, code, light = false, withWrapper = true,
 }) => {
-  let Theme = light ? themes.github : themes.palenight;
+  let theme = light ? themes.vsLight : themes.vsDark;
   return (
-    <Wrapper style={Theme.plain} skip={!withWrapper}>
-      <Highlight theme={Theme} code={code} language={language}>
-        {({ tokens, getLineProps, getTokenProps }) => (
-          <pre>
+    <Wrapper style={theme.plain} skip={!withWrapper}>
+      <Highlight
+        theme={theme}
+        code={code}
+        language={language}
+      >
+        {({ style, tokens, getLineProps, getTokenProps }) => (
+          <pre style={style}>
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => <span {...getTokenProps({ token, key })} />)}
+              <div key={i} {...getLineProps({ line })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token })} />
+                ))}
               </div>
             ))}
           </pre>

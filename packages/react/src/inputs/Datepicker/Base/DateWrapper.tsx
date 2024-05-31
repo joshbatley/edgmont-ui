@@ -3,6 +3,7 @@ import { Placement } from '@popperjs/core';
 import { usePopper } from 'react-popper';
 import { ClickOutside } from '../../../utils';
 import { WithChildren } from '../../../types';
+import { Box } from '../../../data';
 
 export type DateWrapperProps = {
   direction?: Placement;
@@ -27,9 +28,9 @@ export const DateWrapper: React.FC<DateWrapperProps> = ({ children, itemRef, dir
 
   return isOpen ? (
     <ClickOutside handleClose={handleClose} target={popperRef}>
-      <div ref={setPopperRef as Ref<HTMLDivElement>} style={styles.popper} {...attributes.popper}>
+      <Box ref={setPopperRef as Ref<HTMLDivElement>} style={styles.popper} {...attributes.popper}>
         {children}
-      </div>
+      </Box>
     </ClickOutside>
   ) : null;
 };

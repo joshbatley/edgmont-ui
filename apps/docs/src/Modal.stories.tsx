@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import {
-  Chip,
   Modal,
   OutlineButton,
-  Panel,
+  Box,
   PrimaryButton,
-  TextComp,
-  TextField,
+  Typography,
+  Input,
+  Label,
+  Password,
 } from '@edgmont-ui/react';
 
 export default {
@@ -18,7 +19,7 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Modal> = {
+export const Showcase: StoryObj<typeof Modal> = {
   render: ({ title, children, ...rest }) => {
     let [open, setOpen] = useState(false);
 
@@ -31,20 +32,23 @@ export const Example: StoryObj<typeof Modal> = {
           title={title}
           handleClose={() => setOpen(!open)}
         >
-          <Panel
+          <Box
             width="400px"
-            spaceYBetween="10"
-            pt="2"
+            pt="0"
             pb="4"
-            px="2"
+            px="4"
             display="flex"
             flexDirection="column"
           >
-            <TextComp>This is the dialog body, it can contian anything</TextComp>
-            <TextField placeholder="Like a form" />
-            <PrimaryButton color="success">Or a button</PrimaryButton>
-            <Chip color="warning">Or even a chip</Chip>
-          </Panel>
+            <Typography color="mutedForeground">Make changes to your profile here. Click save when you're done.</Typography>
+            <Label value="Email">
+              <Input placeholder="Email" />
+            </Label>
+            <Label value="Password">
+              <Password placeholder="Password" />
+            </Label>
+            <PrimaryButton mt="5">Update</PrimaryButton>
+          </Box>
         </Modal>
       </>
     );

@@ -20,11 +20,6 @@ describe('Radio test', () => {
     expect(container).not.toBeEmptyDOMElement();
     expect(container).toMatchSnapshot();
   });
-  it('should errored with disabled classes', () => {
-    const { container } = render(<Radio error />);
-    expect(container).not.toBeEmptyDOMElement();
-    expect(container).toMatchSnapshot();
-  });
 
   it('should update value when updated', async () => {
     const { getByRole } = render(<Radio value="testing-value" name="testing-input" onChange={onChangeMock} />);

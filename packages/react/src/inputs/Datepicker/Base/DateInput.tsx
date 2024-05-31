@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 import { ClickableElement, OutlineButton } from '../../../inputs/Button';
-import { TextComp } from '../../../data';
+import { Typography } from '../../../data';
 
 export type DateInputProps = {
   placeholder?: string;
@@ -22,14 +22,14 @@ const Container = styled.div`
 `;
 
 const Icon = styled(CalendarIcon)`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   margin-right: ${({ theme }) => theme.space[2]};
 `;
 
 const ClearBtn = styled(ClickableElement)`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   :hover {
-    color: ${({ theme }) => theme.colors.base};
+    color: ${({ theme }) => theme.colors.foreground};
   }
 `;
 
@@ -46,8 +46,8 @@ export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({
   };
 
   let displayValue = value ?
-    (<TextComp as="span" color="base">{value}</TextComp>) :
-    (<TextComp as="span" color="baseHighlight">{placeholder}</TextComp>);
+    (<Typography as="span" color="base">{value}</Typography>) :
+    (<Typography as="span" color="baseHighlight">{placeholder}</Typography>);
 
   return (
     <OutlineButton bg="background.1" width="100%" justifyContent="space-between" ref={ref} onClick={onClick}>

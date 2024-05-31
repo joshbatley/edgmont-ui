@@ -1,7 +1,5 @@
 import { useState, Children, isValidElement } from 'react';
-import { Box } from '../../data';
-import { TabCardItems } from './TabCardItems';
-import { TabNavItems } from './TabNavItems';
+import { TabItems } from './TabItems';
 import { TabPaneList } from './TabPane';
 import { Tab, TabsProps } from '../../types/Tabs';
 
@@ -19,17 +17,13 @@ const parseChildrenToTabs = (children: React.ReactNode): Tab[] => {
   });
 };
 
-export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, type = 'default', value }) => {
+export const Tabs: React.FC<TabsProps> = ({ children: childrenProp, value }) => {
   let tabs = parseChildrenToTabs(childrenProp);
   let [selected, setSelected] = useState(value || tabs[0].key);
   return (
-    <Box width="100%">
-      {type === 'card' ? (
-        <TabCardItems tabs={tabs} selected={selected} onChange={setSelected} />
-      ) : (
-        <TabNavItems tabs={tabs} selected={selected} onChange={setSelected} />
-      )}
-      <TabPaneList type={type} tabs={tabs} selected={selected} />
-    </Box>
+    <>
+      <TabItems tabs={tabs} selected={selected} onChange={setSelected} />
+      <TabPaneList tabs={tabs} selected={selected} />
+    </>
   );
 };

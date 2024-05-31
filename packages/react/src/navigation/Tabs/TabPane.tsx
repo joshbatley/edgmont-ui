@@ -1,5 +1,5 @@
-import { Box } from '../../data';
-import { Tab, TabVariant } from '../../types/Tabs';
+import { Box, BoxProps } from '../../data';
+import { Tab } from '../../types/Tabs';
 
 export type TabPaneProps = {
   selected?: boolean;
@@ -7,21 +7,19 @@ export type TabPaneProps = {
   tab?: React.ReactNode;
   children?: React.ReactNode;
   key: string | number;
-} & React.ComponentPropsWithoutRef<'div'>;
+} & React.ComponentPropsWithoutRef<'div'> & BoxProps;
 
 export type TabPaneListProps = {
   tabs: Tab[];
   selected: string | number;
-  type: TabVariant;
 };
 
 export const TabPane: React.FC<TabPaneProps> = ({ children, selected, ...rest }) =>
   selected ? <Box px="4" py="5" {...rest}>{children}</Box> : null;
 
-export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected, type }) => {
-  let isCard = type === 'card';
+export const TabPaneList: React.FC<TabPaneListProps> = ({ tabs, selected }) => {
   return (
-    <Box bg={isCard ? 'background.0' : ''} border={isCard ? 'background2.1' : ''} borderBottomLeftRadius={isCard ? '2' : '0'} borderBottomRightRadius={isCard ? '2' : '0'}>
+    <Box>
       {tabs.map(({ key, children, ...rest }) => (
         <TabPane
           selected={selected === key}

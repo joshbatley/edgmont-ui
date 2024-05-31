@@ -1,5 +1,5 @@
-import { TextComp } from '../../data/Text';
+import { Typography } from '../../data/Typography';
 
 export const ListItem: React.FC<React.ComponentPropsWithRef<'li'>> = ({ children, ...rest }) => (
-  <TextComp as="li" {...rest}>{children}</TextComp>
+  <Typography as="li" {...rest}>{children}</Typography>
 );

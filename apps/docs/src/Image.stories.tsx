@@ -26,7 +26,7 @@ const fallback = (
   </Box>
 );
 
-export const Example: StoryObj = {
+export const Showcase: StoryObj = {
   render: () => (
     <div>
       <div>

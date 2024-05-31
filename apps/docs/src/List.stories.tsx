@@ -1,5 +1,4 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import {
   List,
   ListItem,
@@ -7,7 +6,8 @@ import {
   UnorderedList as UL,
 } from '@edgmont-ui/react';
 
-const meta: Meta = {
+
+export default {
   title: 'Data/List',
   component: List,
   parameters: {
@@ -15,34 +15,26 @@ const meta: Meta = {
   },
 };
 
-export default meta;
-
-export const UnstyledList: StoryObj<typeof List> = {
+export const Showcase: StoryObj<typeof List> = {
   render: ({ ...rest }) => (
-    <List {...rest}>
-      <ListItem>Item 1</ListItem>
-      <ListItem>Item 2</ListItem>
-      <ListItem>Item 3</ListItem>
-    </List>
-  ),
-};
-
-export const OrderedList: StoryObj<typeof OL> = {
-  render: ({ ...rest }) => (
-    <OL {...rest}>
-      <ListItem>Item 1</ListItem>
-      <ListItem>Item 2</ListItem>
-      <ListItem>Item 3</ListItem>
-    </OL>
-  ),
-};
-
-export const UnorderedList: StoryObj<typeof UL> = {
-  render: ({ ...rest }) => (
-    <UL {...rest}>
-      <ListItem>Item 1</ListItem>
-      <ListItem>Item 2</ListItem>
-      <ListItem>Item 3</ListItem>
-    </UL>
+    <>
+      <List {...rest}>
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+        <ListItem>Item 3</ListItem>
+      </List>
+      <br /> <br />
+      <OL {...rest}>
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+        <ListItem>Item 3</ListItem>
+      </OL>
+      <br /> <br />
+      <UL {...rest}>
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+        <ListItem>Item 3</ListItem>
+      </UL>
+    </>
   ),
 };

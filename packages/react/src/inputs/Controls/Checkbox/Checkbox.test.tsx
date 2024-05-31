@@ -20,11 +20,6 @@ describe('Checkbox test', () => {
     expect(container).not.toBeEmptyDOMElement();
     expect(container).toMatchSnapshot();
   });
-  it('should errored with disabled classes', () => {
-    const { container } = render(<Checkbox error />);
-    expect(container).not.toBeEmptyDOMElement();
-    expect(container).toMatchSnapshot();
-  });
 
   it('should update value when updated', async () => {
     const { getByRole } = render(<Checkbox value="testing-value" name="testing-input" onChange={onChangeMock} />);

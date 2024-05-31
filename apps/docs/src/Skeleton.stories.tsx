@@ -1,6 +1,5 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
-import { Box, Skeleton, TextComp, Title } from '@edgmont-ui/react';
+import { Box, Skeleton, Typography, Title } from '@edgmont-ui/react';
 
 export default {
   title: 'Feedback/Skeleton',
@@ -63,10 +62,10 @@ export const TextStory: StoryObj<typeof Skeleton> = {
         <span>Heading 6</span>
       </Title>
 
-      <TextComp>
+      <Typography>
         <Skeleton width="25%" mr="1" variant="text" {...rest} />
         <span>Text</span>
-      </TextComp>
+      </Typography>
     </Box>
   ),
 };

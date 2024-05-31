@@ -20,7 +20,7 @@ const StyledOpen = styled(Open) <{ direction: 'left' | 'right' }>`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.colors.background[0]};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 export const Drawer: React.FC<DrawerProps> = ({
@@ -34,7 +34,7 @@ export const Drawer: React.FC<DrawerProps> = ({
 
   return (
     <Backdrop config={{ duration: 195 }} onClick={() => setOpen(!isOpen)} onDestroyed={handleClose}>
-      <StyledOpen inProp={isOpen} direction={direction} >
+      <StyledOpen inProp={isOpen} direction={direction} data-testId='here'>
         <Container onClick={stopPropagation}>
           {children}
         </Container>

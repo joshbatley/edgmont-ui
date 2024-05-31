@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { WithChildren } from '../../types';
 
 type WrapperProps = {
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
   skip?: boolean;
 } & WithChildren;
 
@@ -11,6 +11,9 @@ const StyledDiv = styled.div`
   line-height: ${({ theme }) => theme.lineHeights[1]};
   padding: ${({ theme }) => theme.space[2]};
   font-family: ${({ theme }) => theme.fonts.mono};
+  border: ${({ theme }) => theme.borders.border[1]};
+  box-shadow: ${({ theme }) => theme.shadows.base[1]};
+  border-radius: ${({ theme }) => theme.radii[3]};
 `;
 
 export const Wrapper: React.FC<WrapperProps> = ({

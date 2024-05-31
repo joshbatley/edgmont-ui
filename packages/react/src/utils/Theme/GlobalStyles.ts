@@ -1,23 +1,27 @@
 import { createGlobalStyle } from 'styled-components';
+import { ColorTheme } from './Colors';
 
-export const GlobalStyles = createGlobalStyle<{ theme: any }>`
+export const GlobalStyles = createGlobalStyle<{ theme: ColorTheme }>`
   *,
   ::before,
   ::after {
     box-sizing: border-box;
     border-width: 0;
     border-style: solid;
-    border-color: ${({ theme }) => theme.colors.background[2]}
+    border-color: ${({ theme }) => theme.colors.background}
   }
 
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "YTLC" 500;
     tab-size: 4;
-    background: ${({ theme }) => theme.colors.background[0]};
+    background: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fonts.base};
-    color: ${({ theme }) => theme.colors.baseAccent};
+    color: ${({ theme }) => theme.colors.foreground};
     margin: 0;
   }
 
@@ -191,7 +195,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: any }>`
   input::placeholder,
   textarea::placeholder {
     opacity: 1;
-    color: ${({ theme }) => theme.colors.baseHighlight};
+    color: ${({ theme }) => theme.colors.mutedForeground};
   }
 
   button,

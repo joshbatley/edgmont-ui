@@ -1,35 +1,30 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
-import { Title, TextComp, Box } from '@edgmont-ui/react';
+import { Title, Typography, Box } from '@edgmont-ui/react';
 import {
   Label,
   OutlineButton,
   PrimaryButton,
   TextArea,
-  TextField,
+  Input,
+  Card,
+  CardContent,
+  CardMedia,
 } from '@edgmont-ui/react';
-import { Card, CardContent, CardMedia } from '@edgmont-ui/react';
 
-const meta: Meta = {
+export default {
   title: 'Data/Card',
   component: Card,
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
 };
 
-export default meta;
-
-export const Examples: StoryObj<typeof Card> = {
-  render: ({ ...rest }) => (
-    <Box display="flex" flexDirection="column">
+export const Showcase: StoryObj<typeof Card> = {
+  render: () => (
+    <Box display="flex" justifyContent="space-between">
       <Card
         mb="2"
-        maxWidth="400px"
+        maxWidth={400}
         display="flex"
         flexDirection="row"
-        {...rest}
       >
         <CardMedia
           as="img"
@@ -42,16 +37,16 @@ export const Examples: StoryObj<typeof Card> = {
             <Title as="h3" fontWeight="700">
               The Reptile
             </Title>
-            <TextComp mono as="span" color="baseHighlight">
+            <Typography mono as="span" color="baseHighlight">
               £99.99
-            </TextComp>
+            </Typography>
           </Box>
           <Box mb="2">
-            <TextComp fontSize="0" lineHeight="0" color="baseHighlight">
+            <Typography fontSize="0" lineHeight="0" color="baseHighlight">
               In stock
-            </TextComp>
+            </Typography>
           </Box>
-          <TextComp>Good with children, only lightly bites limbs off.</TextComp>
+          <Typography>Good with children, only lightly bites limbs off.</Typography>
           <Box as="hr" my="4" />
           <Box width="100%" display="flex">
             <PrimaryButton
@@ -61,7 +56,7 @@ export const Examples: StoryObj<typeof Card> = {
               mr="2"
             >
               <ShoppingBagIcon width={16} height={16} />
-              <TextComp>Buy now</TextComp>
+              <Typography>Buy now</Typography>
             </PrimaryButton>
             <OutlineButton
               justifyContent="center"
@@ -70,19 +65,20 @@ export const Examples: StoryObj<typeof Card> = {
               textAlign="center"
             >
               <ShoppingCartIcon width={16} height={16} />
-              <TextComp>Add to cart</TextComp>
+              <Typography>Add to cart</Typography>
             </OutlineButton>
           </Box>
         </CardContent>
       </Card>
 
-      <Card style={{ maxWidth: 500 }} {...rest}>
-        <CardContent borderBottom="background2.1">
+      <Card width={500}>
+        <CardContent borderBottom="border.1">
           <Title as="h4">Application form</Title>
         </CardContent>
+
         <CardContent my="2">
           <Label value="Website url">
-            <TextField
+            <Input
               before={
                 <Box px="2" py="1">
                   https://
@@ -96,7 +92,8 @@ export const Examples: StoryObj<typeof Card> = {
             <TextArea placeholder="desciption of website" />
           </Label>
         </CardContent>
-        <Box bg="background.2" p="2" display="flex" justifyContent="flex-end">
+
+        <Box bg="background" p="2" display="flex" justifyContent="flex-end">
           <PrimaryButton>Submit</PrimaryButton>
         </Box>
       </Card>
@@ -115,9 +112,9 @@ export const Content: StoryObj<typeof Card> = {
 };
 
 export const Media: StoryObj<typeof Card> = {
-  render: ({ ...rest }) => (
-    <Box display="flex" flexDirection="column">
-      <Card style={{ maxWidth: 300 }} {...rest}>
+  render: () => (
+    <Box display="flex" justifyContent="space-evenly">
+      <Card maxWidth={300}>
         <CardMedia
           as="img"
           alt="green iguana"
@@ -125,7 +122,7 @@ export const Media: StoryObj<typeof Card> = {
         />
         <CardContent>A image</CardContent>
       </Card>
-      <Card style={{ maxWidth: 300 }} {...rest}>
+      <Card maxWidth={300}>
         <CardMedia
           as="iframe"
           alt="green iguana"

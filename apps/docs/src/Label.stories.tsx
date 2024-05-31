@@ -1,6 +1,5 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
-import { Box, Label, TextField } from '@edgmont-ui/react';
+import { Box, Label, Input } from '@edgmont-ui/react';
 
 export default {
   title: 'Inputs/Label',
@@ -10,15 +9,19 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Label> = {
+export const Showcase: StoryObj<typeof Label> = {
   render: () => (
     <Box spaceYBetween="6">
       <Label value="Username">
-        <TextField placeholder="Username" />
+        <Input placeholder="Username" />
       </Label>
 
       <Label value="Username">
-        <TextField placeholder="Username" required />
+        <Input placeholder="Username" required />
+      </Label>
+
+      <Label error value="Username">
+        <Input placeholder="Username" required />
       </Label>
     </Box>
   ),

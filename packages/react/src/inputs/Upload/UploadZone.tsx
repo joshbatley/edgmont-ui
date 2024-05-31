@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import styled from 'styled-components';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { TextComp, List } from '../../data';
+import { Typography, List } from '../../data';
 import { TileItem } from './TileItem';
 import { BasicItem } from './BasicItem';
 import { BaseUploader, BaseUploaderProps } from './BaseUploader';
@@ -21,7 +21,8 @@ const Container = styled.div<{ isDragActive: boolean }>`
   align-items: center;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.radii[2]};
-  border: ${({ theme }) => theme.borders.background2[3]};
+  border-color: ${({ theme }) => theme.colors.border};
+  border-width: 4px;
   border-style: dashed;
   padding: ${({ theme }) => `${theme.space[5]} ${theme.space[2]}`};
 
@@ -30,8 +31,8 @@ const Container = styled.div<{ isDragActive: boolean }>`
   }
 
   ${({ isDragActive, theme }) => isDragActive && `
-    background: ${theme.colors.primary};
-    border-color: ${theme.colors.primaryHighlight};
+    background: ${theme.colors.muted};
+    border-color: ${theme.colors.accent};
   `}
 `;
 
@@ -47,9 +48,9 @@ const StyledList = styled(List)`
 `;
 
 const TrayIcon = styled(ArrowUpTrayIcon) <{ isDragActive: boolean }>`
-  color: ${({ theme }) => theme.colors.baseHighlight};
+  color: ${({ theme }) => theme.colors.foreground};
   ${({ isDragActive, theme }) => isDragActive && `
-    color: ${theme.colors.base};
+    color: ${theme.colors.foreground};
     ${theme.animations.bounce}
   `}
 `;
@@ -63,13 +64,13 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   let Uploader = useCallback((isDragActive: boolean) => (
     <>
       <TrayIcon width={30} height={30} isDragActive={isDragActive} />
-      {isDragActive ? <TextComp fontWeight="700" color="base">And drop your file to upload</TextComp> :
-        <TextComp>
-          Drag and drop, or <TextComp as="span" color="primary">click to find</TextComp> a file
-        </TextComp>
+      {isDragActive ? <Typography fontWeight="700" color="base">And drop your file to upload</Typography> :
+        <Typography>
+          Drag and drop, or <Typography as="span" color="primary">click to find</Typography> a file
+        </Typography>
       }
-      <TextComp fontSize="1" lineHeight="1"
-        color={isDragActive ? 'baseAccent' : 'baseHighlight'}>{bottomText}</TextComp>
+      <Typography fontSize="1" lineHeight="1"
+        color={isDragActive ? 'baseAccent' : 'baseHighlight'}>{bottomText}</Typography>
     </>
   ), [bottomText]);
 

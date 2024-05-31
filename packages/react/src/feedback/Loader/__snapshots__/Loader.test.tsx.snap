@@ -1,52 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader accepts color value 1`] = `
-.c0 {
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-  stroke: currentColor;
-}
-
-.c1 {
-  stroke: #0e5428;
-}
-
-.c2 {
-  stroke: #16a34a;
-}
-
-<div>
-  <svg
-    class="c0"
-    height="50"
-    viewBox="25 25 50 50"
-    width="50"
-  >
-    <circle
-      class="c1"
-      color="success"
-      cx="50"
-      cy="50"
-      fill="none"
-      r="20"
-      stroke-width="4"
-    />
-    <circle
-      class="c2"
-      color="success"
-      cx="50"
-      cy="50"
-      fill="none"
-      r="20"
-      stroke-dasharray="60"
-      stroke-dashoffset="-50"
-      stroke-linecap="round"
-      stroke-width="4"
-    />
-  </svg>
-</div>
-`;
-
 exports[`Loader it renders 1`] = `
 .c0 {
   -webkit-animation: spin 1s linear infinite;
@@ -55,11 +8,11 @@ exports[`Loader it renders 1`] = `
 }
 
 .c1 {
-  stroke: #352ca3;
+  color: hsl(240,4.8%,95.9%);
 }
 
 .c2 {
-  stroke: #4f46e5;
+  color: hsl(240,5.9%,10%);
 }
 
 <div>
@@ -71,7 +24,6 @@ exports[`Loader it renders 1`] = `
   >
     <circle
       class="c1"
-      color="primary"
       cx="50"
       cy="50"
       fill="none"
@@ -80,7 +32,6 @@ exports[`Loader it renders 1`] = `
     />
     <circle
       class="c2"
-      color="primary"
       cx="50"
       cy="50"
       fill="none"

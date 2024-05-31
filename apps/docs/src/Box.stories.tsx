@@ -1,7 +1,7 @@
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { Box } from '@edgmont-ui/react';
 
-const meta: Meta<typeof Box> = {
+export default {
   title: 'Data/Box',
   component: Box,
   args: {
@@ -11,8 +11,6 @@ const meta: Meta<typeof Box> = {
   },
 };
 
-export default meta;
-
-export const Example: StoryObj<typeof Box> = {
+export const Showcase: StoryObj<typeof Box> = {
   render: ({ children, ...rest }: any) => <Box {...rest}>{children}</Box>,
 };

@@ -1,9 +1,6 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { Box } from '@edgmont-ui/react';
-import { Button } from '@edgmont-ui/react';
-import { sizeSelect } from './presets';
+import { Button, CircleLoader } from '@edgmont-ui/react';
 
 export default {
   title: 'Inputs/Buttons/Button',
@@ -11,43 +8,25 @@ export default {
   args: {
     children: 'Get started',
   },
-  argTypes: {
-    size: sizeSelect,
-  },
 };
-
-export const Example: StoryObj<typeof Button> = {
-  render: ({ children, ...rest }) => <Button {...rest}>{children}</Button>,
-};
-
-export const Sizes: StoryObj<typeof Button> = {
-  argTypes: {
-    size: {
-      table: {
-        disable: true,
-      },
-    },
-  },
+export const Showcase: StoryObj<typeof Button> = {
   render: ({ children, ...rest }) => (
-    <Box spaceXBetween="4">
-      <Button size="large" {...rest}>
-        {children}
+    <>
+      <Button  {...rest}>{children}</Button>
+      <br /><br />
+      <Button active {...rest}>{children}</Button>
+      <br /><br />
+      <Button disabled {...rest}>{children}</Button>
+      <br /><br />
+      <Button {...rest}>
+        <ArrowDownOnSquareIcon width={16} height={16} />
+        <span>{children}</span>
       </Button>
-      <Button size="medium" {...rest}>
-        {children}
+      <br /><br />
+      <Button active disabled {...rest}>
+        <CircleLoader width={16} height={16} />
+        <span>{children}</span>
       </Button>
-      <Button size="small" {...rest}>
-        {children}
-      </Button>
-    </Box>
-  ),
-};
-
-export const WithIcon: StoryObj<typeof Button> = {
-  render: ({ children, ...rest }) => (
-    <Button {...rest}>
-      <ArrowDownOnSquareIcon width={16} height={16} />
-      <span>{children}</span>
-    </Button>
+    </>
   ),
 };

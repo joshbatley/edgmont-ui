@@ -4,6 +4,6 @@ export const OrderedList = styled.ol`
   list-style-type: decimal;
   list-style-position: inside;
   *::marker {
-    color:${({ theme }) => theme.colors.baseHighlight};
+    color:${({ theme }) => theme.colors.foreground};
   }
 `;

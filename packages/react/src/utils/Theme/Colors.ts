@@ -1,67 +1,66 @@
-export const LightThemeColors = {
-  base: '#0f172a',
-  baseAccent: '#1e293b',
-  baseHighlight: '#64748b',
-  background: [
-    '#ffffff', // White
-    '#f8fafc', // offwhite
-    '#e2e8f0', // lightGray
-    '#cbd5e1', // gray
-  ],
-
-  primary: '#4f46e5',
-  primaryHighlight: '#e0e7ff',
-  primaryAccent: '#4338ca',
-
-  success: '#10b981',
-  successHighlight: '#ecfdf5',
-  successAccent: '#047857',
-
-  info: '#0ea5e9',
-  infoHighlight: '#f0f9ff',
-  infoAccent: '#0369a1',
-
-  error: '#f43f5e',
-  errorHighlight: '#fff1f2',
-  errorAccent: '#be123c',
-
-  warning: '#f97316',
-  warningHighlight: '#fff7ed',
-  warningAccent: '#c2410c',
-
-  modalBg: 'rgba(15, 23, 42, 0.70)',
+export type ColorTheme = {
+  background: string;
+  foreground: string;
+  card: string;
+  cardForeground: string;
+  popover: string;
+  popoverForeground: string;
+  primary: string;
+  primaryForeground: string;
+  secondary: string;
+  secondaryForeground: string;
+  muted: string;
+  mutedForeground: string;
+  accent: string;
+  accentForeground: string;
+  destructive: string;
+  destructiveForeground: string;
+  border: string;
+  input: string;
+  ring: string;
+  // radius: string;
 };
 
-export const DarkThemeColors = {
-  base: '#f8fafc',
-  baseAccent: '#cbd5e1',
-  baseHighlight: '#64748b',
-  background: [
-    '#0f172a',
-    '#1e293b',
-    '#334155',
-    '#475569',
-  ],
+export const LightThemeColors: ColorTheme = {
+  background: 'hsl(0, 0%, 100%)',
+  foreground: 'hsl(240, 10%, 3.9%)',
+  card: 'hsl(0, 0%, 100%)',
+  cardForeground: 'hsl(240, 10%, 3.9%)',
+  popover: 'hsl(0, 0%, 100%)',
+  popoverForeground: 'hsl(240, 10%, 3.9%)',
+  primary: 'hsl(240, 5.9%, 10%)',
+  primaryForeground: 'hsl(0, 0%, 98%)',
+  secondary: 'hsl(240, 4.8%, 95.9%)',
+  secondaryForeground: 'hsl(240, 5.9%, 10%)',
+  muted: 'hsl(240, 4.8%, 95.9%)',
+  mutedForeground: 'hsl(240, 3.8%, 46.1%)',
+  accent: 'hsl(240, 4.8%, 95.9%)',
+  accentForeground: 'hsl(240, 5.9%, 10%)',
+  destructive: 'hsl(0, 84.2%, 60.2%)',
+  destructiveForeground: 'hsl(0, 0%, 98%)',
+  border: 'hsl(240, 5.9%, 90%)',
+  input: 'hsl(240, 5.9%, 90%)',
+  ring: 'hsl(240, 5.9%, 10%)',
+};
 
-  primary: '#4f46e5',
-  primaryAccent: '#4338ca',
-  primaryHighlight: '#a5b4fc',
-
-  success: '#16a34a',
-  successAccent: '#15803d',
-  successHighlight: '#86efac',
-
-  info: '#0ea5e9',
-  infoAccent: '#0369a1',
-  infoHighlight: '#7dd3fc',
-
-  error: '#e11d48',
-  errorAccent: '#be123c',
-  errorHighlight: '#fda4af',
-
-  warning: '#d97706',
-  warningAccent: '#b45309',
-  warningHighlight: '#fcd34d',
-
-  modalBg: 'rgba(71, 85, 105, 0.70)',
+export const DarkThemeColors: ColorTheme = {
+  background: 'hsl(240, 10%, 3.9%)',
+  foreground: 'hsl(0, 0%, 98%)',
+  card: 'hsl(240, 10%, 3.9%)',
+  cardForeground: 'hsl(0, 0%, 98%)',
+  popover: 'hsl(240, 10%, 3.9%)',
+  popoverForeground: 'hsl(0, 0%, 98%)',
+  primary: 'hsl(0, 0%, 98%)',
+  primaryForeground: 'hsl(240, 5.9%, 10%)',
+  secondary: 'hsl(240, 3.7%, 15.9%)',
+  secondaryForeground: 'hsl(0, 0%, 98%)',
+  muted: 'hsl(240, 3.7%, 15.9%)',
+  mutedForeground: 'hsl(240, 5%, 64.9%)',
+  accent: 'hsl(240, 3.7%, 15.9%)',
+  accentForeground: 'hsl(0, 0%, 98%)',
+  destructive: 'hsl(0, 62.8%, 30.6%)',
+  destructiveForeground: 'hsl(0, 0%, 98%)',
+  border: 'hsl(240, 3.7%, 15.9%)',
+  input: 'hsl(240, 3.7%, 15.9%)',
+  ring: 'hsl(240, 4.9%, 83.9%)',
 };
