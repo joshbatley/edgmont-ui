@@ -2,7 +2,6 @@ import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box } from '@edgmont-ui/react';
 import { Checkbox } from '@edgmont-ui/react';
-import { colorSelect } from './presets';
 
 export default {
   title: 'Inputs/Checkbox',
@@ -10,9 +9,6 @@ export default {
   args: {
     labelText: 'My Checkboxes',
     disabled: false,
-  },
-  argTypes: {
-    color: colorSelect,
   },
 };
 

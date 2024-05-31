@@ -22,23 +22,6 @@ const After = ({ ...rest }) => (
   </Box>
 );
 
-export const Errored: StoryObj<typeof TextField> = {
-  render: ({ ...rest }) => (
-    <Box spaceYBetween="2">
-      <TextField error {...rest} />
-      <TextField
-        error
-        prefiXMarkIcon={<LockClosedIcon width={16} />}
-        {...rest}
-      />
-      <TextField error suffiXMarkIcon={<EyeIcon width={16} />} {...rest} />
-      <TextField error before={<Before />} {...rest} />
-      <TextField error after={<After />} {...rest} />
-      <TextField error before={<Before />} after={<After />} {...rest} />
-    </Box>
-  ),
-};
-
 export const Disabled: StoryObj<typeof TextField> = {
   render: ({ ...rest }) => (
     <Box spaceYBetween="2">

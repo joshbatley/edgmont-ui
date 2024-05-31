@@ -2,17 +2,12 @@ import { StoryObj, Meta } from '@storybook/react';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { Badge } from '@edgmont-ui/react';
 import { Box } from '@edgmont-ui/react';
-import { colorSelect, intercardinalPointsSelect } from './presets';
 
 const meta: Meta = {
   title: 'Feedback/Badge',
   component: Badge,
   args: {
     tag: '100+',
-  },
-  argTypes: {
-    position: intercardinalPointsSelect,
-    color: colorSelect,
   },
 };
 export default meta;

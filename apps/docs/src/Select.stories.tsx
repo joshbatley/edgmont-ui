@@ -6,7 +6,6 @@ import {
   SelectItem,
   SelectList,
 } from '@edgmont-ui/react';
-import { sizeSelect } from './presets';
 
 export default {
   title: 'Inputs/Select/Controlled',
@@ -15,9 +14,6 @@ export default {
     placeholder: 'My select menu',
     error: false,
     disabled: false,
-  },
-  argTypes: {
-    size: sizeSelect,
   },
 };
 

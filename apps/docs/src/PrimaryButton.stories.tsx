@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { Box, PrimaryButton } from '@edgmont-ui/react';
-import { colorSelect } from './presets';
+import { PrimaryButton } from '@edgmont-ui/react';
 
 const meta: Meta = {
   title: 'Inputs/Buttons/Primary',
@@ -16,52 +15,6 @@ export default meta;
 export const Example: StoryObj<typeof PrimaryButton> = {
   render: ({ children, ...rest }) => (
     <PrimaryButton disabled {...rest}>{children}</PrimaryButton>
-  ),
-};
-
-export const Sizes: StoryObj<typeof PrimaryButton> = {
-  argTypes: {
-    size: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-  render: ({ children, ...rest }) => (
-    <Box spaceXBetween="4">
-      <PrimaryButton size="large" {...rest}>
-        {children}
-      </PrimaryButton>
-      <PrimaryButton size="medium" {...rest}>
-        {children}
-      </PrimaryButton>
-      <PrimaryButton size="small" {...rest}>
-        {children}
-      </PrimaryButton>
-    </Box>
-  ),
-};
-
-export const Colors: StoryObj<typeof PrimaryButton> = {
-  argTypes: {
-    color: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-  render: ({ children = 'save' }) => (
-    <Box
-      display="grid"
-      gridTemplateColumns="repeat(6, minmax(0, 1fr))"
-      gridGap="4"
-    >
-      {colorSelect.options.map((c) => (
-        <PrimaryButton key={c} color={c}>
-          {children}
-        </PrimaryButton>
-      ))}
-    </Box>
   ),
 };
 

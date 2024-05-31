@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { Box, DestructiveButton } from '@edgmont-ui/react';
-import { colorSelect } from './presets';
 
 const meta: Meta = {
   title: 'Inputs/Buttons/Destructive',
@@ -38,29 +37,6 @@ export const Sizes: StoryObj<typeof DestructiveButton> = {
       <DestructiveButton size="small" {...rest}>
         {children}
       </DestructiveButton>
-    </Box>
-  ),
-};
-
-export const Colors: StoryObj<typeof DestructiveButton> = {
-  argTypes: {
-    color: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-  render: ({ children = 'save' }) => (
-    <Box
-      display="grid"
-      gridTemplateColumns="repeat(6, minmax(0, 1fr))"
-      gridGap="4"
-    >
-      {colorSelect.options.map((c) => (
-        <DestructiveButton key={c} color={c}>
-          {children}
-        </DestructiveButton>
-      ))}
     </Box>
   ),
 };

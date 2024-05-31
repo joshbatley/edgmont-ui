@@ -3,16 +3,12 @@ import { StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { Box } from '@edgmont-ui/react';
 import { Button } from '@edgmont-ui/react';
-import { sizeSelect } from './presets';
 
 export default {
   title: 'Inputs/Buttons/Button',
   component: Button,
   args: {
     children: 'Get started',
-  },
-  argTypes: {
-    size: sizeSelect,
   },
 };
 
@@ -30,13 +26,13 @@ export const Sizes: StoryObj<typeof Button> = {
   },
   render: ({ children, ...rest }) => (
     <Box spaceXBetween="4">
-      <Button size="large" {...rest}>
+      <Button {...rest}>
         {children}
       </Button>
-      <Button size="medium" {...rest}>
+      <Button {...rest}>
         {children}
       </Button>
-      <Button size="small" {...rest}>
+      <Button {...rest}>
         {children}
       </Button>
     </Box>

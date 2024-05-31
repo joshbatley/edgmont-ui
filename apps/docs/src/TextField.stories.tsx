@@ -8,16 +8,12 @@ import {
   TextComp,
   TextField,
 } from '@edgmont-ui/react';
-import { sizeSelect } from './presets';
 
 export default {
   title: 'Inputs/TextField',
   component: TextField,
   args: {
     placeholder: 'Email',
-  },
-  argTypes: {
-    size: sizeSelect,
   },
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { StoryObj } from '@storybook/react';
-import { sizeSelect } from './presets';
 import { SimpleSelect } from '@edgmont-ui/react/src/inputs/Select/SimpleSelect';
 
 export default {
@@ -15,7 +14,6 @@ export default {
   },
   argTypes: {
     values: { table: { disable: true } },
-    size: sizeSelect,
   },
 };
 
@@ -37,12 +35,6 @@ export const Disabled: StoryObj<typeof SimpleSelect> = {
   },
   render: ({ disabled, ...rest }) => (
     <SimpleSelect {...rest} values={values} disabled />
-  ),
-};
-
-export const Errored: StoryObj<typeof SimpleSelect> = {
-  render: ({ ...rest }) => (
-    <SimpleSelect {...rest} values={values} />
   ),
 };
 
