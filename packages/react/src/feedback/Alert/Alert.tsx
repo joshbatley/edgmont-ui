@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
-import { Box, TextComp, Title } from '../../data';
+import { Box, Typography, Title } from '../../data';
 import { CloseBtn } from './CloseBtn';
 import { WithChildren } from '../../types';
 
@@ -27,7 +27,7 @@ const Icon = styled(Box)`
   }
 `;
 
-const Content = styled(TextComp)`
+const Content = styled(Typography)`
   min-width: 100%;
   margin-top: ${({ theme }) => theme.space[2]};
   :empty {

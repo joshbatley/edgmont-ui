@@ -12,10 +12,10 @@ export type CodeEditorProps = {
 };
 
 export const CodeEditor: React.FC<CodeEditorProps> = ({
-  language, code, handleChange, light,
+  language, code, handleChange, light = false,
 }) => {
   let [state, setState] = useState(code);
-  let theme = !light ? themes.vsLight : themes.vsDark;
+  let theme = light ? themes.vsLight : themes.vsDark;
   let handleTextChange = (text: string) => {
     setState(text);
     handleChange?.(text);

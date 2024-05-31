@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box, Tooltip } from '@edgmont-ui/react';
 import { directionSelect } from './presets';
@@ -15,7 +14,7 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Tooltip> = {
+export const Showcase: StoryObj<typeof Tooltip> = {
   render: ({ ...rest }: any) => (
     <Box
       spaceYBetween="2"

@@ -6,4 +6,4 @@ export * from './List';
 export * from './Pagination';
 export * from './Panel';
 export * from './Table';
-export * from './Text';
+export * from './Typography';

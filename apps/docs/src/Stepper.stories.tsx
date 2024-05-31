@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box, StepLabel, Stepper } from '@edgmont-ui/react';
 
@@ -11,26 +10,24 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Stepper> = {
+export const Showcase: StoryObj<typeof Stepper> = {
   render: ({ ...rest }: any) => (
-    <Box height="300px">
-      <Stepper {...rest}>
-        <StepLabel>Select campaign settings</StepLabel>
-        <StepLabel>Create an ad group</StepLabel>
-        <StepLabel>Create an ad</StepLabel>
-      </Stepper>
-    </Box>
+    <>
+      <Box height="300px">
+        <Stepper {...rest}>
+          <StepLabel>Select campaign settings</StepLabel>
+          <StepLabel>Create an ad group</StepLabel>
+          <StepLabel>Create an ad</StepLabel>
+        </Stepper>
+      </Box>
+      <Box height="300px">
+        <Stepper {...rest}>
+          <StepLabel>Select campaign settings</StepLabel>
+          <StepLabel error>Create an ad group</StepLabel>
+          <StepLabel>Create an ad</StepLabel>
+        </Stepper>
+      </Box>
+    </>
   ),
 };
 
-export const ErrorStep: StoryObj<typeof Stepper> = {
-  render: ({ ...rest }: any) => (
-    <Box height="300px">
-      <Stepper {...rest}>
-        <StepLabel>Select campaign settings</StepLabel>
-        <StepLabel error>Create an ad group</StepLabel>
-        <StepLabel>Create an ad</StepLabel>
-      </Stepper>
-    </Box>
-  ),
-};

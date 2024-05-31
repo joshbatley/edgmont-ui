@@ -9,9 +9,9 @@ export type SyntaxHighlighterProps = {
 };
 
 export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
-  language, code, light, withWrapper = true,
+  language, code, light = false, withWrapper = true,
 }) => {
-  let theme = !light ? themes.vsLight : themes.vsDark;
+  let theme = light ? themes.vsLight : themes.vsDark;
   return (
     <Wrapper style={theme.plain} skip={!withWrapper}>
       <Highlight

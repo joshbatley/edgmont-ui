@@ -10,7 +10,6 @@ export default {
   },
 };
 
-
 export const Showcase: StoryObj<typeof Alert> = {
   render: ({ ...rest }) => (
     <>

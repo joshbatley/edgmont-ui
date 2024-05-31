@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box, ThreeColumns } from '@edgmont-ui/react';
 
@@ -20,7 +19,7 @@ let mainNav = (
   </Box>
 );
 
-export const Example: StoryObj<typeof ThreeColumns> = {
+export const Showcase: StoryObj<typeof ThreeColumns> = {
   render: () => (
     <ThreeColumns sideNav={sidebar} mainNav={mainNav}>
       <Box bg="muted" borderRight="background.1" height="100vh">

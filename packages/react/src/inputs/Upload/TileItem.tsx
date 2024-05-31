@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { TextComp, ImageComp, Box } from '../../data';
+import { Typography, ImageComp, Box } from '../../data';
 import { ClickableElement } from '../../inputs/Button';
 import { Tooltip } from '../../feedback/Tooltip';
 import { AcceptedFile } from './Utils';
@@ -47,8 +47,8 @@ export const TileItem: React.FC<TileItemProps> = ({ file, handleDelete }) => {
         border={hasError ? 'error.1' : 'background2.1'} color={hasError ? 'error' : 'base'}>
         <StyledImage src={imgSrc as string} fallback={fallback} />
         <Box display="flex" flexDirection="column" ml="2">
-          <TextComp as="span" fontWeight="700">{name}</TextComp>
-          <TextComp fontSize="0" lineHeight="0" color="baseHighlight">{meta}</TextComp>
+          <Typography as="span" fontWeight="700">{name}</Typography>
+          <Typography fontSize="0" lineHeight="0" color="baseHighlight">{meta}</Typography>
         </Box>
         <Box display="flex" flexGrow="1" alignItems="center" justifyContent="end">
           <DeleteBtn hasError={hasError} onClick={() => handleDelete(file.key)}>

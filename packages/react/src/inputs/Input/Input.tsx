@@ -5,7 +5,7 @@ import { BaseInput } from './BaseInput';
 import { AddonElement } from './AddonElement';
 import { OptionalIcon } from './OptionalIcon';
 
-export type TextFieldProps = {
+export type InputProps = {
   before?: ReactElement;
   after?: ReactElement;
   prefiXMarkIcon?: ReactElement;
@@ -28,7 +28,7 @@ const Container = styled(Box) <{ disabled: boolean; }>`
   `}
 `;
 
-export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   prefiXMarkIcon, suffiXMarkIcon,
   before, after, disabled = false,
   ...rest

@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import {
   Modal,
   OutlineButton,
   Box,
   PrimaryButton,
-  TextComp,
-  TextField,
+  Typography,
+  Input,
   Label,
+  Password,
 } from '@edgmont-ui/react';
 
 export default {
@@ -18,7 +19,7 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Modal> = {
+export const Showcase: StoryObj<typeof Modal> = {
   render: ({ title, children, ...rest }) => {
     let [open, setOpen] = useState(false);
 
@@ -33,21 +34,20 @@ export const Example: StoryObj<typeof Modal> = {
         >
           <Box
             width="400px"
-            spaceYBetween="3"
             pt="0"
             pb="4"
             px="4"
             display="flex"
             flexDirection="column"
           >
-            <TextComp color="mutedForeground">Make changes to your profile here. Click save when you're done.</TextComp>
+            <Typography color="mutedForeground">Make changes to your profile here. Click save when you're done.</Typography>
             <Label value="Email">
-              <TextField placeholder="Email" />
+              <Input placeholder="Email" />
             </Label>
             <Label value="Password">
-              <TextField placeholder="password" type="password" />
+              <Password placeholder="Password" />
             </Label>
-            <PrimaryButton>Update</PrimaryButton>
+            <PrimaryButton mt="5">Update</PrimaryButton>
           </Box>
         </Modal>
       </>

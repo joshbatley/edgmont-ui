@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Chip } from '@edgmont-ui/react';
 
@@ -10,7 +9,13 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof Chip> = {
-  render: ({ children, ...rest }) => <Chip {...rest}>{children}</Chip>,
+export const Showcase: StoryObj<typeof Chip> = {
+  render: ({ children }) => (
+    <>
+      <Chip>{children}</Chip>
+      <br />
+      <br />
+      <Chip destructive>{children}</Chip>
+    </>),
 };
 

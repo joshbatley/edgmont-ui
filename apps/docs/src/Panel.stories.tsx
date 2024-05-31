@@ -1,8 +1,7 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { Panel } from '@edgmont-ui/react';
 
-const meta: Meta = {
+export default {
   title: 'Data/Panel',
   component: Panel,
   args: {
@@ -10,9 +9,7 @@ const meta: Meta = {
   },
 };
 
-export default meta;
-
-export const Examples: StoryObj<typeof Panel> = {
+export const Showcase: StoryObj<typeof Panel> = {
   render: ({ children, ...rest }) => (
     <Panel px="3" py="2" {...rest}>
       {children}

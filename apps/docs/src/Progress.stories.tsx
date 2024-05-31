@@ -5,10 +5,6 @@ import { CircleProgress, LinearProgress } from '@edgmont-ui/react';
 export default {
   title: 'Feedback/Progress',
   component: CircleProgress,
-  args: {
-    color: 'primary',
-    percentage: 30,
-  },
 };
 
 export const Circle: StoryObj<typeof CircleProgress> = {

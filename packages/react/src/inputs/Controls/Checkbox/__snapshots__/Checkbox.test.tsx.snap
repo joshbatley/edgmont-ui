@@ -11,6 +11,7 @@ exports[`Checkbox test should render 1`] = `
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  color: foreground;
 }
 
 .c1 > :not([hidden]) ~ :not([hidden]) {
@@ -127,6 +128,7 @@ exports[`Checkbox test should render with disabled classes 1`] = `
   -ms-flex-align: center;
   align-items: center;
   cursor: not-allowed;
+  color: hsl(240,3.8%,46.1%);
 }
 
 .c1 > :not([hidden]) ~ :not([hidden]) {

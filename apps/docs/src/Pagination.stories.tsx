@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box, Pagination } from '@edgmont-ui/react';
 
@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Examples: StoryObj<typeof Pagination> = {
+export const Showcase: StoryObj<typeof Pagination> = {
   render: () => {
     let [skip, setSkip] = useState(0);
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { ClickableElement } from '@edgmont-ui/react';
 
@@ -10,7 +9,7 @@ export default {
   },
 };
 
-export const Example: StoryObj<typeof ClickableElement> = {
+export const Showcase: StoryObj<typeof ClickableElement> = {
   render: ({ children, ...rest }) => (
     <div>
       You can click this and it will work{' '}

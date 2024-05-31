@@ -1,27 +1,25 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { ShoppingCartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
-import { Title, TextComp, Box } from '@edgmont-ui/react';
+import { Title, Typography, Box } from '@edgmont-ui/react';
 import {
   Label,
   OutlineButton,
   PrimaryButton,
   TextArea,
-  TextField,
+  Input,
+  Card,
+  CardContent,
+  CardMedia,
 } from '@edgmont-ui/react';
-import { Card, CardContent, CardMedia } from '@edgmont-ui/react';
 
-const meta: Meta = {
+export default {
   title: 'Data/Card',
   component: Card,
-
 };
 
-export default meta;
-
-export const Examples: StoryObj<typeof Card> = {
+export const Showcase: StoryObj<typeof Card> = {
   render: () => (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" justifyContent="space-between">
       <Card
         mb="2"
         maxWidth={400}
@@ -39,16 +37,16 @@ export const Examples: StoryObj<typeof Card> = {
             <Title as="h3" fontWeight="700">
               The Reptile
             </Title>
-            <TextComp mono as="span" color="baseHighlight">
+            <Typography mono as="span" color="baseHighlight">
               £99.99
-            </TextComp>
+            </Typography>
           </Box>
           <Box mb="2">
-            <TextComp fontSize="0" lineHeight="0" color="baseHighlight">
+            <Typography fontSize="0" lineHeight="0" color="baseHighlight">
               In stock
-            </TextComp>
+            </Typography>
           </Box>
-          <TextComp>Good with children, only lightly bites limbs off.</TextComp>
+          <Typography>Good with children, only lightly bites limbs off.</Typography>
           <Box as="hr" my="4" />
           <Box width="100%" display="flex">
             <PrimaryButton
@@ -58,7 +56,7 @@ export const Examples: StoryObj<typeof Card> = {
               mr="2"
             >
               <ShoppingBagIcon width={16} height={16} />
-              <TextComp>Buy now</TextComp>
+              <Typography>Buy now</Typography>
             </PrimaryButton>
             <OutlineButton
               justifyContent="center"
@@ -67,20 +65,20 @@ export const Examples: StoryObj<typeof Card> = {
               textAlign="center"
             >
               <ShoppingCartIcon width={16} height={16} />
-              <TextComp>Add to cart</TextComp>
+              <Typography>Add to cart</Typography>
             </OutlineButton>
           </Box>
         </CardContent>
       </Card>
 
-      <Card maxWidth={500}>
+      <Card width={500}>
         <CardContent borderBottom="border.1">
           <Title as="h4">Application form</Title>
         </CardContent>
 
         <CardContent my="2">
           <Label value="Website url">
-            <TextField
+            <Input
               before={
                 <Box px="2" py="1">
                   https://
@@ -115,7 +113,7 @@ export const Content: StoryObj<typeof Card> = {
 
 export const Media: StoryObj<typeof Card> = {
   render: () => (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" justifyContent="space-evenly">
       <Card maxWidth={300}>
         <CardMedia
           as="img"

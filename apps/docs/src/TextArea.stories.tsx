@@ -1,8 +1,7 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { TextArea } from '@edgmont-ui/react';
 
-const meta: Meta = {
+export default {
   title: 'Inputs/TextArea',
   component: TextArea,
   parameters: {
@@ -10,8 +9,6 @@ const meta: Meta = {
   },
 };
 
-export default meta;
-
-export const Example: StoryObj<typeof TextArea> = {
+export const Showcase: StoryObj<typeof TextArea> = {
   render: () => <TextArea />,
 };

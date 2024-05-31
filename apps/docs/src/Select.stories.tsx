@@ -1,40 +1,40 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
-import {
-  Select,
-  SelectFilter,
-  SelectItem,
-  SelectList,
-} from '@edgmont-ui/react';
+import { SimpleSelect } from '@edgmont-ui/react/src/inputs/Select/SimpleSelect';
 
 export default {
-  title: 'Inputs/Select/Controlled',
-  component: Select,
+  title: 'Inputs/Select',
+  component: SimpleSelect,
   args: {
-    placeholder: 'My select menu',
-    error: false,
-    disabled: false,
+    placeholder: 'My Simple Select Menu',
+  },
+  argTypes: {
+    values: { table: { disable: true } },
   },
 };
 
-const valuesComplex = [
-  { value: 'hello', label: 'this is hello' },
-  { value: 'world', label: 'this is world' },
+const values = [
+  'hello',
+  'worlds',
+  'yeah us to',
+  'some more options',
+  'Selectable value',
 ];
 
-export const Example: StoryObj<typeof Select & typeof SelectFilter> = {
-  render: ({ placeholder, ...rest }) => (
-    <Select
-      {...rest}
-      onChange={(...item) => console.log(item)}
-      itemToString={(item) => (item ? item.value : '')}
-    >
-      <SelectFilter {...rest} placeholder={placeholder} />
-      <SelectList>
-        {valuesComplex.map((item, i) => (
-          <SelectItem item={item} index={i} key={item.value} />
-        ))}
-      </SelectList>
-    </Select>
-  ),
+export const Showcase: StoryObj<typeof SimpleSelect> = {
+  render: ({ ...rest }) => (
+    <>
+      <SimpleSelect {...rest} values={values} />
+      <br />
+      <SimpleSelect {...rest} values={values} disabled />
+      <br />
+      <SimpleSelect
+        {...rest}
+        values={values}
+        isClearable
+        initialSelectedItem="Selectable value"
+      />
+      <br />
+      <SimpleSelect {...rest} values={values} isFilterable />
+    </>),
 };
+

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  TextComp,
+  Typography,
 } from '@edgmont-ui/react';
 
 export default {
@@ -23,7 +23,7 @@ const arrayRange = (from: number, to: number) =>
   Array.from(Array(Math.max(0, to - from + 1)), (_, idx) => idx + from);
 const allRows = arrayRange(0, 40);
 
-export const Example: StoryObj<typeof Table> = {
+export const Showcase: StoryObj<typeof Table> = {
   render: () => {
     const limit = 10;
     let [skip, setSkip] = useState(0);
@@ -130,9 +130,9 @@ export const TableProps: StoryObj<typeof Table> = {
       </Box>
       <Table
         footer={
-          <TextComp textAlign="center" color="primary" fontWeight="700">
+          <Typography textAlign="center" color="primary" fontWeight="700">
             You can add any footer prop, like a Pagination
-          </TextComp>
+          </Typography>
         }
       >
         <TableHead headers={['Header 1', 'Header 2', 'Header 3']} />

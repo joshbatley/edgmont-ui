@@ -1,6 +1,6 @@
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
-import { Box, TextComp } from '../../data';
+import { Box, Typography } from '../../data';
 import { ClickableElement, OutlineButton, OutlineButtonProps } from '../Button';
 import { useSelectContext } from './SelectContext';
 
@@ -58,7 +58,7 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
       {...getToggleButtonProps()}
       {...rest}
     >
-      <TextComp fontSize="1" lineHeight="1">{buttonText}</TextComp>
+      <Typography fontSize="1" lineHeight="1">{buttonText}</Typography>
       <Container display="flex" alignItems="center">
         {isClearableActive &&
           <ClearBtn as="a" onClick={clear}>

@@ -23,7 +23,7 @@ const Group = styled.div`
   }
 `;
 
-export const TextFieldGroup: React.FC<WithChildren> = ({ children }) => (
+export const InputGroup: React.FC<WithChildren> = ({ children }) => (
   <Group>
     {children}
   </Group>

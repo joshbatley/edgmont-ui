@@ -13,6 +13,7 @@ const StyledList = styled(List)`
   margin-top: ${({ theme }) => theme.space[2]};
   position: absolute;
   min-width: 100%;
+  z-index:1000;
 `;
 
 export const SelectList: React.FC<WithChildren> = ({ children }) => {

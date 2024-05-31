@@ -1,18 +1,17 @@
-import { StoryObj, Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { Badge } from '@edgmont-ui/react';
 import { Box } from '@edgmont-ui/react';
 
-const meta: Meta = {
+export default {
   title: 'Feedback/Badge',
   component: Badge,
   args: {
     tag: '100+',
   },
 };
-export default meta;
 
-export const Examples: StoryObj<typeof Badge> = {
+export const Showcase: StoryObj<typeof Badge> = {
   render: ({ ...rest }: any) => (
     <Box width="50%" mt="10" mx="auto">
       <Box mt="4" display="grid" justifyItems="start" gridTemplateColumns="repeat(2, minmax(0, 1fr))">

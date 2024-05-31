@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj } from '@storybook/react';
 import { Box, UploadButton as UB, UploadZone as UZ } from '@edgmont-ui/react';
 

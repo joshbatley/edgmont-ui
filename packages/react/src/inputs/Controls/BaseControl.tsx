@@ -10,6 +10,7 @@ const Label = styled.label<{ disabled: boolean; }>`
   display: flex;
   align-items: center;
   cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
+  color: ${({ theme, disabled }) => disabled ? theme.colors.mutedForeground : 'foreground'};
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
   }
