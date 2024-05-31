@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
-import { CircleLoader, OutlineButton, PrimaryButton } from '@edgmont-ui/react';
+import { CircleLoader, OutlineButton } from '@edgmont-ui/react';
 
 export default {
   title: 'Inputs/Buttons/Outline',
