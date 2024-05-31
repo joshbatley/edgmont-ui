@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.0
+
+### Major Changes
+
+- b4b59a8: Revamped all components, add themes and fix broken logix
+
 ## 0.3.0
 
 ### Minor Changes
