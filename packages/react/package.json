@@ -20,7 +20,7 @@
     "joshbatley"
   ],
   "files": [
-    "dist/*",
+    "dist",
     "package.json"
   ],
   "scripts": {
