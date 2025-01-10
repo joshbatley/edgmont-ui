@@ -25,7 +25,6 @@ export const TabItem: React.FC<TabItemProps> = ({ children, selected, onClick })
   <StyledBtn
     px="3"
     py="1"
-    zIndex="10"
     position="relative"
     boxShadow={selected ? 'base.1' : 'none'}
     bg={selected ? 'background' : 'transparent'}
