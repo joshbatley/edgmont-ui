@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.5
+
+### Patch Changes
+
+- dd6c970: Added color props to card
+
 ## 1.0.4
 
 ### Patch Changes
