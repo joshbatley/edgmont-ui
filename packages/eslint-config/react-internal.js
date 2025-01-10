@@ -4,12 +4,13 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo", "airbnb-typescript"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "eslint-config-turbo", "airbnb-typescript"],
   plugins: ["only-warn", "@typescript-eslint", "react-hooks", "react"],
   globals: {
     React: true,
     JSX: true,
   },
+  root: true,
   // env: {
   //   browser: true,
   //   jest: true,
