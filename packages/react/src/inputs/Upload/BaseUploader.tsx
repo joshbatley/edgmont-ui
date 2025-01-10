@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DropEvent, DropzoneOptions, FileRejection, useDropzone } from 'react-dropzone';
+import { DropEvent, DropzoneOptions, FileError, FileRejection, useDropzone } from 'react-dropzone';
 import { getMeta, AcceptedFile } from './Utils';
 
 export type BaseUploaderProps = {
@@ -19,7 +19,7 @@ export const BaseUploader: React.FC<BaseUploaderProps> = ({
   let wrappedOnDrop = (acceptedFiles: File[], fileRejections: FileRejection[], event: DropEvent) => {
     onDrop?.(acceptedFiles, fileRejections, event);
     let accepted = acceptedFiles.map(f => (getMeta(f, [])));
-    let rejected = fileRejections.map(f => (getMeta(f.file, f.errors)));
+    let rejected = fileRejections.map(f => (getMeta(f.file, f.errors as FileError[])));
     setFiles([...accepted, ...rejected]);
   };
 
