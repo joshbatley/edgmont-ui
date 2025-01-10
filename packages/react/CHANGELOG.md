@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.7
+
+### Patch Changes
+
+- f3db182: Updated colors
+
 ## 1.0.6
 
 ### Patch Changes
