@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.2
+
+### Patch Changes
+
+- 2738f28: Including missing files
+
 ## 1.0.1
 
 ### Patch Changes
