@@ -1,5 +1,5 @@
 import { StoryObj } from '@storybook/react';
-import { SimpleSelect } from '@edgmont-ui/react/src/inputs/Select/SimpleSelect';
+import { SimpleSelect } from '@edgmont-ui/react';
 
 export default {
   title: 'Inputs/Select',
