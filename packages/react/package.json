@@ -20,9 +20,7 @@
     "joshbatley"
   ],
   "files": [
-    "dist/**/*",
-    "dist/**/*.css",
-    "preset.js",
+    "dist/*",
     "package.json"
   ],
   "scripts": {
