@@ -22,7 +22,6 @@ export const Showcase: StoryObj<typeof Card> = {
     <Box display="flex" justifyContent="space-between">
       <Card
         mb="2"
-        bg="red"
         maxWidth={400}
         display="flex"
         flexDirection="row"

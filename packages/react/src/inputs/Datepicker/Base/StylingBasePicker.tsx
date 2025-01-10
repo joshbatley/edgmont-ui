@@ -139,13 +139,10 @@ export const Container = styled.div`
 
 .react-datepicker__day--selecting-range-start div,
 .react-datepicker__day--selecting-range-end div {
-  background: ${({ theme }) => darken(0.1, theme.colors.accent)};
+  background: ${({ theme }) => darken(0.1, theme.colors.primary)};
+  color: ${({ theme }) => theme.colors.primaryForeground};
 }
 
-.react-datepicker__day--selecting-range-start div,
-.react-datepicker__day--selecting-range-end div {
-  background: ${({ theme }) => darken(0.1, theme.colors.accent)};
-}
 
 .react-datepicker__month-container:last-of-type:not(:first-of-type) {
   margin-left: ${({ theme }) => theme.sizes[4]};
