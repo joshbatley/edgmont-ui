@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.1
+
+### Patch Changes
+
+- bfa80f9: Updated types and files
+
 ## 1.0.0
 
 ### Major Changes
