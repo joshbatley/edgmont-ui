@@ -19,6 +19,15 @@
   "contributors": [
     "joshbatley"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./index.d.mts": "./dist/index.d.mts"
+  },
   "files": [
     "dist",
     "package.json"
