@@ -16,7 +16,7 @@ const Container = styled(Box) <{ destructive: boolean }>`
   border-color: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.border};
   background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.background};
   h1, svg, p {
-    color: ${({ theme, destructive }) => destructive ? theme.colors.background : theme.colors.foreground};
+    color: ${({ theme, destructive }) => destructive ? theme.colors.destructiveForeground : theme.colors.foreground};
   }
 `;
 
