@@ -19,15 +19,6 @@
   "contributors": [
     "joshbatley"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
-    },
-    "./index.d.mts": "./dist/index.d.mts"
-  },
   "files": [
     "dist",
     "package.json"
@@ -80,5 +71,14 @@
     "styled-components": "^5.3.11",
     "styled-system": "^5.1.5",
     "tsup": "^8.0.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./index.d.mts": "./dist/index.d.mts"
   }
 }

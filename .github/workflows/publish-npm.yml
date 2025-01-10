@@ -25,8 +25,11 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Build
+      - name: install
         run: pnpm install
+
+      - name: Build
+        run: pnpm run build
 
       - name: Publish NPM release
         id: changesets

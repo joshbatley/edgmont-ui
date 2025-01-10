@@ -23,7 +23,7 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Build
+      - name: Install
         run: pnpm install
 
       - name: Lint
