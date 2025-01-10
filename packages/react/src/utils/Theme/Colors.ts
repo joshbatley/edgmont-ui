@@ -18,7 +18,8 @@ export type ColorTheme = {
   border: string;
   input: string;
   ring: string;
-  // radius: string;
+  offsetBackground: string;
+  offsetForeground: string;
 };
 
 export const LightThemeColors: ColorTheme = {
@@ -41,6 +42,8 @@ export const LightThemeColors: ColorTheme = {
   border: 'hsl(240, 5.9%, 90%)',
   input: 'hsl(240, 5.9%, 90%)',
   ring: 'hsl(240, 5.9%, 10%)',
+  offsetBackground: 'hsl(0, 0%, 98%)',
+  offsetForeground: 'hsl(240, 5.3%, 26.1%)',
 };
 
 export const DarkThemeColors: ColorTheme = {
@@ -63,4 +66,6 @@ export const DarkThemeColors: ColorTheme = {
   border: 'hsl(240, 3.7%, 15.9%)',
   input: 'hsl(240, 3.7%, 15.9%)',
   ring: 'hsl(240, 4.9%, 83.9%)',
+  offsetBackground: 'hsl(240, 5.9%, 10%)',
+  offsetForeground: 'hsl(240, 4.8%, 95.9%)',
 };
