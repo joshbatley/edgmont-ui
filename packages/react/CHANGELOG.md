@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.6
+
+### Patch Changes
+
+- 914f51c: Included background in cards
+
 ## 1.0.5
 
 ### Patch Changes
