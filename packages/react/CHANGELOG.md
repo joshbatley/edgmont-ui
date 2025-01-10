@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.4
+
+### Patch Changes
+
+- 9dfbc7f: Updated buildstep to republish
+
 ## 1.0.3
 
 ### Patch Changes
