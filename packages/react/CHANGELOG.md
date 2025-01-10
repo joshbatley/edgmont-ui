@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.8
+
+### Patch Changes
+
+- 2111a82: Updated ordering of css
+
 ## 1.0.7
 
 ### Patch Changes
