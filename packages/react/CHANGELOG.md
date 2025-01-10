@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.9
+
+### Patch Changes
+
+- 9a62dae: Removed z-index on tab buttons
+
 ## 1.0.8
 
 ### Patch Changes
