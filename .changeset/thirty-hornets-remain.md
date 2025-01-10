@@ -2,4 +2,4 @@
 "@edgmont-ui/react": patch
 ---
 
-Fixed included files
+Updated types and files
