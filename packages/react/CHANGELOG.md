@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.12
+
+### Patch Changes
+
+- 9ecc972: Updated styling
+
 ## 1.0.11
 
 ### Patch Changes
