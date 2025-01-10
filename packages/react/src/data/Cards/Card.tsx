@@ -7,14 +7,14 @@ export type CardProps = {
 } & LayoutProps & FlexboxProps & SpaceProps & ColorProps;
 
 export const Card = styled.div<CardProps>`
+  background: ${({ theme }) => theme.colors.background};
+  border-radius: ${({ theme }) => theme.radii[3]};
+  box-shadow: ${({ theme }) => theme.shadows.base[0]};
+  border:${({ theme }) => theme.borders.border[1]};
+  overflow: hidden;
   ${layout}
   ${flexbox}
   ${space}
   ${color}
   ${background}
-  border-radius: ${({ theme }) => theme.radii[3]};
-  background: ${({ theme }) => theme.colors.background};
-  box-shadow: ${({ theme }) => theme.shadows.base[0]};
-  border:${({ theme }) => theme.borders.border[1]};
-  overflow: hidden;
 `;
