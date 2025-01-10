@@ -41,7 +41,7 @@ export type TabItemsProps = {
 };
 
 export const TabItems: React.FC<TabItemsProps> = ({ tabs, selected, onChange }) => (
-  <Box bg="muted" borderRadius={4} px="1" py="1" display="inline-flex">
+  <Box bg="muted" borderRadius={4} px="1" py="1" display="inline-flex" border="muted.1">
     {tabs.map(({ tab, key }) => (
       <TabItem
         key={key}

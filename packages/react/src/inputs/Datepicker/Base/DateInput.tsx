@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   > :not([hidden]) ~ :not([hidden]) {
-    margin-left: ${({ theme }) => theme.space[4]};
+    margin-left: ${({ theme }) => theme.space[1]};
     margin-right:${({ theme }) => theme.space[4]};
   }
 `;
@@ -46,11 +46,11 @@ export const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(({
   };
 
   let displayValue = value ?
-    (<Typography as="span" color="base">{value}</Typography>) :
-    (<Typography as="span" color="baseHighlight">{placeholder}</Typography>);
+    (<Typography as="span">{value}</Typography>) :
+    (<Typography as="span" color="mutedForeground">{placeholder}</Typography>);
 
   return (
-    <OutlineButton bg="background.1" width="100%" justifyContent="space-between" ref={ref} onClick={onClick}>
+    <OutlineButton bg="background.1" width="100%" fontWeight="400" lineHeight="inherit" justifyContent="space-between" ref={ref} onClick={onClick}>
       <Container>
         <Icon width={16} height={16} />
         {displayValue}
