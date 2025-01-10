@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.10
+
+### Patch Changes
+
+- 80225e3: Updated colors for datepickers
+
 ## 1.0.9
 
 ### Patch Changes
