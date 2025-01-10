@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.3
+
+### Patch Changes
+
+- 0427863: Exports files
+
 ## 1.0.2
 
 ### Patch Changes
