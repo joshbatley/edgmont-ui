@@ -117,8 +117,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTheme }>`
   [type='reset'],
   [type='submit'] {
     -webkit-appearance: button;
-    background-color: transparent;
-    background-image: none;
   }
 
   :-moz-focusring {
