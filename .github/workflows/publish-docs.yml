@@ -19,6 +19,7 @@ jobs:
     environment:
       name: update docs
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,7 +51,9 @@ jobs:
         run: node scripts/move-docs.js
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
 
       - name: Deploy to GitHub Pages
         id: deployment
