@@ -7,11 +7,11 @@ export default {
 };
 
 export const Switch: StoryObj<typeof ThemeSwitch> = {
-  render: ({ children, ...rest }: any) => <ThemeSwitch />,
+  render: () => <ThemeSwitch />,
 };
 
 export const Button: StoryObj<typeof ThemeButton> = {
-  render: ({ children, ...rest }: any) => <Box display="flex" spaceXBetween="2">
+  render: () => <Box display="flex" spaceXBetween="2">
     <ThemeButton />
     <OutlineButton>Profile</OutlineButton>
   </Box>,
