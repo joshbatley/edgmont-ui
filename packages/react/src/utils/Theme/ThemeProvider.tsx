@@ -1,45 +1,53 @@
 import { ThemeProvider } from 'styled-components';
-import { LightTheme, DarkTheme } from './Theme';
+import { LightTheme, DarkTheme, ProvidedTheme } from './Theme';
 import { GlobalStyles } from './GlobalStyles';
 import { createContext, useContext, useEffect, useState } from 'react';
+import { InheritedTheme } from '../../shared/preferColorScheme';
 
-export type ProvidedTheme = 'Light' | 'Dark';
+const LocalStorageKey = '@EdgmontUI-Settings';
 
 export type ThemeProviderProps = {
   theme?: ProvidedTheme;
   children?: React.ReactNode;
 };
 
-export type ThemeCtx = {
+export type SettingsCtx = {
   theme: ProvidedTheme;
   setTheme: (theme: ProvidedTheme) => void;
   toggleTheme: () => void;
 };
 
-export const InheritedTheme: ProvidedTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'Light' : 'Dark';
+export const SettingsContext = createContext<SettingsCtx | undefined>(undefined);
 
-export const ThemeContext = createContext<ThemeCtx | undefined>(undefined);
-
-export const useEdgmontTheme = () => {
-  let context = useContext(ThemeContext);
+export const useEdgmontSettings = () => {
+  let context = useContext(SettingsContext);
 
   if (context === undefined) {
-    throw new Error('useEdgmontTheme must be used within a ThemeContext provider');
+    throw new Error('useEdgmontSettings must be used within a EdgmontUI provider');
   }
 
   return context;
 };
 
 export const EdgmontUI: React.FC<ThemeProviderProps> = ({ children, theme: defaultTheme }) => {
-  let [themeKey, setTheme] = useState<ProvidedTheme | undefined>(defaultTheme || InheritedTheme);
+  let [themeKey, setTheme] = useState<ProvidedTheme | undefined>(() => {
+    if (localStorage.getItem(LocalStorageKey) !== null) {
+      return JSON.parse(localStorage.getItem(LocalStorageKey) || '')?.theme;
+    }
+    return defaultTheme || InheritedTheme;
+  });
   let theme = themeKey === 'Light' ? LightTheme : DarkTheme;
 
   useEffect(() => {
     setTheme(defaultTheme || InheritedTheme);
   }, [defaultTheme]);
 
+  useEffect(() => {
+    localStorage.setItem(LocalStorageKey, JSON.stringify({ theme: themeKey }));
+  }, [themeKey]);
+
   return (
-    <ThemeContext.Provider value={{
+    <SettingsContext.Provider value={{
       theme: themeKey as ProvidedTheme,
       setTheme,
       toggleTheme: () => setTheme(themeKey == 'Dark' ? 'Light' : 'Dark'),
@@ -48,7 +56,7 @@ export const EdgmontUI: React.FC<ThemeProviderProps> = ({ children, theme: defau
         <GlobalStyles theme={theme} />
         {children}
       </ThemeProvider>
-    </ThemeContext.Provider>
+    </SettingsContext.Provider>
   );
 };
 
