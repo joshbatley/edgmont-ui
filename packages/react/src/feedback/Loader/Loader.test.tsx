@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { ThemeDefaultProvider } from '../../utils';
+import { EdgmontUI } from '../../utils';
 import { CircleLoader } from '.';
 
 function render(Comp: ReactNode) {
-  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
+  return testRender(<EdgmontUI>{Comp}</EdgmontUI>);
 }
 
 describe('Loader', () => {

@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { render as testRender } from '@testing-library/react';
-import { ThemeDefaultProvider } from '../../utils';
+import { EdgmontUI } from '../../utils';
 import { Typography } from '.';
 
 function render(component: ReactNode) {
-  return testRender(<ThemeDefaultProvider>{component}</ThemeDefaultProvider>);
+  return testRender(<EdgmontUI>{component}</EdgmontUI>);
 }
 
 describe('Typography component', () => {

@@ -1,10 +1,10 @@
 import { render as testRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ThemeDefaultProvider } from '../../../utils';
+import { EdgmontUI } from '../../../utils';
 import { Radio } from '.';
 
 function render(Comp: any) {
-  return testRender(<ThemeDefaultProvider>{Comp}</ThemeDefaultProvider>);
+  return testRender(<EdgmontUI>{Comp}</EdgmontUI>);
 }
 
 const onChangeMock = jest.fn();
