@@ -1,8 +1,28 @@
 /** @type { import('@storybook/react').Preview } */
 
-import { EdgmontUI } from '@edgmont-ui/react'
-import { useDarkMode } from 'storybook-dark-mode';
+import { EdgmontUI, useEdgmontSettings } from '@edgmont-ui/react'
+import { UPDATE_DARK_MODE_EVENT_NAME, useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, lightTheme } from './themes';
+import { addons } from '@storybook/preview-api';
+import React from 'react';
+
+const channel = addons.getChannel();
+
+const Comp: React.FC<{ isDark?: boolean, children: any }> = ({ children, isDark }) => {
+  const { theme, setTheme } = useEdgmontSettings();
+
+  React.useEffect(() => {
+    channel.emit(UPDATE_DARK_MODE_EVENT_NAME, theme === 'Dark' ? 'dark' : 'light');
+  }, [theme])
+
+  React.useEffect(() => {
+    setTheme(isDark ? 'Dark' : 'Light');
+  }, [isDark])
+
+  return (
+    <div>{children}</div>
+  )
+}
 
 const decorators = [
   (Story: any, context: any) => {
@@ -11,23 +31,23 @@ const decorators = [
       portalRoot.setAttribute('id', 'portal-root')
       document.body.appendChild(portalRoot);
     }
-    const theme = useDarkMode() ? 'Dark' : 'Light';
+    const isDark = useDarkMode();
+
     return (
-      // @ts-ignore
-      <EdgmontUI theme={theme}>
-        {Story()}
+      <EdgmontUI>
+        <Comp isDark={isDark}>
+          {Story()}
+        </Comp>
       </EdgmontUI>
     )
   },
 ];
-const InheritedTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-const theme: string = (JSON.parse(localStorage.getItem('@EdgmontUI-Settings') || '{}')?.theme || InheritedTheme);
+
 
 const preview = {
   decorators: decorators,
   parameters: {
     darkMode: {
-      // current: theme.toLowerCase(),
       light: lightTheme,
       dark: darkTheme,
     },
