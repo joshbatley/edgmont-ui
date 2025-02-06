@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.15
+
+### Patch Changes
+
+- a30bd78: Theme toggles
+
 ## 1.0.14
 
 ### Patch Changes
