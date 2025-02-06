@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { StepIcon } from './StepIcon';
 import { useStepperContext } from './StepperContext';
 import { Direction, WithChildren } from '../../types';
+import { Typography } from '../../data';
 
 export type StepLabelProps = {
   icon?: React.ReactNode;
@@ -79,7 +80,7 @@ export const StepLabel: React.FC<StepLabelProps> = ({
     <>
       <Label alternativeLabel={false}>
         <StepIcon number={idx + 1} icon={icon} state={state} error={error} />
-        <span>{children}</span>
+        <Typography opacity={state === 'default' ? '0.6' : '1'}>{children}</Typography>
       </Label>
       {idx !== noOfItems && (
         <LineContainer direction={direction}>

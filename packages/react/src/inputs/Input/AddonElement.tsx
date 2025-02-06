@@ -27,7 +27,7 @@ export const AddonElement: React.FC<AddonElementProps> = ({
   addon, left, right,
 }) =>
   addon ? (
-    <StyledBox bg="rgba(0,0,0,0.02)" borderRight={right ? 'none' : 'border.1'} borderLeft={left ? 'none' : 'border.1'} display="flex" alignItems="center">
+    <StyledBox bg="offsetBackground" borderRight={right ? 'none' : 'border.1'} borderLeft={left ? 'none' : 'border.1'} display="flex" alignItems="center">
       {addon}
     </StyledBox>
   ) : null;

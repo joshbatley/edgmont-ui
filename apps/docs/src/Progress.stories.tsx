@@ -8,9 +8,9 @@ export default {
 };
 
 export const Circle: StoryObj<typeof CircleProgress> = {
-  render: ({ ...rest }) => <CircleProgress {...rest} />,
+  render: ({ ...rest }) => <CircleProgress percentage={20} {...rest} />,
 };
 
 export const Linear: StoryObj<typeof LinearProgress> = {
-  render: ({ ...rest }) => <LinearProgress {...rest} />,
+  render: ({ ...rest }) => <LinearProgress percentage={20} {...rest} />,
 };

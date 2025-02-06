@@ -23,6 +23,6 @@ export const SelectFilter: React.FC<SelectFilterProps> = ({ textProps, ...rest }
   }
 
   return (
-    <Input suffiXMarkIcon={<ChevronUpDownIcon height={16} width={16} />} ref={ref} {...textProps} {...getInputProps()} />
+    <Input suffixMarkIcon={<ChevronUpDownIcon height={16} width={16} />} ref={ref} {...textProps} {...getInputProps()} />
   );
 };

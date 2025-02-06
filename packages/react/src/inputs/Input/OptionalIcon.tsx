@@ -9,7 +9,7 @@ export type OptionalIconProps = {
 export const OptionalIcon: React.FC<OptionalIconProps> = ({ icon, left, right }) =>
   icon ? (
     <Box
-      bg="rgba(0,0,0,0.02)"
+      bg="offsetBackground"
       display="flex"
       borderRight={right ? 'none' : 'border.1'}
       borderLeft={left ? 'none' : 'border.1'}

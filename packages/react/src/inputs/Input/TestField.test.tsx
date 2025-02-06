@@ -15,11 +15,11 @@ describe('Input test', () => {
   });
 
   it('should render the Prefix Icon', () => {
-    const { getByTestId } = render(<Input prefiXMarkIcon={<LockClosedIcon data-testid="testingPrefix" />} />);
+    const { getByTestId } = render(<Input prefixMarkIcon={<LockClosedIcon data-testid="testingPrefix" />} />);
     expect(getByTestId('testingPrefix')).toBeInTheDocument();
   });
   it('should render the Suffix Icon', () => {
-    const { getByTestId } = render(<Input suffiXMarkIcon={<LockClosedIcon data-testid="testingSuffix" />} />);
+    const { getByTestId } = render(<Input suffixMarkIcon={<LockClosedIcon data-testid="testingSuffix" />} />);
     expect(getByTestId('testingSuffix')).toBeInTheDocument();
   });
 });

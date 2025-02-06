@@ -18,7 +18,7 @@ export const DestructiveButton = forwardRef<HTMLButtonElement, DestructiveButton
   children, ...rest
 }, ref) => (
   <StyledButton
-    color="background"
+    color="destructiveForeground"
     bg="destructive"
     ref={ref}
     {...rest}

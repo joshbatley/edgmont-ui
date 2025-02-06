@@ -23,7 +23,7 @@ export const Showcase: StoryObj<typeof DestructiveButton> = {
       </DestructiveButton>
       <br /><br />
       <DestructiveButton disabled {...rest}>
-        <CircleLoader destructive width={16} height={16} />
+        <CircleLoader width={16} height={16} />
         <span>{children}</span>
       </DestructiveButton>
     </>
