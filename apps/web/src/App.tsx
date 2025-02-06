@@ -1,11 +1,10 @@
-import { Box, ImageComp, Typography, PrimaryButton, Badge, CenteredWidget, useEdgmontTheme } from '@edgmont-ui/react';
+import { Box, ImageComp, Typography, PrimaryButton, Badge, CenteredWidget, useEdgmontSettings } from '@edgmont-ui/react';
 import LogoLight from './assets/logo-light.svg';
 import LogoDark from './assets/logo-dark.svg';
 import ReactLogo from './assets/react-light.svg';
 
 export const App: React.FC = () => {
-  const { theme } = useEdgmontTheme();
-  console.log(theme);
+  const { theme } = useEdgmontSettings();
   return (
     <CenteredWidget>
       <Box display="grid" gridTemplateColumns={['1fr', '1fr 1fr']} width={['auto', '500px']} gridColumnGap="3" alignItems="flex-end" mt="-200px" mx={['30px', 'auto']}>
