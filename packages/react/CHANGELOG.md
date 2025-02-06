@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.18
+
+### Patch Changes
+
+- 6354c5f: Default theme selection
+
 ## 1.0.17
 
 ### Patch Changes
