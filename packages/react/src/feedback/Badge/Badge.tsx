@@ -69,7 +69,7 @@ const BadgeItem = styled.div<{
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height:  ${({ theme }) => theme.lineHeights[0]};
   text-align: center;
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme, destructive }) => destructive ? theme.colors.destructiveForeground : theme.colors.primaryForeground};
   background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.primary};
   min-width: fit-content;
   width: ${({ theme }) => theme.sizes[5]};
