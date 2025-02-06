@@ -20,14 +20,14 @@ const decorators = [
     )
   },
 ];
-
-export const InheritedTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+const InheritedTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+const theme: string = (JSON.parse(localStorage.getItem('@EdgmontUI-Settings') || '{}')?.theme || InheritedTheme);
 
 const preview = {
   decorators: decorators,
   parameters: {
     darkMode: {
-      current: InheritedTheme,
+      // current: theme.toLowerCase(),
       light: lightTheme,
       dark: darkTheme,
     },
