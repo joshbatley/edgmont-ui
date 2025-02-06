@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.17
+
+### Patch Changes
+
+- cf9dc30: Added setting into localstoage
+
 ## 1.0.16
 
 ### Patch Changes
