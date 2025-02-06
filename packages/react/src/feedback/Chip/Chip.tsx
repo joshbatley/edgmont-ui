@@ -16,7 +16,7 @@ export const Container = styled.div<{ destructive?: boolean }>`
   font-size: ${({ theme }) => theme.fontSizes[0]};
   line-height: ${({ theme }) => theme.lineHeights[0]};
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme, destructive }) => destructive ? theme.colors.destructiveForeground : theme.colors.primaryForeground};
   background: ${({ theme, destructive }) => destructive ? theme.colors.destructive : theme.colors.primary};
 
   > :not([hidden]) ~ :not([hidden]) {

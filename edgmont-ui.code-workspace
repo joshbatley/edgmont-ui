@@ -1,14 +1,17 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "packages/react"
-		},
-		{
-			"path": "apps/docs"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "packages/react"
+    },
+    {
+      "path": "apps/docs"
+    }
+    {
+      "path": "apps/web"
+    }
+  ],
+  "settings": {}
 }
