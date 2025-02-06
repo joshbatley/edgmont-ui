@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.16
+
+### Patch Changes
+
+- 6e15c03: Updated badge colours
+
 ## 1.0.15
 
 ### Patch Changes
