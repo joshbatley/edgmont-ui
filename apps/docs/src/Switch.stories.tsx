@@ -1,5 +1,6 @@
 import { StoryObj } from '@storybook/react';
 import { Box, Switch } from '@edgmont-ui/react';
+import { useState } from 'react';
 
 export default {
   title: 'Inputs/Switch',
@@ -10,15 +11,20 @@ export default {
 };
 
 export const Showcase: StoryObj<typeof Switch> = {
-  render: ({ disabled, ...rest }) => (
-    <Box spaceXBetween="2">
+  render: ({ disabled, ...rest }) => {
+    let [check, setCheck] = useState<boolean>(false);
+    return (
       <Box spaceXBetween="2">
-        <Switch {...rest} />
-        <br /><br />
-        <Switch disabled {...rest} />
-        <br /><br />
-        <Switch disabled checked {...rest} />
+        <Box spaceXBetween="2">
+          <Switch {...rest} onChange={() => { }} />
+          <br /><br />
+          <Switch disabled {...rest} />
+          <br /><br />
+          <Switch disabled checked {...rest} onChange={() => { }} />
+          <br /><br />
+          <Switch checked={check} {...rest} onChange={() => setCheck(!check)} />
+        </Box>
       </Box>
-    </Box>
-  ),
+    );
+  },
 };

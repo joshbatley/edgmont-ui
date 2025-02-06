@@ -68,12 +68,14 @@ const theme = {
 };
 
 export const LightTheme = {
+  name: 'Light',
   colors: LightThemeColors,
   borders: generateBorders(LightThemeColors),
   ...theme,
 };
 
 export const DarkTheme = {
+  name: 'Dark',
   colors: DarkThemeColors,
   borders: generateBorders(DarkThemeColors),
   ...theme,

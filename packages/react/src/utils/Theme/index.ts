@@ -1,3 +1,4 @@
 export * from './Theme';
-export * from './DefaultThemeProvider';
+export * from './ThemeProvider';
+export * from './ThemeToggle';
 export * from './GlobalStyles';

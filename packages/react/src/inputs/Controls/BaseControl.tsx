@@ -6,13 +6,30 @@ export type BaseControlProps = {
   rounded?: boolean;
 } & React.ComponentPropsWithRef<'input'>;
 
-const Label = styled.label<{ disabled: boolean; }>`
+const Label = styled.label<{ disabled: boolean; checked?: boolean; }>`
   display: flex;
   align-items: center;
   cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
-  color: ${({ theme, disabled }) => disabled ? theme.colors.mutedForeground : 'foreground'};
+  color: ${({ theme, disabled }) => disabled ? theme.colors.mutedForeground : theme.colors.foreground};
   > :not([hidden]) ~ :not([hidden]) {
     margin-left: 0.5rem;
+  }
+  div > svg {
+    ${({ theme, checked }) => checked && `
+        color: ${theme.colors.background};
+    `}
+  }
+
+  :hover div  {
+    ${({ theme, checked }) => `
+        background: ${checked ? theme.colors.foreground : theme.colors.background};
+    `}
+  }
+
+  :hover div > svg {
+    ${({ theme, checked }) => `
+        color: ${checked ? theme.colors.background : theme.colors.foreground};
+    `}
   }
 `;
 
@@ -33,32 +50,22 @@ const Btn = styled.div<{ rounded: boolean; disabled: boolean; }>`
   opacity: ${({ disabled }) => disabled ? .5 : 1};
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ checked?: boolean }>`
     background: ${({ theme }) => theme.colors.background};
     width: 100%;
     height: 100%;
     position: absolute;
-    input:checked ~ & {
-      background: ${({ theme }) => theme.colors.primary};
-    }
-    ${Label}:hover input:checked ~ & {
-      background: ${({ theme }) => theme.colors.primary};
-    }
+    ${({ checked, theme }) => checked && `
+      background: ${theme.colors.primary};
+    `}
+
   `;
 
-let Icon = styled.div<{ disabled: boolean; }>`
+let Icon = styled.div<{ disabled: boolean; checked?: boolean }>`
     svg {
       color: transparent;
       z-index: 10;
       position: relative;
-      ${Label} input:checked ~ & {
-        color: ${({ theme }) => theme.colors.background};
-      }
-      ${({ theme, disabled }) => !disabled && `
-        ${Label}:hover & {
-          color: ${theme.colors.primary};
-        }
-      `}
     }
   `;
 
@@ -69,11 +76,11 @@ const Input = styled.input`
 export const BaseControl: React.FC<BaseControlProps> = ({
   labelText, icon, rounded = false, disabled = false, ...rest
 }) => (
-  <Label disabled={disabled}>
+  <Label disabled={disabled} checked={rest.checked}>
     <Btn rounded={rounded} disabled={disabled}>
       <Input disabled={disabled} {...rest} />
-      <Box />
-      <Icon disabled={disabled}>{icon}</Icon>
+      <Box {...rest} />
+      <Icon disabled={disabled} {...rest}>{icon}</Icon>
     </Btn>
     {labelText}
   </Label>

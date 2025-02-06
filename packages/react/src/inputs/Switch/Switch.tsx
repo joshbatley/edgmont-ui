@@ -15,11 +15,7 @@ const Label = styled.label<{ disabled: boolean; }>`
   `}
 `;
 
-const Button = styled.div`
-  input:checked ~ & {
-    right: 0%;
-    transform: translateX(0%);
-  }
+const Button = styled.div<{ checked?: boolean }>`
   background: ${({ theme }) => theme.colors.background};
   position: absolute;
   border-radius: ${({ theme }) => theme.radii[8]};
@@ -28,6 +24,10 @@ const Button = styled.div`
   transform: translateX(100%);
   height: ${({ theme }) => theme.sizes[4]};
   width: ${({ theme }) => theme.sizes[4]};
+  ${({ checked }) => checked && `
+    right: 0%;
+    transform: translateX(0%);
+ `}
   ${({ theme }) => theme.transition}
 `;
 
@@ -35,25 +35,24 @@ const Input = styled.input`
   display: none;
 `;
 
-const Backing = styled.div`
+const Backing = styled.div<{ checked?: boolean }>`
     width: 100%;
     height: ${({ theme }) => theme.sizes[4]};
     border-radius: ${({ theme }) => theme.radii[8]};
     position: absolute;
     background: ${({ theme }) => theme.colors.input};
     box-shadow: ${({ theme }) => theme.colors.input} 0 0 0 2px;
-    input:checked ~ & {
-      background:  ${({ theme }) => theme.colors.primary};
-      box-shadow: ${({ theme }) => theme.colors.primary} 0 0 0 2px;
-    }
-
+    ${({ theme, checked }) => checked && `
+      background:  ${theme.colors.primary};
+      box-shadow: ${theme.colors.primary} 0 0 0 2px;
+    `}
     ${({ theme }) => theme.transition}
 `;
 
 export const Switch: React.FC<SwitchProps> = ({ disabled = false, ...rest }) => (
   <Label disabled={disabled} >
     <Input type="checkbox" disabled={disabled} {...rest} />
-    <Backing />
-    <Button />
+    <Backing {...rest} />
+    <Button {...rest} />
   </Label>
 );
