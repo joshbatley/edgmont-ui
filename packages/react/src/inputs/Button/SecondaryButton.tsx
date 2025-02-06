@@ -6,10 +6,10 @@ export type SecondaryButtonProps = BaseButtonProps & React.ComponentPropsWithRef
 
 const StyledButton = styled(BaseButton) <SecondaryButtonProps>`
   :hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   :disabled {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;
 

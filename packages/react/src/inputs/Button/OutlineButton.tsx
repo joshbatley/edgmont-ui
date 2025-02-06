@@ -18,7 +18,7 @@ export const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>((
     backgroundColor="background"
     boxShadow="base.0"
     border="border.1"
-    color="base"
+    color="foreground"
     lineHeight="18px"
     ref={ref}
     {...rest}

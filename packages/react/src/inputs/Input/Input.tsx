@@ -8,8 +8,8 @@ import { OptionalIcon } from './OptionalIcon';
 export type InputProps = {
   before?: ReactElement;
   after?: ReactElement;
-  prefiXMarkIcon?: ReactElement;
-  suffiXMarkIcon?: ReactElement;
+  prefixMarkIcon?: ReactElement;
+  suffixMarkIcon?: ReactElement;
   disabled?: boolean;
   type?: 'text' | 'password' | 'number' | 'email';
 } & React.ComponentPropsWithRef<'input'>;
@@ -29,7 +29,7 @@ const Container = styled(Box) <{ disabled: boolean; }>`
 `;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({
-  prefiXMarkIcon, suffiXMarkIcon,
+  prefixMarkIcon: prefiXMarkIcon, suffixMarkIcon: suffiXMarkIcon,
   before, after, disabled = false,
   ...rest
 }, ref) => (

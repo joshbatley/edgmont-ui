@@ -58,7 +58,7 @@ export const SelectButton: React.FC<SelectButtonProps> = ({
       {...getToggleButtonProps()}
       {...rest}
     >
-      <Typography fontSize="1" lineHeight="1">{buttonText}</Typography>
+      <Typography fontWeight="normal">{buttonText}</Typography>
       <Container display="flex" alignItems="center">
         {isClearableActive &&
           <ClearBtn as="a" onClick={clear}>

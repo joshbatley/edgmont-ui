@@ -35,11 +35,11 @@ export const Showcase: StoryObj<typeof Input> = {
 export const WithIcons: StoryObj<typeof Input> = {
   render: ({ ...rest }) => (
     <Box spaceYBetween="2" width="320px">
-      <Input prefiXMarkIcon={<CalendarIcon width={16} />} {...rest} />
-      <Input suffiXMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
+      <Input prefixMarkIcon={<CalendarIcon width={16} />} {...rest} />
+      <Input suffixMarkIcon={<CodeBracketIcon width={16} />} {...rest} />
       <Input
-        prefiXMarkIcon={<LockClosedIcon width={16} />}
-        suffiXMarkIcon={<CodeBracketIcon width={16} />}
+        prefixMarkIcon={<LockClosedIcon width={16} />}
+        suffixMarkIcon={<CodeBracketIcon width={16} />}
         {...rest}
       />
     </Box>

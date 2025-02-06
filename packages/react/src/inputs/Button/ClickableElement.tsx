@@ -6,6 +6,7 @@ export type ClickableElementProps = BaseButtonProps & React.ComponentPropsWithRe
 export const ClickableElement = forwardRef<HTMLButtonElement, ClickableElementProps>(({ children, ...rest }, ref) => (
   <BaseButton
     padding="0"
+    backgroundColor="transparent"
     fontWeight="inherit"
     lineHeight="inherit"
     fontSize="inherit"
