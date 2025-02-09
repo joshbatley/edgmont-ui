@@ -51,9 +51,9 @@ export const PaginationControls: React.FC<PaginationProps> = ({
       >
         <ChevronLeftIcon width={16} height={20} />
       </Button>
-      {pages.map((page) => (
+      {pages.map((page, idx) => (
         <StyledBtn
-          key={page.toString()}
+          key={page === ELLIPSIS_ELEMENT ? 'ellipsis' + idx : page}
           borderRadius={2}
           verticalAlign="bottom"
           zIndex={page === currentPage ? 30 : 'unset'}
