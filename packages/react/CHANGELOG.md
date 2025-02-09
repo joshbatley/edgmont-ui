@@ -1,5 +1,11 @@
 # @edgmont-ui/react
 
+## 1.0.19
+
+### Patch Changes
+
+- bd7c88d: Fixed paginations
+
 ## 1.0.18
 
 ### Patch Changes
