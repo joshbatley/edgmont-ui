@@ -114,7 +114,7 @@ export const Content: StoryObj<typeof Card> = {
 export const Media: StoryObj<typeof Card> = {
   render: () => (
     <Box display="flex" justifyContent="space-evenly">
-      <Card maxWidth={300}>
+      <Card maxWidth={300} height="fit-content">
         <CardMedia
           as="img"
           alt="green iguana"

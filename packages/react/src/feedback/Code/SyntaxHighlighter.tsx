@@ -1,36 +1,24 @@
-import { Highlight, Language, themes } from 'prism-react-renderer';
+import { default as SH } from 'react-syntax-highlighter';
+import { githubLight, githubDark } from './theme';
 import { Wrapper } from './Wrapper';
+import { useEdgmontSettings } from '../../utils';
 
 export type SyntaxHighlighterProps = {
   code: string;
-  language: Language;
+  language: string;
   light?: boolean;
   withWrapper?: boolean;
 };
 
 export const SyntaxHighlighter: React.FC<SyntaxHighlighterProps> = ({
-  language, code, light = false, withWrapper = true,
+  language, code, withWrapper = true,
 }) => {
-  let theme = light ? themes.vsLight : themes.vsDark;
+  let { theme } = useEdgmontSettings();
   return (
-    <Wrapper style={theme.plain} skip={!withWrapper}>
-      <Highlight
-        theme={theme}
-        code={code}
-        language={language}
-      >
-        {({ style, tokens, getLineProps, getTokenProps }) => (
-          <pre style={style}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )}
-      </Highlight>
+    <Wrapper skip={!withWrapper}>
+      <SH language={language} style={theme === 'Light' ? githubLight : githubDark}>
+        {code}
+      </SH>
     </Wrapper>
   );
 };

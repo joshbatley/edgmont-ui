@@ -25,11 +25,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTheme }>`
     margin: 0;
   }
 
-  ::before,
-  ::after {
-    --tw-content: '';
-  }
-
   hr {
     height: 0;
     color: inherit;
