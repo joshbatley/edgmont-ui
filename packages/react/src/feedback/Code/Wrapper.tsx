@@ -7,19 +7,20 @@ type WrapperProps = {
 } & WithChildren;
 
 const StyledDiv = styled.div`
+  overflow: hidden;
   font-size: ${({ theme }) => theme.fontSizes[1]};
   line-height: ${({ theme }) => theme.lineHeights[1]};
-  padding: ${({ theme }) => theme.space[2]};
   font-family: ${({ theme }) => theme.fonts.mono};
   border: ${({ theme }) => theme.borders.border[1]};
   box-shadow: ${({ theme }) => theme.shadows.base[1]};
   border-radius: ${({ theme }) => theme.radii[3]};
+  background: ${({ theme }) => theme.colors.offsetBackground};
 `;
 
 export const Wrapper: React.FC<WrapperProps> = ({
-  children, style, skip,
+  children, skip,
 }) => skip ? <>{children}</> : (
-  <StyledDiv style={style}>
+  <StyledDiv >
     {children}
   </StyledDiv>
 );
